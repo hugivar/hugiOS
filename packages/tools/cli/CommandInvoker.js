@@ -10,9 +10,10 @@ class CommandInvoker {
    *
    * @param publish - The function for deploying the site.
    */
-  constructor(publish, createPost) {
+  constructor(publish, createPost, outputArticles) {
     this.publish = publish;
     this.createPost = createPost;
+    this.outputArticles = outputArticles;
   }
 
   /**
@@ -35,6 +36,10 @@ class CommandInvoker {
   runCreatePost(args, options, logger) {
     runOperation(this.createPost, args, options, logger);
   }
+
+  runOutputArticles(args, options, logger) {
+    runOperation(this.outputArticles, args, options, logger);
+  }
 }
 
 function runOperation(operation, args, options, logger) {
@@ -45,4 +50,4 @@ function runOperation(operation, args, options, logger) {
   });
 }
 
-module.exports = CommandInvoker;
+export default CommandInvoker

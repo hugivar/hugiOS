@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
-const chalk = require('chalk');
+import chalk from 'chalk';
 
-const pinFile = ({ pinata, sourcePath, options, logger }) =>
+export const pinFile = ({ pinata, sourcePath, options, logger }) =>
   pinata
     .pinFromFS(sourcePath, options)
     .then((addedResult) => {
@@ -12,14 +12,13 @@ const pinFile = ({ pinata, sourcePath, options, logger }) =>
     .catch((err) => {
       logger.info(
         chalk.red(
-          `Error trying to add ${
-            options.pinataMetadata.name
+          `Error trying to add ${options.pinataMetadata.name
           } to Pinata: ${JSON.stringify(err, 0, 2)}`,
         ),
       );
     });
 
-const pinList = ({ pinata, fileName, logger }) =>
+export const pinList = ({ pinata, fileName, logger }) =>
   pinata
     .pinList({
       status: 'pinned',
@@ -42,7 +41,7 @@ const pinList = ({ pinata, fileName, logger }) =>
       );
     });
 
-const unpin = ({ pinata, hash, logger }) =>
+export const unpin = ({ pinata, hash, logger }) =>
   pinata
     .unpin(hash)
     .then(() => {
@@ -52,4 +51,3 @@ const unpin = ({ pinata, hash, logger }) =>
       logger.info(chalk.red(`Error trying to unpin ${hash} to Pinata: ${err}`));
     });
 
-module.exports = { pinFile, pinList, unpin };

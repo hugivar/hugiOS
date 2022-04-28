@@ -1,7 +1,7 @@
+
 ---
-title: 'Shared Configs'
-description: "Quickly setup your new coding environments"
-date: 1 August 2021
+title: Shared Configs
+description: A key piece of interoperability is consistency between coding environment when moving from one...
 ---
 
 > A key piece of interoperability is consistency between coding environment when moving from one machine to another. One way to achieve this consistency is to ensure your common configs such as your .bashrc/.zshrc files have been saved to a hosted location.
@@ -16,3 +16,4 @@ Transition to a new environment or a new machine can be challenge and a time con
 
 ### Future State
 I have configured it so far to be a manual process that I run occasionally. In the future, this could be setup through a monthly cronjob. Other configurations could be added as well such as VSCode settings and mac specific settings. 
+

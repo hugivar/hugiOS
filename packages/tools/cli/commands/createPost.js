@@ -1,7 +1,6 @@
-const chalk = require('chalk');
-const fs = require('fs');
-const converter = require('number-to-words');
-
+import chalk from 'chalk';
+import fs from 'fs';
+import converter from 'number-to-words';
 /**
  * Adds application module to client or server code and adds it to the module list.
  *
@@ -62,4 +61,4 @@ const createPost = ({ logger }) => {
   );
 };
 
-module.exports = createPost;
+export default createPost

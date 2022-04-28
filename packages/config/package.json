@@ -1,11 +1,12 @@
 {
   "name": "@nezhos/config",
   "version": "0.0.0",
-  "main": "index.js",
   "license": "MIT",
   "files": [
+    "index.js",
     "eslint-preset.js"
   ],
+  "main": "index.js",
   "dependencies": {
     "eslint-config-next": "^12.0.8",
     "eslint-config-prettier": "^8.3.0",

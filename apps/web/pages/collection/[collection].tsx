@@ -5,7 +5,7 @@ import {
   getAllCollections,
   getCollectionSlugs,
   getCollectionBySlug,
-} from "lib/api";
+} from "lib/fs";
 import Layout from "containers/Layout";
 import { Header } from "containers/Header";
 import ListView from "components/ListView";

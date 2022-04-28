@@ -89,7 +89,7 @@ function buildSiteMap(pageFiles) {
         const $ = cheerio.load(htmlString);
         return $(`meta[property='og:url']`).attr('content');
     });
-    console.log('buildSiteMap line:92', urls);
+
     const sitemap = `
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
     xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" 

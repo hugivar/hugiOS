@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
-const chalk = require('chalk');
+import chalk from 'chalk';
 
-const getDNSRecords = async (zoneId) => {
+export const getDNSRecords = async (zoneId) => {
   console.log('cloudflare line:5', zoneId);
   const { CLOUDFLARE_TOKEN_ID, CLOUDFLARE_ZONE_ID } = process.env;
 
@@ -12,7 +12,7 @@ const getDNSRecords = async (zoneId) => {
   return cf.dnsRecords.browse(zoneId || CLOUDFLARE_ZONE_ID);
 };
 
-const getZoneStatus = async (zoneId) => {
+export const getZoneStatus = async (zoneId) => {
   const { CLOUDFLARE_TOKEN_ID } = process.env;
 
   const cf = require('cloudflare')({
@@ -22,7 +22,7 @@ const getZoneStatus = async (zoneId) => {
   return cf.zones.read(zoneId);
 };
 
-const editDNSRecord = ({ args, content, logger }) => {
+export const editDNSRecord = ({ args, content, logger }) => {
   const { cloudflareTokenId, cloudflareZoneId, cloudflareDnsId } = args;
 
   const CLOUDFLARE_TOKEN_ID =
@@ -49,4 +49,3 @@ const editDNSRecord = ({ args, content, logger }) => {
     });
 };
 
-module.exports = { getDNSRecords, getZoneStatus, editDNSRecord };

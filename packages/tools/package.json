@@ -1,14 +1,31 @@
 {
-  "name": "tools",
+  "name": "@nezhos/tools",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "files": [
     "eslint-preset.js"
   ],
+  "scripts": {
+    "cli": "node ./cli",
+    "buildSiteMap": "node ./buildSiteMap"
+  },
   "dependencies": {
     "eslint-config-next": "^12.0.8",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "7.28.0"
+  },
+  "devDependencies": {
+    "@pinata/sdk": "^1.1.25",
+    "caporal": "^1.4.0",
+    "chalk": "^5.0.1",
+    "cloudflare": "^2.9.1",
+    "dotenv": "^16.0.0",
+    "node-fetch": "^3.2.4",
+    "number-to-words": "^1.2.4"
+  },
+  "volta": {
+    "node": "15.14.0"
   }
 }
