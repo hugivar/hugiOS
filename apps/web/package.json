@@ -7,6 +7,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next build && next start",
+    "serve": "serve out",
     "lint": "next lint",
     "cli": "node ./tools/cli",
     "buildSiteMap": "node ./tools/buildSiteMap"
@@ -52,6 +53,7 @@
     "eslint-config-next": "12.1.5",
     "eslint-config-prettier": "^8.5.0",
     "number-to-words": "^1.2.4",
+    "serve": "^13.0.2",
     "typescript": "4.5.4"
   },
   "volta": {
