@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from 'containers/Layout';
 import { Header } from 'containers/Header';
 import ListView from 'components/ListView';
-import { getAllCollections } from 'lib/api';
+import { getAllCollections } from 'lib/fs';
 
 export async function getStaticProps() {
   const collectionData = getAllCollections([

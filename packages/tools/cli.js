@@ -9,18 +9,17 @@ global.__API_URL__ = '';
 //   configFile: `${root}/tools/babel.config.js`,
 //   extensions: ['.js', '.jsx', '.ts', '.tsx']
 // });
-require('dotenv').config();
+import 'dotenv/config';
+import prog from 'caporal';
+import chalk from 'chalk';
 
-const prog = require('caporal');
-const chalk = require('chalk');
+import publish from './cli/commands/publish.js';
+import createPost from './cli/commands/createPost.js';
+import outputArticles from './cli/commands/outputArticles.js';
+import { getDNSRecords } from './cli/helpers/cloudflare.js';
+import CommandInvoker from './cli/CommandInvoker.js';
 
-const publish = require('./cli/commands/publish');
-const createPost = require('./cli/commands/createPost');
-const cloudflare = require('./cli/helpers/cloudflare');
-
-const CommandInvoker = require('./cli/CommandInvoker');
-
-const commandInvoker = new CommandInvoker(publish, createPost);
+const commandInvoker = new CommandInvoker(publish, createPost, outputArticles);
 
 prog
   .version('1.0.1')
@@ -40,8 +39,12 @@ prog
   })
   .command('dns', 'Get cloudflare dns records')
   .action(async (args, options, logger) => {
-    const data = await cloudflare.getDNSRecords();
+    const data = await getDNSRecords();
     logger.info(chalk.cyan(JSON.stringify(data, 0, 2)));
-  });
+  })
+  .command('output', 'Output all dev.to articles to markdown files')
+  .action((args, options, logger) => {
+    commandInvoker.runOutputArticles(args, options, logger);
+  })
 
 prog.parse(process.argv);

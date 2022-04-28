@@ -1,58 +1,33 @@
-/* eslint-disable no-useless-escape */
-import fs from 'fs';
-import { join } from 'path';
-import matter from 'gray-matter';
+import useSWR from "swr"
 
-const postsDirectory = join(process.cwd(), 'src/_posts');
-const collectionsDirectory = join(process.cwd(), 'src/_collections');
+const postPath = "https://dev.to/api/articles?username=nezhivar";
+const fetcher = url => fetch(url).then(res => res.json())
 
-export function getPostSlugs() {
-  const slugs = fs.readdirSync(postsDirectory);
-  return slugs.map((key) => key.replace(/^.*[\\\/]/, '').slice(0, -3));
-}
-
-export const getPostBySlug = (slug) => {
-  const file = fs.readFileSync(`src/_posts/${slug}.md`, 'utf8');
-
-  const { data: frontmatter, content: body } = matter(file);
-
-  return { frontmatter, body, slug, type: 'journal' };
-};
-
-export const getAllPosts = (fields = []) => {
-  const slugs = getPostSlugs();
-
+export const getAllPosts = async (fields = []) => {
+  const posts = await fetcher(postPath);
+  console.log('api line:10', posts);
   return (
-    slugs
-      .map((slug) => getPostBySlug(slug, fields))
+    posts
+      .reduce((acc, currentItem) => {
+        const newObject = Object
+          .keys(currentItem)
+          .filter(key => fields.includes(key))
+          .reduce((acc, item) => (
+            { ...acc, [item]: currentItem[item] }
+          ), { type: 'journal' });
+
+        return [...acc, newObject]
+      }, [])
       // sort posts by date in descending order
       .sort(
         (post1, post2) =>
-          new Date(post2.frontmatter.date) - new Date(post1.frontmatter.date),
+          new Date(post2.date) - new Date(post1.date),
       )
   );
 };
 
-export function getCollectionSlugs() {
-  const slugs = fs.readdirSync(collectionsDirectory);
-  return slugs.map((key) => key.replace(/^.*[\\\/]/, '').slice(0, -3));
+export const useGetPosts = () => {
+  const { data: posts, error } = useSWR(postPath, fetcher)
+
+  return { posts, error }
 }
-
-export const getCollectionBySlug = (slug) => {
-  const file = fs.readFileSync(`src/_collections/${slug}.md`, 'utf8');
-
-  const { data: frontmatter, content: body } = matter(file);
-
-  return { frontmatter, body, slug, type: 'collection' };
-};
-
-export const getAllCollections = (fields = []) => {
-  const slugs = getCollectionSlugs();
-
-  return (
-    slugs
-      .map((slug) => getCollectionBySlug(slug, fields))
-      // sort posts by date in descending order
-      .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-  );
-};

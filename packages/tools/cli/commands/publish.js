@@ -1,10 +1,10 @@
 /* eslint-disable global-require */
-const path = require('path');
-const pinataSDK = require('@pinata/sdk');
-const chalk = require('chalk');
+import path from 'path';
+import pinataSDK from '@pinata/sdk';
+import chalk from 'chalk';
 
-const { editDNSRecord } = require('../helpers/cloudflare');
-const { pinFile, pinList, unpin } = require('../helpers/pinata');
+import { editDNSRecord } from '../helpers/cloudflare.js';
+import { pinFile, pinList, unpin } from '../helpers/pinata.js';
 /**
  * Publish the output NextJS static files to pinata.
  * Configuring a DNS link on Clouldflare pointing the new ipfs location
@@ -12,7 +12,7 @@ const { pinFile, pinList, unpin } = require('../helpers/pinata');
  * @param logger - The Logger
  */
 
-function publishWeb({ logger, ...args }) {
+const publishWeb = ({ logger, ...args }) => {
   const { pinataKey, pinataSecretKey } = args;
 
   const PINATA_KEY = pinataKey || process.env.PINATA_KEY;
@@ -83,4 +83,4 @@ function publishWeb({ logger, ...args }) {
     });
 }
 
-module.exports = publishWeb;
+export default publishWeb;

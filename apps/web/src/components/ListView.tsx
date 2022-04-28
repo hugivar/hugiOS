@@ -7,14 +7,10 @@ import classNames from "classnames";
 import { DrawerButton } from "components/DrawerButton";
 import { determineHref } from "utils/routing";
 
-interface FrontMatter {
+interface Item {
   title: string;
   description: string;
   date: string;
-}
-
-interface Item {
-  frontmatter: FrontMatter;
   slug: string;
   type: string;
 }
@@ -34,19 +30,21 @@ interface ITitle {
 
 const ItemCard = ({ item }: IItemCard) => {
   const url = `/${item.type}/${item.slug}/`;
+  const link = determineHref(url);
+  console.log(link, item.type);
 
   return (
-    <Link href={determineHref(url)}>
+    <Link href={link}>
       <a className="flex py-3 lg:py-2 px-3.5 space-x-3 border-b lg:border-none border-gray-100 dark:border-gray-900 text-sm lg:rounded-lg sm:hover:bg-gray-200 sm:dark:hover:bg-gray-800">
         <div className="flex flex-col justify-center space-y-1">
           <div className="font-bold line-clamp-3 text-gray-1000 dark:text-gray-100">
-            {item?.frontmatter?.title}
+            {item?.title}
           </div>
           <div className="line-clamp-2 text-gray-1000/60 dark:text-white/60">
-            {item?.frontmatter?.description}
+            {item?.description}
           </div>
           <div className="line-clamp-1 text-gray-1000/60 dark:text-white/40">
-            {item?.frontmatter?.date}
+            {item?.date}
           </div>
         </div>
       </a>

@@ -100,7 +100,9 @@ web_modules/
 
 # next.js
 /.next/
+.next/
 /out/
+out/
 
 # Nuxt.js build / generate output
 .nuxt

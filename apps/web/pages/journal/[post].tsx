@@ -1,31 +1,37 @@
 /* tslint:disable */
 import React from "react";
+import { useRouter } from "next/router";
 
-import { getAllPosts, getPostSlugs, getPostBySlug } from "lib/api";
+import { getPostsFromFiles, getPostSlugs, getPostBySlug } from "lib/fs";
 import Layout from "containers/Layout";
 import { Header } from "containers/Header";
 import ListView from "components/ListView";
 import ContentItem from "components/ContentItem";
+import { getAllPosts, useGetPosts } from "lib/api";
 
 interface IPost {
   frontmatter: any;
   body: any;
 }
 
-const Item = ({ frontmatter, body, ...rest }: IPost) => {
-  if (!frontmatter) return null;
+const Item = ({ ...rest }: IPost) => {
+  const router = useRouter();
 
-  return (
-    <Layout pageTitle={`${frontmatter.title} · Nezhivar`}>
-      <div className="flex flex-row">
-        <ListView title="Journal" {...rest} />
-        <div className="flex-1 w-full overflow-x-auto h-screen" id="content">
-          <Header title={frontmatter.title} />
-          <ContentItem frontmatter={frontmatter} body={body} />
-        </div>
-      </div>
-    </Layout>
-  );
+  console.log("16", router);
+
+  // if (!frontmatter) return null;
+
+  // return (
+  //   <Layout pageTitle={`${frontmatter.title} · Nezhivar`}>
+  //     <div className="flex flex-row">
+  //       <ListView title="Journal" {...rest} />
+  //       <div className="flex-1 w-full overflow-x-auto h-screen" id="content">
+  //         <Header title={frontmatter.title} />
+  //         <ContentItem frontmatter={frontmatter} body={body} />
+  //       </div>
+  //     </div>
+  //   </Layout>
+  // );
 };
 
 interface PageParams {
@@ -35,24 +41,30 @@ interface PageParams {
 }
 
 export async function getStaticProps({ params }: PageParams) {
-  const postsData = await getAllPosts(["slug", "title", "description", "date"]);
+  console.log("params", params);
 
-  const { frontmatter, body } = await getPostBySlug(params.post);
+  // const postsData = await getPostsFromFiles([
+  //   "slug",
+  //   "title",
+  //   "description",
+  //   "date",
+  // ]);
+
+  // const { body } = await getPostBySlug(params.post);
 
   return {
     props: {
-      items: postsData,
-      frontmatter,
-      body,
+      items: [],
     },
   };
 }
 
 export async function getStaticPaths() {
-  const paths = getPostSlugs().map((slug) => `/journal/${slug}`);
+  // const paths = getPostSlugs().map((slug) => `/journal/${slug}`);
+  // console.log("64", props);
 
   return {
-    paths,
+    paths: ["/journal/*"],
     fallback: false,
   };
 }
