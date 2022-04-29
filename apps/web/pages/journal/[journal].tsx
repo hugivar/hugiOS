@@ -1,19 +1,23 @@
 /* tslint:disable */
 import React from "react";
 
-import { getPostsFromFiles, getPostSlugs, getPostBySlugFromFile } from "lib/fs";
+import {
+  getArticlesFromFiles,
+  getArticleSlugs,
+  getArticleFromFileBySlug,
+} from "lib/fs";
 import Layout from "containers/Layout";
 import { Header } from "containers/Header";
 import ListView from "components/ListView";
 import ContentItem from "components/ContentItem";
-import { getAllPosts, getPostBySlug } from "lib/api";
+import { getAllArticles, getArticleBySlug } from "lib/api";
 import { determineIPFS } from "utils/routing";
 
 interface IPost {
   data: any;
 }
 
-const Item = ({ data, ...rest }: IPost) => {
+const JournalItem = ({ data, ...rest }: IPost) => {
   const { title, body_markdown } = data;
 
   return (
@@ -31,7 +35,7 @@ const Item = ({ data, ...rest }: IPost) => {
 
 interface PageParams {
   params: {
-    post: string;
+    journal: string;
   };
 }
 
@@ -39,12 +43,12 @@ export async function getStaticProps({ params }: PageParams) {
   const ipfsEnabled = determineIPFS();
 
   const postsData = ipfsEnabled
-    ? await getPostsFromFiles(["slug", "title", "description", "date"])
-    : await getAllPosts(["slug", "title", "description", "date"]);
+    ? await getArticlesFromFiles("journal")
+    : await getAllArticles(["slug", "title", "description", "date"], "journal");
 
   const data = ipfsEnabled
-    ? await getPostBySlugFromFile(params.post)
-    : await getPostBySlug(params.post);
+    ? await getArticleFromFileBySlug(params.journal, "journal")
+    : await getArticleBySlug(params.journal);
 
   return {
     props: {
@@ -55,7 +59,7 @@ export async function getStaticProps({ params }: PageParams) {
 }
 
 export async function getStaticPaths() {
-  const paths = getPostSlugs().map((slug) => `/journal/${slug}`);
+  const paths = getArticleSlugs("journal").map((slug) => `/journal/${slug}`);
 
   return {
     paths,
@@ -63,4 +67,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default Item;
+export default JournalItem;

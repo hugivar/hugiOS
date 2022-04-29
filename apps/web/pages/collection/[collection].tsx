@@ -2,30 +2,31 @@
 import React from "react";
 
 import {
-  getAllCollections,
-  getCollectionSlugs,
-  getCollectionBySlug,
+  getArticlesFromFiles,
+  getArticleSlugs,
+  getArticleFromFileBySlug,
 } from "lib/fs";
 import Layout from "containers/Layout";
 import { Header } from "containers/Header";
 import ListView from "components/ListView";
 import ContentItem from "components/ContentItem";
+import { determineIPFS } from "utils/routing";
+import { getAllArticles, getArticleBySlug } from "lib/api";
 
 interface IPost {
-  frontmatter: any;
-  body: any;
+  data: any;
 }
 
-const CollectionItem = ({ frontmatter, body, ...rest }: IPost) => {
-  if (!frontmatter) return null;
+const CollectionItem = ({ data, ...rest }: IPost) => {
+  const { title, body_markdown } = data;
 
   return (
-    <Layout pageTitle={`${frontmatter.title} · Nezhivar`}>
+    <Layout pageTitle={`${title} · Nezhivar`}>
       <div className="flex flex-row">
         <ListView title="Collection" {...rest} />
         <div className="flex-1 w-full overflow-x-auto h-screen" id="content">
-          <Header title={frontmatter.title} />
-          <ContentItem frontmatter={frontmatter} body={body} />
+          <Header title={title} />
+          <ContentItem title={title} body={body_markdown} />
         </div>
       </div>
     </Layout>
@@ -39,26 +40,31 @@ interface PageParams {
 }
 
 export async function getStaticProps({ params }: PageParams) {
-  const postsData = await getAllCollections([
-    "slug",
-    "title",
-    "description",
-    "date",
-  ]);
+  const ipfsEnabled = determineIPFS();
 
-  const { frontmatter, body } = await getCollectionBySlug(params.collection);
+  const postsData = ipfsEnabled
+    ? await getArticlesFromFiles("collection")
+    : await getAllArticles(
+        ["slug", "title", "description", "date"],
+        "collection"
+      );
+
+  const data = ipfsEnabled
+    ? await getArticleFromFileBySlug(params.collection, "collection")
+    : await getArticleBySlug(params.collection);
 
   return {
     props: {
       items: postsData,
-      frontmatter,
-      body,
+      data,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const paths = getCollectionSlugs().map((slug) => `/collection/${slug}`);
+  const paths = getArticleSlugs("collection").map(
+    (slug) => `/collection/${slug}`
+  );
 
   return {
     paths,
