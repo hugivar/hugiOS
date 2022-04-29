@@ -1,13 +1,9 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import ContentLoader from "react-content-loader";
-
-interface IFrontMatter {
-  title: string;
-  date: string;
-}
 interface IPost {
-  frontmatter: IFrontMatter;
+  title: string;
+  date?: string;
   body: string;
 }
 
@@ -26,19 +22,19 @@ const ContentBlock = dynamic(() => import("components/ContentBlock"), {
   ),
 });
 
-const ContentItem = ({ frontmatter, body }: IPost) => {
-  if (!frontmatter) return <p>loading...</p>;
+const ContentItem = ({ title, body }: IPost) => {
+  if (!title) return <p>loading...</p>;
 
   return (
     <div className="w-full max-w-3xl px-4 py-6 pb-10 mx-auto md:px-8 dark:text-slate-300">
       <div className="w-full flex">
         <div>
           <h1 className="font-sans text-2xl font-bold xl:text-3xl text-primary dark:text-slate-300">
-            {frontmatter.title}
+            {title}
           </h1>
-          <p className="inline-block leading-snug text-tertiary mt-4 dark:text-slate-300">
+          {/* <p className="inline-block leading-snug text-tertiary mt-4 dark:text-slate-300">
             {frontmatter.date}
-          </p>
+          </p> */}
           <div className="mt-8 prose dark:text-slate-300">
             <ContentBlock body={body} />
           </div>

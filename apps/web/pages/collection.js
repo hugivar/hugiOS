@@ -3,10 +3,10 @@ import React from 'react';
 import Layout from 'containers/Layout';
 import { Header } from 'containers/Header';
 import ListView from 'components/ListView';
-import { getAllCollections } from 'lib/fs';
+import { getAllCollectionArticles } from 'lib/api';
 
 export async function getStaticProps() {
-  const collectionData = getAllCollections([
+  const collectionData = await getAllCollectionArticles([
     'slug',
     'title',
     'description',
