@@ -3,12 +3,10 @@ import React from 'react';
 import Layout from 'containers/Layout';
 import { Header } from 'containers/Header';
 import ListView from 'components/ListView';
-import { getAllPosts, useGetPosts } from 'lib/api';
-// import { getPostsFromFiles } from 'lib/fs';
+import { getAllPosts } from 'lib/api';
 
 export async function getStaticProps() {
   const postsData = await getAllPosts(['slug', 'title', 'description', 'date', 'tags']);
-  // const posts = getPostsFromFiles(['slug', 'title', 'description', 'date']);
 
   return {
     props: {
@@ -18,8 +16,6 @@ export async function getStaticProps() {
 }
 
 const Journal = ({ ...rest }) => {
-  const { posts, error } = useGetPosts()
-
   return (
     <Layout pageTitle="Journal · Nezhivar">
       <div className="flex flex-row">
