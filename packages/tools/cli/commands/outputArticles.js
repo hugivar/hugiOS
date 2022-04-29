@@ -15,7 +15,6 @@ ${article.body_markdown}
 `;
 
 const outputArticles = async ({ logger }) => {
-    console.log('outputArticles line:4');
     const response = await fetch("https://dev.to/api/articles/me", { method: 'get', headers: { 'api-key': process.env.API_KEY } });
     const body = await response.text();
     const articles = JSON.parse(body);

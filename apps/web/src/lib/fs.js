@@ -7,53 +7,33 @@ import useSWR from "swr"
 const postsDirectory = join(process.cwd(), 'src/_posts');
 const collectionsDirectory = join(process.cwd(), 'src/_collections');
 
-export function getPostSlugs() {
-  const slugs = fs.readdirSync(postsDirectory);
+export function getArticleSlugs(type) {
+  const directory = type === 'journal' ? postsDirectory : collectionsDirectory;
+
+  const slugs = fs.readdirSync(directory);
   return slugs.map((key) => key.replace(/^.*[\\\/]/, '').slice(0, -3));
 }
 
-export const getPostBySlugFromFile = (slug) => {
-  const file = fs.readFileSync(`src/_posts/${slug}.md`, 'utf8');
+export const getArticleFromFileBySlug = (slug, type) => {
+  const directory = type === 'journal' ? '_posts' : 'collections';
+
+  const file = fs.readFileSync(`src/${directory}/${slug}.md`, 'utf8');
 
   const { data, content: body } = matter(file);
 
   return { ...data, body, slug, type: 'journal' };
 };
 
-export const getPostsFromFiles = (fields = []) => {
-  const slugs = getPostSlugs();
+export const getArticlesFromFiles = (type) => {
+  const slugs = getArticleSlugs(type);
 
   return (
     slugs
-      .map((slug) => getPostBySlugFromFile(slug, fields))
+      .map((slug) => getArticleFromFileBySlug(slug, type))
       // sort posts by date in descending order
       .sort(
         (post1, post2) =>
           new Date(post2.date) - new Date(post1.date),
       )
-  );
-};
-
-export function getCollectionSlugs() {
-  const slugs = fs.readdirSync(collectionsDirectory);
-  return slugs.map((key) => key.replace(/^.*[\\\/]/, '').slice(0, -3));
-}
-
-export const getCollectionBySlug = (slug) => {
-  const file = fs.readFileSync(`src/_collections/${slug}.md`, 'utf8');
-
-  const { data: frontmatter, content: body } = matter(file);
-
-  return { frontmatter, body, slug, type: 'collection' };
-};
-
-export const getAllCollections = (fields = []) => {
-  const slugs = getCollectionSlugs();
-
-  return (
-    slugs
-      .map((slug) => getCollectionBySlug(slug, fields))
-      // sort posts by date in descending order
-      .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   );
 };

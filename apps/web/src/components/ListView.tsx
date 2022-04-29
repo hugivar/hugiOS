@@ -31,7 +31,6 @@ interface ITitle {
 const ItemCard = ({ item }: IItemCard) => {
   const url = `/${item.type}/${item.slug}/`;
   const link = determineHref(url);
-  console.log(link, item.type);
 
   return (
     <Link href={link}>

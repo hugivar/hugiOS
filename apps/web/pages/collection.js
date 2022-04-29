@@ -3,15 +3,15 @@ import React from 'react';
 import Layout from 'containers/Layout';
 import { Header } from 'containers/Header';
 import ListView from 'components/ListView';
-import { getAllCollectionArticles } from 'lib/api';
+import { getAllArticles } from 'lib/api';
 
 export async function getStaticProps() {
-  const collectionData = await getAllCollectionArticles([
+  const collectionData = await getAllArticles([
     'slug',
     'title',
     'description',
     'date',
-  ]);
+  ], 'collection');
 
   return {
     props: {

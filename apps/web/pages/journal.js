@@ -3,10 +3,10 @@ import React from 'react';
 import Layout from 'containers/Layout';
 import { Header } from 'containers/Header';
 import ListView from 'components/ListView';
-import { getAllPosts } from 'lib/api';
+import { getAllArticles } from 'lib/api';
 
 export async function getStaticProps() {
-  const postsData = await getAllPosts(['slug', 'title', 'description', 'date', 'tags']);
+  const postsData = await getAllArticles(['slug', 'title', 'description', 'date', 'tags'], 'journal');
 
   return {
     props: {
