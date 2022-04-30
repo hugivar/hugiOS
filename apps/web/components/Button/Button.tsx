@@ -10,7 +10,7 @@ interface IButton {
 
 export const Button = ({ className, name, children, ...rest }: IButton) => {
   return (
-    <button className={className} name={name} {...rest}>
+    <button role="button" className={className} name={name} {...rest}>
       {children}
     </button>
   );
