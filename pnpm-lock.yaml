@@ -12,12 +12,12 @@ importers:
 
   apps/web:
     specifiers:
-      '@changesets/cli': ^2.22.0
-      '@next/eslint-plugin-next': ^12.1.5
+      '@changesets/cli': 2.22.0
+      '@next/eslint-plugin-next': 12.1.5
       '@nezhos/config': workspace:*
       '@nezhos/tsconfig': workspace:*
-      '@tailwindcss/line-clamp': ^0.3.1
-      '@tailwindcss/typography': ^0.5.2
+      '@tailwindcss/line-clamp': 0.3.1
+      '@tailwindcss/typography': 0.5.2
       '@testing-library/jest-dom': ^5.16.4
       '@testing-library/react': ^13.1.1
       '@testing-library/react-hooks': ^8.0.0
@@ -26,39 +26,39 @@ importers:
       '@types/node': 17.0.23
       '@types/react': 18.0.4
       '@types/react-dom': 18.0.0
-      '@types/react-helmet': ^6.1.5
-      '@types/react-syntax-highlighter': ^13.5.2
+      '@types/react-helmet': 6.1.5
+      '@types/react-syntax-highlighter': 13.5.2
       '@types/react-test-renderer': ^18.0.0
       '@vitejs/plugin-react': ^1.3.1
       '@vitest/ui': ^0.10.0
-      autoprefixer: ^10.4.4
-      cheerio: ^1.0.0-rc.10
-      classnames: ^2.3.1
-      daisyui: ^2.14.0
-      dotenv: ^16.0.0
+      autoprefixer: 10.4.5
+      cheerio: 1.0.0-rc.10
+      classnames: 2.3.1
+      daisyui: 2.14.2
+      dotenv: 16.0.0
       eslint: 8.13.0
       eslint-config-next: 12.1.5
-      eslint-config-prettier: ^8.5.0
-      gray-matter: ^4.0.3
+      eslint-config-prettier: 8.5.0
+      gray-matter: 4.0.3
       happy-dom: ^3.1.0
-      husky: ^7.0.4
+      husky: 7.0.4
       jsdom: ^19.0.0
       next: 12.1.5
-      next-themes: ^0.1.1
-      postcss: ^8.4.12
-      postcss-flexbugs-fixes: ^5.0.2
-      postcss-nesting: ^10.1.4
-      postcss-preset-env: ^7.4.3
+      next-themes: 0.1.1
+      postcss: 8.4.12
+      postcss-flexbugs-fixes: 5.0.2
+      postcss-nesting: 10.1.4
+      postcss-preset-env: 7.4.4
       react: 18.0.0
-      react-content-loader: ^6.2.0
+      react-content-loader: 6.2.0
       react-dom: 18.0.0
-      react-helmet-async: ^1.3.0
-      react-markdown: ^8.0.2
-      react-syntax-highlighter: ^15.5.0
+      react-helmet-async: 1.3.0
+      react-markdown: 8.0.3
+      react-syntax-highlighter: 15.5.0
       react-test-renderer: ^18.1.0
-      serve: ^13.0.2
-      swr: ^1.3.0
-      tailwindcss: ^3.0.24
+      serve: 13.0.2
+      swr: 1.3.0
+      tailwindcss: 3.0.24
       typescript: 4.5.4
       vite-tsconfig-paths: ^3.4.1
       vitest: ^0.10.0
@@ -76,7 +76,7 @@ importers:
       postcss: 8.4.12
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.12
       postcss-nesting: 10.1.4_postcss@8.4.12
-      postcss-preset-env: 7.4.3_postcss@8.4.12
+      postcss-preset-env: 7.4.4_postcss@8.4.12
       react: 18.0.0
       react-content-loader: 6.2.0_react@18.0.0
       react-dom: 18.0.0_react@18.0.0
@@ -117,12 +117,12 @@ importers:
 
   packages/config:
     specifiers:
-      '@typescript-eslint/eslint-plugin': ^5.21.0
-      '@typescript-eslint/parser': ^5.21.0
-      eslint: ^8.14.0
+      '@typescript-eslint/eslint-plugin': 5.21.0
+      '@typescript-eslint/parser': 5.21.0
+      eslint: 8.14.0
       eslint-config-next: ^12.0.8
       eslint-config-prettier: ^8.3.0
-      eslint-plugin-react: ^7.29.4
+      eslint-plugin-react: 7.29.4
     dependencies:
       eslint-config-next: 12.1.5_eslint@8.14.0
       eslint-config-prettier: 8.5.0_eslint@8.14.0
@@ -134,16 +134,16 @@ importers:
 
   packages/tools:
     specifiers:
-      '@pinata/sdk': ^1.1.25
-      caporal: ^1.4.0
-      chalk: ^5.0.1
-      cloudflare: ^2.9.1
-      dotenv: ^16.0.0
+      '@pinata/sdk': 1.1.25
+      caporal: 1.4.0
+      chalk: 5.0.1
+      cloudflare: 2.9.1
+      dotenv: 16.0.0
       eslint-config-next: ^12.0.8
       eslint-config-prettier: ^8.3.0
       eslint-plugin-react: 7.28.0
-      node-fetch: ^3.2.4
-      number-to-words: ^1.2.4
+      node-fetch: 3.2.4
+      number-to-words: 1.2.4
     dependencies:
       eslint-config-next: 12.1.5
       eslint-config-prettier: 8.5.0
@@ -164,15 +164,15 @@ importers:
     specifiers:
       '@nezhos/config': workspace:*
       '@nezhos/tsconfig': workspace:*
-      '@types/react': ^17.0.37
-      '@types/react-dom': ^17.0.11
-      typescript: ^4.5.3
+      '@types/react': 17.0.44
+      '@types/react-dom': 17.0.16
+      typescript: 4.6.4
     devDependencies:
       '@nezhos/config': link:../config
       '@nezhos/tsconfig': link:../tsconfig
       '@types/react': 17.0.44
       '@types/react-dom': 17.0.16
-      typescript: 4.6.3
+      typescript: 4.6.4
 
 packages:
 
@@ -5901,8 +5901,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
-  /postcss-preset-env/7.4.3_postcss@8.4.12:
-    resolution: {integrity: sha512-dlPA65g9KuGv7YsmGyCKtFkZKCPLkoVMUE3omOl6yM+qrynVHxFvf0tMuippIrXB/sB/MyhL1FgTIbrO+qMERg==}
+  /postcss-preset-env/7.4.4_postcss@8.4.12:
+    resolution: {integrity: sha512-MqzSEx/QsvOk562iV9mLTgIvLFEOq1os9QBQfkgnq8TW6yKhVFPGh0gdXSK5ZlmjuNQEga6/x833e86XZF/lug==}
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.4
@@ -7278,8 +7278,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript/4.6.3:
-    resolution: {integrity: sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==}
+  /typescript/4.6.4:
+    resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
