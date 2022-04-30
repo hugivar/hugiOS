@@ -17,13 +17,13 @@
     "eslint-plugin-react": "7.28.0"
   },
   "devDependencies": {
-    "@pinata/sdk": "^1.1.25",
-    "caporal": "^1.4.0",
-    "chalk": "^5.0.1",
-    "cloudflare": "^2.9.1",
-    "dotenv": "^16.0.0",
-    "node-fetch": "^3.2.4",
-    "number-to-words": "^1.2.4"
+    "@pinata/sdk": "1.1.25",
+    "caporal": "1.4.0",
+    "chalk": "5.0.1",
+    "cloudflare": "2.9.1",
+    "dotenv": "16.0.0",
+    "node-fetch": "3.2.4",
+    "number-to-words": "1.2.4"
   },
   "volta": {
     "node": "15.14.0"
