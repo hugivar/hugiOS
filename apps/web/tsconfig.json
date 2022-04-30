@@ -18,11 +18,11 @@
     "baseUrl": "./",
     "paths": {
       "config": ["./config/*"],
-      "lib/*": ["src/lib/*"],
-      "components/*": ["src/components/*"],
-      "containers/*": ["src/containers/*"],
-      "utils/*": ["src/utils/*"],
-      "@assets/*": ["./src/assets/*"]
+      "lib/*": ["./lib/*"],
+      "components/*": ["./components/*"],
+      "containers/*": ["./containers/*"],
+      "utils/*": ["./utils/*"],
+      "@assets/*": ["./assets/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

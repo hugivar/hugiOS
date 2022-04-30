@@ -2,8 +2,8 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 import chalk from 'chalk';
 
-const postDirPath = '../../apps/web/src/_posts';
-const collectionDirPath = '../../apps/web/src/_collections';
+const postDirPath = '../../apps/web/_posts';
+const collectionDirPath = '../../apps/web/_collections';
 
 const formatArticleTemplate = (article) => `
 ---
