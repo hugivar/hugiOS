@@ -26,5 +26,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Setup test pipeline
-        run: npx turbo run build test
+      - name: Run tests on apps/web
+        run: cd apps/web && pnpm run test
