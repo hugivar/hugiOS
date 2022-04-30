@@ -1,4 +1,5 @@
 {
+    "ignoreTests": true,
     "packageRules": [
       {
         "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
