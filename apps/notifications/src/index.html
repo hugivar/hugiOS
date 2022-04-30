@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Electron Notification</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body style="margin: 0">
+    <div class="etabs-tabgroup">
+      <div class="etabs-tabs"></div>
+      <div class="etabs-buttons"></div>
+    </div>
+    <div class="etabs-views"></div>
+    <script>
+      const TabGroup = require("electron-tabs");
+      const config = require("../config.json");
+
+      let tabGroup = new TabGroup({
+        newTab: {
+          title: "New Tab",
+        },
+      });
+
+      config?.tabs?.map((item) => {
+        console.log("index line:40", item);
+        tabGroup.addTab({
+          ...item,
+        });
+      });
+    </script>
+  </body>
+</html>
