@@ -16,7 +16,7 @@ importers:
       '@next/eslint-plugin-next': 12.1.5
       '@nezhos/config': workspace:*
       '@nezhos/tsconfig': workspace:*
-      '@tailwindcss/line-clamp': 0.3.1
+      '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
       '@testing-library/jest-dom': ^5.16.4
       '@testing-library/react': ^13.1.1
@@ -64,7 +64,7 @@ importers:
       vitest: ^0.10.0
     dependencies:
       '@changesets/cli': 2.22.0
-      '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.0.24
+      '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
       autoprefixer: 10.4.5_postcss@8.4.13
       classnames: 2.3.1
@@ -966,8 +966,8 @@ packages:
   /@rushstack/eslint-patch/1.0.8:
     resolution: {integrity: sha512-ZK5v4bJwgXldAUA8r3q9YKfCwOqoHTK/ZqRjSeRXQrBXWouoPnS4MQtgC4AXGiiBuUu5wxrRgTlv0ktmM4P1Aw==}
 
-  /@tailwindcss/line-clamp/0.3.1_tailwindcss@3.0.24:
-    resolution: {integrity: sha512-pNr0T8LAc3TUx/gxCfQZRe9NB2dPEo/cedPHzUGIPxqDMhgjwNm6jYxww4W5l0zAsAddxr+XfZcqttGiFDgrGg==}
+  /@tailwindcss/line-clamp/0.4.0_tailwindcss@3.0.24:
+    resolution: {integrity: sha512-HQZo6gfx1D0+DU3nWlNLD5iA6Ef4JAXh0LeD8lOGrJwEDBwwJNKQza6WoXhhY1uQrxOuU8ROxV7CqiQV4CoiLw==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
