@@ -34,7 +34,7 @@ importers:
       autoprefixer: 10.4.5
       cheerio: 1.0.0-rc.10
       classnames: 2.3.1
-      daisyui: 2.14.2
+      daisyui: 2.14.3
       dotenv: 16.0.0
       eslint: 8.14.0
       eslint-config-next: 12.1.5
@@ -68,7 +68,7 @@ importers:
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
       autoprefixer: 10.4.5_postcss@8.4.13
       classnames: 2.3.1
-      daisyui: 2.14.2_1824c569936d24bc346301fad9d96c12
+      daisyui: 2.14.3_1824c569936d24bc346301fad9d96c12
       gray-matter: 4.0.3
       husky: 7.0.4
       next: 12.1.5_react-dom@18.0.0+react@18.0.0
@@ -2426,8 +2426,8 @@ packages:
     engines: {node: '>=0.4.0'}
     dev: true
 
-  /daisyui/2.14.2_1824c569936d24bc346301fad9d96c12:
-    resolution: {integrity: sha512-/FxRBLC/xydIqxv+EJHfmmH+UndrwcaAxbWsS/oVLnoeOdb4MN4VlkJ3sYOYrl3tmw/D1L5Lp0PK07ebY0O6QA==}
+  /daisyui/2.14.3_1824c569936d24bc346301fad9d96c12:
+    resolution: {integrity: sha512-EH6cLLaieInq81ACE8FxHsWLsH08sZ62zLxctIHTnLhn0eHvtHdLYZ6yngsy7yd43ZFOstzbyYY4q5xByZdaQQ==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
