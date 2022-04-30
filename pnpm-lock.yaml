@@ -24,7 +24,7 @@ importers:
       '@testing-library/user-event': ^14.1.1
       '@types/jest': ^27.4.1
       '@types/node': 17.0.23
-      '@types/react': 18.0.4
+      '@types/react': 18.0.8
       '@types/react-dom': 18.0.0
       '@types/react-helmet': 6.1.5
       '@types/react-syntax-highlighter': 13.5.2
@@ -81,7 +81,7 @@ importers:
       react-content-loader: 6.2.0_react@18.0.0
       react-dom: 18.0.0_react@18.0.0
       react-helmet-async: 1.3.0_react-dom@18.0.0+react@18.0.0
-      react-markdown: 8.0.3_@types+react@18.0.4+react@18.0.0
+      react-markdown: 8.0.3_@types+react@18.0.8+react@18.0.0
       react-syntax-highlighter: 15.5.0_react@18.0.0
       swr: 1.3.0_react@18.0.0
       tailwindcss: 3.0.24
@@ -91,11 +91,11 @@ importers:
       '@nezhos/tsconfig': link:../../packages/tsconfig
       '@testing-library/jest-dom': 5.16.4
       '@testing-library/react': 13.1.1_react-dom@18.0.0+react@18.0.0
-      '@testing-library/react-hooks': 8.0.0_b50888b4dab5fd87ddfd8b6acc1eb2df
+      '@testing-library/react-hooks': 8.0.0_a93daad91f4bec17bf73e6ce5cf969b0
       '@testing-library/user-event': 14.1.1
       '@types/jest': 27.4.1
       '@types/node': 17.0.23
-      '@types/react': 18.0.4
+      '@types/react': 18.0.8
       '@types/react-dom': 18.0.0
       '@types/react-helmet': 6.1.5
       '@types/react-syntax-highlighter': 13.5.2
@@ -164,13 +164,13 @@ importers:
     specifiers:
       '@nezhos/config': workspace:*
       '@nezhos/tsconfig': workspace:*
-      '@types/react': 17.0.44
+      '@types/react': 18.0.8
       '@types/react-dom': 17.0.16
       typescript: 4.6.4
     devDependencies:
       '@nezhos/config': link:../config
       '@nezhos/tsconfig': link:../tsconfig
-      '@types/react': 17.0.44
+      '@types/react': 18.0.8
       '@types/react-dom': 17.0.16
       typescript: 4.6.4
 
@@ -1014,7 +1014,7 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react-hooks/8.0.0_b50888b4dab5fd87ddfd8b6acc1eb2df:
+  /@testing-library/react-hooks/8.0.0_a93daad91f4bec17bf73e6ce5cf969b0:
     resolution: {integrity: sha512-uZqcgtcUUtw7Z9N32W13qQhVAD+Xki2hxbTR461MKax8T6Jr8nsUvZB+vcBTkzY2nFvsUet434CsgF0ncW2yFw==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -1031,7 +1031,7 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.17.9
-      '@types/react': 18.0.4
+      '@types/react': 18.0.8
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
       react-error-boundary: 3.1.4_react@18.0.0
@@ -1176,25 +1176,25 @@ packages:
   /@types/react-dom/18.0.0:
     resolution: {integrity: sha512-49897Y0UiCGmxZqpC8Blrf6meL8QUla6eb+BBhn69dTXlmuOlzkfr7HHY/O8J25e1lTUMs+YYxSlVDAaGHCOLg==}
     dependencies:
-      '@types/react': 18.0.4
+      '@types/react': 18.0.8
     dev: true
 
   /@types/react-helmet/6.1.5:
     resolution: {integrity: sha512-/ICuy7OHZxR0YCAZLNg9r7I9aijWUWvxaPR6uTuyxe8tAj5RL4Sw1+R6NhXUtOsarkGYPmaHdBDvuXh2DIN/uA==}
     dependencies:
-      '@types/react': 18.0.4
+      '@types/react': 18.0.8
     dev: true
 
   /@types/react-syntax-highlighter/13.5.2:
     resolution: {integrity: sha512-sRZoKZBGKaE7CzMvTTgz+0x/aVR58ZYUTfB7HN76vC+yQnvo1FWtzNARBt0fGqcLGEVakEzMu/CtPzssmanu8Q==}
     dependencies:
-      '@types/react': 18.0.4
+      '@types/react': 18.0.8
     dev: true
 
   /@types/react-test-renderer/18.0.0:
     resolution: {integrity: sha512-C7/5FBJ3g3sqUahguGi03O79b8afNeSD6T8/GU50oQrJCU0bVCCGQHaGKUbg2Ce8VQEEqTw8/HiS6lXHHdgkdQ==}
     dependencies:
-      '@types/react': 18.0.4
+      '@types/react': 18.0.8
     dev: true
 
   /@types/react/17.0.44:
@@ -1205,8 +1205,8 @@ packages:
       csstype: 3.0.11
     dev: true
 
-  /@types/react/18.0.4:
-    resolution: {integrity: sha512-Zm4ryWh9xQbMX6ge7Ej/nS6VBoT+9wzvwd/hZ+9EONGjBkejyyvEKndZt/DZHHj1lSU/YeTPyJAn22S3GnYchQ==}
+  /@types/react/18.0.8:
+    resolution: {integrity: sha512-+j2hk9BzCOrrOSJASi5XiOyBbERk9jG5O73Ya4M0env5Ixi6vUNli4qy994AINcEF+1IEHISYFfIT4zwr++LKw==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -6060,7 +6060,7 @@ packages:
     resolution: {integrity: sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==}
     dev: true
 
-  /react-markdown/8.0.3_@types+react@18.0.4+react@18.0.0:
+  /react-markdown/8.0.3_@types+react@18.0.8+react@18.0.0:
     resolution: {integrity: sha512-We36SfqaKoVNpN1QqsZwWSv/OZt5J15LNgTLWynwAN5b265hrQrsjMtlRNwUvS+YyR3yDM8HpTNc4pK9H/Gc0A==}
     peerDependencies:
       '@types/react': '>=16'
@@ -6068,7 +6068,7 @@ packages:
     dependencies:
       '@types/hast': 2.3.4
       '@types/prop-types': 15.7.5
-      '@types/react': 18.0.4
+      '@types/react': 18.0.8
       '@types/unist': 2.0.6
       comma-separated-tokens: 2.0.2
       hast-util-whitespace: 2.0.0
