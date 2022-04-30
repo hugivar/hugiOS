@@ -27,4 +27,4 @@ jobs:
         run: pnpm install
 
       - name: Setup test pipeline
-        run: pnpx turbo run build test
+        run: npx turbo run build test
