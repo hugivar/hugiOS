@@ -1,15 +1,7 @@
 {
     "packageRules": [
       {
-        "matchPackagePatterns": ["eslint"],
-        "labels": ["linting"]
-      },
-      {
-        "matchDepTypes": ["optionalDependencies"],
-        "addLabels": ["optional"]
-      },
-      {
-        "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+        "automergeType": "branch",
         "automerge": true
       }
     ],
