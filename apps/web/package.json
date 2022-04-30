@@ -9,7 +9,7 @@
     "start": "next build && next start",
     "serve": "serve out",
     "lint": "next lint",
-    "test": "vitest --run",
+    "test": "vitest --run --silent",
     "test:watch": "vitest -w"
   },
   "dependencies": {
