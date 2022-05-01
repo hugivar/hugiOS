@@ -1,18 +1,18 @@
-# Turborepo starter with pnpm
+# NezhOS
 
-This is an official starter turborepo.
-
+My personal monorepo to serve as the basis of all my personal projects. Bootstrapped with Turborepo.
 ## What's inside?
 
 This turborepo uses [pnpm](https://pnpm.io) as a packages manager. It includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
+- `notifications`: an electron app built to serve as a notification center for my different services
+- `web`: a nextjs app to serve as my personal site
 - `ui`: a stub React component library shared by both `web` and `docs` applications
 - `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `tools`: `cli`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -33,7 +33,6 @@ This repository is used in the `npx create-turbo@latest` command, and selected w
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
 pnpm run build
 ```
 
@@ -42,7 +41,6 @@ pnpm run build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
 pnpm run dev
 ```
 
@@ -53,7 +51,6 @@ Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo
 By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
 ```
-cd my-turborepo
 pnpx turbo login
 ```
 
