@@ -48,7 +48,7 @@ importers:
       '@types/react': 18.0.8
       '@types/react-dom': 18.0.0
       '@types/react-helmet': 6.1.5
-      '@types/react-syntax-highlighter': 13.5.2
+      '@types/react-syntax-highlighter': 15.5.1
       '@types/react-test-renderer': 18.0.0
       '@vitejs/plugin-react': 1.3.1
       '@vitest/ui': 0.10.0
@@ -119,7 +119,7 @@ importers:
       '@types/react': 18.0.8
       '@types/react-dom': 18.0.0
       '@types/react-helmet': 6.1.5
-      '@types/react-syntax-highlighter': 13.5.2
+      '@types/react-syntax-highlighter': 15.5.1
       '@types/react-test-renderer': 18.0.0
       '@vitejs/plugin-react': 1.3.1
       '@vitest/ui': 0.10.0
@@ -1641,8 +1641,8 @@ packages:
       '@types/react': 18.0.8
     dev: true
 
-  /@types/react-syntax-highlighter/13.5.2:
-    resolution: {integrity: sha512-sRZoKZBGKaE7CzMvTTgz+0x/aVR58ZYUTfB7HN76vC+yQnvo1FWtzNARBt0fGqcLGEVakEzMu/CtPzssmanu8Q==}
+  /@types/react-syntax-highlighter/15.5.1:
+    resolution: {integrity: sha512-+yD6D8y21JqLf89cRFEyRfptVMqo2ROHyAlysRvFwT28gT5gDo3KOiXHwGilHcq9y/OKTjlWK0f/hZUicrBFPQ==}
     dependencies:
       '@types/react': 18.0.8
     dev: true
