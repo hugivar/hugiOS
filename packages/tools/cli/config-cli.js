@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 import inquirer from 'inquirer';
-import { program } from 'commander';
-// import { execSync } from 'child_process';
 
 // Commands
 import createRepo from './commands/createRepo.js';
