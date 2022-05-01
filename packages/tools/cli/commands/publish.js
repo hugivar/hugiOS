@@ -20,8 +20,9 @@ const publishWeb = ({ logger, ...args }) => {
 
   const pinata = pinataSDK(PINATA_KEY, PINATA_SECRET_KEY);
 
+  const __dirname = path.resolve(path.dirname(''));
   logger.info(chalk.green(__dirname));
-  const sourcePath = path.join(__dirname, '../../../out');
+  const sourcePath = path.join(__dirname, '../../apps/web/out');
 
   logger.info(chalk.green(sourcePath));
   const options = {
