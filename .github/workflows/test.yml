@@ -27,4 +27,9 @@ jobs:
         run: pnpm install
 
       - name: Run tests on apps/web
-        run: cd apps/web && pnpm run test
+        uses: codecov/codecov-action@v3.1.0
+        run: cd apps/web && pnpm run test:coverage
+        with:
+          files: apps/web/coverage.json
+          name: codecov-umbrella # optional
+          verbose: true # optional (default = false)
