@@ -4,7 +4,6 @@
   "description": "A simple electron app built to serve as a notification center for my different services such as Protonmail",
   "main": "./app/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
