@@ -9,16 +9,11 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
       - uses: actions/checkout@v3
       - uses: codecov/codecov-action@v2
         with:
-          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
           files: apps/web/coverage.json
-          name: codecov-umbrella # optional
-          verbose: true # optional (default = false)
-
       - uses: pnpm/action-setup@v2.2.1
         with:
           version: 7.0.0-rc.6
@@ -29,6 +24,5 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-
       - name: Run tests on apps/web
         run: cd apps/web && pnpm run test:coverage
