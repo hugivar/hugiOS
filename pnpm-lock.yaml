@@ -46,7 +46,7 @@ importers:
       '@types/jest': 27.4.1
       '@types/node': 17.0.23
       '@types/react': 18.0.8
-      '@types/react-dom': 18.0.0
+      '@types/react-dom': 18.0.3
       '@types/react-helmet': 6.1.5
       '@types/react-syntax-highlighter': 15.5.1
       '@types/react-test-renderer': 18.0.0
@@ -117,7 +117,7 @@ importers:
       '@types/jest': 27.4.1
       '@types/node': 17.0.23
       '@types/react': 18.0.8
-      '@types/react-dom': 18.0.0
+      '@types/react-dom': 18.0.3
       '@types/react-helmet': 6.1.5
       '@types/react-syntax-highlighter': 15.5.1
       '@types/react-test-renderer': 18.0.0
@@ -186,13 +186,13 @@ importers:
       '@nezhos/config': workspace:*
       '@nezhos/tsconfig': workspace:*
       '@types/react': 18.0.8
-      '@types/react-dom': 17.0.16
+      '@types/react-dom': 18.0.3
       typescript: 4.6.4
     devDependencies:
       '@nezhos/config': link:../config
       '@nezhos/tsconfig': link:../tsconfig
       '@types/react': 18.0.8
-      '@types/react-dom': 17.0.16
+      '@types/react-dom': 18.0.3
       typescript: 4.6.4
 
 packages:
@@ -1449,7 +1449,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.17.9
       '@testing-library/dom': 8.13.0
-      '@types/react-dom': 18.0.0
+      '@types/react-dom': 18.0.3
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
     dev: true
@@ -1623,14 +1623,8 @@ packages:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
     dev: true
 
-  /@types/react-dom/17.0.16:
-    resolution: {integrity: sha512-DWcXf8EbMrO/gWnQU7Z88Ws/p16qxGpPyjTKTpmBSFKeE+HveVubqGO1CVK7FrwlWD5MuOcvh8gtd0/XO38NdQ==}
-    dependencies:
-      '@types/react': 17.0.44
-    dev: true
-
-  /@types/react-dom/18.0.0:
-    resolution: {integrity: sha512-49897Y0UiCGmxZqpC8Blrf6meL8QUla6eb+BBhn69dTXlmuOlzkfr7HHY/O8J25e1lTUMs+YYxSlVDAaGHCOLg==}
+  /@types/react-dom/18.0.3:
+    resolution: {integrity: sha512-1RRW9kst+67gveJRYPxGmVy8eVJ05O43hg77G2j5m76/RFJtMbcfAs2viQ2UNsvvDg8F7OfQZx8qQcl6ymygaQ==}
     dependencies:
       '@types/react': 18.0.8
     dev: true
@@ -1651,14 +1645,6 @@ packages:
     resolution: {integrity: sha512-C7/5FBJ3g3sqUahguGi03O79b8afNeSD6T8/GU50oQrJCU0bVCCGQHaGKUbg2Ce8VQEEqTw8/HiS6lXHHdgkdQ==}
     dependencies:
       '@types/react': 18.0.8
-    dev: true
-
-  /@types/react/17.0.44:
-    resolution: {integrity: sha512-Ye0nlw09GeMp2Suh8qoOv0odfgCoowfM/9MG6WeRD60Gq9wS90bdkdRtYbRkNhXOpG4H+YXGvj4wOWhAC0LJ1g==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.0.11
     dev: true
 
   /@types/react/18.0.8:
