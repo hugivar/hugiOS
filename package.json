@@ -18,8 +18,11 @@
     "turbo": "latest"
   },
   "engines": {
-    "npm": ">=8.8.0",
-    "node": ">=14.0.0"
+    "npm": ">=8.0.0",
+    "node": ">=14.19.1"
   },
-  "packageManager": "pnpm@7.0.0"
+  "packageManager": "pnpm@7.0.0",
+  "volta": {
+    "node": "14.19.1"
+  }
 }
