@@ -17,7 +17,7 @@ const { PINATA_KEY, PINATA_SECRET_KEY } = process.env;
 // Establish connection to the pinata SDK
 const pinata = pinataSDK(PINATA_KEY, PINATA_SECRET_KEY);
 // Define where your NextJS exported files exist
-const sourcePath = path.join(__dirname, "../../../out");
+const sourcePath = path.join(__dirname, 'out');
 
 // Describe the options pinata pinned folder
 const options = {
