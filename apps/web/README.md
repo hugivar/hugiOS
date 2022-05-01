@@ -1,7 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <h2 align="center">Nezhivar Personal Website</h2>
+
+  <p align="center">
+     A NextJs app to create my personal website
+  </p>
+</div>
 
 ## Getting Started
-
 > Note this project uses [Volta](https://volta.sh/) to help manage versions
 
 First, run the development server:
