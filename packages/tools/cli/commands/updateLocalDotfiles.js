@@ -2,7 +2,7 @@ import inquirer from 'inquirer';
 import { program } from 'commander';
 import { execSync } from 'child_process';
 
-const updateFromLocalZsh = () => {
+const updateLocalDotfiles = () => {
     program
         .action(() => {
             execSync(`
@@ -19,4 +19,4 @@ const updateFromLocalZsh = () => {
     program.parse();
 }
 
-export default updateFromLocalZsh;
+export default updateLocalDotfiles;
