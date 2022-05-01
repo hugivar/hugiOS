@@ -1,7 +1,3 @@
-<div id="top"></div>
-
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
   <h2 align="center">Electron Notification</h2>
 
