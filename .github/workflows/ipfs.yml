@@ -47,4 +47,4 @@ jobs:
       - name: Create static out folder
         run: npx turbo run export --filter=web  
       - name: Publish to IPFS
-        run: cd packages/tools && pnpm cli publish $PINATA_KEY $PINATA_SECRET_KEY $CLOUDFLARE_TOKEN_ID $CLOUDFLARE_ZONE_ID $CLOUDFLARE_DNS_ID
+        run: cd packages/tools && pnpm cli:website publish $PINATA_KEY $PINATA_SECRET_KEY $CLOUDFLARE_TOKEN_ID $CLOUDFLARE_ZONE_ID $CLOUDFLARE_DNS_ID

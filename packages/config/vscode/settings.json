@@ -1,0 +1,98 @@
+{
+    "workbench.sideBar.location": "right",
+    "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+    "workbench.statusBar.feedback.visible": false,
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "eslint.run": "onSave",
+    "eslint.packageManager": "yarn",
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "eslint.codeActionsOnSave": true,
+    "eslint.alwaysShowStatus": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.html": true,
+        "**/.pytest_cache": true
+    },
+    "search.exclude": {
+        "modules/post/client/components/SlateEditor/assets": true,
+        "modules/post/client/components/SlateEditor/assets/dist": true,
+        "modules/post/client/components/SlateEditor/build": true
+    },
+    "color-highlight.markerType": "dot-before",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "todo-tree.tree.showScanModeButton": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "tslint.jsEnable": true,
+    "cSpell.userWords": [
+        "aethr",
+        "bopj"
+    ],
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "themeswitch.nightTheme": "Night Owl (No Italics)",
+    "themeswitch.dayTheme": "Night Owl Light (No Italics)",
+    "gitlab.enableExperimentalFeatures": true,
+    "gitlab.remoteName": "hlfelkel/aethr-universal",
+    "terminal.integrated.rendererType": "dom",
+    "react-native-storybooks.storyRegex": "**/*.stories.*",
+    "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
+    "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "importCost.debug": true,
+    "importCost.mediumPackageSize": 100000000,
+    "importCost.smallPackageSize": 500000000,
+    "importCost.timeout": 1000000,
+    "importCost.typescriptExtensions": [
+        "\\.ts",
+        "\\.tsx?$"
+    ],
+    "importCost.javascriptExtensions": [
+        "\\.js",
+        "\\.jsx?$"
+    ],
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "dart.flutterHotReloadOnSave": "always",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "yaml.schemas": {
+        "file:///Users/hugofelkel/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.startupEditor": "none",
+    "gitlens.defaultGravatarsStyle": "identicon",
+    "explorer.confirmDragAndDrop": false,
+    "redhat.telemetry.enabled": true,
+    "markdown-preview-enhanced.liveUpdate": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "tabnine.experimentalAutoImports": true,
+    "workbench.colorTheme": "Night Owl"
+}
