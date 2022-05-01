@@ -45,6 +45,6 @@ jobs:
       - name: Build deployment package
         run: pnpm build
       - name: Create static out folder
-        run: pnpm export
+        run: cd apps/web && pnpm run export
       - name: Publish to IPFS
         run: pnpm cli publish $PINATA_KEY $PINATA_SECRET_KEY $CLOUDFLARE_TOKEN_ID $CLOUDFLARE_ZONE_ID $CLOUDFLARE_DNS_ID
