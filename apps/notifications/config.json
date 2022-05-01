@@ -1,0 +1,7 @@
+{
+  "tabs": [
+    { "title": "Account 1", "src": "https://mail.protonmail.com/u/0/inbox" },
+    { "title": "Account 2", "src": "https://mail.protonmail.com/u/1/inbox" },
+    { "title": "Account 4", "src": "https://mail.protonmail.com/u/2/inbox" }
+  ]
+}
