@@ -1,7 +1,7 @@
-// const root = `${__dirname}/..`;
+#!/usr/bin/env node
 
-global.__DEV__ = false;
-global.__API_URL__ = '';
+// global.__DEV__ = false;
+// global.__API_URL__ = '';
 
 // require('@babel/register')({
 //   root,
@@ -13,11 +13,11 @@ import 'dotenv/config';
 import prog from 'caporal';
 import chalk from 'chalk';
 
-import publish from './cli/commands/publish.js';
-import createPost from './cli/commands/createPost.js';
-import outputArticles from './cli/commands/outputArticles.js';
-import { getDNSRecords } from './cli/helpers/cloudflare.js';
-import CommandInvoker from './cli/CommandInvoker.js';
+import publish from './commands/publish.js';
+import createPost from './commands/createPost.js';
+import outputArticles from './commands/outputArticles.js';
+import { getDNSRecords } from './helpers/cloudflare.js';
+import CommandInvoker from './CommandInvoker.js';
 
 const commandInvoker = new CommandInvoker(publish, createPost, outputArticles);
 

@@ -1,0 +1,9 @@
+source ~/.bash_prompt
+alias ls='ls -G'
+
+setopt PROMPT_SUBST
+PROMPT='%${#PWD}G%}%(!.%F{red}.%F{cyan})%n %{$(pwd|([[ $EUID == 0 ]] && GREP_COLORS="mt=01;31" grep --color=always /|| GREP_COLORS="mt=01;34" grep --color=always /))%F{yellow} >> '
+
+# NPM global installs
+export PATH=$PATH:/usr/local/Cellar/node/12.4.0/bin
+
