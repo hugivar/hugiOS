@@ -38,6 +38,9 @@ lib-cov
 coverage
 *.lcov
 
+# vitest test coverage
+coverage.json
+
 # nyc test coverage
 .nyc_output
 
