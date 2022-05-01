@@ -10,6 +10,9 @@
     "lint": {
       "outputs": []
     },
+    "export": {
+      "outputs": []
+    },
     "dev": {
       "cache": false
     }

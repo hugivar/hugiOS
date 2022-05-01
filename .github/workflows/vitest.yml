@@ -24,5 +24,14 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: Run tests on apps/web
+      - name: Generate coverage report
         run: cd apps/web && pnpm run test:coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          env_vars: OS,PYTHON
+          fail_ci_if_error: true
+          files: ./coverage.json,
+          flags: unittests
+          name: codecov-umbrella
+          verbose: true
