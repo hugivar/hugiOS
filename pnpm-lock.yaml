@@ -138,6 +138,12 @@ importers:
       vite-tsconfig-paths: 3.4.1
       vitest: 0.10.0_ublysxqp3gjqpcuiczhvezjh3a
 
+  packages/clickup-doc-export:
+    specifiers:
+      https: ^1.0.0
+    dependencies:
+      https: 1.0.0
+
   packages/config:
     specifiers:
       '@typescript-eslint/eslint-plugin': 5.21.0
@@ -5385,6 +5391,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /https/1.0.0:
+    resolution: {integrity: sha1-PDfHrhqO65ZpBKKtHpdaGUt+06Q=}
+    dev: false
 
   /human-id/1.0.2:
     resolution: {integrity: sha512-UNopramDEhHJD+VR+ehk8rOslwSfByxPIZyJRfV739NDhN5LF1fa1MqnzKm2lGTQRjNrjK19Q5fhkgIfjlVUKw==}
