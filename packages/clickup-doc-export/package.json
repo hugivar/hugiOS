@@ -1,0 +1,13 @@
+{
+  "name": "clickup-docs-export",
+  "version": "1.0.0",
+  "scripts": {
+    "export": "node src/export.js",
+    "extract": "node src/extract.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "https": "^1.0.0"
+  }
+}
