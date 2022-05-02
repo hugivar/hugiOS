@@ -151,5 +151,5 @@ dist
 
 # ClickUp document export
 config.json
-packages/clickup-doc-export/exports/**
-packages/clickup-doc-export/data/**
+packages/clickup-docs-export/exports/**
+packages/clickup-docs-export/data/**
