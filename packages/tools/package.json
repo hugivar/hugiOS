@@ -8,8 +8,6 @@
   ],
   "scripts": {
     "cli": "node ./cli",
-    "cli:config": "node ./cli/config-cli",
-    "cli:website": "node ./cli/website-cli",
     "buildSiteMap": "node ./buildSiteMap"
   },
   "dependencies": {
