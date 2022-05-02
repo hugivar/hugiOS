@@ -35,7 +35,7 @@ const createProject = () => {
                 message: 'What would you name your project'
             },
             {
-                type: 'rawlist',
+                type: 'list',
                 name: 'type',
                 message: "Is this a package or an app?",
                 choices: ['app', 'package']
