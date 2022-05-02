@@ -148,3 +148,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# ClickUp document export
+config.json
+packages/clickup-doc-export/exports/**
+packages/clickup-doc-export/data/**
