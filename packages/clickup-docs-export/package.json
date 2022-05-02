@@ -1,13 +1,17 @@
 {
   "name": "clickup-docs-export",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "export": "node src/export.js",
-    "extract": "node src/extract.js"
+    "clean": "rimraf export",
+    "compress": "node src/compress.js",
+    "extract": " node src/extract.js",
+    "export": "pnpm run clean && && node src/export.js && pnpm run compress"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "https": "^1.0.0"
+    "https": "^1.0.0",
+    "rimraf": "^3.0.2"
   }
 }
