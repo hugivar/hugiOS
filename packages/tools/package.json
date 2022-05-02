@@ -1,13 +1,13 @@
 {
   "name": "@nezhos/tools",
-  "version": "0.0.0",
-  "main": "index.js",
+  "version": "1.0.0",
   "license": "MIT",
   "type": "module",
   "files": [
     "eslint-preset.js"
   ],
   "scripts": {
+    "cli": "node ./cli",
     "cli:config": "node ./cli/config-cli",
     "cli:website": "node ./cli/website-cli",
     "buildSiteMap": "node ./buildSiteMap"
