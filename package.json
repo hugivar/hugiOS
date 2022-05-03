@@ -11,6 +11,7 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "test": "turbo run test",
+    "clean": "npx rimraf ./**/node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
@@ -19,10 +20,10 @@
   },
   "engines": {
     "npm": ">=8.0.0",
-    "node": ">=14.19.1"
+    "node": ">=16"
   },
   "packageManager": "pnpm@7.0.0",
   "volta": {
-    "node": "14.19.1"
+    "node": "16.15.0"
   }
 }
