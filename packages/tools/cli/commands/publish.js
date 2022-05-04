@@ -13,6 +13,7 @@ import { pinFile, pinList, unpin } from '../helpers/pinata.js';
  */
 
 const publishWeb = ({ logger, ...args }) => {
+  console.log('publish line:16');
   const { pinataKey, pinataSecretKey } = args;
 
   const PINATA_KEY = pinataKey || process.env.PINATA_KEY;
