@@ -1,10 +1,20 @@
 #!/usr/bin/env node
-
 import inquirer from 'inquirer';
+import { execSync } from 'child_process';
+import { Command } from "commander";
+
 import { generatorQuestons, generatorAnswer } from './cli/generatorSetup.js';
 import { configQuestions, configAnswers } from './cli/configSetup.js';
+import { setupWebisteComannder } from './cli/websiteSetup.js';
 
-const run = async () => {
+const setupCommander = () => {
+    const program = new Command();
+    const prog = setupWebisteComannder(program);
+
+    return prog;
+};
+
+const inquirerRun = async () => {
     console.log('Hi! 👋  Welcome to the NezhOS cli!');
 
     const { type } = await inquirer.prompt({
@@ -31,5 +41,21 @@ const run = async () => {
         inquirer.prompt(configQuestions).then(configAnswers);
     }
 }
+
+const commanderRun = () => {
+    const program = setupCommander();
+    // const options = program.opts();
+    // console.log('cli line:44', options, program.executableFile);
+    // execSync(' node ./cli/nestedCommands.js brew tea', { stdio: 'inherit' })
+};
+
+const run = () => {
+    console.log('cli line:51', process.argv);
+    const ranWithArgs = process.argv.length > 2;
+
+    if (!ranWithArgs) return inquirerRun();
+
+    return commanderRun();
+};
 
 run();

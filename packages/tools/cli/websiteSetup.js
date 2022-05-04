@@ -12,39 +12,51 @@
 import 'dotenv/config';
 import prog from 'caporal';
 import chalk from 'chalk';
-
+import { Command } from 'commander';
 import publish from './commands/publish.js';
 import createPost from './commands/createPost.js';
 import outputArticles from './commands/outputArticles.js';
 import { getDNSRecords } from './helpers/cloudflare.js';
-import CommandInvoker from './CommandInvoker.js';
 
-const commandInvoker = new CommandInvoker(publish, createPost, outputArticles);
+export const setupWebisteComannder = (program) => {
+  program
+    .command('publish <pinataKey> <pinataSecretKey> <cloudflareTokenId> <cloudflareZoneId> <cloudflareDnsId>')
+    .description('Publish site to Pinata')
+    .action((pinataKey, pinataSecretKey, cloudflareTokenId, cloudflareZoneId, cloudflareDnsId) => {
+      publish({ logger: console, pinataKey, pinataSecretKey, cloudflareTokenId, cloudflareZoneId, cloudflareDnsId })
+    })
 
-prog
-  .version('1.0.1')
-  // Publish site to Pinata
-  .command('publish', 'Publish a web-build')
-  .argument('[pinataKey]', 'PINATA_KEY to deploy with')
-  .argument('[pinataSecretKey]', 'PINATA_KEY to deploy with')
-  .argument('[cloudflareTokenId]', 'PINATA_KEY to deploy with')
-  .argument('[cloudflareZoneId]', 'PINATA_KEY to deploy with')
-  .argument('[cloudflareDnsId]', 'PINATA_KEY to deploy with')
-  .action((args, options, logger) => {
-    commandInvoker.runPublish(args, options, logger);
-  })
-  .command('post', 'Create a post')
-  .action((args, options, logger) => {
-    commandInvoker.runCreatePost(args, options, logger);
-  })
-  .command('dns', 'Get cloudflare dns records')
-  .action(async (args, options, logger) => {
-    const data = await getDNSRecords();
-    logger.info(chalk.cyan(JSON.stringify(data, 0, 2)));
-  })
-  .command('output', 'Output all dev.to articles to markdown files')
-  .action((args, options, logger) => {
-    commandInvoker.runOutputArticles(args, options, logger);
-  })
+  function makePostCommand() {
+    const post = new Command('post').description('create a markdown post from template').action(() => {
+      createPost({ logger: console })
+    });
 
-prog.parse(process.argv);
+    return post;
+  }
+
+  // Get cloudflare dns records
+  function makeDNSCommand() {
+    const dns = new Command('dns <zoneId>').description('get cloudflare dns records').action(() => {
+      getDNSRecords(zoneId);
+    });
+
+    return dns;
+  }
+
+  // Get cloudflare dns records
+  function makeOutputCommand() {
+    const dns = new Command('output').description('output all dev.to articles to markdown files').action(() => {
+      outputArticles({ logger: console })
+    });
+
+    return dns;
+  }
+
+  program.addCommand(makePostCommand());
+  program.addCommand(makeDNSCommand());
+  program.addCommand(makeOutputCommand());
+
+  program.parse(process.argv);
+
+  return program
+}
