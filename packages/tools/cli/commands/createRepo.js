@@ -27,7 +27,12 @@ const shellCommand = (name) => {
 
     program.parse();
 }
-const createRepo = () => {
+
+const createRepo = (name) => {
+    if (name) {
+        return shellCommand(name)
+    }
+
     inquirer
         .prompt([
             {
