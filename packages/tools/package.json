@@ -11,8 +11,8 @@
     "buildSiteMap": "node ./buildSiteMap"
   },
   "dependencies": {
-    "eslint-config-next": "^12.0.8",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "8.5.0",
     "eslint-plugin-react": "7.29.4"
   },
   "devDependencies": {
@@ -20,9 +20,9 @@
     "caporal": "1.4.0",
     "chalk": "5.0.1",
     "cloudflare": "2.9.1",
-    "commander": "^9.2.0",
+    "commander": "9.2.0",
     "dotenv": "16.0.0",
-    "inquirer": "^8.2.4",
+    "inquirer": "8.2.4",
     "node-fetch": "3.2.4",
     "number-to-words": "1.2.4"
   },
