@@ -4,14 +4,16 @@ import { execSync } from 'child_process';
 import { Command } from "commander";
 
 import { generatorQuestons, generatorAnswer } from './cli/generatorSetup.js';
-import { configQuestions, configAnswers } from './cli/configSetup.js';
+import { configQuestions, configAnswers, setupConfigComannder } from './cli/configSetup.js';
 import { setupWebisteComannder } from './cli/websiteSetup.js';
 
 const setupCommander = () => {
     const program = new Command();
-    const prog = setupWebisteComannder(program);
 
-    return prog;
+    setupWebisteComannder(program);
+    setupConfigComannder(program);
+
+    program.parse(process.argv);
 };
 
 const inquirerRun = async () => {
@@ -50,7 +52,6 @@ const commanderRun = () => {
 };
 
 const run = () => {
-    console.log('cli line:51', process.argv);
     const ranWithArgs = process.argv.length > 2;
 
     if (!ranWithArgs) return inquirerRun();

@@ -1,17 +1,6 @@
 #!/usr/bin/env node
 
-// global.__DEV__ = false;
-// global.__API_URL__ = '';
-
-// require('@babel/register')({
-//   root,
-//   cwd: root,
-//   configFile: `${root}/tools/babel.config.js`,
-//   extensions: ['.js', '.jsx', '.ts', '.tsx']
-// });
 import 'dotenv/config';
-import prog from 'caporal';
-import chalk from 'chalk';
 import { Command } from 'commander';
 import publish from './commands/publish.js';
 import createPost from './commands/createPost.js';
@@ -55,8 +44,6 @@ export const setupWebisteComannder = (program) => {
   program.addCommand(makePostCommand());
   program.addCommand(makeDNSCommand());
   program.addCommand(makeOutputCommand());
-
-  program.parse(process.argv);
 
   return program
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import inquirer from 'inquirer';
+import { Command } from 'commander';
 
 // Commands
 import createRepo from './commands/createRepo.js';
@@ -59,4 +59,46 @@ export const configAnswers = (answers) => {
     if (answers.options === 'updateLocalDotfiles') {
         updateLocalDotfiles();
     }
+}
+
+export const setupConfigComannder = (program) => {
+    const setup = program.command('setup').description('setup a Github repo, local zsh, or local wakatime plugin');
+
+    setup
+        .command('zsh')
+        .action(() => {
+            setupZsh();
+        });
+    setup
+        .command('wakatime')
+        .action(() => {
+            setupWakaTime();
+        });
+    setup
+        .command('repo <name>')
+        .description('setup a new github repo for your username. Must have the gh cli installed and authenticated')
+        .action((name) => {
+            createRepo(name);
+        });
+
+    function makeUpdateCommand() {
+        const update = new Command('update').description('update from/to dotfiles');
+
+        update
+            .command('from')
+            .action(() => {
+                updateFromLocalDotfiles();
+            });
+        update
+            .command('to')
+            .action(() => {
+                updateLocalDotfiles();
+            });
+
+        return update;
+    }
+
+    program.addCommand(makeUpdateCommand());
+
+    return program
 }
