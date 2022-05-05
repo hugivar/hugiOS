@@ -20,10 +20,10 @@
   },
   "engines": {
     "npm": ">=8.0.0",
-    "node": ">=16"
+    "node": ">=14"
   },
   "packageManager": "pnpm@7.0.0",
   "volta": {
-    "node": "16.15.0"
+    "node": "14.15.0"
   }
 }
