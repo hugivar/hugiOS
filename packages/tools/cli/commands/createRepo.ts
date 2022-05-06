@@ -28,7 +28,7 @@ const shellCommand = (name) => {
     program.parse();
 }
 
-const createRepo = (name) => {
+const createRepo = (name?: string) => {
     if (name) {
         return shellCommand(name)
     }
