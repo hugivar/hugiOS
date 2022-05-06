@@ -13,7 +13,8 @@
   "dependencies": {
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-react": "7.29.4"
+    "eslint-plugin-react": "7.29.4",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@pinata/sdk": "1.1.25",
