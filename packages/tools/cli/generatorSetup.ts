@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 // Commands
-import createProject from './commands/createProject.js';
+import createProject from './commands/createProject';
 
-import groupByChoices from './helpers/groupByChoices.js';
+import groupByChoices from './helpers/groupByChoices';
 
 const choices = [
     {
@@ -42,7 +42,7 @@ export const setupGeneratorComannder = (prog) => {
                 .command(programItem.command)
                 .description(programItem.description)
                 .action(() => {
-                    setupZsh();
+                    programItem.action()
                 });
         });
     });

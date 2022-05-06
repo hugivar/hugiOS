@@ -1,10 +1,9 @@
-#!/usr/bin/env node
 import inquirer from 'inquirer';
 import { Command } from "commander";
 
-import { generatorQuestons, generatorAnswer, setupGeneratorComannder } from './cli/generatorSetup.js';
-import { configQuestions, configAnswers, setupConfigComannder } from './cli/configSetup.js';
-import { setupWebisteComannder } from './cli/websiteSetup.js';
+import { generatorQuestons, generatorAnswer, setupGeneratorComannder } from './cli/generatorSetup';
+import { configQuestions, configAnswers, setupConfigComannder } from './cli/configSetup';
+import { setupWebisteComannder } from './cli/websiteSetup';
 
 const setupCommander = () => {
     const program = new Command();
