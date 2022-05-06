@@ -10,7 +10,7 @@
     "buildSiteMap": "node ./buildSiteMap"
   },
   "dependencies": {
-    "chalk": "4",
+    "chalk": "5.0.1",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-react": "7.29.4",
