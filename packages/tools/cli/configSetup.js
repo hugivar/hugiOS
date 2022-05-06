@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import { Command } from 'commander';
-
 // Commands
 import createRepo from './commands/createRepo.js';
 import setupZsh from './commands/setupZsh.js';
@@ -9,96 +7,73 @@ import setupWakaTime from './commands/setupWakaTime.js';
 import updateFromLocalDotfiles from './commands/updateFromLocalDotfiles.js';
 import updateLocalDotfiles from './commands/updateLocalDotfiles.js';
 
+import groupByChoices from './helpers/groupByChoices.js';
+
+const choices = [
+    {
+        name: 'Create a repo',
+        value: 'setup.Repo',
+        action: createRepo
+    },
+    {
+        name: 'Setup commands for zsh',
+        value: 'setup.Zsh',
+        action: setupZsh
+    },
+    {
+        name: 'Setup Wakatime',
+        value: 'setup.WakeTime',
+        action: setupWakaTime
+    },
+    {
+        name: 'Update repo dotfiles file based on local zsh file',
+        value: 'update.FromLocalDotfiles',
+        action: updateFromLocalDotfiles,
+    },
+    {
+        name: 'Update local dotfiles based on repo files',
+        value: 'update.LocalDotfiles',
+        action: updateLocalDotfiles
+    }
+];
+
 export const configQuestions = [
     {
         type: 'list',
         name: 'options',
         message: 'What would you like to do',
-        choices: [
-            {
-                name: 'Create a repo',
-                value: 'createRepo',
-            },
-            {
-                name: 'Setup commands for zsh',
-                value: 'setupZsh',
-            },
-            {
-                name: 'Setup Wakatime',
-                value: 'setupWakeTime',
-            },
-            {
-                name: 'Update repo dotfiles file based on local zsh file',
-                value: 'updateFromLocalDotfiles',
-            },
-            {
-                name: 'Update local dotfiles based on repo files',
-                value: 'updateFromLocalDotfiles',
-            }
-        ]
+        choices: choices.reduce((acc, cur) => {
+            const { name, value } = cur;
+
+            return [...acc, { name, value }]
+        }, [])
     },
 ];
 
 export const configAnswers = (answers) => {
-    if (answers.options === 'createRepo') {
-        createRepo();
-    }
+    const { action } = choices.find(item => item.value === answers.options);
 
-    if (answers.options === 'setupZsh') {
-        setupZsh();
-    }
-
-    if (answers.options === 'setupWakeTime') {
-        setupWakaTime();
-    }
-
-    if (answers.options === 'updateFromLocalDotfiles') {
-        updateFromLocalDotfiles();
-    }
-
-    if (answers.options === 'updateLocalDotfiles') {
-        updateLocalDotfiles();
+    if (action) {
+        action();
     }
 }
 
-export const setupConfigComannder = (program) => {
-    const setup = program.command('setup').description('setup a Github repo, local zsh, or local wakatime plugin');
+export const setupConfigComannder = (prog) => {
+    const grouped = groupByChoices(choices);
 
-    setup
-        .command('zsh')
-        .action(() => {
-            setupZsh();
+    Object.keys(grouped).map(program => {
+        const item = prog
+            .command(program)
+
+        grouped[program].map(programItem => {
+            item
+                .command(programItem.command)
+                .description(programItem.description)
+                .action(() => {
+                    setupZsh();
+                });
         });
-    setup
-        .command('wakatime')
-        .action(() => {
-            setupWakaTime();
-        });
-    setup
-        .command('repo <name>')
-        .description('setup a new github repo for your username. Must have the gh cli installed and authenticated')
-        .action((name) => {
-            createRepo(name);
-        });
+    });
 
-    function makeUpdateCommand() {
-        const update = new Command('update').description('update from/to dotfiles');
-
-        update
-            .command('from')
-            .action(() => {
-                updateFromLocalDotfiles();
-            });
-        update
-            .command('to')
-            .action(() => {
-                updateLocalDotfiles();
-            });
-
-        return update;
-    }
-
-    program.addCommand(makeUpdateCommand());
-
-    return program
+    return prog;
 }

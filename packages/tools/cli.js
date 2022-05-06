@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 import inquirer from 'inquirer';
-import { execSync } from 'child_process';
 import { Command } from "commander";
 
-import { generatorQuestons, generatorAnswer } from './cli/generatorSetup.js';
+import { generatorQuestons, generatorAnswer, setupGeneratorComannder } from './cli/generatorSetup.js';
 import { configQuestions, configAnswers, setupConfigComannder } from './cli/configSetup.js';
 import { setupWebisteComannder } from './cli/websiteSetup.js';
 
@@ -12,6 +11,7 @@ const setupCommander = () => {
 
     setupWebisteComannder(program);
     setupConfigComannder(program);
+    setupGeneratorComannder(program);
 
     program.parse(process.argv);
 };
@@ -44,19 +44,12 @@ const inquirerRun = async () => {
     }
 }
 
-const commanderRun = () => {
-    const program = setupCommander();
-    // const options = program.opts();
-    // console.log('cli line:44', options, program.executableFile);
-    // execSync(' node ./cli/nestedCommands.js brew tea', { stdio: 'inherit' })
-};
-
 const run = () => {
     const ranWithArgs = process.argv.length > 2;
 
     if (!ranWithArgs) return inquirerRun();
 
-    return commanderRun();
+    return setupCommander();
 };
 
 run();
