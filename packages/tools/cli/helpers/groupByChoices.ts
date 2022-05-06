@@ -1,4 +1,5 @@
-import { groupBy } from 'lodash-es';
+import lodash from 'lodash';
+const { groupBy } = lodash;
 
 const groupByChoices = (choices) => {
     const values = choices.map(item => {
@@ -9,12 +10,14 @@ const groupByChoices = (choices) => {
         const key = curr[0];
         const value = curr[1];
         const description = choices[idx].name || '';
+        const action = choices[idx].action || null;
 
         const updatedKey = {
             ...curr[key],
             program: key,
             command: value.toLowerCase(),
-            description
+            description,
+            action
         };
 
         return [...acc, updatedKey];

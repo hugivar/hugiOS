@@ -1,6 +1,6 @@
-import chalk from 'chalk';
 import fs from 'fs';
 import converter from 'number-to-words';
+const chalk = require('chalk');
 /**
  * Adds application module to client or server code and adds it to the module list.
  *

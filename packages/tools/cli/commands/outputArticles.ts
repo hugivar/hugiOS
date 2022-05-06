@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
 import fs from 'fs';
-import chalk from 'chalk';
+const fetch = require('node-fetch');
+const chalk = require('chalk');
 
 const postDirPath = '../../apps/web/_posts';
 const collectionDirPath = '../../apps/web/_collections';

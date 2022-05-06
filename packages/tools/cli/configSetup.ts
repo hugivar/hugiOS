@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 // Commands
-import createRepo from './commands/createRepo.js';
-import setupZsh from './commands/setupZsh.js';
-import setupWakaTime from './commands/setupWakaTime.js';
-import updateFromLocalDotfiles from './commands/updateFromLocalDotfiles.js';
-import updateLocalDotfiles from './commands/updateLocalDotfiles.js';
+import createRepo from './commands/createRepo';
+import setupZsh from './commands/setupZsh';
+import setupWakaTime from './commands/setupWakaTime';
+import updateFromLocalDotfiles from './commands/updateFromLocalDotfiles';
+import updateLocalDotfiles from './commands/updateLocalDotfiles';
 
-import groupByChoices from './helpers/groupByChoices.js';
+import groupByChoices from './helpers/groupByChoices';
 
 const choices = [
     {
