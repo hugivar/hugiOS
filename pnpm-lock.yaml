@@ -13,12 +13,14 @@ importers:
       eslint-config-prettier: 8.5.0
       eslint-plugin-react: 7.29.4
       inquirer: 8.2.4
+      lodash-es: ^4.17.21
       node-fetch: 3.2.4
       number-to-words: 1.2.4
     dependencies:
       eslint-config-next: 12.1.6
       eslint-config-prettier: 8.5.0
       eslint-plugin-react: 7.29.4
+      lodash-es: 4.17.21
     devDependencies:
       '@pinata/sdk': 1.1.25
       chalk: 5.0.1
@@ -1172,6 +1174,10 @@ packages:
     dependencies:
       p-locate: 2.0.0
       path-exists: 3.0.0
+    dev: false
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
     dev: false
 
   /lodash/4.17.21:
