@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-import chalk from 'chalk';
+const chalk = require('chalk');
 
 export const pinFile = ({ pinata, sourcePath, options, logger }) =>
   pinata
@@ -13,7 +13,7 @@ export const pinFile = ({ pinata, sourcePath, options, logger }) =>
       logger.info(
         chalk.red(
           `Error trying to add ${options.pinataMetadata.name
-          } to Pinata: ${JSON.stringify(err, 0, 2)}`,
+          } to Pinata: ${JSON.stringify(err)}`,
         ),
       );
     });

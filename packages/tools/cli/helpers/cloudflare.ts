@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-import chalk from 'chalk';
+const chalk = require('chalk');
 
 export const getDNSRecords = async (zoneId) => {
   console.log('cloudflare line:5', zoneId);

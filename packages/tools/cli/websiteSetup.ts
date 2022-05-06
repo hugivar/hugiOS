@@ -2,10 +2,10 @@
 
 import 'dotenv/config';
 import { Command } from 'commander';
-import publish from './commands/publish.js';
-import createPost from './commands/createPost.js';
-import outputArticles from './commands/outputArticles.js';
-import { getDNSRecords } from './helpers/cloudflare.js';
+import publish from './commands/publish';
+import createPost from './commands/createPost';
+import outputArticles from './commands/outputArticles';
+import { getDNSRecords } from './helpers/cloudflare';
 
 export const setupWebisteComannder = (program) => {
   program
@@ -25,7 +25,7 @@ export const setupWebisteComannder = (program) => {
 
   // Get cloudflare dns records
   function makeDNSCommand() {
-    const dns = new Command('dns <zoneId>').description('get cloudflare dns records').action(() => {
+    const dns = new Command('dns <zoneId>').description('get cloudflare dns records').action((zoneId: string) => {
       getDNSRecords(zoneId);
     });
 
