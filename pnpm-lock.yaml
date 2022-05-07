@@ -39,7 +39,7 @@ importers:
       '@nezhos/tsconfig': workspace:*
       '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
-      '@testing-library/dom': 7.31.2
+      '@testing-library/dom': 8.13.0
       '@testing-library/jest-dom': 5.16.4
       '@testing-library/react': 13.2.0
       '@testing-library/user-event': 14.1.1
@@ -112,10 +112,10 @@ importers:
       '@next/eslint-plugin-next': 12.1.6
       '@nezhos/config': link:../../packages/config
       '@nezhos/tsconfig': link:../../packages/tsconfig
-      '@testing-library/dom': 7.31.2
+      '@testing-library/dom': 8.13.0
       '@testing-library/jest-dom': 5.16.4
       '@testing-library/react': 13.2.0_ef5jwxihqo6n7gxfmzogljlgcm
-      '@testing-library/user-event': 14.1.1_7izb363m7fjrh7ob6q4a2yqaqe
+      '@testing-library/user-event': 14.1.1_tlwynutqiyp5mns3woioasuxnq
       '@types/jest': 27.5.0
       '@types/node': 17.0.23
       '@types/react': 18.0.9
@@ -1186,17 +1186,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /@jest/types/26.6.2:
-    resolution: {integrity: sha512-fC6QCp7Sc5sX6g8Tvbmj4XUTbyrik0akgRy03yjXbQaBWWNWGE7SGtJk98m0N8nzegD/7SggrUlivxo5ax4KWQ==}
-    engines: {node: '>= 10.14.2'}
-    dependencies:
-      '@types/istanbul-lib-coverage': 2.0.4
-      '@types/istanbul-reports': 3.0.1
-      '@types/node': 17.0.23
-      '@types/yargs': 15.0.14
-      chalk: 4.1.2
-    dev: true
-
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
     engines: {node: '>=6.0.0'}
@@ -1480,20 +1469,6 @@ packages:
       tailwindcss: 3.0.24
     dev: false
 
-  /@testing-library/dom/7.31.2:
-    resolution: {integrity: sha512-3UqjCpey6HiTZT92vODYLPxTBWlM8ZOOjr3LX5F37/VRipW2M1kX6I/Cm4VXzteZqfGfagg8yXywpcOgQBlNsQ==}
-    engines: {node: '>=10'}
-    dependencies:
-      '@babel/code-frame': 7.16.7
-      '@babel/runtime': 7.17.9
-      '@types/aria-query': 4.2.2
-      aria-query: 4.2.2
-      chalk: 4.1.2
-      dom-accessibility-api: 0.5.14
-      lz-string: 1.4.4
-      pretty-format: 26.6.2
-    dev: true
-
   /@testing-library/dom/8.13.0:
     resolution: {integrity: sha512-9VHgfIatKNXQNaZTtLnalIy0jNZzY35a4S3oi08YAt9Hv1VsfZ/DfA45lM8D/UhtHBGJ4/lGwp0PZkVndRkoOQ==}
     engines: {node: '>=12'}
@@ -1537,13 +1512,13 @@ packages:
       react-dom: 18.1.0_react@18.1.0
     dev: true
 
-  /@testing-library/user-event/14.1.1_7izb363m7fjrh7ob6q4a2yqaqe:
+  /@testing-library/user-event/14.1.1_tlwynutqiyp5mns3woioasuxnq:
     resolution: {integrity: sha512-XrjH/iEUqNl9lF2HX9YhPNV7Amntkcnpw0Bo1KkRzowNDcgSN9i0nm4Q8Oi5wupgdfPaJNMAWa61A+voD6Kmwg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
     dependencies:
-      '@testing-library/dom': 7.31.2
+      '@testing-library/dom': 8.13.0
     dev: true
 
   /@tootallnate/once/1.1.2:
@@ -1648,18 +1623,6 @@ packages:
 
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
-    dev: true
-
-  /@types/istanbul-lib-report/3.0.0:
-    resolution: {integrity: sha512-plGgXAPfVKFoYfa9NpYDAkseG+g6Jr294RqeqcqDixSbU34MZVJRi/P+7Y8GDpzkEwLaGZZOpKIEmeVZNtKsrg==}
-    dependencies:
-      '@types/istanbul-lib-coverage': 2.0.4
-    dev: true
-
-  /@types/istanbul-reports/3.0.1:
-    resolution: {integrity: sha512-c3mAZEuK0lvBp8tmuL74XRKn1+y2dcwOUpH7x4WrF6gk1GIgiluDRgMYQtw2OFcBvAJWlt6ASU3tSqxp0Uu0Aw==}
-    dependencies:
-      '@types/istanbul-lib-report': 3.0.0
     dev: true
 
   /@types/jest/27.5.0:
@@ -1802,16 +1765,6 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
-
-  /@types/yargs-parser/21.0.0:
-    resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
-    dev: true
-
-  /@types/yargs/15.0.14:
-    resolution: {integrity: sha512-yEJzHoxf6SyQGhBhIYGXQDSCkJjB6HohDShto7m8vaKg9Yp0Yn8+71J9eakh2bnPg6BfsH9PRMhiRTZnd4eXGQ==}
-    dependencies:
-      '@types/yargs-parser': 21.0.0
-    dev: true
 
   /@types/yauzl/2.10.0:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
@@ -7700,16 +7653,6 @@ packages:
   /pretty-bytes/4.0.2:
     resolution: {integrity: sha1-sr+C5zUNZcbDOqlaqlpPYyf2HNk=}
     engines: {node: '>=4'}
-    dev: true
-
-  /pretty-format/26.6.2:
-    resolution: {integrity: sha512-7AeGuCYNGmycyQbCqd/3PWH4eOoX/OiCa0uphp57NVTeAGdJGaAliecxwBDHYQCIvrW7aDBZCYeNTP/WX69mkg==}
-    engines: {node: '>= 10'}
-    dependencies:
-      '@jest/types': 26.6.2
-      ansi-regex: 5.0.1
-      ansi-styles: 4.3.0
-      react-is: 17.0.2
     dev: true
 
   /pretty-format/27.5.1:
