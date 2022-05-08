@@ -12,10 +12,13 @@ This turborepo uses [pnpm](https://pnpm.io) as a packages manager. It includes t
 
 - `notifications`: an electron app built to serve as a notification center for my different services
 - `web`: a nextjs app to serve as my personal site
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `clickup-docs-export`: a nodejs app to extract ClickUp network urls from log files, download those files, and group them correctly 
+- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`) as well as `terminal`, and `vscode` configurations
+- `fig`: custom plugins for `fig.io`
+- `tools`: a toolkit used throughout the monorepo including the `cli`
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 - `tools`: `cli`s used throughout the monorepo
+- `ui`: a stub React component library shared by both web and docs applications
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -28,8 +31,6 @@ This turborepo has some additional tools already setup for you:
 - [Prettier](https://prettier.io) for code formatting
 
 ## Setup
-
-This repository is used in the `npx create-turbo@latest` command, and selected when choosing which package manager you wish to use with your monorepo (PNPM).
 
 ### Build
 
