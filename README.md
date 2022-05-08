@@ -1,6 +1,7 @@
 # NezhOS
 
-My personal monorepo to serve as the basis of all my personal projects. Bootstrapped with Turborepo.
+A monorepo that holds all of Nezhivar's open source projects . Bootstrapped with Turborepo.
+
 ## What's inside?
 
 This turborepo uses [pnpm](https://pnpm.io) as a packages manager. It includes the following packages/apps:
