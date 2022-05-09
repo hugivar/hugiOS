@@ -25,5 +25,10 @@
   "packageManager": "pnpm@7.0.1",
   "volta": {
     "node": "14.19.2"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
