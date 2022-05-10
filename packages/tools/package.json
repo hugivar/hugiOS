@@ -5,6 +5,9 @@
   "files": [
     "eslint-preset.js"
   ],
+  "bin": {
+    "nezhos": "./bin/cli.js"
+  },
   "scripts": {
     "cli": "ts-node ./cli",
     "buildSiteMap": "node ./buildSiteMap"
