@@ -69,7 +69,7 @@ importers:
       next-themes: 0.2.0
       postcss: 8.4.13
       postcss-flexbugs-fixes: 5.0.2
-      postcss-nesting: 10.1.4
+      postcss-nesting: 10.1.5
       postcss-preset-env: 7.5.0
       react: 18.1.0
       react-content-loader: 6.2.0
@@ -98,7 +98,7 @@ importers:
       next-themes: 0.2.0_2mgcgz5qhsdxw4fgpqzqeafmkq
       postcss: 8.4.13
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.13
-      postcss-nesting: 10.1.4_postcss@8.4.13
+      postcss-nesting: 10.1.5_postcss@8.4.13
       postcss-preset-env: 7.5.0_postcss@8.4.13
       react: 18.1.0
       react-content-loader: 6.2.0_react@18.1.0
@@ -794,6 +794,17 @@ packages:
       postcss: ^8.3
     dependencies:
       postcss: 8.4.13
+    dev: false
+
+  /@csstools/selector-specificity/1.0.0_qiplrb533afbljv7sbepwo7yse:
+    resolution: {integrity: sha512-RkYG5KiGNX0fJ5YoI0f4Wfq2Yo74D25Hru4fxTOioYdQvHBxcrrtTTyT5Ozzh2ejcNrhFy7IEts2WyEY7yi5yw==}
+    engines: {node: ^12 || ^14 || >=16}
+    peerDependencies:
+      postcss: ^8.3
+      postcss-selector-parser: ^6.0.10
+    dependencies:
+      postcss: 8.4.13
+      postcss-selector-parser: 6.0.10
     dev: false
 
   /@cush/relative/1.0.0:
@@ -7237,12 +7248,13 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: false
 
-  /postcss-nesting/10.1.4_postcss@8.4.13:
-    resolution: {integrity: sha512-2ixdQ59ik/Gt1+oPHiI1kHdwEI8lLKEmui9B1nl6163ANLC+GewQn7fXMxJF2JSb4i2MKL96GU8fIiQztK4TTA==}
+  /postcss-nesting/10.1.5_postcss@8.4.13:
+    resolution: {integrity: sha512-+NyBBE/wUcJ+NJgVd2FyKIZ414lul6ExqkOt1qXXw7oRzpQ0iT68cVpx+QfHh42QUMHXNoVLlN9InFY9XXK8ng==}
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.4
     dependencies:
+      '@csstools/selector-specificity': 1.0.0_qiplrb533afbljv7sbepwo7yse
       postcss: 8.4.13
       postcss-selector-parser: 6.0.10
     dev: false
@@ -7322,7 +7334,7 @@ packages:
       postcss-lab-function: 4.2.0_postcss@8.4.13
       postcss-logical: 5.0.4_postcss@8.4.13
       postcss-media-minmax: 5.0.0_postcss@8.4.13
-      postcss-nesting: 10.1.4_postcss@8.4.13
+      postcss-nesting: 10.1.5_postcss@8.4.13
       postcss-opacity-percentage: 1.1.2
       postcss-overflow-shorthand: 3.0.3_postcss@8.4.13
       postcss-page-break: 3.0.4_postcss@8.4.13
