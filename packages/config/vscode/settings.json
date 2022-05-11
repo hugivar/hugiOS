@@ -1,0 +1,52 @@
+{
+    "editor.formatOnSave": true,
+    "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
+    "editor.suggestSelection": "first",
+    "workbench.iconTheme": "material-icon-theme",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.accessibilitySupport": "off",
+    "gitlens.defaultGravatarsStyle": "identicon",
+    "editor.formatOnType": true,
+    "redhat.telemetry.enabled": false,
+    "[dart]": {
+        "editor.wordBasedSuggestions": false,
+        "editor.tabCompletion": "onlySnippets",
+        "editor.rulers": [
+            80
+        ],
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.selectionHighlight": false,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.suggestSelection": "first"
+    },
+    "workbench.preferredLightColorTheme": "Night Owl",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "telemetry.telemetryLevel": "off",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.colorTheme": "Night Owl",
+    "workbench.startupEditor": "none",
+    "npm.packageManager": "pnpm",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.sideBar.location": "right",
+    "git.confirmSync": false,
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "gitlens.views.worktrees.files.layout": "tree",
+    "workbench.colorCustomizations": {
+        "[Night Owl]": {
+            "activityBar.foreground": "#448aff",
+            "activityBar.inactiveForeground": "#8c9eff"
+        }
+    },
+    "git.autofetch": true
+}
