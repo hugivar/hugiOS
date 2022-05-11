@@ -1,0 +1,20 @@
+[
+    {
+        "key": "alt+cmd+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "shift+alt+t",
+        "command": "themeswitch.toggle"
+    },
+    {
+        "key": "alt+cmd+t",
+        "command": "-themeswitch.toggle"
+    }
+]
