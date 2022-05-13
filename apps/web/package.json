@@ -9,7 +9,7 @@
     "start": "next build && next start",
     "serve": "serve out",
     "lint": "next lint",
-    "test": "vitest --run --silent",
+    "test": "vitest --run",
     "test:coverage": "vitest run --coverage --reporter=json --outputFile=coverage.json",
     "test:watch": "vitest -w"
   },
