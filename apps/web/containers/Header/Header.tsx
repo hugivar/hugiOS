@@ -16,7 +16,7 @@ interface IRouter {
   asPath: string;
 }
 
-export const Header = ({ title }: IHeader) => {
+const Header = ({ title }: IHeader) => {
   const router: IRouter = useRouter();
 
   const viewingBase =
@@ -85,3 +85,5 @@ export const Header = ({ title }: IHeader) => {
     </div>
   );
 };
+
+export default Header

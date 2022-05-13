@@ -2,12 +2,12 @@ import React from "react";
 
 import settings from "config/settings";
 import { MetaData } from "components/MetaData";
-import { Drawer } from "containers/Drawer";
+import Drawer from "containers/Drawer";
 
 interface ILayout {
   children: React.ReactNode;
   bodyClass?: object;
-  pageTitle: string;
+  pageTitle?: string;
 }
 
 const SiteTitle = () => (
