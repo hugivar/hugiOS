@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from 'containers/Layout';
-import { Header } from 'containers/Header';
+import Header from 'containers/Header';
 import ListView from 'components/ListView';
 import { getAllArticles } from 'lib/api';
 

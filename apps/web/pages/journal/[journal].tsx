@@ -7,7 +7,7 @@ import {
   getArticleFromFileBySlug,
 } from "lib/fs";
 import Layout from "containers/Layout";
-import { Header } from "containers/Header";
+import Header from "containers/Header";
 import ListView from "components/ListView";
 import ContentItem from "components/ContentItem";
 import { getAllArticles, getArticleBySlug } from "lib/api";
