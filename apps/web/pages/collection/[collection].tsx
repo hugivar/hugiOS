@@ -7,7 +7,7 @@ import {
   getArticleFromFileBySlug,
 } from "lib/fs";
 import Layout from "containers/Layout";
-import { Header } from "containers/Header";
+import Header from "containers/Header";
 import ListView from "components/ListView";
 import ContentItem from "components/ContentItem";
 import { determineIPFS } from "utils/routing";
@@ -45,9 +45,9 @@ export async function getStaticProps({ params }: PageParams) {
   const postsData = ipfsEnabled
     ? await getArticlesFromFiles("collection")
     : await getAllArticles(
-        ["slug", "title", "description", "date"],
-        "collection"
-      );
+      ["slug", "title", "description", "date"],
+      "collection"
+    );
 
   const data = ipfsEnabled
     ? await getArticleFromFileBySlug(params.collection, "collection")

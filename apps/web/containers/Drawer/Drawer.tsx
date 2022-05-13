@@ -39,7 +39,7 @@ const NavItem = ({ title, href, active, icon, external }: INavItem) => (
   </li>
 );
 
-export const Drawer = () => {
+const Drawer = () => {
   const router = useRouter();
 
   return (
@@ -68,3 +68,5 @@ export const Drawer = () => {
     </ul>
   );
 };
+
+export default Drawer;
