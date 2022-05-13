@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import settings from "config/settings";
 
 interface IMetaData {
-  title: string;
+  title?: string;
   description?: string;
   bodyClass?: object;
 }
