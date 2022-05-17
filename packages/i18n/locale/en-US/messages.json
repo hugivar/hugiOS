@@ -1,0 +1,24 @@
+{
+    "home": {
+        "me": {
+            "subtitle1": "I'm a full-stack engineer, explorer, and lifelong learner. I share thoughts and learnings through my",
+            "visit": "Visit my",
+            "subtitle2": "page for a glimpse into the various technologies that I am currently using."
+        },
+        "quote": {
+            "title": "Anonymity",
+            "desc": "See that bird? It’s a brown-throated thrush, but in Germany it’s called a Halzenfugel, and in Chinese they call it a Chung Ling and even if you know all those names for it, you still know nothing about the bird. You only know something about people; what they call the bird. Now that thrush sings, and teaches its young to fly, and flies so many miles away during the summer across the country, and nobody knows how it finds its way.",
+            "author": "Richard Feynman"
+        },
+        "idea": {
+            "names": "Names are meaningless. Seek knowledge and understanding. Question Everything.",
+            "anonymity": "Anonymity should be sought after at all costs. Contributions should be judge based on content alone. Not based on the gravitas of author."
+        }
+    },
+    "journal": {
+        "title": "Journal"
+    },
+    "collection": {
+        "title": "Collection"
+    }
+}
