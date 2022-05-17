@@ -1,0 +1,6 @@
+{
+  "name": "@nezhos/i18n",
+  "version": "1.0.0",
+  "main": "./locale/languages.js",
+  "license": "MIT"
+}
