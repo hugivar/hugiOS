@@ -38,6 +38,7 @@ importers:
       '@changesets/cli': 2.22.0
       '@next/eslint-plugin-next': 12.1.6
       '@nezhos/config': workspace:*
+      '@nezhos/i18n': workspace:*
       '@nezhos/tsconfig': workspace:*
       '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
@@ -66,6 +67,7 @@ importers:
       gray-matter: 4.0.3
       happy-dom: 3.2.2
       husky: 8.0.1
+      i18next: ^21.8.2
       jsdom: 19.0.0
       next: 12.1.6
       next-themes: 0.2.0
@@ -77,6 +79,7 @@ importers:
       react-content-loader: 6.2.0
       react-dom: 18.1.0
       react-helmet-async: 1.3.0
+      react-i18next: ^11.16.9
       react-markdown: 8.0.3
       react-syntax-highlighter: 15.5.0
       react-test-renderer: 18.1.0
@@ -96,6 +99,7 @@ importers:
       daisyui: 2.15.0_cr4sis33dk4di3xnobyqnqmrf4
       gray-matter: 4.0.3
       husky: 8.0.1
+      i18next: 21.8.2
       next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
       next-themes: 0.2.0_2mgcgz5qhsdxw4fgpqzqeafmkq
       postcss: 8.4.13
@@ -106,6 +110,7 @@ importers:
       react-content-loader: 6.2.0_react@18.1.0
       react-dom: 18.1.0_react@18.1.0
       react-helmet-async: 1.3.0_ef5jwxihqo6n7gxfmzogljlgcm
+      react-i18next: 11.16.9_nlaekqjbpikw4agfyzvj2iejnm
       react-markdown: 8.0.3_7cpxmzzodpxnolj5zcc5cr63ji
       react-syntax-highlighter: 15.5.0_react@18.1.0
       swr: 1.3.0_react@18.1.0
@@ -113,6 +118,7 @@ importers:
     devDependencies:
       '@next/eslint-plugin-next': 12.1.6
       '@nezhos/config': link:../../packages/config
+      '@nezhos/i18n': link:../../packages/i18n
       '@nezhos/tsconfig': link:../../packages/tsconfig
       '@testing-library/dom': 8.13.0
       '@testing-library/jest-dom': 5.16.4
@@ -174,6 +180,9 @@ importers:
       '@typescript-eslint/parser': 5.23.0_hcfsmds2fshutdssjqluwm76uu
       eslint: 8.15.0
       typescript: 4.6.4
+
+  packages/i18n:
+    specifiers: {}
 
   packages/tools:
     specifiers:
@@ -825,7 +834,6 @@ packages:
       inquirer: 8.2.4
       semver: 7.3.7
     transitivePeerDependencies:
-      - bluebird
       - encoding
       - supports-color
     dev: true
@@ -869,7 +877,6 @@ packages:
       username: 5.1.0
       yarn-or-npm: 3.0.1
     transitivePeerDependencies:
-      - bluebird
       - encoding
       - supports-color
     dev: true
@@ -964,7 +971,6 @@ packages:
       fs-extra: 10.1.0
       which: 2.0.2
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -977,7 +983,6 @@ packages:
     optionalDependencies:
       electron-installer-debian: 3.1.0
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -990,7 +995,6 @@ packages:
     optionalDependencies:
       electron-installer-redhat: 3.3.0
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -1004,7 +1008,6 @@ packages:
     optionalDependencies:
       electron-winstaller: 5.0.0
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -1017,7 +1020,6 @@ packages:
       cross-zip: 4.0.0
       fs-extra: 10.1.0
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -1027,7 +1029,6 @@ packages:
     dependencies:
       '@electron-forge/shared-types': 6.0.0-beta.63
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -1037,7 +1038,6 @@ packages:
     dependencies:
       '@electron-forge/shared-types': 6.0.0-beta.63
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -1050,7 +1050,6 @@ packages:
       electron-rebuild: 3.2.7
       ora: 5.4.1
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -1065,7 +1064,6 @@ packages:
       fs-extra: 10.1.0
       username: 5.1.0
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -1078,7 +1076,6 @@ packages:
       '@electron-forge/template-base': 6.0.0-beta.63
       fs-extra: 10.1.0
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -1091,7 +1088,6 @@ packages:
       '@electron-forge/template-base': 6.0.0-beta.63
       fs-extra: 10.1.0
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -1104,7 +1100,6 @@ packages:
       '@electron-forge/template-base': 6.0.0-beta.63
       fs-extra: 10.1.0
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -2448,8 +2443,6 @@ packages:
       ssri: 8.0.1
       tar: 6.1.11
       unique-filename: 1.1.1
-    transitivePeerDependencies:
-      - bluebird
     dev: true
 
   /cacheable-lookup/5.0.4:
@@ -2863,8 +2856,6 @@ packages:
       on-headers: 1.0.2
       safe-buffer: 5.1.2
       vary: 1.1.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /concat-map/0.0.1:
@@ -3122,21 +3113,11 @@ packages:
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
     dependencies:
       ms: 2.0.0
 
   /debug/3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
     dependencies:
       ms: 2.1.2
 
@@ -3467,8 +3448,6 @@ packages:
       isbinaryfile: 3.0.3
       minimist: 1.2.6
       plist: 3.0.5
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /electron-packager/15.5.1:
@@ -3519,7 +3498,6 @@ packages:
       tar: 6.1.11
       yargs: 17.4.1
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -3527,8 +3505,6 @@ packages:
     resolution: {integrity: sha1-GbTlWTP6Dvj1VnhLnGYPdyVGoLg=}
     dependencies:
       debug: 2.6.9
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /electron-tabs/0.17.0:
@@ -3916,14 +3892,13 @@ packages:
       eslint: 8.15.0
       eslint-import-resolver-node: 0.3.6
       eslint-import-resolver-typescript: 2.7.1_gwd37gqv3vjv3xlpl7ju3ag2qu
-      eslint-plugin-import: 2.26.0_j3mcmpo7om5tltq775lihvikb4
+      eslint-plugin-import: 2.26.0_eslint@8.15.0
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.15.0
       eslint-plugin-react: 7.29.4_eslint@8.15.0
       eslint-plugin-react-hooks: 4.5.0_eslint@8.15.0
       next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
       typescript: 4.6.4
     transitivePeerDependencies:
-      - eslint-import-resolver-webpack
       - supports-color
 
   /eslint-config-prettier/8.5.0_eslint@8.15.0:
@@ -3939,8 +3914,6 @@ packages:
     dependencies:
       debug: 3.2.7
       resolve: 1.22.0
-    transitivePeerDependencies:
-      - supports-color
 
   /eslint-import-resolver-typescript/2.7.1_gwd37gqv3vjv3xlpl7ju3ag2qu:
     resolution: {integrity: sha512-00UbgGwV8bSgUv34igBDbTOtKhqoRMy9bFjNehT40bXg6585PNIct8HhXZ0SybqB9rWtXj9crcku8ndDn/gIqQ==}
@@ -3951,7 +3924,7 @@ packages:
     dependencies:
       debug: 4.3.4
       eslint: 8.15.0
-      eslint-plugin-import: 2.26.0_j3mcmpo7om5tltq775lihvikb4
+      eslint-plugin-import: 2.26.0_eslint@8.15.0
       glob: 7.2.0
       is-glob: 4.0.3
       resolve: 1.22.0
@@ -3959,50 +3932,26 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /eslint-module-utils/2.7.3_bpv7bvgsekzf76isjsnkhydtce:
+  /eslint-module-utils/2.7.3:
     resolution: {integrity: sha512-088JEC7O3lDZM9xGe0RerkOMd0EjFl+Yvd1jPWIkMT5u3H9+HC34mWWPnqPrN13gieT9pBOO+Qt07Nb/6TresQ==}
     engines: {node: '>=4'}
-    peerDependencies:
-      '@typescript-eslint/parser': '*'
-      eslint-import-resolver-node: '*'
-      eslint-import-resolver-typescript: '*'
-      eslint-import-resolver-webpack: '*'
-    peerDependenciesMeta:
-      '@typescript-eslint/parser':
-        optional: true
-      eslint-import-resolver-node:
-        optional: true
-      eslint-import-resolver-typescript:
-        optional: true
-      eslint-import-resolver-webpack:
-        optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.23.0_hcfsmds2fshutdssjqluwm76uu
       debug: 3.2.7
-      eslint-import-resolver-node: 0.3.6
-      eslint-import-resolver-typescript: 2.7.1_gwd37gqv3vjv3xlpl7ju3ag2qu
       find-up: 2.1.0
-    transitivePeerDependencies:
-      - supports-color
 
-  /eslint-plugin-import/2.26.0_j3mcmpo7om5tltq775lihvikb4:
+  /eslint-plugin-import/2.26.0_eslint@8.15.0:
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
     engines: {node: '>=4'}
     peerDependencies:
-      '@typescript-eslint/parser': '*'
       eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
-    peerDependenciesMeta:
-      '@typescript-eslint/parser':
-        optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.23.0_hcfsmds2fshutdssjqluwm76uu
       array-includes: 3.1.5
       array.prototype.flat: 1.3.0
       debug: 2.6.9
       doctrine: 2.1.0
       eslint: 8.15.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.3_bpv7bvgsekzf76isjsnkhydtce
+      eslint-module-utils: 2.7.3
       has: 1.0.3
       is-core-module: 2.9.0
       is-glob: 4.0.3
@@ -4010,10 +3959,6 @@ packages:
       object.values: 1.1.5
       resolve: 1.22.0
       tsconfig-paths: 3.14.1
-    transitivePeerDependencies:
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
 
   /eslint-plugin-jsx-a11y/6.5.1_eslint@8.15.0:
     resolution: {integrity: sha512-sVCFKX9fllURnXT2JwLN5Qgo24Ug5NF6dxhkmxsMEUZhXRcGg+X3e1JbJ84YePQKBl5E0ZjAH5Q4rkdcGY99+g==}
@@ -4238,8 +4183,6 @@ packages:
       debug: 2.6.9
       mkdirp: 0.5.6
       yauzl: 2.10.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /extract-zip/2.0.1:
@@ -4610,8 +4553,6 @@ packages:
       debug: 2.6.9
       lodash.get: 4.4.2
       read-pkg-up: 2.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /get-port/3.2.0:
@@ -4957,7 +4898,12 @@ packages:
 
   /html-escaper/2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
-    dev: true
+
+  /html-parse-stringify/3.0.1:
+    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
+    dependencies:
+      void-elements: 3.1.0
+    dev: false
 
   /htmlparser2/6.1.0:
     resolution: {integrity: sha512-gyyPk6rgonLFEDGoeRgQNaEUvdJ4ktTmmUh/h2t7s+M8oPpIPxgNACWa+6ESR57kXstwqPiCut0V8NRpcwgU7A==}
@@ -5054,6 +5000,12 @@ packages:
     resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
     engines: {node: '>=14'}
     hasBin: true
+    dev: false
+
+  /i18next/21.8.2:
+    resolution: {integrity: sha512-H/oQvA/OXcqurXHemlyDwdIzr9GHYg5/xBuDeFXTXJGMOJFH0ke1wgbsDjFFk2noD4cJfzicVPpUtp39Z+OzgQ==}
+    dependencies:
+      '@babel/runtime': 7.17.9
     dev: false
 
   /iconv-lite/0.4.24:
@@ -5840,7 +5792,6 @@ packages:
       socks-proxy-agent: 6.2.0
       ssri: 8.0.1
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -6467,7 +6418,6 @@ packages:
       tar: 6.1.11
       which: 2.0.2
     transitivePeerDependencies:
-      - bluebird
       - supports-color
     dev: true
 
@@ -6553,8 +6503,6 @@ packages:
       request: 2.88.2
       single-line-log: 1.1.2
       throttleit: 0.0.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /number-is-nan/1.0.1:
@@ -7428,11 +7376,6 @@ packages:
 
   /promise-inflight/1.0.1:
     resolution: {integrity: sha1-mEcocL8igTL8vdhoEputEsPAKeM=}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
     dev: true
 
   /promise-retry/2.0.1:
@@ -7575,6 +7518,27 @@ packages:
       react-dom: 18.1.0_react@18.1.0
       react-fast-compare: 3.2.0
       shallowequal: 1.1.0
+    dev: false
+
+  /react-i18next/11.16.9_nlaekqjbpikw4agfyzvj2iejnm:
+    resolution: {integrity: sha512-euXxWvcEAvsY7ZVkwx9ztCq4butqtsGHEkpkuo0RMj8Ru09IF9o2KxCyN+zyv51Nr0aBh/elaTIiR6fMb8YfVg==}
+    peerDependencies:
+      i18next: '>= 19.0.0'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.17.9
+      html-escaper: 2.0.2
+      html-parse-stringify: 3.0.1
+      i18next: 21.8.2
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
     dev: false
 
   /react-is/16.13.1:
@@ -8075,8 +8039,6 @@ packages:
       compression: 1.7.3
       serve-handler: 6.1.3
       update-check: 1.5.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /set-blocking/2.0.0:
@@ -9234,6 +9196,11 @@ packages:
       - sass
       - stylus
     dev: true
+
+  /void-elements/3.1.0:
+    resolution: {integrity: sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /w3c-hr-time/1.0.2:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==}
