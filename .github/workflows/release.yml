@@ -63,6 +63,7 @@ jobs:
         if: steps.changesets.outputs.hasChangesets == 'false'
         run: |
           pnpm changeset status --since=origin/main 
+          echo steps.changesets.outputs
           cd packages/tools && pnpm cli publish $PINATA_KEY $PINATA_SECRET_KEY $CLOUDFLARE_TOKEN_ID $CLOUDFLARE_ZONE_ID $CLOUDFLARE_DNS_ID
 
   changeset:
@@ -88,9 +89,8 @@ jobs:
         run: pnpm install
 
       - name: create and publish versions
-        uses: changesets/action@master
+        uses: changesets/action@v1
         with:
-          version: pnpm ci:version
           commit: "chore: update versions"
           title: "chore: update versions"
         env:
