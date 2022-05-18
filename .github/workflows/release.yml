@@ -38,6 +38,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Check changesets/action
+        id: changesets
         run: pnpm changeset status --since=origin/main
       # https://nextjs.org/docs/messages/no-cache
       # https://github.com/actions/cache/blob/main/examples.md#node---yarn
