@@ -3,8 +3,14 @@ on:
   push:
     branches:
       - main
+
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
 jobs:
   ipfs-deployment:
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -27,6 +33,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
+      - name: setup pnpm config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - name: Install dependencies
         run: pnpm install
       - name: Check changesets/action
@@ -45,11 +53,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
       - name: Build deployment package
+        if: ${{ npx changeset status --since=origin/main }}
         run: pnpm build
       - name: Create static out folder
+        if: ${{ npx changeset status --since=origin/main }}
         run: npx turbo run export --filter=web
       - name: Publish to IPFS
+        if: ${{ npx changeset status --since=origin/main }}
         run: cd packages/tools && pnpm cli publish $PINATA_KEY $PINATA_SECRET_KEY $CLOUDFLARE_TOKEN_ID $CLOUDFLARE_ZONE_ID $CLOUDFLARE_DNS_ID
+
   changeset:
     name: Changeset creation
     runs-on: ubuntu-latest
@@ -72,7 +84,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Create Release Pull Request
-        uses: changesets/action@v1
+      - name: create and publish versions
+        uses: changesets/action@master
+        with:
+          version: pnpm ci:version
+          commit: "chore: update versions"
+          title: "chore: update versions"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
