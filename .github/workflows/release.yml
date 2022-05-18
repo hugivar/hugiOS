@@ -53,10 +53,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
       - name: Build deployment package
-        if: pnpm changeset status --since=origin/main
+        if: ${{ pnpm changeset status --since=origin/main' }}
         run: pnpm build
       - name: Create static out folder
-        if: pnpm changeset status --since=origin/main
+        # if: pnpm changeset status --since=origin/main
         run: npx turbo run export --filter=web
       - name: Publish to IPFS
         run: |
