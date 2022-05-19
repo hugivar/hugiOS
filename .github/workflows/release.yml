@@ -64,11 +64,8 @@ jobs:
           pnpm changeset status
           echo '::set-output name=changesets::enabled'
           echo "{steps.changesets.outputs.hasChangesets}" >> $GITHUB_ENV
-          echo "{steps.changesets}" >> $GITHUB_ENV2
-
           echo GITHUB_ENV
           echo ENV IS $GITHUB_ENV
-          echo ENVS IS $GITHUB_ENV2
           echo '::echo::on'
           echo steps.changesets.outputs
           cd packages/tools && pnpm cli publish $PINATA_KEY $PINATA_SECRET_KEY $CLOUDFLARE_TOKEN_ID $CLOUDFLARE_ZONE_ID $CLOUDFLARE_DNS_ID
