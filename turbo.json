@@ -20,7 +20,8 @@
     },
     "release": {
       "dependsOn": [
-        "build"
+        "build",
+        "export"
       ]
     },
     "dev": {
