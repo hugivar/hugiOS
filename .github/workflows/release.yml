@@ -53,13 +53,7 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
-      - name: Build deployment package
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        run: pnpm build
-      - name: Create static out folder
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        run: npx turbo run export --filter=web
-      - name: Publish to IPFS
+      - name: Release static code if changeset for app exists
         run: |
           pnpm changeset status --output output.json
           pnpm release
