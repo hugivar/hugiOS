@@ -62,6 +62,11 @@ jobs:
       - name: Publish to IPFS
         run: |
           pnpm changeset status
+          echo '::set-output name=changesets::enabled'
+          echo "{steps.changesets.outputs}" >> $GITHUB_ENV
+          echo GITHUB_ENV
+          echo $GITHUB_ENV
+          echo '::echo::on'
           echo steps.changesets.outputs
           cd packages/tools && pnpm cli publish $PINATA_KEY $PINATA_SECRET_KEY $CLOUDFLARE_TOKEN_ID $CLOUDFLARE_ZONE_ID $CLOUDFLARE_DNS_ID
 
