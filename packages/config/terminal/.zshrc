@@ -1,9 +1,5 @@
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
-source ~/zsh-snap/znap.zsh
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 export USER="${USER}"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -20,8 +16,7 @@ export PATH=~/Library/Android/sdk/platform-tools:$PATH
 alias python=python3
 alias ls='ls -G'
 alias bertyAndroid='cd ~/repos/berty/js/android'
-alias projects='cd ~/repos/personal-projects'
-alias ghc='~/repos/shared-configs/scripts/github-create.sh'
+alias repos='cd ~/repos'
 
 export ANDROID_HOME=/Users/${USER}/Library/Android/sdk
 export ANDROID_SDK_ROOT=/Users/${USER}/Library/Android/sdk
@@ -113,11 +108,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # https://dev.to/abdfnx/oh-my-zsh-powerlevel10k-cool-terminal-1no0
 
 plugins=( 
-  git 
-  z
-  zsh-syntax-highlighting
-  zsh-completions
+  alias-finder
+  common-aliases
+  gh
+  git
+  gitignore
+  history
   node
+  volta
+  vscode
+  z
 )
 
 if [ -x "$(command -v exa)" ]; then
@@ -164,12 +164,12 @@ autoload -U compinit && compinit
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-
 export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
+export PNPM_HOME="/Users/${USER}/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"
