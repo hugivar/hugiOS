@@ -1,0 +1,39 @@
+{
+  "changesets": [
+    {
+      "releases": [
+        {
+          "name": "@nezhos/tsconfig",
+          "type": "patch"
+        }
+      ],
+      "summary": "Minor bump to test github action changes",
+      "id": "rude-beers-destroy"
+    }
+  ],
+  "releases": [
+    {
+      "name": "@nezhos/tsconfig",
+      "type": "patch",
+      "oldVersion": "1.1.0",
+      "changesets": [
+        "rude-beers-destroy"
+      ],
+      "newVersion": "1.1.1"
+    },
+    {
+      "name": "@nezhos/web",
+      "type": "none",
+      "oldVersion": "1.1.0",
+      "changesets": [],
+      "newVersion": "1.1.0"
+    },
+    {
+      "name": "ui",
+      "type": "none",
+      "oldVersion": "0.0.0",
+      "changesets": [],
+      "newVersion": "0.0.0"
+    }
+  ]
+}

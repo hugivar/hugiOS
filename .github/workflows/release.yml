@@ -61,14 +61,8 @@ jobs:
         run: npx turbo run export --filter=web
       - name: Publish to IPFS
         run: |
-          pnpm changeset status
-          echo '::set-output name=changesets::enabled'
-          echo "{steps.changesets.outputs.hasChangesets}" >> $GITHUB_ENV
-          echo GITHUB_ENV
-          echo ENV IS $GITHUB_ENV
-          echo '::echo::on'
-          echo steps.changesets.outputs
-          cd packages/tools && pnpm cli publish $PINATA_KEY $PINATA_SECRET_KEY $CLOUDFLARE_TOKEN_ID $CLOUDFLARE_ZONE_ID $CLOUDFLARE_DNS_ID
+          pnpm changeset status --output output.json
+          pnpm release
 
   changeset:
     name: Changeset creation
