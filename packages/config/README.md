@@ -1,11 +1,14 @@
-## Shared configs between work environments
+# Shared configs between work environments
+
+## Terminal Configs
 
 **List of terminal config files:**
 
 1. bash_profile
 2. bash_prompt
 3. bashrc
-4. zshrc
+4. vimrc
+5. zshrc
 
 ### Useful Links
 
@@ -14,10 +17,6 @@
 ### List of plugins
 
 1. zsh-completions: https://github.com/zsh-users/zsh-completions
-
-### List of cronjobs
-
-1. Wakatime to Toggl: https://github.com/bokub/wakatime-to-toggl
 
 ## VSCode Config
  
