@@ -6,7 +6,7 @@
     "clean": "rimraf export",
     "compress": "node src/compress.js",
     "extract": " node src/extract.js",
-    "export": "pnpm run clean && && node src/export.js && pnpm run compress"
+    "export": "pnpm run clean && node src/export.js && pnpm run compress"
   },
   "author": "",
   "license": "ISC",
