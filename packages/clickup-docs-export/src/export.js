@@ -1,7 +1,7 @@
-const https = require('https');
-const fs = require('fs');
+import https from 'https';
+import fs from 'fs';
 
-const config = require('../config.json');
+import config from '../config.json';
 
 const initialize = () => {
     if (!fs.existsSync('./exports')) {
