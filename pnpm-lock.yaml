@@ -89,7 +89,7 @@ importers:
       typescript: 4.6.4
       vite: 2.9.9
       vite-tsconfig-paths: 3.4.1
-      vitest: 0.12.7
+      vitest: 0.12.8
     dependencies:
       '@changesets/cli': 2.22.0
       '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
@@ -146,7 +146,7 @@ importers:
       typescript: 4.6.4
       vite: 2.9.9
       vite-tsconfig-paths: 3.4.1_vite@2.9.9
-      vitest: 0.12.7_lilqxk2bejfdp36sxp7x5zsanu
+      vitest: 0.12.8_lilqxk2bejfdp36sxp7x5zsanu
 
   packages/clickup-docs-export:
     specifiers:
@@ -9263,8 +9263,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.12.7_lilqxk2bejfdp36sxp7x5zsanu:
-    resolution: {integrity: sha512-rQsb9i/zEw+HtiTNr+5p+tOUMu0Ojp0jtZc/6FfE4T1xL2bhMq74tfUgu7hav3rFF9eGKpJeZBVlEszjdCuYQg==}
+  /vitest/0.12.8_lilqxk2bejfdp36sxp7x5zsanu:
+    resolution: {integrity: sha512-/h0myRYwsUEzNwz6c1GFHVZYMZ0mGYMhkLMEZgsX+lJXFfOVHikUpZl1MRnnCzaZxDVPnRsuUje7OemDeW+h5w==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
