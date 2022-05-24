@@ -19,7 +19,7 @@ importers:
       '@electron-forge/maker-rpm': 6.0.0-beta.63
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
-      electron: 18.2.4
+      electron: 18.3.0
       electron-squirrel-startup: ^1.0.0
       electron-tabs: ^0.17.0
     dependencies:
@@ -31,7 +31,7 @@ importers:
       '@electron-forge/maker-rpm': 6.0.0-beta.63
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
-      electron: 18.2.4
+      electron: 18.3.0
 
   apps/web:
     specifiers:
@@ -3549,8 +3549,8 @@ packages:
     dev: true
     optional: true
 
-  /electron/18.2.4:
-    resolution: {integrity: sha512-wSjU2N6kBGyGKb2GgBhujpfKtnmNr+gDaZZ6fMmlVMoPJ+GvuW0Zr1ImKPdb5zPXopPYmaURDSvHuAfSd4oHFA==}
+  /electron/18.3.0:
+    resolution: {integrity: sha512-2+pAUIViVvFOGE5mJKKi8F6ruyvQrcqdfsm/AUfz+6P05vbvR5ZsR6WBkr90mlyojHW5w/nAVX9ZSOtz3aHs4A==}
     engines: {node: '>= 8.6'}
     hasBin: true
     requiresBuild: true
