@@ -21,10 +21,10 @@ importers:
       '@electron-forge/maker-zip': 6.0.0-beta.63
       electron: 18.3.1
       electron-squirrel-startup: ^1.0.0
-      electron-tabs: ^0.17.0
+      electron-tabs: ^1.0.0
     dependencies:
       electron-squirrel-startup: 1.0.0
-      electron-tabs: 0.17.0
+      electron-tabs: 1.0.1
     devDependencies:
       '@electron-forge/cli': 6.0.0-beta.63
       '@electron-forge/maker-deb': 6.0.0-beta.63
@@ -3527,8 +3527,8 @@ packages:
       - supports-color
     dev: false
 
-  /electron-tabs/0.17.0:
-    resolution: {integrity: sha512-jFv6WOeumSR5q2Cf6WOghE7CTdxPB0mSuPw8dGwz1OAG8MJMQn/kd/ghmvRPwoOYK77v4d9YligqjXIQc2oPcg==}
+  /electron-tabs/1.0.1:
+    resolution: {integrity: sha512-BwSDK0beANmcfedFB/FBZfTewLPniJKiWdK+5Eh0kqTLda2dqKNEoCqVvRqjJ81rHjhUKZANSY29ypMseCp+sA==}
     dev: false
 
   /electron-to-chromium/1.4.137:
