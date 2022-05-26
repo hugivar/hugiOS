@@ -9,19 +9,19 @@ const chalk = require('chalk');
  * @param moduleName - The name of a new module
  */
 
-const format = (m, t) => {
+const format = (m: any, t: any) => {
   const f = new Intl.DateTimeFormat('en', m);
   return f.format(t);
 };
 
-const join = (time, split) => {
+const join = (time: any, split: string) => {
   const arrayOfDates = [
     { day: 'numeric' },
     { month: 'short' },
     { year: 'numeric' },
   ];
 
-  return arrayOfDates.map((item) => format(item, time)).join(split);
+  return arrayOfDates.map((item: any) => format(item, time)).join(split);
 };
 
 const dirPath = './_posts';
@@ -44,7 +44,7 @@ I'm baby enamel pin swag gastropub bitters migas lomo, dreamcatcher chartreuse v
 
 > Street art air plant tbh`;
 
-const createPost = ({ logger }) => {
+const createPost = ({ logger }: any) => {
   const arrayLength = fs.readdirSync(dirPath).length;
 
   const wordNumber = converter.toWordsOrdinal(arrayLength);

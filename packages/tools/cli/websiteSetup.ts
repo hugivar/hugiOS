@@ -7,11 +7,11 @@ import createPost from './commands/createPost';
 import outputArticles from './commands/outputArticles';
 import { getDNSRecords } from './helpers/cloudflare';
 
-export const setupWebisteComannder = (program) => {
+export const setupWebisteComannder = (program: any) => {
   program
     .command('publish <pinataKey> <pinataSecretKey> <cloudflareTokenId> <cloudflareZoneId> <cloudflareDnsId>')
     .description('Publish site to Pinata')
-    .action((pinataKey, pinataSecretKey, cloudflareTokenId, cloudflareZoneId, cloudflareDnsId) => {
+    .action((pinataKey: string, pinataSecretKey: string, cloudflareTokenId: string, cloudflareZoneId: string, cloudflareDnsId: string) => {
       publish({ logger: console, pinataKey, pinataSecretKey, cloudflareTokenId, cloudflareZoneId, cloudflareDnsId })
     })
 

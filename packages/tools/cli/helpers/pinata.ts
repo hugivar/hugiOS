@@ -1,15 +1,15 @@
 /* eslint-disable global-require */
 const chalk = require('chalk');
 
-export const pinFile = ({ pinata, sourcePath, options, logger }) =>
+export const pinFile = ({ pinata, sourcePath, options, logger }: any) =>
   pinata
     .pinFromFS(sourcePath, options)
-    .then((addedResult) => {
+    .then((addedResult: any) => {
       logger.info(chalk.cyan('Successfully pinned to Pinata'));
 
       return addedResult;
     })
-    .catch((err) => {
+    .catch((err: any) => {
       logger.info(
         chalk.red(
           `Error trying to add ${options.pinataMetadata.name
@@ -18,7 +18,7 @@ export const pinFile = ({ pinata, sourcePath, options, logger }) =>
       );
     });
 
-export const pinList = ({ pinata, fileName, logger }) =>
+export const pinList = ({ pinata, fileName, logger }: any) =>
   pinata
     .pinList({
       status: 'pinned',
@@ -28,26 +28,26 @@ export const pinList = ({ pinata, fileName, logger }) =>
         name: fileName,
       },
     })
-    .then((addedResult) => {
+    .then((addedResult: any) => {
       logger.info(chalk.green('Gathered pinned files'));
 
       return addedResult.rows.filter(
-        (item) => item?.metadata?.name === fileName,
+        (item: any) => item?.metadata?.name === fileName,
       );
     })
-    .catch((err) => {
+    .catch((err: any) => {
       logger.info(
         chalk.red(`Error trying to list ${fileName} to Pinata: ${err}`),
       );
     });
 
-export const unpin = ({ pinata, hash, logger }) =>
+export const unpin = ({ pinata, hash, logger }: any) =>
   pinata
     .unpin(hash)
     .then(() => {
       logger.info(chalk.green('Removed pinned file', hash));
     })
-    .catch((err) => {
+    .catch((err: any) => {
       logger.info(chalk.red(`Error trying to unpin ${hash} to Pinata: ${err}`));
     });
 

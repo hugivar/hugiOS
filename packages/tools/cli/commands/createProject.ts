@@ -2,7 +2,7 @@ import inquirer from 'inquirer';
 import { program } from 'commander';
 import { execSync } from 'child_process';
 
-const shellCommand = ({ name, type }) => {
+const shellCommand = ({ name, type }: any) => {
     program
         .action(() => {
             execSync(`
