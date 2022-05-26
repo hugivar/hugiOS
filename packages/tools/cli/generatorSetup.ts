@@ -22,7 +22,8 @@ export const generatorQuestons = [
     },
 ];
 
-export const generatorAnswer = (answers) => {
+export const generatorAnswer = (answers: any) => {
+    //@ts-ignore
     const { action } = choices.find(item => item.value === answers.options);
 
     if (action) {
@@ -30,14 +31,14 @@ export const generatorAnswer = (answers) => {
     }
 };
 
-export const setupGeneratorComannder = (prog) => {
+export const setupGeneratorComannder = (prog: any) => {
     const grouped = groupByChoices(choices);
 
-    Object.keys(grouped).map(program => {
+    Object.keys(grouped).map((program: string) => {
         const item = prog
             .command(program)
 
-        grouped[program].map(programItem => {
+        grouped[program].map((programItem: any) => {
             item
                 .command(programItem.command)
                 .description(programItem.description)
