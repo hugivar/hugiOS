@@ -42,7 +42,7 @@ export const configQuestions = [
         type: 'list',
         name: 'options',
         message: 'What would you like to do',
-        choices: choices.reduce((acc, cur) => {
+        choices: choices.reduce((acc: any, cur: any) => {
             const { name, value } = cur;
 
             return [...acc, { name, value }]
@@ -50,7 +50,8 @@ export const configQuestions = [
     },
 ];
 
-export const configAnswers = (answers) => {
+export const configAnswers = (answers: any) => {
+    //@ts-ignore
     const { action } = choices.find(item => item.value === answers.options);
 
     if (action) {
@@ -58,7 +59,7 @@ export const configAnswers = (answers) => {
     }
 }
 
-export const setupConfigComannder = (prog) => {
+export const setupConfigComannder = (prog: any) => {
     const grouped = groupByChoices(choices);
 
     Object.keys(grouped).map(program => {

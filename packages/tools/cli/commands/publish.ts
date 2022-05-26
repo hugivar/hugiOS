@@ -12,7 +12,7 @@ const { pinFile, pinList, unpin } = require('../helpers/pinata');
  * @param logger - The Logger
  */
 
-const publishWeb = ({ logger, ...args }) => {
+const publishWeb = ({ logger, ...args }: any) => {
   const { pinataKey, pinataSecretKey } = args;
 
   const PINATA_KEY = pinataKey || process.env.PINATA_KEY;

@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 const chalk = require('chalk');
 
-export const getDNSRecords = async (zoneId) => {
+export const getDNSRecords = async (zoneId: string) => {
   console.log('cloudflare line:5', zoneId);
   const { CLOUDFLARE_TOKEN_ID, CLOUDFLARE_ZONE_ID } = process.env;
 
@@ -12,7 +12,7 @@ export const getDNSRecords = async (zoneId) => {
   return cf.dnsRecords.browse(zoneId || CLOUDFLARE_ZONE_ID);
 };
 
-export const getZoneStatus = async (zoneId) => {
+export const getZoneStatus = async (zoneId: string) => {
   const { CLOUDFLARE_TOKEN_ID } = process.env;
 
   const cf = require('cloudflare')({
@@ -22,7 +22,7 @@ export const getZoneStatus = async (zoneId) => {
   return cf.zones.read(zoneId);
 };
 
-export const editDNSRecord = ({ args, content, logger }) => {
+export const editDNSRecord = ({ args, content, logger }: any) => {
   const { cloudflareTokenId, cloudflareZoneId, cloudflareDnsId } = args;
 
   const CLOUDFLARE_TOKEN_ID =
@@ -44,7 +44,7 @@ export const editDNSRecord = ({ args, content, logger }) => {
     .then(() => {
       logger.info(chalk.cyan('Successfully updated the DNS record'));
     })
-    .catch((err) => {
+    .catch((err: any) => {
       logger.info(chalk.red(`Error trying to edit DNS record: ${err}`));
     });
 };

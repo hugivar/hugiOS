@@ -1,12 +1,12 @@
 import lodash from 'lodash';
 const { groupBy } = lodash;
 
-const groupByChoices = (choices) => {
-    const values = choices.map(item => {
+const groupByChoices = (choices: any) => {
+    const values = choices.map((item: any) => {
         const splits = item.value.split('.')
 
         return splits;
-    }).reduce(function (acc, curr, idx) {
+    }).reduce(function (acc: any, curr: any, idx: number) {
         const key = curr[0];
         const value = curr[1];
         const description = choices[idx].name || '';
@@ -23,7 +23,7 @@ const groupByChoices = (choices) => {
         return [...acc, updatedKey];
     }, []);
 
-    return groupBy(values, item => item.program);
+    return groupBy(values, (item: any) => item.program);
 };
 
 export default groupByChoices;
