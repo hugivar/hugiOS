@@ -1,7 +1,7 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { Button } from "@nezhos/ui";
 
-import { Button } from "components/Button";
 import settings from "config/settings";
 import { determineIPFS } from "utils/routing";
 import Tooltip from "./Tooltip";

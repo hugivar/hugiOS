@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { Button } from "@nezhos/ui";
 
 import Tooltip from "./Tooltip";
-import { Button } from "components/Button";
 
 export const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
