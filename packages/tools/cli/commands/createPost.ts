@@ -24,7 +24,7 @@ const join = (time: any, split: string) => {
   return arrayOfDates.map((item: any) => format(item, time)).join(split);
 };
 
-const dirPath = './_posts';
+const dirPath = './data/posts';
 
 const postTemplate = `---
 title: 'New post!'
