@@ -1,12 +1,11 @@
-import React from 'react';
-import { render, screen } from 'utils/test-utils';
+import { render, screen } from '@nezhos/testing';
 
 import { Button } from './Button'
 
 test('Button renders', async () => {
-    render(
+  render(
     <Button>Nezhivar</Button>,
   )
 
-    // expect(screen.getByText('Nezhivar')).toBeTruthy()
+  expect(screen.getByText('Nezhivar')).toBeTruthy()
 })

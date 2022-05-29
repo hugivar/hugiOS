@@ -39,14 +39,11 @@ importers:
       '@next/eslint-plugin-next': 12.1.6
       '@nezhos/config': workspace:*
       '@nezhos/i18n': workspace:*
+      '@nezhos/testing': workspace:*
       '@nezhos/tsconfig': workspace:*
       '@nezhos/ui': workspace:*
       '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
-      '@testing-library/dom': 8.13.0
-      '@testing-library/jest-dom': 5.16.4
-      '@testing-library/react': 13.3.0
-      '@testing-library/user-event': 14.2.0
       '@types/jest': 27.5.1
       '@types/node': 17.0.23
       '@types/react': 18.0.9
@@ -120,12 +117,9 @@ importers:
       '@next/eslint-plugin-next': 12.1.6
       '@nezhos/config': link:../../packages/config
       '@nezhos/i18n': link:../../packages/i18n
+      '@nezhos/testing': link:../../packages/testing
       '@nezhos/tsconfig': link:../../packages/tsconfig
       '@nezhos/ui': link:../../packages/ui
-      '@testing-library/dom': 8.13.0
-      '@testing-library/jest-dom': 5.16.4
-      '@testing-library/react': 13.3.0_ef5jwxihqo6n7gxfmzogljlgcm
-      '@testing-library/user-event': 14.2.0_tlwynutqiyp5mns3woioasuxnq
       '@types/jest': 27.5.1
       '@types/node': 17.0.23
       '@types/react': 18.0.9
@@ -186,6 +180,23 @@ importers:
   packages/i18n:
     specifiers: {}
 
+  packages/testing:
+    specifiers:
+      '@testing-library/dom': 8.13.0
+      '@testing-library/jest-dom': 5.16.4
+      '@testing-library/react': 13.3.0
+      '@testing-library/user-event': 14.2.0
+      react: 18.1.0
+      react-dom: 18.1.0
+    dependencies:
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+    devDependencies:
+      '@testing-library/dom': 8.13.0
+      '@testing-library/jest-dom': 5.16.4
+      '@testing-library/react': 13.3.0_ef5jwxihqo6n7gxfmzogljlgcm
+      '@testing-library/user-event': 14.2.0_tlwynutqiyp5mns3woioasuxnq
+
   packages/tools:
     specifiers:
       '@pinata/sdk': 1.1.25
@@ -229,10 +240,8 @@ importers:
   packages/ui:
     specifiers:
       '@nezhos/config': workspace:*
+      '@nezhos/testing': workspace:*
       '@nezhos/tsconfig': workspace:*
-      '@testing-library/dom': 8.13.0
-      '@testing-library/react': 13.3.0
-      '@testing-library/user-event': 14.2.0
       '@types/react': 18.0.9
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 1.3.2
@@ -247,10 +256,8 @@ importers:
       react-dom: 18.1.0_react@18.1.0
     devDependencies:
       '@nezhos/config': link:../config
+      '@nezhos/testing': link:../testing
       '@nezhos/tsconfig': link:../tsconfig
-      '@testing-library/dom': 8.13.0
-      '@testing-library/react': 13.3.0_ef5jwxihqo6n7gxfmzogljlgcm
-      '@testing-library/user-event': 14.2.0_tlwynutqiyp5mns3woioasuxnq
       '@types/react': 18.0.9
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 1.3.2
@@ -3075,7 +3082,7 @@ packages:
     dev: true
 
   /css.escape/1.5.1:
-    resolution: {integrity: sha1-QuJ9T6BK4y+TGktNQZH6nN3ul8s=}
+    resolution: {integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==}
     dev: true
 
   /css/3.0.0:
@@ -3216,7 +3223,7 @@ packages:
     dev: false
 
   /decode-uri-component/0.2.0:
-    resolution: {integrity: sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=}
+    resolution: {integrity: sha512-hjf+xovcEn31w/EUYdTXQh/8smFL/dzYjohQGEIgjyNavaJfBY2p5F527Bo1VPATxv0VYTUC2bOcXvqFwk78Og==}
     engines: {node: '>=0.10'}
     dev: true
 
