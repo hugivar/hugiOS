@@ -2,8 +2,8 @@ import fs from 'fs';
 const fetch = require('node-fetch');
 const chalk = require('chalk');
 
-const postDirPath = '../../apps/web/_posts';
-const collectionDirPath = '../../apps/web/_collections';
+const postDirPath = '../../apps/web/data/posts';
+const collectionDirPath = '../../apps/web/data/collections';
 
 const formatArticleTemplate = (article: any) => `
 ---

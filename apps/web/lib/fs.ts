@@ -5,8 +5,8 @@ import matter from "gray-matter";
 
 type Type = "journal" | "collection";
 
-const postsDirectory = join(process.cwd(), "_posts");
-const collectionsDirectory = join(process.cwd(), "_collections");
+const postsDirectory = join(process.cwd(), "data/posts");
+const collectionsDirectory = join(process.cwd(), "data/collections");
 
 export function getArticleSlugs(type: Type) {
   const directory = type === "journal" ? postsDirectory : collectionsDirectory;

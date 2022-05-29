@@ -114,7 +114,7 @@ function buildSiteMap(pageFiles) {
 }
 
 // Main
-const collectionsDir = './_collections';
+const collectionsDir = './data/collections';
 const collectionFiles = getPageFiles(collectionsDir);
 buildRss(collectionFiles, collectionsDir);
 buildSiteMap(collectionFiles);
