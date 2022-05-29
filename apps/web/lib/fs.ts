@@ -16,7 +16,7 @@ export function getArticleSlugs(type: Type) {
 }
 
 export const getArticleFromFileBySlug = (slug: string, type: Type) => {
-  const directory = type === "journal" ? "_posts" : "collections";
+  const directory = type === "journal" ? "posts" : "collections";
 
   const file = fs.readFileSync(`src/${directory}/${slug}.md`, "utf8");
 
