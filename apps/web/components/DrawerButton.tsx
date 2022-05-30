@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "components/Icon";
-import { Button } from "@nezhos/ui";
+import { Button } from "@nezhos/react-ui";
 
 export const DrawerButton = () => (
   <Button
