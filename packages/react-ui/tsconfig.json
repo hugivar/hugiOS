@@ -1,11 +1,11 @@
 {
   "extends": "@nezhos/tsconfig/react-library.json",
   "compilerOptions": {
-    "outDir": "../dist"
+    "outDir": "dist"
   },
   "include": [
     "./**/*.tsx",
-    "react/index.tsx"
+    "./index.tsx"
   ],
   "exclude": [
     "**/*.test.tsx",
