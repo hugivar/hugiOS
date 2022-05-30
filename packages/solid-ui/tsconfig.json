@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "lib": [
+      "ES2015"
+    ],
+    "module": "ESNext",
+    "target": "ES6",
+    "moduleResolution": "node"
   },
   "include": [
     "./**/*.tsx",
-    "react/index.tsx"
+    "solid/index.tsx"
   ],
   "exclude": [
     "**/*.test.tsx",

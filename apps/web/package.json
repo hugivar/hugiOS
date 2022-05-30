@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@changesets/cli": "2.22.0",
+    "@nezhos/react-ui": "workspace:*",
     "@tailwindcss/line-clamp": "0.4.0",
     "@tailwindcss/typography": "0.5.2",
     "autoprefixer": "10.4.7",
@@ -46,7 +47,6 @@
     "@nezhos/i18n": "workspace:*",
     "@nezhos/tsconfig": "workspace:*",
     "@nezhos/testing": "workspace:*",
-    "@nezhos/ui": "workspace:*",
     "@types/jest": "27.5.1",
     "@types/node": "17.0.23",
     "@types/react": "18.0.9",

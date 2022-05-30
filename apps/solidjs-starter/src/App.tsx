@@ -3,7 +3,7 @@ import type { Component } from 'solid-js';
 
 import logo from './logo.svg';
 import styles from './App.module.css';
-import { Button } from "@nezhos/ui";
+import { Button } from "@nezhos/solid-ui";
 
 function MyComponent(props: any) {
   return <div>Hello {props.name}</div>
@@ -14,7 +14,6 @@ const App: Component = () => {
   const [last, setLast] = createSignal("Bourne");
 
   createEffect(() => console.log(`${first()} ${last()}`));
-  console.log(Button);
 
   return (
     <div class={styles.App}>
@@ -32,7 +31,6 @@ const App: Component = () => {
           Learn Solid
         </a>
         <Button>Click Me</Button>
-        <button>here</button>
         <MyComponent name="Nezhivar" />
       </header>
     </div>

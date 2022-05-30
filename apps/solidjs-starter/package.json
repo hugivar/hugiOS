@@ -6,16 +6,20 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test": "vitest --run"
   },
   "license": "MIT",
   "devDependencies": {
+    "@nezhos/testing": "workspace:*",
     "typescript": "^4.6.4",
     "vite": "^2.9.9",
-    "vite-plugin-solid": "^2.2.6"
+    "vite-plugin-solid": "^2.2.6",
+    "vite-tsconfig-paths": "3.5.0",
+    "vitest": "0.13.0"
   },
   "dependencies": {
-    "solid-js": "^1.4.2",
-    "@nezhos/ui": "workspace:*"
+    "@nezhos/solid-ui": "workspace:*",
+    "solid-js": "^1.4.2"
   }
 }
