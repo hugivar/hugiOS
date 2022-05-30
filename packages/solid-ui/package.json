@@ -6,9 +6,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "pnpm build:react & pnpm build:solid",
-    "build:react": "tsc --project react",
-    "build:solid": "tsc --project solid",
+    "build": "tsc",
     "clean": "rimraf ./**/dist",
     "test": "vitest --run"
   },
