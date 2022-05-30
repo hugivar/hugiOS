@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "jsx": "preserve"
+  },
+  "include": [
+    "./**/*.tsx",
+    "react/index.tsx"
+  ],
+  "exclude": [
+    "**/*.test.tsx",
+    "dist",
+    "build",
+    "node_modules"
+  ]
+}
