@@ -1,14 +1,21 @@
 import { defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
+import solidPlugin from 'vite-plugin-solid';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
+  plugins: [solidPlugin(), tsconfigPaths()],
   test: {
-    globals: true,
-    environment: 'happy-dom',
-    coverage: {
-      reporter: ['text', 'json', 'html'],
+    environment: 'jsdom',
+    transformMode: {
+      web: [/.[jt]sx?/],
     },
+    deps: {
+      inline: [/solid-js/],
+    },
+    threads: false,
+    isolate: false,
+  },
+  resolve: {
+    conditions: ['development', 'browser'],
   },
 })
