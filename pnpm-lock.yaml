@@ -84,7 +84,7 @@ importers:
       eslint-config-next: 12.1.6
       eslint-config-prettier: 8.5.0
       gray-matter: 4.0.3
-      happy-dom: 4.1.0
+      happy-dom: 5.0.0
       husky: 8.0.1
       i18next: ^21.8.2
       jsdom: 19.0.0
@@ -156,14 +156,14 @@ importers:
       eslint: 8.16.0
       eslint-config-next: 12.1.6_k6khgwrcmlpd2kpaxkviqw2zii
       eslint-config-prettier: 8.5.0_eslint@8.16.0
-      happy-dom: 4.1.0
+      happy-dom: 5.0.0
       jsdom: 19.0.0
       react-test-renderer: 18.1.0_react@18.1.0
       serve: 13.0.2
       typescript: 4.7.2
       vite: 2.9.9
       vite-tsconfig-paths: 3.5.0_vite@2.9.9
-      vitest: 0.13.0_rv2ydzcytrteyg5cpeive5gnte
+      vitest: 0.13.0_np3rlaelt3xfifqyphvqm2casi
 
   packages/clickup-docs-export:
     specifiers:
@@ -5141,8 +5141,8 @@ packages:
       strip-bom-string: 1.0.0
     dev: false
 
-  /happy-dom/4.1.0:
-    resolution: {integrity: sha512-x/W72MnJ3VENTXrIlvdkb5t+f7Tkeze8CEcUEiVAbPovZnsB6vl/szkWCKuuovmdWBxJtqP147qedos9wWxllg==}
+  /happy-dom/5.0.0:
+    resolution: {integrity: sha512-n47uxVRW2prLQ1mYEfwc5JPeMmiQGHpUsM0edtqlKIWJlAvpZJmq0ZAKdeDuZ/f1Gu8kXumy9jyWsJ1zRT7VEw==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
@@ -9652,7 +9652,7 @@ packages:
       - supports-color
     dev: true
 
-  /vitest/0.13.0_rv2ydzcytrteyg5cpeive5gnte:
+  /vitest/0.13.0_np3rlaelt3xfifqyphvqm2casi:
     resolution: {integrity: sha512-vuYt3+G25MMnANgyMHHG3VK86C9K/VFi/8uH5myQ2v660W4WArv99ElakPlVFxxSXXM1jqQPiPj2ht35Bod9LQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -9677,7 +9677,7 @@ packages:
       c8: 7.11.3
       chai: 4.3.6
       debug: 4.3.4
-      happy-dom: 4.1.0
+      happy-dom: 5.0.0
       jsdom: 19.0.0
       local-pkg: 0.4.1
       tinypool: 0.1.3
