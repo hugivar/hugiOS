@@ -1,6 +1,5 @@
-import React from 'react';
-import { expect, test } from 'vitest'
-import { render, screen } from '@nezhos/testing/react';
+import { describe, expect, test } from 'vitest'
+import { render, screen } from '@nezhos/testing/solid';
 
 import { Button } from './Button'
 
