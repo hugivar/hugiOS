@@ -65,7 +65,7 @@ importers:
       '@nezhos/tsconfig': workspace:*
       '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
-      '@types/jest': 27.5.1
+      '@types/jest': 27.5.2
       '@types/node': 17.0.23
       '@types/react': 18.0.10
       '@types/react-dom': 18.0.5
@@ -141,7 +141,7 @@ importers:
       '@nezhos/i18n': link:../../packages/i18n
       '@nezhos/testing': link:../../packages/testing
       '@nezhos/tsconfig': link:../../packages/tsconfig
-      '@types/jest': 27.5.1
+      '@types/jest': 27.5.2
       '@types/node': 17.0.23
       '@types/react': 18.0.10
       '@types/react-dom': 18.0.5
@@ -1874,6 +1874,13 @@ packages:
 
   /@types/jest/27.5.1:
     resolution: {integrity: sha512-fUy7YRpT+rHXto1YlL+J9rs0uLGyiqVt3ZOTQR+4ROc47yNl8WLdVLgUloBRhOxP1PZvguHl44T3H0wAWxahYQ==}
+    dependencies:
+      jest-matcher-utils: 27.5.1
+      pretty-format: 27.5.1
+    dev: true
+
+  /@types/jest/27.5.2:
+    resolution: {integrity: sha512-mpT8LJJ4CMeeahobofYWIjFo0xonRS/HfxnVEPMPFSQdGUt1uHCnoPT7Zhb+sjDU2wz0oKV0OLUR0WzrHNgfeA==}
     dependencies:
       jest-matcher-utils: 27.5.1
       pretty-format: 27.5.1
