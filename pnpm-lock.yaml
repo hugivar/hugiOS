@@ -19,7 +19,7 @@ importers:
       '@electron-forge/maker-rpm': 6.0.0-beta.63
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
-      electron: 19.0.1
+      electron: 19.0.2
       electron-squirrel-startup: ^1.0.0
       electron-tabs: ^1.0.0
     dependencies:
@@ -31,7 +31,7 @@ importers:
       '@electron-forge/maker-rpm': 6.0.0-beta.63
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
-      electron: 19.0.1
+      electron: 19.0.2
 
   apps/solidjs-starter:
     specifiers:
@@ -3873,8 +3873,8 @@ packages:
     dev: true
     optional: true
 
-  /electron/19.0.1:
-    resolution: {integrity: sha512-zuhJVV7nTDFrRZ7uAIylSD0Eoi1xcUV4UzGfpWsREI4W5GsxNGyZQeqQDpg43w8+7oED812oDrGfPh5kb9rcQA==}
+  /electron/19.0.2:
+    resolution: {integrity: sha512-9RzS8wUpxY8dHFJRncro2mEIkCg9Vig1Q0iLu5y3dusEIDKcBRKoW9mVhUeqvZVZgb2SsTEowZBBdBhdL6/+aQ==}
     engines: {node: '>= 8.6'}
     hasBin: true
     requiresBuild: true
@@ -7234,7 +7234,7 @@ packages:
     dev: true
 
   /pend/1.2.0:
-    resolution: {integrity: sha1-elfrVQpng/kRUzH89GY9XI4AelA=}
+    resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
     dev: true
 
   /performance-now/2.1.0:
@@ -8196,7 +8196,7 @@ packages:
       oauth-sign: 0.9.0
       performance-now: 2.1.0
       qs: 6.5.3
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
       tough-cookie: 2.5.0
       tunnel-agent: 0.6.0
       uuid: 3.4.0
