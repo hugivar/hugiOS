@@ -1,4 +1,6 @@
-import { render, screen } from '@nezhos/testing';
+import React from 'react';
+import { expect, test } from 'vitest'
+import { render, screen } from '@nezhos/testing/react';
 
 import { Button } from './Button'
 
