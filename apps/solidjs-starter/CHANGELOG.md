@@ -1,6 +1,6 @@
-# @nezhos/web
+# solidjs-starter
 
-## 1.2.0
+## 0.1.0
 
 ### Minor Changes
 
@@ -9,10 +9,4 @@
 ### Patch Changes
 
 - Updated dependencies [2eb73b3]
-  - @nezhos/react-ui@1.1.0
-
-## 1.1.0
-
-### Minor Changes
-
-- 83381a6: Add initial localization setup
+  - @nezhos/solid-ui@1.1.0
