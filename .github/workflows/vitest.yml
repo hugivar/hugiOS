@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Generate coverage report
         run: cd apps/web && pnpm run test:coverage
       - name: Upload coverage to Codecov
