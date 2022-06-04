@@ -1,12 +1,22 @@
 {
-    "packageRules": [
-      {
-        "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-        "automerge": true,
-        "automergeType": "branch"
-      }
-    ],
-    "extends": [
-        "config:base"
-    ]
+  "packageRules": [
+    {
+      "description": "Automatically merge minor and patch-level updates",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ],
+  "ignoreDeps": [
+    "eslint",
+    "eslint-config-base"
+  ],
+  "extends": [
+    "config:base"
+  ]
 }
