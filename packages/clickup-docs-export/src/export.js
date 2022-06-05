@@ -1,7 +1,7 @@
 import https from 'https';
 import fs from 'fs';
 
-import config from '../config.json';
+import config from "../config.json" assert {type: "json"};
 
 const initialize = () => {
     if (!fs.existsSync('./exports')) {
