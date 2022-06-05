@@ -9,7 +9,7 @@
     "nezhos": "./bin/cli.js"
   },
   "scripts": {
-    "cli": "ts-node -r tsconfig-paths/register ./cli",
+    "cli": "ts-node -r tsconfig-paths/register ./cli/main",
     "buildSiteMap": "node ./buildSiteMap"
   },
   "dependencies": {

@@ -1,7 +1,16 @@
 /* eslint-disable global-require */
 import chalk from 'chalk';
 
-export const getDNSRecords = async ({ zoneId }: any) => {
+interface IZone {
+  zoneId: string;
+};
+
+interface IRecord {
+  content: string;
+  logger: any;
+};
+
+export const getDNSRecords = async ({ zoneId }: IZone) => {
   const { CLOUDFLARE_TOKEN_ID, CLOUDFLARE_ZONE_ID } = process.env;
 
   const cf = require('cloudflare')({
@@ -21,7 +30,7 @@ export const getZoneStatus = async (zoneId: string) => {
   return cf.zones.read(zoneId);
 };
 
-export const editDNSRecord = ({ content, logger }: any) => {
+export const editDNSRecord = ({ content, logger }: IRecord) => {
   const CLOUDFLARE_TOKEN_ID = process.env.CLOUDFLARE_TOKEN_ID;
   const CLOUDFLARE_ZONE_ID = process.env.CLOUDFLARE_ZONE_ID;
   const CLOUDFLARE_DNS_ID = process.env.CLOUDFLARE_DNS_ID;

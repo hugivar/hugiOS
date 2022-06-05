@@ -2,6 +2,7 @@
 
 import 'dotenv/config';
 import inquirer from 'inquirer';
+import path from 'path';
 
 import publish from 'cli/commands/publish';
 import createPost from 'cli/commands/createPost';
@@ -10,7 +11,7 @@ import { getDNSRecords } from 'cli/helpers/cloudflare';
 
 export const setup = {
     name: 'Website setup',
-    value: 'website'
+    value: path.parse(__filename).name,
 };
 
 export const choices = [
