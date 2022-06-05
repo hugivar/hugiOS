@@ -1,46 +1,89 @@
 import inquirer from 'inquirer';
 import { Command } from "commander";
 
-import { generatorQuestons, generatorAnswer, setupGeneratorComannder } from './cli/generatorSetup';
-import { configQuestions, configAnswers, setupConfigComannder } from './cli/configSetup';
-import { setupWebisteComannder } from './cli/websiteSetup';
+import { groupByChoices, generateTypes } from './cli/helpers';
 
-const setupCommander = () => {
+const commanderSetup = async (prog: any, type: string) => {
+    try {
+        const { choices } = await import(`./cli/config/${type}`);
+
+        const grouped = groupByChoices(choices);
+
+        Object.keys(grouped).map(program => {
+            const item = prog
+                .command(program)
+
+            grouped[program].map(programItem => {
+                item
+                    .command(programItem.command)
+                    .description(programItem.description)
+                    .action(() => {
+                        programItem.action();
+                    });
+            });
+        });
+
+        return prog;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+const setupCommander = async () => {
     const program = new Command();
+    const types = await generateTypes();
 
-    setupWebisteComannder(program);
-    setupConfigComannder(program);
-    setupGeneratorComannder(program);
+    const commands = types.map(async item => {
+        await commanderSetup(program, item.value);
+    });
 
-    program.parse(process.argv);
+    Promise.all(commands).then(() => {
+        program.parse(process.argv);
+    });
 };
 
+const questionSetup = async (type) => {
+    const { choices } = await import(`./cli/config/${type}`);
+
+    return [
+        {
+            type: 'list',
+            name: 'options',
+            message: 'What would you like to do',
+            choices: choices.reduce((acc: any, cur: any) => {
+                const { name, value } = cur;
+
+                return [...acc, { name, value }]
+            }, [])
+        },
+    ];
+};
+
+const questionAction = (answers: any) => {
+    //@ts-ignore
+    const { action } = choices.find(item => item.value === answers.options);
+
+    if (!action) {
+        console.error('No action defined');
+    }
+
+    action();
+}
+
 const inquirerRun = async () => {
-    console.log('Hi! 👋  Welcome to the NezhOS cli!');
+    console.log('Hi! 👋  Welcome to the NezhOS CLI!');
+
+    const types = await generateTypes();
 
     const { type } = await inquirer.prompt({
         type: 'list',
         name: 'type',
         message: 'What would you like to do',
-        choices: [
-            {
-                name: 'Monorepo generators',
-                value: 'generator',
-            },
-            {
-                name: 'Config setup',
-                value: 'config',
-            },
-        ]
+        choices: types
     });
 
-    if (type === 'generator') {
-        inquirer.prompt(generatorQuestons).then(generatorAnswer);
-    }
-
-    if (type === 'config') {
-        inquirer.prompt(configQuestions).then(configAnswers);
-    }
+    const questions = await questionSetup(type);
+    inquirer.prompt(questions).then(questionAction);
 }
 
 const run = () => {

@@ -2,7 +2,16 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "moduleResolution": "Node",
-    "module": "esnext"
+    "module": "esnext",
+    "baseUrl": "./",
+    "paths": {
+      "cli/commands/*": [
+        "./cli/commands/*"
+      ],
+      "cli/helpers/*": [
+        "./cli/helpers/*"
+      ],
+    },
   },
   "include": [
     "**/*.ts",
