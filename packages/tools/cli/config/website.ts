@@ -7,6 +7,11 @@ import createPost from '../commands/createPost';
 import outputArticles from '../commands/outputArticles';
 import { getDNSRecords } from '../helpers/cloudflare';
 
+export const setup = {
+    name: 'Website setup',
+    value: 'website'
+};
+
 export const choices = [
     {
         name: 'Publish site to Pinata',
