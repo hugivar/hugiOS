@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // Commands
-import createProject from '../commands/createProject';
+import createProject from 'cli/commands/createProject';
 
 export const setup = {
     name: 'Monorepo generators',

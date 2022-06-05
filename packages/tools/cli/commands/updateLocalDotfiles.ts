@@ -1,4 +1,3 @@
-import inquirer from 'inquirer';
 import { program } from 'commander';
 import { execSync } from 'child_process';
 

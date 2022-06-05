@@ -9,7 +9,7 @@
     "nezhos": "./bin/cli.js"
   },
   "scripts": {
-    "cli": "ts-node ./cli",
+    "cli": "ts-node -r tsconfig-paths/register ./cli",
     "buildSiteMap": "node ./buildSiteMap"
   },
   "dependencies": {
@@ -30,7 +30,8 @@
     "dotenv": "16.0.1",
     "inquirer": "8.2.4",
     "lodash": "4.17.21",
-    "number-to-words": "1.2.4"
+    "number-to-words": "1.2.4",
+    "tsconfig-paths": "^4.0.0"
   },
   "volta": {
     "node": "16.15.1"

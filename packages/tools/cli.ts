@@ -1,9 +1,7 @@
 import inquirer from 'inquirer';
 import { Command } from "commander";
-import fs from "fs";
-import path from "path";
 
-import groupByChoices from './cli/helpers/groupByChoices';
+import { groupByChoices, generateTypes } from './cli/helpers';
 
 const commanderSetup = async (prog: any, type: string) => {
     try {
@@ -58,20 +56,6 @@ const questionAction = (answers: any) => {
 
     action();
 }
-
-const generateTypes = () => {
-    const configPath = path.join(__dirname, './cli/config');
-
-    const files = fs.readdirSync(configPath);
-    const setups = files.map(async file => {
-        const { setup } = await import(`./cli/config/${file}`);
-        return setup
-    });
-
-    return Promise.all(setups).then(value => {
-        return value
-    });
-};
 
 const setupCommander = async () => {
     const program = new Command();
