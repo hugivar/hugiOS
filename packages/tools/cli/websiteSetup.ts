@@ -1,49 +1,82 @@
 #!/usr/bin/env node
 
 import 'dotenv/config';
-import { Command } from 'commander';
+import inquirer from 'inquirer';
 import publish from './commands/publish';
 import createPost from './commands/createPost';
 import outputArticles from './commands/outputArticles';
 import { getDNSRecords } from './helpers/cloudflare';
 
-export const setupWebisteComannder = (program: any) => {
-  program
-    .command('publish <pinataKey> <pinataSecretKey> <cloudflareTokenId> <cloudflareZoneId> <cloudflareDnsId>')
-    .description('Publish site to Pinata')
-    .action((pinataKey: string, pinataSecretKey: string, cloudflareTokenId: string, cloudflareZoneId: string, cloudflareDnsId: string) => {
-      publish({ logger: console, pinataKey, pinataSecretKey, cloudflareTokenId, cloudflareZoneId, cloudflareDnsId })
-    })
+import groupByChoices from './helpers/groupByChoices';
 
-  function makePostCommand() {
-    const post = new Command('post').description('create a markdown post from template').action(() => {
-      createPost({ logger: console })
-    });
-
-    return post;
+const choices = [
+  {
+    name: 'Publish site to Pinata',
+    value: 'setup.Repo',
+    action: publish
+  },
+  {
+    name: 'Create a markdown post from template',
+    value: 'post.Create',
+    action: createPost
+  },
+  {
+    name: 'Get cloudflare dns records',
+    value: 'dns.GetRecord',
+    action: () => {
+      inquirer
+        .prompt({
+          name: 'zoneId',
+          message: 'What is the zoneId'
+        })
+        .then(getDNSRecords);
+    }
+  },
+  {
+    name: 'Output all dev.to articles to markdown files',
+    value: 'output.Articles',
+    action: outputArticles
   }
+];
 
-  // Get cloudflare dns records
-  function makeDNSCommand() {
-    const dns = new Command('dns <zoneId>').description('get cloudflare dns records').action((zoneId: string) => {
-      getDNSRecords(zoneId);
-    });
+export const websiteQuestions = [
+  {
+    type: 'list',
+    name: 'options',
+    message: 'What would you like to do',
+    choices: choices.reduce((acc: any, cur: any) => {
+      const { name, value } = cur;
 
-    return dns;
+      return [...acc, { name, value }]
+    }, [])
+  },
+];
+
+export const websiteAnswers = (answers: any) => {
+  //@ts-ignore
+  const { action } = choices.find(item => item.value === answers.options);
+
+  if (action) {
+    action();
   }
+}
 
-  // Get cloudflare dns records
-  function makeOutputCommand() {
-    const dns = new Command('output').description('output all dev.to articles to markdown files').action(() => {
-      outputArticles({ logger: console })
+export const setupWebsiteComannder = (prog: any) => {
+  const grouped = groupByChoices(choices);
+
+  Object.keys(grouped).map(program => {
+    const item = prog
+      .command(program)
+
+    grouped[program].map(programItem => {
+      item
+        .command(programItem.command)
+        .description(programItem.description)
+        .action(() => {
+          programItem.action();
+        });
     });
+  });
 
-    return dns;
-  }
-
-  program.addCommand(makePostCommand());
-  program.addCommand(makeDNSCommand());
-  program.addCommand(makeOutputCommand());
-
-  return program
+  return prog;
 }

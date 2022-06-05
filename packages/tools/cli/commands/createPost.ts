@@ -1,10 +1,10 @@
 import fs from 'fs';
 import converter from 'number-to-words';
-const chalk = require('chalk');
+import chalk from 'chalk';
 /**
  * Adds application module to client or server code and adds it to the module list.
  *
- * @param logger - The Logger
+ * @param console - The Logger
  * @param templatesPath - The path to the templates for a new module
  * @param moduleName - The name of a new module
  */
@@ -24,7 +24,7 @@ const join = (time: any, split: string) => {
   return arrayOfDates.map((item: any) => format(item, time)).join(split);
 };
 
-const dirPath = './data/posts';
+const dirPath = '../../apps/web/data/posts';
 
 const postTemplate = `---
 title: 'New post!'
@@ -44,7 +44,7 @@ I'm baby enamel pin swag gastropub bitters migas lomo, dreamcatcher chartreuse v
 
 > Street art air plant tbh`;
 
-const createPost = ({ logger }: any) => {
+const createPost = () => {
   const arrayLength = fs.readdirSync(dirPath).length;
 
   const wordNumber = converter.toWordsOrdinal(arrayLength);
@@ -56,7 +56,7 @@ const createPost = ({ logger }: any) => {
     (err) => {
       if (err) throw err;
 
-      logger.info(chalk.green('Post successfully created'));
+      console.info(chalk.green('Post successfully created'));
     },
   );
 };
