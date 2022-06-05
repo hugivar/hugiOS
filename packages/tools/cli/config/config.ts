@@ -7,6 +7,11 @@ import setupWakaTime from '../commands/setupWakaTime';
 import updateFromLocalDotfiles from '../commands/updateFromLocalDotfiles';
 import updateLocalDotfiles from '../commands/updateLocalDotfiles';
 
+export const setup = {
+    name: 'Config setup',
+    value: 'config',
+}
+
 export const choices = [
     {
         name: 'Create a repo',

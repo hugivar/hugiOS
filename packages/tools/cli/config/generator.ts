@@ -3,6 +3,11 @@
 // Commands
 import createProject from '../commands/createProject';
 
+export const setup = {
+    name: 'Monorepo generators',
+    value: 'generator',
+}
+
 export const choices = [
     {
         name: 'Create monorepo project',
