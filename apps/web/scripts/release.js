@@ -5,5 +5,5 @@ const changes = require('../../../output.json');
 const hasChanges = changes.changesets.find(item => item.releases.find(releaseItem => releaseItem.name === "@nezhos/web"));
 
 if (hasChanges) {
-    execSync("cd ../../packages/tools && pnpm cli publish");
+    execSync("cd ../../packages/tools && pnpm cli publish site");
 }
