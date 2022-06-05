@@ -3,12 +3,12 @@ import { Command } from "commander";
 
 import { generatorQuestons, generatorAnswer, setupGeneratorComannder } from './cli/generatorSetup';
 import { configQuestions, configAnswers, setupConfigComannder } from './cli/configSetup';
-import { setupWebisteComannder } from './cli/websiteSetup';
+import { websiteQuestions, websiteAnswers, setupWebsiteComannder } from './cli/websiteSetup';
 
 const setupCommander = () => {
     const program = new Command();
 
-    setupWebisteComannder(program);
+    setupWebsiteComannder(program);
     setupConfigComannder(program);
     setupGeneratorComannder(program);
 
@@ -18,6 +18,7 @@ const setupCommander = () => {
 const inquirerRun = async () => {
     console.log('Hi! 👋  Welcome to the NezhOS cli!');
 
+    // Add this logic be made dynamic?
     const { type } = await inquirer.prompt({
         type: 'list',
         name: 'type',
@@ -31,6 +32,10 @@ const inquirerRun = async () => {
                 name: 'Config setup',
                 value: 'config',
             },
+            {
+                name: 'Website setup',
+                value: 'website',
+            },
         ]
     });
 
@@ -40,6 +45,10 @@ const inquirerRun = async () => {
 
     if (type === 'config') {
         inquirer.prompt(configQuestions).then(configAnswers);
+    }
+
+    if (type === 'website') {
+        inquirer.prompt(websiteQuestions).then(websiteAnswers);
     }
 }
 
