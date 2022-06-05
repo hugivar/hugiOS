@@ -39,8 +39,8 @@ const choices = [
 ### Value Prop Explained
 Set of commands for commander. Usually follows the pattern of parent.Child
 
-1.This function would be called in the non-interactive environment as: pnpm cli parent child
-2. This enables grouping to occur so you can have parent.Another, which is called as pnpm cli parent another
+1. This function would be called in the non-interactive environment as: pnpm cli parent child
+2. Next, the value prop enables grouping to occur so you can have parent.Another, which is called as pnpm cli parent another
 
 ## Inquirer Setup
 
