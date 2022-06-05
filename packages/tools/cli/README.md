@@ -1,1 +1,63 @@
-# cli
+# NezhOS CLI
+
+## Basis
+
+This CLI provides two separate experiences baked into a single app. It can be used as either an interactive app build through `Inquirer` or through a non-interactive app built through `Commander`.
+
+## Configuration
+
+All of the logic of the CLI is dynamic and driven by the files under the config folder.
+Each of these files contain two configuration objects, `setup` and `choices`
+
+### Setup
+```js
+const setup = {
+    name: 'Website setup', // Title shown in initial inquirer prompt
+    value: 'config' // Leverage to determine which Inquirer prompt was selected. Must be unique
+}
+```
+
+### Choices
+```js
+import someFunction from 'cli/commands/someFunction';
+import anotherFunction from 'cli/commands/anotherFunction';
+
+const choices = [
+    {
+        name: 'Example title to show in the inquirer prompt',
+        value: 'setup.Repo',
+        action: someFunction
+    },
+    {
+        name: 'Another title to show in the inquirer prompt',
+        value: 'setup.Zsh',
+        action: anotherFunction
+    }
+];
+```
+#### Elements Explained
+1. Name: Title shown in the inquirer prompt
+2. Value: Set of commands for commander. Usually follows the pattern of parent.Child
+    a. This function would be called in the non-interactive environment as: pnpm cli parent child
+    b. This enables grouping to occur so you can have parent.Another, which is called as pnpm cli parent another
+3. Action: Function that is invoked when the value prop is called in either the interactive or non-interactive environment
+
+## Inquirer Setup
+
+The Inqirer setup contains two key pieces, `questionSetup` and `questionAction` as defined by cli.ts
+
+### Question Setup
+Dynamically read the config file based on the select type in the initial Inquirier question prompt. Lastly. Present those dynamics choices as Inquirer options
+
+### Question Action
+It interepts the answer provide through the Inquirer prompt and calls the appropriate function listed under the `action` key of your supplied `choices` array.
+
+## Commander Setup
+
+**Steps:**
+1. Generate all the commands available to the commander program based on the `key` provied in the `choices` array of the each file available in the config folder. 
+2. Intake those `choices` into the `groupByChoices` function, which will group like parent keys under the same command, but separate out their child into separate, distint Commander commands
+3. Lastly, iterate through the available commands and inject them into the Commander program with the appropriate tile, description, and action driven dynamically by the config properities.
+
+## Open Questions
+[] Is the prop `value` in `choices` to vague and thus unclear?

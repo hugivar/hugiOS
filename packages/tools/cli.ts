@@ -29,6 +29,19 @@ const commanderSetup = async (prog: any, type: string) => {
     }
 }
 
+const setupCommander = async () => {
+    const program = new Command();
+    const types = await generateTypes();
+
+    const commands = types.map(async item => {
+        await commanderSetup(program, item.value);
+    });
+
+    Promise.all(commands).then(() => {
+        program.parse(process.argv);
+    });
+};
+
 const questionSetup = async (type) => {
     const { choices } = await import(`./cli/config/${type}`);
 
@@ -57,21 +70,8 @@ const questionAction = (answers: any) => {
     action();
 }
 
-const setupCommander = async () => {
-    const program = new Command();
-    const types = await generateTypes();
-
-    const commands = types.map(async item => {
-        await commanderSetup(program, item.value);
-    });
-
-    Promise.all(commands).then(() => {
-        program.parse(process.argv);
-    });
-};
-
 const inquirerRun = async () => {
-    console.log('Hi! 👋  Welcome to the NezhOS cli!');
+    console.log('Hi! 👋  Welcome to the NezhOS CLI!');
 
     const types = await generateTypes();
 
