@@ -60,4 +60,4 @@ It interepts the answer provide through the Inquirer prompt and calls the approp
 3. Lastly, iterate through the available commands and inject them into the Commander program with the appropriate tile, description, and action driven dynamically by the config properities.
 
 ## Open Questions
-[] Is the prop `value` in `choices` to vague and thus unclear?
+1. Is the prop `value` in `choices` to vague and thus unclear?
