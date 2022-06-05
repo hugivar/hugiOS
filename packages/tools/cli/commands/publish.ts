@@ -1,30 +1,27 @@
 /* eslint-disable global-require */
 import path from 'path';
 import pinataSDK from '@pinata/sdk';
-const chalk = require('chalk');
+import chalk from 'chalk';
 
-const { editDNSRecord } = require('../helpers/cloudflare');
-const { pinFile, pinList, unpin } = require('../helpers/pinata');
+import { editDNSRecord } from '../helpers/cloudflare';
+import { pinFile, pinList, unpin } from '../helpers/pinata';
+
 /**
  * Publish the output NextJS static files to pinata.
  * Configuring a DNS link on Clouldflare pointing the new ipfs location
- *
- * @param logger - The Logger
  */
 
-const publishWeb = ({ logger, ...args }: any) => {
-  const { pinataKey, pinataSecretKey } = args;
-
-  const PINATA_KEY = pinataKey || process.env.PINATA_KEY;
-  const PINATA_SECRET_KEY = pinataSecretKey || process.env.PINATA_SECRET_KEY;
+const publishWeb = () => {
+  const PINATA_KEY = process.env.PINATA_KEY;
+  const PINATA_SECRET_KEY = process.env.PINATA_SECRET_KEY;
 
   const pinata = pinataSDK(PINATA_KEY, PINATA_SECRET_KEY);
 
   const __dirname = path.resolve(path.dirname(''));
-  logger.info(chalk.green(__dirname));
+  console.info(chalk.green(__dirname));
   const sourcePath = path.join(__dirname, '../../apps/web/out');
 
-  logger.info(chalk.green(sourcePath));
+  console.info(chalk.green(sourcePath));
   const options = {
     pinataMetadata: {
       name: 'out',
@@ -42,41 +39,40 @@ const publishWeb = ({ logger, ...args }: any) => {
   pinata
     .testAuthentication()
     .then(async (result) => {
-      logger.info(chalk.green(JSON.stringify(result)));
-      logger.info(chalk.cyan('Uploading static folder to Pinata'));
+      console.info(chalk.green(JSON.stringify(result)));
+      console.info(chalk.cyan('Uploading static folder to Pinata'));
 
       const addedResult = await pinFile({
         pinata,
         sourcePath,
         options,
-        logger,
+        console,
       });
 
       // To find your CLOUDFLARE_DNS_ID, uncomment this line
       // console.log(await getDNSRecords(process.env.CLOUDFLARE_ZONE_ID));
 
       await editDNSRecord({
-        args,
         content: addedResult.IpfsHash,
-        logger,
+        console,
       });
 
       // Check if more than 3 entries exist for the same file name, delete the LRU
       const pinnedFiles = await pinList({
         pinata,
         fileName: options?.pinataMetadata?.name,
-        logger,
+        console,
       });
 
       if (pinnedFiles.length > 3) {
         const oldestPinnedFile = pinnedFiles[pinnedFiles.length - 1];
         const oldestHash = oldestPinnedFile?.ipfs_pin_hash;
 
-        unpin({ pinata, hash: oldestHash, logger });
+        unpin({ pinata, hash: oldestHash, console });
       }
     })
     .catch((err) => {
-      logger.info(
+      console.info(
         chalk.red(
           `Error trying to authenticate with Pinata: ${JSON.stringify(err)}`,
         ),

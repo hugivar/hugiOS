@@ -37,6 +37,7 @@ const choices = [
     }
 ];
 
+// Can this questions and answers logic be standardized? 
 export const configQuestions = [
     {
         type: 'list',
@@ -71,7 +72,7 @@ export const setupConfigComannder = (prog: any) => {
                 .command(programItem.command)
                 .description(programItem.description)
                 .action(() => {
-                    setupZsh();
+                    programItem.action()
                 });
         });
     });
