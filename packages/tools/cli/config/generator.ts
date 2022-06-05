@@ -1,11 +1,12 @@
 #!/usr/bin/env node
+import path from 'path';
 
 // Commands
 import createProject from 'cli/commands/createProject';
 
 export const setup = {
     name: 'Monorepo generators',
-    value: 'generator',
+    value: path.parse(__filename).name,
 }
 
 export const choices = [

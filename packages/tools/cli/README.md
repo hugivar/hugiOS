@@ -61,3 +61,4 @@ Interepts the answer provide through the Inquirer prompt and calls the appropria
 
 ## Open Questions
 1. Is the prop `value` in `choices` to vague and thus unclear?
+2. Are the `choices` or `types` or `options`?

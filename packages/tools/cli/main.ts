@@ -1,11 +1,16 @@
 import inquirer from 'inquirer';
 import { Command } from "commander";
+import flatten from "lodash/flatten";
 
-import { groupByChoices, generateTypes } from './cli/helpers';
+import { groupByChoices, gatherConfig } from './helpers';
 
-const commanderSetup = async (prog: any, type: string) => {
+interface IAction {
+    options: string;
+}
+
+const commanderSetup = async (prog: Command, type: string) => {
     try {
-        const { choices } = await import(`./cli/config/${type}`);
+        const { choices } = await import(`./config/${type}`);
 
         const grouped = groupByChoices(choices);
 
@@ -31,7 +36,7 @@ const commanderSetup = async (prog: any, type: string) => {
 
 const setupCommander = async () => {
     const program = new Command();
-    const types = await generateTypes();
+    const types = await gatherConfig('setup');
 
     const commands = types.map(async item => {
         await commanderSetup(program, item.value);
@@ -42,8 +47,8 @@ const setupCommander = async () => {
     });
 };
 
-const questionSetup = async (type) => {
-    const { choices } = await import(`./cli/config/${type}`);
+const questionSetup = async (type: string) => {
+    const { choices } = await import(`./config/${type}`);
 
     return [
         {
@@ -59,21 +64,25 @@ const questionSetup = async (type) => {
     ];
 };
 
-const questionAction = (answers: any) => {
+const questionAction = async (answers: IAction) => {
     //@ts-ignore
-    const { action } = choices.find(item => item.value === answers.options);
+    const choices = await gatherConfig('choices');
+    const flatChoices = flatten(choices);
 
-    if (!action) {
+    const option = flatChoices.find(item => item.value === answers.options);
+
+    if (!option?.action) {
         console.error('No action defined');
+        return;
     }
 
-    action();
+    option.action();
 }
 
 const inquirerRun = async () => {
     console.log('Hi! 👋  Welcome to the NezhOS CLI!');
 
-    const types = await generateTypes();
+    const types = await gatherConfig('setup');
 
     const { type } = await inquirer.prompt({
         type: 'list',

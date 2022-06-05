@@ -1,8 +1,8 @@
 import lodash from 'lodash';
 const { groupBy } = lodash;
 
-const groupByChoices = (choices: any) => {
-    const values = choices.map((item: any) => {
+const groupByChoices = (choices: IChoices) => {
+    const values = choices.map((item: IChoice) => {
         const splits = item.value.split('.')
 
         return splits;

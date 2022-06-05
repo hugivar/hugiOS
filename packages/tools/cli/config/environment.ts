@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import path from 'path';
 
 // Commands
 import createRepo from 'cli/commands/createRepo';
@@ -8,8 +9,8 @@ import updateFromLocalDotfiles from 'cli/commands/updateFromLocalDotfiles';
 import updateLocalDotfiles from 'cli/commands/updateLocalDotfiles';
 
 export const setup = {
-    name: 'Config setup',
-    value: 'config',
+    name: 'Environment setup',
+    value: path.parse(__filename).name,
 }
 
 export const choices = [

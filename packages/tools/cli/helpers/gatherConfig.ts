@@ -1,13 +1,16 @@
 import fs from "fs";
 import path from "path";
 
-const generateTypes = () => {
+type IType = "setup" | "choices";
+
+const gatherConfig = (type: IType) => {
     const configPath = path.join(__dirname, '../config');
 
     const files = fs.readdirSync(configPath);
     const setups = files.map(async file => {
-        const { setup } = await import(`../config/${file}`);
-        return setup
+        const { setup, choices } = await import(`../config/${file}`);
+
+        return type === "setup" ? setup : choices;
     });
 
     return Promise.all(setups).then(value => {
@@ -15,4 +18,4 @@ const generateTypes = () => {
     });
 };
 
-export default generateTypes;
+export default gatherConfig;

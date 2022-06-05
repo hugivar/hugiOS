@@ -1,7 +1,22 @@
 /* eslint-disable global-require */
-const chalk = require('chalk');
+import chalk from "chalk";
 
-export const pinFile = ({ pinata, sourcePath, options, logger }: any) =>
+interface IPin {
+  pinata: any;
+  sourcePath?: string;
+  hash?: string;
+  options?: any;
+  logger: any;
+};
+
+interface IPinList {
+  pinata: any;
+  fileName: string;
+  logger: any;
+};
+
+
+export const pinFile = ({ pinata, sourcePath, options, logger }: IPin) =>
   pinata
     .pinFromFS(sourcePath, options)
     .then((addedResult: any) => {
@@ -18,7 +33,7 @@ export const pinFile = ({ pinata, sourcePath, options, logger }: any) =>
       );
     });
 
-export const pinList = ({ pinata, fileName, logger }: any) =>
+export const pinList = ({ pinata, fileName, logger }: IPinList) =>
   pinata
     .pinList({
       status: 'pinned',
@@ -41,7 +56,7 @@ export const pinList = ({ pinata, fileName, logger }: any) =>
       );
     });
 
-export const unpin = ({ pinata, hash, logger }: any) =>
+export const unpin = ({ pinata, hash, logger }: IPin) =>
   pinata
     .unpin(hash)
     .then(() => {
