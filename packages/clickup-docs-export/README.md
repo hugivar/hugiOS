@@ -9,6 +9,10 @@
 
 <!-- GETTING STARTED -->
 
+## Problem
+
+ClickUp provides an amazing solution to create a knowledge base from tasks and docs in a singular location, but it fails to expose the export functionality through the API. This tool seeks to make exporting and storing documents easier
+
 ## Getting Started
 
 This is an instruction set on setting up your project locally.
@@ -59,3 +63,7 @@ To get a local copy up and running follow these simple example steps.
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+## TODO
+ 
+- [ ] Convert this networking tool to be an autoclicker of the ClickUp app UI
