@@ -1,18 +1,87 @@
 import inquirer from 'inquirer';
 import { Command } from "commander";
 
-import { generatorQuestons, generatorAnswer, setupGeneratorComannder } from './cli/generatorSetup';
-import { configQuestions, configAnswers, setupConfigComannder } from './cli/configSetup';
-import { websiteQuestions, websiteAnswers, setupWebsiteComannder } from './cli/websiteSetup';
+import groupByChoices from './cli/helpers/groupByChoices';
 
-const setupCommander = () => {
+const types = [
+    {
+        name: 'Monorepo generators',
+        value: 'generator',
+    },
+    {
+        name: 'Config setup',
+        value: 'config',
+    },
+    {
+        name: 'Website setup',
+        value: 'website',
+    },
+];
+
+const commanderSetup = async (prog: any, type: string) => {
+    try {
+        const { choices } = await import(`./cli/config/${type}`);
+
+        const grouped = groupByChoices(choices);
+
+        Object.keys(grouped).map(program => {
+            const item = prog
+                .command(program)
+
+            grouped[program].map(programItem => {
+                item
+                    .command(programItem.command)
+                    .description(programItem.description)
+                    .action(() => {
+                        programItem.action();
+                    });
+            });
+        });
+
+        return prog;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+const questionSetup = async (type) => {
+    const { choices } = await import(`./cli/config/${type}`);
+
+    return [
+        {
+            type: 'list',
+            name: 'options',
+            message: 'What would you like to do',
+            choices: choices.reduce((acc: any, cur: any) => {
+                const { name, value } = cur;
+
+                return [...acc, { name, value }]
+            }, [])
+        },
+    ];
+};
+
+const questionAction = (answers: any) => {
+    //@ts-ignore
+    const { action } = choices.find(item => item.value === answers.options);
+
+    if (!action) {
+        console.error('No action defined');
+    }
+
+    action();
+}
+
+const setupCommander = async () => {
     const program = new Command();
 
-    setupWebsiteComannder(program);
-    setupConfigComannder(program);
-    setupGeneratorComannder(program);
+    const commands = types.map(async item => {
+        await commanderSetup(program, item.value);
+    });
 
-    program.parse(process.argv);
+    Promise.all(commands).then(() => {
+        program.parse(process.argv);
+    });
 };
 
 const inquirerRun = async () => {
@@ -23,33 +92,11 @@ const inquirerRun = async () => {
         type: 'list',
         name: 'type',
         message: 'What would you like to do',
-        choices: [
-            {
-                name: 'Monorepo generators',
-                value: 'generator',
-            },
-            {
-                name: 'Config setup',
-                value: 'config',
-            },
-            {
-                name: 'Website setup',
-                value: 'website',
-            },
-        ]
+        choices: types
     });
 
-    if (type === 'generator') {
-        inquirer.prompt(generatorQuestons).then(generatorAnswer);
-    }
-
-    if (type === 'config') {
-        inquirer.prompt(configQuestions).then(configAnswers);
-    }
-
-    if (type === 'website') {
-        inquirer.prompt(websiteQuestions).then(websiteAnswers);
-    }
+    const questions = await questionSetup(type);
+    inquirer.prompt(questions).then(questionAction);
 }
 
 const run = () => {
