@@ -1,6 +1,8 @@
 import lodash from 'lodash';
 const { groupBy } = lodash;
 
+// Can this be leverage in the Inquirer logic instead of using "lodash/flatten"
+// Can we add an additional key to the config to enable descriptions
 const groupByChoices = (choices: IChoices) => {
     const values = choices.map((item: IChoice) => {
         const splits = item.value.split('.')
