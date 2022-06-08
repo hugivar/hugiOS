@@ -31,7 +31,7 @@ jobs:
         with:
           env_vars: OS,PYTHON
           fail_ci_if_error: true
-          files: ./coverage.json,
+          files: ./apps/web/coverage.json,
           flags: unittests
           name: codecov-umbrella
           verbose: true
