@@ -13,6 +13,8 @@
 
 ClickUp provides an amazing solution to create a knowledge base from tasks and docs in a singular location, but it fails to expose the export functionality through the API. This tool seeks to make exporting and storing documents easier
 
+This feature will be archived once an official solution becomes available, https://clickup.canny.io/feature-requests/p/bulk-export-all-docs-to-pdf-ms-word 
+
 ## Getting Started
 
 This is an instruction set on setting up your project locally.
