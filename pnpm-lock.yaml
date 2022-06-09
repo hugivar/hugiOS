@@ -273,7 +273,7 @@ importers:
 
   packages/tools:
     specifiers:
-      '@pinata/sdk': 1.1.25
+      '@pinata/sdk': 1.1.26
       '@types/inquirer': 8.2.1
       '@types/lodash': 4.14.182
       '@types/node': 17.0.23
@@ -296,7 +296,7 @@ importers:
       ts-node: 10.8.1_hqlc27ex4r5dzavyk2d2vhrb7q
       typescript: 4.7.3
     devDependencies:
-      '@pinata/sdk': 1.1.25
+      '@pinata/sdk': 1.1.26
       '@types/inquirer': 8.2.1
       '@types/lodash': 4.14.182
       '@types/node': 17.0.23
@@ -2000,8 +2000,8 @@ packages:
     resolution: {integrity: sha512-S/SF/XYJeevwIgHFmVDAFRUvM3m+OjhvCAYMk78ZJQCYCQ5wS7j+LTt1ZEv2jpEEGg2tx/F6TYYWxddNAYHrFQ==}
     engines: {node: '>=12.0.0'}
 
-  /@pinata/sdk/1.1.25:
-    resolution: {integrity: sha512-juEeQQrSsm5MjCnqjF3tF/yuHQ3QemnJI8ML4f9ps7F7DjTnRNuvehdy14qEPcZX6XkOKrcifFVQX5AbNcp2+g==}
+  /@pinata/sdk/1.1.26:
+    resolution: {integrity: sha512-surJDg6aBRMnx3TAzBeBH/rNnlsTsykkBe1Fr7VMZgw3Ub4Q0RO2y5mAXtO4AmBqFtqLTbMW/2ItAQ6rVfKGPw==}
     dependencies:
       axios: 0.21.4
       base-path-converter: 1.0.2
@@ -3699,7 +3699,7 @@ packages:
   /base-x/3.0.9:
     resolution: {integrity: sha512-H7JU6iBHTal1gp56aKoaa//YUxEaAOUiydvrV/pILqIHXTtqxSkATOnDA2u+jZ/61sD+L/412+7kzXRtWukhpQ==}
     dependencies:
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
     dev: true
 
   /base64-js/1.5.1:
@@ -6878,7 +6878,7 @@ packages:
       is-retry-allowed: 1.2.0
       is-stream: 1.1.0
       lowercase-keys: 1.0.1
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.1
       timed-out: 4.0.1
       unzip-response: 2.0.1
       url-parse-lax: 1.0.0
