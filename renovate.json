@@ -15,6 +15,9 @@
     "eslint",
     "eslint-config-base"
   ],
+  "patch": {
+    "enabled": false
+  },
   "extends": [
     "config:base"
   ]
