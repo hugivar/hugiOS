@@ -84,7 +84,7 @@ importers:
       rimraf: 3.0.2
       serve: 13.0.2
       swr: 1.3.0
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.1
       typescript: 4.7.3
       vite: 2.9.10
       vite-tsconfig-paths: 3.5.0
@@ -92,8 +92,8 @@ importers:
     dependencies:
       '@changesets/cli': 2.22.0
       '@nezhos/react-ui': link:../../packages/react-ui
-      '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
-      '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
+      '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.1.1
+      '@tailwindcss/typography': 0.5.2_tailwindcss@3.1.1
       autoprefixer: 10.4.7_postcss@8.4.14
       classnames: 2.3.1
       daisyui: 2.15.2_ugi4xkrfysqkt4c4y6hkyfj344
@@ -114,7 +114,7 @@ importers:
       react-markdown: 8.0.3_cbpnieqasrszcwkqeh5i7z7nse
       react-syntax-highlighter: 15.5.0_react@18.1.0
       swr: 1.3.0_react@18.1.0
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.1
     devDependencies:
       '@next/eslint-plugin-next': 12.1.6
       '@nezhos/config': link:../../packages/config
@@ -342,7 +342,7 @@ importers:
       react-helmet-async: 1.3.0
       serve-static: 1.15.0
       stylelint: 14.9.0
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.1
       typescript: 4.7.3
       vite: 2.9.10
       vitest: 0.14.1
@@ -366,7 +366,7 @@ importers:
       '@shopify/cli-hydrogen': 3.0.11_@shopify+cli-kit@3.0.11
       '@shopify/prettier-config': 1.1.2
       '@shopify/stylelint-plugin': 11.0.1_t7l5xu3j5gvuz4zzoia3ce4ddi
-      '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
+      '@tailwindcss/typography': 0.5.2_tailwindcss@3.1.1
       autoprefixer: 10.4.7_postcss@8.4.14
       cross-env: 7.0.3
       eslint: 8.17.0
@@ -376,7 +376,7 @@ importers:
       postcss: 8.4.14
       prettier: 2.6.2
       stylelint: 14.9.0
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.1
       vite: 2.9.10
       vitest: 0.14.1
 
@@ -2212,15 +2212,15 @@ packages:
       defer-to-connect: 2.0.1
     dev: true
 
-  /@tailwindcss/line-clamp/0.4.0_tailwindcss@3.0.24:
+  /@tailwindcss/line-clamp/0.4.0_tailwindcss@3.1.1:
     resolution: {integrity: sha512-HQZo6gfx1D0+DU3nWlNLD5iA6Ef4JAXh0LeD8lOGrJwEDBwwJNKQza6WoXhhY1uQrxOuU8ROxV7CqiQV4CoiLw==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.1
     dev: false
 
-  /@tailwindcss/typography/0.5.2_tailwindcss@3.0.24:
+  /@tailwindcss/typography/0.5.2_tailwindcss@3.1.1:
     resolution: {integrity: sha512-coq8DBABRPFcVhVIk6IbKyyHUt7YTEC/C992tatFB+yEx5WGBQrCgsSFjxHUr8AWXphWckadVJbominEduYBqw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || insiders'
@@ -2228,7 +2228,7 @@ packages:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.1
 
   /@testing-library/dom/7.31.2:
     resolution: {integrity: sha512-3UqjCpey6HiTZT92vODYLPxTBWlM8ZOOjr3LX5F37/VRipW2M1kX6I/Cm4VXzteZqfGfagg8yXywpcOgQBlNsQ==}
@@ -4746,7 +4746,7 @@ packages:
       css-selector-tokenizer: 0.8.0
       postcss: 8.4.14
       postcss-js: 4.0.0_postcss@8.4.14
-      tailwindcss: 3.0.24
+      tailwindcss: 3.1.1
     transitivePeerDependencies:
       - ts-node
     dev: false
@@ -9440,7 +9440,6 @@ packages:
   /pify/2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /pify/3.0.0:
     resolution: {integrity: sha512-C3FsVNH1udSEX48gGX1xfvwTWfsYWj5U+8/uK15BGzIGrKoUpghX8hWZwa/OFnakBiiVNmBvemTJR5mcy7iPcg==}
@@ -9663,6 +9662,17 @@ packages:
       postcss: 8.4.14
       postcss-value-parser: 4.2.0
     dev: false
+
+  /postcss-import/14.1.0_postcss@8.4.14:
+    resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.14
+      postcss-value-parser: 4.2.0
+      read-cache: 1.0.0
+      resolve: 1.22.0
 
   /postcss-initial/4.0.1_postcss@8.4.14:
     resolution: {integrity: sha512-0ueD7rPqX8Pn1xJIjay0AZeIuDoF+V+VvMt/uOnn+4ezUKhZM/NokDeP6DwMNyIoYByuN/94IQnt5FEkaN59xQ==}
@@ -10335,6 +10345,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
+
+  /read-cache/1.0.0:
+    resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
+    dependencies:
+      pify: 2.3.0
 
   /read-pkg-up/2.0.0:
     resolution: {integrity: sha1-a3KoBImE4MQeeVEP1en6mbO1Sb4=}
@@ -11468,8 +11483,8 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tailwindcss/3.0.24:
-    resolution: {integrity: sha512-H3uMmZNWzG6aqmg9q07ZIRNIawoiEcNFKDfL+YzOPuPsXuDXxJxB9icqzLgdzKNwjG3SAro2h9SYav8ewXNgig==}
+  /tailwindcss/3.1.1:
+    resolution: {integrity: sha512-F5VFj5FiS4QZqdXPE6T6RJFqbsmISQ2KBUp9bOQyws9TleGToHsa54X8kwXwVdHMQhNeXOlxI47lrRICEVuOvg==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
@@ -11487,6 +11502,7 @@ packages:
       object-hash: 3.0.0
       picocolors: 1.0.0
       postcss: 8.4.14
+      postcss-import: 14.1.0_postcss@8.4.14
       postcss-js: 4.0.0_postcss@8.4.14
       postcss-load-config: 3.1.4_postcss@8.4.14
       postcss-nested: 5.0.6_postcss@8.4.14
