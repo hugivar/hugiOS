@@ -319,7 +319,7 @@ importers:
       '@shopify/cli': 3.0.11
       '@shopify/cli-hydrogen': 3.0.11
       '@shopify/cli-kit': 3.0.11
-      '@shopify/hydrogen': 0.23.0
+      '@shopify/hydrogen': 0.24.0
       '@shopify/prettier-config': 1.1.2
       '@shopify/stylelint-plugin': 11.0.1
       '@tailwindcss/typography': 0.5.2
@@ -349,7 +349,7 @@ importers:
     dependencies:
       '@headlessui/react': 1.6.4_ef5jwxihqo6n7gxfmzogljlgcm
       '@shopify/cli-kit': 3.0.11
-      '@shopify/hydrogen': 0.23.0_aynxs3sndhyuidzxztoqoh3qta
+      '@shopify/hydrogen': 0.24.0_aynxs3sndhyuidzxztoqoh3qta
       body-parser: 1.20.0
       compression: 1.7.4
       graphql: 16.5.0
@@ -2072,8 +2072,8 @@ packages:
       - supports-color
     dev: true
 
-  /@shopify/hydrogen/0.23.0_aynxs3sndhyuidzxztoqoh3qta:
-    resolution: {integrity: sha512-aajblIQdW0TbDoTVwdvVNuRmmUQ6DkurwSmQWTrHwszpQXMlFYGV8DPOAkTzIjaTqxYIt5ILYv8tV8qKiac9Tw==}
+  /@shopify/hydrogen/0.24.0_aynxs3sndhyuidzxztoqoh3qta:
+    resolution: {integrity: sha512-pREwnsIILEJFTFtKKqqaBnNQzXGRBn0v0RzpveZCkuFfaYKA234TweuSIP4JCHTRLOpBrl6YPcWbBf33r6Y5JQ==}
     engines: {node: '>=14'}
     peerDependencies:
       compression: ^1.7.4
