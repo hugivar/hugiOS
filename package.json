@@ -24,7 +24,7 @@
     "npm": ">=8.0.0",
     "node": ">=14"
   },
-  "packageManager": "pnpm@7.1.9",
+  "packageManager": "pnpm@7.2.0",
   "volta": {
     "node": "16.15.1"
   },
