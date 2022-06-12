@@ -16,7 +16,7 @@
     "release": "node ./scripts/release.js"
   },
   "dependencies": {
-    "@changesets/cli": "2.22.0",
+    "@changesets/cli": "2.23.0",
     "@nezhos/react-ui": "workspace:*",
     "@tailwindcss/line-clamp": "0.4.0",
     "@tailwindcss/typography": "0.5.2",
