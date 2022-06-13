@@ -13,7 +13,9 @@
   ],
   "ignoreDeps": [
     "eslint",
-    "eslint-config-base"
+    "eslint-config-base",
+    "typescript-eslint",
+    "@vue/eslint-config-typescript"
   ],
   "patch": {
     "enabled": false
