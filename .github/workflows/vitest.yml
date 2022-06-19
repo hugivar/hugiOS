@@ -29,8 +29,8 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           env_vars: OS,PYTHON
-          fail_ci_if_error: true
-          files: apps/web/coverage.json,
+          # fail_ci_if_error: true
+          # files: apps/web/coverage.json,
           flags: unittests
           name: codecov-umbrella
           verbose: true
