@@ -252,17 +252,23 @@ importers:
 
   packages/testing:
     specifiers:
+      '@nezhos/i18n': workspace:^1.1.0
       '@testing-library/dom': 8.13.0
       '@testing-library/jest-dom': 5.16.4
       '@testing-library/react': 13.3.0
       '@testing-library/user-event': 14.2.0
+      i18next: 21.8.9
       react: 18.2.0
       react-dom: 18.2.0
+      react-i18next: 11.17.0
       solid-js: 1.4.3
       solid-testing-library: 0.3.0
     dependencies:
+      '@nezhos/i18n': link:../i18n
+      i18next: 21.8.9
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-i18next: 11.17.0_w2dawyuewtjic4aakr66n7mlim
       solid-js: 1.4.3
     devDependencies:
       '@testing-library/dom': 8.13.0
@@ -9745,7 +9751,7 @@ packages:
     dev: true
 
   /void-elements/3.1.0:
-    resolution: {integrity: sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=}
+    resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
     engines: {node: '>=0.10.0'}
     dev: false
 
