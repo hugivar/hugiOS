@@ -11,7 +11,7 @@
     "lint": "next lint",
     "clean": "rimraf .next",
     "test": "vitest --run",
-    "test:coverage": "vitest run --coverage --reporter=json --outputFile=coverage.json",
+    "test:coverage": "vitest run --coverage",
     "test:watch": "vitest -w",
     "release": "node ./scripts/release.js"
   },
