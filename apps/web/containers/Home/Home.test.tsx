@@ -1,25 +1,27 @@
 import React from 'react';
-import { render, screen } from '@nezhos/testing/react';
+import { render, screen, TestWrapper } from '@nezhos/testing/react';
 
 import Home from './Home'
 
 test('Home renders with correct text', async () => {
   render(
-    <Home />
+    <TestWrapper>
+      <Home />
+    </TestWrapper>
   )
 
   expect(screen.getByText(/Hey, I'm nezhivar /i)).toBeTruthy()
 
-  expect(screen.getByText(/home.me.subtitle1 /i)).toBeTruthy()
-  expect(screen.getByText(/journal.title/i)).toBeTruthy()
-  expect(screen.getByText(/home.me.visit/i)).toBeTruthy()
-  expect(screen.getByText(/collection.title/i)).toBeTruthy()
-  expect(screen.getByText(/home.me.subtitle2/i)).toBeTruthy()
+  expect(screen.getByText(/I'm a full-stack engineer/i)).toBeTruthy()
+  expect(screen.getByText(/Journal/i)).toBeTruthy()
+  expect(screen.getByText(/Visit my/i)).toBeTruthy()
+  expect(screen.getByText(/Collection/i)).toBeTruthy()
+  expect(screen.getByText(/page for a glimpse into the various technologies/i)).toBeTruthy()
 
-  expect(screen.getByText(/home.quote.title/i)).toBeTruthy()
-  expect(screen.getByText(/home.quote.desc/i)).toBeTruthy()
-  expect(screen.getByText(/home.quote.author/i)).toBeTruthy()
+  expect(screen.getByText('Anonymity')).toBeTruthy()
+  expect(screen.getByText(/See that bird?/i)).toBeTruthy()
+  expect(screen.getByText(/Richard Feynman/i)).toBeTruthy()
 
-  expect(screen.getByText(/home.idea.names/i)).toBeTruthy()
-  expect(screen.getByText(/home.idea.anonymity/i)).toBeTruthy()
+  expect(screen.getByText(/Names are meaningless/i)).toBeTruthy()
+  expect(screen.getByText(/Anonymity should be sought after at all costs/i)).toBeTruthy()
 })
