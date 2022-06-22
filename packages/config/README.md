@@ -23,7 +23,7 @@ nezhos update localdotfiles
 
 ### Useful Links
 
-1. https://www.swyx.io/new-mac-setup-2021/
+1. https://www.swyx.io/new-mac-setup
 
 ### List of plugins
 
