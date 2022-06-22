@@ -173,3 +173,8 @@ export PATH="$PNPM_HOME:$PATH"
 
 # Fig post block. Keep at the bottom of this file.
 . "$HOME/.fig/shell/zshrc.post.zsh"
+
+# pnpm
+export PNPM_HOME="/Users/hugofelkel/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
