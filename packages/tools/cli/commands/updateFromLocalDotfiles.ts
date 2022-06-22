@@ -5,13 +5,9 @@ const updateFromLocalDotfiles = () => {
     program
         .action(() => {
             execSync(`
-                cp -R ~/.zshrc .zshrc
-                cp -R ~/.gitignore_global .gitignore_global
-                cp -R ~/.vimrc .vimrc
-                
-                git add . 
-                git commit -m "Update shared configs"
-                git push
+                cp -R ~/.zshrc ../config/terminal/.zshrc
+                cp -R ~/.gitignore_global ../config/terminal/.zshrc
+                cp -R ~/.vimrc ../config/terminal/.zshrc
             `);
         })
         .configureOutput({
