@@ -1,6 +1,7 @@
 const fs = require("fs");
 
 const inputFile = "./data/data.json";
+const outputDir = './out';
 const config = {
     dirs: [
         { taskName: 'Weekly Reflection', fileTitle: 'Weekly Reflection' },
@@ -8,18 +9,9 @@ const config = {
     ],
     // tag: "architect" // Uncomment if you want to gather by tag than task name
 };
-const outputDir = './out';
 
 const rawdata = fs.readFileSync(inputFile);
-const rows = JSON.parse(rawdata).filter(row => {
-    const csvTitle = row['Task Name'];
-    const tags = row['Tags'];
-    if (config.tag) {
-        return tags.includes(config.tag);
-    }
-
-    return config.dirs.filter(item => csvTitle.toLowerCase().includes(item.taskName.toLowerCase())).length > 0;
-});
+const rows = JSON.parse(rawdata);
 
 if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir);
@@ -44,10 +36,13 @@ const createFile = ({ row, dir, tag }) => {
     const content = row['Task Content'];
     const startDate = row['Start Date Text']
 
+    if (!csvTitle.toLowerCase().includes(dir.taskName.toLowerCase())) {
+        return;
+    }
+
     const fileTitle = dir?.fileTitle || tag;
 
     const data = JSON.stringify(content);
-
 
     // normalize date from ordinal
     const normalizedTitle = csvTitle.replace(/(?<=[0-9])(?:st|nd|rd|th)/, '');
@@ -74,16 +69,23 @@ const createFile = ({ row, dir, tag }) => {
     fs.writeFileSync(`${outputDir}/${fileTitle}/${year}/${title}.md`, data.replace(/\\+\\n/g, "\n").replace(/"/g, ""), { flag: 'w+' });
 };
 
-const convert = (rows) => {
-    if (config.tag) {
-        if (!fs.existsSync(`${outputDir}/${config.tag}`)) {
-            fs.mkdirSync(`${outputDir}/${config.tag}`);
-        }
+const convertTag = () => {
+    const filteredRows = rows.filter(row => {
+        const tags = row['Tags'];
 
-        return rows.map(row => {
-            createFile({ row, tag: config.tag })
-        });
+        return tags.includes(config.tag);
+    });
+
+    if (!fs.existsSync(`${outputDir}/${config.tag}`)) {
+        fs.mkdirSync(`${outputDir}/${config.tag}`);
     }
+
+    return filteredRows.map(row => {
+        createFile({ row, tag: config.tag })
+    });
+}
+
+const convertDirs = () => {
     // This logic should be improved to not have an Big O squared time complexity
     return config.dirs.map(dir => {
         if (!fs.existsSync(`${outputDir}/${dir.taskName}`)) {
@@ -93,7 +95,15 @@ const convert = (rows) => {
         rows.map(row => {
             createFile({ row, dir })
         });
-    })
+    });
 };
 
-convert(rows);
+const run = () => {
+    if (config.tag) {
+        return convertTag();
+    };
+
+    convertDirs();
+}
+
+run();
