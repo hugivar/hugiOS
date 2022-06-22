@@ -20,6 +20,10 @@
   "ts-node": {
     // these options are overrides used only by ts-node
     // same as our --compilerOptions flag and our TS_NODE_COMPILER_OPTIONS environment variable
+    // Do not forget to `npm i -D tsconfig-paths`
+    "require": [
+      "tsconfig-paths/register"
+    ],
     "compilerOptions": {
       "module": "commonjs"
     }
