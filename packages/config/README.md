@@ -10,6 +10,17 @@
 4. vimrc
 5. zshrc
 
+### Update NezhOS repo using local configs
+
+```
+nezhos update fromlocaldotfiles 
+```
+### Using these configs
+
+```
+nezhos update localdotfiles
+```
+
 ### Useful Links
 
 1. https://www.swyx.io/new-mac-setup-2021/
