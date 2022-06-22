@@ -31,7 +31,7 @@ export const choices = [
     },
     {
         name: 'Update repo dotfiles file based on local zsh file',
-        value: 'update.FromLocalDotfiles',
+        value: 'update.fromlocaldotfiles',
         action: updateFromLocalDotfiles,
     },
     {

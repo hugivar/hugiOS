@@ -46,7 +46,7 @@ const publishWeb = () => {
         pinata,
         sourcePath,
         options,
-        console,
+        logger: console,
       });
 
       // To find your CLOUDFLARE_DNS_ID, uncomment this line
@@ -54,21 +54,21 @@ const publishWeb = () => {
 
       await editDNSRecord({
         content: addedResult.IpfsHash,
-        console,
+        logger: console,
       });
 
       // Check if more than 3 entries exist for the same file name, delete the LRU
       const pinnedFiles = await pinList({
         pinata,
         fileName: options?.pinataMetadata?.name,
-        console,
+        logger: console,
       });
 
       if (pinnedFiles.length > 3) {
         const oldestPinnedFile = pinnedFiles[pinnedFiles.length - 1];
         const oldestHash = oldestPinnedFile?.ipfs_pin_hash;
 
-        unpin({ pinata, hash: oldestHash, console });
+        unpin({ pinata, hash: oldestHash, logger: console });
       }
     })
     .catch((err) => {
