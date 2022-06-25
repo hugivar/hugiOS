@@ -182,9 +182,9 @@ importers:
   packages/i18n:
     specifiers: {}
 
-  packages/json-to-markdown:
+  packages/obsidian:
     specifiers:
-      glob: ^8.0.3
+      glob: 8.0.3
     dependencies:
       glob: 8.0.3
 
