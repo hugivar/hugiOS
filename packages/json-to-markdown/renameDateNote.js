@@ -5,20 +5,6 @@ const glob = require("glob");
 const inputDir = './data/Architect Notes/**/*.md';
 const directoryPath = path.join(__dirname, inputDir);
 
-const formatDate = (date) => {
-    let d = new Date(date);
-    let month = (d.getMonth() + 1).toString();
-    let day = d.getDate().toString();
-    let year = d.getFullYear();
-    if (month.length < 2) {
-        month = '0' + month;
-    }
-    if (day.length < 2) {
-        day = '0' + day;
-    }
-    return [year, month, day].join('-');
-}
-
 glob(directoryPath, function (err, files) {
     //handling error
     if (err) {
