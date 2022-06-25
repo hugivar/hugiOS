@@ -3,11 +3,11 @@ const fs = require("fs");
 const inputFile = "./data/data.json";
 const outputDir = './out';
 const config = {
-    dirs: [
-        { taskName: 'Weekly Reflection', fileTitle: 'Weekly Reflection' },
-        { taskName: 'Daily Reflection', fileTitle: 'Daily Reflection' }
-    ],
-    // tag: "architect" // Uncomment if you want to gather by tag than task name
+    // dirs: [
+    //     { taskName: 'Weekly Reflection', fileTitle: 'Weekly Reflection' },
+    //     { taskName: 'Daily Reflection', fileTitle: 'Daily Reflection' }
+    // ],
+    tag: "mirror" // Uncomment if you want to gather by tag than task name
 };
 
 const rawdata = fs.readFileSync(inputFile);
@@ -31,12 +31,22 @@ const formatDate = (date) => {
     return [year, month, day].join('-');
 }
 
+function addDays(date, days) {
+    console.log('convert line:35', days);
+    date.setDate(date.getDate() + Number(days));
+    return date;
+}
+
 const createFile = ({ row, dir, tag }) => {
+    const titleDate = new Date('October 10, 2014 00:00:00');
+
     const csvTitle = row['Task Name'];
     const content = row['Task Content'];
-    const startDate = row['Start Date Text']
 
-    if (!csvTitle.toLowerCase().includes(dir.taskName.toLowerCase())) {
+    // increment days
+    console.log(addDays(titleDate, csvTitle.replace(/days ago/g, '').trim()));
+
+    if (dir && !csvTitle.toLowerCase().includes(dir.taskName.toLowerCase())) {
         return;
     }
 
@@ -50,12 +60,19 @@ const createFile = ({ row, dir, tag }) => {
     // Parse date from title string (eg. Weekly reflection for 06/19/2022)
     const date = Date.parse(normalizedTitle);
     if (isNaN(date)) {
+        const noteYear = titleDate.getFullYear();
+        const noteTitle = `Mirror Note for ${formatDate(titleDate)}`;
+        console.log('convert line:66', noteYear);
         if (!tag) {
             console.log('Problem', normalizedTitle);
             return null;
         }
 
-        return fs.writeFileSync(`${outputDir}/${fileTitle}/${csvTitle}.md`, data.replace(/\\+\\n/g, "\n").replace(/"/g, ""), { flag: 'w+' });
+        if (!fs.existsSync(`${outputDir}/${noteYear}`)) {
+            fs.mkdirSync(`${outputDir}/${noteYear}`);
+        }
+
+        return fs.writeFileSync(`${outputDir}/${noteYear}/${noteTitle}.md`, data.replace(/\\+\\n/g, "\n").replace(/"/g, ""), { flag: 'w+' });
     }
     // Create new title if needed
     const title = `${fileTitle} for ${formatDate(date)}`;
