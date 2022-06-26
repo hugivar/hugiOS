@@ -1,5 +1,7 @@
+
 ---
-title: "Development"
+title: Development
+description: Quick Links    Shared Configs   Housing repo for all my personal local development config...
 ---
 
 ## Quick Links
@@ -100,3 +102,5 @@ title: "Development"
 20. [WakaTime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime)
 
 🚀 = recommended
+
+
