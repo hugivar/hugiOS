@@ -13,3 +13,10 @@ description: Firefox Hardening  Improve the security and privacy of your Firefox
 
 1. https://www.privacyguides.org/
 
+## Apps
+
+- [Firefox Relay](https://relay.firefox.com/) - Protect your true email address to help control your inbox
+
+- [ProtonVPN](https://protonvpn.com/) - Protect yourself online
+
+
