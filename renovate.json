@@ -15,7 +15,8 @@
     "eslint",
     "eslint-config-base",
     "typescript-eslint",
-    "@vue/eslint-config-typescript"
+    "@vue/eslint-config-typescript",
+    "inquirer"
   ],
   "patch": {
     "enabled": false
