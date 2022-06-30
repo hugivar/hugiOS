@@ -1,0 +1,31 @@
+name: Pull markdown files from dev.to daily
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  markdown:
+    name: Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.0.0-rc.6
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: pull version from dev.to
+        run: cd packages/tools && nezhos output articles
+      - name: commit the code
+        run: git add . && git commit -m "update markdown files" && git push
