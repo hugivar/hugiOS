@@ -78,7 +78,7 @@ importers:
       react-content-loader: 6.2.0
       react-dom: 18.2.0
       react-helmet-async: 1.3.0
-      react-i18next: 11.17.0
+      react-i18next: 11.18.0
       react-markdown: 8.0.3
       react-syntax-highlighter: 15.5.0
       react-test-renderer: 18.2.0
@@ -111,7 +111,7 @@ importers:
       react-content-loader: 6.2.0_react@18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-helmet-async: 1.3.0_biqbaboplfbrettd7655fr4n2y
-      react-i18next: 11.17.0_w2dawyuewtjic4aakr66n7mlim
+      react-i18next: 11.18.0_w2dawyuewtjic4aakr66n7mlim
       react-markdown: 8.0.3_ihkhab3gpahsyb3ahx7z7w4mhq
       react-syntax-highlighter: 15.5.0_react@18.2.0
       swr: 1.3.0_react@18.2.0
@@ -268,7 +268,7 @@ importers:
       i18next: 21.8.9
       react: 18.2.0
       react-dom: 18.2.0
-      react-i18next: 11.17.0
+      react-i18next: 11.18.0
       solid-js: 1.4.3
       solid-testing-library: 0.3.0
     dependencies:
@@ -276,7 +276,7 @@ importers:
       i18next: 21.8.9
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-i18next: 11.17.0_w2dawyuewtjic4aakr66n7mlim
+      react-i18next: 11.18.0_w2dawyuewtjic4aakr66n7mlim
       solid-js: 1.4.3
     devDependencies:
       '@testing-library/dom': 8.14.0
@@ -5363,6 +5363,7 @@ packages:
 
   /html-escaper/2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
+    dev: true
 
   /html-parse-stringify/3.0.1:
     resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
@@ -8032,8 +8033,8 @@ packages:
       react-fast-compare: 3.2.0
       shallowequal: 1.1.0
 
-  /react-i18next/11.17.0_w2dawyuewtjic4aakr66n7mlim:
-    resolution: {integrity: sha512-ewq2S4bVUTRqOMAdM/XvzCn9xUPIryzeBQRghmJ8lC6VI/8Kp7z1GwoLyt8j7GB2ywhN2SjPk7LU4sHzVeu7aw==}
+  /react-i18next/11.18.0_w2dawyuewtjic4aakr66n7mlim:
+    resolution: {integrity: sha512-coJujU20xJ5Wa5rHjTyB5LFKZb1yfXo2A+40RRSyAF0FlZRHyy+3C1Mr92x1JPfS7W7v2TWNn8mRhpDFGJwXVg==}
     peerDependencies:
       i18next: '>= 19.0.0'
       react: '>= 16.8.0'
@@ -8046,7 +8047,6 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.18.3
-      html-escaper: 2.0.2
       html-parse-stringify: 3.0.1
       i18next: 21.8.9
       react: 18.2.0
