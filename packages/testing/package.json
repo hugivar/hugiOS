@@ -16,7 +16,7 @@
     "i18next": "21.8.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-i18next": "11.17.0",
+    "react-i18next": "11.18.0",
     "solid-js": "1.4.3"
   }
 }
