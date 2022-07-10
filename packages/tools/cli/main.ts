@@ -8,25 +8,40 @@ interface IAction {
     options: string;
 }
 
+const availableCommands = [];
+
 const commanderSetup = async (prog: Command, type: string) => {
     try {
         const { choices } = await import(`./config/${type}`);
 
         const grouped = groupByChoices(choices);
 
-        Object.keys(grouped).map(program => {
-            const item = prog
-                .command(program)
+        try {
+            Object.keys(grouped).map(program => {
+                const item = prog
+                    .command(program)
 
-            grouped[program].map(programItem => {
-                item
-                    .command(programItem.command)
-                    .description(programItem.description)
-                    .action(() => {
-                        programItem.action();
-                    });
+                grouped[program].map(programItem => {
+                    const currentKey = `${program}.${programItem.command}`;
+                    if (availableCommands.includes(currentKey)) {
+                        throw new Error(`This command already exists: ${currentKey}`);
+                    }
+
+                    availableCommands.push(currentKey);
+
+                    item
+                        .command(programItem.command)
+                        .description(programItem.description)
+                        .action(() => {
+                            programItem.action();
+                        });
+                });
             });
-        });
+        } catch (e) {
+            console.log('main line:42', e);
+            process.exit();
+        }
+
 
         return prog;
     } catch (err) {
