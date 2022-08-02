@@ -29,10 +29,9 @@ const formatDate = (date, format) => {
 
 const compress = () => {
     const today = new Date();
-    console.log('compress line:32', today);
     const formattedDate = formatDate(today, 'mm-yy');
 
-    execSync(`cd ./exports && zip -r ./${formattedDate}.zip *`);
+    execSync(`cd ./data && zip -r ./${formattedDate}.zip *`);
 };
 
 compress();
