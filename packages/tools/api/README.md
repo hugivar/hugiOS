@@ -1,21 +1,22 @@
+
 <br />
 <div align="center">
-  <h2 align="center">ClickUp Docs Exports</h2>
-
-  <p align="center">
-     A NodeJS app to extract network urls from log files, download those files, and group them correctly
-  </p>
+  <h2 align="center">NezhOS CLI</h2>
 </div>
 
-<!-- GETTING STARTED -->
+## Using the CLI
 
-## Problem
+[NezhOS CLI](https://github.com/nezhivar/nezhOS/tree/main/packages/tools/cli)
 
-ClickUp provides an amazing solution to create a knowledge base from tasks and docs in a singular location, but it fails to expose the export functionality through the API. This tool seeks to make exporting and storing documents easier
+Once you have the node_modules installed, you can access the monorepo cli using the command `nezhos`.
+
+## Clickup Exports
+
+ClickUp provides a solution to create a knowledge base from tasks and docs in a singular location, but it fails to expose the export functionality through the API. This tool seeks to make exporting and storing documents easier
 
 This feature will be archived once an official solution becomes available, https://clickup.canny.io/feature-requests/p/bulk-export-all-docs-to-pdf-ms-word 
 
-## Getting Started
+### Getting Started
 
 This is an instruction set on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
@@ -61,11 +62,5 @@ To get a local copy up and running follow these simple example steps.
    ```js
    npm run export
    ```
+## Todoist Exports
 
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-## TODO
- 
-- [ ] Convert this networking tool to be an autoclicker of the ClickUp app UI

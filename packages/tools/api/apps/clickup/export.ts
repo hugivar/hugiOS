@@ -1,7 +1,8 @@
 import https from 'https';
 import fs from 'fs';
+import 'dotenv/config';
 
-import config from "../config.json" assert {type: "json"};
+const config = JSON.parse(process.env.CLICKUP_DATA);
 
 const initialize = () => {
     if (!fs.existsSync('./exports')) {
@@ -9,7 +10,7 @@ const initialize = () => {
     }
 
 };
-const exportDocument = (spaceName, url) => {
+const exportDocument = (spaceName: string, url: string) => {
     const name = url.split('/').filter(item => item.length)[4];
     const parent = name.split('_')[0];
 
@@ -32,7 +33,7 @@ const exportDocument = (spaceName, url) => {
 const exportDocumentsBySpace = () => {
     initialize();
 
-    config?.spaces.map(space => {
+    config?.spaces.map((space: any) => {
         const { name, docs } = space;
         const currentDir = `./exports/${name}`;
 
@@ -41,7 +42,7 @@ const exportDocumentsBySpace = () => {
         }
 
         console.log('Exporting documents for space', name);
-        docs?.map((url, idx) => {
+        docs?.map((url: string) => {
             exportDocument(name, url);
         });
 
@@ -51,4 +52,4 @@ const exportDocumentsBySpace = () => {
     });
 }
 
-exportDocumentsBySpace();
+export default exportDocumentsBySpace;

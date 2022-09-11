@@ -1,16 +1,41 @@
 {
     "compilerOptions": {
+        "module": "esnext",
+        "moduleResolution": "node",
         "esModuleInterop": true,
-        "moduleResolution": "Node",
-        "module": "esnext"
+        "resolveJsonModule": true,
+        "baseUrl": "./",
+        "paths": {
+            "cli/commands/*": [
+                "./cli/commands/*"
+            ],
+            "cli/helpers/*": [
+                "./cli/helpers/*"
+            ],
+        },
     },
     "include": [
         "**/*.ts",
         "**/*.tsx"
     ],
     "ts-node": {
+        "require": [
+            "tsconfig-paths/register"
+        ],
         "compilerOptions": {
-            "module": "commonjs"
+            "moduleResolution": "node",
+            "esModuleInterop": true,
+            "resolveJsonModule": true,
+            "module": "commonjs",
+            "baseUrl": "./",
+            "paths": {
+                "cli/commands/*": [
+                    "./cli/commands/*"
+                ],
+                "cli/helpers/*": [
+                    "./cli/helpers/*"
+                ],
+            },
         }
     },
 }
