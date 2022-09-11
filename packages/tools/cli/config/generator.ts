@@ -2,7 +2,7 @@
 import path from 'path';
 
 // Commands
-import createProject from 'cli/commands/createProject';
+import createProject from '../commands/createProject';
 
 export const setup = {
     name: 'Monorepo generators',

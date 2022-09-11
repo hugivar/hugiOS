@@ -4,10 +4,10 @@ import 'dotenv/config';
 import inquirer from 'inquirer';
 import path from 'path';
 
-import publish from 'cli/commands/publish';
-import createPost from 'cli/commands/createPost';
-import outputArticles from 'cli/commands/outputArticles';
-import { getDNSRecords } from 'cli/helpers/cloudflare';
+import publish from '../commands/publish';
+import createPost from '../commands/createPost';
+import outputArticles from '../commands/outputArticles';
+import { getDNSRecords } from '../helpers/cloudflare';
 
 export const setup = {
     name: 'Website setup',

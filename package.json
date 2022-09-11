@@ -13,10 +13,12 @@
     "test": "turbo run test",
     "release": "turbo run release",
     "clean": "npx rimraf ./**/node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "nezhos": "nezhos"
   },
   "devDependencies": {
     "@changesets/cli": "2.24.0",
+    "@nezhos/tools": "workspace:*",
     "prettier": "latest",
     "turbo": "latest"
   },

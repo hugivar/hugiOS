@@ -4,7 +4,7 @@ import 'dotenv/config';
 import inquirer from 'inquirer';
 import path from 'path';
 
-import createSetupFile from 'cli/commands/createSetupFile';
+import createSetupFile from '../commands/createSetupFile';
 
 export const setup = {
     name: 'Config setup',
