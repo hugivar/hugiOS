@@ -1,5 +1,0 @@
-# ClickUp document export
-config.json
-data/todoist/**
-data/clickup/**
-data/*.zip

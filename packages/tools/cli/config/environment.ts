@@ -2,11 +2,11 @@
 import path from 'path';
 
 // Commands
-import createRepo from '../commands/createRepo';
-import setupZsh from '../commands/setupZsh';
-import setupWakaTime from '../commands/setupWakaTime';
-import updateFromLocalDotfiles from '../commands/updateFromLocalDotfiles';
-import updateLocalDotfiles from '../commands/updateLocalDotfiles';
+import createRepo from 'cli/commands/createRepo';
+import setupZsh from 'cli/commands/setupZsh';
+import setupWakaTime from 'cli/commands/setupWakaTime';
+import updateFromLocalDotfiles from 'cli/commands/updateFromLocalDotfiles';
+import updateLocalDotfiles from 'cli/commands/updateLocalDotfiles';
 
 export const setup = {
     name: 'Environment setup',
