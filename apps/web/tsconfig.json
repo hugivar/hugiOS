@@ -1,8 +1,11 @@
 {
   "extends": "@nezhos/tsconfig/nextjs.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,14 +20,33 @@
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "config": ["./config/*"],
-      "lib/*": ["./lib/*"],
-      "components/*": ["./components/*"],
-      "containers/*": ["./containers/*"],
-      "utils/*": ["./utils/*"],
-      "@assets/*": ["./assets/*"]
-    }
+      "config": [
+        "./config/*"
+      ],
+      "lib/*": [
+        "./lib/*"
+      ],
+      "components/*": [
+        "./components/*"
+      ],
+      "containers/*": [
+        "./containers/*"
+      ],
+      "utils/*": [
+        "./utils/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ]
+    },
+    "target": "es6"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
