@@ -1,28 +1,16 @@
 {
-  "compilerOptions": {
-    "esModuleInterop": true,
-    "moduleResolution": "Node",
-    "module": "esnext",
-    "baseUrl": "./",
-    "paths": {
-      "cli/commands/*": [
-        "./cli/commands/*"
-      ],
-      "cli/helpers/*": [
-        "./cli/helpers/*"
-      ],
-    },
-  },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "ts-node": {
-    "require": [
-      "tsconfig-paths/register"
-    ],
     "compilerOptions": {
-      "module": "commonjs"
-    }
-  },
+        "esModuleInterop": true,
+        "moduleResolution": "Node",
+        "module": "esnext"
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.tsx"
+    ],
+    "ts-node": {
+        "compilerOptions": {
+            "module": "commonjs"
+        }
+    },
 }

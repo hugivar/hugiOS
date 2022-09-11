@@ -18,7 +18,7 @@ const outputArticles = async () => {
     if (!process.env.API_KEY) {
         console.error(chalk.red('No dev.to API key provided'))
     }
-    const response = await fetch("https://dev.to/api/articles/me", { method: 'get', headers: { 'api-key': process.env.API_KEY } });
+    const response = await fetch("https://dev.to/api/articles/me", { method: 'get', headers: { 'api-key': process.env.API_KEY || '' } });
     const body = await response.text();
     const articles = JSON.parse(body);
 

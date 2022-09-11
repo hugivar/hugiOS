@@ -8,8 +8,6 @@ interface IAction {
     options: string;
 }
 
-const availableCommands = [];
-
 const commanderSetup = async (prog: Command, type: string) => {
     try {
         const { choices } = await import(`./config/${type}`);
@@ -22,6 +20,7 @@ const commanderSetup = async (prog: Command, type: string) => {
                     .command(program)
 
                 grouped[program].map(programItem => {
+                    const availableCommands: string[] = [];
                     const currentKey = `${program}.${programItem.command}`;
                     if (availableCommands.includes(currentKey)) {
                         throw new Error(`This command already exists: ${currentKey}`);

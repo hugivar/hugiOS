@@ -12,8 +12,8 @@ import { pinFile, pinList, unpin } from '../helpers/pinata';
  */
 
 const publishWeb = () => {
-  const PINATA_KEY = process.env.PINATA_KEY;
-  const PINATA_SECRET_KEY = process.env.PINATA_SECRET_KEY;
+  const PINATA_KEY = process.env.PINATA_KEY || '';
+  const PINATA_SECRET_KEY = process.env.PINATA_SECRET_KEY || '';
 
   const pinata = pinataSDK(PINATA_KEY, PINATA_SECRET_KEY);
 
