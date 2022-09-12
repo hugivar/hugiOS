@@ -21,7 +21,7 @@
   "devDependencies": {
     "@doist/todoist-api-typescript": "^1.0.0",
     "@pinata/sdk": "1.1.26",
-    "@types/inquirer": "8.2.1",
+    "@types/inquirer": "9.0.1",
     "@types/lodash": "4.14.182",
     "@types/node": "17.0.23",
     "@types/node-fetch": "2.6.1",
