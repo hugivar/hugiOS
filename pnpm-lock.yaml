@@ -21,7 +21,7 @@ importers:
       '@electron-forge/maker-rpm': 6.0.0-beta.63
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
-      electron: 19.0.4
+      electron: 20.1.4
       electron-squirrel-startup: ^1.0.0
       electron-tabs: ^1.0.0
     dependencies:
@@ -33,7 +33,7 @@ importers:
       '@electron-forge/maker-rpm': 6.0.0-beta.63
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
-      electron: 19.0.4
+      electron: 20.1.4
 
   apps/web:
     specifiers:
@@ -4314,15 +4314,15 @@ packages:
     dev: true
     optional: true
 
-  /electron/19.0.4:
-    resolution: {integrity: sha512-roRYr1VNAWIhjD9n8qZdmhROtrzsFpuZEXrjWAw+GqPbZlrUInmvFCviRDC2Lt+VBsTNRpTfPpfzXSlLL4reEw==}
-    engines: {node: '>= 8.6'}
+  /electron/20.1.4:
+    resolution: {integrity: sha512-7ov5kgSQi2JewV5SrVfjGasUvyScjuJrrDCW0rYxtP2SMe3JjoP4rsOOnh3ps2P/Nrdlbv+0ygiK0zp4ARCZ+A==}
+    engines: {node: '>= 10.17.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@electron/get': 1.14.1
       '@types/node': 16.11.39
-      extract-zip: 1.7.0
+      extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5037,18 +5037,6 @@ packages:
       chardet: 0.7.0
       iconv-lite: 0.4.24
       tmp: 0.0.33
-
-  /extract-zip/1.7.0:
-    resolution: {integrity: sha512-xoh5G1W/PB0/27lXgMQyIhP5DSY/LhoCsOyZgb+6iMmRtCwVBo55uKaMoEYrDCKQhWvqEip5ZPKAc6eFNyf/MA==}
-    hasBin: true
-    dependencies:
-      concat-stream: 1.6.2
-      debug: 2.6.9
-      mkdirp: 0.5.6
-      yauzl: 2.10.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
 
   /extract-zip/2.0.1:
     resolution: {integrity: sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==}
@@ -7198,6 +7186,7 @@ packages:
     dependencies:
       minimist: 1.2.6
     dev: true
+    optional: true
 
   /mkdirp/1.0.4:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
@@ -7550,7 +7539,7 @@ packages:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
 
   /object-keys/0.4.0:
-    resolution: {integrity: sha1-KKaq50KN0sOpLz2V8hM13SBOAzY=}
+    resolution: {integrity: sha512-ncrLw+X55z7bkl5PnUvHwFK9FcGuFYo9gtjws2XtSzL+aZ8tm830P60WJ0dSmFVaSalWieW5MD7kEdnXda9yJw==}
     dev: true
 
   /object-keys/1.1.1:
@@ -8359,7 +8348,7 @@ packages:
     engines: {node: '>= 0.8.0'}
 
   /prepend-http/1.0.4:
-    resolution: {integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=}
+    resolution: {integrity: sha512-PhmXi5XmoyKw1Un4E+opM2KcsJInDvKyuOumcjjw3waw86ZNjHwVUOOWLc4bCzLdcKNaWBH9e99sbWzDQsVaYg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -10273,14 +10262,14 @@ packages:
     dev: true
 
   /url-parse-lax/1.0.0:
-    resolution: {integrity: sha1-evjzA2Rem9eaJy56FKxovAYJ2nM=}
+    resolution: {integrity: sha512-BVA4lR5PIviy2PMseNd2jbFQ+jwSwQGdJejf5ctd1rEXt0Ypd7yanUK9+lYechVlN5VaTJGsu2U/3MDDu6KgBA==}
     engines: {node: '>=0.10.0'}
     dependencies:
       prepend-http: 1.0.4
     dev: true
 
   /url-parse-lax/3.0.0:
-    resolution: {integrity: sha1-FrXK/Afb42dsGxmZF3gj1lA6yww=}
+    resolution: {integrity: sha512-NjFKA0DidqPa5ciFcSrXnAltTtzz84ogy+NebPvfEgAck0+TNg4UJ4IN+fB7zRZfbgUf0syOo9MDxFkDSMuFaQ==}
     engines: {node: '>=4'}
     dependencies:
       prepend-http: 2.0.0
@@ -10789,7 +10778,7 @@ packages:
     dev: true
 
   /yauzl/2.10.0:
-    resolution: {integrity: sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk=}
+    resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
     dependencies:
       buffer-crc32: 0.2.13
       fd-slicer: 1.1.0
