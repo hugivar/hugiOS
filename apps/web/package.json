@@ -22,7 +22,7 @@
     "@tailwindcss/typography": "0.5.2",
     "autoprefixer": "10.4.7",
     "classnames": "2.3.1",
-    "daisyui": "2.30.0",
+    "daisyui": "2.31.0",
     "gray-matter": "4.0.3",
     "husky": "8.0.1",
     "i18next": "21.9.0",
