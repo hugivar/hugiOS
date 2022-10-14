@@ -66,7 +66,7 @@ importers:
       eslint-config-next: 12.3.0
       eslint-config-prettier: 8.5.0
       gray-matter: 4.0.3
-      happy-dom: 6.0.0
+      happy-dom: 7.5.12
       husky: 8.0.1
       i18next: 21.10.0
       jsdom: 20.0.0
@@ -140,7 +140,7 @@ importers:
       eslint: 8.17.0
       eslint-config-next: 12.3.0_3zouvldjmhrtmf7vfvokihmccq
       eslint-config-prettier: 8.5.0_eslint@8.17.0
-      happy-dom: 6.0.0
+      happy-dom: 7.5.12
       jsdom: 20.0.0
       react-test-renderer: 18.2.0_react@18.2.0
       rimraf: 3.0.2
@@ -148,7 +148,7 @@ importers:
       typescript: 4.8.3
       vite: 3.1.0
       vite-tsconfig-paths: 3.5.0_vite@3.1.0
-      vitest: 0.24.0_ri327lchjkdvunynqr74q2al7u
+      vitest: 0.24.0_lledzfkztw6bxilwy74vgdh2lm
 
   packages/config:
     specifiers:
@@ -5644,8 +5644,8 @@ packages:
       strip-bom-string: 1.0.0
     dev: false
 
-  /happy-dom/6.0.0:
-    resolution: {integrity: sha512-Nk+hyCemZGIyQ0gDLyb6K1PFOHepfec101dG93z5g8+LIYSUZWT3FDzWUIUwfYkcAnaRCM9hMDgmR2pFLUYE9w==}
+  /happy-dom/7.5.12:
+    resolution: {integrity: sha512-Q4JE09CMWHptj1bvtoeYqUmdhj/5cuZqj0O60xs/9NgfyxL3YEVKJ588uBcLnCAkBiUvZnAJB6T+6IzbOSMSRA==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
@@ -9405,7 +9405,7 @@ packages:
       es-abstract: 1.20.1
 
   /string_decoder/0.10.31:
-    resolution: {integrity: sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=}
+    resolution: {integrity: sha512-ev2QzSzWPYmy9GuqfIVildA4OdcGLeFZQrq5ys6RtiuF+RQQiZWr8TZNyAcuVXyQRYfEO+MsoB/1BuQVhOJuoQ==}
     dev: true
 
   /string_decoder/1.1.1:
@@ -10018,7 +10018,7 @@ packages:
     dev: true
 
   /typedarray/0.0.6:
-    resolution: {integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=}
+    resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
     dev: true
 
   /typescript/4.8.3:
@@ -10371,7 +10371,7 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.24.0_ri327lchjkdvunynqr74q2al7u:
+  /vitest/0.24.0_lledzfkztw6bxilwy74vgdh2lm:
     resolution: {integrity: sha512-k5j3FPTor+MJx2x0pDW2gtVk+s9VC6nSHT3SoqOIk9Je5fFpPgict+Xy2eAVXUogvSixs45Ya1oZk+oK93BO0w==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -10399,7 +10399,7 @@ packages:
       '@vitest/ui': 0.24.0
       chai: 4.3.6
       debug: 4.3.4
-      happy-dom: 6.0.0
+      happy-dom: 7.5.12
       jsdom: 20.0.0
       local-pkg: 0.4.2
       strip-literal: 0.4.2
