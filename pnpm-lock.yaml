@@ -74,7 +74,7 @@ importers:
       next-themes: 0.2.0
       postcss: 8.4.14
       postcss-flexbugs-fixes: 5.0.2
-      postcss-nesting: 10.1.8
+      postcss-nesting: 10.2.0
       postcss-preset-env: 7.8.0
       react: 18.2.0
       react-content-loader: 6.2.0
@@ -107,7 +107,7 @@ importers:
       next-themes: 0.2.0_c3hne4hwj64hb7tofigd3bvkji
       postcss: 8.4.14
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.14
-      postcss-nesting: 10.1.8_postcss@8.4.14
+      postcss-nesting: 10.2.0_postcss@8.4.14
       postcss-preset-env: 7.8.0_postcss@8.4.14
       react: 18.2.0
       react-content-loader: 6.2.0_react@18.2.0
@@ -1101,7 +1101,7 @@ packages:
     peerDependencies:
       postcss: ^8.2
     dependencies:
-      '@csstools/selector-specificity': 2.0.0_444rcjjorr3kpoqtvoodsr46pu
+      '@csstools/selector-specificity': 2.0.2_444rcjjorr3kpoqtvoodsr46pu
       postcss: 8.4.14
       postcss-selector-parser: 6.0.10
     dev: false
@@ -1184,17 +1184,6 @@ packages:
       postcss: ^8.2
     dependencies:
       postcss: 8.4.14
-    dev: false
-
-  /@csstools/selector-specificity/2.0.0_444rcjjorr3kpoqtvoodsr46pu:
-    resolution: {integrity: sha512-rZ6vufeY/UjAgtyiJ4WvfF6XP6HizIyOfbZOg0RnecIwjrvH8Am3nN1BpKnnPZunYAkUcPPXDhwbxOtGop8cfQ==}
-    engines: {node: ^12 || ^14 || >=16}
-    peerDependencies:
-      postcss: ^8.3
-      postcss-selector-parser: ^6.0.10
-    dependencies:
-      postcss: 8.4.14
-      postcss-selector-parser: 6.0.10
     dev: false
 
   /@csstools/selector-specificity/2.0.2_444rcjjorr3kpoqtvoodsr46pu:
@@ -8130,24 +8119,13 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: false
 
-  /postcss-nesting/10.1.10_postcss@8.4.14:
-    resolution: {integrity: sha512-lqd7LXCq0gWc0wKXtoKDru5wEUNjm3OryLVNRZ8OnW8km6fSNUuFrjEhU3nklxXE2jvd4qrox566acgh+xQt8w==}
+  /postcss-nesting/10.2.0_postcss@8.4.14:
+    resolution: {integrity: sha512-EwMkYchxiDiKUhlJGzWsD9b2zvq/r2SSubcRrgP+jujMXFzqvANLt16lJANC+5uZ6hjI7lpRmI6O8JIl+8l1KA==}
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.2
     dependencies:
       '@csstools/selector-specificity': 2.0.2_444rcjjorr3kpoqtvoodsr46pu
-      postcss: 8.4.14
-      postcss-selector-parser: 6.0.10
-    dev: false
-
-  /postcss-nesting/10.1.8_postcss@8.4.14:
-    resolution: {integrity: sha512-txdb3/idHYsBbNDFo1PFY0ExCgH5nfWi8G5lO49e6iuU42TydbODTzJgF5UuL5bhgeSlnAtDgfFTDG0Cl1zaSQ==}
-    engines: {node: ^12 || ^14 || >=16}
-    peerDependencies:
-      postcss: ^8.4
-    dependencies:
-      '@csstools/selector-specificity': 2.0.0_444rcjjorr3kpoqtvoodsr46pu
       postcss: 8.4.14
       postcss-selector-parser: 6.0.10
     dev: false
@@ -8232,7 +8210,7 @@ packages:
       postcss-lab-function: 4.2.1_postcss@8.4.14
       postcss-logical: 5.0.4_postcss@8.4.14
       postcss-media-minmax: 5.0.0_postcss@8.4.14
-      postcss-nesting: 10.1.10_postcss@8.4.14
+      postcss-nesting: 10.2.0_postcss@8.4.14
       postcss-opacity-percentage: 1.1.2
       postcss-overflow-shorthand: 3.0.4_postcss@8.4.14
       postcss-page-break: 3.0.4_postcss@8.4.14
