@@ -76,7 +76,7 @@ importers:
       postcss-flexbugs-fixes: 5.0.2
       postcss-nesting: 10.1.8
       postcss-preset-env: 7.8.0
-      react: link:@nezhos/testing/react
+      react: ^18.2.0
       react-content-loader: 6.2.0
       react-dom: 18.2.0
       react-helmet-async: 1.3.0
@@ -101,18 +101,19 @@ importers:
       daisyui: 2.31.0_a191cbaa25c4a0a9f05cc78eac153be7
       gray-matter: 4.0.3
       husky: 8.0.1
-      next: 12.3.0_2024e2ebf16eff8ecdf6a75a98eaf3a8
-      next-themes: 0.2.0_24317f07432caaf600bce3b720852d6f
+      next: 12.3.0_react-dom@18.2.0+react@18.2.0
+      next-themes: 0.2.0_16ced270f64fb870fe6e2a0c3d86aa4a
       postcss: 8.4.14
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.14
       postcss-nesting: 10.1.8_postcss@8.4.14
       postcss-preset-env: 7.8.0_postcss@8.4.14
-      react-content-loader: 6.2.0_57ac396dfbacabb78a9c70df884125d0
-      react-dom: 18.2.0_57ac396dfbacabb78a9c70df884125d0
-      react-helmet-async: 1.3.0_2024e2ebf16eff8ecdf6a75a98eaf3a8
-      react-markdown: 8.0.3_08ed1eaf8f2f7220ffd9e8f8f0016804
-      react-syntax-highlighter: 15.5.0_57ac396dfbacabb78a9c70df884125d0
-      swr: 1.3.0_57ac396dfbacabb78a9c70df884125d0
+      react: 18.2.0
+      react-content-loader: 6.2.0_react@18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-helmet-async: 1.3.0_react-dom@18.2.0+react@18.2.0
+      react-markdown: 8.0.3_41d4700766780f2c07603dff9fdb8c3c
+      react-syntax-highlighter: 15.5.0_react@18.2.0
+      swr: 1.3.0_react@18.2.0
       tailwindcss: 3.1.1
     devDependencies:
       '@next/eslint-plugin-next': 12.3.0
@@ -125,7 +126,7 @@ importers:
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       '@types/react-helmet': 6.1.5
-      '@types/react-helmet-async': 1.0.3_2024e2ebf16eff8ecdf6a75a98eaf3a8
+      '@types/react-helmet-async': 1.0.3_react-dom@18.2.0+react@18.2.0
       '@types/react-syntax-highlighter': 15.5.1
       '@types/react-test-renderer': 18.0.0
       '@vitejs/plugin-react': 2.1.0_vite@3.1.0
@@ -139,8 +140,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.17.0
       happy-dom: 6.0.0
       jsdom: 20.0.0
-      react: link:@nezhos/testing/react
-      react-test-renderer: 18.2.0_57ac396dfbacabb78a9c70df884125d0
+      react-test-renderer: 18.2.0_react@18.2.0
       rimraf: 3.0.2
       serve: 14.0.0
       typescript: 4.8.3
@@ -2256,11 +2256,11 @@ packages:
       '@types/react': 18.0.12
     dev: true
 
-  /@types/react-helmet-async/1.0.3_2024e2ebf16eff8ecdf6a75a98eaf3a8:
+  /@types/react-helmet-async/1.0.3_react-dom@18.2.0+react@18.2.0:
     resolution: {integrity: sha512-DqbSuZPSHiH1l3XI/y8LbhrAGNh+Bpc9QY4MsYRM1yD4+qhax8bN4DInUMpv/tNyIdjsa+1V8XXmbRx8W5dB0w==}
     deprecated: This is a stub types definition. react-helmet-async provides its own type definitions, so you do not need this installed.
     dependencies:
-      react-helmet-async: 1.3.0_2024e2ebf16eff8ecdf6a75a98eaf3a8
+      react-helmet-async: 1.3.0_react-dom@18.2.0+react@18.2.0
     transitivePeerDependencies:
       - react
       - react-dom
@@ -7253,61 +7253,16 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /next-themes/0.2.0_24317f07432caaf600bce3b720852d6f:
+  /next-themes/0.2.0_16ced270f64fb870fe6e2a0c3d86aa4a:
     resolution: {integrity: sha512-myhpDL4vadBD9YDSHiewqvzorGzB03N84e+3LxCwHRlM/hiBOaW+UsKsQojQAzC7fdcJA0l2ppveXcYaVV+hxQ==}
     peerDependencies:
       next: '*'
       react: '*'
       react-dom: '*'
     dependencies:
-      next: 12.3.0_2024e2ebf16eff8ecdf6a75a98eaf3a8
-      react: link:apps/web/@nezhos/testing/react
-      react-dom: 18.2.0_57ac396dfbacabb78a9c70df884125d0
-    dev: false
-
-  /next/12.3.0_2024e2ebf16eff8ecdf6a75a98eaf3a8:
-    resolution: {integrity: sha512-GpzI6me9V1+XYtfK0Ae9WD0mKqHyzQlGq1xH1rzNIYMASo4Tkl4rTe9jSqtBpXFhOS33KohXs9ZY38Akkhdciw==}
-    engines: {node: '>=12.22.0'}
-    hasBin: true
-    peerDependencies:
-      fibers: '>= 3.1.0'
-      node-sass: ^6.0.0 || ^7.0.0
-      react: ^17.0.2 || ^18.0.0-0
-      react-dom: ^17.0.2 || ^18.0.0-0
-      sass: ^1.3.0
-    peerDependenciesMeta:
-      fibers:
-        optional: true
-      node-sass:
-        optional: true
-      sass:
-        optional: true
-    dependencies:
-      '@next/env': 12.3.0
-      '@swc/helpers': 0.4.11
-      caniuse-lite: 1.0.30001377
-      postcss: 8.4.14
-      react: link:apps/web/@nezhos/testing/react
-      react-dom: 18.2.0_57ac396dfbacabb78a9c70df884125d0
-      styled-jsx: 5.0.6_57ac396dfbacabb78a9c70df884125d0
-      use-sync-external-store: 1.2.0_57ac396dfbacabb78a9c70df884125d0
-    optionalDependencies:
-      '@next/swc-android-arm-eabi': 12.3.0
-      '@next/swc-android-arm64': 12.3.0
-      '@next/swc-darwin-arm64': 12.3.0
-      '@next/swc-darwin-x64': 12.3.0
-      '@next/swc-freebsd-x64': 12.3.0
-      '@next/swc-linux-arm-gnueabihf': 12.3.0
-      '@next/swc-linux-arm64-gnu': 12.3.0
-      '@next/swc-linux-arm64-musl': 12.3.0
-      '@next/swc-linux-x64-gnu': 12.3.0
-      '@next/swc-linux-x64-musl': 12.3.0
-      '@next/swc-win32-arm64-msvc': 12.3.0
-      '@next/swc-win32-ia32-msvc': 12.3.0
-      '@next/swc-win32-x64-msvc': 12.3.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - babel-plugin-macros
+      next: 12.3.0_react-dom@18.2.0+react@18.2.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /next/12.3.0_react-dom@18.2.0+react@18.2.0:
@@ -8559,23 +8514,13 @@ packages:
       cross-spawn-windows-exe: 1.2.0
     dev: true
 
-  /react-content-loader/6.2.0_57ac396dfbacabb78a9c70df884125d0:
+  /react-content-loader/6.2.0_react@18.2.0:
     resolution: {integrity: sha512-r1dI6S+uHNLW68qraLE2njJYOuy6976PpCExuCZUcABWbfnF3FMcmuESRI8L4Bj45wnZ7n8g71hkPLzbma7/Cw==}
     engines: {node: '>=10'}
     peerDependencies:
       react: '>=16.0.0'
     dependencies:
-      react: link:apps/web/@nezhos/testing/react
-    dev: false
-
-  /react-dom/18.2.0_57ac396dfbacabb78a9c70df884125d0:
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
-    peerDependencies:
-      react: ^18.2.0
-    dependencies:
-      loose-envify: 1.4.0
-      react: link:apps/web/@nezhos/testing/react
-      scheduler: 0.23.0
+      react: 18.2.0
     dev: false
 
   /react-dom/18.2.0_react@18.2.0:
@@ -8591,7 +8536,7 @@ packages:
   /react-fast-compare/3.2.0:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
 
-  /react-helmet-async/1.3.0_2024e2ebf16eff8ecdf6a75a98eaf3a8:
+  /react-helmet-async/1.3.0_react-dom@18.2.0+react@18.2.0:
     resolution: {integrity: sha512-9jZ57/dAn9t3q6hneQS0wukqC2ENOBgMNVEhb/ZG9ZSxUetzVIw4iAmEU38IaVg3QGYauQPhSeUTuIUtFglWpg==}
     peerDependencies:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
@@ -8600,8 +8545,8 @@ packages:
       '@babel/runtime': 7.18.3
       invariant: 2.2.4
       prop-types: 15.8.1
-      react: link:apps/web/@nezhos/testing/react
-      react-dom: 18.2.0_57ac396dfbacabb78a9c70df884125d0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       react-fast-compare: 3.2.0
       shallowequal: 1.1.0
 
@@ -8640,7 +8585,7 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
 
-  /react-markdown/8.0.3_08ed1eaf8f2f7220ffd9e8f8f0016804:
+  /react-markdown/8.0.3_41d4700766780f2c07603dff9fdb8c3c:
     resolution: {integrity: sha512-We36SfqaKoVNpN1QqsZwWSv/OZt5J15LNgTLWynwAN5b265hrQrsjMtlRNwUvS+YyR3yDM8HpTNc4pK9H/Gc0A==}
     peerDependencies:
       '@types/react': '>=16'
@@ -8654,7 +8599,7 @@ packages:
       hast-util-whitespace: 2.0.0
       prop-types: 15.8.1
       property-information: 6.1.1
-      react: link:apps/web/@nezhos/testing/react
+      react: 18.2.0
       react-is: 18.1.0
       remark-parse: 10.0.1
       remark-rehype: 10.1.0
@@ -8672,17 +8617,17 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-shallow-renderer/16.15.0_57ac396dfbacabb78a9c70df884125d0:
+  /react-shallow-renderer/16.15.0_react@18.2.0:
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
     peerDependencies:
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
       object-assign: 4.1.1
-      react: link:apps/web/@nezhos/testing/react
+      react: 18.2.0
       react-is: 18.2.0
     dev: true
 
-  /react-syntax-highlighter/15.5.0_57ac396dfbacabb78a9c70df884125d0:
+  /react-syntax-highlighter/15.5.0_react@18.2.0:
     resolution: {integrity: sha512-+zq2myprEnQmH5yw6Gqc8lD55QHnpKaU8TOcFeC/Lg/MQSs8UknEA0JC4nTZGFAXC2J2Hyj/ijJ7NlabyPi2gg==}
     peerDependencies:
       react: '>= 0.14.0'
@@ -8691,18 +8636,18 @@ packages:
       highlight.js: 10.7.3
       lowlight: 1.20.0
       prismjs: 1.28.0
-      react: link:apps/web/@nezhos/testing/react
+      react: 18.2.0
       refractor: 3.6.0
     dev: false
 
-  /react-test-renderer/18.2.0_57ac396dfbacabb78a9c70df884125d0:
+  /react-test-renderer/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-JWD+aQ0lh2gvh4NM3bBM42Kx+XybOxCpgYK7F8ugAlpaTSnWsX+39Z4XkOykGZAHrjwwTZT3x3KxswVWxHPUqA==}
     peerDependencies:
       react: ^18.2.0
     dependencies:
-      react: link:apps/web/@nezhos/testing/react
+      react: 18.2.0
       react-is: 18.2.0
-      react-shallow-renderer: 16.15.0_57ac396dfbacabb78a9c70df884125d0
+      react-shallow-renderer: 16.15.0_react@18.2.0
       scheduler: 0.23.0
     dev: true
 
@@ -9552,22 +9497,6 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-jsx/5.0.6_57ac396dfbacabb78a9c70df884125d0:
-    resolution: {integrity: sha512-xOeROtkK5MGMDimBQ3J6iPId8q0t/BDoG5XN6oKkZClVz9ISF/hihN8OCn2LggMU6N32aXnrXBdn3auSqNS9fA==}
-    engines: {node: '>= 12.0.0'}
-    peerDependencies:
-      '@babel/core': '*'
-      babel-plugin-macros: '*'
-      react: '>= 16.8.0 || 17.x.x || ^18.0.0-0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      babel-plugin-macros:
-        optional: true
-    dependencies:
-      react: link:apps/web/@nezhos/testing/react
-    dev: false
-
   /styled-jsx/5.0.6_react@18.2.0:
     resolution: {integrity: sha512-xOeROtkK5MGMDimBQ3J6iPId8q0t/BDoG5XN6oKkZClVz9ISF/hihN8OCn2LggMU6N32aXnrXBdn3auSqNS9fA==}
     engines: {node: '>= 12.0.0'}
@@ -9620,12 +9549,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /swr/1.3.0_57ac396dfbacabb78a9c70df884125d0:
+  /swr/1.3.0_react@18.2.0:
     resolution: {integrity: sha512-dkghQrOl2ORX9HYrMDtPa7LTVHJjCTeZoB1dqTbnnEDlSvN8JEKpYIYurDfvbQFUUS8Cg8PceFVZNkW0KNNYPw==}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: link:apps/web/@nezhos/testing/react
+      react: 18.2.0
     dev: false
 
   /symbol-tree/3.2.4:
@@ -10251,14 +10180,6 @@ packages:
     resolution: {integrity: sha1-BAkpJHGyTyPFDWWkeTF5PStaz8E=}
     engines: {node: '>=0.12.0'}
     dev: true
-
-  /use-sync-external-store/1.2.0_57ac396dfbacabb78a9c70df884125d0:
-    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: link:apps/web/@nezhos/testing/react
-    dev: false
 
   /use-sync-external-store/1.2.0_react@18.2.0:
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
