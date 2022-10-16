@@ -266,14 +266,12 @@ importers:
       '@testing-library/user-event': 14.4.3
       react: 18.2.0
       react-dom: 18.2.0
-      react-i18next: 11.18.0
       solid-js: 1.5.1
       solid-testing-library: 0.3.0
     dependencies:
       '@nezhos/i18n': link:../i18n
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-i18next: 11.18.0_react-dom@18.2.0+react@18.2.0
       solid-js: 1.5.1
     devDependencies:
       '@testing-library/dom': 8.19.0
@@ -8623,25 +8621,6 @@ packages:
       '@babel/runtime': 7.18.3
       html-parse-stringify: 3.0.1
       i18next: 21.10.0
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
-  /react-i18next/11.18.0_react-dom@18.2.0+react@18.2.0:
-    resolution: {integrity: sha512-coJujU20xJ5Wa5rHjTyB5LFKZb1yfXo2A+40RRSyAF0FlZRHyy+3C1Mr92x1JPfS7W7v2TWNn8mRhpDFGJwXVg==}
-    peerDependencies:
-      i18next: '>= 19.0.0'
-      react: '>= 16.8.0'
-      react-dom: '*'
-      react-native: '*'
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-      react-native:
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.18.3
-      html-parse-stringify: 3.0.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
