@@ -1,7 +1,7 @@
 {
   "name": "@nezhos/i18n",
   "version": "1.1.0",
-  "main": "i18n.js",
+  "main": "i18n.ts",
   "license": "MIT",
   "dependencies": {
     "i18next": "21.10.0",

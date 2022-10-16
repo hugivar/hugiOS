@@ -16,3 +16,5 @@ i18n
     });
 
 export default i18n;
+
+export * from 'react-i18next';
