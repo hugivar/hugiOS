@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "@nezhos/i18n";
 
 import Layout from 'containers/Layout';
 import Header from 'containers/Header';
