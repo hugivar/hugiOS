@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "containers/Header";
 import Link from "next/link";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "@nezhos/i18n";
 
 const PersonalInfo = ({ t }: any) => (
   <div className="max-w-md">
@@ -71,7 +71,7 @@ const Idea = ({ t }: any) => (
 );
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <>
