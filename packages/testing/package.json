@@ -12,8 +12,7 @@
     "solid-testing-library": "0.3.0"
   },
   "dependencies": {
-    "@nezhos/i18n": "workspace:^1.1.0",
-    "i18next": "21.10.0",
+    "@nezhos/i18n": "workspace:*",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "11.18.0",

@@ -1,20 +1,7 @@
 import '@assets/main.css';
 import { ThemeProvider } from 'next-themes'
 import { HelmetProvider } from 'react-helmet-async';
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import resources from '@nezhos/i18n';
-
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: 'en-US',
-    debug: false,
-    interpolation: {
-      escapeValue: false,
-    }
-  });
+import '@nezhos/i18n';
 
 function MyApp({ Component, pageProps }) {
   return (
