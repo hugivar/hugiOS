@@ -17,7 +17,7 @@
     "nezhos": "nezhos"
   },
   "devDependencies": {
-    "@changesets/cli": "2.24.0",
+    "@changesets/cli": "2.25.0",
     "@nezhos/tools": "workspace:*",
     "prettier": "latest",
     "turbo": "latest"
