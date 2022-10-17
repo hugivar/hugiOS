@@ -283,7 +283,7 @@ importers:
   packages/tools:
     specifiers:
       '@doist/todoist-api-typescript': 1.7.0
-      '@pinata/sdk': 1.1.26
+      '@pinata/sdk': 1.2.0
       '@types/inquirer': 9.0.1
       '@types/lodash': 4.14.182
       '@types/node': 17.0.23
@@ -308,7 +308,7 @@ importers:
       typescript: 4.8.3
     devDependencies:
       '@doist/todoist-api-typescript': 1.7.0
-      '@pinata/sdk': 1.1.26
+      '@pinata/sdk': 1.2.0
       '@types/inquirer': 9.0.1
       '@types/lodash': 4.14.182
       '@types/node': 17.0.23
@@ -1875,8 +1875,8 @@ packages:
       rimraf: 3.0.2
     dev: true
 
-  /@pinata/sdk/1.1.26:
-    resolution: {integrity: sha512-surJDg6aBRMnx3TAzBeBH/rNnlsTsykkBe1Fr7VMZgw3Ub4Q0RO2y5mAXtO4AmBqFtqLTbMW/2ItAQ6rVfKGPw==}
+  /@pinata/sdk/1.2.0:
+    resolution: {integrity: sha512-PiDpn2RTNa08cHzrRoW69qQvJxxLFEzKTTHpIFUImBwcRBTml3SMldWvGmbop0buywDi9bI9PPyYdosUUmRzbA==}
     dependencies:
       axios: 0.21.4
       base-path-converter: 1.0.2
