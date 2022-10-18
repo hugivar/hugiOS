@@ -46,7 +46,7 @@ importers:
       '@nezhos/tsconfig': workspace:*
       '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
-      '@types/jest': 29.1.0
+      '@types/jest': 29.2.0
       '@types/node': 17.0.23
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
@@ -121,7 +121,7 @@ importers:
       '@nezhos/i18n': link:../../packages/i18n
       '@nezhos/testing': link:../../packages/testing
       '@nezhos/tsconfig': link:../../packages/tsconfig
-      '@types/jest': 29.1.0
+      '@types/jest': 29.2.0
       '@types/node': 17.0.23
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
@@ -2135,8 +2135,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/29.1.0:
-    resolution: {integrity: sha512-CqlKkMNaUhFSRvqVKniNhbcy9fc/Rj2cmFD5t8Jtu4HlHzSit27h7XKfP5kkxBeROQ8WAvQQmy93FIz9or8jKg==}
+  /@types/jest/29.2.0:
+    resolution: {integrity: sha512-KO7bPV21d65PKwv3LLsD8Jn3E05pjNjRZvkm+YTacWhVmykAb07wW6IkZUmQAltwQafNcDUEUrMO2h3jeBSisg==}
     dependencies:
       expect: 29.0.3
       pretty-format: 29.0.3
@@ -2288,7 +2288,7 @@ packages:
   /@types/testing-library__jest-dom/5.14.3:
     resolution: {integrity: sha512-oKZe+Mf4ioWlMuzVBaXQ9WDnEm1+umLx0InILg+yvZVBBDmzV5KfZyLrCvadtWcx8+916jLmHafcmqqffl+iIw==}
     dependencies:
-      '@types/jest': 29.1.0
+      '@types/jest': 29.2.0
     dev: true
 
   /@types/through/0.0.30:
