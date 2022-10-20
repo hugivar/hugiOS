@@ -1,7 +1,8 @@
 import { Client } from "@notionhq/client";
 
+// Create new secret thorugh .env file
 const notion = new Client({
-    auth: 'secret_u31XxrAJFsz1i6XxA4eXTLZvMckJiCyAUAJVMEDQ9lu'
+    auth: ''
 })
 
 interface IPage {
