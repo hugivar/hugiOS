@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 import settings from "config/settings";
 import { Icon } from "components/Icon";
-import { determineHref } from "utils/routing";
+import { determineHref } from "src/utils/routing";
 
 interface INavItem {
   title: string;

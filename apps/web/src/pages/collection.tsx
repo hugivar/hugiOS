@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTranslation } from "@nezhos/i18n";
 
-import Layout from 'containers/Layout';
-import Header from 'containers/Header';
+import Layout from 'src/containers/Layout';
+import Header from 'src/containers/Header';
 import ListView from 'components/ListView';
-import { getAllArticles } from 'lib/api';
+import { getAllArticles } from 'src/data/api';
 
 export async function getStaticProps() {
   const collectionData = await getAllArticles([

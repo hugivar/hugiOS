@@ -24,16 +24,16 @@
         "./config/*"
       ],
       "lib/*": [
-        "./lib/*"
+        "src/lib/*"
       ],
       "components/*": [
-        "./components/*"
+        "./src/components/*"
       ],
       "containers/*": [
-        "./containers/*"
+        "src/containers/*"
       ],
       "utils/*": [
-        "./utils/*"
+        "src/utils/*"
       ],
       "@assets/*": [
         "./assets/*"

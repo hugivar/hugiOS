@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import Header from "containers/Header";
+import Header from "src/containers/Header";
 import Link from "next/link";
 import { useTranslation } from "@nezhos/i18n";
 
