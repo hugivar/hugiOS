@@ -15,6 +15,6 @@
     "@nezhos/i18n": "workspace:*",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "solid-js": "1.5.1"
+    "solid-js": "1.6.0"
   }
 }

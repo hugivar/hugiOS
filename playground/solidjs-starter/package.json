@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "@nezhos/solid-ui": "workspace:*",
-    "solid-js": "1.5.1"
+    "solid-js": "1.6.0"
   }
 }
