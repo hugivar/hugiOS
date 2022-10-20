@@ -67,7 +67,7 @@ importers:
       eslint-config-next: 12.3.0
       eslint-config-prettier: 8.5.0
       gray-matter: 4.0.3
-      happy-dom: 7.5.12
+      happy-dom: 7.6.0
       husky: 8.0.1
       jsdom: 20.0.0
       next: 12.3.0
@@ -130,7 +130,7 @@ importers:
       '@types/react-syntax-highlighter': 15.5.1
       '@types/react-test-renderer': 18.0.0
       '@vitejs/plugin-react': 2.1.0_vite@3.1.0
-      '@vitest/coverage-c8': 0.24.3_lledzfkztw6bxilwy74vgdh2lm
+      '@vitest/coverage-c8': 0.24.3_ute2iywn2lxmdfcvvh5vkysjxq
       '@vitest/ui': 0.24.0
       c8: 7.12.0
       cheerio: 1.0.0-rc.11
@@ -138,7 +138,7 @@ importers:
       eslint: 8.17.0
       eslint-config-next: 12.3.0_3zouvldjmhrtmf7vfvokihmccq
       eslint-config-prettier: 8.5.0_eslint@8.17.0
-      happy-dom: 7.5.12
+      happy-dom: 7.6.0
       jsdom: 20.0.0
       react-test-renderer: 18.2.0_react@18.2.0
       rimraf: 3.0.2
@@ -146,7 +146,7 @@ importers:
       typescript: 4.8.3
       vite: 3.1.0
       vite-tsconfig-paths: 3.5.0_vite@3.1.0
-      vitest: 0.24.0_lledzfkztw6bxilwy74vgdh2lm
+      vitest: 0.24.0_ute2iywn2lxmdfcvvh5vkysjxq
 
   packages/config:
     specifiers:
@@ -2465,11 +2465,11 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/coverage-c8/0.24.3_lledzfkztw6bxilwy74vgdh2lm:
+  /@vitest/coverage-c8/0.24.3_ute2iywn2lxmdfcvvh5vkysjxq:
     resolution: {integrity: sha512-tAmMyHxWYnAwGeJb7QgTuEX8aLasTg4X1/6INobXa/7wYGEJ28CACFO5iLn1HzFVPoLvhsS3luQjiflGjjSMRQ==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.24.3_lledzfkztw6bxilwy74vgdh2lm
+      vitest: 0.24.3_ute2iywn2lxmdfcvvh5vkysjxq
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -5633,8 +5633,8 @@ packages:
       strip-bom-string: 1.0.0
     dev: false
 
-  /happy-dom/7.5.12:
-    resolution: {integrity: sha512-Q4JE09CMWHptj1bvtoeYqUmdhj/5cuZqj0O60xs/9NgfyxL3YEVKJ588uBcLnCAkBiUvZnAJB6T+6IzbOSMSRA==}
+  /happy-dom/7.6.0:
+    resolution: {integrity: sha512-QnNsiblZdyVDzW5ts6E7ub79JnabqHJeJgt+1WGNq9fSYqS/r/RzzTVXCZSDl6EVkipdwI48B4bgXAnMZPecIw==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
@@ -10344,7 +10344,7 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.24.0_lledzfkztw6bxilwy74vgdh2lm:
+  /vitest/0.24.0_ute2iywn2lxmdfcvvh5vkysjxq:
     resolution: {integrity: sha512-k5j3FPTor+MJx2x0pDW2gtVk+s9VC6nSHT3SoqOIk9Je5fFpPgict+Xy2eAVXUogvSixs45Ya1oZk+oK93BO0w==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -10372,7 +10372,7 @@ packages:
       '@vitest/ui': 0.24.0
       chai: 4.3.6
       debug: 4.3.4
-      happy-dom: 7.5.12
+      happy-dom: 7.6.0
       jsdom: 20.0.0
       local-pkg: 0.4.2
       strip-literal: 0.4.2
@@ -10388,7 +10388,7 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.24.3_lledzfkztw6bxilwy74vgdh2lm:
+  /vitest/0.24.3_ute2iywn2lxmdfcvvh5vkysjxq:
     resolution: {integrity: sha512-aM0auuPPgMSstWvr851hB74g/LKaKBzSxcG3da7ejfZbx08Y21JpZmbmDYrMTCGhVZKqTGwzcnLMwyfz2WzkhQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -10416,7 +10416,7 @@ packages:
       '@vitest/ui': 0.24.0
       chai: 4.3.6
       debug: 4.3.4
-      happy-dom: 7.5.12
+      happy-dom: 7.6.0
       jsdom: 20.0.0
       local-pkg: 0.4.2
       strip-literal: 0.4.2
