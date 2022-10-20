@@ -5,13 +5,13 @@ import {
   getArticlesFromFiles,
   getArticleSlugs,
   getArticleFromFileBySlug,
-} from "lib/fs";
-import Layout from "containers/Layout";
-import Header from "containers/Header";
+} from "src/lib/fs";
+import Layout from "src/containers/Layout";
+import Header from "src/containers/Header";
 import ListView from "components/ListView";
 import ContentItem from "components/ContentItem";
-import { determineIPFS } from "utils/routing";
-import { getAllArticles, getArticleBySlug } from "lib/api";
+import { determineIPFS } from "src/utils/routing";
+import { getAllArticles, getArticleBySlug } from "src/data/api";
 
 interface IPost {
   data: any;

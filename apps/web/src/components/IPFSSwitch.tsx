@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@nezhos/react-ui";
 
 import settings from "config/settings";
-import { determineIPFS } from "utils/routing";
+import { determineIPFS } from "src/utils/routing";
 import Tooltip from "./Tooltip";
 
 export const IPFSSwitch = () => {

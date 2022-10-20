@@ -5,46 +5,42 @@ import { useRouter } from "next/router";
 import classNames from "classnames";
 
 import { DrawerButton } from "components/DrawerButton";
-import { determineHref } from "utils/routing";
-
-interface Item {
-  title: string;
-  description: string;
-  date: string;
-  slug: string;
-  type: string;
-}
+import { determineHref } from "src/utils/routing";
 
 interface IItemCard {
-  item: Item;
+  title: string;
+  description?: string;
+  date?: string;
+  link: string;
+  slug?: string;
+  type?: string;
 }
 
 interface IItemList {
   title: string;
-  items?: [Item];
+  pages?: [IItemCard];
 }
 
 interface ITitle {
   title: string;
 }
 
-const ItemCard = ({ item }: IItemCard) => {
-  const url = `/${item.type}/${item.slug}/`;
-  const link = determineHref(url);
+const ItemCard = ({ title, link, description, date, type, slug }: IItemCard) => {
+  const pageLink = determineHref(link);
 
   return (
-    <Link href={link}>
+    <Link href={pageLink}>
       <a className="flex py-3 lg:py-2 px-3.5 space-x-3 border-b lg:border-none border-gray-100 dark:border-gray-900 text-sm lg:rounded-lg sm:hover:bg-gray-200 sm:dark:hover:bg-gray-800">
         <div className="flex flex-col justify-center space-y-1">
           <div className="font-bold line-clamp-3 text-gray-1000 dark:text-gray-100">
-            {item?.title}
+            {title}
           </div>
-          <div className="line-clamp-2 text-gray-1000/60 dark:text-white/60">
-            {item?.description}
+          {/* <div className="line-clamp-2 text-gray-1000/60 dark:text-white/60">
+            {description}
           </div>
           <div className="line-clamp-1 text-gray-1000/60 dark:text-white/40">
-            {item?.date}
-          </div>
+            {date}
+          </div> */}
         </div>
       </a>
     </Link>
@@ -66,10 +62,10 @@ const Title = ({ title }: ITitle) => (
   </div>
 );
 
-const ListView = ({ title, items }: IItemList) => {
+const ListView = ({ title, pages }: IItemList) => {
   const router = useRouter();
 
-  if (!items || !items.length) return <p>No items found</p>;
+  if (!pages || !pages.length) return <p>No pages found</p>;
 
   const viewingBase =
     router.asPath === "/journal" || router.asPath === "/collection";
@@ -84,8 +80,8 @@ const ListView = ({ title, items }: IItemList) => {
       )}
     >
       <Title title={title} />
-      {items.map((item, idx) => (
-        <ItemCard key={idx} item={item} />
+      {pages.map((page, idx) => (
+        <ItemCard key={idx} title={page.title} link={page.link} />
       ))}
     </div>
   );
