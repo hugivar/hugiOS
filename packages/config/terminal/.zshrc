@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export USER="${USER}"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -171,10 +171,10 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PNPM_HOME="/Users/${USER}/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-# Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
-
 # pnpm
 export PNPM_HOME="/Users/${USER}/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
