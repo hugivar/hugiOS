@@ -175,15 +175,15 @@ importers:
 
   packages/i18n:
     specifiers:
-      i18next: 21.10.0
+      i18next: 22.0.2
       react: ^18.2.0
       react-dom: 18.2.0
       react-i18next: 11.18.0
     dependencies:
-      i18next: 21.10.0
+      i18next: 22.0.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-i18next: 11.18.0_vfm63zmruocgezzfl2v26zlzpy
+      react-i18next: 11.18.0_nedrny62vyfw32zwpg5ep5hijq
 
   packages/obsidian:
     specifiers:
@@ -5859,8 +5859,8 @@ packages:
     hasBin: true
     dev: false
 
-  /i18next/21.10.0:
-    resolution: {integrity: sha512-YeuIBmFsGjUfO3qBmMOc0rQaun4mIpGKET5WDwvu8lU7gvwpcariZLNtL0Fzj+zazcHUrlXHiptcFhBMFaxzfg==}
+  /i18next/22.0.2:
+    resolution: {integrity: sha512-rGXWILemhx0dpNE5PfudVU1g4SdW0hkh4WYHaP8Cl6gm1KkMdBckmNqj9WvYqp8fOSocqX5FFJeadwiOZHLSXQ==}
     dependencies:
       '@babel/runtime': 7.18.3
     dev: false
@@ -8520,7 +8520,7 @@ packages:
       react-fast-compare: 3.2.0
       shallowequal: 1.1.0
 
-  /react-i18next/11.18.0_vfm63zmruocgezzfl2v26zlzpy:
+  /react-i18next/11.18.0_nedrny62vyfw32zwpg5ep5hijq:
     resolution: {integrity: sha512-coJujU20xJ5Wa5rHjTyB5LFKZb1yfXo2A+40RRSyAF0FlZRHyy+3C1Mr92x1JPfS7W7v2TWNn8mRhpDFGJwXVg==}
     peerDependencies:
       i18next: '>= 19.0.0'
@@ -8535,7 +8535,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.3
       html-parse-stringify: 3.0.1
-      i18next: 21.10.0
+      i18next: 22.0.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
