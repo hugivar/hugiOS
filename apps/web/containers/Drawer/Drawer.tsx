@@ -29,11 +29,11 @@ const NavItem = ({ title, href, active, icon, external }: INavItem) => (
         )}
       >
         <span className="flex items-center justify-center">
-          <Icon name={icon} className="w-4 h-4" />
+          <Icon name={icon} alt="nav item" className="w-4 h-4" />
         </span>
         <span className="flex items-center justify-center"></span>
         <span className="flex-1 text-gray-900 dark:text-gray-50">{title}</span>
-        {external && <Icon name="external" height="12" width="12" />}
+        {external && <Icon name="external" alt="external link" height={12} width={12} />}
       </a>
     </Link>
   </li>

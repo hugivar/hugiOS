@@ -2,12 +2,6 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    loader: "custom"
-  },
-  devIndicators: {
-    autoPrerender: false,
-  },
   webpack(config, options) {
     if (!options.dev) {
       config.devtool = options.isServer ? false : 'source-map';
