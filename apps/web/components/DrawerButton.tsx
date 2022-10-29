@@ -9,7 +9,7 @@ export const DrawerButton = () => (
     name="Menu"
   >
     <label htmlFor="my-drawer">
-      <Icon name="menu" height="24" width="24" />
+      <Icon name="menu" alt="menu" height={24} width={24} />
     </label>
   </Button>
 );

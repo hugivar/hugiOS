@@ -58,7 +58,7 @@ const Header = ({ title }: IHeader) => {
             <div className="lg:hidden">
               <Link href={url} passHref>
                 <div className="text-black dark:text-white w-5 lg">
-                  <Icon name="back" height="16" width="16" />
+                  <Icon name="back" alt="back" height={16} width={16} />
                 </div>
               </Link>
             </div>
