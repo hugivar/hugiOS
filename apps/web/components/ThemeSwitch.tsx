@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "@nezhos/react-ui";
 
+import settings from "config/settings";
 import Tooltip from "./Tooltip";
 
 export const ThemeSwitch = () => {
@@ -27,7 +28,7 @@ export const ThemeSwitch = () => {
               unoptimized
               height="24"
               width="24"
-              src="/icons/darkmode.svg"
+              src={`https://${settings.siteAddress}/icons/darkmode.svg`}
               alt="dark mode icon"
             />
           </Button>
@@ -43,7 +44,7 @@ export const ThemeSwitch = () => {
               unoptimized
               height="24"
               width="24"
-              src="/icons/lightmode.svg"
+              src={`https://${settings.siteAddress}/icons/lightmode.svg`}
               alt="light mode icon"
             />
           </Button>
