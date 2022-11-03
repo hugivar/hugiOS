@@ -29,7 +29,7 @@ export const IPFSSwitch = () => {
               unoptimized
               height="24"
               width="24"
-              src="/icons/ipfs-enabled.svg"
+              src={`https://${settings.siteAddress}/icons/ipfs-enabled.svg`}
               alt="ipfs enabled icon"
             />
           </Button>
@@ -47,7 +47,7 @@ export const IPFSSwitch = () => {
               unoptimized
               height="24"
               width="24"
-              src="/icons/ipfs.svg"
+              src={`https://${settings.siteAddress}/icons/ipfs.svg`}
               alt="ipfs disabled icon"
             />
           </Button>

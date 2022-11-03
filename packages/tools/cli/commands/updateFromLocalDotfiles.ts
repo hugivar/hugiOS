@@ -1,13 +1,14 @@
 import { program } from 'commander';
+import path from 'path';
 import { execSync } from 'child_process';
 
+console.log(__dirname, path.resolve('config/terminal/.zshrc'))
 const updateFromLocalDotfiles = () => {
     program
         .action(() => {
             execSync(`
-                cp -R ~/.zshrc ../config/terminal/.zshrc
-                cp -R ~/.gitignore_global ../config/terminal/.zshrc
-                cp -R ~/.vimrc ../config/terminal/.zshrc
+                cp ~/.zshrc ${path.resolve('packages/config/terminal')}
+                cp ~/.vimrc ${path.resolve('packages/config/terminal')}
             `);
         })
         .configureOutput({
