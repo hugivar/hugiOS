@@ -2,7 +2,7 @@ import { Client } from "@notionhq/client";
 
 // Create new secret thorugh .env file
 const notion = new Client({
-    auth: ''
+    auth: process.env.NOTION_KEY
 })
 
 interface IPage {
@@ -18,19 +18,22 @@ interface IPages {
     pages?: [IPage];
 }
 
-const getPages = async (pageId: string): Promise<any> => {
-    const blocks = await notion.blocks.children.list({
+export const getBlocksByPageId = (pageId: string): Promise<any> => {
+    return notion.blocks.children.list({
         block_id: pageId,
         page_size: 50,
     });
+};
 
-    const pages = blocks.results.map(item => ({
+export const getPage = (pageId: string): Promise<any> => {
+    return notion.pages.retrieve({ page_id: pageId })
+
+};
+
+export const getPagesByBlocks = (blocks: any): Promise<any> => {
+    return blocks?.results?.filter((item: any) => item.child_page).map((item: any) => ({
         id: item.id,
         title: item.child_page.title,
         link: `journal/${item.id}`
     }));
-
-    return pages;
 };
-
-export default getPages;

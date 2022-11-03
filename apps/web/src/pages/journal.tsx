@@ -4,20 +4,22 @@ import { useTranslation } from "@nezhos/i18n";
 import Layout from 'src/containers/Layout';
 import Header from 'src/containers/Header';
 import ListView from 'components/ListView';
-import getPages from 'src/data/getPages';
+import { getBlocksByPageId, getPagesByBlocks } from 'src/data/notion';
 
 export async function getStaticProps() {
-  const pageId = 'a80184c5-8ec5-4d99-b8ec-4b994d5cd7c8';
-  const pages = await getPages(pageId);
+  const pageId = 'a80184c58ec54d99b8ec4b994d5cd7c8';
+  const blocks = await getBlocksByPageId(pageId);
+  const pages = await getPagesByBlocks(blocks);
 
   return {
     props: {
+      blocks,
       pages
     },
   };
 }
 
-const Journal = ({ pages, ...rest }) => {
+const Journal = ({ blocks, pages, ...rest }) => {
   const { t } = useTranslation();
 
   return (

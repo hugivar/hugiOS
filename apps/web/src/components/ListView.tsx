@@ -29,8 +29,8 @@ const ItemCard = ({ title, link, description, date, type, slug }: IItemCard) => 
   const pageLink = determineHref(link);
 
   return (
-    <Link href={pageLink}>
-      <a className="flex py-3 lg:py-2 px-3.5 space-x-3 border-b lg:border-none border-gray-100 dark:border-gray-900 text-sm lg:rounded-lg sm:hover:bg-gray-200 sm:dark:hover:bg-gray-800">
+    <Link href={pageLink} passHref legacyBehavior>
+      <a>
         <div className="flex flex-col justify-center space-y-1">
           <div className="font-bold line-clamp-3 text-gray-1000 dark:text-gray-100">
             {title}
