@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Layout from "containers/Layout";
-import Home from 'containers/Home';
+import Layout from "src/containers/Layout";
+import Home from 'src/containers/Home';
 
 const Index = () => {
   return (

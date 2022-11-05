@@ -3,7 +3,7 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
-type Type = "journal" | "collection";
+type Type = "journal";
 
 const postsDirectory = join(process.cwd(), "data/posts");
 const collectionsDirectory = join(process.cwd(), "data/collections");

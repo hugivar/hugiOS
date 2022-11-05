@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 import settings from "config/settings";
 import { Icon } from "components/Icon";
-import { determineHref } from "utils/routing";
+import { determineHref } from "src/utils/routing";
 
 interface INavItem {
   title: string;
@@ -17,7 +17,7 @@ interface INavItem {
 
 const NavItem = ({ title, href, active, icon, external }: INavItem) => (
   <li className="flex items-stretch space-x-1">
-    <Link href={determineHref(href)}>
+    <Link href={determineHref(href)} passHref legacyBehavior>
       <a
         target={external ? "_blank" : "_self"}
         className={classNames(

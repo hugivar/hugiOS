@@ -22,7 +22,7 @@ const Header = ({ title }: IHeader) => {
   const viewingBase =
     (router?.pathname?.match(/[a-z]*(\.html|$)/gm) || [])?.length > 1;
   const viewingSubPath = router?.pathname.match(/[a-z]*\/\[[a-z]*\]/gm);
-  const url = router?.asPath.includes("journal") ? "/journal" : "/collection";
+  const url = "/journal";
 
   const [opacityValues, setOpacity] = useState({
     text: -1,
