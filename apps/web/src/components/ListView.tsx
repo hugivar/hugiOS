@@ -10,10 +10,8 @@ import { determineHref } from "src/utils/routing";
 interface IItemCard {
   title: string;
   description?: string;
-  date?: string;
+  created: string;
   link: string;
-  slug?: string;
-  type?: string;
 }
 
 interface IItemList {
@@ -25,22 +23,20 @@ interface ITitle {
   title: string;
 }
 
-const ItemCard = ({ title, link, description, date, type, slug }: IItemCard) => {
+const ItemCard = ({ title, link, created }: IItemCard) => {
   const pageLink = determineHref(link);
+  const date = new Date(created);
 
   return (
     <Link href={pageLink} passHref legacyBehavior>
       <a>
-        <div className="flex flex-col justify-center space-y-1">
+        <div className="flex flex-col justify-center space-y-1 m-4">
           <div className="font-bold line-clamp-3 text-gray-1000 dark:text-gray-100">
             {title}
           </div>
-          {/* <div className="line-clamp-2 text-gray-1000/60 dark:text-white/60">
-            {description}
-          </div>
           <div className="line-clamp-1 text-gray-1000/60 dark:text-white/40">
-            {date}
-          </div> */}
+            {date?.toLocaleDateString("en-US")}
+          </div>
         </div>
       </a>
     </Link>
@@ -68,7 +64,7 @@ const ListView = ({ title, pages }: IItemList) => {
   if (!pages || !pages.length) return <p>No pages found</p>;
 
   const viewingBase =
-    router.asPath === "/journal" || router.asPath === "/collection";
+    router.asPath === "/journal";
 
   return (
     <div
@@ -81,7 +77,7 @@ const ListView = ({ title, pages }: IItemList) => {
     >
       <Title title={title} />
       {pages.map((page, idx) => (
-        <ItemCard key={idx} title={page.title} link={page.link} />
+        <ItemCard key={idx} title={page.title} link={page.link} created={page.created} />
       ))}
     </div>
   );

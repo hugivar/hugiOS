@@ -18,9 +18,9 @@ const PersonalInfo = ({ t }: any) => (
       </p>
       <p>
         {t("home.me.visit")}{" "}
-        <Link href="/collection" passHref>
+        <Link href="/journal" passHref>
           <span className="text-black font-bold cursor-pointer dark:text-slate-100">
-            {t('collection.title')}
+            {t('journal.title')}
           </span>
         </Link>{" "}
         {t("home.me.subtitle2")}

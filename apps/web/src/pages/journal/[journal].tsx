@@ -1,16 +1,6 @@
-/* tslint:disable */
 import React from "react";
-
-import {
-  getArticlesFromFiles,
-  getArticleSlugs,
-  getArticleFromFileBySlug,
-} from "src/lib/fs";
 import Layout from "src/containers/Layout";
 import Header from "src/containers/Header";
-import ListView from "components/ListView";
-import ContentItem from "components/ContentItem";
-import { getAllArticles, getArticleBySlug } from "src/data/api";
 import { determineIPFS } from "src/utils/routing";
 import { getPage, getBlocksByPageId, getPagesByBlocks } from 'src/data/notion';
 import { getRichText } from 'src/data/selector';
@@ -27,14 +17,6 @@ export async function getStaticProps({ params }: PageParams) {
 
   const page = await getPage(params.journal);
   const blocks = await getBlocksByPageId(params.journal);
-
-  // const postsData = ipfsEnabled
-  //   ? await getArticlesFromFiles("journal")
-  //   : await getAllArticles(["slug", "title", "description", "date"], "journal");
-
-  // const data = ipfsEnabled
-  //   ? await getArticleFromFileBySlug(params.journal, "journal")
-  //   : await getArticleBySlug(params.journal);
 
   return {
     props: {
@@ -65,7 +47,7 @@ interface IPost {
 const JournalItem = ({ page, blocks }: IPost) => {
   const title = page?.properties?.title?.title[0]?.plain_text;
   const date = new Date(page?.created_time);
-  const content = blocks.results.map(block => getRichText(block)).filter(item => item);
+  const content = blocks.results.map((block: any) => getRichText(block)).filter((item: any) => item);
 
   return (
     <Layout pageTitle={`${title} · Nezhivar`}>
@@ -82,7 +64,7 @@ const JournalItem = ({ page, blocks }: IPost) => {
                   {date.toLocaleDateString("en-US")}
                 </p>
                 <div className="mt-8 prose dark:text-slate-300">
-                  {content.map(block => (
+                  {content.map((block: any) => (
                     <TextBlock
                       type={block.type}
                       text={block.plain_text}

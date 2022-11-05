@@ -4,7 +4,7 @@ const articlePath =
   "https://dev.to/api/articles?username=nezhivar&per_page=1000";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-type Type = "journal" | "collection";
+type Type = "journal";
 type IArticle = {
   date: any;
   tag_list: string[];
