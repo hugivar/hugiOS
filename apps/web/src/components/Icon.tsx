@@ -15,6 +15,7 @@ interface ILoader {
 export const Icon = ({ name, height = 16, width = 16 }: IIcon & NextImage): any => {
   return (
     <Image
+      unoptimized
       src={`https://${settings.siteAddress}/icons/${name}.svg`}
       width={height}
       height={width}

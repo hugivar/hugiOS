@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import Header from "containers/Header";
+import Header from "src/containers/Header";
 import Link from "next/link";
 import { useTranslation } from "@nezhos/i18n";
 
@@ -18,9 +18,9 @@ const PersonalInfo = ({ t }: any) => (
       </p>
       <p>
         {t("home.me.visit")}{" "}
-        <Link href="/collection" passHref>
+        <Link href="/journal" passHref>
           <span className="text-black font-bold cursor-pointer dark:text-slate-100">
-            {t('collection.title')}
+            {t('journal.title')}
           </span>
         </Link>{" "}
         {t("home.me.subtitle2")}
