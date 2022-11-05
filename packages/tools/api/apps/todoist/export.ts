@@ -10,7 +10,11 @@ const exportTasks = () => {
 
     api.getTasks()
         .then((tasks) => {
-            const outputPath = resolve(dirname(require.main.filename), "../api/output/todoist.csv");
+            const options: Intl.DateTimeFormatOptions = { month: "short", year: '2-digit' };
+            const date = new Date();
+            const formattedDate = date.toLocaleDateString("en-US", options).replace(/ /i, "-");
+
+            const outputPath = resolve(dirname(require.main.filename), `../api/output/todoist-${formattedDate}.csv`);
 
             const csvWriter = createObjectCsvWriter({
                 path: outputPath,
@@ -27,7 +31,7 @@ const exportTasks = () => {
 
             csvWriter
                 .writeRecords(tasks)
-                .then(() => console.log('The CSV file was written successfully'));
+                .then(() => console.log('The CSV file was written successfully here:', outputPath));
         })
         .catch((error) => console.log(error))
 }

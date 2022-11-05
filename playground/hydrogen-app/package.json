@@ -20,8 +20,8 @@
   },
   "prettier": "@shopify/prettier-config",
   "devDependencies": {
-    "@shopify/cli": "3.20.0",
-    "@shopify/cli-hydrogen": "3.20.0",
+    "@shopify/cli": "3.21.0",
+    "@shopify/cli-hydrogen": "3.21.0",
     "@shopify/prettier-config": "1.1.2",
     "@shopify/stylelint-plugin": "11.0.1",
     "@tailwindcss/typography": "0.5.2",
@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@headlessui/react": "1.7.0",
-    "@shopify/cli-kit": "3.20.0",
+    "@shopify/cli-kit": "3.21.0",
     "@shopify/hydrogen": "1.6.0",
     "body-parser": "1.20.0",
     "compression": "1.7.4",
