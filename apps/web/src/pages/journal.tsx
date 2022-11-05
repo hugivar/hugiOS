@@ -19,7 +19,7 @@ export async function getStaticProps() {
   };
 }
 
-const Journal = ({ blocks, pages, ...rest }) => {
+const Journal = ({ blocks, pages, ...rest }: any) => {
   const { t } = useTranslation();
 
   return (

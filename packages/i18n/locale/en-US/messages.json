@@ -2,7 +2,7 @@
     "home": {
         "me": {
             "subtitle1": "I'm a full-stack engineer, explorer, and lifelong learner. I share thoughts and learnings through my",
-            "visit": "Visit my",
+            "visit": "You can also visit my",
             "subtitle2": "page for a glimpse into the various technologies that I am currently using."
         },
         "quote": {
@@ -17,8 +17,5 @@
     },
     "journal": {
         "title": "Journal"
-    },
-    "collection": {
-        "title": "Collection"
     }
 }

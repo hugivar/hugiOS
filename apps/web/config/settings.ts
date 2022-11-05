@@ -39,8 +39,7 @@ const settings: ISettings = {
   siteIcon: "favicon.png",
   navigation: [
     { title: "Home", href: "/", icon: "home" },
-    { title: "Journal", href: "/journal", icon: "pen" },
-    { title: "Collection", href: "/collection", icon: "collection" },
+    { title: "Journal", href: "/journal", icon: "pen" }
   ],
   social: [
     {

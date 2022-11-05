@@ -34,6 +34,8 @@ export const getPagesByBlocks = (blocks: any): Promise<any> => {
     return blocks?.results?.filter((item: any) => item.child_page).map((item: any) => ({
         id: item.id,
         title: item.child_page.title,
-        link: `journal/${item.id}`
+        link: `journal/${item.id}`,
+        created: item.created_time,
+        archived: item.archived
     }));
 };

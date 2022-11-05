@@ -1,6 +1,12 @@
 import React from 'react';
 
-const H1Block = ({ text, annotations }) => {
+interface TextBlock {
+    text: string;
+    annotations?: any;
+    type?: string
+};
+
+const H1Block = ({ text, annotations }: TextBlock) => {
     return (
         <div className='my-5 text-4xl'>
             {text}
@@ -8,7 +14,7 @@ const H1Block = ({ text, annotations }) => {
     );
 }
 
-const H2Block = ({ text, annotations }) => {
+const H2Block = ({ text, annotations }: TextBlock) => {
     return (
         <div className='my-5 text-3xl'>
             {text}
@@ -16,7 +22,7 @@ const H2Block = ({ text, annotations }) => {
     );
 }
 
-const H3Block = ({ text, annotations }) => {
+const H3Block = ({ text, annotations }: TextBlock) => {
     return (
         <div className='my-5 text-xl'>
             {text}
@@ -24,7 +30,7 @@ const H3Block = ({ text, annotations }) => {
     );
 }
 
-const ParagraphBlock = ({ text, annotations, type }) => {
+const ParagraphBlock = ({ text, annotations, type }: TextBlock) => {
     return (
         <div className='my-2'>
             {text}
@@ -32,15 +38,25 @@ const ParagraphBlock = ({ text, annotations, type }) => {
     );
 };
 
-const TextBlock = ({ text, annotations, type }) => {
-    console.log(text, type);
+const NumberedList = ({ text }: TextBlock) => {
+    return (
+        <li className="list-decimal">
+            {text}
+        </li>
+    );
+}
 
+
+const TextBlock = ({ text, annotations, type }: TextBlock): JSX.Element => {
     switch (type) {
         case 'paragraph': return <ParagraphBlock text={text} />
         case 'heading_1': return <H1Block text={text} />
         case 'heading_2': return <H2Block text={text} />
         case 'heading_3': return <H3Block text={text} />
+        case 'numbered_list_item': return <NumberedList text={text} />
     }
+
+    return <React.Fragment />
 };
 
 export default TextBlock;
