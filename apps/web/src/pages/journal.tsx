@@ -8,8 +8,9 @@ import { getBlocksByPageId, getPagesByBlocks } from 'src/data/notion';
 
 export async function getStaticProps() {
   const pageId = 'a80184c58ec54d99b8ec4b994d5cd7c8';
-  const blocks = await getBlocksByPageId(pageId);
-  const pages = await getPagesByBlocks(blocks);
+
+  const blocks = await getBlocksByPageId(pageId).then(item => item).catch(() => []);
+  const pages = await getPagesByBlocks(blocks) || [];
 
   return {
     props: {
