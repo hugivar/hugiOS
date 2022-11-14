@@ -16,7 +16,7 @@ export async function getStaticProps({ params }: PageParams) {
   const ipfsEnabled = determineIPFS();
 
   const page = await getPage(params.journal);
-  const blocks = await getBlocksByPageId(params.journal);
+  const blocks = await getBlocksByPageId(params.journal).then(item => item).catch(() => []);
 
   return {
     props: {
@@ -28,8 +28,8 @@ export async function getStaticProps({ params }: PageParams) {
 
 export async function getStaticPaths() {
   const pageId = 'a80184c58ec54d99b8ec4b994d5cd7c8';
-  const blocks = await getBlocksByPageId(pageId);
-  const pages = await getPagesByBlocks(blocks);
+  const blocks = await getBlocksByPageId(pageId).then(item => item).catch(() => []);
+  const pages = await getPagesByBlocks(blocks) || [];
 
   const paths = pages.map((item: any) => `/journal/${item.id}`);
 
