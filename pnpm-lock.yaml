@@ -62,7 +62,7 @@ importers:
       c8: 7.12.0
       cheerio: 1.0.0-rc.11
       classnames: 2.3.1
-      daisyui: 2.39.1
+      daisyui: 2.40.1
       dotenv: 16.0.1
       eslint: 8.17.0
       eslint-config-next: 13.0.0
@@ -100,7 +100,7 @@ importers:
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.2.0
       autoprefixer: 10.4.7_postcss@8.4.14
       classnames: 2.3.1
-      daisyui: 2.39.1_ugi4xkrfysqkt4c4y6hkyfj344
+      daisyui: 2.40.1_ugi4xkrfysqkt4c4y6hkyfj344
       gray-matter: 4.0.3
       husky: 8.0.1
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
@@ -3958,8 +3958,8 @@ packages:
     dev: true
     optional: true
 
-  /daisyui/2.39.1_ugi4xkrfysqkt4c4y6hkyfj344:
-    resolution: {integrity: sha512-J7goHjiQ6zk7irpKJ0HyElAuWF+x8iGoebQ1IfHM6BuvKoGSOcfZC/bedTultsX2Co5XARsE+qvE7BI1amUtsQ==}
+  /daisyui/2.40.1_ugi4xkrfysqkt4c4y6hkyfj344:
+    resolution: {integrity: sha512-nzLpcU8kCLU4zoMQ0hUKw1orRRn2x/LJLZenIsHF+UlGVsml02U4u20nb/knN7B06MPpDZ4RAZyp0rEp67iwzQ==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
