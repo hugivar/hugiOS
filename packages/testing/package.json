@@ -9,7 +9,7 @@
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.4.0",
     "@testing-library/user-event": "14.4.3",
-    "solid-testing-library": "0.3.0"
+    "solid-testing-library": "0.5.0"
   },
   "dependencies": {
     "@nezhos/i18n": "workspace:*",
