@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@doist/todoist-api-typescript": "1.7.0",
-    "@pinata/sdk": "1.2.0",
+    "@pinata/sdk": "2.1.0",
     "@types/inquirer": "9.0.1",
     "@types/lodash": "4.14.182",
     "@types/node": "18.11.7",
