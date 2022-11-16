@@ -33,20 +33,20 @@ const Quote = ({ t }: any) => (
   <div className="flex flex-col p-8 mt-4 pb-2 mx-auto max-w-3xl text-grey-darkest dark:text-slate-300">
     <h3 className="text-center text-3xl">{t('home.quote.title')}</h3>
     <div className="flex items-center justify-center px-5 py-4">
-      <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-800">
+      <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-800 dark:bg-zinc-800">
         <div className="w-full mb-6">
-          <div className="text-3xl text-indigo-500 text-left leading-tight h-3">
+          <div className="text-3xl text-indigo-500 text-left leading-tight h-3 text-sky-300">
             “
           </div>
-          <p className="text-sm text-gray-600 text-center px-5">
+          <p className="text-sm text-gray-600 text-center px-5 dark:text-slate-300">
             {t('home.quote.desc')}
           </p>
-          <div className="text-3xl text-indigo-600 text-right leading-tight h-3 -mt-2">
+          <div className="text-3xl text-indigo-600 text-right leading-tight h-3 -mt-2 dark:text-sky-300">
             ”
           </div>
         </div>
         <div className="w-full">
-          <p className="text-md text-indigo-600 font-bold text-center">
+          <p className="text-md text-indigo-600 font-bold text-center dark:text-sky-300">
             {t('home.quote.author')}
           </p>
         </div>
