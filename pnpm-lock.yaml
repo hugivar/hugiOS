@@ -285,7 +285,7 @@ importers:
   packages/tools:
     specifiers:
       '@doist/todoist-api-typescript': 1.7.0
-      '@pinata/sdk': 1.2.0
+      '@pinata/sdk': 2.1.0
       '@types/inquirer': 9.0.1
       '@types/lodash': 4.14.182
       '@types/node': 18.11.7
@@ -310,7 +310,7 @@ importers:
       typescript: 4.9.3
     devDependencies:
       '@doist/todoist-api-typescript': 1.7.0
-      '@pinata/sdk': 1.2.0
+      '@pinata/sdk': 2.1.0
       '@types/inquirer': 9.0.1
       '@types/lodash': 4.14.182
       '@types/node': 18.11.7
@@ -1717,14 +1717,13 @@ packages:
       rimraf: 3.0.2
     dev: true
 
-  /@pinata/sdk/1.2.0:
-    resolution: {integrity: sha512-PiDpn2RTNa08cHzrRoW69qQvJxxLFEzKTTHpIFUImBwcRBTml3SMldWvGmbop0buywDi9bI9PPyYdosUUmRzbA==}
+  /@pinata/sdk/2.1.0:
+    resolution: {integrity: sha512-hkS0tcKtsjf9xhsEBs2Nbey5s+Db7x5rlOH9TaWHBXkJ7IwwOs2xnEDigNaxAHKjYAwcw+m2hzpO5QgOfeF7Zw==}
     dependencies:
       axios: 0.21.4
-      base-path-converter: 1.0.2
       form-data: 2.5.1
       is-ipfs: 0.6.3
-      recursive-fs: 1.1.2
+      path: 0.12.7
     transitivePeerDependencies:
       - debug
     dev: true
@@ -2810,10 +2809,6 @@ packages:
 
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
-
-  /base-path-converter/1.0.2:
-    resolution: {integrity: sha512-51R8JiuXadknn6ouVUteOhDpmI3G5u5GqjruL7bPJpfxUHVgosaO5uPAvRP4FeR4VyyH4sSvsN78Ci6ouoRYqQ==}
-    dev: true
 
   /base-x/3.0.9:
     resolution: {integrity: sha512-H7JU6iBHTal1gp56aKoaa//YUxEaAOUiydvrV/pILqIHXTtqxSkATOnDA2u+jZ/61sD+L/412+7kzXRtWukhpQ==}
@@ -5803,6 +5798,10 @@ packages:
       once: 1.4.0
       wrappy: 1.0.2
 
+  /inherits/2.0.3:
+    resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
+    dev: true
+
   /inherits/2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
 
@@ -7709,6 +7708,13 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
 
+  /path/0.12.7:
+    resolution: {integrity: sha512-aXXC6s+1w7otVF9UletFkFcDsJeO7lSZBPUQhtb5O0xJe8LtYhj/GxldoL09bBj9+ZmE2hNoHqQSFMN5fikh4Q==}
+    dependencies:
+      process: 0.11.10
+      util: 0.10.4
+    dev: true
+
   /pathval/1.1.1:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
     dev: true
@@ -8245,6 +8251,11 @@ packages:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
     dev: true
 
+  /process/0.11.10:
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
+    engines: {node: '>= 0.6.0'}
+    dev: true
+
   /progress-stream/1.2.0:
     resolution: {integrity: sha1-LNPP6jO6OonJwSHsM0er6asSX3c=}
     dependencies:
@@ -8604,12 +8615,6 @@ packages:
       glob-regex: 0.3.2
       slash: 3.0.0
       tslib: 1.14.1
-    dev: true
-
-  /recursive-fs/1.1.2:
-    resolution: {integrity: sha512-QPFEt5EwzwlHoqYsZc+NkUSyDTQf1Hvq7c/kpQJHi77OSCAiDXI3wfB0J04ZG+ekGHmv37mdR8MDPEshD3/RlQ==}
-    engines: {node: '>=4.0.0'}
-    hasBin: true
     dev: true
 
   /redent/3.0.0:
@@ -10038,6 +10043,12 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  /util/0.10.4:
+    resolution: {integrity: sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==}
+    dependencies:
+      inherits: 2.0.3
+    dev: true
 
   /uuid/3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
