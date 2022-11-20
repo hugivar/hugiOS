@@ -201,7 +201,7 @@ importers:
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 2.2.0
-      concurrently: 7.5.0
+      concurrently: 7.6.0
       react: 18.2.0
       react-dom: 18.2.0
       rimraf: 3.0.2
@@ -219,7 +219,7 @@ importers:
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 2.2.0_vite@3.2.0
-      concurrently: 7.5.0
+      concurrently: 7.6.0
       rimraf: 3.0.2
       typescript: 4.9.3
       vite: 3.2.0
@@ -234,7 +234,7 @@ importers:
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 2.2.0
-      concurrently: 7.5.0
+      concurrently: 7.6.0
       rimraf: 3.0.2
       solid-js: 1.6.0
       typescript: 4.9.3
@@ -251,7 +251,7 @@ importers:
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 2.2.0_vite@3.2.0
-      concurrently: 7.5.0
+      concurrently: 7.6.0
       rimraf: 3.0.2
       typescript: 4.9.3
       vite: 3.2.0
@@ -3479,8 +3479,8 @@ packages:
       typedarray: 0.0.6
     dev: true
 
-  /concurrently/7.5.0:
-    resolution: {integrity: sha512-5E3mwiS+i2JYBzr5BpXkFxOnleZTMsG+WnE/dCG4/P+oiVXrbmrBwJ2ozn4SxwB2EZDrKR568X+puVohxz3/Mg==}
+  /concurrently/7.6.0:
+    resolution: {integrity: sha512-BKtRgvcJGeZ4XttiDiNcFiRlxoAeZOseqUvyYRUp/Vtd+9p1ULmeoSqGsDA+2ivdeDFpqrJvGvmI+StKfKl5hw==}
     engines: {node: ^12.20.0 || ^14.13.0 || >=16.0.0}
     hasBin: true
     dependencies:
