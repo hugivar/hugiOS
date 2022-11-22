@@ -1,73 +1,68 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Header from "src/containers/Header";
-import Link from "next/link";
+import NextLink from "next/link";
 import { useTranslation } from "@nezhos/i18n";
+import { Grid, GridItem, Heading, Link, Center, Text, Box } from "@chakra-ui/react";
 
 const PersonalInfo = ({ t }: any) => (
-  <div className="max-w-md">
-    <div className="text-lg leading-8 spaced-y-6">
-      <p className="mb-4">
-        {t("home.me.subtitle1")}{" "}
-        <Link href="/journal" passHref>
-          <span className="text-black font-bold cursor-pointer dark:text-slate-100">
-            {t("journal.title")}
-          </span>
+  <Box maxW="md">
+    <Text fontSize='xl' size="xl" mb="4">
+      {t("home.me.subtitle1")}{" "}
+      <NextLink href="/journal" passHref>
+        <Link>
+          {t("journal.title")}
         </Link>
-        .
-      </p>
-      <p>
-        {t("home.me.visit")}{" "}
-        <Link href="/journal" passHref>
-          <span className="text-black font-bold cursor-pointer dark:text-slate-100">
-            {t('journal.title')}
-          </span>
-        </Link>{" "}
-        {t("home.me.subtitle2")}
-      </p>
-    </div>
-  </div>
+      </NextLink>
+      .
+    </Text>
+    <Text fontSize='xl' size="xl">
+      {t("home.me.visit")}{" "}
+      <NextLink href="/journal" passHref>
+        <Link>
+          {t('journal.title')}
+        </Link>
+      </NextLink>{" "}
+      {t("home.me.subtitle2")}
+    </Text>
+  </Box>
 );
 
 const Quote = ({ t }: any) => (
-  <div className="flex flex-col p-8 mt-4 pb-2 mx-auto max-w-3xl text-grey-darkest dark:text-slate-300">
-    <h3 className="text-center text-3xl">{t('home.quote.title')}</h3>
-    <div className="flex items-center justify-center px-5 py-4">
-      <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-800 dark:bg-zinc-800">
-        <div className="w-full mb-6">
-          <div className="text-3xl text-indigo-500 text-left leading-tight h-3 text-sky-300">
-            “
-          </div>
-          <p className="text-sm text-gray-600 text-center px-5 dark:text-slate-300">
-            {t('home.quote.desc')}
-          </p>
-          <div className="text-3xl text-indigo-600 text-right leading-tight h-3 -mt-2 dark:text-sky-300">
-            ”
-          </div>
-        </div>
-        <div className="w-full">
-          <p className="text-md text-indigo-600 font-bold text-center dark:text-sky-300">
+  <Grid p="8" mt="4" pb="2" mx="auto" maxW="3xl">
+    <Center>
+      <Heading as="h3" size="lg">{t('home.quote.title')}</Heading>
+    </Center>
+    <Center px="5" py="4">
+      <Box borderRadius="lg" boxShadow="lg" p="5" mb="6">
+        <Text fontSize="3xl" h="3">
+          “
+        </Text>
+        <Text fontSize="sm" px="5">
+          {t('home.quote.desc')}
+        </Text>
+        <Text fontSize="3xl" h="3" align="right">
+          ”
+        </Text>
+        <Center>
+          <Text size="md" as="b">
             {t('home.quote.author')}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+          </Text>
+        </Center>
+      </Box>
+    </Center>
+  </Grid >
 );
 
 const Idea = ({ t }: any) => (
-  <div className="flex flex-col mx-auto max-w-3xl text-grey-darkest dark:text-slate-300 text-center">
-    <div className="max-w-md">
-      <div className="text-lg text-grey-darkest leading-8 spaced-y-6">
-        <p className="mb-4">
-          {t("home.idea.names")}
-        </p>
-        <p>
-          {t("home.idea.anonymity")}
-        </p>
-      </div>
-    </div>
-  </div>
+  <Grid mx="auto" maxW="md">
+    <Text size="xl" mb="4">
+      {t("home.idea.names")}
+    </Text>
+    <Text size="xl">
+      {t("home.idea.anonymity")}
+    </Text>
+  </Grid>
 );
 
 const Home = () => {
@@ -76,10 +71,12 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="flex flex-col p-8 pb-0 mx-auto mt-8 max-w-3xl text-grey-darkest dark:text-slate-300 text-center">
-        <h2 className="text-center text-3xl mb-8">Hey, I'm Nezhivar 👋</h2>
+      <Grid mx="auto" p="8" mt="8">
+        <Center>
+          <Heading as='h2' size='lg' mb="8">Hey, I'm Nezhivar 👋</Heading>
+        </Center>
         <PersonalInfo t={t} />
-      </div>
+      </Grid>
       <Quote t={t} />
       <Idea t={t} />
     </>

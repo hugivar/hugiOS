@@ -1,4 +1,5 @@
 import React from "react";
+import { Flex } from "@chakra-ui/react"
 
 import settings from "config/settings";
 import { MetaData } from "components/MetaData";
@@ -23,7 +24,7 @@ const SiteTitle = () => (
 
 const Layout = ({ children, bodyClass, pageTitle }: ILayout) => {
   return (
-    <div className="relative flex w-full h-full min-h-screen">
+    <Flex>
       <MetaData title={pageTitle} bodyClass={bodyClass} />
       <nav className="absolute -translate-x-full lg:relative flex flex-none flex-col lg:translate-x-0 w-3/4 sm:w-1/2 md:w-1/3 lg:w-56 2xl:w-72 3xl:w-80 z-30 lg:z-auto max-h-screen h-full min-h-screen transform bg-white border-r pb-10 sm:pb-0 border-gray-150 dark:bg-mui dark:border-gray-800">
         <div
@@ -46,7 +47,7 @@ const Layout = ({ children, bodyClass, pageTitle }: ILayout) => {
           <Drawer />
         </div>
       </div>
-    </div>
+    </Flex>
   );
 };
 

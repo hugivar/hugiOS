@@ -1,15 +1,17 @@
 import '@assets/main.css';
 import { ThemeProvider } from 'next-themes'
 import { HelmetProvider } from 'react-helmet-async';
+import { ChakraProvider } from '@chakra-ui/react';
 import '@nezhos/i18n';
+import theme from '../theme';
 
 function MyApp({ Component, pageProps }) {
   return (
     <HelmetProvider>
       <ThemeProvider attribute="class">
-        <div className="w-full min-h-screen bg-white dark:bg-black">
+        <ChakraProvider theme={theme}>
           <Component {...pageProps} />
-        </div>
+        </ChakraProvider>
       </ThemeProvider>
     </HelmetProvider>
   );
