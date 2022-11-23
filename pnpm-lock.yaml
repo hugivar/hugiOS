@@ -11,7 +11,7 @@ importers:
     devDependencies:
       '@changesets/cli': 2.25.0
       '@nezhos/tools': link:packages/tools
-      prettier: 2.7.1
+      prettier: 2.8.0
       turbo: 1.6.3
 
   apps/notifications:
@@ -62,7 +62,7 @@ importers:
       c8: 7.12.0
       cheerio: 1.0.0-rc.11
       classnames: 2.3.1
-      daisyui: 2.41.0
+      daisyui: 2.42.0
       dotenv: 16.0.1
       eslint: 8.17.0
       eslint-config-next: 13.0.0
@@ -100,7 +100,7 @@ importers:
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.2.0
       autoprefixer: 10.4.7_postcss@8.4.14
       classnames: 2.3.1
-      daisyui: 2.41.0_ugi4xkrfysqkt4c4y6hkyfj344
+      daisyui: 2.42.0_ugi4xkrfysqkt4c4y6hkyfj344
       gray-matter: 4.0.3
       husky: 8.0.1
       next: 13.0.0_biqbaboplfbrettd7655fr4n2y
@@ -714,7 +714,7 @@ packages:
       fs-extra: 7.0.1
       lodash.startcase: 4.4.0
       outdent: 0.5.0
-      prettier: 2.7.1
+      prettier: 2.8.0
       resolve-from: 5.0.0
       semver: 5.7.1
 
@@ -865,7 +865,7 @@ packages:
       '@changesets/types': 5.2.0
       fs-extra: 7.0.1
       human-id: 1.0.2
-      prettier: 2.7.1
+      prettier: 2.8.0
 
   /@cspotcode/source-map-support/0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -3702,8 +3702,8 @@ packages:
     dev: true
     optional: true
 
-  /daisyui/2.41.0_ugi4xkrfysqkt4c4y6hkyfj344:
-    resolution: {integrity: sha512-M/MPbTERJK4iBIXRGQpQdHTmy53HRqrgca4rsbPhio1Sqq0w2GH/RJSVX8b14hYB0E9E8R+t5bHIeqW1oHT97A==}
+  /daisyui/2.42.0_ugi4xkrfysqkt4c4y6hkyfj344:
+    resolution: {integrity: sha512-OCrpiKKzgLeWbEC8qykewAGKYTeRbnzdsKOICOwUlz/1eFz/2spgeNm62fDY5P9SsXKARTkAgf/J2NOA+1wngQ==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
@@ -8202,8 +8202,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier/2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+  /prettier/2.8.0:
+    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
 
