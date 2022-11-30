@@ -21,7 +21,7 @@ importers:
       '@electron-forge/maker-rpm': 6.0.0-beta.63
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
-      electron: 21.3.0
+      electron: 22.0.0
       electron-squirrel-startup: ^1.0.0
       electron-tabs: ^1.0.0
     dependencies:
@@ -33,7 +33,7 @@ importers:
       '@electron-forge/maker-rpm': 6.0.0-beta.63
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
-      electron: 21.3.0
+      electron: 22.0.0
 
   apps/web:
     specifiers:
@@ -1372,6 +1372,23 @@ packages:
     optionalDependencies:
       global-agent: 3.0.0
       global-tunnel-ng: 2.7.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@electron/get/2.0.2:
+    resolution: {integrity: sha512-eFZVFoRXb3GFGd7Ak7W4+6jBl9wBtiZ4AaYOse97ej6mKj5tkyO0dUnUChs1IhJZtx1BENo4/p4WUTXpi6vT+g==}
+    engines: {node: '>=12'}
+    dependencies:
+      debug: 4.3.4
+      env-paths: 2.2.1
+      fs-extra: 8.1.0
+      got: 11.8.5
+      progress: 2.0.3
+      semver: 6.3.0
+      sumchecker: 3.0.1
+    optionalDependencies:
+      global-agent: 3.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4187,13 +4204,13 @@ packages:
     dev: true
     optional: true
 
-  /electron/21.3.0:
-    resolution: {integrity: sha512-MGRpshN8fBcx4IRuBABIsGDv0tB/MclIFsyFHFFXsBCUc+vIXaE/E6vuWaniGIFSz5WyeuapfTH5IeRb+7yIfw==}
-    engines: {node: '>= 10.17.0'}
+  /electron/22.0.0:
+    resolution: {integrity: sha512-cgRc4wjyM+81A0E8UGv1HNJjL1HBI5cWNh/DUIjzYvoUuiEM0SS0hAH/zaFQ18xOz2ced6Yih8SybpOiOYJhdg==}
+    engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@electron/get': 1.14.1
+      '@electron/get': 2.0.2
       '@types/node': 16.11.39
       extract-zip: 2.0.1
     transitivePeerDependencies:
