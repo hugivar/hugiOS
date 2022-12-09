@@ -21,7 +21,7 @@
     "@types/jsdom": "20.0.0",
     "@types/node": "18.11.7",
     "@vitejs/plugin-vue": "3.2.0",
-    "@vitejs/plugin-vue-jsx": "2.1.0",
+    "@vitejs/plugin-vue-jsx": "3.0.0",
     "@vue/eslint-config-prettier": "7.0.0",
     "@vue/eslint-config-typescript": "10.0.0",
     "@vue/test-utils": "2.2.0",
