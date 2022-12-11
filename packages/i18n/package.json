@@ -4,7 +4,7 @@
   "main": "i18n.ts",
   "license": "MIT",
   "dependencies": {
-    "i18next": "22.3.0",
+    "i18next": "22.4.0",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "12.1.0"
