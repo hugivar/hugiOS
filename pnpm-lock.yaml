@@ -68,7 +68,7 @@ importers:
       eslint-config-next: 13.0.0
       eslint-config-prettier: 8.5.0
       gray-matter: 4.0.3
-      happy-dom: 7.8.1
+      happy-dom: 8.1.0
       husky: 8.0.1
       jsdom: 20.0.0
       next: 13.0.0
@@ -132,7 +132,7 @@ importers:
       '@types/react-syntax-highlighter': 15.5.1
       '@types/react-test-renderer': 18.0.0
       '@vitejs/plugin-react': 2.2.0_vite@4.0.1
-      '@vitest/coverage-c8': 0.25.1_elgpwtodbtszdgerrlh2zzt6xi
+      '@vitest/coverage-c8': 0.25.1_4kzvewnjpbq7mfcnz2qflbcgfm
       '@vitest/ui': 0.25.1
       c8: 7.12.0
       cheerio: 1.0.0-rc.11
@@ -140,7 +140,7 @@ importers:
       eslint: 8.17.0
       eslint-config-next: 13.0.0_t556sga2mdjl5mfp5u2n75qejq
       eslint-config-prettier: 8.5.0_eslint@8.17.0
-      happy-dom: 7.8.1
+      happy-dom: 8.1.0
       jsdom: 20.0.0
       react-test-renderer: 18.2.0_react@18.2.0
       rimraf: 3.0.2
@@ -148,7 +148,7 @@ importers:
       typescript: 4.9.3
       vite: 4.0.1_@types+node@18.11.7
       vite-tsconfig-paths: 3.6.0_vite@4.0.1
-      vitest: 0.25.1_elgpwtodbtszdgerrlh2zzt6xi
+      vitest: 0.25.1_4kzvewnjpbq7mfcnz2qflbcgfm
 
   packages/config:
     specifiers:
@@ -2592,11 +2592,11 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/coverage-c8/0.25.1_elgpwtodbtszdgerrlh2zzt6xi:
+  /@vitest/coverage-c8/0.25.1_4kzvewnjpbq7mfcnz2qflbcgfm:
     resolution: {integrity: sha512-gpl5QNaNeIN0mfRiosCqBFoZcizb5GA458TDnOQXkGDc4kklazxn70u9evGfV62wiiAUfGGebgRhxlBkAa6m6g==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.25.1_elgpwtodbtszdgerrlh2zzt6xi
+      vitest: 0.25.1_4kzvewnjpbq7mfcnz2qflbcgfm
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -5769,8 +5769,8 @@ packages:
       strip-bom-string: 1.0.0
     dev: false
 
-  /happy-dom/7.8.1:
-    resolution: {integrity: sha512-lKpeGDtA0FqS/LpAEU+5N5kKkmW5TOjZCXZDnF7YtWuvKP9iwCqpeshG9gXA/H+gX0VQ/I/OToy73+umx1NQUw==}
+  /happy-dom/8.1.0:
+    resolution: {integrity: sha512-R9NVb5815gpMFsldZF0wVSHw2uSobx6yitSkCdQPda1kwfAmVw4Ut8ZspxGHXkK6OA93SznldkcvrbhKFr6JcA==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
@@ -10468,7 +10468,7 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.25.1_elgpwtodbtszdgerrlh2zzt6xi:
+  /vitest/0.25.1_4kzvewnjpbq7mfcnz2qflbcgfm:
     resolution: {integrity: sha512-eH74h6MkuEgsqR4mAQZeMK9O0PROiKY+i+1GMz/fBi5A3L2ml5U7JQs7LfPU7+uWUziZyLHagl+rkyfR8SLhlA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -10498,7 +10498,7 @@ packages:
       acorn-walk: 8.2.0
       chai: 4.3.6
       debug: 4.3.4
-      happy-dom: 7.8.1
+      happy-dom: 8.1.0
       jsdom: 20.0.0
       local-pkg: 0.4.2
       source-map: 0.6.1
