@@ -6,6 +6,8 @@ import { Icon } from "components/Icon";
 import { DrawerButton } from "components/DrawerButton";
 import { ThemeSwitch } from "components/ThemeSwitch";
 import { IPFSSwitch } from "components/IPFSSwitch";
+import settings from "config/settings";
+import { Text, Switch, Flex } from "@chakra-ui/react";
 
 interface IHeader {
   title?: string;
@@ -28,6 +30,24 @@ const Header = ({ title }: IHeader) => {
     text: -1,
     background: 1,
   });
+
+  const SiteTitle = () => {
+    const isBlog = typeof window !== "undefined" && window?.location?.pathname.includes('journal');
+
+    const handleNavigation = () => {
+      console.log('Header line:36 go to blog', isBlog);
+    };
+
+    return (
+      <div className="flex items-center justify-between flex-none">
+        <Flex>
+          <Link href="/"><Text>{settings.shortTitle}</Text></Link>
+          <Switch id='email-alerts' isChecked={isBlog} />
+          <Link href="/journal"><Text>Blog</Text></Link>
+        </Flex>
+      </div>
+    );
+  };
 
   useEffect(() => {
     if (title) {
@@ -65,6 +85,7 @@ const Header = ({ title }: IHeader) => {
           ) : (
             <DrawerButton />
           )}
+          <SiteTitle />
           <span className="flex items-center space-x-3">
             <p
               style={{

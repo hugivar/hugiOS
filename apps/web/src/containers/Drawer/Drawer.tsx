@@ -7,7 +7,7 @@ import settings from "config/settings";
 import { Icon } from "components/Icon";
 import { determineHref } from "src/utils/routing";
 
-interface INavItem {
+interface IDrawerItem {
   title: string;
   href: string;
   icon: string;
@@ -15,7 +15,7 @@ interface INavItem {
   active?: boolean;
 }
 
-const NavItem = ({ title, href, active, icon, external }: INavItem) => (
+const DrawerItem = ({ title, href, active, icon, external }: IDrawerItem) => (
   <li className="flex items-stretch space-x-1">
     <Link href={determineHref(href)} passHref legacyBehavior>
       <a
@@ -43,9 +43,9 @@ const Drawer = () => {
   const router = useRouter();
 
   return (
-    <ul className=" menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content lg:flex-1 lg:px-3 lg:py-3 lg:space-y-1 lg:bg-transparent dark:bg-mui">
+    <ul className="p-4 overflow-y-auto w-80 bg-base-100 text-base-content lg:flex-1 lg:px-3 lg:py-3 lg:space-y-1 lg:bg-transparent dark:bg-mui">
       {settings.navigation.map((item, idx) => (
-        <NavItem
+        <DrawerItem
           key={idx}
           title={item.title}
           href={item.href}
@@ -57,7 +57,7 @@ const Drawer = () => {
         Online
       </li>
       {settings.social.map((item, idx) => (
-        <NavItem
+        <DrawerItem
           key={idx}
           title={item.title}
           href={item.href}

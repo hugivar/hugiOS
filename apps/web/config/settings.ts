@@ -38,8 +38,8 @@ const settings: ISettings = {
   shortTitle: "Nezhivar",
   siteIcon: "favicon.png",
   navigation: [
-    { title: "Home", href: "/", icon: "home" },
-    { title: "Journal", href: "/journal", icon: "pen" }
+    { title: "Blog", href: "/blog", icon: "pen" },
+    { title: "About", href: "/about", icon: "pen" }
   ],
   social: [
     {
