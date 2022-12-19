@@ -24,7 +24,7 @@
     "vite": "4.0.1",
     "vite-plugin-solid": "2.5.0",
     "vite-tsconfig-paths": "4.0.3",
-    "vitest": "0.25.1"
+    "vitest": "0.26.0"
   },
   "dependencies": {
     "solid-js": "1.6.0"
