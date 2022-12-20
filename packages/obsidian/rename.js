@@ -5,11 +5,12 @@ const glob = require("glob");
 const inputDir = './data/Architect Notes/**/*.md';
 const directoryPath = path.join(__dirname, inputDir);
 
-glob(directoryPath, function (err, files) {
+glob(directoryPath, (err, files) => {
     //handling error
     if (err) {
         return console.log('Unable to scan directory: ' + err);
     }
+
     //listing all files using forEach
     files.forEach(function (oldPath) {
         const newPath = oldPath.split('/').map((item, idx, array) => {
@@ -19,16 +20,14 @@ glob(directoryPath, function (err, files) {
                     console.log('Problem:', item);
                 }
 
-                return `Architect Note for ${date?.[0]}.md`;
+                return `Mirror Note for ${date?.[0]}.md`;
             };
-
             return item;
         }).join('/');
 
         // Rename file
-        fs.rename(
-            oldPath,
-            newPath
-        );
+        fs.rename(oldPath, newPath, () => {
+            console.log("\nFile Renamed!\n");
+        });
     });
 });
