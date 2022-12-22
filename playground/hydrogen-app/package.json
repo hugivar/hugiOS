@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@headlessui/react": "1.7.0",
-    "@shopify/cli-kit": "3.29.0",
+    "@shopify/cli-kit": "3.30.0",
     "@shopify/hydrogen": "1.6.0",
     "body-parser": "1.20.0",
     "compression": "1.7.4",
