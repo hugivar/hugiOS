@@ -27,8 +27,19 @@ fn main() -> io::Result<()> {
             ("A", "Y") | ("B", "Z") | ("C", "X") => 6,
             _ => 3,
         };
-        println!("score {} {} {}", opponent, me, win_score);
+        println!("win_score {}", win_score);
+        score += win_score;
+
+        let extra_score = match me {
+            "X" => 1,
+            "Y" => 2,
+            "Z" => 3,
+            _ => 0
+        };
+        println!("extra_score {} {}", me, extra_score);
+        score += extra_score;
     }
 
+    println!("score {}", score);
     Ok(())
 }

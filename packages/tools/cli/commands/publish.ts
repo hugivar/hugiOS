@@ -15,7 +15,7 @@ const publishWeb = () => {
   const PINATA_KEY = process.env.PINATA_KEY || '';
   const PINATA_SECRET_KEY = process.env.PINATA_SECRET_KEY || '';
 
-  const pinata = pinataSDK(PINATA_KEY, PINATA_SECRET_KEY);
+  const pinata = new pinataSDK({ pinataApiKey: PINATA_KEY, pinataSecretApiKey: PINATA_SECRET_KEY });
 
   const __dirname = path.resolve(path.dirname(''));
   console.info(chalk.green(__dirname));
