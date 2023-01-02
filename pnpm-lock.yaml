@@ -286,7 +286,7 @@ importers:
 
   packages/tools:
     specifiers:
-      '@doist/todoist-api-typescript': 1.7.0
+      '@doist/todoist-api-typescript': ^2.1.2
       '@pinata/sdk': 2.1.0
       '@types/inquirer': 9.0.1
       '@types/lodash': 4.14.182
@@ -311,7 +311,7 @@ importers:
       ts-node: 10.9.1_wp5y27xoyq2mtxzexuwzzt7cty
       typescript: 4.9.3
     devDependencies:
-      '@doist/todoist-api-typescript': 1.7.0
+      '@doist/todoist-api-typescript': 2.1.2
       '@pinata/sdk': 2.1.0
       '@types/inquirer': 9.0.1
       '@types/lodash': 4.14.182
@@ -1014,15 +1014,15 @@ packages:
       postcss-selector-parser: 6.0.10
     dev: false
 
-  /@doist/todoist-api-typescript/1.7.0:
-    resolution: {integrity: sha512-Pe7EGpwhLuxZEhxDmqwXZqc9DAESWl/l1VjFYSdGlNfcUI1KSPSW9Hs7le78EIqAxHFVxjgpcKkDkV9h+EaUlA==}
+  /@doist/todoist-api-typescript/2.1.2:
+    resolution: {integrity: sha512-6aCY8FVERMBQ+hDcADGjz76f8fZwRww3gIg05/KkcGhwqq2nfzQAPJ0d3T2F67yWTRCAmxMSupERqFJbCRXDXA==}
     dependencies:
       axios: 0.27.2
-      axios-case-converter: 0.9.0_axios@0.27.2
+      axios-case-converter: 0.11.1_axios@0.27.2
       axios-retry: 3.3.1
       runtypes: 6.6.0
       ts-custom-error: 3.2.0
-      uuid: 8.3.2
+      uuid: 9.0.0
     transitivePeerDependencies:
       - debug
     dev: true
@@ -2924,10 +2924,10 @@ packages:
     resolution: {integrity: sha512-LVAaGp/wkkgYJcjmHsoKx4juT1aQvJyPcW09MLCjVTh3V2cc6PnyempiLMNH5iMdfIX/zdbjUx2KDjMLCTdPeA==}
     engines: {node: '>=12'}
 
-  /axios-case-converter/0.9.0_axios@0.27.2:
-    resolution: {integrity: sha512-G6tOanR1cdIrBtRyiPvR+xXyWCCZacSw8LtT8bmImvpye+XiyoOlLluz0N61IfetznNQ9BeMi5yA0rIyYDr8mQ==}
+  /axios-case-converter/0.11.1_axios@0.27.2:
+    resolution: {integrity: sha512-i5hrkBg7SE9jsm2Q+ClznR5DsKcYXChH6Cc3Rhx2p4gdIfJwvvO5/ATcAg/vN2UVzGE2B1eR1O4VuEGkICdJdQ==}
     peerDependencies:
-      axios: '>=0.23.0 <1.0.0'
+      axios: '>=0.23.0 <2.0.0'
     dependencies:
       axios: 0.27.2
       camel-case: 4.1.2
@@ -2939,7 +2939,7 @@ packages:
   /axios-retry/3.3.1:
     resolution: {integrity: sha512-RohAUQTDxBSWLFEnoIG/6bvmy8l3TfpkclgStjl5MDCMBDgapAWCmr1r/9harQfWC8bzLC8job6UcL1A1Yc+/Q==}
     dependencies:
-      '@babel/runtime': 7.18.3
+      '@babel/runtime': 7.20.6
       is-retry-allowed: 2.2.0
     dev: true
 
@@ -10116,8 +10116,8 @@ packages:
     hasBin: true
     dev: true
 
-  /uuid/8.3.2:
-    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
     hasBin: true
     dev: true
 
