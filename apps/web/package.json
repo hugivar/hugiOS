@@ -63,7 +63,7 @@
     "dotenv": "16.0.1",
     "eslint": "8.17.0",
     "eslint-config-next": "13.1.0",
-    "eslint-config-prettier": "8.5.0",
+    "eslint-config-prettier": "8.6.0",
     "happy-dom": "8.1.0",
     "jsdom": "20.0.0",
     "react-test-renderer": "18.2.0",
