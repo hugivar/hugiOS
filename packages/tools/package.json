@@ -36,6 +36,6 @@
     "tsconfig-paths": "4.1.0"
   },
   "volta": {
-    "node": "18.12.0"
+    "node": "18.13.0"
   }
 }
