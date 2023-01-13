@@ -16,7 +16,7 @@
     "vite": "4.0.1",
     "vite-plugin-solid": "2.5.0",
     "vite-tsconfig-paths": "4.0.3",
-    "vitest": "0.26.0"
+    "vitest": "0.27.0"
   },
   "dependencies": {
     "@nezhos/solid-ui": "workspace:*",
