@@ -26,9 +26,9 @@
     "npm": ">=8.0.0",
     "node": ">=14"
   },
-  "packageManager": "pnpm@7.21.0",
+  "packageManager": "pnpm@7.24.2",
   "volta": {
-    "node": "18.12.0"
+    "node": "18.13.0"
   },
   "lint-staged": {
     "**/*.{js,ts,jsx,tsx}": [
