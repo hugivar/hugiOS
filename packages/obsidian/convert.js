@@ -32,7 +32,6 @@ const formatDate = (date) => {
 }
 
 function addDays(date, days) {
-    console.log('convert line:35', days);
     date.setDate(date.getDate() + Number(days));
     return date;
 }
@@ -62,7 +61,6 @@ const createFile = ({ row, dir, tag }) => {
     if (isNaN(date)) {
         const noteYear = titleDate.getFullYear();
         const noteTitle = `Mirror Note for ${formatDate(titleDate)}`;
-        console.log('convert line:66', noteYear);
         if (!tag) {
             console.log('Problem', normalizedTitle);
             return null;

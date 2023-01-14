@@ -2,7 +2,6 @@ import { program } from 'commander';
 import { exec, execSync } from 'child_process';
 
 const createSetupFile = ({ fileName }: any) => {
-    console.log('createSetupFile line:5', fileName);
     program
         .action(() => {
             execSync(`

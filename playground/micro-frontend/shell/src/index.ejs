@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Microfrontends</title>
+    <meta name="importmap-type" content="systemjs-importmap" />
+    <script type="systemjs-importmap"
+        src="https://storage.googleapis.com/react.microfrontends.app/importmap.json"></script>
+    <% if (isLocal) { %>
+        <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@nezhos/shell": "//localhost:9000/nezhos-shell.js",
+        "@nezhos/navbar": "//localhost:8080/nezhos-navbar.js",
+        "react": "https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"
+      }
+    }
+  </script>
+        <% } %>
+            <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+            <template id="single-spa-layout">
+                <single-spa-router>
+                    <nav class="topnav">
+                        <application name="@nezhos/navbar" loader="topNav" error="topNav"></application>
+                    </nav>
+                    <div class="main-content mt-16">
+                        <route path="people">
+                            <application name="@nezhos/people"></application>
+                        </route>
+                        <route path="planets">
+                            <application name="@nezhos/planets"></application>
+                        </route>
+                        <redirect from="/earth" to="/planets"></redirect>
+                        <route default>
+                            <h1 class="flex flex-row justify-center p-16">
+                                <p class="max-w-md">This example project shows independently built and deployed
+                                    microfrontends that use React and single-spa. Each nav link above takes you to a
+                                    different microfrontend.</p>
+                            </h1>
+                        </route>
+                    </div>
+                </single-spa-router>
+            </template>
+</head>
+
+<body>
+    <script>
+        System.import('@nezhos/shell');
+        System.import('@nezhos/styleguide');
+    </script>
+    <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+
+</html>

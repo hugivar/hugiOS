@@ -37,7 +37,6 @@ const commanderSetup = async (prog: Command, type: string) => {
                 });
             });
         } catch (e) {
-            console.log('main line:42', e);
             process.exit();
         }
 
