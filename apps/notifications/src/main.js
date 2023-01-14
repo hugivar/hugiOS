@@ -11,7 +11,7 @@ app.on('ready', function () {
       webviewTag: true
     }
   });
-  console.log('main line:14', config, config?.tabs?.length);
+
   const url = config?.tabs?.length > 0 ? 'file://' + __dirname + '/index.html' : config?.url;
   mainWindow.loadURL(url);
   mainWindow.on('ready-to-show', function () {

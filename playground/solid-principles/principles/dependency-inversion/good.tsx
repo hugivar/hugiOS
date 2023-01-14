@@ -39,7 +39,6 @@ export default function App() {
 
     useEffect(() => {
         RequestStarWarsService().then((res) => {
-            console.log('good line:36', res);
             setFact(res);
         });
     }, []);

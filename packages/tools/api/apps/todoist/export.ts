@@ -6,8 +6,6 @@ import 'dotenv/config';
 const api = new TodoistApi(process.env.TODOIST_API_TOKEN);
 
 const exportTasks = () => {
-    console.log('export line:32', api);
-
     api.getTasks()
         .then((tasks) => {
             const options: Intl.DateTimeFormatOptions = { month: "short", year: '2-digit' };
