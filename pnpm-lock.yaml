@@ -408,7 +408,7 @@ importers:
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       react: ^18.0.0
-      react-dom: 18.0.0
+      react-dom: 18.2.0
       single-spa: ^5.9.4
       single-spa-react: ^5.0.0
       webpack: ^5.75.0
@@ -418,7 +418,7 @@ importers:
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       react: 18.2.0
-      react-dom: 18.0.0_react@18.2.0
+      react-dom: 18.2.0_react@18.2.0
       single-spa: 5.9.4
       single-spa-react: 5.0.0_rlx3ngqzrwutwm3a3vhw4vphvy
     devDependencies:
@@ -14385,16 +14385,6 @@ packages:
       - bufferutil
       - utf-8-validate
 
-  /react-dom/18.0.0_react@18.2.0:
-    resolution: {integrity: sha512-XqX7uzmFo0pUceWFCt7Gff6IyIMzFUn7QMZrbrQfGxtaxXZIcGQzoNpRLE3fQLnS4XzLLPMZX2T9TRcSrasicw==}
-    peerDependencies:
-      react: ^18.0.0
-    dependencies:
-      loose-envify: 1.4.0
-      react: 18.2.0
-      scheduler: 0.21.0
-    dev: false
-
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -15113,12 +15103,6 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-
-  /scheduler/0.21.0:
-    resolution: {integrity: sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==}
-    dependencies:
-      loose-envify: 1.4.0
-    dev: false
 
   /scheduler/0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
