@@ -297,7 +297,7 @@ importers:
       '@types/number-to-words': 1.2.1
       chalk: 4.1.2
       cloudflare: 2.9.1
-      commander: 9.5.0
+      commander: 10.0.0
       csv-writer: 1.6.0
       dotenv: 16.0.1
       inquirer: ^8.0.0
@@ -321,7 +321,7 @@ importers:
       '@types/node-fetch': 2.6.1
       '@types/number-to-words': 1.2.1
       cloudflare: 2.9.1
-      commander: 9.5.0
+      commander: 10.0.0
       csv-writer: 1.6.0
       dotenv: 16.0.1
       inquirer: 8.2.4
@@ -6804,6 +6804,11 @@ packages:
 
   /comma-separated-tokens/2.0.2:
     resolution: {integrity: sha512-G5yTt3KQN4Yn7Yk4ed73hlZ1evrFKXeUW3086p3PRFNp7m2vIjI6Pg+Kgb+oyzhd9F2qdcoj67+y3SdxL5XWsg==}
+
+  /commander/10.0.0:
+    resolution: {integrity: sha512-zS5PnTI22FIRM6ylNW8G4Ap0IEOyk62fhLSD0+uHRT9McRCLGpkVNvao4bjimpK/GShynyQkFFxHhwMcETmduA==}
+    engines: {node: '>=14'}
+    dev: true
 
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
