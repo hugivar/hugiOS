@@ -7,13 +7,13 @@ importers:
       '@changesets/cli': 2.26.0
       '@nezhos/tools': workspace:*
       prettier: latest
-      rimraf: 3.0.2
+      rimraf: 4.0.7
       turbo: latest
     devDependencies:
       '@changesets/cli': 2.26.0
       '@nezhos/tools': link:packages/tools
       prettier: 2.8.3
-      rimraf: 3.0.2
+      rimraf: 4.0.7
       turbo: 1.7.0
 
   apps/notifications:
@@ -86,7 +86,7 @@ importers:
       react-markdown: 8.0.3
       react-syntax-highlighter: 15.5.0
       react-test-renderer: 18.2.0
-      rimraf: 3.0.2
+      rimraf: 4.0.7
       serve: 14.1.1
       swr: 2.0.0
       tailwindcss: 3.2.0
@@ -145,7 +145,7 @@ importers:
       happy-dom: 8.1.0
       jsdom: 20.0.0
       react-test-renderer: 18.2.0_react@18.2.0
-      rimraf: 3.0.2
+      rimraf: 4.0.7
       serve: 14.1.1
       typescript: 4.9.3
       vite: 4.0.1_@types+node@18.11.7
@@ -206,7 +206,7 @@ importers:
       concurrently: 7.6.0
       react: 18.2.0
       react-dom: 18.2.0
-      rimraf: 3.0.2
+      rimraf: 4.0.7
       typescript: 4.9.3
       vite: 4.0.1
       vite-tsconfig-paths: 4.0.3
@@ -222,7 +222,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.0.0_vite@4.0.1
       concurrently: 7.6.0
-      rimraf: 3.0.2
+      rimraf: 4.0.7
       typescript: 4.9.3
       vite: 4.0.1
       vite-tsconfig-paths: 4.0.3_txq4r6jfrycvbgr7hkerqcakpe
@@ -238,7 +238,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.0.0
       concurrently: 7.6.0
-      rimraf: 3.0.2
+      rimraf: 4.0.7
       solid-js: 1.6.0
       typescript: 4.9.3
       vite: 4.0.1
@@ -256,7 +256,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.0.0_vite@4.0.1
       concurrently: 7.6.0
-      rimraf: 3.0.2
+      rimraf: 4.0.7
       typescript: 4.9.3
       vite: 4.0.1
       vite-plugin-solid: 2.5.0_solid-js@1.6.0+vite@4.0.1
@@ -15011,6 +15011,12 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
+
+  /rimraf/4.0.7:
+    resolution: {integrity: sha512-CUEDDrZvc0swDgVdXGiv3FcYYQMpJxjvSGt85Amj6yU+MCVWurrLCeLiJDdJPHCzNJnwuebBEdcO//eP11Xa7w==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /roarr/2.15.4:
     resolution: {integrity: sha512-CHhPh+UNHD2GTXNYhPWLnU8ONHdI+5DI+4EYIAOaiD63rHeYlZvyh8P+in5999TTSFgUYuKUAjzRI4mdh/p+2A==}
