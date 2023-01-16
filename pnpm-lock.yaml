@@ -295,7 +295,7 @@ importers:
       '@types/node': 18.11.7
       '@types/node-fetch': 2.6.1
       '@types/number-to-words': 1.2.1
-      chalk: 4.1.2
+      chalk: 5.2.0
       cloudflare: 2.9.1
       commander: 10.0.0
       csv-writer: 1.6.0
@@ -308,7 +308,7 @@ importers:
       tsconfig-paths: 4.1.0
       typescript: 4.9.3
     dependencies:
-      chalk: 4.1.2
+      chalk: 5.2.0
       node-fetch: 3.3.0
       ts-node: 10.9.1_wp5y27xoyq2mtxzexuwzzt7cty
       typescript: 4.9.3
@@ -15370,7 +15370,7 @@ packages:
     hasBin: true
     dependencies:
       ansi-styles: 3.2.1
-      chalk: 2.4.1
+      chalk: 2.4.2
       cross-spawn: 6.0.5
       memorystream: 0.3.1
       minimatch: 3.1.2
