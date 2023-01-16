@@ -23,7 +23,7 @@
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "react": "^18.0.0",
-    "react-dom": "18.0.0",
+    "react-dom": "18.2.0",
     "single-spa": "^5.9.4",
     "single-spa-react": "^5.0.0"
   }
