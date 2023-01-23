@@ -1,0 +1,30 @@
+div {
+    background-color: red;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* rule 1 */
+/* rule 1 */
+#subsection {
+    color: blue;
+  }
+  
+  /* rule 2 */
+  .main .list {
+    color: red;
+  }
+
+
+  /* rule 1 */
+  .class.second-class {
+    font-size: 12px;
+  }
+  
+  /* rule 2 */
+  .class > .second-class {
+    font-size: 24px;
+  }
+
