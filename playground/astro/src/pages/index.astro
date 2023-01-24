@@ -1,0 +1,16 @@
+---
+export const prerender = true;
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+const newsletterEntries = await getCollection('newsletters');
+---
+
+<Layout>
+<ul>
+  {newsletterEntries.map(blogPostEntry => (
+    <li>
+      <a href={`/newsletters/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+    </li>
+  ))}
+</ul>
+</Layout>
