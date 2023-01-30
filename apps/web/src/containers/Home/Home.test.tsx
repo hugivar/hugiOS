@@ -1,7 +1,12 @@
 import React from 'react';
 import { render, screen, TestWrapper } from '@nezhos/testing/react';
+import { vi } from 'vitest';
 
 import Home from './Home'
+
+vi.mock('next/router', () => ({
+  useRouter: vi.fn()
+}));
 
 test('Home renders with correct text', async () => {
   render(

@@ -1,8 +1,13 @@
 import React from 'react';
 import { render, screen } from '@nezhos/testing/react';
 import { HelmetProvider } from 'react-helmet-async';
+import { vi } from 'vitest';
 
 import Layout from './Layout'
+
+vi.mock('next/router', () => ({
+  useRouter: vi.fn()
+}));
 
 test('Layout renders', async () => {
   render(
