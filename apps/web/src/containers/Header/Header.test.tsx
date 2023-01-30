@@ -1,7 +1,13 @@
 import React from 'react';
 import { render, screen } from '@nezhos/testing/react';
+import { vi } from 'vitest';
 
 import Header from './Header'
+
+vi.mock('next/router', () => ({
+  useRouter: vi.fn()
+}));
+
 
 test('Header renders', async () => {
   render(
