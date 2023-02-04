@@ -47,7 +47,7 @@
     "@nezhos/i18n": "workspace:*",
     "@nezhos/testing": "workspace:*",
     "@nezhos/tsconfig": "workspace:*",
-    "@types/jest": "29.2.0",
+    "@types/jest": "29.4.0",
     "@types/node": "18.11.7",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",

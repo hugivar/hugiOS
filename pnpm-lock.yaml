@@ -49,7 +49,7 @@ importers:
       '@notionhq/client': ^2.2.1
       '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
-      '@types/jest': 29.2.0
+      '@types/jest': 29.4.0
       '@types/node': 18.11.7
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
@@ -125,7 +125,7 @@ importers:
       '@nezhos/i18n': link:../../packages/i18n
       '@nezhos/testing': link:../../packages/testing
       '@nezhos/tsconfig': link:../../packages/tsconfig
-      '@types/jest': 29.2.0
+      '@types/jest': 29.4.0
       '@types/node': 18.11.7
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
@@ -6260,8 +6260,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/29.2.0:
-    resolution: {integrity: sha512-KO7bPV21d65PKwv3LLsD8Jn3E05pjNjRZvkm+YTacWhVmykAb07wW6IkZUmQAltwQafNcDUEUrMO2h3jeBSisg==}
+  /@types/jest/29.4.0:
+    resolution: {integrity: sha512-VaywcGQ9tPorCX/Jkkni7RWGFfI11whqzs8dvxF41P17Z+z872thvEvlIbznjPJ02kl1HMX3LmLOonsj2n7HeQ==}
     dependencies:
       expect: 29.0.3
       pretty-format: 29.0.3
@@ -6506,7 +6506,7 @@ packages:
   /@types/testing-library__jest-dom/5.14.3:
     resolution: {integrity: sha512-oKZe+Mf4ioWlMuzVBaXQ9WDnEm1+umLx0InILg+yvZVBBDmzV5KfZyLrCvadtWcx8+916jLmHafcmqqffl+iIw==}
     dependencies:
-      '@types/jest': 29.2.0
+      '@types/jest': 29.4.0
     dev: true
 
   /@types/through/0.0.30:
@@ -6853,7 +6853,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.20.5
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.0.1_@types+node@18.11.18
+      vite: 4.0.1_@types+node@18.11.7
     transitivePeerDependencies:
       - supports-color
 
@@ -17827,7 +17827,7 @@ packages:
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
       '@types/node': 18.11.18
-      acorn: 8.8.1
+      acorn: 8.7.1
       acorn-walk: 8.2.0
       arg: 4.1.3
       create-require: 1.1.1
@@ -18559,7 +18559,7 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.0.1_typescript@4.9.3
-      vite: 4.0.1
+      vite: 4.0.1_@types+node@18.11.7
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -18662,7 +18662,6 @@ packages:
       rollup: 3.7.3
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vite/4.0.4_@types+node@18.11.18:
     resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
