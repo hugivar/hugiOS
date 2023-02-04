@@ -7,13 +7,13 @@ importers:
       '@changesets/cli': 2.26.0
       '@nezhos/tools': workspace:*
       prettier: latest
-      rimraf: 4.0.7
+      rimraf: 4.1.2
       turbo: latest
     devDependencies:
       '@changesets/cli': 2.26.0
       '@nezhos/tools': link:packages/tools
       prettier: 2.8.3
-      rimraf: 4.0.7
+      rimraf: 4.1.2
       turbo: 1.7.3
 
   apps/notifications:
@@ -86,7 +86,7 @@ importers:
       react-markdown: 8.0.3
       react-syntax-highlighter: 15.5.0
       react-test-renderer: 18.2.0
-      rimraf: 4.0.7
+      rimraf: 4.1.2
       serve: 14.1.1
       swr: 2.0.0
       tailwindcss: 3.2.0
@@ -145,7 +145,7 @@ importers:
       happy-dom: 8.1.0
       jsdom: 21.0.0
       react-test-renderer: 18.2.0_react@18.2.0
-      rimraf: 4.0.7
+      rimraf: 4.1.2
       serve: 14.1.1
       typescript: 4.9.3
       vite: 4.0.1_@types+node@18.11.7
@@ -206,7 +206,7 @@ importers:
       concurrently: 7.6.0
       react: 18.2.0
       react-dom: 18.2.0
-      rimraf: 4.0.7
+      rimraf: 4.1.2
       typescript: 4.9.3
       vite: 4.0.1
       vite-tsconfig-paths: 4.0.3
@@ -222,7 +222,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.0.0_vite@4.0.1
       concurrently: 7.6.0
-      rimraf: 4.0.7
+      rimraf: 4.1.2
       typescript: 4.9.3
       vite: 4.0.1
       vite-tsconfig-paths: 4.0.3_txq4r6jfrycvbgr7hkerqcakpe
@@ -238,7 +238,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.0.0
       concurrently: 7.6.0
-      rimraf: 4.0.7
+      rimraf: 4.1.2
       solid-js: 1.6.0
       typescript: 4.9.3
       vite: 4.0.1
@@ -256,7 +256,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.0.0_vite@4.0.1
       concurrently: 7.6.0
-      rimraf: 4.0.7
+      rimraf: 4.1.2
       typescript: 4.9.3
       vite: 4.0.1
       vite-plugin-solid: 2.5.0_solid-js@1.6.0+vite@4.0.1
@@ -6853,7 +6853,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.20.5
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.0.1_@types+node@18.11.18
+      vite: 4.0.1_@types+node@18.11.7
     transitivePeerDependencies:
       - supports-color
 
@@ -16479,8 +16479,8 @@ packages:
     dependencies:
       glob: 7.2.3
 
-  /rimraf/4.0.7:
-    resolution: {integrity: sha512-CUEDDrZvc0swDgVdXGiv3FcYYQMpJxjvSGt85Amj6yU+MCVWurrLCeLiJDdJPHCzNJnwuebBEdcO//eP11Xa7w==}
+  /rimraf/4.1.2:
+    resolution: {integrity: sha512-BlIbgFryTbw3Dz6hyoWFhKk+unCcHMSkZGrTFVAx2WmttdBSonsdtRlwiuTbDqTKr+UlXIUqJVS4QT5tUzGENQ==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -17827,7 +17827,7 @@ packages:
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
       '@types/node': 18.11.18
-      acorn: 8.8.1
+      acorn: 8.7.1
       acorn-walk: 8.2.0
       arg: 4.1.3
       create-require: 1.1.1
@@ -18559,7 +18559,7 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.0.1_typescript@4.9.3
-      vite: 4.0.1
+      vite: 4.0.1_@types+node@18.11.7
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -18662,7 +18662,6 @@ packages:
       rollup: 3.7.3
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vite/4.0.4_@types+node@18.11.18:
     resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}

@@ -20,7 +20,7 @@
     "@changesets/cli": "2.26.0",
     "@nezhos/tools": "workspace:*",
     "prettier": "latest",
-    "rimraf": "4.0.7",
+    "rimraf": "4.1.2",
     "turbo": "latest"
   },
   "engines": {
