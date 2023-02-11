@@ -1,4 +1,4 @@
-# NezhOS CLI
+# HugiOS CLI
 
 ## Basis
 
