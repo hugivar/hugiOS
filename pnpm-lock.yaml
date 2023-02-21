@@ -154,7 +154,7 @@ importers:
       react-syntax-highlighter: 15.5.0
       react-test-renderer: 18.2.0
       rimraf: 4.0.7
-      serve: 14.1.1
+      serve: 14.2.0
       swr: 2.0.0
       tailwindcss: 3.2.0
       typescript: 4.9.3
@@ -213,7 +213,7 @@ importers:
       jsdom: 21.0.0
       react-test-renderer: 18.2.0_react@18.2.0
       rimraf: 4.0.7
-      serve: 14.1.1
+      serve: 14.2.0
       typescript: 4.9.3
       vite: 4.0.1_@types+node@18.11.7
       vite-tsconfig-paths: 4.0.3_txq4r6jfrycvbgr7hkerqcakpe
@@ -8467,8 +8467,8 @@ packages:
     resolution: {integrity: sha512-19uTjoZGP4/Ax7kSNhhay9JA83BirKzpqLkeEAilrpdI1hE5xuq6q+tzJOsrMOOqJrm7LkmZp5lbsTQzvK2pYg==}
     dev: false
 
-  /@zeit/schemas/2.21.0:
-    resolution: {integrity: sha512-/J4WBTpWtQ4itN1rb3ao8LfClmVcmz2pO6oYb7Qd4h7VSqUhIbJIvrykz9Ew1WMg6eFWsKdsMHc5uPbFxqlCpg==}
+  /@zeit/schemas/2.29.0:
+    resolution: {integrity: sha512-g5QiLIfbg3pLuYUJPlisNKY+epQJTcMDsOnVNkscrDP1oi7vmJnzOANYJI/1pZcVJ6umUkBv3aFtlg1UvUHGzA==}
     dev: true
 
   /abab/2.0.6:
@@ -18879,12 +18879,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /serve/14.1.1:
-    resolution: {integrity: sha512-7RhRDEirZ7Qyee4QWhBHO9qRtjIGsIPGecDDPzNzlOsjDiZWcq36GS8FioVJAuJPVJBBDTsGp33WWOO4B9A82g==}
+  /serve/14.2.0:
+    resolution: {integrity: sha512-+HOw/XK1bW8tw5iBilBz/mJLWRzM8XM6MPxL4J/dKzdxq1vfdEWSwhaR7/yS8EJp5wzvP92p1qirysJvnEtjXg==}
     engines: {node: '>= 14'}
     hasBin: true
     dependencies:
-      '@zeit/schemas': 2.21.0
+      '@zeit/schemas': 2.29.0
       ajv: 8.11.0
       arg: 5.0.2
       boxen: 7.0.0
