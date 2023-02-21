@@ -11,6 +11,7 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "test": "turbo run test",
+    "graph": "turbo run build --graph=my-graph.html --filter=web",
     "release": "turbo run release",
     "clean": "npx rimraf ./**/node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
