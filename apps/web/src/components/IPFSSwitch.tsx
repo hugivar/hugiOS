@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Button } from "@nezhos/react-ui";
+import { Button } from "@hugios/react-ui";
 
 import settings from "config/settings";
 import { determineIPFS } from "src/utils/routing";

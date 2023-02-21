@@ -1,1 +1,1 @@
-module.exports = require("@nezhos/config/eslint-preset");
+module.exports = require("@hugios/config/eslint-preset");

@@ -1,5 +1,5 @@
 {
-  "name": "nezhos",
+  "name": "hugios",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
@@ -15,11 +15,11 @@
     "release": "turbo run release",
     "clean": "npx rimraf ./**/node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "nezhos": "nezhos"
+    "hugios": "hugios"
   },
   "devDependencies": {
     "@changesets/cli": "2.26.0",
-    "@nezhos/tools": "workspace:*",
+    "@hugios/tools": "workspace:*",
     "prettier": "latest",
     "rimraf": "4.0.7",
     "turbo": "latest"

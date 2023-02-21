@@ -1,5 +1,5 @@
 {
-  "extends": "@nezhos/tsconfig/react-library.json",
+  "extends": "@hugios/tsconfig/react-library.json",
   "compilerOptions": {
     "outDir": "dist"
   },

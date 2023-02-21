@@ -1,4 +1,4 @@
-# @nezhos/tools
+# @hugios/tools
 
 ## 2.0.0
 

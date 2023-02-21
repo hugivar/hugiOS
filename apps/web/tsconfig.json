@@ -1,5 +1,5 @@
 {
-  "extends": "@nezhos/tsconfig/nextjs.json",
+  "extends": "@hugios/tsconfig/nextjs.json",
   "compilerOptions": {
     "lib": [
       "dom",

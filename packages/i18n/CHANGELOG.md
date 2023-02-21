@@ -1,4 +1,4 @@
-# @nezhos/i18n
+# @hugios/i18n
 
 ## 1.1.0
 

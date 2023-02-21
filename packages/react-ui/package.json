@@ -1,5 +1,5 @@
 {
-  "name": "@nezhos/react-ui",
+  "name": "@hugios/react-ui",
   "version": "1.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,9 +10,9 @@
     "test": "vitest --run"
   },
   "devDependencies": {
-    "@nezhos/config": "workspace:*",
-    "@nezhos/testing": "workspace:*",
-    "@nezhos/tsconfig": "workspace:*",
+    "@hugios/config": "workspace:*",
+    "@hugios/testing": "workspace:*",
+    "@hugios/tsconfig": "workspace:*",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "@vitejs/plugin-react": "3.1.0",

@@ -9,4 +9,4 @@
 ### Patch Changes
 
 - Updated dependencies [2eb73b3]
-  - @nezhos/solid-ui@1.1.0
+  - @hugios/solid-ui@1.1.0

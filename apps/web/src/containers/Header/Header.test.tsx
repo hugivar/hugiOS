@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@nezhos/testing/react';
+import { render, screen } from '@hugios/testing/react';
 import { vi } from 'vitest';
 
 import Header from './Header'

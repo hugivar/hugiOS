@@ -1,4 +1,4 @@
-# @nezhos/web
+# @hugios/web
 
 ## 1.3.0
 
@@ -15,7 +15,7 @@
 ### Patch Changes
 
 - Updated dependencies [2eb73b3]
-  - @nezhos/react-ui@1.1.0
+  - @hugios/react-ui@1.1.0
 
 ## 1.1.0
 

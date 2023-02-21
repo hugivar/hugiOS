@@ -3,7 +3,7 @@ import type { Component } from 'solid-js';
 
 import logo from './logo.svg';
 import styles from './App.module.css';
-import { Button } from "@nezhos/solid-ui";
+import { Button } from "@hugios/solid-ui";
 
 function MyComponent(props: any) {
   return <div>Hello {props.name}</div>

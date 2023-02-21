@@ -4,7 +4,7 @@ var m = require('react-dom');
 
 module.exports = (webpackConfigEnv) => {
     const defaultConfig = singleSpaDefaults({
-        orgName: "nezhos",
+        orgName: "hugios",
         projectName: "navbar",
         webpackConfigEnv,
     });
