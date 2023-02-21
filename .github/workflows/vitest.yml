@@ -24,8 +24,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
+      - name: setup pnpm config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER    
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install
       - name: Generate coverage report
         run: npx turbo run test:coverage
       - name: Upload coverage to Codecov
