@@ -40,7 +40,6 @@ importers:
   apps/web:
     specifiers:
       '@changesets/cli': 2.26.0
-      '@next/bundle-analyzer': ^13.1.6
       '@next/eslint-plugin-next': 13.1.0
       '@nezhos/config': workspace:*
       '@nezhos/i18n': workspace:*
@@ -121,7 +120,6 @@ importers:
       swr: 2.0.0_react@18.2.0
       tailwindcss: 3.2.0_postcss@8.4.14
     devDependencies:
-      '@next/bundle-analyzer': 13.1.6
       '@next/eslint-plugin-next': 13.1.0
       '@nezhos/config': link:../../packages/config
       '@nezhos/i18n': link:../../packages/i18n
@@ -216,7 +214,6 @@ importers:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      typescript: 4.9.3
     devDependencies:
       '@nezhos/config': link:../config
       '@nezhos/testing': link:../testing
@@ -226,6 +223,7 @@ importers:
       '@vitejs/plugin-react': 3.0.0_vite@4.0.1
       concurrently: 7.6.0
       rimraf: 4.0.7
+      typescript: 4.9.3
       vite: 4.0.1
       vite-tsconfig-paths: 4.0.3_txq4r6jfrycvbgr7hkerqcakpe
       vitest: 0.28.3
@@ -5406,15 +5404,6 @@ packages:
       hey-listen: 1.0.8
       tslib: 2.4.1
     dev: false
-
-  /@next/bundle-analyzer/13.1.6:
-    resolution: {integrity: sha512-rJS9CtLoGT58mL+v2ISKANosFFWP/0YKYByHQ3vTaZrbQP8b1rYRxd2QVMJmnSXaFkiP9URt1XJ6OdGyVq5b6g==}
-    dependencies:
-      webpack-bundle-analyzer: 4.7.0
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-    dev: true
 
   /@next/env/13.1.0:
     resolution: {integrity: sha512-6iNixFzCndH+Bl4FetQzOMjxCJqg8fs0LAlZviig1K6mIjOWH2m2oPcHcOg1Ta5VCe7Bx5KG1Hs+NrWDUkBt9A==}
@@ -11948,7 +11937,7 @@ packages:
       lodash: 4.17.21
       pretty-error: 4.0.0
       tapable: 2.2.1
-      webpack: 5.75.0
+      webpack: 5.75.0_webpack-cli@5.0.1
 
   /htmlparser2/6.1.0:
     resolution: {integrity: sha512-gyyPk6rgonLFEDGoeRgQNaEUvdJ4ktTmmUh/h2t7s+M8oPpIPxgNACWa+6ESR57kXstwqPiCut0V8NRpcwgU7A==}
