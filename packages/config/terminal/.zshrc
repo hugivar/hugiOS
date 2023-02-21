@@ -2,21 +2,10 @@
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export USER="${USER}"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "/Users/${USER}/google-cloud-sdk/path.zsh.inc" ]; then . "/Users/${USER}/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "/Users/${USER}/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/${USER}/google-cloud-sdk/completion.zsh.inc"; fi
-
 export PATH=$PATH:~/flutter/bin
 export PATH=$PATH:~/go/bin
 export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
-
-alias python=python3
-alias ls='ls -G'
-alias bertyAndroid='cd ~/repos/berty/js/android'
-alias repos='cd ~/repos'
 
 export ANDROID_HOME=/Users/${USER}/Library/Android/sdk
 export ANDROID_SDK_ROOT=/Users/${USER}/Library/Android/sdk
@@ -41,7 +30,6 @@ export ZSH="/Users/${USER}/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="afowler"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -107,18 +95,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # https://dev.to/abdfnx/oh-my-zsh-powerlevel10k-cool-terminal-1no0
 
-plugins=( 
-  alias-finder
-  common-aliases
-  gh
-  git
-  gitignore
-  history
-  node
-  volta
-  vscode
-  z
-)
+plugins=()
 
 if [ -x "$(command -v exa)" ]; then
     alias ls="exa"
@@ -165,8 +142,8 @@ autoload -U compinit && compinit
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export NVM_DIR="$HOME/.config/nvm"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+export VOLTA_HOME=$HOME/.volta
+export PATH=$VOLTA_HOME/bin:$PATH
 
 export PNPM_HOME="/Users/${USER}/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -175,6 +152,11 @@ export PATH="$PNPM_HOME:$PATH"
 export PNPM_HOME="/Users/${USER}/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# zplug
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+source $ZPLUG_HOME/init.zsh
+# zplug end
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
