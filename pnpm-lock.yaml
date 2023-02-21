@@ -117,7 +117,7 @@ importers:
       '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
       '@types/jest': 29.2.0
-      '@types/node': 18.11.7
+      '@types/node': 18.14.0
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       '@types/react-helmet': 6.1.5
@@ -193,7 +193,7 @@ importers:
       '@nezhos/testing': link:../../packages/testing
       '@nezhos/tsconfig': link:../../packages/tsconfig
       '@types/jest': 29.2.0
-      '@types/node': 18.11.7
+      '@types/node': 18.14.0
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       '@types/react-helmet': 6.1.5
@@ -215,7 +215,7 @@ importers:
       rimraf: 4.0.7
       serve: 14.1.1
       typescript: 4.9.3
-      vite: 4.1.3_@types+node@18.11.7
+      vite: 4.1.3_@types+node@18.14.0
       vite-tsconfig-paths: 4.0.3_r3tshpxaacwvgaksx7d3cyrk5y
       vitest: 0.28.3_foashswwgoan52vyctycovmohq
 
@@ -359,7 +359,7 @@ importers:
       '@pinata/sdk': 2.1.0
       '@types/inquirer': 9.0.1
       '@types/lodash': 4.14.182
-      '@types/node': 18.11.7
+      '@types/node': 18.14.0
       '@types/node-fetch': 2.6.1
       '@types/number-to-words': 1.2.1
       chalk: 5.2.0
@@ -377,14 +377,14 @@ importers:
     dependencies:
       chalk: 5.2.0
       node-fetch: 3.3.0
-      ts-node: 10.9.1_wp5y27xoyq2mtxzexuwzzt7cty
+      ts-node: 10.9.1_w3g2me3mjo25mnmnojgjhg2v6y
       typescript: 4.9.3
     devDependencies:
       '@doist/todoist-api-typescript': 2.1.2
       '@pinata/sdk': 2.1.0
       '@types/inquirer': 9.0.1
       '@types/lodash': 4.14.182
-      '@types/node': 18.11.7
+      '@types/node': 18.14.0
       '@types/node-fetch': 2.6.1
       '@types/number-to-words': 1.2.1
       cloudflare: 2.9.1
@@ -687,7 +687,7 @@ importers:
     specifiers:
       '@rushstack/eslint-patch': 1.2.0
       '@types/jsdom': 20.0.0
-      '@types/node': 18.11.7
+      '@types/node': 18.14.0
       '@vitejs/plugin-vue': 4.0.0
       '@vitejs/plugin-vue-jsx': 3.0.0
       '@vue/eslint-config-prettier': 7.0.0
@@ -715,13 +715,13 @@ importers:
     devDependencies:
       '@rushstack/eslint-patch': 1.2.0
       '@types/jsdom': 20.0.0
-      '@types/node': 18.11.7
+      '@types/node': 18.14.0
       '@vitejs/plugin-vue': 4.0.0_vite@4.1.3+vue@3.2.37
       '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.1.3+vue@3.2.37
       '@vue/eslint-config-prettier': 7.0.0_zzmr4pfnhjmfb7v4arbp5glbhm
       '@vue/eslint-config-typescript': 10.0.0_6ropraxgaacymg2uqysnopq2ua
       '@vue/test-utils': 2.2.0_vue@3.2.37
-      '@vue/tsconfig': 0.1.3_@types+node@18.11.7
+      '@vue/tsconfig': 0.1.3_@types+node@18.14.0
       cypress: 12.6.0
       eslint: 8.17.0
       eslint-plugin-cypress: 2.12.1_eslint@8.17.0
@@ -730,7 +730,7 @@ importers:
       prettier: 2.8.0
       start-server-and-test: 1.15.0
       typescript: 4.9.3
-      vite: 4.1.3_@types+node@18.11.7
+      vite: 4.1.3_@types+node@18.14.0
       vitest: 0.28.3_jsdom@21.0.0
       vue-tsc: 1.0.8_typescript@4.9.3
 
@@ -7351,9 +7351,6 @@ packages:
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
 
-  /@types/node/18.11.7:
-    resolution: {integrity: sha512-LhFTglglr63mNXUSRYD8A+ZAIu5sFqNJ4Y2fPuY7UlrySJH87rRRlhtVmMHplmfk5WkoJGmDjE9oiTfyX94CpQ==}
-
   /@types/node/18.14.0:
     resolution: {integrity: sha512-5EWrvLmglK+imbCJY0+INViFWUHg1AHel1sq4ZVSfdcNqGy9Edv3UB9IIzzg+xPaUcAgZYcfVs2fBcwDeZzU0A==}
 
@@ -8093,7 +8090,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.21.0
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.1.3_@types+node@18.11.7
+      vite: 4.1.3_@types+node@18.14.0
     transitivePeerDependencies:
       - supports-color
 
@@ -8123,7 +8120,7 @@ packages:
       '@babel/core': 7.20.5
       '@babel/plugin-transform-typescript': 7.20.7_@babel+core@7.20.5
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.5
-      vite: 4.1.3_@types+node@18.11.7
+      vite: 4.1.3_@types+node@18.14.0
       vue: 3.2.37
     transitivePeerDependencies:
       - supports-color
@@ -8136,7 +8133,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.1.3_@types+node@18.11.7
+      vite: 4.1.3_@types+node@18.14.0
       vue: 3.2.37
     dev: true
 
@@ -8452,7 +8449,7 @@ packages:
       vue: 3.2.37
     dev: true
 
-  /@vue/tsconfig/0.1.3_@types+node@18.11.7:
+  /@vue/tsconfig/0.1.3_@types+node@18.14.0:
     resolution: {integrity: sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==}
     peerDependencies:
       '@types/node': '*'
@@ -8460,7 +8457,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 18.11.7
+      '@types/node': 18.14.0
     dev: true
 
   /@webassemblyjs/ast/1.11.1:
@@ -20334,7 +20331,7 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /ts-node/10.9.1_wp5y27xoyq2mtxzexuwzzt7cty:
+  /ts-node/10.9.1_w3g2me3mjo25mnmnojgjhg2v6y:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -20353,7 +20350,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
-      '@types/node': 18.11.7
+      '@types/node': 18.14.0
       acorn: 8.7.1
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -21083,7 +21080,7 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.0.1_typescript@4.9.3
-      vite: 4.1.3_@types+node@18.11.7
+      vite: 4.1.3_@types+node@18.14.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -21187,39 +21184,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite/4.1.3_@types+node@18.11.7:
-    resolution: {integrity: sha512-0Zqo4/Fr/swSOBmbl+HAAhOjrqNwju+yTtoe4hQX9UsARdcuc9njyOdr6xU0DDnV7YP0RT6mgTTOiRtZgxfCxA==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      '@types/node': 18.11.7
-      esbuild: 0.16.17
-      postcss: 8.4.21
-      resolve: 1.22.1
-      rollup: 3.17.2
-    optionalDependencies:
-      fsevents: 2.3.2
-
   /vite/4.1.3_@types+node@18.14.0:
     resolution: {integrity: sha512-0Zqo4/Fr/swSOBmbl+HAAhOjrqNwju+yTtoe4hQX9UsARdcuc9njyOdr6xU0DDnV7YP0RT6mgTTOiRtZgxfCxA==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -21252,7 +21216,6 @@ packages:
       rollup: 3.17.2
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vitefu/0.2.3_vite@4.1.3:
     resolution: {integrity: sha512-75l7TTuU8isAhz1QFtNKjDkqjxvndfMC1AfIMjJ0ZQ59ZD0Ow9QOIsJJX16Wv9PS8f+zMzp6fHy5cCbKG/yVUQ==}
