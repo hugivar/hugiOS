@@ -1,5 +1,5 @@
 {
-  "name": "@nezhos/testing",
+  "name": "@hugios/testing",
   "version": "1.1.0",
   "main": "./index.js",
   "author": "nezhivar",
@@ -12,7 +12,7 @@
     "solid-testing-library": "0.5.0"
   },
   "dependencies": {
-    "@nezhos/i18n": "workspace:*",
+    "@hugios/i18n": "workspace:*",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "solid-js": "1.6.0"

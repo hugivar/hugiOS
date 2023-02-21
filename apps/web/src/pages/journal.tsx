@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from "@nezhos/i18n";
+import { useTranslation } from "@hugios/i18n";
 
 import Layout from 'src/containers/Layout';
 import Header from 'src/containers/Header';

@@ -5,13 +5,13 @@ importers:
   .:
     specifiers:
       '@changesets/cli': 2.26.0
-      '@nezhos/tools': workspace:*
+      '@hugios/tools': workspace:*
       prettier: latest
       rimraf: 4.0.7
       turbo: latest
     devDependencies:
       '@changesets/cli': 2.26.0
-      '@nezhos/tools': link:packages/tools
+      '@hugios/tools': link:packages/tools
       prettier: 2.8.4
       rimraf: 4.0.7
       turbo: 1.8.1
@@ -108,11 +108,11 @@ importers:
     specifiers:
       '@changesets/cli': 2.26.0
       '@next/eslint-plugin-next': 13.1.0
-      '@nezhos/config': workspace:*
-      '@nezhos/i18n': workspace:*
-      '@nezhos/react-ui': workspace:*
-      '@nezhos/testing': workspace:*
-      '@nezhos/tsconfig': workspace:*
+      '@hugios/config': workspace:*
+      '@hugios/i18n': workspace:*
+      '@hugios/react-ui': workspace:*
+      '@hugios/testing': workspace:*
+      '@hugios/tsconfig': workspace:*
       '@notionhq/client': ^2.2.1
       '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
@@ -163,7 +163,7 @@ importers:
       vitest: 0.28.3
     dependencies:
       '@changesets/cli': 2.26.0
-      '@nezhos/react-ui': link:../../packages/react-ui
+      '@hugios/react-ui': link:../../packages/react-ui
       '@notionhq/client': 2.2.1
       '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.2.0
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.2.0
@@ -188,10 +188,10 @@ importers:
       tailwindcss: 3.2.0_postcss@8.4.14
     devDependencies:
       '@next/eslint-plugin-next': 13.1.0
-      '@nezhos/config': link:../../packages/config
-      '@nezhos/i18n': link:../../packages/i18n
-      '@nezhos/testing': link:../../packages/testing
-      '@nezhos/tsconfig': link:../../packages/tsconfig
+      '@hugios/config': link:../../packages/config
+      '@hugios/i18n': link:../../packages/i18n
+      '@hugios/testing': link:../../packages/testing
+      '@hugios/tsconfig': link:../../packages/tsconfig
       '@types/jest': 29.2.0
       '@types/node': 18.14.0
       '@types/react': 18.0.12
@@ -264,9 +264,9 @@ importers:
 
   packages/react-ui:
     specifiers:
-      '@nezhos/config': workspace:*
-      '@nezhos/testing': workspace:*
-      '@nezhos/tsconfig': workspace:*
+      '@hugios/config': workspace:*
+      '@hugios/testing': workspace:*
+      '@hugios/tsconfig': workspace:*
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.1.0
@@ -282,9 +282,9 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
-      '@nezhos/config': link:../config
-      '@nezhos/testing': link:../testing
-      '@nezhos/tsconfig': link:../tsconfig
+      '@hugios/config': link:../config
+      '@hugios/testing': link:../testing
+      '@hugios/tsconfig': link:../tsconfig
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.1.0_vite@4.0.1
@@ -297,9 +297,9 @@ importers:
 
   packages/solid-ui:
     specifiers:
-      '@nezhos/config': workspace:*
-      '@nezhos/testing': workspace:*
-      '@nezhos/tsconfig': workspace:*
+      '@hugios/config': workspace:*
+      '@hugios/testing': workspace:*
+      '@hugios/tsconfig': workspace:*
       '@testing-library/jest-dom': 5.16.4
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
@@ -315,9 +315,9 @@ importers:
     dependencies:
       solid-js: 1.6.0
     devDependencies:
-      '@nezhos/config': link:../config
-      '@nezhos/testing': link:../testing
-      '@nezhos/tsconfig': link:../tsconfig
+      '@hugios/config': link:../config
+      '@hugios/testing': link:../testing
+      '@hugios/tsconfig': link:../tsconfig
       '@testing-library/jest-dom': 5.16.4
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
@@ -332,7 +332,7 @@ importers:
 
   packages/testing:
     specifiers:
-      '@nezhos/i18n': workspace:*
+      '@hugios/i18n': workspace:*
       '@testing-library/dom': 8.19.0
       '@testing-library/jest-dom': 5.16.4
       '@testing-library/react': 13.4.0
@@ -342,7 +342,7 @@ importers:
       solid-js: 1.6.0
       solid-testing-library: 0.5.0
     dependencies:
-      '@nezhos/i18n': link:../i18n
+      '@hugios/i18n': link:../i18n
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       solid-js: 1.6.0
@@ -662,8 +662,8 @@ importers:
 
   playground/solidjs-starter:
     specifiers:
-      '@nezhos/solid-ui': workspace:*
-      '@nezhos/testing': workspace:*
+      '@hugios/solid-ui': workspace:*
+      '@hugios/testing': workspace:*
       '@testing-library/jest-dom': 5.16.4
       solid-js: 1.6.0
       typescript: 4.9.3
@@ -672,10 +672,10 @@ importers:
       vite-tsconfig-paths: 4.0.3
       vitest: 0.28.3
     dependencies:
-      '@nezhos/solid-ui': link:../../packages/solid-ui
+      '@hugios/solid-ui': link:../../packages/solid-ui
       solid-js: 1.6.0
     devDependencies:
-      '@nezhos/testing': link:../../packages/testing
+      '@hugios/testing': link:../../packages/testing
       '@testing-library/jest-dom': 5.16.4
       typescript: 4.9.3
       vite: 4.0.1

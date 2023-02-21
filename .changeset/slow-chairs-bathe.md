@@ -1,5 +1,5 @@
 ---
-"@nezhos/web": minor
+"@hugios/web": minor
 ---
 
 Switch the internal api to use Notion as my CMS

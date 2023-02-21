@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { render, screen } from '@nezhos/testing/solid';
+import { render, screen } from '@hugios/testing/solid';
 
 import App from './App'
 

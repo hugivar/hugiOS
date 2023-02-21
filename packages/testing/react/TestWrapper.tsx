@@ -1,5 +1,5 @@
 import React from 'react';
-import '@nezhos/i18n';
+import '@hugios/i18n';
 
 function TestWrapper({ children }) {
     return (

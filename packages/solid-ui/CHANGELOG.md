@@ -1,4 +1,4 @@
-# @nezhos/solid-ui
+# @hugios/solid-ui
 
 ## 1.1.0
 

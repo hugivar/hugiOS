@@ -1,5 +1,5 @@
 {
-  "name": "@nezhos/notifications",
+  "name": "@hugios/notifications",
   "version": "1.0.0",
   "description": "A simple electron app built to serve as a notification center for my different services such as Protonmail",
   "main": "./src/main.js",

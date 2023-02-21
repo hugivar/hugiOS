@@ -13,8 +13,8 @@
         <script type="systemjs-importmap">
     {
       "imports": {
-        "@nezhos/shell": "//localhost:9000/nezhos-shell.js",
-        "@nezhos/navbar": "//localhost:8080/nezhos-navbar.js",
+        "@hugios/shell": "//localhost:9000/hugios-shell.js",
+        "@hugios/navbar": "//localhost:8080/hugios-navbar.js",
         "react": "https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js",
         "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"
       }
@@ -27,14 +27,14 @@
             <template id="single-spa-layout">
                 <single-spa-router>
                     <nav class="topnav">
-                        <application name="@nezhos/navbar" loader="topNav" error="topNav"></application>
+                        <application name="@hugios/navbar" loader="topNav" error="topNav"></application>
                     </nav>
                     <div class="main-content mt-16">
                         <route path="people">
-                            <application name="@nezhos/people"></application>
+                            <application name="@hugios/people"></application>
                         </route>
                         <route path="planets">
-                            <application name="@nezhos/planets"></application>
+                            <application name="@hugios/planets"></application>
                         </route>
                         <redirect from="/earth" to="/planets"></redirect>
                         <route default>
@@ -51,8 +51,8 @@
 
 <body>
     <script>
-        System.import('@nezhos/shell');
-        System.import('@nezhos/styleguide');
+        System.import('@hugios/shell');
+        System.import('@hugios/styleguide');
     </script>
     <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>

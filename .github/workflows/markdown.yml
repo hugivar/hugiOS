@@ -26,6 +26,6 @@ jobs:
         run: pnpm install
 
       - name: pull version from dev.to
-        run: cd packages/tools && nezhos output articles
+        run: cd packages/tools && hugios output articles
       - name: commit the code
         run: git add . && git commit -m "update markdown files" && git push

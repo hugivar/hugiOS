@@ -13,12 +13,12 @@
 ### Update NezhOS repo using local configs
 
 ```
-nezhos update fromlocaldotfiles 
+hugios update fromlocaldotfiles 
 ```
 ### Using these configs
 
 ```
-nezhos update localdotfiles
+hugios update localdotfiles
 ```
 
 ### Useful Links

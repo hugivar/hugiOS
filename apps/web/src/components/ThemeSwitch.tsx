@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { Button } from "@nezhos/react-ui";
+import { Button } from "@hugios/react-ui";
 
 import settings from "config/settings";
 import Tooltip from "./Tooltip";

@@ -1,4 +1,4 @@
-# @nezhos/react-ui
+# @hugios/react-ui
 
 ## 1.1.0
 

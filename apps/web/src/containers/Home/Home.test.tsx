@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, TestWrapper } from '@nezhos/testing/react';
+import { render, screen, TestWrapper } from '@hugios/testing/react';
 import { vi } from 'vitest';
 
 import Home from './Home'

@@ -3,7 +3,7 @@ const singleSpaDefaults = require("webpack-config-single-spa");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (webpackConfigEnv, argv) => {
-    const orgName = "nezhos";
+    const orgName = "hugios";
     const defaultConfig = singleSpaDefaults({
         orgName,
         projectName: "shell",

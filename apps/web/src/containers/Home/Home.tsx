@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "src/containers/Header";
 import Link from "next/link";
-import { useTranslation } from "@nezhos/i18n";
+import { useTranslation } from "@hugios/i18n";
 
 const PersonalInfo = ({ t }: any) => (
   <div className="max-w-md">

@@ -1,5 +1,5 @@
 {
-  "name": "@nezhos/web",
+  "name": "@hugios/web",
   "version": "1.3.0",
   "private": true,
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@changesets/cli": "2.26.0",
-    "@nezhos/react-ui": "workspace:*",
+    "@hugios/react-ui": "workspace:*",
     "@notionhq/client": "^2.2.1",
     "@tailwindcss/line-clamp": "0.4.0",
     "@tailwindcss/typography": "0.5.2",
@@ -43,10 +43,10 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "13.1.0",
-    "@nezhos/config": "workspace:*",
-    "@nezhos/i18n": "workspace:*",
-    "@nezhos/testing": "workspace:*",
-    "@nezhos/tsconfig": "workspace:*",
+    "@hugios/config": "workspace:*",
+    "@hugios/i18n": "workspace:*",
+    "@hugios/testing": "workspace:*",
+    "@hugios/tsconfig": "workspace:*",
     "@types/jest": "29.2.0",
     "@types/node": "18.14.0",
     "@types/react": "18.0.12",
