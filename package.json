@@ -30,7 +30,7 @@
   },
   "packageManager": "pnpm@7.25.0",
   "volta": {
-    "node": "18.13.0"
+    "node": "18.14.1"
   },
   "lint-staged": {
     "**/*.{js,ts,jsx,tsx}": [
