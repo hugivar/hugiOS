@@ -14,7 +14,7 @@
     "@hugios/testing": "workspace:*",
     "@testing-library/jest-dom": "5.16.4",
     "typescript": "4.9.3",
-    "vite": "4.0.1",
+    "vite": "4.1.4",
     "vite-plugin-solid": "2.5.0",
     "vite-tsconfig-paths": "4.0.3",
     "vitest": "0.28.3"
