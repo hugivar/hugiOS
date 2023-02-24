@@ -1,0 +1,28 @@
+Scope: all 26 workspace projects
+ WARN  A pnpm-lock.yaml file exists. The current configuration prohibits to read or write a lockfile
+Progress: resolved 0, reused 1, downloaded 0, added 0
+apps/web                                 |  WARN  deprecated @types/react-helmet-async@1.0.3
+Progress: resolved 200, reused 198, downloaded 0, added 0
+Progress: resolved 448, reused 393, downloaded 0, added 0
+Progress: resolved 1046, reused 990, downloaded 0, added 0
+apps/breaches                            |  WARN  deprecated source-map-resolve@0.6.0
+packages/tools                           |  WARN  deprecated cids@0.7.5
+packages/tools                           |  WARN  deprecated multibase@0.6.1
+playground/astro                         |  WARN  deprecated stable@0.1.8
+Progress: resolved 1565, reused 1521, downloaded 0, added 0
+playground/micro-frontend/player-form    |  WARN  deprecated sorted-array@2.0.4
+apps/notifications                       |  WARN  deprecated request@2.88.2
+packages/tools                           |  WARN  deprecated multicodec@1.0.4
+packages/tools                           |  WARN  deprecated cids@0.8.3
+packages/tools                           |  WARN  deprecated multibase@0.7.0
+playground/vue-project                   |  WARN  deprecated sourcemap-codec@1.4.8
+apps/notifications                       |  WARN  deprecated har-validator@5.1.5
+apps/notifications                       |  WARN  deprecated uuid@3.4.0
+Progress: resolved 2168, reused 2130, downloaded 0, added 0
+apps/web                                 |  WARN  deprecated core-js-pure@3.22.7
+packages/tools                           |  WARN  deprecated multibase@1.0.1
+Progress: resolved 2386, reused 2348, downloaded 0, added 0
+Already up to date
+
+Done in 7s
+Progress: resolved 2386, reused 2348, downloaded 0, added 0, done
