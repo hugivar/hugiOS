@@ -152,7 +152,7 @@ importers:
       next-themes: 0.2.0
       postcss: 8.4.14
       postcss-flexbugs-fixes: 5.0.2
-      postcss-nesting: 10.2.0
+      postcss-nesting: 11.2.1
       postcss-preset-env: 7.8.0
       react: 18.2.0
       react-content-loader: 6.2.0
@@ -184,7 +184,7 @@ importers:
       next-themes: 0.2.0_f4d7icgk4i3oippbo5yzyh5rhq
       postcss: 8.4.14
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.14
-      postcss-nesting: 10.2.0_postcss@8.4.14
+      postcss-nesting: 11.2.1_postcss@8.4.14
       postcss-preset-env: 7.8.0_postcss@8.4.14
       react: 18.2.0
       react-content-loader: 6.2.0_react@18.2.0
@@ -3580,17 +3580,6 @@ packages:
       postcss: ^8.2
     dependencies:
       postcss: 8.4.14
-    dev: false
-
-  /@csstools/selector-specificity/2.0.2_444rcjjorr3kpoqtvoodsr46pu:
-    resolution: {integrity: sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==}
-    engines: {node: ^12 || ^14 || >=16}
-    peerDependencies:
-      postcss: ^8.2
-      postcss-selector-parser: ^6.0.10
-    dependencies:
-      postcss: 8.4.14
-      postcss-selector-parser: 6.0.10
     dev: false
 
   /@csstools/selector-specificity/2.0.2_rhwutn3cj7dglz37pcp3mvzxzm:
@@ -15962,9 +15951,20 @@ packages:
     peerDependencies:
       postcss: ^8.2
     dependencies:
-      '@csstools/selector-specificity': 2.0.2_444rcjjorr3kpoqtvoodsr46pu
+      '@csstools/selector-specificity': 2.0.2_rhwutn3cj7dglz37pcp3mvzxzm
       postcss: 8.4.14
-      postcss-selector-parser: 6.0.10
+      postcss-selector-parser: 6.0.11
+    dev: false
+
+  /postcss-nesting/11.2.1_postcss@8.4.14:
+    resolution: {integrity: sha512-E6Jq74Jo/PbRAtZioON54NPhUNJYxVWhwxbweYl1vAoBYuGlDIts5yhtKiZFLvkvwT73e/9nFrW3oMqAtgG+GQ==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      '@csstools/selector-specificity': 2.0.2_rhwutn3cj7dglz37pcp3mvzxzm
+      postcss: 8.4.14
+      postcss-selector-parser: 6.0.11
     dev: false
 
   /postcss-opacity-percentage/1.1.2:
