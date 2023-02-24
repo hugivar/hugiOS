@@ -13,7 +13,7 @@
     "test": "turbo run test",
     "graph": "turbo run build --graph=my-graph.html --filter=web",
     "release": "turbo run release",
-    "clean": "npx rimraf ./**/node_modules",
+    "clean": "npx rimraf */**/node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "hugios": "hugios"
   },
