@@ -30,7 +30,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.42.1",
     "vite": "4.1.4",
-    "yup": "^0.32.11"
+    "yup": "^1.0.0"
   },
   "devDependencies": {
     "@testing-library/dom": "9.0.0",
