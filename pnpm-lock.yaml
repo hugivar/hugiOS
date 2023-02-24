@@ -528,7 +528,7 @@ importers:
       '@player-ui/react': ^0.4.0
       '@player-ui/reference-assets-plugin-react': 0.4.0
       '@player-ui/types': 0.4.0
-      '@types/node': ^16.11.39
+      '@types/node': ^18.0.0
       '@types/react': 17.0.53
       framer-motion: ^6.5.1
       react: ^17.0.2
@@ -548,9 +548,9 @@ importers:
       '@player-ui/asset-provider-plugin-react': 0.4.0_6l7wh56a32yqjh5pgapyyeyorm
       '@player-ui/player': 0.4.0
       '@player-ui/react': 0.4.0_oqgzwlowqciix6krwefu2awy7u
-      '@player-ui/reference-assets-plugin-react': 0.4.0_o4nk74lqwqkjcl3kthshqew3qe
+      '@player-ui/reference-assets-plugin-react': 0.4.0_u4ivs52f7453jibmxwcnc5b3au
       '@player-ui/types': 0.4.0
-      '@types/node': 16.11.39
+      '@types/node': 18.14.1
       '@types/react': 17.0.53
       framer-motion: 6.5.1_sfoxds7t5ydpegc3knd667wn6m
       react: 17.0.2
@@ -5427,7 +5427,7 @@ packages:
       - '@player-ui/types'
     dev: false
 
-  /@player-ui/reference-assets-plugin-react/0.4.0_o4nk74lqwqkjcl3kthshqew3qe:
+  /@player-ui/reference-assets-plugin-react/0.4.0_u4ivs52f7453jibmxwcnc5b3au:
     resolution: {integrity: sha512-/lIxIBNHEXEWQryx/fb+zJJAOPKLMza/N0kirG+KiiU5G9b4DqG+61L7rqgq9TKZIPnRJEyx/rAdJ9odWEcVjw==}
     peerDependencies:
       '@player-ui/react': 0.4.0
@@ -5441,7 +5441,7 @@ packages:
       '@player-ui/partial-match-registry': 0.4.0
       '@player-ui/react': 0.4.0_oqgzwlowqciix6krwefu2awy7u
       '@player-ui/reference-assets-plugin': 0.4.0_njku5ge2nkeco3wshebxlvldnu
-      '@types/node': 16.11.39
+      '@types/node': 18.14.1
       clsx: 1.2.1
     transitivePeerDependencies:
       - '@chakra-ui/system'
@@ -6104,6 +6104,7 @@ packages:
 
   /@types/node/16.11.39:
     resolution: {integrity: sha512-K0MsdV42vPwm9L6UwhIxMAOmcvH/1OoVkZyCgEtVu4Wx7sElGloy/W7kMBNe/oJ7V/jW9BVt1F6RahH6e7tPXw==}
+    dev: true
 
   /@types/node/18.11.18:
     resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
