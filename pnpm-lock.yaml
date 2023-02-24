@@ -438,7 +438,7 @@ importers:
     specifiers:
       '@astrojs/mdx': 1.0.0-beta.2
       '@astrojs/node': ^5.0.0-beta.1
-      '@astrojs/preact': ^1.2.0
+      '@astrojs/preact': ^2.0.0
       '@astrojs/tailwind': 3.0.0-beta.1
       '@tailwindcss/aspect-ratio': ^0.4.2
       '@tailwindcss/container-queries': ^0.1.0
@@ -457,7 +457,7 @@ importers:
       zod: ^3.20.2
     dependencies:
       '@astrojs/node': 5.0.0-beta.1_astro@2.0.0-beta.2
-      '@astrojs/preact': 1.2.0_preact@10.11.3
+      '@astrojs/preact': 2.0.3_preact@10.11.3
       '@tailwindcss/container-queries': 0.1.0_tailwindcss@3.2.4
       lunr: 2.3.9
       preact: 10.11.3
@@ -909,16 +909,16 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/preact/1.2.0_preact@10.11.3:
-    resolution: {integrity: sha512-Vm8rkBIE3cNlxhFoUO2Rsv5RxSP7x7Oi9J6qz8+91lwAIjdm6oyDOrrBmdGqsONJ1MqnjPG4EPmIZJGuFtz2SQ==}
-    engines: {node: ^14.18.0 || >=16.12.0}
+  /@astrojs/preact/2.0.3_preact@10.11.3:
+    resolution: {integrity: sha512-zKmS8oUteh24NDES3v+LvBEIRYzL7VRDZ1K7OW7+sa2ryLjqxA+2prI/X+SJTyX+eyM0hBcSrF5ubSIP686qQw==}
+    engines: {node: '>=16.12.0'}
     peerDependencies:
       preact: ^10.6.5
     dependencies:
-      '@babel/core': 7.20.5
-      '@babel/plugin-transform-react-jsx': 7.20.7_@babel+core@7.20.5
+      '@babel/core': 7.21.0
+      '@babel/plugin-transform-react-jsx': 7.20.7_@babel+core@7.21.0
       '@preact/signals': 1.1.3_preact@10.11.3
-      babel-plugin-module-resolver: 4.1.0
+      babel-plugin-module-resolver: 5.0.0
       preact: 10.11.3
       preact-render-to-string: 5.2.6_preact@10.11.3
     transitivePeerDependencies:
@@ -2080,7 +2080,6 @@ packages:
       '@babel/helper-plugin-utils': 7.20.2
       '@babel/plugin-syntax-jsx': 7.18.6_@babel+core@7.21.0
       '@babel/types': 7.21.0
-    dev: true
 
   /@babel/plugin-transform-react-pure-annotations/7.18.6_@babel+core@7.21.0:
     resolution: {integrity: sha512-I8VfEPg9r2TRDdvnHgPepTKvuRomzA8+u+nhY7qSI1fR2hRNebasZEETLyM5mAUr0Ku56OkXJ0I7NHJnO6cJiQ==}
@@ -7856,12 +7855,12 @@ packages:
       resolve: 1.22.1
     dev: false
 
-  /babel-plugin-module-resolver/4.1.0:
-    resolution: {integrity: sha512-MlX10UDheRr3lb3P0WcaIdtCSRlxdQsB1sBqL7W0raF070bGl1HQQq5K3T2vf2XAYie+ww+5AKC/WrkjRO2knA==}
-    engines: {node: '>= 8.0.0'}
+  /babel-plugin-module-resolver/5.0.0:
+    resolution: {integrity: sha512-g0u+/ChLSJ5+PzYwLwP8Rp8Rcfowz58TJNCe+L/ui4rpzE/mg//JVX0EWBUYoxaextqnwuGHzfGp2hh0PPV25Q==}
+    engines: {node: '>= 16'}
     dependencies:
-      find-babel-config: 1.2.0
-      glob: 7.2.3
+      find-babel-config: 2.0.0
+      glob: 8.1.0
       pkg-up: 3.1.0
       reselect: 4.1.7
       resolve: 1.22.1
@@ -11083,12 +11082,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /find-babel-config/1.2.0:
-    resolution: {integrity: sha512-jB2CHJeqy6a820ssiqwrKMeyC6nNdmrcgkKWJWmpoxpE8RKciYJXCcXRq1h2AzCo5I5BJeN2tkGEO3hLTuePRA==}
-    engines: {node: '>=4.0.0'}
+  /find-babel-config/2.0.0:
+    resolution: {integrity: sha512-dOKT7jvF3hGzlW60Gc3ONox/0rRZ/tz7WCil0bqA1In/3I8f1BctpXahRnEKDySZqci7u+dqq93sZST9fOJpFw==}
+    engines: {node: '>=16.0.0'}
     dependencies:
-      json5: 0.5.1
-      path-exists: 3.0.0
+      json5: 2.2.3
+      path-exists: 4.0.0
     dev: false
 
   /find-cache-dir/3.3.2:
@@ -13418,11 +13417,6 @@ packages:
   /json-stringify-safe/5.0.1:
     resolution: {integrity: sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==}
     dev: true
-
-  /json5/0.5.1:
-    resolution: {integrity: sha512-4xrs1aW+6N5DalkqSVA8fxh458CXvR99WU8WLKmq4v8eWAL86Xo3BVqyd3SkA9wEVjCMqyvvRRkshAdOnBp5rw==}
-    hasBin: true
-    dev: false
 
   /json5/1.0.1:
     resolution: {integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==}
