@@ -1,10 +1,9 @@
 import { component$, useClientEffect$, useStore, useStylesScoped$ } from '@builder.io/qwik';
-import { DocumentHead, useLocation } from '@builder.io/qwik-city';
+import { DocumentHead } from '@builder.io/qwik-city';
 import styles from './flower.css?inline';
 
 export default component$(() => {
   useStylesScoped$(styles);
-  const loc = useLocation();
 
   const state = useStore({
     count: 0,
@@ -34,8 +33,7 @@ export default component$(() => {
           '--state': `${state.count * 0.1}`,
         }}
         class={{
-          host: true,
-          pride: loc.query['pride'] === 'true',
+          host: true
         }}
       >
         {Array.from({ length: state.number }, (_, i) => (

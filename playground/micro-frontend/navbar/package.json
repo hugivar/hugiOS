@@ -20,6 +20,7 @@
     "webpack-config-single-spa-react": "^4.0.4"
   },
   "dependencies": {
+    "@babel/core": "7.21.0",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "react": "^18.0.0",
