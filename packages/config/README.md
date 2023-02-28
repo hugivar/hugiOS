@@ -10,7 +10,7 @@
 4. vimrc
 5. zshrc
 
-### Update NezhOS repo using local configs
+### Update HugiOS repo using local configs
 
 ```
 hugios update fromlocaldotfiles 
