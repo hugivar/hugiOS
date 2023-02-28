@@ -93,7 +93,7 @@ const questionAction = async (answers: IAction) => {
 }
 
 const inquirerRun = async () => {
-    console.log('Hi! 👋  Welcome to the NezhOS CLI!');
+    console.log('Hi! 👋  Welcome to the HugiOS CLI!');
 
     const types = await gatherConfig('setup');
 

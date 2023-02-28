@@ -1,12 +1,12 @@
 
 <br />
 <div align="center">
-  <h2 align="center">NezhOS CLI</h2>
+  <h2 align="center">HugiOS CLI</h2>
 </div>
 
 ## Using the CLI
 
-[NezhOS CLI](https://github.com/nezhivar/nezhOS/tree/main/packages/tools/cli)
+[HugiOS CLI](https://github.com/nezhivar/hugiOS/tree/main/packages/tools/cli)
 
 Once you have the node_modules installed, you can access the monorepo cli using the command `hugios`.
 
