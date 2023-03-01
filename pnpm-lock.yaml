@@ -266,9 +266,9 @@ importers:
 
   packages/obsidian:
     specifiers:
-      glob: 9.0.1
+      glob: 9.1.0
     dependencies:
-      glob: 9.0.1
+      glob: 9.1.0
 
   packages/react-ui:
     specifiers:
@@ -607,15 +607,15 @@ importers:
 
   playground/qwik-app:
     specifiers:
-      '@builder.io/qwik': 0.19.2
-      '@builder.io/qwik-city': 0.4.0
+      '@builder.io/qwik': 0.20.0
+      '@builder.io/qwik-city': 0.5.2
       '@types/eslint': 8.21.1
       '@types/node': ^18.11.16
       '@types/node-fetch': latest
       '@typescript-eslint/eslint-plugin': 5.54.0
       '@typescript-eslint/parser': 5.54.0
       eslint: 8.30.0
-      eslint-plugin-qwik: 0.19.2
+      eslint-plugin-qwik: 0.20.0
       node-fetch: 3.3.0
       prettier: 2.8.1
       typescript: 4.9.4
@@ -623,15 +623,15 @@ importers:
       vite: 4.1.4
       vite-tsconfig-paths: 4.0.3
     devDependencies:
-      '@builder.io/qwik': 0.19.2_undici@5.20.0
-      '@builder.io/qwik-city': 0.4.0_@builder.io+qwik@0.19.2
+      '@builder.io/qwik': 0.20.0_undici@5.20.0
+      '@builder.io/qwik-city': 0.5.2_@builder.io+qwik@0.20.0
       '@types/eslint': 8.21.1
       '@types/node': 18.11.18
       '@types/node-fetch': 2.6.2
       '@typescript-eslint/eslint-plugin': 5.54.0_doxbze3n7wbinazsaf32pq6lzy
       '@typescript-eslint/parser': 5.54.0_lzzuuodtsqwxnvqeq4g4likcqa
       eslint: 8.30.0
-      eslint-plugin-qwik: 0.19.2_eslint@8.30.0
+      eslint-plugin-qwik: 0.20.0_eslint@8.30.0
       node-fetch: 3.3.0
       prettier: 2.8.1
       typescript: 4.9.4
@@ -2435,13 +2435,13 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@builder.io/qwik-city/0.4.0_@builder.io+qwik@0.19.2:
-    resolution: {integrity: sha512-XNpmHzSHam7ZYrd12kJdwFerMEck0iOk3Wgb9IlVIuaN/nLuN033qrNWLVq+ZzlhplUea9DGc4job8qMix7WWA==}
+  /@builder.io/qwik-city/0.5.2_@builder.io+qwik@0.20.0:
+    resolution: {integrity: sha512-ItpQw+A4nK7Uh+Ypdx+LGqPlOzoIGWg9VgnqWCKpAfJaLnD4ffvSPrgHKQx/DdsDFFl7nBMMq4ddUQSL7xp0Yw==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     peerDependencies:
-      '@builder.io/qwik': '>=0.19.0'
+      '@builder.io/qwik': '>=0.20.0'
     dependencies:
-      '@builder.io/qwik': 0.19.2_undici@5.20.0
+      '@builder.io/qwik': 0.20.0_undici@5.20.0
       '@mdx-js/mdx': 2.3.0
       '@types/mdx': 2.0.3
       source-map: 0.7.4
@@ -2451,8 +2451,8 @@ packages:
       - supports-color
     dev: true
 
-  /@builder.io/qwik/0.19.2_undici@5.20.0:
-    resolution: {integrity: sha512-Rxdyx96ucx0+nABLsg1sH7SgrlMdHgpxbR+NR3c53Ux4Jj+Xf+QHNQSIKF9zTV8KClrzmDlqILgmkDU4uMTVcg==}
+  /@builder.io/qwik/0.20.0_undici@5.20.0:
+    resolution: {integrity: sha512-1nwoAiualvxhYnIwAoDiNUBXUM1WI7bOPxPN5rjWCaMvdQvHC96l/ZxWGEndUbO2L2sMbHDwjmMWgjTO7DdFhw==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
@@ -10547,8 +10547,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-qwik/0.19.2_eslint@8.30.0:
-    resolution: {integrity: sha512-dvJziAYCHu0Pw2GLD/IL2IoVtVsgEuEO20HhOUi6ZRCSZxCtODVaEr1sKV+rTUdUgLIghfKpalh7Y28dgzpPuQ==}
+  /eslint-plugin-qwik/0.20.0_eslint@8.30.0:
+    resolution: {integrity: sha512-W/6ZPVjiNpiUE91GvfBgzVaCZmzUfcZDoH+uGWmU9Hl4Avs8Y0vUvIm/607wozbd1ofLQdJgl/+MuPnZK+a2xw==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: '>= 8'
@@ -11697,12 +11697,12 @@ packages:
       minimatch: 5.1.0
       once: 1.4.0
 
-  /glob/9.0.1:
-    resolution: {integrity: sha512-psRdn8MI0gRcH0xow0VOhYxXD/6ZaRGmgtfN0oWN/hCgjxpRQBMCl7wE4JRJSAUTdJsW+FmD0EtE0CgJhKqSVw==}
+  /glob/9.1.0:
+    resolution: {integrity: sha512-bAnZn/xYN7o43Y97vDipnunJtQOOhJAyt7/zt1HrzFgtIrol4eJTUn8Kd74B1cMyOBuzWUMvBr2F178h0UQuUw==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       fs.realpath: 1.0.0
-      minimatch: 7.3.0
+      minimatch: 7.4.1
       minipass: 4.2.4
       path-scurry: 1.5.0
     dev: false
@@ -14672,8 +14672,8 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
-  /minimatch/7.3.0:
-    resolution: {integrity: sha512-WaMDuhKa7a6zKiwplR1AOz+zGvJba24k5VU1Cy6NhEguavT2YRlHxuINUgTas4wiS6fwBpYq4TcA1XIECSntyw==}
+  /minimatch/7.4.1:
+    resolution: {integrity: sha512-Oz1iPEP+MGl7KS3SciLsLLcuZ7VsBfb7Qrz/jYt/s/sYAv272P26HSLz2f77Y6hzTKXiBi6g765fqpEDNc5fJw==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
