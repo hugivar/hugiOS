@@ -266,9 +266,9 @@ importers:
 
   packages/obsidian:
     specifiers:
-      glob: 9.1.0
+      glob: 9.2.1
     dependencies:
-      glob: 9.1.0
+      glob: 9.2.1
 
   packages/react-ui:
     specifiers:
@@ -11697,16 +11697,6 @@ packages:
       minimatch: 5.1.0
       once: 1.4.0
 
-  /glob/9.1.0:
-    resolution: {integrity: sha512-bAnZn/xYN7o43Y97vDipnunJtQOOhJAyt7/zt1HrzFgtIrol4eJTUn8Kd74B1cMyOBuzWUMvBr2F178h0UQuUw==}
-    engines: {node: '>=16 || 14 >=14.17'}
-    dependencies:
-      fs.realpath: 1.0.0
-      minimatch: 7.4.1
-      minipass: 4.2.4
-      path-scurry: 1.5.0
-    dev: false
-
   /glob/9.2.1:
     resolution: {integrity: sha512-Pxxgq3W0HyA3XUvSXcFhRSs+43Jsx0ddxcFrbjxNGkL2Ak5BAUBxLqI5G6ADDeCHLfzzXFhe0b1yYcctGmytMA==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -11715,7 +11705,6 @@ packages:
       minimatch: 7.4.1
       minipass: 4.2.4
       path-scurry: 1.6.1
-    dev: true
 
   /global-agent/3.0.0:
     resolution: {integrity: sha512-PT6XReJ+D07JvGoxQMkT6qji/jVNfX/h364XHZOWeRzy64sSFr+xJ5OX7LI3b4MPQzdL4H8Y8M0xzPpsVMwA8Q==}
@@ -15649,21 +15638,12 @@ packages:
   /path-parse/1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
 
-  /path-scurry/1.5.0:
-    resolution: {integrity: sha512-hJ8rODLI9B2qwsYAd32rrI76gwVUPeu5kq/do6URDj2bJCVH3ilyT978Mv/NLuFMaqzHrn3XtiDLMZHaTTh4vA==}
-    engines: {node: '>=14'}
-    dependencies:
-      lru-cache: 7.17.0
-      minipass: 4.2.4
-    dev: false
-
   /path-scurry/1.6.1:
     resolution: {integrity: sha512-OW+5s+7cw6253Q4E+8qQ/u1fVvcJQCJo/VFD8pje+dbJCF1n5ZRMV2AEHbGp+5Q7jxQIYJxkHopnj6nzdGeZLA==}
     engines: {node: '>=14'}
     dependencies:
       lru-cache: 7.17.0
       minipass: 4.2.4
-    dev: true
 
   /path-to-regexp/0.1.7:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
