@@ -7,13 +7,13 @@ importers:
       '@changesets/cli': 2.26.0
       '@hugios/tools': workspace:*
       prettier: latest
-      rimraf: 4.2.0
+      rimraf: 4.3.0
       turbo: latest
     devDependencies:
       '@changesets/cli': 2.26.0
       '@hugios/tools': link:packages/tools
       prettier: 2.8.4
-      rimraf: 4.2.0
+      rimraf: 4.3.0
       turbo: 1.8.3
 
   apps/breaches:
@@ -161,7 +161,7 @@ importers:
       react-markdown: 8.0.3
       react-syntax-highlighter: 15.5.0
       react-test-renderer: 18.2.0
-      rimraf: 4.2.0
+      rimraf: 4.3.0
       serve: 14.2.0
       swr: 2.0.0
       tailwindcss: 3.2.0
@@ -220,7 +220,7 @@ importers:
       happy-dom: 8.9.0
       jsdom: 21.0.0
       react-test-renderer: 18.2.0_react@18.2.0
-      rimraf: 4.2.0
+      rimraf: 4.3.0
       serve: 14.2.0
       typescript: 4.9.3
       vite: 4.1.4_@types+node@18.14.0
@@ -281,7 +281,7 @@ importers:
       concurrently: 7.6.0
       react: 18.2.0
       react-dom: 18.2.0
-      rimraf: 4.2.0
+      rimraf: 4.3.0
       typescript: 4.9.3
       vite: 4.1.4
       vite-tsconfig-paths: 4.0.3
@@ -297,7 +297,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
       concurrently: 7.6.0
-      rimraf: 4.2.0
+      rimraf: 4.3.0
       typescript: 4.9.3
       vite: 4.1.4
       vite-tsconfig-paths: 4.0.3_t4e54rm5g4i752zpvfvytoko5i
@@ -313,7 +313,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.1.0
       concurrently: 7.6.0
-      rimraf: 4.2.0
+      rimraf: 4.3.0
       solid-js: 1.6.0
       typescript: 4.9.3
       vite: 4.1.4
@@ -331,7 +331,7 @@ importers:
       '@types/react-dom': 18.0.5
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
       concurrently: 7.6.0
-      rimraf: 4.2.0
+      rimraf: 4.3.0
       typescript: 4.9.3
       vite: 4.1.4
       vite-plugin-solid: 2.6.0_solid-js@1.6.0+vite@4.1.4
@@ -17414,8 +17414,8 @@ packages:
     dependencies:
       glob: 7.2.3
 
-  /rimraf/4.2.0:
-    resolution: {integrity: sha512-tPt+gLORNVqRCk0NwuJ5SlMEcOGvt4CCU8sUPqgCFtCbnoNCTd9Q6vq7JlBbxQlACiH14OR28y7piA2Bak9Sxw==}
+  /rimraf/4.3.0:
+    resolution: {integrity: sha512-5qVDXPbByA1qSJEWMv1qAwKsoS22vVpsL2QyxCKBw4gf6XiFo1K3uRLY6uSOOBFDwnqAZtnbILqWKKlzh8bkGg==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
