@@ -9,3 +9,9 @@ Tools for importing data into Obsidian/markdown format and publishing markdown f
 
 ## Helpful Links
 1. [CSV to JSON](https://csvjson.com/csv2json)
+
+## Hotkeys
+1. ⌘ [ = Navigate backwards
+2. ⌘ ] = Navigate forewards
+3. ⌘ ⇧ P = Open command
+4. ⌘ ⌥ Z = Toggle zen mode
