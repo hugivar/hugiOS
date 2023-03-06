@@ -143,7 +143,7 @@ importers:
       dotenv: 16.0.1
       eslint: 8.17.0
       eslint-config-next: 13.2.0
-      eslint-config-prettier: 8.6.0
+      eslint-config-prettier: 8.7.0
       gray-matter: 4.0.3
       happy-dom: 8.9.0
       husky: 8.0.1
@@ -216,7 +216,7 @@ importers:
       dotenv: 16.0.1
       eslint: 8.17.0
       eslint-config-next: 13.2.0_t556sga2mdjl5mfp5u2n75qejq
-      eslint-config-prettier: 8.6.0_eslint@8.17.0
+      eslint-config-prettier: 8.7.0_eslint@8.17.0
       happy-dom: 8.9.0
       jsdom: 21.0.0
       react-test-renderer: 18.2.0_react@18.2.0
@@ -7052,8 +7052,8 @@ packages:
       prettier: '>= 2.0.0'
     dependencies:
       eslint: 8.17.0
-      eslint-config-prettier: 8.6.0_eslint@8.17.0
-      eslint-plugin-prettier: 4.2.1_fxrq5t3d2egmbv4dueo3m62fpq
+      eslint-config-prettier: 8.7.0_eslint@8.17.0
+      eslint-plugin-prettier: 4.2.1_xv5zxu72a2q2tvvdaexntjgtye
       prettier: 2.8.0
     dev: true
 
@@ -10304,15 +10304,6 @@ packages:
       eslint: 8.17.0
     dev: false
 
-  /eslint-config-prettier/8.6.0_eslint@8.17.0:
-    resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
-    hasBin: true
-    peerDependencies:
-      eslint: '>=7.0.0'
-    dependencies:
-      eslint: 8.17.0
-    dev: true
-
   /eslint-config-prettier/8.6.0_eslint@8.34.0:
     resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
     hasBin: true
@@ -10320,6 +10311,15 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 8.34.0
+    dev: true
+
+  /eslint-config-prettier/8.7.0_eslint@8.17.0:
+    resolution: {integrity: sha512-HHVXLSlVUhMSmyW4ZzEuvjpwqamgmlfkutD53cYXLikh4pt/modINRcCIApJ84czDxM4GZInwUrromsDdTImTA==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: 8.17.0
     dev: true
 
   /eslint-import-resolver-node/0.3.6:
@@ -10513,23 +10513,6 @@ packages:
       language-tags: 1.0.5
       minimatch: 3.1.2
 
-  /eslint-plugin-prettier/4.2.1_fxrq5t3d2egmbv4dueo3m62fpq:
-    resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      eslint: '>=7.28.0'
-      eslint-config-prettier: '*'
-      prettier: '>=2.0.0'
-    peerDependenciesMeta:
-      eslint-config-prettier:
-        optional: true
-    dependencies:
-      eslint: 8.17.0
-      eslint-config-prettier: 8.6.0_eslint@8.17.0
-      prettier: 2.8.0
-      prettier-linter-helpers: 1.0.0
-    dev: true
-
   /eslint-plugin-prettier/4.2.1_u5wnrdwibbfomslmnramz52buy:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
@@ -10544,6 +10527,23 @@ packages:
       eslint: 8.34.0
       eslint-config-prettier: 8.6.0_eslint@8.34.0
       prettier: 2.8.4
+      prettier-linter-helpers: 1.0.0
+    dev: true
+
+  /eslint-plugin-prettier/4.2.1_xv5zxu72a2q2tvvdaexntjgtye:
+    resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      eslint: '>=7.28.0'
+      eslint-config-prettier: '*'
+      prettier: '>=2.0.0'
+    peerDependenciesMeta:
+      eslint-config-prettier:
+        optional: true
+    dependencies:
+      eslint: 8.17.0
+      eslint-config-prettier: 8.7.0_eslint@8.17.0
+      prettier: 2.8.0
       prettier-linter-helpers: 1.0.0
     dev: true
 
