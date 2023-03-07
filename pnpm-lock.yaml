@@ -439,7 +439,7 @@ importers:
       '@astrojs/mdx': 1.0.0-beta.2
       '@astrojs/node': ^5.0.0-beta.1
       '@astrojs/preact': ^2.0.0
-      '@astrojs/tailwind': 3.0.0-beta.1
+      '@astrojs/tailwind': 3.1.0
       '@tailwindcss/aspect-ratio': ^0.4.2
       '@tailwindcss/container-queries': ^0.1.0
       '@tailwindcss/line-clamp': ^0.4.2
@@ -465,7 +465,7 @@ importers:
       zod: 3.20.2
     devDependencies:
       '@astrojs/mdx': 1.0.0-beta.2_ts6i6hemdtlmn4osp23qfjwu5e
-      '@astrojs/tailwind': 3.0.0-beta.1_qpjr2jmeso4nezdyninvkfh7oe
+      '@astrojs/tailwind': 3.1.0_qpjr2jmeso4nezdyninvkfh7oe
       '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.4
       '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
       '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
@@ -607,7 +607,7 @@ importers:
 
   playground/qwik-app:
     specifiers:
-      '@builder.io/qwik': 0.20.0
+      '@builder.io/qwik': 0.21.0
       '@builder.io/qwik-city': 0.5.2
       '@types/eslint': 8.21.1
       '@types/node': ^18.11.16
@@ -615,7 +615,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.54.0
       '@typescript-eslint/parser': 5.54.0
       eslint: 8.30.0
-      eslint-plugin-qwik: 0.20.0
+      eslint-plugin-qwik: 0.21.0
       node-fetch: 3.3.0
       prettier: 2.8.1
       typescript: 4.9.4
@@ -623,15 +623,15 @@ importers:
       vite: 4.1.4
       vite-tsconfig-paths: 4.0.3
     devDependencies:
-      '@builder.io/qwik': 0.20.0_undici@5.20.0
-      '@builder.io/qwik-city': 0.5.2_@builder.io+qwik@0.20.0
+      '@builder.io/qwik': 0.21.0_undici@5.20.0
+      '@builder.io/qwik-city': 0.5.2_@builder.io+qwik@0.21.0
       '@types/eslint': 8.21.1
       '@types/node': 18.11.18
       '@types/node-fetch': 2.6.2
       '@typescript-eslint/eslint-plugin': 5.54.0_doxbze3n7wbinazsaf32pq6lzy
       '@typescript-eslint/parser': 5.54.0_lzzuuodtsqwxnvqeq4g4likcqa
       eslint: 8.30.0
-      eslint-plugin-qwik: 0.20.0_eslint@8.30.0
+      eslint-plugin-qwik: 0.21.0_eslint@8.30.0
       node-fetch: 3.3.0
       prettier: 2.8.1
       typescript: 4.9.4
@@ -931,17 +931,20 @@ packages:
     dependencies:
       prismjs: 1.28.0
 
-  /@astrojs/tailwind/3.0.0-beta.1_qpjr2jmeso4nezdyninvkfh7oe:
-    resolution: {integrity: sha512-Y1vptD7xk7/p1mcn9d/hwTRX38YVOgjYB4OtccGUPfkVov63C6bO2zNBTnJVgnaq1sopuLWX9it1+GsqFxY3HQ==}
+  /@astrojs/tailwind/3.1.0_qpjr2jmeso4nezdyninvkfh7oe:
+    resolution: {integrity: sha512-eNflzlCdCtLZjc8pK0xQb/hXYnN/mVGVJFRAMWStrFwg8Tsvj6WVCPyRy77D5NL2tQ1piS2wiouOzAgiy1Dsiw==}
     peerDependencies:
-      astro: ^2.0.0-beta.2
+      astro: ^2.1.0
       tailwindcss: ^3.0.24
     dependencies:
       '@proload/core': 0.3.3
       astro: 2.0.0-beta.2_@types+node@18.11.18
-      autoprefixer: 10.4.8_postcss@8.4.20
-      postcss: 8.4.20
+      autoprefixer: 10.4.7_postcss@8.4.14
+      postcss: 8.4.14
+      postcss-load-config: 4.0.1_postcss@8.4.14
       tailwindcss: 3.2.4
+    transitivePeerDependencies:
+      - ts-node
     dev: true
 
   /@astrojs/telemetry/2.0.0-beta.0:
@@ -2435,13 +2438,13 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@builder.io/qwik-city/0.5.2_@builder.io+qwik@0.20.0:
+  /@builder.io/qwik-city/0.5.2_@builder.io+qwik@0.21.0:
     resolution: {integrity: sha512-ItpQw+A4nK7Uh+Ypdx+LGqPlOzoIGWg9VgnqWCKpAfJaLnD4ffvSPrgHKQx/DdsDFFl7nBMMq4ddUQSL7xp0Yw==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     peerDependencies:
       '@builder.io/qwik': '>=0.20.0'
     dependencies:
-      '@builder.io/qwik': 0.20.0_undici@5.20.0
+      '@builder.io/qwik': 0.21.0_undici@5.20.0
       '@mdx-js/mdx': 2.3.0
       '@types/mdx': 2.0.3
       source-map: 0.7.4
@@ -2451,8 +2454,8 @@ packages:
       - supports-color
     dev: true
 
-  /@builder.io/qwik/0.20.0_undici@5.20.0:
-    resolution: {integrity: sha512-1nwoAiualvxhYnIwAoDiNUBXUM1WI7bOPxPN5rjWCaMvdQvHC96l/ZxWGEndUbO2L2sMbHDwjmMWgjTO7DdFhw==}
+  /@builder.io/qwik/0.21.0_undici@5.20.0:
+    resolution: {integrity: sha512-YDQcCSGPgXLQkY260N4XvYavxPNHewzIzIjqbl9hvnnk7a1s4EkcCrkudbGCl6VkkiQsDKMYPsemy4sFpKlafg==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
@@ -7828,23 +7831,6 @@ packages:
       picocolors: 1.0.0
       postcss: 8.4.14
       postcss-value-parser: 4.2.0
-    dev: false
-
-  /autoprefixer/10.4.8_postcss@8.4.20:
-    resolution: {integrity: sha512-75Jr6Q/XpTqEf6D2ltS5uMewJIx5irCU1oBYJrWjFenq/m12WRRrz6g15L1EIoYvPLXTbEry7rDOwrcYNj77xw==}
-    engines: {node: ^10 || ^12 || >=14}
-    hasBin: true
-    peerDependencies:
-      postcss: ^8.1.0
-    dependencies:
-      browserslist: 4.21.4
-      caniuse-lite: 1.0.30001425
-      fraction.js: 4.2.0
-      normalize-range: 0.1.2
-      picocolors: 1.0.0
-      postcss: 8.4.20
-      postcss-value-parser: 4.2.0
-    dev: true
 
   /available-typed-arrays/1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
@@ -8250,7 +8236,6 @@ packages:
       electron-to-chromium: 1.4.221
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
-    dev: false
 
   /browserslist/4.21.4:
     resolution: {integrity: sha512-CBHJJdDmgjl3daYjN5Cp5kbTf1mUhZoS+beLklHIvkOWscs83YAhLlF3Wsh/lciQYAcbBJgTOD44VtG31ZM4Hw==}
@@ -9976,7 +9961,6 @@ packages:
 
   /electron-to-chromium/1.4.221:
     resolution: {integrity: sha512-aWg2mYhpxZ6Q6Xvyk7B2ziBca4YqrCDlXzmcD7wuRs65pVEVkMT1u2ifdjpAQais2O2o0rW964ZWWWYRlAL/kw==}
-    dev: false
 
   /electron-to-chromium/1.4.284:
     resolution: {integrity: sha512-M8WEXFuKXMYMVr45fo8mq0wUrrJHheiKZf6BArTKk9ZBYCKJEOU5H8cdWgDT+qCVZf7Na4lVUaZsA+h6uA9+PA==}
@@ -10547,8 +10531,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-qwik/0.20.0_eslint@8.30.0:
-    resolution: {integrity: sha512-W/6ZPVjiNpiUE91GvfBgzVaCZmzUfcZDoH+uGWmU9Hl4Avs8Y0vUvIm/607wozbd1ofLQdJgl/+MuPnZK+a2xw==}
+  /eslint-plugin-qwik/0.21.0_eslint@8.30.0:
+    resolution: {integrity: sha512-hT+n+PG3PHTKieQUcn3jGwWsxdqXL45pYFLKN2wvqyaesKMDEYQl4l82xAUTn9pAoJMSoF0rHsutOC6pUrplhg==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: '>= 8'
@@ -16044,6 +16028,23 @@ packages:
       postcss: 8.4.20
       yaml: 1.10.2
 
+  /postcss-load-config/4.0.1_postcss@8.4.14:
+    resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
+    engines: {node: '>= 14'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      lilconfig: 2.0.6
+      postcss: 8.4.14
+      yaml: 2.2.1
+    dev: true
+
   /postcss-logical/6.1.0_postcss@8.4.14:
     resolution: {integrity: sha512-qb1+LpClhYjxac8SfOcWotnY3unKZesDqIOm+jnGt8rTl7xaIWpE2bPGZHxflOip1E/4ETo79qlJyRL3yrHn1g==}
     engines: {node: ^14 || ^16 || >=18}
@@ -19396,7 +19397,6 @@ packages:
       browserslist: 4.21.3
       escalade: 3.1.1
       picocolors: 1.0.0
-    dev: false
 
   /update-check/1.5.4:
     resolution: {integrity: sha512-5YHsflzHP4t1G+8WGPlvKbJEbAJGCgw+Em+dGR1KmBUbr1J36SJBqlHLjR7oob7sco5hWHGQVcr9B2poIVDDTQ==}
