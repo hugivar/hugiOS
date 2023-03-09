@@ -21,7 +21,7 @@
     "@changesets/cli": "2.26.0",
     "@hugios/tools": "workspace:*",
     "prettier": "latest",
-    "rimraf": "4.3.0",
+    "rimraf": "4.4.0",
     "turbo": "latest"
   },
   "engines": {
