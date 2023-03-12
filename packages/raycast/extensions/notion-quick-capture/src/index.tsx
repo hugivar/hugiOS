@@ -33,7 +33,6 @@ export default function Command() {
       page = await createDatabasePage({
         ...values,
         database,
-        "property::date::Date": new Date(),
       });
     } catch (err: any) {
       showToast({ title: "Error", message: err.toString(), style: Toast.Style.Failure });

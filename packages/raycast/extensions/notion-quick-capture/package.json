@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "notion-quick-capture",
   "title": "Notion Quick Capture",
-  "description": "",
+  "description": "A Raycast extension to capture a quick text thought then create a page within a specific Notion database",
   "icon": "command-icon.png",
   "author": "hugivar",
   "license": "MIT",
