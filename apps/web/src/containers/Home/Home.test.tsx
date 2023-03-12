@@ -15,7 +15,7 @@ test('Home renders with correct text', async () => {
     </TestWrapper>
   )
 
-  expect(screen.getByText(/Hey, I'm nezhivar /i)).toBeTruthy()
+  expect(screen.getByText(/Hey, I'm hugivar /i)).toBeTruthy()
 
   expect(screen.getByText(/I'm a full-stack engineer/i)).toBeTruthy()
   // expect(screen.getByText(/Journal/i)).toBeTruthy()

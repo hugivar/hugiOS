@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
 const articlePath =
-  "https://dev.to/api/articles?username=nezhivar&per_page=1000";
+  "https://dev.to/api/articles?username=hugivar&per_page=1000";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 type Type = "journal";
@@ -32,7 +32,7 @@ export const getAllArticles = async (fields: string[] = [], type: Type) => {
 };
 
 export const getArticleBySlug = async (slug: string) => {
-  const article = await fetcher(`https://dev.to/api/articles/nezhivar/${slug}`);
+  const article = await fetcher(`https://dev.to/api/articles/hugivar/${slug}`);
 
   return article;
 };

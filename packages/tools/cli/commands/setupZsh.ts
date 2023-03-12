@@ -5,7 +5,7 @@ const setupZsh = () => {
     program
         .action(() => {
             execSync(`
-                git config --global user.name "nezhivar"
+                git config --global user.name "hugivar"
                 
                 git config --global core.excludesfile ~/.gitignore_global
                 

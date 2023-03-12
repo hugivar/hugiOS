@@ -6,7 +6,7 @@ description: Quick Links    Shared Configs   Housing repo for all my personal lo
 
 ## Quick Links
 
-- [Shared Configs](https://github.com/nezhivar/shared-configs)
+- [Shared Configs](https://github.com/hugivar/shared-configs)
 
   Housing repo for all my personal local development config files that I use between different work environments. Holds my bash_profile, bash_prompt, bashrc, and zshrc files
 
@@ -72,7 +72,7 @@ description: Quick Links    Shared Configs   Housing repo for all my personal lo
 
 ## [VS Code](https://code.visualstudio.com/)
 
-> Currently the best, feature rich text editor. You can check out all of my VS Code settings [here](https://github.com/nezhivar/shared-configs/blob/main/packages/config/vscode/extensions.json)
+> Currently the best, feature rich text editor. You can check out all of my VS Code settings [here](https://github.com/hugivar/shared-configs/blob/main/packages/config/vscode/extensions.json)
 
 ### VSCode Theme
 

@@ -16,7 +16,7 @@ const shellCommand = (name: string) => {
                 git add README.md
                 git commit -m "first commit"
                 git branch -M main
-                git remote add origin https://github.com/nezhivar/${name}.git
+                git remote add origin https://github.com/hugivar/${name}.git
                 git push -u origin main
             `);
         })

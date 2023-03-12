@@ -26,8 +26,8 @@ const settings: ISettings = {
   title: "Nezhivar",
   lang: "en",
   siteUrl: "http://localhost:3000", // Site domain. Do not include a trailing slash!
-  siteAddress: "nezhivar.com",
-  siteIPFSAddress: "ipfs.nezhivar.com",
+  siteAddress: "hugivar.com",
+  siteIPFSAddress: "ipfs.hugivar.com",
   siteTitleMeta: "Nezhivar", // This allows an alternative site title for meta data for pages.
   siteDescriptionMeta:
     "A site about my personal philosophy and thoughts on engineering",
@@ -44,7 +44,7 @@ const settings: ISettings = {
   social: [
     {
       title: "Github",
-      href: "https://github.com/nezhivar",
+      href: "https://github.com/hugivar",
       icon: "github",
     },
   ],

@@ -6,7 +6,7 @@
 
 ## Using the CLI
 
-[HugiOS CLI](https://github.com/nezhivar/hugiOS/tree/main/packages/tools/cli)
+[HugiOS CLI](https://github.com/hugivar/hugiOS/tree/main/packages/tools/cli)
 
 Once you have the node_modules installed, you can access the monorepo cli using the command `hugios`.
 
@@ -48,7 +48,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/nezhivar/electron-notification.git
+   git clone https://github.com/hugivar/electron-notification.git
    ```
 2. Install pnpm packages
    ```sh

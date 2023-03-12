@@ -7,7 +7,7 @@ description: A key piece of interoperability is consistency between coding envir
 > A key piece of interoperability is consistency between coding environment when moving from one machine to another. One way to achieve this consistency is to ensure your common configs such as your .bashrc/.zshrc files have been saved to a hosted location.
 
 ### Example
-Here is an example of my own shared config repo: [Shared Configs](https://github.com/nezhivar/hugiOS/tree/main/packages/config)
+Here is an example of my own shared config repo: [Shared Configs](https://github.com/hugivar/hugiOS/tree/main/packages/config)
 
 This gives me the flexibility to ensure that I can move from one environment to the next with minimal downtime with provided scripts. Aiming to create a seaming transition from one machine to the next.
 
