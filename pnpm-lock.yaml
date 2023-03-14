@@ -266,9 +266,9 @@ importers:
 
   packages/obsidian:
     specifiers:
-      glob: 9.2.1
+      glob: 9.3.0
     dependencies:
-      glob: 9.2.1
+      glob: 9.3.0
 
   packages/react-ui:
     specifiers:
@@ -11735,6 +11735,17 @@ packages:
       minimatch: 7.4.1
       minipass: 4.2.4
       path-scurry: 1.6.1
+    dev: true
+
+  /glob/9.3.0:
+    resolution: {integrity: sha512-EAZejC7JvnQINayvB/7BJbpZpNOJ8Lrw2OZNEvQxe0vaLn1SuwMcfV7/MNaX8L/T0wmptBFI4YMtDvSBxYDc7w==}
+    engines: {node: '>=16 || 14 >=14.17'}
+    dependencies:
+      fs.realpath: 1.0.0
+      minimatch: 7.4.1
+      minipass: 4.2.4
+      path-scurry: 1.6.1
+    dev: false
 
   /global-agent/3.0.0:
     resolution: {integrity: sha512-PT6XReJ+D07JvGoxQMkT6qji/jVNfX/h364XHZOWeRzy64sSFr+xJ5OX7LI3b4MPQzdL4H8Y8M0xzPpsVMwA8Q==}
