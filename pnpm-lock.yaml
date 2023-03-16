@@ -124,7 +124,7 @@ importers:
       '@notionhq/client': ^2.2.1
       '@tailwindcss/line-clamp': 0.4.0
       '@tailwindcss/typography': 0.5.2
-      '@types/jest': 29.4.1
+      '@types/jest': 29.5.0
       '@types/node': 18.14.0
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
@@ -200,7 +200,7 @@ importers:
       '@hugios/testing': link:../../packages/testing
       '@hugios/tsconfig': link:../../packages/tsconfig
       '@next/eslint-plugin-next': 13.2.0
-      '@types/jest': 29.4.1
+      '@types/jest': 29.5.0
       '@types/node': 18.14.0
       '@types/react': 18.0.12
       '@types/react-dom': 18.0.5
@@ -607,7 +607,7 @@ importers:
 
   playground/qwik-app:
     specifiers:
-      '@builder.io/qwik': 0.21.0
+      '@builder.io/qwik': 0.22.0
       '@builder.io/qwik-city': 0.6.1
       '@types/eslint': 8.21.1
       '@types/node': ^18.11.16
@@ -623,8 +623,8 @@ importers:
       vite: 4.2.0
       vite-tsconfig-paths: 4.0.3
     devDependencies:
-      '@builder.io/qwik': 0.21.0_undici@5.21.0
-      '@builder.io/qwik-city': 0.6.1_@builder.io+qwik@0.21.0
+      '@builder.io/qwik': 0.22.0_undici@5.21.0
+      '@builder.io/qwik-city': 0.6.1_@builder.io+qwik@0.22.0
       '@types/eslint': 8.21.1
       '@types/node': 18.11.18
       '@types/node-fetch': 2.6.2
@@ -2452,13 +2452,13 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@builder.io/qwik-city/0.6.1_@builder.io+qwik@0.21.0:
+  /@builder.io/qwik-city/0.6.1_@builder.io+qwik@0.22.0:
     resolution: {integrity: sha512-+ApoQ66hThSR1MVJlxNFY8TTO70UJjcqBq/Sq4EDevr9w/clKR2N/+BCyIAHeyfVeuBuZSvJA/Ng+P4IOvPh4w==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     peerDependencies:
       '@builder.io/qwik': '>=0.22.0'
     dependencies:
-      '@builder.io/qwik': 0.21.0_undici@5.21.0
+      '@builder.io/qwik': 0.22.0_undici@5.21.0
       '@mdx-js/mdx': 2.3.0
       '@types/mdx': 2.0.3
       source-map: 0.7.4
@@ -2468,8 +2468,8 @@ packages:
       - supports-color
     dev: true
 
-  /@builder.io/qwik/0.21.0_undici@5.21.0:
-    resolution: {integrity: sha512-YDQcCSGPgXLQkY260N4XvYavxPNHewzIzIjqbl9hvnnk7a1s4EkcCrkudbGCl6VkkiQsDKMYPsemy4sFpKlafg==}
+  /@builder.io/qwik/0.22.0_undici@5.21.0:
+    resolution: {integrity: sha512-i5DzLahRLmlZtjpcTr8WgFeEMiUDhS6ha4AeqZMwfWwvbAvdcMUHcI5xpn/ezIm0tEYPMGrKUgLr2BQ/sbmsFA==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
@@ -6139,8 +6139,8 @@ packages:
       pretty-format: 29.0.3
     dev: true
 
-  /@types/jest/29.4.1:
-    resolution: {integrity: sha512-zDQSWXG+ZkEvs2zFFMszePhx4euKz+Yt3Gg1P+RHjfJBinTTr6L2DEyovO4V/WrKXuF0Dgn56GWGZPDa6TW9eQ==}
+  /@types/jest/29.5.0:
+    resolution: {integrity: sha512-3Emr5VOl/aoBwnWcH/EFQvlSAmjV+XtV9GGu5mwdYew5vhQh0IUZx/60x0TzHDu09Bi7HMx10t/namdJw5QIcg==}
     dependencies:
       expect: 29.4.3
       pretty-format: 29.4.3
@@ -6397,7 +6397,7 @@ packages:
   /@types/testing-library__jest-dom/5.14.3:
     resolution: {integrity: sha512-oKZe+Mf4ioWlMuzVBaXQ9WDnEm1+umLx0InILg+yvZVBBDmzV5KfZyLrCvadtWcx8+916jLmHafcmqqffl+iIw==}
     dependencies:
-      '@types/jest': 29.4.1
+      '@types/jest': 29.5.0
     dev: true
 
   /@types/through/0.0.30:
