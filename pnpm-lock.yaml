@@ -608,7 +608,7 @@ importers:
   playground/qwik-app:
     specifiers:
       '@builder.io/qwik': 0.21.0
-      '@builder.io/qwik-city': 0.5.2
+      '@builder.io/qwik-city': 0.6.1
       '@types/eslint': 8.21.1
       '@types/node': ^18.11.16
       '@types/node-fetch': latest
@@ -624,7 +624,7 @@ importers:
       vite-tsconfig-paths: 4.0.3
     devDependencies:
       '@builder.io/qwik': 0.21.0_undici@5.21.0
-      '@builder.io/qwik-city': 0.5.2_@builder.io+qwik@0.21.0
+      '@builder.io/qwik-city': 0.6.1_@builder.io+qwik@0.21.0
       '@types/eslint': 8.21.1
       '@types/node': 18.11.18
       '@types/node-fetch': 2.6.2
@@ -716,7 +716,7 @@ importers:
       '@rushstack/eslint-patch': 1.2.0
       '@types/jsdom': 20.0.0
       '@types/node': 18.14.0
-      '@vitejs/plugin-vue': 4.0.0
+      '@vitejs/plugin-vue': 4.1.0
       '@vitejs/plugin-vue-jsx': 3.0.0
       '@vue/eslint-config-prettier': 7.1.0
       '@vue/eslint-config-typescript': 10.0.0
@@ -744,7 +744,7 @@ importers:
       '@rushstack/eslint-patch': 1.2.0
       '@types/jsdom': 20.0.0
       '@types/node': 18.14.0
-      '@vitejs/plugin-vue': 4.0.0_vite@4.1.4+vue@3.2.37
+      '@vitejs/plugin-vue': 4.1.0_vite@4.1.4+vue@3.2.37
       '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.1.4+vue@3.2.37
       '@vue/eslint-config-prettier': 7.1.0_zzmr4pfnhjmfb7v4arbp5glbhm
       '@vue/eslint-config-typescript': 10.0.0_gqon5kjicsxxwfidz43svinsw4
@@ -2452,18 +2452,18 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@builder.io/qwik-city/0.5.2_@builder.io+qwik@0.21.0:
-    resolution: {integrity: sha512-ItpQw+A4nK7Uh+Ypdx+LGqPlOzoIGWg9VgnqWCKpAfJaLnD4ffvSPrgHKQx/DdsDFFl7nBMMq4ddUQSL7xp0Yw==}
+  /@builder.io/qwik-city/0.6.1_@builder.io+qwik@0.21.0:
+    resolution: {integrity: sha512-+ApoQ66hThSR1MVJlxNFY8TTO70UJjcqBq/Sq4EDevr9w/clKR2N/+BCyIAHeyfVeuBuZSvJA/Ng+P4IOvPh4w==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     peerDependencies:
-      '@builder.io/qwik': '>=0.20.0'
+      '@builder.io/qwik': '>=0.22.0'
     dependencies:
       '@builder.io/qwik': 0.21.0_undici@5.21.0
       '@mdx-js/mdx': 2.3.0
       '@types/mdx': 2.0.3
       source-map: 0.7.4
       vfile: 5.3.7
-      zod: 3.20.6
+      zod: 3.21.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6875,8 +6875,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue/4.0.0_vite@4.1.4+vue@3.2.37:
-    resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
+  /@vitejs/plugin-vue/4.1.0_vite@4.1.4+vue@3.2.37:
+    resolution: {integrity: sha512-++9JOAFdcXI3lyer9UKUV4rfoQ3T1RN8yDqoCLar86s0xQct5yblxAE+yWgRnU5/0FOlVCpTZpYSBV/bGWrSrQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
@@ -20832,6 +20832,10 @@ packages:
 
   /zod/3.20.6:
     resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
+
+  /zod/3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: true
 
   /zwitch/2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
