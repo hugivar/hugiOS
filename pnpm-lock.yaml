@@ -95,7 +95,7 @@ importers:
     specifiers:
       '@electron-forge/cli': 6.0.0-beta.63
       '@electron-forge/maker-deb': 6.1.0
-      '@electron-forge/maker-rpm': 6.0.0-beta.63
+      '@electron-forge/maker-rpm': 6.1.0
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
       electron: 23.2.0
@@ -107,7 +107,7 @@ importers:
     devDependencies:
       '@electron-forge/cli': 6.0.0-beta.63
       '@electron-forge/maker-deb': 6.1.0
-      '@electron-forge/maker-rpm': 6.0.0-beta.63
+      '@electron-forge/maker-rpm': 6.1.0
       '@electron-forge/maker-squirrel': 6.0.0-beta.63
       '@electron-forge/maker-zip': 6.0.0-beta.63
       electron: 23.2.0
@@ -4019,16 +4019,17 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-rpm/6.0.0-beta.63:
-    resolution: {integrity: sha512-htKNsA3/7nOd5PL6jjdrYCcSXrrIj43aJyOfIuFHswFpjFFmYEgsDCrN8lKZH5y1qdXQefaGOc9MapuBC0GO+w==}
-    engines: {node: '>= 12.13.0'}
+  /@electron-forge/maker-rpm/6.1.0:
+    resolution: {integrity: sha512-v0r1C+zVlEh+QC8Il5R8Vcj/iErfZ6rjkUumpNBVYwOayHvajy8itiNRBCbd4GAXiVSZFDKygWwsVXdBImxkcQ==}
+    engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.0.0-beta.63
-      '@electron-forge/shared-types': 6.0.0-beta.63
+      '@electron-forge/maker-base': 6.1.0
+      '@electron-forge/shared-types': 6.1.0
     optionalDependencies:
       electron-installer-redhat: 3.3.0
     transitivePeerDependencies:
       - bluebird
+      - enquirer
       - supports-color
     dev: true
 
