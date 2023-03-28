@@ -724,7 +724,7 @@ importers:
       '@vue/tsconfig': 0.1.3
       cypress: 12.8.0
       eslint: ^8.5.0
-      eslint-plugin-cypress: 2.12.1
+      eslint-plugin-cypress: 2.13.1
       eslint-plugin-vue: 8.7.1
       jsdom: 21.0.0
       pinia: 2.0.14
@@ -752,7 +752,7 @@ importers:
       '@vue/tsconfig': 0.1.3_@types+node@18.14.0
       cypress: 12.8.0
       eslint: 8.17.0
-      eslint-plugin-cypress: 2.12.1_eslint@8.17.0
+      eslint-plugin-cypress: 2.13.1_eslint@8.17.0
       eslint-plugin-vue: 8.7.1_eslint@8.17.0
       jsdom: 21.0.0
       prettier: 2.8.0
@@ -10698,8 +10698,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-cypress/2.12.1_eslint@8.17.0:
-    resolution: {integrity: sha512-c2W/uPADl5kospNDihgiLc7n87t5XhUbFDoTl6CfVkmG+kDAb5Ux10V9PoLPu9N+r7znpc+iQlcmAqT1A/89HA==}
+  /eslint-plugin-cypress/2.13.1_eslint@8.17.0:
+    resolution: {integrity: sha512-THjc7IT3S9H4KwmRhzAhMGQaEqy78/7W75He/gBhJEH0vIuAY16vOI4YSliDo/ZY+Wm6DtvMHR+8uVvICcI3Lw==}
     peerDependencies:
       eslint: '>= 3.2.1'
     dependencies:
