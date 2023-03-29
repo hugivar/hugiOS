@@ -96,7 +96,7 @@ importers:
       '@electron-forge/cli': 6.1.0
       '@electron-forge/maker-deb': 6.1.0
       '@electron-forge/maker-rpm': 6.1.0
-      '@electron-forge/maker-squirrel': 6.0.0-beta.63
+      '@electron-forge/maker-squirrel': 6.1.0
       '@electron-forge/maker-zip': 6.0.0-beta.63
       electron: 23.2.0
       electron-squirrel-startup: ^1.0.0
@@ -108,7 +108,7 @@ importers:
       '@electron-forge/cli': 6.1.0
       '@electron-forge/maker-deb': 6.1.0
       '@electron-forge/maker-rpm': 6.1.0
-      '@electron-forge/maker-squirrel': 6.0.0-beta.63
+      '@electron-forge/maker-squirrel': 6.1.0
       '@electron-forge/maker-zip': 6.0.0-beta.63
       electron: 23.2.0
 
@@ -4005,17 +4005,18 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-squirrel/6.0.0-beta.63:
-    resolution: {integrity: sha512-18eLRQmMZ6zBcI1Jhuqvhm50bmmatRCbyOUHTaIbhVf1M6ksq34xXXVWKUGlqDiCNLLLNzVw5MIb9O04eUdfIg==}
-    engines: {node: '>= 12.13.0'}
+  /@electron-forge/maker-squirrel/6.1.0:
+    resolution: {integrity: sha512-kYqKe9sIEYuod5hkqdUrNrDetGl9bIBNRFUr38jLlVyQ5oLzwpNtahQyl3hNWAF2fC7H6k7lK3SmdY41CB8MWA==}
+    engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.0.0-beta.63
-      '@electron-forge/shared-types': 6.0.0-beta.63
+      '@electron-forge/maker-base': 6.1.0
+      '@electron-forge/shared-types': 6.1.0
       fs-extra: 10.1.0
     optionalDependencies:
       electron-winstaller: 5.0.0
     transitivePeerDependencies:
       - bluebird
+      - enquirer
       - supports-color
     dev: true
 
@@ -7806,6 +7807,7 @@ packages:
   /asar/2.1.0:
     resolution: {integrity: sha512-d2Ovma+bfqNpvBzY/KU8oPY67ZworixTpkjSx0PCXnQi67c2cXmssaTxpFDUM0ttopXoGx/KRxNg/GDThYbXQA==}
     engines: {node: '>=8.0'}
+    deprecated: Please use @electron/asar moving forward.  There is no API change, just a package name change
     hasBin: true
     dependencies:
       chromium-pickle-js: 0.2.0
