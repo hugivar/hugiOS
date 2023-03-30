@@ -24,7 +24,7 @@ const Journal = ({ blocks, pages, ...rest }: any) => {
   const { t } = useTranslation();
 
   return (
-    <Layout pageTitle="Journal · Nezhivar">
+    <Layout pageTitle="Journal · Hugivar">
       <div className="flex flex-row">
         <ListView title={t("journal.title")} pages={pages} {...rest} />
         <div className="flex-1">

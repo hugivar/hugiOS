@@ -50,7 +50,7 @@ const JournalItem = ({ page, blocks }: IPost) => {
   const content = blocks.results.map((block: any) => getRichText(block)).filter((item: any) => item);
 
   return (
-    <Layout pageTitle={`${title} · Nezhivar`}>
+    <Layout pageTitle={`${title} · Hugivar`}>
       <div className="flex flex-row">
         <div className="flex-1 w-full overflow-x-auto h-screen" id="content">
           <Header title={title} />
