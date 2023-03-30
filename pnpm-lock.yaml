@@ -56,8 +56,8 @@ importers:
         specifier: ^16.6.0
         version: 16.6.0
       notistack:
-        specifier: ^2.0.8
-        version: 2.0.8(@emotion/react@11.10.5)(@emotion/styled@11.10.5)(@mui/material@5.11.10)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^3.0.0
+        version: 3.0.0(csstype@3.1.1)(react-dom@18.2.0)(react@18.2.0)
       qs:
         specifier: ^6.11.0
         version: 6.11.0
@@ -11920,6 +11920,14 @@ packages:
   /globrex@0.1.2:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
 
+  /goober@2.1.12(csstype@3.1.1):
+    resolution: {integrity: sha512-yXHAvO08FU1JgTXX6Zn6sYCUFfB/OJSX8HHjDSgerZHZmFKAb08cykp5LBw5QnmyMcZyPRMqkdyHUSSzge788Q==}
+    peerDependencies:
+      csstype: ^3.0.10
+    dependencies:
+      csstype: 3.1.1
+    dev: false
+
   /gopd@1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
@@ -15150,27 +15158,19 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /notistack@2.0.8(@emotion/react@11.10.5)(@emotion/styled@11.10.5)(@mui/material@5.11.10)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-/IY14wkFp5qjPgKNvAdfL5Jp6q90+MjgKTPh4c81r/lW70KeuX6b9pE/4f8L4FG31cNudbN9siiFS5ql1aSLRw==}
+  /notistack@3.0.0(csstype@3.1.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-W2efiijfkND3K0pmxMsL9h9RA7ycbAeWlkpb6vuGhJnXr4ff50qfUSeqnbGXHdJQUvfbRT9BWM4doFZggeQgSw==}
+    engines: {node: '>=12.0.0', npm: '>=6.0.0'}
     peerDependencies:
-      '@emotion/react': ^11.4.1
-      '@emotion/styled': ^11.3.0
-      '@mui/material': ^5.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@emotion/react':
-        optional: true
-      '@emotion/styled':
-        optional: true
     dependencies:
-      '@emotion/react': 11.10.5(@babel/core@7.21.0)(@types/react@17.0.53)(react@17.0.2)
-      '@emotion/styled': 11.10.5(@babel/core@7.21.0)(@emotion/react@11.10.5)(@types/react@17.0.53)(react@17.0.2)
-      '@mui/material': 5.11.10(@emotion/react@11.10.5)(@emotion/styled@11.10.5)(react-dom@18.2.0)(react@18.2.0)
       clsx: 1.2.1
-      hoist-non-react-statics: 3.3.2
+      goober: 2.1.12(csstype@3.1.1)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - csstype
     dev: false
 
   /npm-run-path@2.0.2:
