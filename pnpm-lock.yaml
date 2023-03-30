@@ -35,8 +35,8 @@ importers:
         specifier: ^11.10.5
         version: 11.10.5(@babel/core@7.21.0)(@emotion/react@11.10.5)(@types/react@17.0.53)(react@17.0.2)
       '@hookform/resolvers':
-        specifier: ^2.9.10
-        version: 2.9.11(react-hook-form@7.43.1)
+        specifier: ^3.0.0
+        version: 3.0.0(react-hook-form@7.43.1)
       '@mui/icons-material':
         specifier: ^5.11.0
         version: 5.11.9(@mui/material@5.11.10)(react@18.2.0)
@@ -4893,8 +4893,8 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: true
 
-  /@hookform/resolvers@2.9.11(react-hook-form@7.43.1):
-    resolution: {integrity: sha512-bA3aZ79UgcHj7tFV7RlgThzwSSHZgvfbt2wprldRkYBcMopdMvHyO17Wwp/twcJasNFischFfS7oz8Katz8DdQ==}
+  /@hookform/resolvers@3.0.0(react-hook-form@7.43.1):
+    resolution: {integrity: sha512-SQPefakODpyq25b/phHXDKCdRrEfPcCXV7B4nAa139wE1DxufYbbNAjeo0T04ZXBokRxZ+wD8iA1kkVMa3QwjQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
