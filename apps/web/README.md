@@ -1,5 +1,5 @@
 <div align="center">
-  <h2 align="center">Nezhivar Personal Website</h2>
+  <h2 align="center">Hugivar Personal Website</h2>
 
   <p align="center">
      A NextJs app to create my personal website

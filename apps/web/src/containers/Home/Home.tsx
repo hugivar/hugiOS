@@ -77,7 +77,7 @@ const Home = () => {
     <>
       <Header />
       <div className="flex flex-col p-8 pb-0 mx-auto mt-8 max-w-3xl text-grey-darkest dark:text-slate-300 text-center">
-        <h2 className="text-center text-3xl mb-8">Hey, I'm Nezhivar 👋</h2>
+        <h2 className="text-center text-3xl mb-8">Hey, I'm Hugivar 👋</h2>
         <PersonalInfo t={t} />
       </div>
       <Quote t={t} />

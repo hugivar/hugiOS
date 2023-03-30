@@ -5,7 +5,7 @@ import Home from 'src/containers/Home';
 
 const Index = () => {
   return (
-    <Layout pageTitle="Nezhivar">
+    <Layout pageTitle="Hugivar">
       <Home />
     </Layout>
   );
