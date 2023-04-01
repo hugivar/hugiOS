@@ -855,8 +855,8 @@ importers:
         specifier: 0.24.0
         version: 0.24.0(undici@5.21.0)
       '@builder.io/qwik-city':
-        specifier: 0.7.0
-        version: 0.7.0(@builder.io/qwik@0.24.0)
+        specifier: 0.100.0
+        version: 0.100.0(@builder.io/qwik@0.24.0)
       '@types/eslint':
         specifier: 8.37.0
         version: 8.37.0
@@ -876,8 +876,8 @@ importers:
         specifier: 8.30.0
         version: 8.30.0
       eslint-plugin-qwik:
-        specifier: 0.24.0
-        version: 0.24.0(eslint@8.30.0)
+        specifier: 0.100.0
+        version: 0.100.0(eslint@8.30.0)
       node-fetch:
         specifier: 3.3.0
         version: 3.3.0
@@ -2575,8 +2575,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@builder.io/qwik-city@0.7.0(@builder.io/qwik@0.24.0):
-    resolution: {integrity: sha512-+P/nLl8tpQVfTGkFybYlag4atUkwXQpsFE+8yAmxAH+lcxHPW3GwtYPS6QwMKkL5dlFM0VML4kKFiQYQ1r7CGw==}
+  /@builder.io/qwik-city@0.100.0(@builder.io/qwik@0.24.0):
+    resolution: {integrity: sha512-EEZ8q10vmEjOOe5qQIel+jLcuuFYOjakIIgHt5KOWnY/L0HBw9xzFDkFDcdmPJlrCmHTm3y4T1ZtqKPEFNgO9w==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     peerDependencies:
       '@builder.io/qwik': '>=0.22.0'
@@ -6878,7 +6878,7 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.37.0
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
 
   /@types/eslint@8.37.0:
     resolution: {integrity: sha512-Piet7dG2JBuDIfohBngQ3rCt7MgO9xCO4xIMKxBThCq5PNRB91IjlJ10eJVwfoNtvTErmxLzwBZ7rHZtbOMmFQ==}
@@ -11026,8 +11026,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-qwik@0.24.0(eslint@8.30.0):
-    resolution: {integrity: sha512-2anjaJVyDWuUPEYQcLmQb6HrIGADnjkjIWtH/0Zxog2xiLd9gB2LIeEOuYtllHOePz2Ulq5m4X4vjx7CS8sbUA==}
+  /eslint-plugin-qwik@0.100.0(eslint@8.30.0):
+    resolution: {integrity: sha512-ubkyPdvlA1ProIpivu4N0oemvFYWgz7EOToFRnWc7IaxdPDvsZGcqDtf0gtNHyze1VR/PJ99nQZ6to8L/PLtag==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: '>= 8'
