@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "@hugios/solid-ui": "workspace:*",
-    "solid-js": "1.6.0"
+    "solid-js": "1.7.0"
   }
 }
