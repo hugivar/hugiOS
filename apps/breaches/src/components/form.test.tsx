@@ -1,19 +1,21 @@
 import React from "react";
+import { it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from "@testing-library/react";
 import Form from "./form.component";
 import { act } from "@testing-library/react";
 
-test("render the form correctly", () => {
-  render(<Form onSubmit={jest.fn()} />);
+it("render the form correctly", () => {
+  render(<Form onSubmit={vi.fn()} />);
 
   expect(screen.getByText("Email Breach Checker")).toBeInTheDocument();
 });
 
-test("handle form change correctly", async () => {
-  const handleSubmit = jest.fn();
-  render(<Form onSubmit={handleSubmit} />);
+it("handle form change correctly", async () => {
+  const handleSubmit = vi.fn();
+  const { container } = render(<Form onSubmit={handleSubmit} />);
 
-  const input = screen.getByLabelText("Email address");
+  const input = screen.getByRole("textbox", { name: "" });
+
   expect(input).toBeInTheDocument();
 
   await fireEvent.change(input, { target: { value: "test@gmail.com" } });
