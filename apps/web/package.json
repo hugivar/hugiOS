@@ -29,7 +29,7 @@
     "husky": "8.0.1",
     "next": "13.2.0",
     "next-themes": "0.2.0",
-    "postcss": "8.4.14",
+    "postcss": "8.4.21",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-nesting": "11.2.1",
     "postcss-preset-env": "8.3.0",
