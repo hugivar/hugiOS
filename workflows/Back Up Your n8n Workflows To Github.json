@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "n8n": {
       "main": [
@@ -152,7 +152,7 @@
         ]
       ]
     },
-    "Every 12 hours": {
+    "On clicking 'execute'": {
       "main": [
         [
           {
@@ -163,7 +163,7 @@
         ]
       ]
     },
-    "On clicking 'execute'": {
+    "Every 24 hours": {
       "main": [
         [
           {
@@ -211,8 +211,8 @@
       "alwaysOutputData": true,
       "credentials": {
         "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+          "id": "5",
+          "name": "GitHub account"
         }
       },
       "continueOnFail": true
@@ -299,8 +299,8 @@
       "typeVersion": 1,
       "credentials": {
         "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+          "id": "5",
+          "name": "GitHub account"
         }
       }
     },
@@ -323,8 +323,8 @@
       "typeVersion": 1,
       "credentials": {
         "githubApi": {
-          "id": "11",
-          "name": "GitHub"
+          "id": "5",
+          "name": "GitHub account"
         }
       }
     },
@@ -348,11 +348,11 @@
           "string": [
             {
               "name": "repo.owner",
-              "value": "n8n-io"
+              "value": "hugivar"
             },
             {
               "name": "repo.name",
-              "value": "n8n-backups"
+              "value": "hugios"
             },
             {
               "name": "repo.path",
@@ -368,26 +368,6 @@
       "position": [
         1020,
         460
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "triggerTimes": {
-          "item": [
-            {
-              "mode": "everyX",
-              "value": 12
-            }
-          ]
-        }
-      },
-      "id": "9815a578-3e63-4128-bea5-8301745606b7",
-      "name": "Every 12 hours",
-      "type": "n8n-nodes-base.cron",
-      "position": [
-        835,
-        595
       ],
       "typeVersion": 1
     },
@@ -450,8 +430,8 @@
       "typeVersion": 1,
       "credentials": {
         "n8nApi": {
-          "id": "162",
-          "name": "Docker"
+          "id": "4",
+          "name": "n8n account"
         }
       }
     },
@@ -478,13 +458,33 @@
         440
       ],
       "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 24
+            }
+          ]
+        }
+      },
+      "id": "9815a578-3e63-4128-bea5-8301745606b7",
+      "name": "Every 24 hours",
+      "type": "n8n-nodes-base.cron",
+      "position": [
+        840,
+        600
+      ],
+      "typeVersion": 1
     }
   ],
   "pinData": {},
   "settings": {},
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2023-04-06T03:50:18.427Z",
-  "versionId": "cba68fac-af59-4da6-ba32-deb3597db977"
+  "triggerCount": 1,
+  "updatedAt": "2023-04-06T04:02:24.000Z",
+  "versionId": "9d346c3d-13ef-4fd1-8773-a29af31af35a"
 }
