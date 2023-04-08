@@ -1,8 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import classNames from "classnames";
 
 import { DrawerButton } from "components/DrawerButton";
 import { determineHref } from "src/utils/routing";
@@ -59,21 +57,11 @@ const Title = ({ title }: ITitle) => (
 );
 
 const ListView = ({ title, pages }: IItemList) => {
-  const router = useRouter();
-
   if (!pages || !pages.length) return <p>No pages found</p>;
-
-  const viewingBase =
-    router.asPath === "/journal";
 
   return (
     <div
-      className={classNames(
-        "relative min-h-screen flex-none w-full bg-white border-r border-gray-150 md:w-80 lg:block xl:w-96 bg-gray-50 overflow-x-auto h-screen dark:bg-mui dark:border-gray-800",
-        {
-          hidden: !viewingBase,
-        }
-      )}
+      className={"relative min-h-screen flex-none w-full bg-white border-r border-gray-150 md:w-80 lg:block xl:w-96 bg-gray-50 overflow-x-auto h-screen dark:bg-mui dark:border-gray-800"}
     >
       <Title title={title} />
       {pages.map((page, idx) => (

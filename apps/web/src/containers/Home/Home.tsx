@@ -9,7 +9,7 @@ const PersonalInfo = ({ t }: any) => (
     <div className="text-lg leading-8 spaced-y-6">
       <p className="mb-4">
         {t("home.me.subtitle1")}{" "}
-        <Link href="/journal" passHref>
+        <Link href="https://compile.substack.com/" passHref>
           <span className="text-black font-bold cursor-pointer dark:text-slate-100">
             {t("journal.title")}
           </span>
@@ -18,7 +18,7 @@ const PersonalInfo = ({ t }: any) => (
       </p>
       <p>
         {t("home.me.visit")}{" "}
-        <Link href="/journal" passHref>
+        <Link href="https://compile.substack.com/" passHref>
           <span className="text-black font-bold cursor-pointer dark:text-slate-100">
             {t('journal.title')}
           </span>

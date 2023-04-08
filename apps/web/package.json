@@ -19,7 +19,6 @@
     "@changesets/cli": "2.26.0",
     "@csstools/css-parser-algorithms": "^2.1.0",
     "@hugios/react-ui": "workspace:*",
-    "@notionhq/client": "^2.2.1",
     "@tailwindcss/line-clamp": "0.4.0",
     "@tailwindcss/typography": "0.5.2",
     "autoprefixer": "10.4.7",
