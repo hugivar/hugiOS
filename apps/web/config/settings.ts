@@ -38,8 +38,7 @@ const settings: ISettings = {
   shortTitle: "Hugivar",
   siteIcon: "favicon.png",
   navigation: [
-    { title: "Home", href: "/", icon: "home" },
-    { title: "Journal", href: "/journal", icon: "pen" }
+    { title: "Home", href: "/", icon: "home" }
   ],
   social: [
     {
