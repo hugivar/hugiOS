@@ -482,8 +482,8 @@ importers:
         specifier: 4.2.0
         version: 4.2.0(@types/node@18.15.11)
       vite-plugin-solid:
-        specifier: 2.6.0
-        version: 2.6.0(solid-js@1.7.0)(vite@4.2.0)
+        specifier: 2.7.0
+        version: 2.7.0(solid-js@1.7.0)(vite@4.2.0)
       vite-tsconfig-paths:
         specifier: 4.0.3
         version: 4.0.3(typescript@5.0.2)(vite@4.2.0)
@@ -897,8 +897,8 @@ importers:
         specifier: 8.30.0
         version: 8.30.0
       eslint-plugin-qwik:
-        specifier: 0.100.0
-        version: 0.100.0(eslint@8.30.0)
+        specifier: 0.101.0
+        version: 0.101.0(eslint@8.30.0)
       node-fetch:
         specifier: 3.3.0
         version: 3.3.0
@@ -1001,8 +1001,8 @@ importers:
         specifier: 4.2.0
         version: 4.2.0(@types/node@18.15.11)
       vite-plugin-solid:
-        specifier: 2.6.0
-        version: 2.6.0(solid-js@1.7.0)(vite@4.2.0)
+        specifier: 2.7.0
+        version: 2.7.0(solid-js@1.7.0)(vite@4.2.0)
       vite-tsconfig-paths:
         specifier: 4.0.3
         version: 4.0.3(typescript@5.0.2)(vite@4.2.0)
@@ -8747,8 +8747,8 @@ packages:
       '@types/babel__traverse': 7.18.3
     dev: true
 
-  /babel-plugin-jsx-dom-expressions@0.36.6(@babel/core@7.21.0):
-    resolution: {integrity: sha512-O7R0wl6uROhswAcg12sq/HuMQZIhXgjSgkQB83lu5hQWxVMcxZSX0avYXR0PGZxcK6zX6ke7Du1d6rwy+BssWg==}
+  /babel-plugin-jsx-dom-expressions@0.36.9(@babel/core@7.21.0):
+    resolution: {integrity: sha512-4ACO10PoUvqRcBEErbhVGv5vAHXgkz7epvULHfqJXw5TPtDYwjhmhGxGNGSK6220ec/b85ElLrGHlqQiJxI0WQ==}
     peerDependencies:
       '@babel/core': ^7.20.12
     dependencies:
@@ -8847,13 +8847,13 @@ packages:
       babel-preset-current-node-syntax: 1.0.1(@babel/core@7.21.0)
     dev: true
 
-  /babel-preset-solid@1.7.1(@babel/core@7.21.0):
-    resolution: {integrity: sha512-a4TSLrEKIscsTIEBVo9fuWSdBQjEBrkQmNzIvXd26MO1Zyqdts+VEMy2k/OhfH0/L9ZY0ELLrTcij1IMDxVldQ==}
+  /babel-preset-solid@1.7.3(@babel/core@7.21.0):
+    resolution: {integrity: sha512-HOdyrij99zo+CBrmtDxSexBAl54vCBCfBoyueLBvcfVniaEXNd4ftKqSN6XQcLvFfCY28UFO+DHaigXzWKOfzg==}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
       '@babel/core': 7.21.0
-      babel-plugin-jsx-dom-expressions: 0.36.6(@babel/core@7.21.0)
+      babel-plugin-jsx-dom-expressions: 0.36.9(@babel/core@7.21.0)
     dev: true
 
   /bail@2.0.2:
@@ -11089,8 +11089,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-qwik@0.100.0(eslint@8.30.0):
-    resolution: {integrity: sha512-ubkyPdvlA1ProIpivu4N0oemvFYWgz7EOToFRnWc7IaxdPDvsZGcqDtf0gtNHyze1VR/PJ99nQZ6to8L/PLtag==}
+  /eslint-plugin-qwik@0.101.0(eslint@8.30.0):
+    resolution: {integrity: sha512-MwcTC0SRTigZ4ZLkPttBd9zxl6rsswHYq9tXrmpD4iSqP9mDabQBMaNf9mIp/fJaGUNocxWVaOjhcCelleC1wg==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: '>= 8'
@@ -18118,8 +18118,8 @@ packages:
       csstype: 3.1.2
       seroval: 0.5.1
 
-  /solid-refresh@0.4.3(solid-js@1.7.0):
-    resolution: {integrity: sha512-7+4/gYsVi0BlM4PzT1PU1TB5nW3Hv8FWuB+Kw/ofWui7KQkWBf+dVZOrReQYHEmLCzytHUa2JysUXgzVALJmSw==}
+  /solid-refresh@0.5.2(solid-js@1.7.0):
+    resolution: {integrity: sha512-I69HmFj0LsGRJ3n8CEMVjyQFgVtuM2bSjznu2hCnsY+i5oOxh8ioWj00nnHBv0UYD3WpE/Sq4Q3TNw2IKmKN7A==}
     peerDependencies:
       solid-js: ^1.3
     dependencies:
@@ -19608,19 +19608,19 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-solid@2.6.0(solid-js@1.7.0)(vite@4.2.0):
-    resolution: {integrity: sha512-zw9LRfLwUIDyg9oyuHdpkuO+ds98WPmZXy05AhQc7/2Zn7nWqoWm455y0zD621T8qpmJsInkwm7ttHqFLjhMWg==}
+  /vite-plugin-solid@2.7.0(solid-js@1.7.0)(vite@4.2.0):
+    resolution: {integrity: sha512-avp/Jl5zOp/Itfo67xtDB2O61U7idviaIp4mLsjhCa13PjKNasz+IID0jYTyqUp9SFx6/PmBr6v4KgDppqompg==}
     peerDependencies:
-      solid-js: ^1.3.17 || ^1.4.0 || ^1.5.0 || ^1.6.0
+      solid-js: ^1.7.2
       vite: ^3.0.0 || ^4.0.0
     dependencies:
       '@babel/core': 7.21.0
       '@babel/preset-typescript': 7.21.4(@babel/core@7.21.0)
       '@types/babel__core': 7.20.0
-      babel-preset-solid: 1.7.1(@babel/core@7.21.0)
+      babel-preset-solid: 1.7.3(@babel/core@7.21.0)
       merge-anything: 5.1.4
       solid-js: 1.7.0
-      solid-refresh: 0.4.3(solid-js@1.7.0)
+      solid-refresh: 0.5.2(solid-js@1.7.0)
       vite: 4.2.0(@types/node@18.15.11)
       vitefu: 0.2.4(vite@4.2.0)
     transitivePeerDependencies:
