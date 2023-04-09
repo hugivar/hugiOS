@@ -1,0 +1,276 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Get Brain Backlog items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Brain Backlog items": {
+      "main": [
+        [
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Page Content": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2023-04-07T18:07:01.676Z",
+  "id": "10",
+  "name": "Seed Brain Supabase from Notion",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "4258447d-df65-4891-97e8-c16b3cb39f74",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "4725faa1-5821-4bc0-abcf-1dab16fa3ec4",
+          "mode": "list",
+          "cachedResultName": "Brain Backlog",
+          "cachedResultUrl": "https://www.notion.so/4725faa158214bc0abcf1dab16fa3ec4"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "7a791eec-d7f1-4967-98b6-f28b105c1b84",
+      "name": "Get Brain Backlog items",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        100,
+        500
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "Brain Backlog",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "name",
+              "fieldValue": "={{ $json.name }}"
+            },
+            {
+              "fieldId": "name",
+              "fieldValue": "={{ $json.name }}"
+            },
+            {
+              "fieldId": "property_age",
+              "fieldValue": "={{ $json.property_age }}"
+            },
+            {
+              "fieldId": "property_sub_tasks",
+              "fieldValue": "={{ $json.property_sub_tasks }}"
+            },
+            {
+              "fieldId": "property_parent_tasks",
+              "fieldValue": "={{ $json.property_parent_tasks }}"
+            },
+            {
+              "fieldId": "property_energy",
+              "fieldValue": "={{ $json.property_energy }}"
+            },
+            {
+              "fieldId": "property_project",
+              "fieldValue": "={{ $json.property_project }}"
+            },
+            {
+              "fieldId": "property_linked_tasks",
+              "fieldValue": "={{ $json.property_linked_tasks }}"
+            },
+            {
+              "fieldId": "property_parent_epic",
+              "fieldValue": "={{ $json.property_parent_epic }}"
+            },
+            {
+              "fieldId": "property_last_edited_time",
+              "fieldValue": "={{ $json.property_last_edited_time }}"
+            },
+            {
+              "fieldId": "property_clarity",
+              "fieldValue": "={{ $json.property_clarity }}"
+            },
+            {
+              "fieldId": "property_epic",
+              "fieldValue": "={{ $json.property_epic }}"
+            },
+            {
+              "fieldId": "property_status",
+              "fieldValue": "={{ $json.property_status }}"
+            },
+            {
+              "fieldId": "property_days",
+              "fieldValue": "={{ $json.property_days }}"
+            },
+            {
+              "fieldId": "property_created_on",
+              "fieldValue": "={{ $json.property_created_on }}"
+            },
+            {
+              "fieldId": "property_level_of_impact",
+              "fieldValue": "={{ $json.property_level_of_impact }}"
+            },
+            {
+              "fieldId": "property_bento",
+              "fieldValue": "={{ $json.property_bento }}"
+            },
+            {
+              "fieldId": "property_task",
+              "fieldValue": "={{ $json.property_task }}"
+            },
+            {
+              "fieldId": "property_time_complexity",
+              "fieldValue": "={{ $json.property_time_complexity }}"
+            },
+            {
+              "fieldId": "property_person",
+              "fieldValue": "={{ $json.property_person }}"
+            },
+            {
+              "fieldId": "id",
+              "fieldValue": "={{ $json.id }}"
+            }
+          ]
+        }
+      },
+      "id": "787a5afe-38cf-4891-84ad-5824335f9c08",
+      "name": "Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        480
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "block",
+        "operation": "getAll",
+        "blockId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url",
+          "__regex": "(?:https|http)://www.notion.so/(?:[a-z0-9-]{2,}/)?(?:[a-zA-Z0-9-]{2,}-)?([0-9a-f]{8}[0-9a-f]{4}4[0-9a-f]{3}[89ab][0-9a-f]{3}[0-9a-f]{12})"
+        },
+        "returnAll": true
+      },
+      "id": "8a9d7c7d-ed97-43e1-bea7-be821a3c8102",
+      "name": "Get Page Content",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        440,
+        760
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "aggregateItems",
+        "aggregate": "aggregateAllItemData"
+      },
+      "id": "582bd19f-6989-40d3-85d8-4aea4fd9b640",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        660,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "id",
+              "field2": "data[0].parent.page_id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "99f381ce-732c-4f80-aa4e-0887bf3db61a",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        920,
+        600
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-04-09T02:33:50.000Z",
+  "versionId": "d4bf6efb-e5a6-4505-9d9e-6cb7ef8e3765"
+}
