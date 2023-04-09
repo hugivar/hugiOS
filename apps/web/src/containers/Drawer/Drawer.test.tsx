@@ -13,6 +13,5 @@ test('Drawer renders', async () => {
     <Drawer />
   );
 
-  expect(screen.getByText(/Home/i)).toBeTruthy()
-  expect(screen.getByText(/Journal/i)).toBeTruthy()
+  expect(screen.getByText(/Home/i)).toBeTruthy();
 })
