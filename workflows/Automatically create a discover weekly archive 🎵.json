@@ -1,0 +1,138 @@
+{
+  "active": true,
+  "connections": {
+    "Cron job every monday": {
+      "main": [
+        [
+          {
+            "node": "Get weekly",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get weekly": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Add song to weekly archive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-09T14:31:14.439Z",
+  "id": "13",
+  "name": "Automatically create a discover weekly archive 🎵",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 0 * * mon"
+            }
+          ]
+        }
+      },
+      "id": "976b67cc-5009-4cc5-ae61-6cd690a112c4",
+      "name": "Cron job every monday",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        340,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "playlist",
+        "id": "spotify:playlist:3pYa375IVqAaQlxNtAdPZ0",
+        "trackID": "=spotify:track:{{ $json.track.id }}",
+        "additionalFields": {}
+      },
+      "id": "6d36ea9b-15fb-4bd3-9373-a77382312f9d",
+      "name": "Add song to weekly archive",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        440
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "playlist",
+        "operation": "get",
+        "id": "spotify:playlist:37i9dQZEVXcWoAONAPxY7l"
+      },
+      "id": "991d556e-1755-455d-a1ab-f7dab68da353",
+      "name": "Get weekly",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        600,
+        440
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "tracks.items",
+        "options": {}
+      },
+      "id": "c1f3aa64-35f5-4798-af0c-0a1fd5288e68",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        880,
+        440
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": {
+    "node:Cron job every monday": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:33:40.065Z",
+      "updatedAt": "2023-04-09T15:33:40.065Z",
+      "id": "1",
+      "name": "Spotify"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2023-04-09T15:37:10.000Z",
+  "versionId": "bb02f7ee-999c-429b-a3a1-4f41de3cfc95"
+}
