@@ -31,7 +31,7 @@ const App: Component = () => {
           Learn Solid
         </a>
         <Button>Click Me</Button>
-        <MyComponent name="Nezhivar" />
+        <MyComponent name="Hugivar" />
       </header>
     </div>
   );

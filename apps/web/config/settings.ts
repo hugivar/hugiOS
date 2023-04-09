@@ -23,23 +23,22 @@ interface ISettings {
 }
 
 const settings: ISettings = {
-  title: "Nezhivar",
+  title: "Hugivar",
   lang: "en",
   siteUrl: "http://localhost:3000", // Site domain. Do not include a trailing slash!
   siteAddress: "hugivar.com",
   siteIPFSAddress: "ipfs.hugivar.com",
-  siteTitleMeta: "Nezhivar", // This allows an alternative site title for meta data for pages.
+  siteTitleMeta: "Hugivar", // This allows an alternative site title for meta data for pages.
   siteDescriptionMeta:
     "A site about my personal philosophy and thoughts on engineering",
 
   shareImageWidth: 1000,
   shareImageHeight: 523,
 
-  shortTitle: "Nezhivar",
+  shortTitle: "Hugivar",
   siteIcon: "favicon.png",
   navigation: [
-    { title: "Home", href: "/", icon: "home" },
-    { title: "Journal", href: "/journal", icon: "pen" }
+    { title: "Home", href: "/", icon: "home" }
   ],
   social: [
     {

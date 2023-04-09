@@ -13,14 +13,14 @@
   "devDependencies": {
     "@hugios/testing": "workspace:*",
     "@testing-library/jest-dom": "5.16.4",
-    "typescript": "4.9.3",
+    "typescript": "5.0.2",
     "vite": "4.2.0",
-    "vite-plugin-solid": "2.6.0",
+    "vite-plugin-solid": "2.7.0",
     "vite-tsconfig-paths": "4.0.3",
     "vitest": "0.29.1"
   },
   "dependencies": {
     "@hugios/solid-ui": "workspace:*",
-    "solid-js": "1.6.0"
+    "solid-js": "1.7.0"
   }
 }

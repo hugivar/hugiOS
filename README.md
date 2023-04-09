@@ -1,7 +1,7 @@
 <h3 align="center">HugiOS</h1>
 <!-- <h3 align="center">Exploring the world and questioning everything</h3> -->
 <p align="center">
-  A monorepo that holds all of Nezhivar's open source projects . Bootstrapped with Turborepo.
+  A monorepo that holds all of Hugivar's open source projects . Bootstrapped with Turborepo.
 </p>
 
 ## What's inside?

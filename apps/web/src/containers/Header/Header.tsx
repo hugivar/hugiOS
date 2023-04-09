@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
 
-import { Icon } from "components/Icon";
 import { DrawerButton } from "components/DrawerButton";
 import { ThemeSwitch } from "components/ThemeSwitch";
 import { IPFSSwitch } from "components/IPFSSwitch";
@@ -11,19 +8,8 @@ interface IHeader {
   title?: string;
 }
 
-interface IRouter {
-  pathname: string;
-  asPath: string;
-}
 
 const Header = ({ title }: IHeader) => {
-  const router: IRouter = useRouter();
-
-  const viewingBase =
-    (router?.pathname?.match(/[a-z]*(\.html|$)/gm) || [])?.length > 1;
-  const viewingSubPath = router?.pathname.match(/[a-z]*\/\[[a-z]*\]/gm);
-  const url = "/journal";
-
   const [opacityValues, setOpacity] = useState({
     text: -1,
     background: 1,
@@ -54,17 +40,7 @@ const Header = ({ title }: IHeader) => {
     >
       <div className="max-w-8xl mx-auto">
         <div className="py-4 lg:px-8 mx-4 lg:mx-0 h-14 flex justify-between flex-row">
-          {viewingBase ? null : viewingSubPath ? (
-            <div className="lg:hidden">
-              <Link href={url} passHref>
-                <div className="text-black dark:text-white w-5 lg">
-                  <Icon name="back" alt="back" height={16} width={16} />
-                </div>
-              </Link>
-            </div>
-          ) : (
-            <DrawerButton />
-          )}
+          <DrawerButton />
           <span className="flex items-center space-x-3">
             <p
               style={{
