@@ -6,8 +6,8 @@ import { Button } from './Button'
 
 test('Button renders', async () => {
   render(
-    <Button>Nezhivar</Button>,
+    <Button>Hugivar</Button>,
   )
 
-  expect(screen.getByText('Nezhivar')).toBeTruthy()
+  expect(screen.getByText('Hugivar')).toBeTruthy()
 })

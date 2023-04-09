@@ -1,21 +1,9 @@
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [solidPlugin(), tsconfigPaths()],
-  test: {
-    environment: 'jsdom',
-    transformMode: {
-      web: [/.[jt]sx?/],
-    },
-    deps: {
-      inline: [/solid-js/],
-    },
-    threads: false,
-    isolate: false,
+ plugins: [solidPlugin()],
+ build: {
+    target: 'esnext'
   },
-  resolve: {
-    conditions: ['development', 'browser'],
-  },
-})
+});

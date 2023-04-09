@@ -1,0 +1,660 @@
+{
+  "active": true,
+  "connections": {
+    "Get Notion Events": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Create Supabase Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Event Updated": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Get Page",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create Supabase Row1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Page": {
+      "main": [
+        [
+          {
+            "node": "Create Supabase Row2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Supabase Row2": {
+      "main": [
+        [
+          {
+            "node": "Add version and version date",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-07T01:04:58.332Z",
+  "id": "7",
+  "name": "Notion Events Backlog to Supabase Events Table",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $node[\"Event Updated\"].json.id }}",
+          "mode": "id",
+          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?4[0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12})"
+        },
+        "simple": false,
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Version|number",
+              "numberValue": "={{ ($node[\"Event Updated\"].json.Version || 0) + 1 }}"
+            },
+            {
+              "key": "Version Date|date",
+              "includeTime": false,
+              "date": "={{ $today }}"
+            }
+          ]
+        }
+      },
+      "id": "83c6e7dd-8466-49d4-a8d3-e7f4f81f38e5",
+      "name": "Update version and date",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        1580,
+        600
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "13a86ee2-fa70-4a82-b7a0-f019b3b0c67d",
+          "mode": "list",
+          "cachedResultName": "Event Backlog",
+          "cachedResultUrl": "https://www.notion.so/13a86ee2fa704a82b7a0f019b3b0c67d"
+        },
+        "limit": 5,
+        "filterType": "manual",
+        "options": {}
+      },
+      "id": "ddf4a4a4-72ef-44bb-98b1-0ace6bb24266",
+      "name": "Get Notion Events",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        320,
+        700
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "Events Backlog",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "id",
+              "fieldValue": "={{ $json.id }}"
+            },
+            {
+              "fieldId": "name",
+              "fieldValue": "={{ $json.name }}"
+            },
+            {
+              "fieldId": "url",
+              "fieldValue": "={{ $json.url }}"
+            },
+            {
+              "fieldId": "property_edited",
+              "fieldValue": "={{ $json.property_edited }}"
+            },
+            {
+              "fieldId": "property_priority",
+              "fieldValue": "={{ $json.property_priority }}"
+            },
+            {
+              "fieldId": "property_days_only_if_set_to_1_day_s",
+              "fieldValue": "={{ $json.property_days_only_if_set_to_1_day_s }}"
+            },
+            {
+              "fieldId": "property_created",
+              "fieldValue": "={{ $json.property_created }}"
+            },
+            {
+              "fieldId": "property_state",
+              "fieldValue": "={{ $json.property_state }}"
+            },
+            {
+              "fieldId": "property_last_day_base_date",
+              "fieldValue": "={{ $json.property_last_day_base_date }}"
+            },
+            {
+              "fieldId": "property_created_by",
+              "fieldValue": "={{ $json.property_created_by }}"
+            },
+            {
+              "fieldId": "property_due_timestamp",
+              "fieldValue": "={{ $json.property_due_timestamp }}"
+            },
+            {
+              "fieldId": "property_first_weekday_base_date",
+              "fieldValue": "={{ $json.property_first_weekday_base_date }}"
+            },
+            {
+              "fieldId": "property_simplified_recur_unit",
+              "fieldValue": "={{ $json.property_simplified_recur_unit }}"
+            },
+            {
+              "fieldId": "property_next_due",
+              "fieldValue": "={{ $json.property_next_due }}"
+            },
+            {
+              "fieldId": "property_done",
+              "fieldValue": "={{ $json.property_done }}"
+            },
+            {
+              "fieldId": "property_type",
+              "fieldValue": "={{ $json.property_type }}"
+            },
+            {
+              "fieldId": "property_due_date",
+              "fieldValue": "={{ $json.property_due_date }}"
+            },
+            {
+              "fieldId": "property_synced",
+              "fieldValue": "={{ $json.property_synced }}"
+            },
+            {
+              "fieldId": "property_recur_interval",
+              "fieldValue": "={{ $json.property_recur_interval }}"
+            },
+            {
+              "fieldId": "property_utc_offset",
+              "fieldValue": "={{ $json.property_utc_offset }}"
+            },
+            {
+              "fieldId": "property_recur_unit",
+              "fieldValue": "={{ $json.property_recur_unit }}"
+            },
+            {
+              "fieldId": "property_last_weekday_base_date",
+              "fieldValue": "={{ $json.property_last_weekday_base_date }}"
+            },
+            {
+              "fieldId": "property_next_last_base_date",
+              "fieldValue": "={{ $json.property_next_last_base_date }}"
+            },
+            {
+              "fieldId": "property_task",
+              "fieldValue": "={{ $json.property_task }}"
+            }
+          ]
+        }
+      },
+      "id": "095864e9-4c14-42ff-8a67-f8876e108da5",
+      "name": "Create Supabase Row",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        960,
+        700
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "dateTime": [
+            {
+              "value1": "={{ $json.property_edited }}",
+              "value2": "={{ $today }}"
+            }
+          ]
+        }
+      },
+      "id": "df80379a-87aa-4583-a31c-07919e6f776e",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [
+        620,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "tableId": "Events Backlog",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "id",
+              "fieldValue": "={{ $json.id }}"
+            },
+            {
+              "fieldId": "name",
+              "fieldValue": "={{ $json.Task }}"
+            },
+            {
+              "fieldId": "property_edited",
+              "fieldValue": "={{ $json.Edited }}"
+            },
+            {
+              "fieldId": "property_priority",
+              "fieldValue": "={{ $json.Edited }}"
+            },
+            {
+              "fieldId": "property_days_only_if_set_to_1_day_s",
+              "fieldValue": "={{ $json[\"Days (Only if Set to 1 Day(s))\"] }}"
+            },
+            {
+              "fieldId": "property_created",
+              "fieldValue": "={{ $json.Created }}"
+            },
+            {
+              "fieldId": "property_state",
+              "fieldValue": "={{ $json.State }}"
+            },
+            {
+              "fieldId": "property_last_day_base_date",
+              "fieldValue": "={{ $json[\"Last Day Base Date\"] }}"
+            },
+            {
+              "fieldId": "property_created_by",
+              "fieldValue": "={{ $json[\"Created By\"] }}"
+            },
+            {
+              "fieldId": "property_due_timestamp",
+              "fieldValue": "={{ $json[\"Due Timestamp\"] }}"
+            },
+            {
+              "fieldId": "property_first_weekday_base_date",
+              "fieldValue": "={{ $json[\"First Weekday Base Date\"] }}"
+            },
+            {
+              "fieldId": "property_simplified_recur_unit",
+              "fieldValue": "={{ $json[\"Simplified Recur Unit\"] }}"
+            },
+            {
+              "fieldId": "property_next_due",
+              "fieldValue": "={{ $json[\"Next Due\"] }}"
+            },
+            {
+              "fieldId": "property_done",
+              "fieldValue": "={{ $json.Done }}"
+            },
+            {
+              "fieldId": "property_type",
+              "fieldValue": "={{ $json.Type }}"
+            },
+            {
+              "fieldId": "property_due_date",
+              "fieldValue": "={{ $json[\"Due Date\"] }}"
+            },
+            {
+              "fieldId": "property_synced",
+              "fieldValue": "={{ $json[\"Synced to Calendar\"] }}"
+            },
+            {
+              "fieldId": "property_recur_interval",
+              "fieldValue": "={{ $json[\"Recur Interval\"] }}"
+            },
+            {
+              "fieldId": "property_utc_offset",
+              "fieldValue": "={{ $json[\"UTC Offset\"] }}"
+            },
+            {
+              "fieldId": "property_recur_unit",
+              "fieldValue": "={{ $json[\"Recur Unit\"] }}"
+            },
+            {
+              "fieldId": "property_last_weekday_base_date",
+              "fieldValue": "={{ $json[\"Last Weekday Base Date\"] }}"
+            },
+            {
+              "fieldId": "property_next_last_base_date",
+              "fieldValue": "={{ $json[\"Next Last Base Date\"] }}"
+            },
+            {
+              "fieldId": "property_task",
+              "fieldValue": "={{ $json.Task }}"
+            }
+          ]
+        }
+      },
+      "id": "20d9ce2a-14c0-419a-9aae-d140fdff6ec3",
+      "name": "Create Supabase Row1",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        940,
+        500
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "event": "pagedUpdatedInDatabase",
+        "databaseId": {
+          "__rl": true,
+          "value": "13a86ee2-fa70-4a82-b7a0-f019b3b0c67d",
+          "mode": "list",
+          "cachedResultName": "Event Backlog",
+          "cachedResultUrl": "https://www.notion.so/13a86ee2fa704a82b7a0f019b3b0c67d"
+        },
+        "simple": false
+      },
+      "id": "22799e8f-ddc5-435a-b52a-db587efbadcc",
+      "name": "Event Updated",
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [
+        420,
+        360
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.object }}",
+              "operation": "contains",
+              "value2": "page"
+            }
+          ]
+        }
+      },
+      "id": "5b320870-9af6-461a-a856-c7528a8e1c59",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        640,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "get",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id",
+          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?4[0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12})"
+        }
+      },
+      "id": "943f2305-cfcc-4057-9c7c-9612d938d46e",
+      "name": "Get Page",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        940,
+        260
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "Events Backlog",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "id",
+              "fieldValue": "={{ $json.id }}"
+            },
+            {
+              "fieldId": "name",
+              "fieldValue": "= {{ $json.property_task }}"
+            },
+            {
+              "fieldId": "property_edited",
+              "fieldValue": "= {{ $json.property_edited }}"
+            },
+            {
+              "fieldId": "property_priority",
+              "fieldValue": "={{ $json.property_priority }}"
+            },
+            {
+              "fieldId": "property_days_only_if_set_to_1_day_s",
+              "fieldValue": "={{ $json.property_days_only_if_set_to_1_day_s }}"
+            },
+            {
+              "fieldId": "property_created",
+              "fieldValue": "={{ $json.property_created }}"
+            },
+            {
+              "fieldId": "property_state",
+              "fieldValue": "={{ $json.property_state }}"
+            },
+            {
+              "fieldId": "property_last_day_base_date",
+              "fieldValue": "={{ $json.property_last_day_base_date }}"
+            },
+            {
+              "fieldId": "property_created_by",
+              "fieldValue": "={{ $json.property_created_by }}"
+            },
+            {
+              "fieldId": "property_due_timestamp",
+              "fieldValue": "={{ $json.property_due_timestamp }}"
+            },
+            {
+              "fieldId": "property_first_weekday_base_date",
+              "fieldValue": "={{ $json.property_first_weekday_base_date }}"
+            },
+            {
+              "fieldId": "property_simplified_recur_unit",
+              "fieldValue": "={{ $json.property_simplified_recur_unit }}"
+            },
+            {
+              "fieldId": "property_next_due",
+              "fieldValue": "={{ $json.property_next_due }}"
+            },
+            {
+              "fieldId": "property_done",
+              "fieldValue": "={{ $json.property_done }}"
+            },
+            {
+              "fieldId": "property_type",
+              "fieldValue": "={{ $json.property_type }}"
+            },
+            {
+              "fieldId": "property_due_date",
+              "fieldValue": "={{ $json.property_due_date }}"
+            },
+            {
+              "fieldId": "property_synced",
+              "fieldValue": "={{ $json.property_synced_to_calendar }}"
+            },
+            {
+              "fieldId": "property_recur_interval",
+              "fieldValue": "={{ $json.property_recur_interval }}"
+            },
+            {
+              "fieldId": "property_utc_offset",
+              "fieldValue": "={{ $json.property_utc_offset }}"
+            },
+            {
+              "fieldId": "property_recur_unit",
+              "fieldValue": "={{ $json.property_recur_unit }}"
+            },
+            {
+              "fieldId": "property_last_weekday_base_date",
+              "fieldValue": "={{ $json.property_last_weekday_base_date }}"
+            },
+            {
+              "fieldId": "property_next_last_base_date",
+              "fieldValue": "={{ $json.property_next_last_base_date }}"
+            },
+            {
+              "fieldId": "property_task",
+              "fieldValue": "={{ $json.property_task }}"
+            }
+          ]
+        }
+      },
+      "id": "f9be4cde-76f8-4f36-b55d-87ec8befb6f1",
+      "name": "Create Supabase Row2",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        260
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "tableId": "Events Backlog",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "column_id",
+              "condition": "eq",
+              "keyValue": "={{ $json.column_id }}"
+            }
+          ]
+        },
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "version_date",
+              "fieldValue": "={{ $now }}"
+            }
+          ]
+        }
+      },
+      "id": "c74ac896-345c-44bc-9109-36aa5d9a8209",
+      "name": "Add version and version date",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        260
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": {
+    "node:Notion Trigger (Beta)": {
+      "lastTimeChecked": "2023-04-07T02:56:00.000Z",
+      "possibleDuplicates": [
+        "da226364-91c0-42a4-9dfc-cef68247a978"
+      ]
+    },
+    "node:Event Updated": {
+      "lastTimeChecked": "2023-04-07T20:34:00.000Z",
+      "possibleDuplicates": [
+        "96a92ffa-36cd-4174-9618-da192541d56f"
+      ]
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2023-04-07T20:34:38.000Z",
+  "versionId": "bfde2bd6-4b97-4e4a-8d60-32e46b59aed7"
+}

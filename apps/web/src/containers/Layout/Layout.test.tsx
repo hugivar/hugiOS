@@ -18,6 +18,6 @@ test('Layout renders', async () => {
     </HelmetProvider>
   )
 
-  expect(screen.getByText(/Nezhivar/i)).toBeTruthy()
+  expect(screen.getByText(/Hugivar/i)).toBeTruthy()
   expect(screen.getByText(/Hello World/i)).toBeTruthy()
 })

@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.0"
   },
   "dependencies": {
     "@types/node": "^18.11.18",
@@ -21,6 +21,6 @@
     "fs": "0.0.1-security"
   },
   "volta": {
-    "node": "18.14.0"
+    "node": "18.15.0"
   }
 }

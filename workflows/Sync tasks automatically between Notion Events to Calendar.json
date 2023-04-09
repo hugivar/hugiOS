@@ -1,0 +1,203 @@
+{
+  "active": true,
+  "connections": {
+    "If date exists": {
+      "main": [
+        [
+          {
+            "node": "Create all-day event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion Events Not Yet Synced": {
+      "main": [
+        [
+          {
+            "node": "If date exists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create all-day event": {
+      "main": [
+        [
+          {
+            "node": "Set Event to Synced",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every hour": {
+      "main": [
+        [
+          {
+            "node": "Notion Events Not Yet Synced",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-06T03:21:31.985Z",
+  "id": "3",
+  "name": "Sync tasks automatically between Notion Events to Calendar",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.property_due_date.start }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "5e4c60fc-a519-4abb-ad51-1e12963fd56a",
+      "name": "If date exists",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        860,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "hemingway72129@gmail.com",
+          "mode": "list",
+          "cachedResultName": "hemingway72129@gmail.com"
+        },
+        "start": "={{ $json.property_due_date.start }}",
+        "end": "={{ $json.property_due_date.start }}",
+        "additionalFields": {
+          "allday": "yes",
+          "description": "=",
+          "location": "",
+          "summary": "={{ $json.name }}"
+        }
+      },
+      "id": "629faeeb-5bd4-43fd-a78a-ad7478016b1d",
+      "name": "Create all-day event",
+      "type": "n8n-nodes-base.googleCalendar",
+      "position": [
+        1140,
+        120
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "3",
+          "name": "Google Calendar"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "13a86ee2-fa70-4a82-b7a0-f019b3b0c67d",
+          "mode": "list",
+          "cachedResultName": "Event Backlog",
+          "cachedResultUrl": "https://www.notion.so/13a86ee2fa704a82b7a0f019b3b0c67d"
+        },
+        "limit": 100,
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Synced to Calendar|checkbox",
+              "condition": "equals"
+            },
+            {
+              "key": "Done|checkbox",
+              "condition": "equals"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b383c614-46a7-4ef8-8faa-64cf41b6442d",
+      "name": "Notion Events Not Yet Synced",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        620,
+        240
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $node[\"If date exists\"].json.id }}",
+          "mode": "id",
+          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?4[0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12})"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Synced?|checkbox",
+              "checkboxValue": true
+            }
+          ]
+        }
+      },
+      "id": "4b87208b-16a8-4ea7-8d31-86f9b9c772c9",
+      "name": "Set Event to Synced",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        1480,
+        140
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "unit": "hours"
+      },
+      "id": "a41e0dec-49b2-40fb-8357-cd39df6226f5",
+      "name": "Every hour",
+      "type": "n8n-nodes-base.interval",
+      "position": [
+        380,
+        240
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2023-04-07T17:16:45.000Z",
+  "versionId": "1bf07afc-74c2-49b5-9b74-8094285bf81c"
+}
