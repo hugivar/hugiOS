@@ -29,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "5.57.0",
     "@typescript-eslint/parser": "5.57.0",
     "eslint": "8.30.0",
-    "eslint-plugin-qwik": "0.100.0",
+    "eslint-plugin-qwik": "0.101.0",
     "node-fetch": "3.3.0",
     "prettier": "2.8.1",
     "typescript": "5.0.2",
