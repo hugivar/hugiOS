@@ -1,0 +1,232 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Get Event Backlog items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Event Backlog items": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion (Beta)": {
+      "main": [
+        [
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-07T18:19:30.894Z",
+  "id": "11",
+  "name": "Export Event Backlog to Supabase",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1c277932-2e00-4891-929e-b8bbaafa7b24",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        120,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "tableId": "Events Backlog",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "id",
+              "fieldValue": "={{ $json.id }}"
+            },
+            {
+              "fieldId": "name",
+              "fieldValue": "={{ $json.name }}"
+            },
+            {
+              "fieldId": "property_edited",
+              "fieldValue": "={{ $json.property_edited }}"
+            },
+            {
+              "fieldId": "property_priority",
+              "fieldValue": "={{ $json.property_priority }}"
+            },
+            {
+              "fieldId": "property_days_only_if_set_to_1_day_s",
+              "fieldValue": "={{ $json.property_days_only_if_set_to_1_day_s }}"
+            },
+            {
+              "fieldId": "property_created",
+              "fieldValue": "={{ $json.property_created }}"
+            },
+            {
+              "fieldId": "property_state",
+              "fieldValue": "={{ $json.property_state }}"
+            },
+            {
+              "fieldId": "property_last_day_base_date",
+              "fieldValue": "={{ $json.property_last_day_base_date }}"
+            },
+            {
+              "fieldId": "property_created_by",
+              "fieldValue": "={{ $json.property_created_by }}"
+            },
+            {
+              "fieldId": "property_due_timestamp",
+              "fieldValue": "={{ $json.property_due_timestamp }}"
+            },
+            {
+              "fieldId": "property_first_weekday_base_date",
+              "fieldValue": "={{ $json.property_first_weekday_base_date }}"
+            },
+            {
+              "fieldId": "property_simplified_recur_unit",
+              "fieldValue": "={{ $json.property_simplified_recur_unit }}"
+            },
+            {
+              "fieldId": "property_next_due",
+              "fieldValue": "={{ $json.property_next_due }}"
+            },
+            {
+              "fieldId": "property_done",
+              "fieldValue": "={{ $json.property_done }}"
+            },
+            {
+              "fieldId": "property_type",
+              "fieldValue": "={{ $json.property_type }}"
+            },
+            {
+              "fieldId": "property_due_date",
+              "fieldValue": "={{ $json.property_due_date }}"
+            },
+            {
+              "fieldId": "property_synced",
+              "fieldValue": "={{ $json.property_synced_to_calendar }}"
+            },
+            {
+              "fieldId": "property_recur_interval",
+              "fieldValue": "={{ $json.property_recur_interval }}"
+            },
+            {
+              "fieldId": "property_utc_offset",
+              "fieldValue": "={{ $json.property_utc_offset }}"
+            },
+            {
+              "fieldId": "property_recur_unit",
+              "fieldValue": "={{ $json.property_recur_unit }}"
+            },
+            {
+              "fieldId": "property_last_weekday_base_date",
+              "fieldValue": "={{ $json.property_last_weekday_base_date }}"
+            },
+            {
+              "fieldId": "property_next_last_base_date",
+              "fieldValue": "={{ $json.property_next_last_base_date }}"
+            },
+            {
+              "fieldId": "property_task",
+              "fieldValue": "={{ $json.property_task }}"
+            }
+          ]
+        }
+      },
+      "id": "9b73985a-8f8f-492a-949a-3f3332bedf04",
+      "name": "Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        860,
+        500
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "13a86ee2-fa70-4a82-b7a0-f019b3b0c67d",
+          "mode": "list",
+          "cachedResultName": "Event Backlog",
+          "cachedResultUrl": "https://www.notion.so/13a86ee2fa704a82b7a0f019b3b0c67d"
+        },
+        "returnAll": true,
+        "simple": false,
+        "options": {}
+      },
+      "id": "e2c61141-bcf9-4b64-9862-6fccbd68d6ce",
+      "name": "Get Event Backlog items",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        400,
+        500
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "get",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id",
+          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?4[0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12})"
+        }
+      },
+      "id": "1ba9bcd2-82f2-4457-a4f9-40a332972688",
+      "name": "Notion (Beta)",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        640,
+        500
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-04-07T18:35:03.000Z",
+  "versionId": "89909034-c1d9-4b39-8314-f0d694aa9d5e"
+}
