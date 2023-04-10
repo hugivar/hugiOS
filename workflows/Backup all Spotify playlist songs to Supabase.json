@@ -1,0 +1,167 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Get all playlist fora user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all playlist fora user": {
+      "main": [
+        [
+          {
+            "node": "Get all tracks from a user's playlist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all tracks from a user's playlist": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Remove available markets array",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove available markets array": {
+      "main": [
+        [
+          {
+            "node": "Spreadsheet File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-10T00:47:45.958Z",
+  "id": "16",
+  "name": "Backup all Spotify playlist songs to Supabase",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "9b5f353f-23d0-49dd-82f0-fd734061c918",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        60,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "playlist",
+        "operation": "getUserPlaylists",
+        "limit": 1
+      },
+      "id": "86e93147-ba29-4f33-b29b-e45a177a6e17",
+      "name": "Get all playlist fora user",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        340,
+        440
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "playlist",
+        "operation": "get",
+        "id": "={{ $json.uri }}"
+      },
+      "id": "6acde680-3f31-44ae-9d4d-b253206a89ce",
+      "name": "Get all tracks from a user's playlist",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        620,
+        440
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "tracks.items",
+        "options": {}
+      },
+      "id": "0bf61e1e-c418-4b38-a601-3c8286a093bd",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        880,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "93e50bf3-0ed9-436b-bd8e-44f00e3ade64",
+      "name": "Spreadsheet File",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  delete item.json.track.available_markets;\n}\n\nreturn $input.all();"
+      },
+      "id": "2055daf6-f2ad-456a-b647-39ab93cd1bfe",
+      "name": "Remove available markets array",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        440
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-04-10T01:58:40.000Z",
+  "versionId": "7c995f94-0605-43c5-a81d-2db9a3b55838"
+}
