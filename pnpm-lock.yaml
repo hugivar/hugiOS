@@ -135,8 +135,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.2
       vite-tsconfig-paths:
-        specifier: 4.0.3
-        version: 4.0.3(typescript@5.0.2)(vite@4.2.0)
+        specifier: 4.1.0
+        version: 4.1.0(typescript@5.0.2)(vite@4.2.0)
       vitest:
         specifier: 0.30.0
         version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.1.0)(jsdom@21.1.1)
@@ -332,8 +332,8 @@ importers:
         specifier: 4.2.0
         version: 4.2.0(@types/node@18.15.11)
       vite-tsconfig-paths:
-        specifier: 4.0.3
-        version: 4.0.3(typescript@5.0.2)(vite@4.2.0)
+        specifier: 4.1.0
+        version: 4.1.0(typescript@5.0.2)(vite@4.2.0)
       vitest:
         specifier: 0.30.0
         version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.1.0)(jsdom@21.1.1)
@@ -433,8 +433,8 @@ importers:
         specifier: 4.2.0
         version: 4.2.0(@types/node@18.15.11)
       vite-tsconfig-paths:
-        specifier: 4.0.3
-        version: 4.0.3(typescript@5.0.2)(vite@4.2.0)
+        specifier: 4.1.0
+        version: 4.1.0(typescript@5.0.2)(vite@4.2.0)
       vitest:
         specifier: 0.30.0
         version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.1.0)(jsdom@21.1.1)
@@ -485,8 +485,8 @@ importers:
         specifier: 2.7.0
         version: 2.7.0(solid-js@1.7.0)(vite@4.2.0)
       vite-tsconfig-paths:
-        specifier: 4.0.3
-        version: 4.0.3(typescript@5.0.2)(vite@4.2.0)
+        specifier: 4.1.0
+        version: 4.1.0(typescript@5.0.2)(vite@4.2.0)
       vitest:
         specifier: 0.30.0
         version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.1.0)(jsdom@21.1.1)
@@ -915,8 +915,8 @@ importers:
         specifier: 4.2.0
         version: 4.2.0(@types/node@18.15.11)
       vite-tsconfig-paths:
-        specifier: 4.0.3
-        version: 4.0.3(typescript@5.0.2)(vite@4.2.0)
+        specifier: 4.1.0
+        version: 4.1.0(typescript@5.0.2)(vite@4.2.0)
 
   playground/react/custom-hooks:
     dependencies:
@@ -1004,8 +1004,8 @@ importers:
         specifier: 2.7.0
         version: 2.7.0(solid-js@1.7.0)(vite@4.2.0)
       vite-tsconfig-paths:
-        specifier: 4.0.3
-        version: 4.0.3(typescript@5.0.2)(vite@4.2.0)
+        specifier: 4.1.0
+        version: 4.1.0(typescript@5.0.2)(vite@4.2.0)
       vitest:
         specifier: 0.30.0
         version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.1.0)(jsdom@21.1.1)
@@ -19802,10 +19802,13 @@ packages:
       - supports-color
     dev: true
 
-  /vite-tsconfig-paths@4.0.3(typescript@5.0.2)(vite@4.2.0):
-    resolution: {integrity: sha512-gRO2Q/tOkV+9kMht5tz90+IaEKvW2zCnvwJV3tp2ruPNZOTM5rF+yXorJT4ggmAMYEaJ3nyXjx5P5jY5FwiZ+A==}
+  /vite-tsconfig-paths@4.1.0(typescript@5.0.2)(vite@4.2.0):
+    resolution: {integrity: sha512-Ps275He1fF6Wpm/3tvyokIfXd3lcmk4KsdCG4yduSTRVt+htaxIoEor88M1h3soOeXg5fn77ZiupVRwGeB/XNQ==}
     peerDependencies:
-      vite: '>2.0.0-0'
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       globrex: 0.1.2
