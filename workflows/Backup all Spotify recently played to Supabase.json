@@ -1,0 +1,170 @@
+{
+  "active": true,
+  "connections": {
+    "Get all tracks from a user's playlist": {
+      "main": [
+        [
+          {
+            "node": "Remove available markets array",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove available markets array": {
+      "main": [
+        [
+          {
+            "node": "Supabase",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Add record to database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get all tracks from a user's playlist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-11T21:58:48.279Z",
+  "id": "17",
+  "name": "Backup all Spotify recently played to Supabase",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "recentlyPlayed"
+      },
+      "id": "edc477dc-4b75-4997-ba58-42e899c149a5",
+      "name": "Get all tracks from a user's playlist",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        860,
+        440
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all().map(item => {\n  return {\n    \"track_id\": item.json.track.id,\n    \"uri\": item.json.track.uri,\n    \"duration_ms\": item.json.track['duration_ms'],\n    \"artist\": item.json.track.artists[0].name,\n    \"title\": item.json.track.name\n  }\n});"
+      },
+      "id": "a04cbea0-7df5-412a-9415-5612ba5f9972",
+      "name": "Remove available markets array",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "tableId": "Recently Played Spotify",
+        "dataToSend": "autoMapInputData"
+      },
+      "id": "387a27ab-aabd-464b-8715-23d38220587b",
+      "name": "Add record to database",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        580
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "tableId": "Recently Played Spotify",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "track_id",
+              "condition": "neq",
+              "keyValue": "\"\""
+            }
+          ]
+        }
+      },
+      "id": "e7f234ec-faee-491c-b6ed-3fa683f02208",
+      "name": "Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        380
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "a904d4a4-1ff6-4aad-9181-ee90bdc447a8",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        620,
+        440
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:33:40.065Z",
+      "updatedAt": "2023-04-09T15:33:40.065Z",
+      "id": "1",
+      "name": "Spotify"
+    },
+    {
+      "createdAt": "2023-04-09T15:35:19.638Z",
+      "updatedAt": "2023-04-09T15:35:19.638Z",
+      "id": "3",
+      "name": "Supabase"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2023-04-11T22:15:45.000Z",
+  "versionId": "72080516-d286-46a6-aa9b-8f8aebe62e6c"
+}
