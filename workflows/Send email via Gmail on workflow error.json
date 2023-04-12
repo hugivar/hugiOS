@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Gmail",
+            "node": "Gmail1",
             "type": "main",
             "index": 0
           }
@@ -13,8 +13,8 @@
       ]
     }
   },
-  "createdAt": "2023-04-06T04:05:56.238Z",
-  "id": "5",
+  "createdAt": "2023-04-12T03:24:04.374Z",
+  "id": "18",
   "name": "Send email via Gmail on workflow error",
   "nodes": [
     {
@@ -26,7 +26,7 @@
         240
       ],
       "typeVersion": 1,
-      "id": "48013dde-4541-4fe8-a3cc-2fea32f873ed"
+      "id": "913f8a01-6e62-4177-a49e-98c7eae07b63"
     },
     {
       "parameters": {
@@ -34,18 +34,18 @@
         "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
         "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
         "toList": [
-          "recipient@email.com"
+          "n8n.prong493@silomails.com"
         ],
         "additionalFields": {}
       },
-      "name": "Gmail",
+      "name": "Gmail1",
       "type": "n8n-nodes-base.gmail",
       "position": [
-        580,
+        640,
         240
       ],
       "typeVersion": 1,
-      "id": "21edf549-dfbc-4911-95ec-887a7569eb6c",
+      "id": "bd958798-bdb3-41ea-bfb7-3f4ab240f8c5",
       "credentials": {
         "gmailOAuth2": {
           "id": "6",
@@ -59,6 +59,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2023-04-06T13:14:23.000Z",
-  "versionId": "5ad893f9-047a-4c21-a2ce-a55b5c7b5c73"
+  "updatedAt": "2023-04-12T03:24:04.374Z",
+  "versionId": "67adfb80-fcd5-4a41-93fa-4d7fe363a4a5"
 }
