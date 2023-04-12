@@ -158,7 +158,7 @@
         "propertiesUi": {
           "propertyValues": [
             {
-              "key": "Synced?|checkbox",
+              "key": "Synced to Calendar|checkbox",
               "checkboxValue": true
             }
           ]
@@ -211,6 +211,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-09T16:17:16.000Z",
-  "versionId": "d1e2a796-1b19-49bb-a196-937a74239e05"
+  "updatedAt": "2023-04-12T03:23:04.000Z",
+  "versionId": "6b8c0772-ed55-44b2-80e5-c753c2041fd9"
 }
