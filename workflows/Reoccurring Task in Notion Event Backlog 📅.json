@@ -22,6 +22,17 @@
           }
         ]
       ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-06T00:41:51.798Z",
@@ -118,13 +129,49 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        1220,
+        1140,
         460
       ],
       "credentials": {
         "notionApi": {
           "id": "1",
           "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        760,
+        260
+      ],
+      "typeVersion": 1,
+      "id": "41f75e42-2a48-4e1b-a37d-9ba7da1b3dd9"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {}
+      },
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        960,
+        260
+      ],
+      "typeVersion": 1,
+      "id": "e465efbc-01e5-4d9b-b9fb-b1417f8bc66d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
         }
       }
     }
@@ -145,6 +192,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-09T16:19:25.000Z",
-  "versionId": "c815c71f-ae73-49c2-ade0-7051a717d235"
+  "updatedAt": "2023-04-11T23:31:29.000Z",
+  "versionId": "cef3b545-14e8-4866-b2b0-a923ad3448a5"
 }
