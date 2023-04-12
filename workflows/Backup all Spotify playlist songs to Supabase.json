@@ -1,22 +1,6 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
-    "When clicking \"Execute Workflow\"": {
-      "main": [
-        [
-          {
-            "node": "Get all playlist fora user",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Get all stored Spotify tracks",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Get all playlist fora user": {
       "main": [
         [
@@ -93,23 +77,28 @@
           }
         ]
       ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get all playlist fora user",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get all stored Spotify tracks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-10T00:47:45.958Z",
   "id": "16",
   "name": "Backup all Spotify playlist songs to Supabase",
   "nodes": [
-    {
-      "parameters": {},
-      "id": "9b5f353f-23d0-49dd-82f0-fd734061c918",
-      "name": "When clicking \"Execute Workflow\"",
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        60,
-        440
-      ]
-    },
     {
       "parameters": {
         "resource": "playlist",
@@ -203,7 +192,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1320,
+        1340,
         440
       ]
     },
@@ -280,8 +269,7 @@
             },
             {
               "value1": "={{ $json.owner.display_name }}",
-              "operation": "notEqual",
-              "value2": "Spotify"
+              "value2": "udw"
             }
           ]
         }
@@ -291,14 +279,37 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 1,
       "position": [
-        560,
+        620,
         440
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks"
+            }
+          ]
+        }
+      },
+      "id": "e9ec4abd-4bf6-410a-bebd-ad43a27bd928",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        20,
+        500
       ]
     }
   ],
   "pinData": {},
   "settings": {},
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    }
+  },
   "tags": [
     {
       "createdAt": "2023-04-09T15:33:40.065Z",
@@ -313,7 +324,7 @@
       "name": "Supabase"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2023-04-11T00:46:00.000Z",
-  "versionId": "9af572c1-e293-43d4-a9f8-adaecbf15dc9"
+  "triggerCount": 1,
+  "updatedAt": "2023-04-11T22:18:07.000Z",
+  "versionId": "bd25dc22-7378-4c10-9de2-e35610c818a4"
 }
