@@ -368,7 +368,7 @@
       ]
     },
     "node:Event Updated": {
-      "lastTimeChecked": "2023-04-12T03:23:00.000Z"
+      "lastTimeChecked": "2023-04-13T00:44:00.000Z"
     }
   },
   "tags": [
@@ -386,6 +386,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-12T03:23:40.000Z",
+  "updatedAt": "2023-04-13T00:44:34.000Z",
   "versionId": "fe5303b8-7956-40a9-9f10-acac41d7c7fe"
 }
