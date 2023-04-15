@@ -11,28 +11,28 @@ import {
   closeMainWindow,
 } from "@raycast/api";
 import { setTimeout } from "timers";
-import { createDatabasePage } from "./utils/notion";
+import { createDatabasePage } from "@hugios/notion";
 
 type Values = {
   "property::title::title": string;
 };
 
 interface Preferences {
+  accessToken: string;
   databaseId: string;
 }
 
 export default function Command() {
-  const preferences = getPreferenceValues<Preferences>();
-  const database = preferences?.databaseId;
+  const { accessToken, databaseId } = getPreferenceValues<Preferences>();
 
   async function handleSubmit(values: Values) {
     showToast({ title: "Capturing", style: Toast.Style.Animated });
 
     let page = null;
     try {
-      page = await createDatabasePage({
+      page = await createDatabasePage(accessToken, {
         ...values,
-        database,
+        databaseId,
       });
     } catch (err: any) {
       showToast({ title: "Error", message: err.toString(), style: Toast.Style.Failure });
@@ -49,7 +49,7 @@ export default function Command() {
     }
   }
 
-  if (!database) {
+  if (!databaseId) {
     const markdown = "No database id provided. Please update it in extension preferences and try again.";
 
     return (
@@ -73,7 +73,7 @@ export default function Command() {
         </ActionPanel>
       }
     >
-      <Form.Description title="Database Id" text={`The database id is ${database}`} />
+      <Form.Description title="Database Id" text={`The database id is ${databaseId}`} />
       <Form.Separator key="separator" />
       <Form.TextField
         id="property::title::title"

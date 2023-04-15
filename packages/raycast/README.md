@@ -1,6 +1,13 @@
-# Raycast Scripts
+# Raycast
 
-## Quit Window Server
+## Raycast Extensions
+```sh
+npx create-raycast-extension -t crud-admin-panel
+```
+
+## Raycast Scripts
+
+### Quit Window Server
 This commands works through a mechanism added to /etc/sudoers to bypass the sudo password authentication when running the pkill command
 
 Refernces:
