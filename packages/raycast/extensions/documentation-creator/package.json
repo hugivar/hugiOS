@@ -154,13 +154,13 @@
     "email-validator": "^2.0.4",
     "nanoid": "^4.0.0",
     "node-fetch": "^3.2.10",
-    "uuid": "^8.3.2",
+    "uuid": "^9.0.0",
     "yaml": "^2.1.1"
   },
   "devDependencies": {
     "@types/node": "16.10.3",
     "@types/react": "18.0.9",
-    "@types/uuid": "^8.3.4",
+    "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.32.0",
