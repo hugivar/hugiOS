@@ -26,15 +26,15 @@
     "@types/eslint": "8.37.0",
     "@types/node": "^18.11.16",
     "@types/node-fetch": "latest",
-    "@typescript-eslint/eslint-plugin": "5.57.0",
-    "@typescript-eslint/parser": "5.57.0",
+    "@typescript-eslint/eslint-plugin": "5.58.0",
+    "@typescript-eslint/parser": "5.58.0",
     "eslint": "8.30.0",
-    "eslint-plugin-qwik": "0.101.0",
+    "eslint-plugin-qwik": "0.102.0",
     "node-fetch": "3.3.0",
     "prettier": "2.8.1",
     "typescript": "5.0.2",
     "undici": "5.21.0",
     "vite": "4.2.0",
-    "vite-tsconfig-paths": "4.0.3"
+    "vite-tsconfig-paths": "4.2.0"
   }
 }

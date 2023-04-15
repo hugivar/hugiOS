@@ -1,0 +1,155 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Spotify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-09T15:26:29.453Z",
+  "id": "14",
+  "name": "Add songs to Spotify generated playlist 🎵",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "654a262b-7b5a-4039-85a9-6f1342dc9eac",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        140,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.playlist-generator.com/api/playlist_generator",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Basic c3BvdGlmeV9yZWdpc3RlcmVkOmFydGlzdGNsdXN0ZXI="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "f6135edf-d4d2-497d-a388-07a7e7fbbaae",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        380,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "tracks",
+        "options": {}
+      },
+      "id": "bb4fffc1-7c72-4dd6-8466-343093b25b05",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        620,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "playlist",
+        "id": "spotify:playlist:0IIxCoCu2IQkuxSDnvSYJg",
+        "trackID": "=spotify:track:{{ $json.id }}",
+        "additionalFields": {}
+      },
+      "id": "b2eaf241-f7fc-4f33-91a4-26986fafa052",
+      "name": "Spotify",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        880,
+        500
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "When clicking \"Execute Workflow\"": [
+      {
+        "json": {
+          "artist_sampling": null,
+          "mood_preset": "sad",
+          "name": "sad",
+          "seed_artists": [
+            {
+              "id": "663kAPig2oCodG3UmqpX0n"
+            },
+            {
+              "id": "34Y0ldeyUv7jBvukWOGASO"
+            }
+          ],
+          "seed_library": false,
+          "seed_tracks": [],
+          "supplement_library": false,
+          "use_front_tracks": false,
+          "cover_image_url": "https://www.playlist-generator.com/img/covers/mood_playlist_sad.jpg",
+          "test": true
+        }
+      }
+    ]
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:33:40.065Z",
+      "updatedAt": "2023-04-09T15:33:40.065Z",
+      "id": "1",
+      "name": "Spotify"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2023-04-09T20:03:01.000Z",
+  "versionId": "2261fef1-21b1-4cff-a15c-951394729fdc"
+}

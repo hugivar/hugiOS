@@ -1,0 +1,330 @@
+{
+  "active": true,
+  "connections": {
+    "Get all playlist fora user": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all tracks from a user's playlist": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Remove available markets array",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove available markets array": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all stored Spotify tracks": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Get all tracks from a user's playlist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compare Datasets": {
+      "main": [
+        [
+          {
+            "node": "Add record to database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get all playlist fora user",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get all stored Spotify tracks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-10T00:47:45.958Z",
+  "id": "16",
+  "name": "Backup all Spotify playlist songs to Supabase",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "playlist",
+        "operation": "getUserPlaylists",
+        "returnAll": true
+      },
+      "id": "86e93147-ba29-4f33-b29b-e45a177a6e17",
+      "name": "Get all playlist fora user",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        340,
+        440
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "playlist",
+        "operation": "get",
+        "id": "={{ $json.uri }}"
+      },
+      "id": "6acde680-3f31-44ae-9d4d-b253206a89ce",
+      "name": "Get all tracks from a user's playlist",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        840,
+        440
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "tracks.items",
+        "include": "selectedOtherFields",
+        "fieldsToInclude": {
+          "fields": [
+            {
+              "fieldName": "name"
+            },
+            {
+              "fieldName": "uri"
+            }
+          ]
+        },
+        "options": {
+          "destinationFieldName": "tracks"
+        }
+      },
+      "id": "0bf61e1e-c418-4b38-a601-3c8286a093bd",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toFile",
+        "fileFormat": "csv",
+        "options": {}
+      },
+      "id": "93e50bf3-0ed9-436b-bd8e-44f00e3ade64",
+      "name": "Spreadsheet File",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all().map(item => {\n  return {\n    \"playist_name\": item.json.name,\n    \"playlist_uri\": item.json.uri,\n    \"track_id\": item.json.tracks.track.id,\n    \"uri\": item.json.tracks.track.uri,\n    \"duration_ms\": item.json.tracks.track['duration_ms'],\n    \"artist\": item.json.tracks.track.artists[0].name,\n    \"title\": item.json.tracks.track.name\n  }\n});"
+      },
+      "id": "2055daf6-f2ad-456a-b647-39ab93cd1bfe",
+      "name": "Remove available markets array",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "Spotify Tracks",
+        "returnAll": true
+      },
+      "id": "04c6d6da-9a0b-4092-927f-011c5c23f083",
+      "name": "Get all stored Spotify tracks",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        360,
+        680
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "Spotify Tracks",
+        "dataToSend": "autoMapInputData"
+      },
+      "id": "dd7e4504-90e7-425e-91ff-9a56dd1900e8",
+      "name": "Add record to database",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        520
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "uri",
+              "field2": "uri"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "36687c68-2f51-4843-b333-6b166d9e100d",
+      "name": "Compare Datasets",
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2,
+      "position": [
+        1680,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.name }}",
+              "operation": "notContains",
+              "value2": "Generated"
+            },
+            {
+              "value1": "={{ $json.owner.display_name }}",
+              "value2": "udw"
+            }
+          ]
+        }
+      },
+      "id": "4655a052-38e0-4903-bd19-1e850574ce72",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [
+        620,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks"
+            }
+          ]
+        }
+      },
+      "id": "e9ec4abd-4bf6-410a-bebd-ad43a27bd928",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        20,
+        500
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:33:40.065Z",
+      "updatedAt": "2023-04-09T15:33:40.065Z",
+      "id": "1",
+      "name": "Spotify"
+    },
+    {
+      "createdAt": "2023-04-09T15:35:19.638Z",
+      "updatedAt": "2023-04-09T15:35:19.638Z",
+      "id": "3",
+      "name": "Supabase"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2023-04-11T22:18:07.000Z",
+  "versionId": "bd25dc22-7378-4c10-9de2-e35610c818a4"
+}
