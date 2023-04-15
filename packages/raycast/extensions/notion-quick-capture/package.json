@@ -1,6 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "notion-quick-capture",
+  "version": "1.0.0",
   "title": "Notion Quick Capture",
   "description": "A Raycast extension to capture a quick text thought then create a page within a specific Notion database",
   "icon": "command-icon.png",
@@ -23,14 +24,26 @@
       ]
     }
   ],
+  "preferences": [
+    {
+      "name": "accessToken",
+      "title": "Notion token",
+      "label": "Notion key",
+      "type": "textfield",
+      "required": true,
+      "description": "Notion api access token"
+    }
+  ],
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  },
   "dependencies": {
-    "@notionhq/client": "^2.2.1",
+    "@hugios/notion": "workspace:^",
     "@raycast/api": "^1.48.8",
-    "@tryfabric/martian": "^1.2.4",
-    "dotenv": "^16.0.3",
-    "moment": "^2.29.4",
-    "node-fetch": "^3.3.1",
-    "notion-to-md": "^2.5.5",
     "timers": "^0.1.1"
   },
   "devDependencies": {
@@ -40,12 +53,5 @@
     "eslint": "^7.32.0",
     "prettier": "^2.5.1",
     "typescript": "^5.0.0"
-  },
-  "scripts": {
-    "build": "ray build -e dist",
-    "dev": "ray develop",
-    "fix-lint": "ray lint --fix",
-    "lint": "ray lint",
-    "publish": "ray publish"
   }
 }

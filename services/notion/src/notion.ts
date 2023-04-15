@@ -1,9 +1,10 @@
-import { showToast, Color, Form, Toast, OAuth, getPreferenceValues, Image, Icon } from "@raycast/api";
-import { Client, isNotionClientError } from "@notionhq/client";
-import fetch from "node-fetch";
+import { Client, NotionClientError, isNotionClientError } from "@notionhq/client";
 import moment from "moment";
 import { markdownToBlocks } from "@tryfabric/martian";
 import { NotionToMarkdown } from "notion-to-md";
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import {
   Page,
   Database,
@@ -17,16 +18,7 @@ import {
   NotionObject,
 } from "./types";
 
-const clientId = "c843219a-d93c-403c-8e4d-e8aa9a987494";
-const client = new OAuth.PKCEClient({
-  redirectMethod: OAuth.RedirectMethod.Web,
-  providerName: "Notion",
-  providerIcon: "notion-logo.png",
-  providerId: "notion",
-  description: "Connect your Notion account",
-});
-
-const preferenceToken = getPreferenceValues().notion_token;
+const preferenceToken = '';
 let notion = new Client({
   auth: preferenceToken,
 });
@@ -35,18 +27,9 @@ let notion = new Client({
 
 let alreadyAuthorizing: Promise<void> | false = false;
 
-export async function authorize(): Promise<void> {
+export async function authorize(accessToken: string): Promise<void> {
   // we are authorized with a token in the preference
   if (preferenceToken) {
-    return;
-  }
-
-  const tokenSet = await client.getTokens();
-  // we are already authorized with oauth
-  if (tokenSet?.accessToken) {
-    notion = new Client({
-      auth: tokenSet.accessToken,
-    });
     return;
   }
 
@@ -58,19 +41,8 @@ export async function authorize(): Promise<void> {
   // we aren't yet authorized so let's do so now
   alreadyAuthorizing = new Promise((resolve, reject) => {
     async function run() {
-      const authRequest = await client.authorizationRequest({
-        endpoint: "https://notion.oauth-proxy.raycast.com/authorize",
-        clientId,
-        scope: "",
-        extraParameters: { owner: "user" },
-      });
-      const { authorizationCode } = await client.authorize(authRequest);
-      const tokens = await fetchTokens(authRequest, authorizationCode);
-
-      await client.setTokens(tokens);
-
       notion = new Client({
-        auth: (await client.getTokens())?.accessToken,
+        auth: accessToken,
       });
     }
 
@@ -80,33 +52,14 @@ export async function authorize(): Promise<void> {
   await alreadyAuthorizing;
 }
 
-export async function fetchTokens(authRequest: OAuth.AuthorizationRequest, code: string): Promise<OAuth.TokenResponse> {
-  const response = await fetch("https://notion.oauth-proxy.raycast.com/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      client_id: clientId,
-      code,
-      code_verifier: authRequest.codeVerifier,
-      grant_type: "authorization_code",
-      redirect_uri: authRequest.redirectURI,
-    }),
-  });
-  if (!response.ok) {
-    console.error("fetch tokens error:", await response.text());
-    throw new Error(response.statusText);
-  }
-  return (await response.json()) as OAuth.TokenResponse;
-}
-
 function isNotNullOrUndefined<T>(input: null | undefined | T): input is T {
   return input != null;
 }
 
 // Fetch databases
-export async function fetchDatabases(): Promise<Database[]> {
+export async function fetchDatabases(accessToken: string): Promise<Database[] | NotionClientError> {
   try {
-    await authorize();
+    await authorize(accessToken);
     const databases = await notion.search({
       sort: {
         direction: "descending",
@@ -131,24 +84,17 @@ export async function fetchDatabases(): Promise<Database[]> {
   } catch (err: unknown) {
     console.error(err);
     if (isNotionClientError(err)) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: err.message,
-      });
-    } else {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Failed to fetch databases",
-      });
-    }
+      return err;
+    }; 
+
     return [];
   }
 }
 
 // Fetch database properties
-export async function fetchDatabaseProperties(databaseId: string): Promise<DatabaseProperty[]> {
+export async function fetchDatabaseProperties(accessToken: string, databaseId: string): Promise<DatabaseProperty[] | NotionClientError> {
   try {
-    await authorize();
+    await authorize(accessToken);
     const database = await notion.databases.retrieve({ database_id: databaseId });
     const propertyNames = Object.keys(database.properties).reverse();
 
@@ -193,16 +139,9 @@ export async function fetchDatabaseProperties(databaseId: string): Promise<Datab
   } catch (err: unknown) {
     console.error(err);
     if (isNotionClientError(err)) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: err.message,
-      });
-    } else {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Failed to fetch database properties",
-      });
-    }
+      return err;
+    }; 
+
     return [];
   }
 }
@@ -211,12 +150,13 @@ export async function fetchDatabaseProperties(databaseId: string): Promise<Datab
  * Query a database
  */
 export async function queryDatabase(
+  accessToken: string,
   databaseId: string,
   query: string | undefined,
   sort: "last_edited_time" | "created_time" = "last_edited_time"
-): Promise<Page[]> {
+): Promise<Page[] | NotionClientError> {
   try {
-    await authorize();
+    await authorize(accessToken);
     const database = await notion.databases.query({
       database_id: databaseId,
       page_size: 20,
@@ -244,16 +184,9 @@ export async function queryDatabase(
   } catch (err: unknown) {
     console.error(err);
     if (isNotionClientError(err)) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: err.message,
-      });
-    } else {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Failed to fetch database properties",
-      });
-    }
+      return err;
+    }; 
+
     return [];
   }
 }
@@ -263,13 +196,13 @@ type DatabaseCreateProperties<T> = T extends { parent: { type?: "database_id" };
 type DatabaseCreateProperty = UnwrapRecord<DatabaseCreateProperties<CreateRequest>>;
 
 // Create database page
-export async function createDatabasePage(values: Form.Values): Promise<Page | undefined> {
+export async function createDatabasePage(accessToken: string, values: any): Promise<Page | NotionClientError | undefined> {
   try {
-    await authorize();
-    const { database, content, ...props } = values;
+    await authorize(accessToken);
+    const { databaseId, content, ...props } = values;
 
     const arg: CreateRequest = {
-      parent: { database_id: database },
+      parent: { database_id: databaseId },
       properties: {},
     };
 
@@ -382,27 +315,21 @@ export async function createDatabasePage(values: Form.Values): Promise<Page | un
   } catch (err: unknown) {
     console.error(err);
     if (isNotionClientError(err)) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: err.message,
-      });
-    } else {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Failed to create page",
-      });
-    }
+      return err;
+    }; 
+
     return undefined;
   }
 }
 
 // Patch page
 export async function patchPage(
+  accessToken: string,
   pageId: string,
   properties: Parameters<typeof notion.pages.update>[0]["properties"]
-): Promise<Page | undefined> {
+): Promise<Page | NotionClientError | undefined> {
   try {
-    await authorize();
+    await authorize(accessToken);
     const page = await notion.pages.update({
       page_id: pageId,
       properties,
@@ -412,24 +339,16 @@ export async function patchPage(
   } catch (err: unknown) {
     console.error(err);
     if (isNotionClientError(err)) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: err.message,
-      });
-    } else {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Failed to fetch database properties",
-      });
-    }
+      return err;
+    }; 
     return undefined;
   }
 }
 
 // Search pages
-export async function search(query: string | undefined): Promise<Page[]> {
+export async function search(accessToken: string, query: string | undefined): Promise<Page[] | NotionClientError> {
   try {
-    await authorize();
+    await authorize(accessToken);
     const database = await notion.search({
       sort: {
         direction: "descending",
@@ -443,24 +362,17 @@ export async function search(query: string | undefined): Promise<Page[]> {
   } catch (err: unknown) {
     console.error(err);
     if (isNotionClientError(err)) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: err.message,
-      });
-    } else {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Failed to load pages",
-      });
-    }
+      return err;
+    }; 
+
     return [];
   }
 }
 
 // Fetch page content
-export async function fetchPageContent(pageId: string): Promise<PageContent | undefined> {
+export async function fetchPageContent(accessToken: string, pageId: string): Promise<PageContent | NotionClientError | undefined> {
   try {
-    await authorize();
+    await authorize(accessToken);
     const { results } = await notion.blocks.children.list({
       block_id: pageId,
     });
@@ -473,24 +385,17 @@ export async function fetchPageContent(pageId: string): Promise<PageContent | un
   } catch (err: unknown) {
     console.error(err);
     if (isNotionClientError(err)) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: err.message,
-      });
-    } else {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Failed to fetch page content",
-      });
-    }
+      return err;
+    }; 
+
     return undefined;
   }
 }
 
 // Fetch users
-export async function fetchUsers(): Promise<User[]> {
+export async function fetchUsers(accessToken: string): Promise<User[] | NotionClientError> {
   try {
-    await authorize();
+    await authorize(accessToken);
     const users = await notion.users.list({});
     return users.results
       .map((x) => (x.object === "user" && x.type === "person" ? x : undefined))
@@ -507,23 +412,16 @@ export async function fetchUsers(): Promise<User[]> {
   } catch (err: unknown) {
     console.error(err);
     if (isNotionClientError(err)) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: err.message,
-      });
-    } else {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Failed to fetch users",
-      });
-    }
+      return err;
+    }; 
+
     return [];
   }
 }
 
-export async function appendToPage(pageId: string, params: { content: string }): Promise<{ markdown: string }> {
+export async function appendToPage(accessToken: string, pageId: string, params: { content: string }): Promise<{ markdown: string } | NotionClientError> {
   try {
-    await authorize();
+    await authorize(accessToken);
 
     const arg: Parameters<typeof notion.blocks.children.append>[0] = {
       block_id: pageId,
@@ -540,16 +438,8 @@ export async function appendToPage(pageId: string, params: { content: string }):
   } catch (err: unknown) {
     console.error(err);
     if (isNotionClientError(err)) {
-      showToast({
-        style: Toast.Style.Failure,
-        title: err.message,
-      });
-    } else {
-      showToast({
-        style: Toast.Style.Failure,
-        title: "Failed to add content to the page",
-      });
-    }
+      return err;
+    }; 
     return { markdown: "" };
   }
 }
@@ -589,26 +479,6 @@ function pageMapper(jsonPage: NotionObject): Page {
   }
 
   return page;
-}
-
-export function notionColorToTintColor(notionColor: string | undefined): Color {
-  const colorMapper = {
-    default: Color.PrimaryText,
-    gray: Color.PrimaryText,
-    brown: Color.Brown,
-    red: Color.Red,
-    blue: Color.Blue,
-    green: Color.Green,
-    yellow: Color.Yellow,
-    orange: Color.Orange,
-    purple: Color.Purple,
-    pink: Color.Magenta,
-  } as any;
-
-  if (notionColor === undefined) {
-    return colorMapper["default"];
-  }
-  return colorMapper[notionColor];
 }
 
 export function extractPropertyValue(
@@ -668,16 +538,4 @@ export function extractPropertyValue(
   }
 
   return null;
-}
-
-export function pageIcon(page: Page): Image.ImageLike {
-  return page.icon_emoji
-    ? page.icon_emoji
-    : page.icon_file
-    ? page.icon_file
-    : page.icon_external
-    ? page.icon_external
-    : page.object === "database"
-    ? Icon.List
-    : Icon.TextDocument;
 }

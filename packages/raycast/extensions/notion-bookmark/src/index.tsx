@@ -13,7 +13,7 @@ import {
 } from "@raycast/api";
 import { useEffect, useState } from "react";
 import { setTimeout } from "timers";
-import { createDatabasePage } from "./utils/notion";
+import { createDatabasePage } from '@hugios/notion';
 const urlMetadata = require('url-metadata');
 
 type Values = {
@@ -22,6 +22,11 @@ type Values = {
 
 interface Preferences {
   databaseId: string;
+  accessToken: string;
+}
+
+interface Metadata {
+  title: string;
 }
 
 const isValidURL = (url: string) => {
@@ -44,13 +49,10 @@ const grabURLMetadta = (url: string, setData: any) => {
   };
 };
 
-
-
 export default function Command() {
   const [url, setURL] = useState("");
-  const [metadata, setMetadata] = useState();
-  const preferences = getPreferenceValues<Preferences>();
-  const database = preferences?.databaseId;
+  const [metadata, setMetadata] = useState<Metadata>();
+  const { accessToken, databaseId } = getPreferenceValues<Preferences>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,7 +62,7 @@ export default function Command() {
 
     // call the function
     fetchData()
-      .then((item: string) => {
+      .then((item: any) => {
         setURL(item);
         if (item.length > 0) {
           grabURLMetadta(item, setMetadata);
@@ -71,7 +73,7 @@ export default function Command() {
 
   }, []);
 
-  async function handleChange(url) {
+  async function handleChange(url: string) {
     setURL(url)
 
     if (url) {
@@ -84,11 +86,13 @@ export default function Command() {
 
     let page = null;
     try {
-      page = await createDatabasePage({
-        ...values,
-        'property::title::title': metadata?.title,
-        database,
-      });
+      page = await createDatabasePage(
+        accessToken,
+        {
+          ...values,
+          'property::title::title': metadata?.title,
+          databaseId,
+        });
 
     } catch (err: any) {
       showToast({ title: "Error", message: err.toString(), style: Toast.Style.Failure });
@@ -105,7 +109,7 @@ export default function Command() {
     }
   }
 
-  if (!database) {
+  if (!databaseId) {
     const markdown = "No database id provided. Please update it in extension preferences and try again.";
 
     return (
@@ -129,7 +133,7 @@ export default function Command() {
         </ActionPanel>
       }
     >
-      <Form.Description title="Database Id" text={`The database id is ${database}`} />
+      <Form.Description title="Database Id" text={`The database id is ${databaseId}`} />
       <Form.Separator key="separator" />
       <Form.TextField
         id="property::url::url"

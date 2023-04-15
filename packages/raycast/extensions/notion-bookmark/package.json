@@ -23,14 +23,19 @@
       ]
     }
   ],
+  "preferences": [
+    {
+      "name": "accessToken",
+      "title": "Notion token",
+      "label": "Notion key",
+      "type": "textfield",
+      "required": true,
+      "description": "Notion api access token"
+    }
+  ],
   "dependencies": {
-    "@notionhq/client": "^2.2.1",
+    "@hugios/notion": "workspace:^",
     "@raycast/api": "^1.48.8",
-    "@tryfabric/martian": "^1.2.4",
-    "dotenv": "^16.0.3",
-    "moment": "^2.29.4",
-    "node-fetch": "^3.3.1",
-    "notion-to-md": "^2.5.5",
     "timers": "^0.1.1",
     "url-metadata": "^2.5.0"
   },

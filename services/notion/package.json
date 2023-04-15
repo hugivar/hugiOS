@@ -1,0 +1,19 @@
+{
+  "name": "@hugios/notion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^2.2.1",
+    "@tryfabric/martian": "^1.2.4",
+    "dotenv": "^16.0.3",
+    "moment": "^2.29.4",
+    "notion-to-md": "^2.5.5"
+  }
+}
