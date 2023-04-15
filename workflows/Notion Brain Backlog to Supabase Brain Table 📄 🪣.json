@@ -8,11 +8,6 @@
             "node": "Get Page",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Get Page Content",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -21,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Merge",
+            "node": "Create Supabase Row",
             "type": "main",
             "index": 0
           }
@@ -35,39 +30,6 @@
             "node": "IF",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Page Content": {
-      "main": [
-        [
-          {
-            "node": "Item Lists",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Merge": {
-      "main": [
-        [
-          {
-            "node": "Create Supabase Row",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Item Lists": {
-      "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
           }
         ]
       ]
@@ -114,7 +76,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        960,
+        1140,
         220
       ],
       "credentials": {
@@ -150,32 +112,6 @@
       "position": [
         360,
         360
-      ],
-      "credentials": {
-        "notionApi": {
-          "id": "1",
-          "name": "Notion account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "block",
-        "operation": "getAll",
-        "blockId": {
-          "__rl": true,
-          "value": "={{ $json.id }}",
-          "mode": "id",
-          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?4[0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12})"
-        }
-      },
-      "id": "a4539f7e-37d7-4ed4-9f28-a9221ea024a0",
-      "name": "Get Page Content",
-      "type": "n8n-nodes-base.notion",
-      "typeVersion": 2,
-      "position": [
-        960,
-        520
       ],
       "credentials": {
         "notionApi": {
@@ -272,10 +208,6 @@
             {
               "fieldId": "property_person",
               "fieldValue": "={{ $json.property_person }}"
-            },
-            {
-              "fieldId": "content",
-              "fieldValue": "={{ $json.pageContent }}"
             }
           ]
         }
@@ -294,36 +226,6 @@
           "name": "Supabase account"
         }
       }
-    },
-    {
-      "parameters": {
-        "mode": "combine",
-        "combinationMode": "multiplex",
-        "options": {}
-      },
-      "id": "371cb074-ea95-4779-9ac6-9be2c12b24bd",
-      "name": "Merge",
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 2,
-      "position": [
-        1460,
-        380
-      ]
-    },
-    {
-      "parameters": {
-        "operation": "aggregateItems",
-        "aggregate": "aggregateAllItemData",
-        "destinationFieldName": "pageContent"
-      },
-      "id": "f375898b-c645-4c65-9e1a-f6be0cbc5ae4",
-      "name": "Item Lists",
-      "type": "n8n-nodes-base.itemLists",
-      "typeVersion": 2,
-      "position": [
-        1180,
-        520
-      ]
     }
   ],
   "pinData": {},
@@ -342,10 +244,7 @@
       ]
     },
     "node:Brain Item Updated": {
-      "lastTimeChecked": "2023-04-14T00:00:00.000Z",
-      "possibleDuplicates": [
-        "0adfa4d0-e558-4023-8bae-88337e7fa6d2"
-      ]
+      "lastTimeChecked": "2023-04-15T01:56:00.000Z"
     }
   },
   "tags": [
@@ -363,6 +262,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-14T00:00:29.000Z",
-  "versionId": "b81c2345-61eb-45b9-bbb0-7914ecb4b66b"
+  "updatedAt": "2023-04-15T01:56:23.000Z",
+  "versionId": "c2b55348-f3e4-48be-b711-1e19802470d0"
 }
