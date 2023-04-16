@@ -1,0 +1,332 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Get videos for channelIds",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Get all current YouTube backlog items": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get videos for channelIds": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Compare Datasets": {
+      "main": [
+        [],
+        [],
+        [],
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-15T17:14:23.040Z",
+  "id": "19",
+  "name": "Scan for video uploads to specific channels, then add it to a library in Notion",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "2d037017-ef68-4e90-90c6-dfa5aca1f454",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "0a4191a5-eb8a-48e8-bf4f-67c9eb46d7f9",
+          "mode": "list",
+          "cachedResultName": "YouTube Backlog",
+          "cachedResultUrl": "https://www.notion.so/0a4191a5eb8a48e8bf4f67c9eb46d7f9"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Name|title",
+              "title": "={{ $json.snippet.title }}"
+            },
+            {
+              "key": "URL|url",
+              "urlValue": "=https://www.youtube.com/watch?v={{ $json.id.videoId }}"
+            },
+            {
+              "key": "videoId|rich_text",
+              "textContent": "={{ $json.id.videoId }}"
+            },
+            {
+              "key": "Grouping Backlog|relation",
+              "relationValue": [
+                "= {{ $json.groupDatabaseId }}"
+              ]
+            },
+            {
+              "key": "Tags Backlog|relation",
+              "relationValue": [
+                "= {{ $json.tagDatabaseId }}"
+              ]
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0dd85b14-4ba9-4b7b-a6d8-e4a62c363bb7",
+      "name": "Notion (Beta)",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        520,
+        560
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "0a4191a5-eb8a-48e8-bf4f-67c9eb46d7f9",
+          "mode": "list",
+          "cachedResultName": "YouTube Backlog",
+          "cachedResultUrl": "https://www.notion.so/0a4191a5eb8a48e8bf4f67c9eb46d7f9"
+        },
+        "returnAll": true,
+        "simple": false,
+        "options": {}
+      },
+      "id": "36532577-a94c-46c4-a6be-18e1a141a7c3",
+      "name": "Get all current YouTube backlog items",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        -120
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "limit": 1,
+        "filters": {
+          "channelId": "={{ $json.channelId }}",
+          "publishedAfter": "2023-04-08T21:07:45.310Z"
+        },
+        "options": {}
+      },
+      "id": "af64a05d-6f18-4222-8bbc-bf9fd96c1843",
+      "name": "Get videos for channelIds",
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        160
+      ],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "9",
+          "name": "YouTube account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "properties.videoId.rich_text[0].text.content",
+              "field2": "id.videoId"
+            }
+          ]
+        },
+        "resolve": "preferInput1",
+        "fuzzyCompare": true,
+        "options": {
+          "skipFields": ""
+        }
+      },
+      "id": "80194b68-dce3-4304-b56a-c2680d3223b2",
+      "name": "Compare Datasets",
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2,
+      "position": [
+        300,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "{{ $json.properties.videoId.rich_text[0].text.content }}"
+            }
+          ]
+        }
+      },
+      "id": "8a8e5519-47fc-4ad3-aac3-f5d87b23d38f",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        140,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "properties.videoId.rich_text[0].text.content did not exist"
+      },
+      "id": "e5762a96-0303-4311-8ea3-7455dd7b6694",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        380,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "snippet.channelId",
+              "field2": "channelId"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cace8a05-af90-4b10-8aee-fc991dc2eeac",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        240,
+        560
+      ]
+    }
+  ],
+  "pinData": {
+    "When clicking \"Execute Workflow\"": [
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UC6vRUjYqDuoUsYsku86Lrsw",
+          "groupDatabaseId": "24c4e107bbb84ceb86a15d46919a2a06",
+          "tagDatabaseId": "f89be03b3e3449a1bd364394a84d147e",
+          "name": "Jack Harrington"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCsBjURrPoezykLs9EqgamOA",
+          "groupDatabaseId": "24c4e107bbb84ceb86a15d46919a2a06",
+          "tagDatabaseId": "297063992c394737923c3764d964e15e",
+          "name": "Fireship"
+        }
+      }
+    ]
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:35:16.927Z",
+      "updatedAt": "2023-04-09T15:35:16.927Z",
+      "id": "2",
+      "name": "Notion"
+    },
+    {
+      "createdAt": "2023-04-15T18:54:49.214Z",
+      "updatedAt": "2023-04-15T18:54:49.214Z",
+      "id": "6",
+      "name": "YouTube"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2023-04-15T21:11:34.000Z",
+  "versionId": "61afdaf0-734b-4460-a800-bd86f8938ecb"
+}
