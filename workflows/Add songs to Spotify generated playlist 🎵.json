@@ -5,14 +5,164 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "IF purge Generated playlist is true",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "HTTP Request": {
+    "Search for an artist": {
+      "main": [
+        [
+          {
+            "node": "Aggregate artistIds",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "IF statement to hit internal Spotify Recommendations API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate artistIds": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out tracks": {
+      "main": [
+        [
+          {
+            "node": "Add songs to Generated palylist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request to playlist-generator": {
+      "main": [
+        [
+          {
+            "node": "Split out tracks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate artistIds to seed_artists object array": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request to playlist-generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "artistIds array to a string": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request to Spotify recommendations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out seed_artists": {
+      "main": [
+        [
+          {
+            "node": "Search for an artist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request to Spotify recommendations": {
+      "main": [
+        [
+          {
+            "node": "Split out tracks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF statement to hit internal Spotify Recommendations API": {
+      "main": [
+        [
+          {
+            "node": "artistIds array to a string",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Aggregate artistIds to seed_artists object array",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF purge Generated playlist is true": {
+      "main": [
+        [
+          {
+            "node": "Get \"Generated\" Spotify playlist",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Split out seed_artists",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Split out seed_artists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get \"Generated\" Spotify playlist": {
       "main": [
         [
           {
@@ -46,8 +196,107 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        140,
-        500
+        -1340,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "artist",
+        "operation": "search",
+        "query": "={{ $json.seed_artists }}",
+        "limit": 1,
+        "filters": {}
+      },
+      "id": "c98f2746-88b3-4227-9de9-b63e7474fc0b",
+      "name": "Search for an artist",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        300,
+        420
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition",
+        "options": {}
+      },
+      "id": "811e443d-8cad-4d94-abae-f208f4f6b678",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        260,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "aggregateItems",
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id",
+              "renameField": true,
+              "outputFieldName": "artistIds"
+            }
+          ]
+        },
+        "options": {
+          "mergeLists": true
+        }
+      },
+      "id": "5422893f-442c-4b4a-8ae9-93da632e699d",
+      "name": "Aggregate artistIds",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        540,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "playlist",
+        "id": "spotify:playlist:0IIxCoCu2IQkuxSDnvSYJg",
+        "trackID": "=spotify:track:{{ $json.id }}",
+        "additionalFields": {}
+      },
+      "id": "b2eaf241-f7fc-4f33-91a4-26986fafa052",
+      "name": "Add songs to Generated palylist",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        700
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "tracks",
+        "options": {}
+      },
+      "id": "bb4fffc1-7c72-4dd6-8466-343093b25b05",
+      "name": "Split out tracks",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        1500,
+        700
       ]
     },
     {
@@ -69,42 +318,186 @@
         "options": {}
       },
       "id": "f6135edf-d4d2-497d-a388-07a7e7fbbaae",
-      "name": "HTTP Request",
+      "name": "HTTP Request to playlist-generator",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        380,
-        500
+        1160,
+        820
       ]
     },
     {
       "parameters": {
-        "fieldToSplitOut": "tracks",
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.artistIds = $input.item.json.artistIds.toString();\n\nreturn $input.item;"
+      },
+      "id": "6d912f28-04ef-45a7-8fe6-6ecfa5899c99",
+      "name": "artistIds array to a string",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        900,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.artistIds.map((artistId, idx) => {\n   $input.item.json.seed_artists[idx] = {\n     id: artistId\n   };\n});\ndelete $input.item.json.artistIds\n\nreturn $input.item;"
+      },
+      "id": "30211d8e-8aa9-44c1-a15a-33846b7738ea",
+      "name": "Aggregate artistIds to seed_artists object array",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        900,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.spotify.com/v1/recommendations",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "spotifyOAuth2Api",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "seed_tracks"
+            },
+            {
+              "name": "seed_artists",
+              "value": "5O1YiYFy3CEWD2lkOmoerV"
+            },
+            {
+              "name": "seed_genres"
+            },
+            {
+              "name": "limit",
+              "value": "2"
+            }
+          ]
+        },
         "options": {}
       },
-      "id": "bb4fffc1-7c72-4dd6-8466-343093b25b05",
-      "name": "Item Lists",
+      "id": "09bee257-794e-4c30-9b16-852fb4e23383",
+      "name": "HTTP Request to Spotify recommendations",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1160,
+        580
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "seed_artists",
+        "options": {}
+      },
+      "id": "1d064032-0cf3-48f5-b862-66aa959c4ae6",
+      "name": "Split out seed_artists",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 2,
       "position": [
+        80,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.internal }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "2cabe72f-1c9c-4ae3-9f71-241e43682153",
+      "name": "IF statement to hit internal Spotify Recommendations API",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
         620,
-        500
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.purge }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "78b8d512-b5bf-4cd5-91dd-007d1c922654",
+      "name": "IF purge Generated playlist is true",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1080,
+        540
       ]
     },
     {
       "parameters": {
         "resource": "playlist",
-        "id": "spotify:playlist:0IIxCoCu2IQkuxSDnvSYJg",
-        "trackID": "=spotify:track:{{ $json.id }}",
-        "additionalFields": {}
+        "operation": "get",
+        "id": "spotify:playlist:0IIxCoCu2IQkuxSDnvSYJg"
       },
-      "id": "b2eaf241-f7fc-4f33-91a4-26986fafa052",
+      "id": "01947cdc-bf4a-4109-b0b0-53437f07ec2f",
+      "name": "Get \"Generated\" Spotify playlist",
+      "type": "n8n-nodes-base.spotify",
+      "typeVersion": 1,
+      "position": [
+        -780,
+        220
+      ],
+      "credentials": {
+        "spotifyOAuth2Api": {
+          "id": "8",
+          "name": "Spotify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "tracks.items",
+        "options": {}
+      },
+      "id": "7d4ac310-b62d-44ff-a492-5b61d1a72a7b",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        -560,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "playlist",
+        "operation": "delete",
+        "id": "spotify:playlist:0IIxCoCu2IQkuxSDnvSYJg",
+        "trackID": "=spotify:track:{{ $json.track.album.id }}"
+      },
+      "id": "bc564b78-0b95-469c-b86f-7ff5ff0c5359",
       "name": "Spotify",
       "type": "n8n-nodes-base.spotify",
       "typeVersion": 1,
       "position": [
-        880,
-        500
+        -340,
+        220
       ],
       "credentials": {
         "spotifyOAuth2Api": {
@@ -118,13 +511,15 @@
     "When clicking \"Execute Workflow\"": [
       {
         "json": {
+          "internal": true,
+          "purge": true,
           "artist_sampling": null,
           "mood_preset": "energetic",
           "name": "energetic",
           "seed_artists": [
-            {
-              "id": "663kAPig2oCodG3UmqpX0n"
-            }
+            "Zone 2",
+            "Karma",
+            "Kwengface"
           ],
           "seed_library": false,
           "seed_tracks": [],
@@ -147,6 +542,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2023-04-15T01:51:12.000Z",
-  "versionId": "201f4822-4d83-44e6-a4b7-a5f9e4fc91c4"
+  "updatedAt": "2023-04-15T15:27:33.000Z",
+  "versionId": "2becf6d4-cc20-40d8-9318-b470e28d612f"
 }
