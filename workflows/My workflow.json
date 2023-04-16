@@ -1,0 +1,59 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "YouTube",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-16T00:21:38.627Z",
+  "id": "20",
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "61fbd377-039a-402e-8b1d-24c9135e9ef1",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        500,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "channelId": "UC6vRUjYqDuoUsYsku86Lrsw"
+      },
+      "id": "2759ff71-881d-46fc-a415-66ba8db2ed53",
+      "name": "YouTube",
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        720,
+        240
+      ],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "9",
+          "name": "YouTube account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-04-16T00:21:38.627Z",
+  "versionId": "728fd45b-82ea-44cc-a650-9a72941d680a"
+}
