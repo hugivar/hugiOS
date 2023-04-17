@@ -1,0 +1,368 @@
+{
+  "active": false,
+  "connections": {
+    "Remove Project from Summary": {
+      "main": [
+        [
+          {
+            "node": "Google Calendar1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Get Session events": {
+      "main": [
+        [
+          {
+            "node": "Remove Project from Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Copy session events to my own calendar": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion (Beta)": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Calendar1": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Session events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-17T01:50:34.740Z",
+  "id": "21",
+  "name": "Add session time tracked to Notion",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.summary = $input.item.json.summary.split(':')[1].trim();\n\nreturn $input.item;"
+      },
+      "id": "c3c0753c-62d9-4367-a2a7-0a5fabb9c478",
+      "name": "Remove Project from Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        660,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "hk6htrtktofghv0jimp1l40adj0khrth@import.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Session: focus"
+        },
+        "returnAll": true,
+        "options": {
+          "timeMin": "={{$today.minus({days: 7})}}"
+        }
+      },
+      "id": "f62cb709-af0d-405a-bc0f-02a136f101ab",
+      "name": "Get Session events",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1,
+      "position": [
+        420,
+        460
+      ],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "3",
+          "name": "Google Calendar"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "hemingway72129@gmail.com",
+          "mode": "list",
+          "cachedResultName": "hemingway72129@gmail.com"
+        },
+        "start": "={{ $json.start.dateTime }}",
+        "end": "={{ $json.end.dateTime }}",
+        "additionalFields": {
+          "summary": "={{ $json.summary }}"
+        }
+      },
+      "id": "cc91f171-5bb3-4b2e-81c6-371c04f0d8cb",
+      "name": "Copy session events to my own calendar",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        340
+      ],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "3",
+          "name": "Google Calendar"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "version": 1,
+        "operation": "search",
+        "text": "={{ $json.summary }}",
+        "limit": 5,
+        "options": {
+          "filter": {
+            "filters": {
+              "value": "page"
+            }
+          }
+        }
+      },
+      "id": "9a56e375-791f-4bc2-8317-c47c04ecb67c",
+      "name": "Notion (Beta)",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        1500,
+        200
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n\nvar diff = Math.abs(new Date($input.item.json.start.dateTime) - new Date($input.item.json.end.dateTime));\nvar minutes = Math.floor((diff/1000)/60);\n\n$input.item.json.time = minutes;\n\nreturn $input.item;"
+      },
+      "id": "28e2fe5b-74a1-4469-b686-08e20d6648b5",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "name",
+              "field2": "summary"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c210994e-68b4-4132-9e6a-af7104db449d",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url",
+          "__regex": "(?:https|http)://www.notion.so/(?:[a-z0-9-]{2,}/)?(?:[a-zA-Z0-9-]{2,}-)?([0-9a-f]{8}[0-9a-f]{4}4[0-9a-f]{3}[89ab][0-9a-f]{3}[0-9a-f]{12})"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Time Spent (mins)|number",
+              "numberValue": "={{ $json.property_time_spent_mins ? $json.property_time_spent_mins : 0 + $json.time }}"
+            }
+          ]
+        }
+      },
+      "id": "dc4f30f4-3365-468e-8ffe-ab31f3f2930e",
+      "name": "Notion (Beta)1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        1960,
+        320
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "hemingway72129@gmail.com",
+          "mode": "list",
+          "cachedResultName": "hemingway72129@gmail.com"
+        },
+        "limit": 5,
+        "options": {
+          "timeMin": "2023-04-16T03:53:25.034Z"
+        }
+      },
+      "id": "24066711-94aa-4e92-a981-8937883e7767",
+      "name": "Google Calendar1",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1,
+      "position": [
+        840,
+        300
+      ],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "3",
+          "name": "Google Calendar"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "summary",
+              "field2": "summary"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4d5c5a22-d9b2-4231-aa67-19c1cb004354",
+      "name": "Compare Datasets",
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2,
+      "position": [
+        1020,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 3
+            }
+          ]
+        }
+      },
+      "id": "9c4130da-e5c4-4985-be04-a9d07a9342bb",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        160,
+        460
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:35:16.927Z",
+      "updatedAt": "2023-04-09T15:35:16.927Z",
+      "id": "2",
+      "name": "Notion"
+    },
+    {
+      "createdAt": "2023-04-09T16:17:15.682Z",
+      "updatedAt": "2023-04-09T16:17:15.682Z",
+      "id": "4",
+      "name": "Calendar"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2023-04-17T03:53:42.000Z",
+  "versionId": "23a06619-06d6-4180-9961-3a3dddef202f"
+}
