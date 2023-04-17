@@ -1,22 +1,6 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
-    "When clicking \"Execute Workflow\"": {
-      "main": [
-        [
-          {
-            "node": "Get videos for channelIds",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
     "Get all current YouTube backlog items": {
       "main": [
         [
@@ -24,17 +8,6 @@
             "node": "IF",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "Get videos for channelIds": {
-      "main": [
-        [
-          {
-            "node": "Compare Datasets",
-            "type": "main",
-            "index": 1
           }
         ]
       ]
@@ -81,23 +54,61 @@
           }
         ]
       ]
+    },
+    "Get videos for channelIds from the last week": {
+      "main": [
+        [
+          {
+            "node": "Remove shorts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Get videos for channelIds from the last week",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove shorts": {
+      "main": [
+        [
+          {
+            "node": "Convert unicode",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert unicode": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-15T17:14:23.040Z",
   "id": "19",
   "name": "Scan for video uploads to specific channels, then add it to a library in Notion",
   "nodes": [
-    {
-      "parameters": {},
-      "id": "2d037017-ef68-4e90-90c6-dfa5aca1f454",
-      "name": "When clicking \"Execute Workflow\"",
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        -460,
-        240
-      ]
-    },
     {
       "parameters": {
         "resource": "databasePage",
@@ -143,7 +154,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        520,
+        740,
         560
       ],
       "credentials": {
@@ -185,31 +196,6 @@
     },
     {
       "parameters": {
-        "resource": "video",
-        "limit": 1,
-        "filters": {
-          "channelId": "={{ $json.channelId }}",
-          "publishedAfter": "2023-04-08T21:07:45.310Z"
-        },
-        "options": {}
-      },
-      "id": "af64a05d-6f18-4222-8bbc-bf9fd96c1843",
-      "name": "Get videos for channelIds",
-      "type": "n8n-nodes-base.youTube",
-      "typeVersion": 1,
-      "position": [
-        -100,
-        160
-      ],
-      "credentials": {
-        "youTubeOAuth2Api": {
-          "id": "9",
-          "name": "YouTube account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "mergeByFields": {
           "values": [
             {
@@ -229,7 +215,7 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2,
       "position": [
-        300,
+        520,
         160
       ]
     },
@@ -283,13 +269,93 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        240,
+        460,
         560
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "returnAll": true,
+        "filters": {
+          "channelId": "={{ $json.channelId }}",
+          "publishedAfter": "={{$today.minus({days: 7})}}"
+        },
+        "options": {}
+      },
+      "id": "af64a05d-6f18-4222-8bbc-bf9fd96c1843",
+      "name": "Get videos for channelIds from the last week",
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        140
+      ],
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "10",
+          "name": "YouTube account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 1
+            }
+          ]
+        }
+      },
+      "id": "bbed0f4e-32e0-4976-acea-b9101a6885b3",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.snippet.description }}",
+              "operation": "notContains",
+              "value2": "#shorts"
+            }
+          ]
+        }
+      },
+      "id": "511078ca-72ad-417b-81af-72777e6fc7cc",
+      "name": "Remove shorts",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "html": "={{ $json.snippet.title }}",
+        "destinationKey": "=snippet.title",
+        "options": {}
+      },
+      "id": "2a76cfca-d4d7-4f57-a9d6-556cb5bad57a",
+      "name": "Convert unicode",
+      "type": "n8n-nodes-base.markdown",
+      "typeVersion": 1,
+      "position": [
+        180,
+        140
       ]
     }
   ],
   "pinData": {
-    "When clicking \"Execute Workflow\"": [
+    "Schedule Trigger": [
       {
         "json": {
           "limit": 1,
@@ -307,11 +373,204 @@
           "tagDatabaseId": "297063992c394737923c3764d964e15e",
           "name": "Fireship"
         }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCfPQrqsmYFFRK0NKLEr27Bg",
+          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
+          "tagDatabaseId": "56a90b2ed3c742f4bf5ceca09c58ba17",
+          "name": "Crypto Critics' Corner"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCnH8al10BzxCg-N-69Syqjg",
+          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
+          "tagDatabaseId": "97205a513b144f51885342365cc8d7db",
+          "name": "Trap Lore Ross"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCkCGANrihzExmu9QiqZpPlQ",
+          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
+          "tagDatabaseId": "4ac3014c6a9e4480956daa69ea714e00",
+          "name": "How Money Works"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCZ4AMrDcNrfy3X6nsU8-rPg",
+          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
+          "tagDatabaseId": "2fcb4354219a4193b44a651561c0377b",
+          "name": "Economics Explained"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UC9RM-iSvTu1uPJb8X5yp3EQ",
+          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
+          "tagDatabaseId": "0aa679ae673443f8940b25dc4754a0a3",
+          "name": "Wendover Productions"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCDJZPusVYgqWwP67JnZviRw",
+          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
+          "tagDatabaseId": "bedb8de9f606407da4d54009070c831f",
+          "name": "BTODtv"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCFCEuCsyWP0YkP3CZ3Mr01Q",
+          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
+          "tagDatabaseId": "63259ab4f22c4f158ba64e664eed6695",
+          "name": "The Plain Bagel"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCYwVxWpjeKFWwu8TML-Te9A",
+          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
+          "tagDatabaseId": "fe1ee2e60aed4d3faad6b57e4e278329",
+          "name": "JCS - Criminal Psychology"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCjy5wrSZmcFefxex3ljOouA",
+          "groupDatabaseId": "2ef2285bc62141d180217b5856d61a03",
+          "tagDatabaseId": "b6ee7e0aa26148b199c22d040598299f",
+          "name": "Demetri Panici"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCsXVk37bltHxD1rDPwtNM8Q",
+          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
+          "tagDatabaseId": "ff6c07108fe4476d816e3186cd071710",
+          "name": "Kurzgesagt – In a Nutshell"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCFQMnBA3CS502aghlcr0_aw",
+          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
+          "tagDatabaseId": "d106a1aea4d2408e883990edad4dc64d",
+          "name": "Coffeezilla"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCm9K6rby98W8JigLoZOh6FQ",
+          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
+          "tagDatabaseId": "3632b9c08bd04e5f955cbc8613a098eb",
+          "name": "LockPickingLawyer"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UClfEht64_NrzHf8Y0slKEjw",
+          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
+          "tagDatabaseId": "657370a5ac24401db5b62ecfeaeeef7d",
+          "name": "AlternateHistoryHub"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UC-tLyAaPbRZiYrOJxAGB7dQ",
+          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
+          "tagDatabaseId": "e317ab750b2c43aeb65da0829ee05375",
+          "name": "Pursuit of Wonder"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCp1mRTkVlqDnxz_9S0YD9YQ",
+          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
+          "tagDatabaseId": "40c6e13bd2604c55aa3c5ddbec035088",
+          "name": "Philosophies for Life"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCG9ShGbASoiwHwFcLcAh9EA",
+          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
+          "tagDatabaseId": "6636a9691bf843f6bbcb6f01617520aa",
+          "name": "SEA"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCybBViio_TH_uiFFDJuz5tg",
+          "groupDatabaseId": "e728841bbca8452bbd45da6419030018",
+          "tagDatabaseId": "de81f6f4fcda4deebc963227aa6e3e68",
+          "name": "Einzelgänger"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCimiUgDLbi6P17BdaCZpVbg",
+          "groupDatabaseId": "e728841bbca8452bbd45da6419030018",
+          "tagDatabaseId": "2f62fa370aaa4e5b9452ab957001beea",
+          "name": "exurb1a"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCNIuvl7V8zACPpTmmNIqP2A",
+          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
+          "tagDatabaseId": "231c309ab44c403293a80957388efc62",
+          "name": "OverSimplified"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCRcgy6GzDeccI7dkbbBna3Q",
+          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
+          "tagDatabaseId": "519692b8086040c1baa10c76f54280ba",
+          "name": "LEMMiNO"
+        }
+      },
+      {
+        "json": {
+          "limit": 1,
+          "channelId": "UCd_WBvzBg1UbHE8j8MIL5Ng",
+          "groupDatabaseId": "2ef2285bc62141d180217b5856d61a03",
+          "tagDatabaseId": "82f9cff4febe459ea35cc967b484e6ab",
+          "name": "Thomas Frank Explains"
+        }
       }
     ]
   },
   "settings": {},
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    }
+  },
   "tags": [
     {
       "createdAt": "2023-04-09T15:35:16.927Z",
@@ -326,7 +585,7 @@
       "name": "YouTube"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2023-04-15T21:11:34.000Z",
-  "versionId": "61afdaf0-734b-4460-a800-bd86f8938ecb"
+  "triggerCount": 1,
+  "updatedAt": "2023-04-16T19:47:04.000Z",
+  "versionId": "a6f592e7-08be-4ec0-a512-6102e0b2193d"
 }
