@@ -1,14 +1,9 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Remove Project from Summary": {
       "main": [
         [
-          {
-            "node": "Google Calendar1",
-            "type": "main",
-            "index": 0
-          },
           {
             "node": "Compare Datasets",
             "type": "main",
@@ -48,7 +43,7 @@
       "main": [
         [
           {
-            "node": "Merge",
+            "node": "Filter",
             "type": "main",
             "index": 0
           }
@@ -59,18 +54,7 @@
       "main": [
         [
           {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Merge": {
-      "main": [
-        [
-          {
-            "node": "Notion (Beta)1",
+            "node": "Item Lists",
             "type": "main",
             "index": 0
           }
@@ -98,6 +82,64 @@
           }
         ]
       ]
+    },
+    "Compare Datasets": {
+      "main": [
+        [],
+        [],
+        [
+          {
+            "node": "Copy session events to my own calendar",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Item Lists1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Item Lists1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-17T01:50:34.740Z",
@@ -114,7 +156,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        660,
+        700,
         460
       ]
     },
@@ -129,7 +171,7 @@
         },
         "returnAll": true,
         "options": {
-          "timeMin": "={{$today.minus({days: 7})}}"
+          "timeMin": "={{$today.minus({days: 1})}}"
         }
       },
       "id": "f62cb709-af0d-405a-bc0f-02a136f101ab",
@@ -137,7 +179,7 @@
       "type": "n8n-nodes-base.googleCalendar",
       "typeVersion": 1,
       "position": [
-        420,
+        480,
         460
       ],
       "credentials": {
@@ -166,8 +208,8 @@
       "type": "n8n-nodes-base.googleCalendar",
       "typeVersion": 1,
       "position": [
-        1280,
-        340
+        1240,
+        380
       ],
       "credentials": {
         "googleCalendarOAuth2Api": {
@@ -181,7 +223,7 @@
         "version": 1,
         "operation": "search",
         "text": "={{ $json.summary }}",
-        "limit": 5,
+        "limit": 2,
         "options": {
           "filter": {
             "filters": {
@@ -221,28 +263,6 @@
     },
     {
       "parameters": {
-        "mode": "combine",
-        "mergeByFields": {
-          "values": [
-            {
-              "field1": "name",
-              "field2": "summary"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "c210994e-68b4-4132-9e6a-af7104db449d",
-      "name": "Merge",
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 2,
-      "position": [
-        1760,
-        320
-      ]
-    },
-    {
-      "parameters": {
         "resource": "databasePage",
         "operation": "update",
         "pageId": {
@@ -255,7 +275,7 @@
           "propertyValues": [
             {
               "key": "Time Spent (mins)|number",
-              "numberValue": "={{ $json.property_time_spent_mins ? $json.property_time_spent_mins : 0 + $json.time }}"
+              "numberValue": "={{ $json.property_time_spent_mins ? $json.property_time_spent_mins : 0 + $json.sum_time }}"
             }
           ]
         }
@@ -265,8 +285,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        1960,
-        320
+        2440,
+        340
       ],
       "credentials": {
         "notionApi": {
@@ -284,9 +304,9 @@
           "mode": "list",
           "cachedResultName": "hemingway72129@gmail.com"
         },
-        "limit": 5,
+        "returnAll": true,
         "options": {
-          "timeMin": "2023-04-16T03:53:25.034Z"
+          "timeMin": "={{$today.minus({days: 1})}}"
         }
       },
       "id": "24066711-94aa-4e92-a981-8937883e7767",
@@ -294,8 +314,8 @@
       "type": "n8n-nodes-base.googleCalendar",
       "typeVersion": 1,
       "position": [
-        840,
-        300
+        660,
+        280
       ],
       "credentials": {
         "googleCalendarOAuth2Api": {
@@ -321,8 +341,8 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2,
       "position": [
-        1020,
-        480
+        960,
+        380
       ]
     },
     {
@@ -343,11 +363,102 @@
         160,
         460
       ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.property_project }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "f010e5ac-e916-420f-b849-8c022da9cec9",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "summarize",
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "aggregation": "sum",
+              "field": "time"
+            }
+          ]
+        },
+        "fieldsToSplitBy": "summary",
+        "options": {}
+      },
+      "id": "1a1da123-07d5-4774-bcf6-ef4a3a0c0927",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "removeDuplicates",
+        "compare": "selectedFields",
+        "fieldsToCompare": {
+          "fields": [
+            {
+              "fieldName": "name"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "65ea205e-a268-42a1-8e76-3660a6c12a54",
+      "name": "Item Lists1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        1940,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "name",
+              "field2": "summary"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a5db3090-5190-4f0a-84f1-5c26745cb95e",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        2160,
+        340
+      ]
     }
   ],
   "pinData": {},
   "settings": {},
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    }
+  },
   "tags": [
     {
       "createdAt": "2023-04-09T15:35:16.927Z",
@@ -362,7 +473,7 @@
       "name": "Calendar"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2023-04-17T03:53:42.000Z",
-  "versionId": "23a06619-06d6-4180-9961-3a3dddef202f"
+  "triggerCount": 1,
+  "updatedAt": "2023-04-18T00:50:02.000Z",
+  "versionId": "2d488ac3-d493-4314-8acf-fdb3a52b7035"
 }
