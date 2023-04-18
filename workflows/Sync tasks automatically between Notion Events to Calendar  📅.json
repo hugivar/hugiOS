@@ -34,11 +34,33 @@
         ]
       ]
     },
-    "Every hour": {
+    "When clicking \"Execute Workflow\"": {
       "main": [
         [
           {
             "node": "Notion Events Not Yet Synced",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion Trigger (Beta)": {
+      "main": [
+        [
+          {
+            "node": "Create all-day event1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion Trigger (Beta)1": {
+      "main": [
+        [
+          {
+            "node": "Create all-day event2",
             "type": "main",
             "index": 0
           }
@@ -180,22 +202,156 @@
       }
     },
     {
-      "parameters": {
-        "unit": "hours"
-      },
-      "id": "a41e0dec-49b2-40fb-8357-cd39df6226f5",
-      "name": "Every hour",
-      "type": "n8n-nodes-base.interval",
+      "parameters": {},
+      "id": "c8d260f6-c3c4-43c2-a7e8-ad3dc1ff5f05",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
       "position": [
         380,
         240
+      ]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyHour"
+            }
+          ]
+        },
+        "databaseId": {
+          "__rl": true,
+          "value": "13a86ee2-fa70-4a82-b7a0-f019b3b0c67d",
+          "mode": "list",
+          "cachedResultName": "Event Backlog",
+          "cachedResultUrl": "https://www.notion.so/13a86ee2fa704a82b7a0f019b3b0c67d"
+        }
+      },
+      "id": "bcb77a90-e28c-4fa6-9a5a-b3bd86e62dd7",
+      "name": "Notion Trigger (Beta)",
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [
+        360,
+        520
       ],
-      "typeVersion": 1
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "hemingway72129@gmail.com",
+          "mode": "list",
+          "cachedResultName": "hemingway72129@gmail.com"
+        },
+        "start": "={{ $json[\"Due Date\"].start }}",
+        "end": "={{ $json[\"Due Date\"].start }}",
+        "additionalFields": {
+          "allday": "yes",
+          "description": "=",
+          "location": "",
+          "summary": "={{ $json.Task }}"
+        }
+      },
+      "id": "ae2f186d-8db7-4fba-b348-26f02490633c",
+      "name": "Create all-day event1",
+      "type": "n8n-nodes-base.googleCalendar",
+      "position": [
+        640,
+        520
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "3",
+          "name": "Google Calendar"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "event": "pagedUpdatedInDatabase",
+        "databaseId": {
+          "__rl": true,
+          "value": "13a86ee2-fa70-4a82-b7a0-f019b3b0c67d",
+          "mode": "list",
+          "cachedResultName": "Event Backlog",
+          "cachedResultUrl": "https://www.notion.so/13a86ee2fa704a82b7a0f019b3b0c67d"
+        }
+      },
+      "id": "783c594b-7530-4c57-a936-8ef8002c1b51",
+      "name": "Notion Trigger (Beta)1",
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [
+        360,
+        780
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "hemingway72129@gmail.com",
+          "mode": "list",
+          "cachedResultName": "hemingway72129@gmail.com"
+        },
+        "start": "={{ $json[\"Due Date\"].start }}",
+        "end": "={{ $json[\"Due Date\"].start }}",
+        "additionalFields": {
+          "allday": "yes",
+          "description": "=",
+          "location": "",
+          "summary": "={{ $json.Task }}"
+        }
+      },
+      "id": "7705cc89-c985-47ca-89c7-05520b47c31d",
+      "name": "Create all-day event2",
+      "type": "n8n-nodes-base.googleCalendar",
+      "position": [
+        640,
+        780
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "3",
+          "name": "Google Calendar"
+        }
+      }
     }
   ],
   "pinData": {},
   "settings": {},
-  "staticData": null,
+  "staticData": {
+    "node:Notion Trigger (Beta)": {
+      "lastTimeChecked": "2023-04-18T01:33:00.000Z"
+    },
+    "node:Notion Trigger (Beta)1": {
+      "lastTimeChecked": "2023-04-18T01:33:00.000Z"
+    }
+  },
   "tags": [
     {
       "createdAt": "2023-04-09T15:35:16.927Z",
@@ -210,7 +366,7 @@
       "name": "Calendar"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2023-04-12T03:23:04.000Z",
-  "versionId": "6b8c0772-ed55-44b2-80e5-c753c2041fd9"
+  "triggerCount": 2,
+  "updatedAt": "2023-04-18T01:33:50.000Z",
+  "versionId": "a9c70056-855c-4d38-be34-1a8a64e87618"
 }
