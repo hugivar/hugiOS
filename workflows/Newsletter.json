@@ -1,0 +1,142 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS Read1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS Read2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS Read3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS Read4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "RSS Read5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-18T04:04:20.053Z",
+  "id": "22",
+  "name": "Newsletter",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "2e511c66-b458-47d5-b1ee-f63cb68414ee",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        660,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://medium.com/feed/tag/money"
+      },
+      "id": "14ddcbd6-5b14-48e4-aab6-4518c714206d",
+      "name": "RSS Read",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        880,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://medium.com/feed/@MediumStaff"
+      },
+      "id": "58c40796-52a5-4e16-92dc-62a4dd46b71f",
+      "name": "RSS Read1",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        940,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://medium.com/feed/tag/productivity"
+      },
+      "id": "45ab00d6-7bdb-42c8-a8f3-7ce4c4ad5e90",
+      "name": "RSS Read2",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        920,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://medium.com/feed/tag/self-improvement"
+      },
+      "id": "b794c107-4ed1-4677-a9e1-123746d9508d",
+      "name": "RSS Read3",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        880,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://medium.com/feed/tag/technology"
+      },
+      "id": "258f46a7-1abf-4a3a-aa07-8cf8bea2fb84",
+      "name": "RSS Read4",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        940,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://medium.com/feed/tag/programming"
+      },
+      "id": "b332bda2-99a3-4bbf-9543-2a90143bdc0d",
+      "name": "RSS Read5",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        940,
+        1080
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-04-18T14:32:28.000Z",
+  "versionId": "61d48627-af37-4dce-a558-24b65b6ff245"
+}
