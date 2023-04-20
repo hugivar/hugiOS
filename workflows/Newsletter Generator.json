@@ -1,0 +1,431 @@
+{
+  "active": true,
+  "connections": {
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "A scribe.rip url",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A scribe.rip url": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rip titles and hrefs from page": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Weekly Schedule Trigger on Sunday at 3am": {
+      "main": [
+        [
+          {
+            "node": "Medium Programming Tag",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Medium Technology tag",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Medium Productivity tag",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "FS blog newsletter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "React Newsletter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rip titles and hrefs from page1": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FS blog newsletter": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Medium Productivity tag": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Medium Technology tag": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Medium Programming Tag": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "React Newsletter": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rip titles and hrefs from page2": {
+      "main": [
+        [
+          {
+            "node": "A scribe.rip url1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A scribe.rip url1": {
+      "main": [
+        [
+          {
+            "node": "Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Markdown": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-18T04:04:20.053Z",
+  "id": "22",
+  "name": "Newsletter Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "fieldToSplitOut": "titles",
+        "options": {}
+      },
+      "id": "ddbe022c-1004-486a-b8ba-74108cb9d2c3",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        1420,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "22a4c495-5aef-4a32-8032-deed90357668",
+          "mode": "list",
+          "cachedResultName": "Bookmarks Backlog",
+          "cachedResultUrl": "https://www.notion.so/22a4c4955aef4a328032deed90357668"
+        },
+        "title": "={{ $json.title }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "url|url",
+              "urlValue": "={{ $json.href }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9227d87e-6e61-4044-836f-719e42bfed1f",
+      "name": "Notion (Beta)",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        2060,
+        460
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.href = \"https://scribe.rip\" + $input.item.json.href;\n\nreturn $input.item;"
+      },
+      "id": "6a5be8b5-fc33-466b-97c0-963f3c2c8315",
+      "name": "A scribe.rip url",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const hrefRegex = /(([^>]+)>)|<\\/h2/ig;\n  \n  const hrefs = item.json.data.split(/></g).filter(item => item.includes(\"Post Preview Title\")).map(item => item.match(/href=([\"'\\\\])(.*?)\\1/ig)[0].slice(6));\n\n  const titleRegex = /(([^>]+)>)|<\\/h2/ig;\n  const titles = item.json.data.split(/></g).filter(item => item.includes(\"bd ij kj kk kl km eo kn ko kp kq es kr ks kt ku ew kv kw kx ky fa kz la lb lc fe ff fg fh fj fk bi\")).map(str => str.replace(titleRegex, \"\"))\n\n  const data = titles.map((title, idx) => ({ \"title\": title, href: hrefs[idx] }))\n\n  item.json.data = null;\n  item.json.titles = data;\n}\n\nreturn $input.all();"
+      },
+      "id": "c64702dd-b00f-48ea-8994-90ff93513aa5",
+      "name": "Rip titles and hrefs from page",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtHour": 3
+            }
+          ]
+        }
+      },
+      "id": "c56ccb1a-9c30-476d-a8a9-52c0268dd4f1",
+      "name": "Weekly Schedule Trigger on Sunday at 3am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        520,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const href = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].match(/href=([\"'\\\\])(.*?)\\1/ig);\n\n    const title = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].replace(/<a[^>]*>|<\\/a>/g, \"\");\n\n\n  item.json.data = null;\n  item.json.title = { \"title\": title, \"href\": href };\n  \n}\n\nreturn $input.all();"
+      },
+      "id": "3cd24c43-c254-49de-acaf-b4dfb830832d",
+      "name": "Rip titles and hrefs from page1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://fs.blog/brain-food/",
+        "options": {}
+      },
+      "id": "7de9b7da-5d6b-4eba-928a-11e946412e71",
+      "name": "FS blog newsletter",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        900,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://medium.com/tag/productivity/top/week",
+        "options": {}
+      },
+      "id": "e7a496ad-277a-48ba-8a51-f203f72771fa",
+      "name": "Medium Productivity tag",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        900,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://medium.com/tag/technology/top/week",
+        "options": {}
+      },
+      "id": "8ba4f4fa-af53-464b-870a-a78be597e301",
+      "name": "Medium Technology tag",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        900,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://medium.com/tag/programming/top/week",
+        "options": {}
+      },
+      "id": "b5333599-d3fd-4c5c-9c84-14eb027fbdff",
+      "name": "Medium Programming Tag",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        920,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://reactnewsletter.com/issues",
+        "options": {}
+      },
+      "id": "72756470-e147-4564-81b0-0155e434a18c",
+      "name": "React Newsletter",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        920,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const hrefRegex = /(([^>]+)>)|<\\/h2/ig;\n  \n  const href = item.json.data.split(/></g).filter(item => item.includes(\"block my-8 mx-auto p-8 relative w-11/12 bg-gray-dark hover:bg-gray-darkest text-white\")).map(item => item.match(/href=([\"'\\\\])(.*?)\\1/ig)[0].slice(6))[0];\n  \n  const titleRegex = /(([^>]+)>)|<\\/h2/ig;\n  const title = item.json.data.split(/></g).filter(item => item.includes(\"sm:text-2xl mt-6\")).map(str => str.replace(titleRegex, \"\"))[0]\n\n\n  item.json.data = null;\n  item.json.title = title;\n  item.json.href = href;\n}\n\nreturn $input.all();"
+      },
+      "id": "0c2ec5cb-f32c-49c0-b213-80b4d75ab2a2",
+      "name": "Rip titles and hrefs from page2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.href = \"https://reactnewsletter.com\" + $input.item.json.href.slice(0, $input.item.json.href.length -1);\n\nreturn $input.item;"
+      },
+      "id": "95ba1f27-4015-4cc0-a757-34feffcafb56",
+      "name": "A scribe.rip url1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "html": "={{ $json.title }}",
+        "destinationKey": "title",
+        "options": {}
+      },
+      "id": "a2b13898-3b7d-47a8-8a92-73dd6976fb3c",
+      "name": "Markdown",
+      "type": "n8n-nodes-base.markdown",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        1280
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": {
+    "node:Weekly Schedule Trigger on Sunday at 3am": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:35:16.927Z",
+      "updatedAt": "2023-04-09T15:35:16.927Z",
+      "id": "2",
+      "name": "Notion"
+    },
+    {
+      "createdAt": "2023-04-20T03:31:52.530Z",
+      "updatedAt": "2023-04-20T03:31:52.530Z",
+      "id": "7",
+      "name": "React"
+    },
+    {
+      "createdAt": "2023-04-20T03:31:54.437Z",
+      "updatedAt": "2023-04-20T03:31:54.437Z",
+      "id": "8",
+      "name": "Medium"
+    },
+    {
+      "createdAt": "2023-04-20T03:32:00.300Z",
+      "updatedAt": "2023-04-20T03:32:00.300Z",
+      "id": "9",
+      "name": "Productivity"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2023-04-20T03:45:38.000Z",
+  "versionId": "0a51fe37-bef9-401e-bcc9-7972f75feb94"
+}
