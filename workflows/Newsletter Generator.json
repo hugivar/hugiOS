@@ -1,17 +1,6 @@
 {
   "active": true,
   "connections": {
-    "Item Lists": {
-      "main": [
-        [
-          {
-            "node": "A scribe.rip url",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "A scribe.rip url": {
       "main": [
         [
@@ -27,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Item Lists",
+            "node": "Split out titles",
             "type": "main",
             "index": 0
           }
@@ -38,27 +27,17 @@
       "main": [
         [
           {
-            "node": "Medium Programming Tag",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Medium Technology tag",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Medium Productivity tag",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "FS blog newsletter",
             "type": "main",
             "index": 0
           },
           {
             "node": "React Newsletter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Construct medium urls",
             "type": "main",
             "index": 0
           }
@@ -81,39 +60,6 @@
         [
           {
             "node": "Rip titles and hrefs from page1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Medium Productivity tag": {
-      "main": [
-        [
-          {
-            "node": "Rip titles and hrefs from page",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Medium Technology tag": {
-      "main": [
-        [
-          {
-            "node": "Rip titles and hrefs from page",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Medium Programming Tag": {
-      "main": [
-        [
-          {
-            "node": "Rip titles and hrefs from page",
             "type": "main",
             "index": 0
           }
@@ -163,26 +109,89 @@
           }
         ]
       ]
+    },
+    "Medium tag": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Morning Brew",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Morning Brew": {
+      "main": [
+        [
+          {
+            "node": "Rip data from script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rip data from script": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Construct medium urls": {
+      "main": [
+        [
+          {
+            "node": "Split out array into pieces",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out array into pieces": {
+      "main": [
+        [
+          {
+            "node": "Medium tag",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out titles": {
+      "main": [
+        [
+          {
+            "node": "A scribe.rip url",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-18T04:04:20.053Z",
   "id": "22",
   "name": "Newsletter Generator",
   "nodes": [
-    {
-      "parameters": {
-        "fieldToSplitOut": "titles",
-        "options": {}
-      },
-      "id": "ddbe022c-1004-486a-b8ba-74108cb9d2c3",
-      "name": "Item Lists",
-      "type": "n8n-nodes-base.itemLists",
-      "typeVersion": 2,
-      "position": [
-        1420,
-        460
-      ]
-    },
     {
       "parameters": {
         "resource": "databasePage",
@@ -209,7 +218,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        2060,
+        2120,
         460
       ],
       "credentials": {
@@ -229,7 +238,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1700,
+        1760,
         460
       ]
     },
@@ -242,7 +251,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1160,
+        1340,
         460
       ]
     },
@@ -262,7 +271,7 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        520,
+        400,
         460
       ]
     },
@@ -275,8 +284,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1160,
-        1000
+        1620,
+        720
       ]
     },
     {
@@ -289,50 +298,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        900,
-        1000
-      ]
-    },
-    {
-      "parameters": {
-        "url": "https://medium.com/tag/productivity/top/week",
-        "options": {}
-      },
-      "id": "e7a496ad-277a-48ba-8a51-f203f72771fa",
-      "name": "Medium Productivity tag",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 3,
-      "position": [
-        900,
+        860,
         720
-      ]
-    },
-    {
-      "parameters": {
-        "url": "https://medium.com/tag/technology/top/week",
-        "options": {}
-      },
-      "id": "8ba4f4fa-af53-464b-870a-a78be597e301",
-      "name": "Medium Technology tag",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 3,
-      "position": [
-        900,
-        460
-      ]
-    },
-    {
-      "parameters": {
-        "url": "https://medium.com/tag/programming/top/week",
-        "options": {}
-      },
-      "id": "b5333599-d3fd-4c5c-9c84-14eb027fbdff",
-      "name": "Medium Programming Tag",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 3,
-      "position": [
-        920,
-        200
       ]
     },
     {
@@ -345,8 +312,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        920,
-        1280
+        840,
+        240
       ]
     },
     {
@@ -358,8 +325,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1180,
-        1280
+        1100,
+        240
       ]
     },
     {
@@ -372,8 +339,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1440,
-        1280
+        1360,
+        240
       ]
     },
     {
@@ -387,8 +354,110 @@
       "type": "n8n-nodes-base.markdown",
       "typeVersion": 1,
       "position": [
-        1680,
-        1280
+        1600,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.href }}",
+        "options": {}
+      },
+      "id": "8ba4f4fa-af53-464b-870a-a78be597e301",
+      "name": "Medium tag",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1160,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "8bb54d7f-711a-407f-8ae0-dfa9d711702d",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        420,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.morningbrew.com/archive",
+        "options": {}
+      },
+      "id": "bcfb0d04-4e7b-480e-9489-a46d00ed5672",
+      "name": "Morning Brew",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        820,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const script = item.json.data.match(/<script[^>]*>([^<]+)<\\/script>/g)[1];\n\n  const jsonData = script.replace(/<script[^>]*>|<\\/script>/g, \"\");\n\n  const dailyArticle = JSON.parse(jsonData)?.props?.pageProps?.initialApolloState?.ROOT_QUERY?.['allArchiveIssues:{\"query\":\"\",\"newsletter\":\"daily\"}']?.[0];\n\n\n\n  item.json.data = null;\n   item.json.title = { \"title\": dailyArticle?.subjectLine, \"href\": \"https://www.morningbrew.com/daily/issues/\" + dailyArticle.slug };\n}\n\nreturn $input.all();"
+      },
+      "id": "5dcaf9f9-a5ff-409f-ab61-c82c77a504f6",
+      "name": "Rip data from script",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.data = [\n  { href: \"https://medium.com/tag/programming/top/week\" },\n  { href: \"https://medium.com/tag/technology/top/week\" },\n  { href: \"https://medium.com/tag/productivity/top/week\" }\n];\n\nreturn $input.item;"
+      },
+      "id": "565a29b4-d715-41a0-a280-b7991a2df752",
+      "name": "Construct medium urls",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        720,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "12fe2b4d-71d4-4dc2-ae74-95c379a1c75a",
+      "name": "Split out array into pieces",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        940,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "titles",
+        "options": {}
+      },
+      "id": "ddbe022c-1004-486a-b8ba-74108cb9d2c3",
+      "name": "Split out titles",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        1540,
+        460
       ]
     }
   ],
@@ -396,6 +465,9 @@
   "settings": {},
   "staticData": {
     "node:Weekly Schedule Trigger on Sunday at 3am": {
+      "recurrencyRules": []
+    },
+    "node:Schedule Trigger": {
       "recurrencyRules": []
     }
   },
@@ -425,7 +497,7 @@
       "name": "Productivity"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2023-04-20T03:45:38.000Z",
-  "versionId": "0a51fe37-bef9-401e-bcc9-7972f75feb94"
+  "triggerCount": 2,
+  "updatedAt": "2023-04-20T19:28:40.000Z",
+  "versionId": "a08cebff-d342-4b37-ad89-6ef0ea413381"
 }
