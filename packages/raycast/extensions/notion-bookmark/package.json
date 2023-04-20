@@ -37,7 +37,7 @@
     "@hugios/notion": "workspace:^",
     "@raycast/api": "^1.48.8",
     "timers": "^0.1.1",
-    "url-metadata": "^2.5.0"
+    "url-metadata": "^3.0.0"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",
