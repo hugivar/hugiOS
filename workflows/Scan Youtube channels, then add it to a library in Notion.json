@@ -70,7 +70,7 @@
       "main": [
         [
           {
-            "node": "Filter",
+            "node": "Code",
             "type": "main",
             "index": 0
           }
@@ -99,23 +99,18 @@
         ]
       ]
     },
-    "Execute Workflow Trigger": {
+    "Code": {
       "main": [
         [
           {
-            "node": "Get videos for channelIds from the last week",
+            "node": "Item Lists",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
           }
         ]
       ]
     },
-    "Workflow Trigger": {
+    "Item Lists": {
       "main": [
         [
           {
@@ -132,8 +127,8 @@
       ]
     }
   },
-  "createdAt": "2023-04-15T17:14:23.040Z",
-  "id": "19",
+  "createdAt": "2023-04-20T03:50:13.013Z",
+  "id": "24",
   "name": "Scan Youtube channels, then add it to a library in Notion",
   "nodes": [
     {
@@ -340,8 +335,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        -960,
-        160
+        -1060,
+        360
       ]
     },
     {
@@ -381,484 +376,43 @@
       ]
     },
     {
-      "parameters": {},
-      "id": "3b4c12e8-5369-43ae-9569-3b0ed6d674ce",
-      "name": "Execute Workflow Trigger",
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.data = [\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UC6vRUjYqDuoUsYsku86Lrsw\",\n          \"groupDatabaseId\": \"24c4e107bbb84ceb86a15d46919a2a06\",\n          \"tagDatabaseId\": \"f89be03b3e3449a1bd364394a84d147e\",\n          \"name\": \"Jack Harrington\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCsBjURrPoezykLs9EqgamOA\",\n          \"groupDatabaseId\": \"24c4e107bbb84ceb86a15d46919a2a06\",\n          \"tagDatabaseId\": \"297063992c394737923c3764d964e15e\",\n          \"name\": \"Fireship\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCfPQrqsmYFFRK0NKLEr27Bg\",\n          \"groupDatabaseId\": \"7a4eb266762b492098f3d17e8e3c9116\",\n          \"tagDatabaseId\": \"56a90b2ed3c742f4bf5ceca09c58ba17\",\n          \"name\": \"Crypto Critics' Corner\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCnH8al10BzxCg-N-69Syqjg\",\n          \"groupDatabaseId\": \"66a7db1665064e09a3ebf7c632ff495c\",\n          \"tagDatabaseId\": \"97205a513b144f51885342365cc8d7db\",\n          \"name\": \"Trap Lore Ross\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCkCGANrihzExmu9QiqZpPlQ\",\n          \"groupDatabaseId\": \"7a4eb266762b492098f3d17e8e3c9116\",\n          \"tagDatabaseId\": \"4ac3014c6a9e4480956daa69ea714e00\",\n          \"name\": \"How Money Works\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCZ4AMrDcNrfy3X6nsU8-rPg\",\n          \"groupDatabaseId\": \"7a4eb266762b492098f3d17e8e3c9116\",\n          \"tagDatabaseId\": \"2fcb4354219a4193b44a651561c0377b\",\n          \"name\": \"Economics Explained\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UC9RM-iSvTu1uPJb8X5yp3EQ\",\n          \"groupDatabaseId\": \"50c83fc4692f4bfba31bdc2d3d5a00fb\",\n          \"tagDatabaseId\": \"0aa679ae673443f8940b25dc4754a0a3\",\n          \"name\": \"Wendover Productions\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCDJZPusVYgqWwP67JnZviRw\",\n          \"groupDatabaseId\": \"66a7db1665064e09a3ebf7c632ff495c\",\n          \"tagDatabaseId\": \"bedb8de9f606407da4d54009070c831f\",\n          \"name\": \"BTODtv\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCFCEuCsyWP0YkP3CZ3Mr01Q\",\n          \"groupDatabaseId\": \"7a4eb266762b492098f3d17e8e3c9116\",\n          \"tagDatabaseId\": \"63259ab4f22c4f158ba64e664eed6695\",\n          \"name\": \"The Plain Bagel\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCYwVxWpjeKFWwu8TML-Te9A\",\n          \"groupDatabaseId\": \"50c83fc4692f4bfba31bdc2d3d5a00fb\",\n          \"tagDatabaseId\": \"fe1ee2e60aed4d3faad6b57e4e278329\",\n          \"name\": \"JCS - Criminal Psychology\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCjy5wrSZmcFefxex3ljOouA\",\n          \"groupDatabaseId\": \"2ef2285bc62141d180217b5856d61a03\",\n          \"tagDatabaseId\": \"b6ee7e0aa26148b199c22d040598299f\",\n          \"name\": \"Demetri Panici\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCsXVk37bltHxD1rDPwtNM8Q\",\n          \"groupDatabaseId\": \"50c83fc4692f4bfba31bdc2d3d5a00fb\",\n          \"tagDatabaseId\": \"ff6c07108fe4476d816e3186cd071710\",\n          \"name\": \"Kurzgesagt – In a Nutshell\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCFQMnBA3CS502aghlcr0_aw\",\n          \"groupDatabaseId\": \"66a7db1665064e09a3ebf7c632ff495c\",\n          \"tagDatabaseId\": \"d106a1aea4d2408e883990edad4dc64d\",\n          \"name\": \"Coffeezilla\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCm9K6rby98W8JigLoZOh6FQ\",\n          \"groupDatabaseId\": \"66a7db1665064e09a3ebf7c632ff495c\",\n          \"tagDatabaseId\": \"3632b9c08bd04e5f955cbc8613a098eb\",\n          \"name\": \"LockPickingLawyer\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UClfEht64_NrzHf8Y0slKEjw\",\n          \"groupDatabaseId\": \"66a7db1665064e09a3ebf7c632ff495c\",\n          \"tagDatabaseId\": \"657370a5ac24401db5b62ecfeaeeef7d\",\n          \"name\": \"AlternateHistoryHub\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UC-tLyAaPbRZiYrOJxAGB7dQ\",\n          \"groupDatabaseId\": \"50c83fc4692f4bfba31bdc2d3d5a00fb\",\n          \"tagDatabaseId\": \"e317ab750b2c43aeb65da0829ee05375\",\n          \"name\": \"Pursuit of Wonder\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCp1mRTkVlqDnxz_9S0YD9YQ\",\n          \"groupDatabaseId\": \"50c83fc4692f4bfba31bdc2d3d5a00fb\",\n          \"tagDatabaseId\": \"40c6e13bd2604c55aa3c5ddbec035088\",\n          \"name\": \"Philosophies for Life\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCG9ShGbASoiwHwFcLcAh9EA\",\n          \"groupDatabaseId\": \"50c83fc4692f4bfba31bdc2d3d5a00fb\",\n          \"tagDatabaseId\": \"6636a9691bf843f6bbcb6f01617520aa\",\n          \"name\": \"SEA\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCybBViio_TH_uiFFDJuz5tg\",\n          \"groupDatabaseId\": \"e728841bbca8452bbd45da6419030018\",\n          \"tagDatabaseId\": \"de81f6f4fcda4deebc963227aa6e3e68\",\n          \"name\": \"Einzelgänger\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCimiUgDLbi6P17BdaCZpVbg\",\n          \"groupDatabaseId\": \"e728841bbca8452bbd45da6419030018\",\n          \"tagDatabaseId\": \"2f62fa370aaa4e5b9452ab957001beea\",\n          \"name\": \"exurb1a\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCNIuvl7V8zACPpTmmNIqP2A\",\n          \"groupDatabaseId\": \"50c83fc4692f4bfba31bdc2d3d5a00fb\",\n          \"tagDatabaseId\": \"231c309ab44c403293a80957388efc62\",\n          \"name\": \"OverSimplified\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCRcgy6GzDeccI7dkbbBna3Q\",\n          \"groupDatabaseId\": \"50c83fc4692f4bfba31bdc2d3d5a00fb\",\n          \"tagDatabaseId\": \"519692b8086040c1baa10c76f54280ba\",\n          \"name\": \"LEMMiNO\"\n        }\n      },\n      {\n        \"json\": {\n          \"limit\": 1,\n          \"channelId\": \"UCd_WBvzBg1UbHE8j8MIL5Ng\",\n          \"groupDatabaseId\": \"2ef2285bc62141d180217b5856d61a03\",\n          \"tagDatabaseId\": \"82f9cff4febe459ea35cc967b484e6ab\",\n          \"name\": \"Thomas Frank Explains\"\n        }\n      }\n    ];\n\nreturn $input.item;"
+      },
+      "id": "4e0d6631-a3d2-4831-8a21-e97e1ccf9bf7",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        -760,
-        560
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "88720475-a37c-4ad2-a27e-b2903f263329",
-      "name": "Filter",
-      "type": "n8n-nodes-base.filter",
-      "typeVersion": 1,
-      "position": [
-        -720,
-        160
+        -800,
+        360
       ]
     },
     {
       "parameters": {
-        "events": [
-          "activate"
-        ]
+        "fieldToSplitOut": "data",
+        "options": {}
       },
-      "id": "3b038b2e-99fc-4bc1-bf21-7c9f49041768",
-      "name": "Workflow Trigger",
-      "type": "n8n-nodes-base.workflowTrigger",
-      "typeVersion": 1,
+      "id": "3e2ad593-0f20-4054-9d0e-412404ec2ed3",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
       "position": [
-        -840,
-        400
+        -580,
+        360
       ]
     }
   ],
-  "pinData": {
-    "Schedule Trigger": [
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UC6vRUjYqDuoUsYsku86Lrsw",
-          "groupDatabaseId": "24c4e107bbb84ceb86a15d46919a2a06",
-          "tagDatabaseId": "f89be03b3e3449a1bd364394a84d147e",
-          "name": "Jack Harrington"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCsBjURrPoezykLs9EqgamOA",
-          "groupDatabaseId": "24c4e107bbb84ceb86a15d46919a2a06",
-          "tagDatabaseId": "297063992c394737923c3764d964e15e",
-          "name": "Fireship"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCfPQrqsmYFFRK0NKLEr27Bg",
-          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
-          "tagDatabaseId": "56a90b2ed3c742f4bf5ceca09c58ba17",
-          "name": "Crypto Critics' Corner"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCnH8al10BzxCg-N-69Syqjg",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "97205a513b144f51885342365cc8d7db",
-          "name": "Trap Lore Ross"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCkCGANrihzExmu9QiqZpPlQ",
-          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
-          "tagDatabaseId": "4ac3014c6a9e4480956daa69ea714e00",
-          "name": "How Money Works"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCZ4AMrDcNrfy3X6nsU8-rPg",
-          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
-          "tagDatabaseId": "2fcb4354219a4193b44a651561c0377b",
-          "name": "Economics Explained"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UC9RM-iSvTu1uPJb8X5yp3EQ",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "0aa679ae673443f8940b25dc4754a0a3",
-          "name": "Wendover Productions"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCDJZPusVYgqWwP67JnZviRw",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "bedb8de9f606407da4d54009070c831f",
-          "name": "BTODtv"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCFCEuCsyWP0YkP3CZ3Mr01Q",
-          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
-          "tagDatabaseId": "63259ab4f22c4f158ba64e664eed6695",
-          "name": "The Plain Bagel"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCYwVxWpjeKFWwu8TML-Te9A",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "fe1ee2e60aed4d3faad6b57e4e278329",
-          "name": "JCS - Criminal Psychology"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCjy5wrSZmcFefxex3ljOouA",
-          "groupDatabaseId": "2ef2285bc62141d180217b5856d61a03",
-          "tagDatabaseId": "b6ee7e0aa26148b199c22d040598299f",
-          "name": "Demetri Panici"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCsXVk37bltHxD1rDPwtNM8Q",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "ff6c07108fe4476d816e3186cd071710",
-          "name": "Kurzgesagt – In a Nutshell"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCFQMnBA3CS502aghlcr0_aw",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "d106a1aea4d2408e883990edad4dc64d",
-          "name": "Coffeezilla"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCm9K6rby98W8JigLoZOh6FQ",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "3632b9c08bd04e5f955cbc8613a098eb",
-          "name": "LockPickingLawyer"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UClfEht64_NrzHf8Y0slKEjw",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "657370a5ac24401db5b62ecfeaeeef7d",
-          "name": "AlternateHistoryHub"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UC-tLyAaPbRZiYrOJxAGB7dQ",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "e317ab750b2c43aeb65da0829ee05375",
-          "name": "Pursuit of Wonder"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCp1mRTkVlqDnxz_9S0YD9YQ",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "40c6e13bd2604c55aa3c5ddbec035088",
-          "name": "Philosophies for Life"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCG9ShGbASoiwHwFcLcAh9EA",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "6636a9691bf843f6bbcb6f01617520aa",
-          "name": "SEA"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCybBViio_TH_uiFFDJuz5tg",
-          "groupDatabaseId": "e728841bbca8452bbd45da6419030018",
-          "tagDatabaseId": "de81f6f4fcda4deebc963227aa6e3e68",
-          "name": "Einzelgänger"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCimiUgDLbi6P17BdaCZpVbg",
-          "groupDatabaseId": "e728841bbca8452bbd45da6419030018",
-          "tagDatabaseId": "2f62fa370aaa4e5b9452ab957001beea",
-          "name": "exurb1a"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCNIuvl7V8zACPpTmmNIqP2A",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "231c309ab44c403293a80957388efc62",
-          "name": "OverSimplified"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCRcgy6GzDeccI7dkbbBna3Q",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "519692b8086040c1baa10c76f54280ba",
-          "name": "LEMMiNO"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCd_WBvzBg1UbHE8j8MIL5Ng",
-          "groupDatabaseId": "2ef2285bc62141d180217b5856d61a03",
-          "tagDatabaseId": "82f9cff4febe459ea35cc967b484e6ab",
-          "name": "Thomas Frank Explains"
-        }
-      }
-    ],
-    "Execute Workflow Trigger": [
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UC6vRUjYqDuoUsYsku86Lrsw",
-          "groupDatabaseId": "24c4e107bbb84ceb86a15d46919a2a06",
-          "tagDatabaseId": "f89be03b3e3449a1bd364394a84d147e",
-          "name": "Jack Harrington"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCsBjURrPoezykLs9EqgamOA",
-          "groupDatabaseId": "24c4e107bbb84ceb86a15d46919a2a06",
-          "tagDatabaseId": "297063992c394737923c3764d964e15e",
-          "name": "Fireship"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCfPQrqsmYFFRK0NKLEr27Bg",
-          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
-          "tagDatabaseId": "56a90b2ed3c742f4bf5ceca09c58ba17",
-          "name": "Crypto Critics' Corner"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCnH8al10BzxCg-N-69Syqjg",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "97205a513b144f51885342365cc8d7db",
-          "name": "Trap Lore Ross"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCkCGANrihzExmu9QiqZpPlQ",
-          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
-          "tagDatabaseId": "4ac3014c6a9e4480956daa69ea714e00",
-          "name": "How Money Works"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCZ4AMrDcNrfy3X6nsU8-rPg",
-          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
-          "tagDatabaseId": "2fcb4354219a4193b44a651561c0377b",
-          "name": "Economics Explained"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UC9RM-iSvTu1uPJb8X5yp3EQ",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "0aa679ae673443f8940b25dc4754a0a3",
-          "name": "Wendover Productions"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCDJZPusVYgqWwP67JnZviRw",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "bedb8de9f606407da4d54009070c831f",
-          "name": "BTODtv"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCFCEuCsyWP0YkP3CZ3Mr01Q",
-          "groupDatabaseId": "7a4eb266762b492098f3d17e8e3c9116",
-          "tagDatabaseId": "63259ab4f22c4f158ba64e664eed6695",
-          "name": "The Plain Bagel"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCYwVxWpjeKFWwu8TML-Te9A",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "fe1ee2e60aed4d3faad6b57e4e278329",
-          "name": "JCS - Criminal Psychology"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCjy5wrSZmcFefxex3ljOouA",
-          "groupDatabaseId": "2ef2285bc62141d180217b5856d61a03",
-          "tagDatabaseId": "b6ee7e0aa26148b199c22d040598299f",
-          "name": "Demetri Panici"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCsXVk37bltHxD1rDPwtNM8Q",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "ff6c07108fe4476d816e3186cd071710",
-          "name": "Kurzgesagt – In a Nutshell"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCFQMnBA3CS502aghlcr0_aw",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "d106a1aea4d2408e883990edad4dc64d",
-          "name": "Coffeezilla"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCm9K6rby98W8JigLoZOh6FQ",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "3632b9c08bd04e5f955cbc8613a098eb",
-          "name": "LockPickingLawyer"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UClfEht64_NrzHf8Y0slKEjw",
-          "groupDatabaseId": "66a7db1665064e09a3ebf7c632ff495c",
-          "tagDatabaseId": "657370a5ac24401db5b62ecfeaeeef7d",
-          "name": "AlternateHistoryHub"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UC-tLyAaPbRZiYrOJxAGB7dQ",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "e317ab750b2c43aeb65da0829ee05375",
-          "name": "Pursuit of Wonder"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCp1mRTkVlqDnxz_9S0YD9YQ",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "40c6e13bd2604c55aa3c5ddbec035088",
-          "name": "Philosophies for Life"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCG9ShGbASoiwHwFcLcAh9EA",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "6636a9691bf843f6bbcb6f01617520aa",
-          "name": "SEA"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCybBViio_TH_uiFFDJuz5tg",
-          "groupDatabaseId": "e728841bbca8452bbd45da6419030018",
-          "tagDatabaseId": "de81f6f4fcda4deebc963227aa6e3e68",
-          "name": "Einzelgänger"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCimiUgDLbi6P17BdaCZpVbg",
-          "groupDatabaseId": "e728841bbca8452bbd45da6419030018",
-          "tagDatabaseId": "2f62fa370aaa4e5b9452ab957001beea",
-          "name": "exurb1a"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCNIuvl7V8zACPpTmmNIqP2A",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "231c309ab44c403293a80957388efc62",
-          "name": "OverSimplified"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCRcgy6GzDeccI7dkbbBna3Q",
-          "groupDatabaseId": "50c83fc4692f4bfba31bdc2d3d5a00fb",
-          "tagDatabaseId": "519692b8086040c1baa10c76f54280ba",
-          "name": "LEMMiNO"
-        }
-      },
-      {
-        "json": {
-          "limit": 1,
-          "channelId": "UCd_WBvzBg1UbHE8j8MIL5Ng",
-          "groupDatabaseId": "2ef2285bc62141d180217b5856d61a03",
-          "tagDatabaseId": "82f9cff4febe459ea35cc967b484e6ab",
-          "name": "Thomas Frank Explains"
-        }
-      }
-    ]
-  },
+  "pinData": {},
   "settings": {},
   "staticData": {
     "node:Schedule Trigger": {
       "recurrencyRules": []
     }
   },
-  "tags": [
-    {
-      "createdAt": "2023-04-09T15:35:16.927Z",
-      "updatedAt": "2023-04-09T15:35:16.927Z",
-      "id": "2",
-      "name": "Notion"
-    },
-    {
-      "createdAt": "2023-04-15T18:54:49.214Z",
-      "updatedAt": "2023-04-15T18:54:49.214Z",
-      "id": "6",
-      "name": "YouTube"
-    }
-  ],
-  "triggerCount": 2,
-  "updatedAt": "2023-04-18T01:48:13.000Z",
-  "versionId": "d54bfa2b-1c9a-436b-be42-ca78d828dd6b"
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2023-04-20T03:53:27.000Z",
+  "versionId": "b80fe4bb-429a-4d38-b30e-42a6ba125ff2"
 }
