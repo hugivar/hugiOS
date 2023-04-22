@@ -346,16 +346,15 @@
   "settings": {},
   "staticData": {
     "node:Notion Trigger (Beta)": {
-      "lastTimeChecked": "2023-04-20T22:00:00.000Z",
+      "lastTimeChecked": "2023-04-21T13:29:00.000Z",
       "possibleDuplicates": [
         "5ca3e241-0d8c-4008-8ec5-1aa3257e75cb"
       ]
     },
     "node:Notion Trigger (Beta)1": {
-      "lastTimeChecked": "2023-04-20T22:00:00.000Z",
+      "lastTimeChecked": "2023-04-21T13:29:00.000Z",
       "possibleDuplicates": [
-        "fe67eb26-2eea-434a-913b-b1917cdfda97",
-        "5ca3e241-0d8c-4008-8ec5-1aa3257e75cb"
+        "62e56125-d0a4-419e-8573-10d4967ec3a5"
       ]
     }
   },
@@ -374,6 +373,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2023-04-20T22:00:44.000Z",
+  "updatedAt": "2023-04-21T13:29:17.000Z",
   "versionId": "a9c70056-855c-4d38-be34-1a8a64e87618"
 }
