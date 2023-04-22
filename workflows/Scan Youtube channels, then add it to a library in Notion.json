@@ -114,14 +114,25 @@
       "main": [
         [
           {
-            "node": "Get videos for channelIds from the last week",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "Merge",
             "type": "main",
             "index": 1
+          },
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "Get videos for channelIds from the last week",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -176,7 +187,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        740,
+        960,
         560
       ],
       "credentials": {
@@ -237,7 +248,7 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2,
       "position": [
-        520,
+        740,
         160
       ]
     },
@@ -269,7 +280,7 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        380,
+        400,
         -140
       ]
     },
@@ -291,7 +302,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        460,
+        680,
         560
       ]
     },
@@ -300,7 +311,7 @@
         "resource": "video",
         "returnAll": true,
         "filters": {
-          "channelId": "={{ $json.channelId }}",
+          "channelId": "={{ $json.json.channelId }}",
           "publishedAfter": "={{$today.minus({days: 7})}}"
         },
         "options": {}
@@ -310,7 +321,7 @@
       "type": "n8n-nodes-base.youTube",
       "typeVersion": 1,
       "position": [
-        -300,
+        -80,
         140
       ],
       "credentials": {
@@ -356,7 +367,7 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 1,
       "position": [
-        -80,
+        140,
         140
       ]
     },
@@ -371,7 +382,7 @@
       "type": "n8n-nodes-base.markdown",
       "typeVersion": 1,
       "position": [
-        180,
+        400,
         140
       ]
     },
@@ -402,6 +413,26 @@
         -580,
         360
       ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.json.channelId }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "68b07e4d-ef8d-4936-877f-a75bbb58bfbf",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -360,
+        160
+      ]
     }
   ],
   "pinData": {},
@@ -426,6 +457,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-20T03:57:12.000Z",
-  "versionId": "28c17c6d-c446-408c-ad60-4a9165f8d331"
+  "updatedAt": "2023-04-21T21:24:48.000Z",
+  "versionId": "7588ac37-df49-4c3b-ab61-2644ae712a37"
 }
