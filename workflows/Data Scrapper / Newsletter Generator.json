@@ -1,0 +1,801 @@
+{
+  "active": true,
+  "connections": {
+    "A scribe.rip url": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rip titles and hrefs from page": {
+      "main": [
+        [
+          {
+            "node": "Split out titles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Weekly Schedule Trigger on Sunday at 3am": {
+      "main": [
+        [
+          {
+            "node": "FS blog newsletter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "React Newsletter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Construct medium urls",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rip titles and hrefs from page1": {
+      "main": [
+        [
+          {
+            "node": "Add Reading collection and Newsletter tag2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FS blog newsletter": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "React Newsletter": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rip titles and hrefs from page2": {
+      "main": [
+        [
+          {
+            "node": "A scribe.rip url1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A scribe.rip url1": {
+      "main": [
+        [
+          {
+            "node": "Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Markdown": {
+      "main": [
+        [
+          {
+            "node": "Add Reading collection and Newsletter tag1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Medium tag": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Morning Brew",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Morning Brew": {
+      "main": [
+        [
+          {
+            "node": "Rip data from script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Construct medium urls": {
+      "main": [
+        [
+          {
+            "node": "Split out array into pieces",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out array into pieces": {
+      "main": [
+        [
+          {
+            "node": "Medium tag",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out titles": {
+      "main": [
+        [
+          {
+            "node": "A scribe.rip url",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rip data from script": {
+      "main": [
+        [
+          {
+            "node": "Add Reading collection and Newsletter tag",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rip titles and hrefs from page4": {
+      "main": [
+        [
+          {
+            "node": "Split out titles1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Weekly Trigger on Tuesday": {
+      "main": [
+        [
+          {
+            "node": "Construct reddit urls",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Construct reddit urls": {
+      "main": [
+        [
+          {
+            "node": "Split out array into pieces1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reddit": {
+      "main": [
+        [
+          {
+            "node": "Rip titles and hrefs from page4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out array into pieces1": {
+      "main": [
+        [
+          {
+            "node": "Reddit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split out titles1": {
+      "main": [
+        [
+          {
+            "node": "Add Fun collection and Reddit tag",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Fun collection and Reddit tag": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Reading collection and Newsletter tag": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Reading collection and Newsletter tag1": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Reading collection and Newsletter tag2": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-18T04:04:20.053Z",
+  "id": "22",
+  "name": "Data Scrapper / Newsletter Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "22a4c495-5aef-4a32-8032-deed90357668",
+          "mode": "list",
+          "cachedResultName": "Bookmarks Backlog",
+          "cachedResultUrl": "https://www.notion.so/22a4c4955aef4a328032deed90357668"
+        },
+        "title": "={{ $json.title }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "url|url",
+              "urlValue": "={{ $json.href }}"
+            },
+            {
+              "key": "Name|title",
+              "title": "={{ $json.title }}"
+            },
+            {
+              "key": "Collections|relation",
+              "relationValue": [
+                "= {{ $json.collection }}"
+              ]
+            },
+            {
+              "key": "Tags|relation",
+              "relationValue": [
+                "= {{ $json.tag }}"
+              ]
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9227d87e-6e61-4044-836f-719e42bfed1f",
+      "name": "Notion (Beta)",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        2120,
+        460
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.href = \"https://scribe.rip\" + $input.item.json.href;\n$input.item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n$input.item.json.tag = \"d1307e676a454f6997870698f9aaa0e5\"\n\nreturn $input.item;"
+      },
+      "id": "6a5be8b5-fc33-466b-97c0-963f3c2c8315",
+      "name": "A scribe.rip url",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const hrefRegex = /(([^>]+)>)|<\\/h2/ig;\n  \n  const hrefs = item.json.data.split(/></g).filter(item => item.includes(\"Post Preview Title\")).map(item => item.match(/href=([\"'\\\\])(.*?)\\1/ig)[0].slice(6));\n\n  const titleRegex = /(([^>]+)>)|<\\/h2/ig;\n  const titles = item.json.data.split(/></g).filter(item => item.includes(\"bd ij kj kk kl km eo kn ko kp kq es kr ks kt ku ew kv kw kx ky fa kz la lb lc fe ff fg fh fj fk bi\")).map(str => str.replace(titleRegex, \"\"))\n\n  const data = titles.map((title, idx) => ({ \"title\": title, href: hrefs[idx] }))\n\n  item.json.data = null;\n  item.json.titles = data;\n}\n\nreturn $input.all();"
+      },
+      "id": "c64702dd-b00f-48ea-8994-90ff93513aa5",
+      "name": "Rip titles and hrefs from page",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtHour": 3
+            }
+          ]
+        }
+      },
+      "id": "c56ccb1a-9c30-476d-a8a9-52c0268dd4f1",
+      "name": "Weekly Schedule Trigger on Sunday at 3am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        400,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const href = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].match(/href=([\"'\\\\])(.*?)\\1/ig);\n\n    const title = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].replace(/<a[^>]*>|<\\/a>/g, \"\");\n\n\n  item.json.data = null;\n  item.json.title = { \"title\": title, \"href\": href };\n  \n}\n\nreturn $input.all();"
+      },
+      "id": "3cd24c43-c254-49de-acaf-b4dfb830832d",
+      "name": "Rip titles and hrefs from page1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://fs.blog/brain-food/",
+        "options": {}
+      },
+      "id": "7de9b7da-5d6b-4eba-928a-11e946412e71",
+      "name": "FS blog newsletter",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        860,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://reactnewsletter.com/issues",
+        "options": {}
+      },
+      "id": "72756470-e147-4564-81b0-0155e434a18c",
+      "name": "React Newsletter",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        840,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const hrefRegex = /(([^>]+)>)|<\\/h2/ig;\n  \n  const href = item.json.data.split(/></g).filter(item => item.includes(\"block my-8 mx-auto p-8 relative w-11/12 bg-gray-dark hover:bg-gray-darkest text-white\")).map(item => item.match(/href=([\"'\\\\])(.*?)\\1/ig)[0].slice(6))[0];\n  \n  const titleRegex = /(([^>]+)>)|<\\/h2/ig;\n  const title = item.json.data.split(/></g).filter(item => item.includes(\"sm:text-2xl mt-6\")).map(str => str.replace(titleRegex, \"\"))[0]\n\n\n  item.json.data = null;\n  item.json.title = title;\n  item.json.href = href;\n}\n\nreturn $input.all();"
+      },
+      "id": "0c2ec5cb-f32c-49c0-b213-80b4d75ab2a2",
+      "name": "Rip titles and hrefs from page2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.href = \"https://reactnewsletter.com\" + $input.item.json.href.slice(0, $input.item.json.href.length -1);\n\nreturn $input.item;"
+      },
+      "id": "95ba1f27-4015-4cc0-a757-34feffcafb56",
+      "name": "A scribe.rip url1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "html": "={{ $json.title }}",
+        "destinationKey": "title",
+        "options": {}
+      },
+      "id": "a2b13898-3b7d-47a8-8a92-73dd6976fb3c",
+      "name": "Markdown",
+      "type": "n8n-nodes-base.markdown",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.href }}",
+        "options": {}
+      },
+      "id": "8ba4f4fa-af53-464b-870a-a78be597e301",
+      "name": "Medium tag",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1160,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "8bb54d7f-711a-407f-8ae0-dfa9d711702d",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        420,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.morningbrew.com/archive",
+        "options": {}
+      },
+      "id": "bcfb0d04-4e7b-480e-9489-a46d00ed5672",
+      "name": "Morning Brew",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        820,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.data = [\n  { href: \"https://medium.com/tag/programming/top/week\" },\n  { href: \"https://medium.com/tag/technology/top/week\" },\n  { href: \"https://medium.com/tag/productivity/top/week\" }\n];\n\nreturn $input.item;"
+      },
+      "id": "565a29b4-d715-41a0-a280-b7991a2df752",
+      "name": "Construct medium urls",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        720,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "12fe2b4d-71d4-4dc2-ae74-95c379a1c75a",
+      "name": "Split out array into pieces",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        940,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "titles",
+        "options": {}
+      },
+      "id": "ddbe022c-1004-486a-b8ba-74108cb9d2c3",
+      "name": "Split out titles",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        1540,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const script = item.json.data.match(/<script[^>]*>([^<]+)<\\/script>/g)[1];\n\n  const jsonData = script.replace(/<script[^>]*>|<\\/script>/g, \"\");\n\n  const dailyArticle = JSON.parse(jsonData)?.props?.pageProps?.initialApolloState?.ROOT_QUERY?.['allArchiveIssues:{\"query\":\"\",\"newsletter\":\"daily\"}']?.[0];\n\n\n\n  item.json.data = null;\n  item.json.title = dailyArticle?.subjectLine;\n  item.json.href = \"https://www.morningbrew.com/daily/issues/\" + dailyArticle.slug;\n}\n\nreturn $input.all();"
+      },
+      "id": "43e54ec5-be83-4a5c-aab3-fe26720f0f51",
+      "name": "Rip data from script",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const hrefRegex = /(([^>]+)>)|<\\/h2/ig;\n  \n  const hrefs = item.json.data.split(/></g).filter(item => item.includes(\"title may-blank\")).map(item => item.match(/href=([\"'\\\\])(.*?)\\1/ig)[0].slice(6));\n\n  const titleRegex = /(a class=([^>]+)>)|(<\\/a>.+)/ig;\n  const titles = item.json.data.split(/></g).filter(item => item.includes(\"title may-blank\")).map(str => str.replace(titleRegex, \"\"))\n  console.log(titles)\n  const data = titles.map((title, idx) => ({ \"title\": title, href: hrefs[idx] }))\n\n  item.json.data = null;\n  item.json.titles = data;\n}\n\nreturn $input.all();"
+      },
+      "id": "88e17f97-7392-47fb-be82-1380a7881107",
+      "name": "Rip titles and hrefs from page4",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "titles",
+        "options": {}
+      },
+      "id": "930c5db9-af3b-443f-a2b2-1221561e80cd",
+      "name": "Split out titles1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        1580,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                2
+              ]
+            }
+          ]
+        }
+      },
+      "id": "cb455584-0bed-4bc2-9d10-cfe4600196dd",
+      "name": "Weekly Trigger on Tuesday",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        420,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.data = [\n  { href: \"https://old.reddit.com/r/CFB/top/?sort=top&t=week\" },\n  { href: \"https://old.reddit.com/r/popular/top/?sort=top&t=week\" },\n];\n\nreturn $input.item;"
+      },
+      "id": "d30bbd56-5a2a-4a4e-9323-1250407236b5",
+      "name": "Construct reddit urls",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        680,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "url": "= {{ $json.href }}",
+        "options": {}
+      },
+      "id": "d97a67f0-b8b3-4276-bddc-4f0fa922ce6e",
+      "name": "Reddit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1100,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "967e7187-aff6-4125-ac94-22b7d12c8920",
+      "name": "Split out array into pieces1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        900,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"30a613422dba413cb1c36b7d26edd2ab\";\n  item.json.tag = \"792baac9c5184c40ba471f183ee994d2\"\n}\n\nreturn $input.all();"
+      },
+      "id": "a09b17ee-6b30-41ed-80ce-aad995ff1c46",
+      "name": "Add Fun collection and Reddit tag",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"30a613422dba413cb1c36b7d26edd2ab\";\n  item.json.tag = \"792baac9c5184c40ba471f183ee994d2\"\n}\n\nreturn $input.all();"
+      },
+      "id": "fc992cb7-87de-48db-84c4-151659f674e6",
+      "name": "Add Fun collection and Reddit tag1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"30a613422dba413cb1c36b7d26edd2ab\";\n  item.json.tag = \"792baac9c5184c40ba471f183ee994d2\"\n}\n\nreturn $input.all();"
+      },
+      "id": "37af43ac-ebe5-4bcc-9edf-ec6111dd43b8",
+      "name": "Add Fun collection and Reddit tag2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = \"4279a5dabc7f48e183d0ddd4737b4c6f\"\n}\n\nreturn $input.all();"
+      },
+      "id": "8b581b99-a7dc-4185-951b-6913c2932651",
+      "name": "Add Reading collection and Newsletter tag",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = \"4279a5dabc7f48e183d0ddd4737b4c6f\"\n}\n\nreturn $input.all();"
+      },
+      "id": "4d6959be-dd7e-4489-95aa-3401842307f1",
+      "name": "Add Reading collection and Newsletter tag1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = \"4279a5dabc7f48e183d0ddd4737b4c6f\"\n}\n\nreturn $input.all();"
+      },
+      "id": "3c1c09da-81c1-45f9-b6a9-17d9055d1c6b",
+      "name": "Add Reading collection and Newsletter tag2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        720
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": {
+    "node:Weekly Schedule Trigger on Sunday at 3am": {
+      "recurrencyRules": []
+    },
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    },
+    "node:Weekly Trigger on Tuesday": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:35:16.927Z",
+      "updatedAt": "2023-04-09T15:35:16.927Z",
+      "id": "2",
+      "name": "Notion"
+    },
+    {
+      "createdAt": "2023-04-20T03:31:52.530Z",
+      "updatedAt": "2023-04-20T03:31:52.530Z",
+      "id": "7",
+      "name": "React"
+    },
+    {
+      "createdAt": "2023-04-20T03:31:54.437Z",
+      "updatedAt": "2023-04-20T03:31:54.437Z",
+      "id": "8",
+      "name": "Medium"
+    },
+    {
+      "createdAt": "2023-04-20T03:32:00.300Z",
+      "updatedAt": "2023-04-20T03:32:00.300Z",
+      "id": "9",
+      "name": "Productivity"
+    }
+  ],
+  "triggerCount": 3,
+  "updatedAt": "2023-04-22T02:51:00.000Z",
+  "versionId": "bd84684f-ace1-4e36-9f7c-63a008ee1912"
+}
