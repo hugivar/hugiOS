@@ -383,7 +383,7 @@
       "parameters": {
         "resource": "message",
         "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
-        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "message": "=",
         "toList": [
           "n8n.prong493@silomails.com"
         ],
@@ -415,7 +415,7 @@
       ]
     },
     "node:Event Updated": {
-      "lastTimeChecked": "2023-04-23T05:42:00.000Z",
+      "lastTimeChecked": "2023-04-23T14:16:00.000Z",
       "possibleDuplicates": [
         "2f5fb5a0-c4c0-4875-848f-fc24b99412f8"
       ]
@@ -436,6 +436,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-23T05:42:50.000Z",
-  "versionId": "fc27a3c3-9da0-40cf-a27b-2a57d7d1cb05"
+  "updatedAt": "2023-04-23T14:16:05.000Z",
+  "versionId": "db60f836-ec3e-495f-b356-baa68473684a"
 }
