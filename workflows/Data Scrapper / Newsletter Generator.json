@@ -296,6 +296,17 @@
           }
         ]
       ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-18T04:04:20.053Z",
@@ -692,32 +703,6 @@
     },
     {
       "parameters": {
-        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"30a613422dba413cb1c36b7d26edd2ab\";\n  item.json.tag = \"792baac9c5184c40ba471f183ee994d2\"\n}\n\nreturn $input.all();"
-      },
-      "id": "fc992cb7-87de-48db-84c4-151659f674e6",
-      "name": "Add Fun collection and Reddit tag1",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
-      "position": [
-        -180,
-        460
-      ]
-    },
-    {
-      "parameters": {
-        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"30a613422dba413cb1c36b7d26edd2ab\";\n  item.json.tag = \"792baac9c5184c40ba471f183ee994d2\"\n}\n\nreturn $input.all();"
-      },
-      "id": "37af43ac-ebe5-4bcc-9edf-ec6111dd43b8",
-      "name": "Add Fun collection and Reddit tag2",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
-      "position": [
-        -100,
-        540
-      ]
-    },
-    {
-      "parameters": {
         "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = \"4279a5dabc7f48e183d0ddd4737b4c6f\"\n}\n\nreturn $input.all();"
       },
       "id": "8b581b99-a7dc-4185-951b-6913c2932651",
@@ -754,6 +739,42 @@
         1620,
         720
       ]
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        2140,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "cdd3d122-e419-4359-9074-83b8734c2ff1"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {}
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        2400,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "de4670bf-1166-4bf2-aae1-46d19c7e528a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -796,6 +817,6 @@
     }
   ],
   "triggerCount": 3,
-  "updatedAt": "2023-04-22T02:51:00.000Z",
-  "versionId": "bd84684f-ace1-4e36-9f7c-63a008ee1912"
+  "updatedAt": "2023-04-23T05:44:23.000Z",
+  "versionId": "3c8ec4dc-b964-42ce-8561-aecb0cea3443"
 }
