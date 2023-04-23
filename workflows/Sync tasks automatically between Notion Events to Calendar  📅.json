@@ -367,7 +367,7 @@
       "parameters": {
         "resource": "message",
         "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
-        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}",
         "toList": [
           "n8n.prong493@silomails.com"
         ],
@@ -393,13 +393,13 @@
   "settings": {},
   "staticData": {
     "node:Notion Trigger (Beta)": {
-      "lastTimeChecked": "2023-04-23T05:43:00.000Z",
+      "lastTimeChecked": "2023-04-23T14:18:00.000Z",
       "possibleDuplicates": [
         "5ca3e241-0d8c-4008-8ec5-1aa3257e75cb"
       ]
     },
     "node:Notion Trigger (Beta)1": {
-      "lastTimeChecked": "2023-04-23T05:43:00.000Z"
+      "lastTimeChecked": "2023-04-23T14:18:00.000Z"
     }
   },
   "tags": [
@@ -417,6 +417,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2023-04-23T05:43:41.000Z",
-  "versionId": "75da2668-e183-43b2-a431-b83576ab2a96"
+  "updatedAt": "2023-04-23T14:18:06.000Z",
+  "versionId": "0588b958-cc5c-4621-a52c-508bc2ec4d67"
 }
