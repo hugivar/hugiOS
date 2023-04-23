@@ -33,6 +33,17 @@
           }
         ]
       ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-07T17:19:57.030Z",
@@ -226,6 +237,42 @@
           "name": "Supabase account"
         }
       }
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        380,
+        140
+      ],
+      "typeVersion": 1,
+      "id": "d598088b-1a93-4364-9f94-7cf2e0db25e1"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {}
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        640,
+        140
+      ],
+      "typeVersion": 1,
+      "id": "9213e12d-fd2a-443d-ba34-0789c17aa7fb",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -244,7 +291,7 @@
       ]
     },
     "node:Brain Item Updated": {
-      "lastTimeChecked": "2023-04-23T04:00:00.000Z",
+      "lastTimeChecked": "2023-04-23T05:43:00.000Z",
       "possibleDuplicates": [
         "487a6ccb-8f28-42c0-9e15-3d5aa31c792f"
       ]
@@ -265,6 +312,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-23T04:00:15.000Z",
-  "versionId": "c2b55348-f3e4-48be-b711-1e19802470d0"
+  "updatedAt": "2023-04-23T05:43:59.000Z",
+  "versionId": "9d35b9c1-b3fe-43b3-9469-f35979603f78"
 }
