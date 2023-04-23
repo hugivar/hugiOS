@@ -66,6 +66,17 @@
           }
         ]
       ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-06T03:21:31.985Z",
@@ -340,22 +351,55 @@
           "name": "Google Calendar"
         }
       }
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        360,
+        20
+      ],
+      "typeVersion": 1,
+      "id": "39272cee-c55c-4ed0-a1e2-e3d8fc314c51"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {}
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        620,
+        20
+      ],
+      "typeVersion": 1,
+      "id": "aa14e535-b2b6-4fc1-86da-cdd19eb4a2b8",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
     }
   ],
   "pinData": {},
   "settings": {},
   "staticData": {
     "node:Notion Trigger (Beta)": {
-      "lastTimeChecked": "2023-04-23T04:00:00.000Z",
+      "lastTimeChecked": "2023-04-23T05:43:00.000Z",
       "possibleDuplicates": [
         "5ca3e241-0d8c-4008-8ec5-1aa3257e75cb"
       ]
     },
     "node:Notion Trigger (Beta)1": {
-      "lastTimeChecked": "2023-04-23T04:00:00.000Z",
-      "possibleDuplicates": [
-        "2f5fb5a0-c4c0-4875-848f-fc24b99412f8"
-      ]
+      "lastTimeChecked": "2023-04-23T05:43:00.000Z"
     }
   },
   "tags": [
@@ -373,6 +417,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2023-04-23T04:00:47.000Z",
-  "versionId": "a9c70056-855c-4d38-be34-1a8a64e87618"
+  "updatedAt": "2023-04-23T05:43:41.000Z",
+  "versionId": "75da2668-e183-43b2-a431-b83576ab2a96"
 }
