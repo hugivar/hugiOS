@@ -114,8 +114,8 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1(eslint-config-prettier@8.8.0)(eslint@8.32.0)(prettier@2.8.7)
       happy-dom:
-        specifier: 9.8.0
-        version: 9.8.0
+        specifier: 9.9.2
+        version: 9.9.2
       jest:
         specifier: ^29.4.0
         version: 29.4.0(@types/node@18.15.11)(ts-node@10.9.1)
@@ -139,7 +139,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.8.0)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
 
   apps/notifications:
     dependencies:
@@ -311,8 +311,8 @@ importers:
         specifier: 8.8.0
         version: 8.8.0(eslint@8.17.0)
       happy-dom:
-        specifier: 9.8.0
-        version: 9.8.0
+        specifier: 9.9.2
+        version: 9.9.2
       jsdom:
         specifier: 21.1.1
         version: 21.1.1
@@ -336,7 +336,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.8.0)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
 
   packages/config:
     dependencies:
@@ -554,7 +554,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.8.0)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
 
   packages/solid-ui:
     dependencies:
@@ -606,7 +606,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.8.0)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
 
   packages/testing:
     dependencies:
@@ -991,7 +991,7 @@ importers:
     devDependencies:
       '@builder.io/qwik':
         specifier: 0.100.0
-        version: 0.100.0(undici@5.21.0)
+        version: 0.100.0(undici@5.22.0)
       '@builder.io/qwik-city':
         specifier: 0.100.0
         version: 0.100.0(@builder.io/qwik@0.100.0)
@@ -1014,8 +1014,8 @@ importers:
         specifier: 8.30.0
         version: 8.30.0
       eslint-plugin-qwik:
-        specifier: 0.102.0
-        version: 0.102.0(eslint@8.30.0)
+        specifier: 0.103.0
+        version: 0.103.0(eslint@8.30.0)
       node-fetch:
         specifier: 3.3.0
         version: 3.3.0
@@ -1026,8 +1026,8 @@ importers:
         specifier: 5.0.2
         version: 5.0.2
       undici:
-        specifier: 5.21.0
-        version: 5.21.0
+        specifier: 5.22.0
+        version: 5.22.0
       vite:
         specifier: 4.3.0
         version: 4.3.0(@types/node@18.15.11)
@@ -1125,7 +1125,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.8.0)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
 
   playground/vue-project:
     dependencies:
@@ -1164,8 +1164,8 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(vue@3.2.47)
       '@vue/tsconfig':
-        specifier: 0.1.3
-        version: 0.1.3(@types/node@18.15.11)
+        specifier: 0.2.0
+        version: 0.2.0
       cypress:
         specifier: 12.10.0
         version: 12.10.0
@@ -1195,10 +1195,10 @@ importers:
         version: 4.3.0(@types/node@18.15.11)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.8.0)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
       vue-tsc:
-        specifier: 1.2.0
-        version: 1.2.0(typescript@5.0.2)
+        specifier: 1.4.2
+        version: 1.4.2(typescript@5.0.2)
 
   services/haveibeenpwned:
     dependencies:
@@ -1448,7 +1448,7 @@ packages:
       dset: 3.1.2
       is-docker: 3.0.0
       is-wsl: 2.2.0
-      undici: 5.21.0
+      undici: 5.22.0
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
@@ -2816,7 +2816,7 @@ packages:
     peerDependencies:
       '@builder.io/qwik': '>=0.22.0'
     dependencies:
-      '@builder.io/qwik': 0.100.0(undici@5.21.0)
+      '@builder.io/qwik': 0.100.0(undici@5.22.0)
       '@mdx-js/mdx': 2.3.0
       '@types/mdx': 2.0.3
       source-map: 0.7.4
@@ -2826,14 +2826,14 @@ packages:
       - supports-color
     dev: true
 
-  /@builder.io/qwik@0.100.0(undici@5.21.0):
+  /@builder.io/qwik@0.100.0(undici@5.22.0):
     resolution: {integrity: sha512-p2DAHZTkPFVN3fz3I6Ael6pLLdlzf89owPJVAIoQ9vt5jULnDJRf096qGc84Y+gaoqfoFWBYHYVnHOP0fnRjQg==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
       undici: ^5.14.0
     dependencies:
-      undici: 5.21.0
+      undici: 5.22.0
     dev: true
 
   /@chakra-ui/accordion@1.4.12(@chakra-ui/system@1.12.1)(framer-motion@10.0.0)(react@18.2.0):
@@ -8327,7 +8327,7 @@ packages:
       c8: 7.13.0
       picocolors: 1.0.0
       std-env: 3.3.2
-      vitest: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.8.0)(jsdom@21.1.1)
+      vitest: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
     dev: true
 
   /@vitest/expect@0.30.0:
@@ -8381,43 +8381,48 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@volar/language-core@1.3.0-alpha.0:
-    resolution: {integrity: sha512-W3uMzecHPcbwddPu4SJpUcPakRBK/y/BP+U0U6NiPpUX1tONLC4yCawt+QBJqtgJ+sfD6ztf5PyvPL3hQRqfOA==}
+  /@volar/language-core@1.4.0:
+    resolution: {integrity: sha512-zZg771L/v4MCPwM1KJxvnQ3q3QgbGJtEytivqf+PsxPr0kQ7XtwB1J30dd+YSGN869pXXZ0V6vWdHkDpWC8F3A==}
     dependencies:
-      '@volar/source-map': 1.3.0-alpha.0
+      '@volar/source-map': 1.4.0
     dev: true
 
-  /@volar/source-map@1.3.0-alpha.0:
-    resolution: {integrity: sha512-jSdizxWFvDTvkPYZnO6ew3sBZUnS0abKCbuopkc0JrIlFbznWC/fPH3iPFIMS8/IIkRxq1Jh9VVG60SmtsdaMQ==}
+  /@volar/source-map@1.4.0:
+    resolution: {integrity: sha512-gkV8ol9qtP7aMdgijc8a5Yoxxoo90TT55YCi9bsMbKxEUDsOAnlciFNlijR9Ebe42d67GV3w15/RzjveTRNGBw==}
     dependencies:
       muggle-string: 0.2.2
     dev: true
 
-  /@volar/typescript@1.3.0-alpha.0:
-    resolution: {integrity: sha512-5UItyW2cdH2mBLu4RrECRNJRgtvvzKrSCn2y3v/D61QwIDkGx4aeil6x8RFuUL5TFtV6QvVHXnsOHxNgd+sCow==}
+  /@volar/typescript@1.4.0(typescript@5.0.2):
+    resolution: {integrity: sha512-r6OMHj/LeS86iQy3LEjjS+qpmHr9I7BiH8gAwp9WEJP76FHlMPi/EPDQxhf3VcMQ/w6Pi5aBczqI+I3akr9t4g==}
+    peerDependencies:
+      typescript: '*'
     dependencies:
-      '@volar/language-core': 1.3.0-alpha.0
+      '@volar/language-core': 1.4.0
+      typescript: 5.0.2
     dev: true
 
-  /@volar/vue-language-core@1.2.0:
-    resolution: {integrity: sha512-w7yEiaITh2WzKe6u8ZdeLKCUz43wdmY/OqAmsB/PGDvvhTcVhCJ6f0W/RprZL1IhqH8wALoWiwEh/Wer7ZviMQ==}
+  /@volar/vue-language-core@1.4.2:
+    resolution: {integrity: sha512-bDdFowfnyHI7udELEgUWukOh4l9jVTaxb9jZtj0GxUp0Mjj0u81d9+jE2UC3fFJpbndQLGFR6F+ffguHgmrj6Q==}
     dependencies:
-      '@volar/language-core': 1.3.0-alpha.0
-      '@volar/source-map': 1.3.0-alpha.0
+      '@volar/language-core': 1.4.0
+      '@volar/source-map': 1.4.0
       '@vue/compiler-dom': 3.2.47
       '@vue/compiler-sfc': 3.2.47
       '@vue/reactivity': 3.2.47
       '@vue/shared': 3.2.47
-      minimatch: 6.2.0
+      minimatch: 9.0.0
       muggle-string: 0.2.2
       vue-template-compiler: 2.7.14
     dev: true
 
-  /@volar/vue-typescript@1.2.0:
-    resolution: {integrity: sha512-zjmRi9y3J1EkG+pfuHp8IbHmibihrKK485cfzsHjiuvJMGrpkWvlO5WVEk8oslMxxeGC5XwBFE9AOlvh378EPA==}
+  /@volar/vue-typescript@1.4.2(typescript@5.0.2):
+    resolution: {integrity: sha512-A1m1cSvS0Pf7Sm9q0S/1riV4RQQeH2h5gGo0vR9fGK2SrAStvh4HuuxPOX4N9uMDbRsNMhC0ILXwtlvjQ/IXJA==}
     dependencies:
-      '@volar/typescript': 1.3.0-alpha.0
-      '@volar/vue-language-core': 1.2.0
+      '@volar/typescript': 1.4.0(typescript@5.0.2)
+      '@volar/vue-language-core': 1.4.2
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /@vscode/emmet-helper@2.8.6:
@@ -8575,15 +8580,8 @@ packages:
       '@vue/server-renderer': 3.2.47(vue@3.2.47)
     dev: true
 
-  /@vue/tsconfig@0.1.3(@types/node@18.15.11):
-    resolution: {integrity: sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==}
-    peerDependencies:
-      '@types/node': '*'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-    dependencies:
-      '@types/node': 18.15.11
+  /@vue/tsconfig@0.2.0:
+    resolution: {integrity: sha512-T1bRYMEanZ7PYjUQskcI5wWyXoUKnubjlySPKaDYcU+bPLaupxSYSwOTEXr7D91SMC1K6tnbKmWj0Z+2F5VSzg==}
     dev: true
 
   /@webassemblyjs/ast@1.11.1:
@@ -11879,8 +11877,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-qwik@0.102.0(eslint@8.30.0):
-    resolution: {integrity: sha512-XYESC95rDu9SCxEOHLENZoAkXckugTLWp9FBW4jQvq/L4k32dGnMO1wokB3uv5NnnLf1QfNlhoEc5md52mQXwQ==}
+  /eslint-plugin-qwik@0.103.0(eslint@8.30.0):
+    resolution: {integrity: sha512-mEZ5qfNcpnnufWwmGarIqvopgZlNTdaMF1RQbLLwtW3czx7UEEqbWHgxFwcCWv/xLUg7Gn8WxduM0BmTdbSRew==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: '>= 8'
@@ -13314,8 +13312,8 @@ packages:
   /handle-thing@2.0.1:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==}
 
-  /happy-dom@9.8.0:
-    resolution: {integrity: sha512-N7nplhhMBN7cJCH96C9O/kdEg755XZmHwh3JvB+6Nq+ehyGsYewLuMHPmBcOWagpJdn8cMOB+X3tmtJJaZvTBg==}
+  /happy-dom@9.9.2:
+    resolution: {integrity: sha512-E+FouJ18tckCe04ky6mMtNEGGoXZrY+UFqHICNarQB+fCb4RtZeRbp2IOmoIYaQRjb5Iu3ChLNsLBnB8aA3vjA==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
@@ -16300,13 +16298,6 @@ packages:
 
   /minimatch@5.1.6:
     resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
-    engines: {node: '>=10'}
-    dependencies:
-      brace-expansion: 2.0.1
-    dev: true
-
-  /minimatch@6.2.0:
-    resolution: {integrity: sha512-sauLxniAmvnhhRjFwPNnJKaPFYyddAgbYdeUpHULtCT/GhzdCx/MDNy+Y40lBxTQUrMzDE8e0S43Z5uqfO0REg==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
@@ -20742,6 +20733,13 @@ packages:
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
+    dev: false
+
+  /undici@5.22.0:
+    resolution: {integrity: sha512-fR9RXCc+6Dxav4P9VV/sp5w3eFiSdOjJYsbtWfd4s5L5C4ogyuVpdKIVHeW0vV1MloM65/f7W45nR9ZxwVdyiA==}
+    engines: {node: '>=14.0'}
+    dependencies:
+      busboy: 1.6.0
 
   /unherit@3.0.1:
     resolution: {integrity: sha512-akOOQ/Yln8a2sgcLj4U0Jmx0R5jpIg2IUyRrWOzmEbjBtGzBdHtSeFKgoEcoH4KYIG/Pb8GQ/BwtYm0GCq1Sqg==}
@@ -21280,7 +21278,7 @@ packages:
     dependencies:
       vite: 4.3.0(@types/node@18.15.11)
 
-  /vitest@0.30.0(@vitest/ui@0.30.0)(happy-dom@9.8.0)(jsdom@21.1.1):
+  /vitest@0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1):
     resolution: {integrity: sha512-2WW4WeTHtrLFeoiuotWvEW6khozx1NvMGYoGsNz2btdddEbqvEdPJIouIdoiC5i61Rl1ctZvm9cn2R9TcPQlzw==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -21326,7 +21324,7 @@ packages:
       chai: 4.3.7
       concordance: 5.0.4
       debug: 4.3.4(supports-color@8.1.1)
-      happy-dom: 9.8.0
+      happy-dom: 9.9.2
       jsdom: 21.1.1
       local-pkg: 0.4.3
       magic-string: 0.30.0
@@ -21453,14 +21451,15 @@ packages:
       he: 1.2.0
     dev: true
 
-  /vue-tsc@1.2.0(typescript@5.0.2):
-    resolution: {integrity: sha512-rIlzqdrhyPYyLG9zxsVRa+JEseeS9s8F2BbVVVWRRsTZvJO2BbhLEb2HW3MY+DFma0378tnIqs+vfTzbcQtRFw==}
+  /vue-tsc@1.4.2(typescript@5.0.2):
+    resolution: {integrity: sha512-8VFjVekJuFtFG+N4rEimoR0OvNubhoTIMl2dlvbpyAD40LVPR1PN2SUc2qZPnWGGRsXZAVmFgiBHX0RB20HGyA==}
     hasBin: true
     peerDependencies:
       typescript: '*'
     dependencies:
-      '@volar/vue-language-core': 1.2.0
-      '@volar/vue-typescript': 1.2.0
+      '@volar/vue-language-core': 1.4.2
+      '@volar/vue-typescript': 1.4.2(typescript@5.0.2)
+      semver: 7.3.8
       typescript: 5.0.2
     dev: true
 
