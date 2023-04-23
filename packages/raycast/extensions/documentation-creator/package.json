@@ -12,9 +12,9 @@
   "commands": [
     {
       "name": "createNoteCommand",
-      "title": "Create Note",
+      "title": "Create Documentation",
       "subtitle": "Obsidian",
-      "description": "Create new note",
+      "description": "Create new documentation note",
       "mode": "view",
       "preferences": [
         {
