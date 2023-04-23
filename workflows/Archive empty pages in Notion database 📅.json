@@ -104,6 +104,17 @@
           }
         ]
       ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-06T03:10:55.156Z",
@@ -294,6 +305,42 @@
         340,
         240
       ]
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        340,
+        20
+      ],
+      "typeVersion": 1,
+      "id": "e5e265ce-62cf-4d12-8c68-71765783d284"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {}
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        600,
+        20
+      ],
+      "typeVersion": 1,
+      "id": "f4529317-dbbf-482c-a7a4-1d6aaaea10ab",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -312,6 +359,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-09T16:19:34.000Z",
-  "versionId": "f623fe2d-3c63-4849-87e3-619464af528b"
+  "updatedAt": "2023-04-23T05:47:24.000Z",
+  "versionId": "d472d27b-2c71-46c0-a888-881f91fe8e8b"
 }
