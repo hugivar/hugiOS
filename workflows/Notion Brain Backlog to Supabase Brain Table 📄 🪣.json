@@ -257,7 +257,9 @@
         "toList": [
           "n8n.prong493@silomails.com"
         ],
-        "additionalFields": {}
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
       },
       "name": "Send error email",
       "type": "n8n-nodes-base.gmail",
@@ -291,9 +293,10 @@
       ]
     },
     "node:Brain Item Updated": {
-      "lastTimeChecked": "2023-04-24T02:00:00.000Z",
+      "lastTimeChecked": "2023-04-24T23:40:00.000Z",
       "possibleDuplicates": [
-        "74a8d77d-b0b6-42ad-aed3-70ba9906ce82"
+        "1daaf16c-9ed1-4922-a93a-3a63e3598646",
+        "210f29e6-00ec-49a0-8455-365237115280"
       ]
     }
   },
@@ -312,6 +315,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-24T02:00:17.000Z",
-  "versionId": "9d35b9c1-b3fe-43b3-9469-f35979603f78"
+  "updatedAt": "2023-04-24T23:40:06.000Z",
+  "versionId": "c08e8574-e835-4cc7-bb5d-ace0040b8f64"
 }
