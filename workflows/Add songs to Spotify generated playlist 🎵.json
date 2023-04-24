@@ -5,7 +5,17 @@
       "main": [
         [
           {
-            "node": "IF purge Generated playlist is true",
+            "node": "Split out seed_artists",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Get \"Generated\" Spotify playlist",
             "type": "main",
             "index": 0
           }
@@ -123,39 +133,6 @@
         [
           {
             "node": "Aggregate artistIds to seed_artists object array",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF purge Generated playlist is true": {
-      "main": [
-        [
-          {
-            "node": "Get \"Generated\" Spotify playlist",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Split out seed_artists",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          }
-        ],
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          },
-          {
-            "node": "Split out seed_artists",
             "type": "main",
             "index": 0
           }
@@ -378,14 +355,14 @@
             },
             {
               "name": "seed_artists",
-              "value": "5O1YiYFy3CEWD2lkOmoerV"
+              "value": "={{ $json.artistIds }}"
             },
             {
               "name": "seed_genres"
             },
             {
               "name": "limit",
-              "value": "2"
+              "value": "20"
             }
           ]
         },
@@ -442,26 +419,6 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "boolean": [
-            {
-              "value1": "={{ $json.purge }}",
-              "value2": true
-            }
-          ]
-        }
-      },
-      "id": "78b8d512-b5bf-4cd5-91dd-007d1c922654",
-      "name": "IF purge Generated playlist is true",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        -1080,
-        540
-      ]
-    },
-    {
-      "parameters": {
         "resource": "playlist",
         "operation": "get",
         "id": "spotify:playlist:0IIxCoCu2IQkuxSDnvSYJg"
@@ -500,7 +457,7 @@
         "resource": "playlist",
         "operation": "delete",
         "id": "spotify:playlist:0IIxCoCu2IQkuxSDnvSYJg",
-        "trackID": "=spotify:track:{{ $json.track.album.id }}"
+        "trackID": "=spotify:track:{{ $json.track.id }}"
       },
       "id": "bc564b78-0b95-469c-b86f-7ff5ff0c5359",
       "name": "Spotify",
@@ -536,7 +493,9 @@
         "toList": [
           "n8n.prong493@silomails.com"
         ],
-        "additionalFields": {}
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
       },
       "name": "Send error email",
       "type": "n8n-nodes-base.gmail",
@@ -564,9 +523,7 @@
           "mood_preset": "energetic",
           "name": "energetic",
           "seed_artists": [
-            "Zone 2",
-            "Karma",
-            "Kwengface"
+            "Kay Flock"
           ],
           "seed_library": false,
           "seed_tracks": [],
@@ -589,6 +546,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2023-04-23T05:45:10.000Z",
-  "versionId": "8e624dfd-ed97-4974-90c5-73ead22bd61a"
+  "updatedAt": "2023-04-24T23:39:52.000Z",
+  "versionId": "0cb38122-9541-467e-b43b-48f08e800627"
 }
