@@ -311,7 +311,9 @@
         "toList": [
           "n8n.prong493@silomails.com"
         ],
-        "additionalFields": {}
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
       },
       "name": "Send error email",
       "type": "n8n-nodes-base.gmail",
@@ -351,6 +353,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-23T05:44:36.000Z",
-  "versionId": "3471795f-ec26-4f40-8804-873a4f18c695"
+  "updatedAt": "2023-04-24T23:41:06.000Z",
+  "versionId": "7d080834-cbb0-4074-a1c7-2c48ffa86db6"
 }
