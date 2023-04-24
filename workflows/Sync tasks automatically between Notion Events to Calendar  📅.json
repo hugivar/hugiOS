@@ -371,7 +371,9 @@
         "toList": [
           "n8n.prong493@silomails.com"
         ],
-        "additionalFields": {}
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
       },
       "name": "Send error email",
       "type": "n8n-nodes-base.gmail",
@@ -393,13 +395,16 @@
   "settings": {},
   "staticData": {
     "node:Notion Trigger (Beta)": {
-      "lastTimeChecked": "2023-04-23T14:18:00.000Z",
+      "lastTimeChecked": "2023-04-24T23:40:00.000Z",
       "possibleDuplicates": [
-        "5ca3e241-0d8c-4008-8ec5-1aa3257e75cb"
+        "8cecdcb2-6eb8-4fb1-bc8b-327aa9512822"
       ]
     },
     "node:Notion Trigger (Beta)1": {
-      "lastTimeChecked": "2023-04-23T14:18:00.000Z"
+      "lastTimeChecked": "2023-04-24T23:40:00.000Z",
+      "possibleDuplicates": [
+        "8cecdcb2-6eb8-4fb1-bc8b-327aa9512822"
+      ]
     }
   },
   "tags": [
@@ -417,6 +422,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2023-04-23T14:18:06.000Z",
-  "versionId": "0588b958-cc5c-4621-a52c-508bc2ec4d67"
+  "updatedAt": "2023-04-24T23:40:30.000Z",
+  "versionId": "57b2016a-b3a4-4dbb-aa3f-435876c651d2"
 }
