@@ -48,6 +48,11 @@
             "node": "Send error email",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -387,13 +392,15 @@
         "toList": [
           "n8n.prong493@silomails.com"
         ],
-        "additionalFields": {}
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
       },
       "name": "Send error email",
       "type": "n8n-nodes-base.gmail",
       "position": [
-        940,
-        20
+        960,
+        -100
       ],
       "typeVersion": 1,
       "id": "704c268d-5fd1-46db-85d8-b79575cc89e8",
@@ -403,6 +410,19 @@
           "name": "Gmail account"
         }
       }
+    },
+    {
+      "parameters": {
+        "errorMessage": "={{ $json.workflow.name }} is broken"
+      },
+      "id": "e5dd37c8-4600-4947-9ca6-882c9132d3d0",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        960,
+        60
+      ]
     }
   ],
   "pinData": {},
@@ -415,9 +435,9 @@
       ]
     },
     "node:Event Updated": {
-      "lastTimeChecked": "2023-04-23T14:16:00.000Z",
+      "lastTimeChecked": "2023-04-24T23:40:00.000Z",
       "possibleDuplicates": [
-        "2f5fb5a0-c4c0-4875-848f-fc24b99412f8"
+        "8cecdcb2-6eb8-4fb1-bc8b-327aa9512822"
       ]
     }
   },
@@ -436,6 +456,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-23T14:16:05.000Z",
-  "versionId": "db60f836-ec3e-495f-b356-baa68473684a"
+  "updatedAt": "2023-04-24T23:40:18.000Z",
+  "versionId": "e7a1b2f2-ff7b-4055-8e23-ca05c9a045ce"
 }
