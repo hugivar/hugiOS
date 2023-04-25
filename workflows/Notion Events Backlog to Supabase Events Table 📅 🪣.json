@@ -104,6 +104,10 @@
               "value1": "={{ $json.object }}",
               "operation": "contains",
               "value2": "page"
+            },
+            {
+              "value1": "={{ $json.id }}",
+              "operation": "isNotEmpty"
             }
           ]
         }
@@ -435,7 +439,7 @@
       ]
     },
     "node:Event Updated": {
-      "lastTimeChecked": "2023-04-24T23:40:00.000Z",
+      "lastTimeChecked": "2023-04-25T00:31:00.000Z",
       "possibleDuplicates": [
         "8cecdcb2-6eb8-4fb1-bc8b-327aa9512822"
       ]
@@ -456,6 +460,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-24T23:40:18.000Z",
-  "versionId": "e7a1b2f2-ff7b-4055-8e23-ca05c9a045ce"
+  "updatedAt": "2023-04-25T00:31:42.000Z",
+  "versionId": "482a8707-7627-4ddf-bd89-4135b5cc11ab"
 }
