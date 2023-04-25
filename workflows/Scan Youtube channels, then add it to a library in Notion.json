@@ -369,6 +369,11 @@
               "value1": "={{ $json.snippet.description }}",
               "operation": "notContains",
               "value2": "#shorts"
+            },
+            {
+              "value1": "={{ $json.snippet.title }}",
+              "operation": "notContains",
+              "value2": "#Shorts"
             }
           ]
         }
@@ -506,6 +511,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-24T23:39:41.000Z",
-  "versionId": "2245f9a3-320b-469d-acc3-a816eac130e0"
+  "updatedAt": "2023-04-25T00:39:54.000Z",
+  "versionId": "3a4b9867-646f-4f98-aad5-9db9841b09a6"
 }
