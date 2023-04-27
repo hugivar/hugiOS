@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Event Updated": {
       "main": [
@@ -21,13 +21,7 @@
             "index": 0
           }
         ],
-        [
-          {
-            "node": "Create Row in Event Backlog",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Get Page": {
@@ -44,11 +38,6 @@
     "Error Trigger": {
       "main": [
         [
-          {
-            "node": "Send error email",
-            "type": "main",
-            "index": 0
-          },
           {
             "node": "Stop and Error",
             "type": "main",
@@ -127,9 +116,9 @@
         "operation": "get",
         "pageId": {
           "__rl": true,
-          "value": "={{ $json.id }}",
-          "mode": "id",
-          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?4[0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12})"
+          "value": "={{ $json.url }}",
+          "mode": "url",
+          "__regex": "(?:https|http)://www.notion.so/(?:[a-z0-9-]{2,}/)?(?:[a-zA-Z0-9-]{2,}-)?([0-9a-f]{8}[0-9a-f]{4}4[0-9a-f]{3}[89ab][0-9a-f]{3}[0-9a-f]{12})"
         }
       },
       "id": "943f2305-cfcc-4057-9c7c-9612d938d46e",
@@ -144,121 +133,6 @@
         "notionApi": {
           "id": "1",
           "name": "Notion account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "tableId": "Events Backlog",
-        "fieldsUi": {
-          "fieldValues": [
-            {
-              "fieldId": "id",
-              "fieldValue": "={{ $json.id }}"
-            },
-            {
-              "fieldId": "name",
-              "fieldValue": "={{ $json.Task }}"
-            },
-            {
-              "fieldId": "property_edited",
-              "fieldValue": "={{ $json.Edited }}"
-            },
-            {
-              "fieldId": "property_priority",
-              "fieldValue": "={{ $json.Edited }}"
-            },
-            {
-              "fieldId": "property_days_only_if_set_to_1_day_s",
-              "fieldValue": "={{ $json[\"Days (Only if Set to 1 Day(s))\"] }}"
-            },
-            {
-              "fieldId": "property_created",
-              "fieldValue": "={{ $json.Created }}"
-            },
-            {
-              "fieldId": "property_state",
-              "fieldValue": "={{ $json.State }}"
-            },
-            {
-              "fieldId": "property_last_day_base_date",
-              "fieldValue": "={{ $json[\"Last Day Base Date\"] }}"
-            },
-            {
-              "fieldId": "property_created_by",
-              "fieldValue": "={{ $json[\"Created By\"] }}"
-            },
-            {
-              "fieldId": "property_due_timestamp",
-              "fieldValue": "={{ $json[\"Due Timestamp\"] }}"
-            },
-            {
-              "fieldId": "property_first_weekday_base_date",
-              "fieldValue": "={{ $json[\"First Weekday Base Date\"] }}"
-            },
-            {
-              "fieldId": "property_simplified_recur_unit",
-              "fieldValue": "={{ $json[\"Simplified Recur Unit\"] }}"
-            },
-            {
-              "fieldId": "property_next_due",
-              "fieldValue": "={{ $json[\"Next Due\"] }}"
-            },
-            {
-              "fieldId": "property_done",
-              "fieldValue": "={{ $json.Done }}"
-            },
-            {
-              "fieldId": "property_type",
-              "fieldValue": "={{ $json.Type }}"
-            },
-            {
-              "fieldId": "property_due_date",
-              "fieldValue": "={{ $json[\"Due Date\"] }}"
-            },
-            {
-              "fieldId": "property_synced",
-              "fieldValue": "={{ $json[\"Synced to Calendar\"] }}"
-            },
-            {
-              "fieldId": "property_recur_interval",
-              "fieldValue": "={{ $json[\"Recur Interval\"] }}"
-            },
-            {
-              "fieldId": "property_utc_offset",
-              "fieldValue": "={{ $json[\"UTC Offset\"] }}"
-            },
-            {
-              "fieldId": "property_recur_unit",
-              "fieldValue": "={{ $json[\"Recur Unit\"] }}"
-            },
-            {
-              "fieldId": "property_last_weekday_base_date",
-              "fieldValue": "={{ $json[\"Last Weekday Base Date\"] }}"
-            },
-            {
-              "fieldId": "property_next_last_base_date",
-              "fieldValue": "={{ $json[\"Next Last Base Date\"] }}"
-            },
-            {
-              "fieldId": "property_task",
-              "fieldValue": "={{ $json.Task }}"
-            }
-          ]
-        }
-      },
-      "id": "20d9ce2a-14c0-419a-9aae-d140fdff6ec3",
-      "name": "Create Row in Event Backlog",
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
-      "position": [
-        940,
-        500
-      ],
-      "credentials": {
-        "supabaseApi": {
-          "id": "7",
-          "name": "Supabase account"
         }
       }
     },
@@ -460,6 +334,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-26T00:11:13.000Z",
-  "versionId": "482a8707-7627-4ddf-bd89-4135b5cc11ab"
+  "updatedAt": "2023-04-27T00:10:21.000Z",
+  "versionId": "469cba58-4711-4d28-a3f2-ce701dc20022"
 }
