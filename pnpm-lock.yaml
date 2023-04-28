@@ -114,8 +114,8 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1(eslint-config-prettier@8.8.0)(eslint@8.32.0)(prettier@2.8.7)
       happy-dom:
-        specifier: 9.9.2
-        version: 9.9.2
+        specifier: 9.10.0
+        version: 9.10.0
       jest:
         specifier: ^29.4.0
         version: 29.4.0(@types/node@18.15.11)(ts-node@10.9.1)
@@ -139,7 +139,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.10.0)(jsdom@21.1.1)
 
   apps/notifications:
     dependencies:
@@ -311,8 +311,8 @@ importers:
         specifier: 8.8.0
         version: 8.8.0(eslint@8.17.0)
       happy-dom:
-        specifier: 9.9.2
-        version: 9.9.2
+        specifier: 9.10.0
+        version: 9.10.0
       jsdom:
         specifier: 21.1.1
         version: 21.1.1
@@ -336,7 +336,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.10.0)(jsdom@21.1.1)
 
   packages/config:
     dependencies:
@@ -394,10 +394,10 @@ importers:
         version: link:../../../../services/notion
       '@raycast/api':
         specifier: latest
-        version: 1.49.3(@types/node@18.16.0)(@types/react@18.2.0)
+        version: 1.50.0(@types/node@18.16.0)(@types/react@18.2.0)
       '@raycast/utils':
         specifier: ^1.4.7
-        version: 1.4.7(@raycast/api@1.49.3)
+        version: 1.4.7(@raycast/api@1.50.0)
       email-validator:
         specifier: ^2.0.4
         version: 2.0.4
@@ -548,13 +548,13 @@ importers:
         version: 5.0.2
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
       vite-tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.10.0)(jsdom@21.1.1)
 
   packages/solid-ui:
     dependencies:
@@ -597,7 +597,7 @@ importers:
         version: 5.0.2
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
       vite-plugin-solid:
         specifier: 2.7.0
         version: 2.7.0(solid-js@1.7.0)(vite@4.3.0)
@@ -606,7 +606,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.10.0)(jsdom@21.1.1)
 
   packages/testing:
     dependencies:
@@ -947,7 +947,7 @@ importers:
         version: 2.1.0
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
       webpack:
         specifier: ^5.75.0
         version: 5.75.0(webpack-cli@5.0.1)
@@ -1014,8 +1014,8 @@ importers:
         specifier: 8.30.0
         version: 8.30.0
       eslint-plugin-qwik:
-        specifier: 0.104.0
-        version: 0.104.0(eslint@8.30.0)
+        specifier: 0.105.0
+        version: 0.105.0(eslint@8.30.0)
       node-fetch:
         specifier: 3.3.0
         version: 3.3.0
@@ -1048,7 +1048,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
 
   playground/rest:
     dependencies:
@@ -1094,7 +1094,7 @@ importers:
         version: 4.0.0(vite@4.3.0)
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
 
   playground/solidjs-starter:
     dependencies:
@@ -1116,7 +1116,7 @@ importers:
         version: 5.0.2
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
       vite-plugin-solid:
         specifier: 2.7.0
         version: 2.7.0(solid-js@1.7.0)(vite@4.3.0)
@@ -1125,7 +1125,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.10.0)(jsdom@21.1.1)
 
   playground/vue-project:
     dependencies:
@@ -1195,7 +1195,7 @@ importers:
         version: 4.3.0(@types/node@18.16.0)
       vitest:
         specifier: 0.30.0
-        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
+        version: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.10.0)(jsdom@21.1.1)
       vue-tsc:
         specifier: 1.6.1
         version: 1.6.1(typescript@5.0.2)
@@ -6949,6 +6949,25 @@ packages:
       react-reconciler: 0.28.0(react@18.1.0)
     dev: false
 
+  /@raycast/api@1.50.0(@types/node@18.16.0)(@types/react@18.2.0):
+    resolution: {integrity: sha512-zrBbgvrTT5Wb1s1jArxLAsqNe7wdkr3SUPJL/usd7v1f9zWLEqrRxELjO4ov5yr+qyg2Cg/fa0+xZSdYQjiPZg==}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@types/node': 18.8.3
+      '@types/react': 18.0.9
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      '@types/react':
+        optional: true
+    dependencies:
+      '@types/node': 18.16.0
+      '@types/react': 18.2.0
+      react: 18.1.0
+      react-reconciler: 0.28.0(react@18.1.0)
+    dev: false
+
   /@raycast/eslint-config@1.0.5(eslint@7.32.0)(prettier@2.8.7)(typescript@5.0.2):
     resolution: {integrity: sha512-oxpj+3/zQ5aB5+sH9BriiiTcwkR9+ERpfBDJGpqe6eiveNjKRJe5JVt5lHPyeghLF0fl86GhQz9hnvXbuIMJ8g==}
     peerDependencies:
@@ -6981,12 +7000,12 @@ packages:
       - typescript
     dev: true
 
-  /@raycast/utils@1.4.7(@raycast/api@1.49.3):
+  /@raycast/utils@1.4.7(@raycast/api@1.50.0):
     resolution: {integrity: sha512-v0Ba4UnqlUaQfdJBOS9KKhhFUzw3wwgZ6EBVSDg/dJYWOobXWeA6TbjgBBiY9Up5W0ei+IfegbwRICXxehLiww==}
     peerDependencies:
       '@raycast/api': '>=1.39.2'
     dependencies:
-      '@raycast/api': 1.49.3(@types/node@18.16.0)(@types/react@18.2.0)
+      '@raycast/api': 1.50.0(@types/node@18.16.0)(@types/react@18.2.0)
       content-type: 1.0.5
       dequal: 2.0.3
       media-typer: 1.1.0
@@ -8461,7 +8480,7 @@ packages:
       c8: 7.13.0
       picocolors: 1.0.0
       std-env: 3.3.2
-      vitest: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1)
+      vitest: 0.30.0(@vitest/ui@0.30.0)(happy-dom@9.10.0)(jsdom@21.1.1)
     dev: true
 
   /@vitest/expect@0.30.0:
@@ -12086,8 +12105,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-qwik@0.104.0(eslint@8.30.0):
-    resolution: {integrity: sha512-8R4kJ3yyGWmM3j/h5bYjoQ2FmG088Srkz7psIR8pdcSYXOFMadeyhTsuomn3ht50Q+WLeH48c7pC7Bo7pORA3A==}
+  /eslint-plugin-qwik@0.105.0(eslint@8.30.0):
+    resolution: {integrity: sha512-g6jfSVnp1Yq8pht9i5i1C2bA9FKTCIK4ORaswuOcOkiKV7JM2QaDw/mkJRDjUiSwmdlLCnMA6LUgXZDO7w5tpQ==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: '>= 8'
@@ -13527,8 +13546,8 @@ packages:
   /handle-thing@2.0.1:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==}
 
-  /happy-dom@9.9.2:
-    resolution: {integrity: sha512-E+FouJ18tckCe04ky6mMtNEGGoXZrY+UFqHICNarQB+fCb4RtZeRbp2IOmoIYaQRjb5Iu3ChLNsLBnB8aA3vjA==}
+  /happy-dom@9.10.0:
+    resolution: {integrity: sha512-A2NGV4Z2goQEoFUed1jODPcG7WYHF04Ashv804qzIZU0I8kF5wQoJM6SVGC77nxZZAk7PypWzXKenfskgcpdMw==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
@@ -21625,7 +21644,7 @@ packages:
       merge-anything: 5.1.4
       solid-js: 1.7.0
       solid-refresh: 0.5.2(solid-js@1.7.0)
-      vite: 4.3.0(@types/node@18.15.11)
+      vite: 4.3.0(@types/node@18.16.0)
       vitefu: 0.2.4(vite@4.3.0)
     transitivePeerDependencies:
       - supports-color
@@ -21711,7 +21730,6 @@ packages:
       rollup: 3.20.2
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vitefu@0.2.4(vite@4.3.0):
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
@@ -21723,7 +21741,7 @@ packages:
     dependencies:
       vite: 4.3.0(@types/node@18.15.11)
 
-  /vitest@0.30.0(@vitest/ui@0.30.0)(happy-dom@9.9.2)(jsdom@21.1.1):
+  /vitest@0.30.0(@vitest/ui@0.30.0)(happy-dom@9.10.0)(jsdom@21.1.1):
     resolution: {integrity: sha512-2WW4WeTHtrLFeoiuotWvEW6khozx1NvMGYoGsNz2btdddEbqvEdPJIouIdoiC5i61Rl1ctZvm9cn2R9TcPQlzw==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -21769,7 +21787,7 @@ packages:
       chai: 4.3.7
       concordance: 5.0.4
       debug: 4.3.4(supports-color@8.1.1)
-      happy-dom: 9.9.2
+      happy-dom: 9.10.0
       jsdom: 21.1.1
       local-pkg: 0.4.3
       magic-string: 0.30.0
