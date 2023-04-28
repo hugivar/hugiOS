@@ -93,8 +93,7 @@
             "type": "main",
             "index": 0
           }
-        ],
-        []
+        ]
       ]
     },
     "Filter": {
@@ -135,6 +134,17 @@
         [
           {
             "node": "Notion (Beta)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
             "type": "main",
             "index": 0
           }
@@ -450,6 +460,44 @@
         2160,
         340
       ]
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        1480,
+        720
+      ],
+      "typeVersion": 1,
+      "id": "4fcea43b-927b-4ccf-a58e-3ab83107268c"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        1740,
+        720
+      ],
+      "typeVersion": 1,
+      "id": "7747439c-b308-4fca-9c64-64ec5a78bc9b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -474,6 +522,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-18T00:50:02.000Z",
-  "versionId": "2d488ac3-d493-4314-8acf-fdb3a52b7035"
+  "updatedAt": "2023-04-24T23:41:49.000Z",
+  "versionId": "82868815-3335-437a-98d0-992558bd1f9f"
 }

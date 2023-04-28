@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Event Updated": {
       "main": [
@@ -21,13 +21,7 @@
             "index": 0
           }
         ],
-        [
-          {
-            "node": "Create Row in Event Backlog",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Get Page": {
@@ -35,6 +29,17 @@
         [
           {
             "node": "Create Event Backlog Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
             "type": "main",
             "index": 0
           }
@@ -88,6 +93,10 @@
               "value1": "={{ $json.object }}",
               "operation": "contains",
               "value2": "page"
+            },
+            {
+              "value1": "={{ $json.id }}",
+              "operation": "isNotEmpty"
             }
           ]
         }
@@ -107,9 +116,9 @@
         "operation": "get",
         "pageId": {
           "__rl": true,
-          "value": "={{ $json.id }}",
-          "mode": "id",
-          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?4[0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12})"
+          "value": "={{ $json.url }}",
+          "mode": "url",
+          "__regex": "(?:https|http)://www.notion.so/(?:[a-z0-9-]{2,}/)?(?:[a-zA-Z0-9-]{2,}-)?([0-9a-f]{8}[0-9a-f]{4}4[0-9a-f]{3}[89ab][0-9a-f]{3}[0-9a-f]{12})"
         }
       },
       "id": "943f2305-cfcc-4057-9c7c-9612d938d46e",
@@ -124,121 +133,6 @@
         "notionApi": {
           "id": "1",
           "name": "Notion account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "tableId": "Events Backlog",
-        "fieldsUi": {
-          "fieldValues": [
-            {
-              "fieldId": "id",
-              "fieldValue": "={{ $json.id }}"
-            },
-            {
-              "fieldId": "name",
-              "fieldValue": "={{ $json.Task }}"
-            },
-            {
-              "fieldId": "property_edited",
-              "fieldValue": "={{ $json.Edited }}"
-            },
-            {
-              "fieldId": "property_priority",
-              "fieldValue": "={{ $json.Edited }}"
-            },
-            {
-              "fieldId": "property_days_only_if_set_to_1_day_s",
-              "fieldValue": "={{ $json[\"Days (Only if Set to 1 Day(s))\"] }}"
-            },
-            {
-              "fieldId": "property_created",
-              "fieldValue": "={{ $json.Created }}"
-            },
-            {
-              "fieldId": "property_state",
-              "fieldValue": "={{ $json.State }}"
-            },
-            {
-              "fieldId": "property_last_day_base_date",
-              "fieldValue": "={{ $json[\"Last Day Base Date\"] }}"
-            },
-            {
-              "fieldId": "property_created_by",
-              "fieldValue": "={{ $json[\"Created By\"] }}"
-            },
-            {
-              "fieldId": "property_due_timestamp",
-              "fieldValue": "={{ $json[\"Due Timestamp\"] }}"
-            },
-            {
-              "fieldId": "property_first_weekday_base_date",
-              "fieldValue": "={{ $json[\"First Weekday Base Date\"] }}"
-            },
-            {
-              "fieldId": "property_simplified_recur_unit",
-              "fieldValue": "={{ $json[\"Simplified Recur Unit\"] }}"
-            },
-            {
-              "fieldId": "property_next_due",
-              "fieldValue": "={{ $json[\"Next Due\"] }}"
-            },
-            {
-              "fieldId": "property_done",
-              "fieldValue": "={{ $json.Done }}"
-            },
-            {
-              "fieldId": "property_type",
-              "fieldValue": "={{ $json.Type }}"
-            },
-            {
-              "fieldId": "property_due_date",
-              "fieldValue": "={{ $json[\"Due Date\"] }}"
-            },
-            {
-              "fieldId": "property_synced",
-              "fieldValue": "={{ $json[\"Synced to Calendar\"] }}"
-            },
-            {
-              "fieldId": "property_recur_interval",
-              "fieldValue": "={{ $json[\"Recur Interval\"] }}"
-            },
-            {
-              "fieldId": "property_utc_offset",
-              "fieldValue": "={{ $json[\"UTC Offset\"] }}"
-            },
-            {
-              "fieldId": "property_recur_unit",
-              "fieldValue": "={{ $json[\"Recur Unit\"] }}"
-            },
-            {
-              "fieldId": "property_last_weekday_base_date",
-              "fieldValue": "={{ $json[\"Last Weekday Base Date\"] }}"
-            },
-            {
-              "fieldId": "property_next_last_base_date",
-              "fieldValue": "={{ $json[\"Next Last Base Date\"] }}"
-            },
-            {
-              "fieldId": "property_task",
-              "fieldValue": "={{ $json.Task }}"
-            }
-          ]
-        }
-      },
-      "id": "20d9ce2a-14c0-419a-9aae-d140fdff6ec3",
-      "name": "Create Row in Event Backlog",
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
-      "position": [
-        940,
-        500
-      ],
-      "credentials": {
-        "supabaseApi": {
-          "id": "7",
-          "name": "Supabase account"
         }
       }
     },
@@ -356,6 +250,57 @@
           "name": "Supabase account"
         }
       }
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        680,
+        20
+      ],
+      "typeVersion": 1,
+      "id": "48d66d5a-5875-4095-8551-e2f22fa9fb1d"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        960,
+        -100
+      ],
+      "typeVersion": 1,
+      "id": "704c268d-5fd1-46db-85d8-b79575cc89e8",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "errorMessage": "={{ $json.workflow.name }} is broken"
+      },
+      "id": "e5dd37c8-4600-4947-9ca6-882c9132d3d0",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        960,
+        60
+      ]
     }
   ],
   "pinData": {},
@@ -368,9 +313,9 @@
       ]
     },
     "node:Event Updated": {
-      "lastTimeChecked": "2023-04-21T13:29:00.000Z",
+      "lastTimeChecked": "2023-04-26T00:11:00.000Z",
       "possibleDuplicates": [
-        "62e56125-d0a4-419e-8573-10d4967ec3a5"
+        "e6cca1df-d31c-42d9-b9f8-8f9668a4f377"
       ]
     }
   },
@@ -389,6 +334,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-21T13:29:18.000Z",
-  "versionId": "fe5303b8-7956-40a9-9f10-acac41d7c7fe"
+  "updatedAt": "2023-04-27T00:10:21.000Z",
+  "versionId": "469cba58-4711-4d28-a3f2-ce701dc20022"
 }

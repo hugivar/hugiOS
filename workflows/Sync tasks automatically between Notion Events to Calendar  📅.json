@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "If date exists": {
       "main": [
@@ -61,6 +61,17 @@
         [
           {
             "node": "Create all-day event2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
             "type": "main",
             "index": 0
           }
@@ -340,21 +351,59 @@
           "name": "Google Calendar"
         }
       }
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        360,
+        20
+      ],
+      "typeVersion": 1,
+      "id": "39272cee-c55c-4ed0-a1e2-e3d8fc314c51"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        620,
+        20
+      ],
+      "typeVersion": 1,
+      "id": "aa14e535-b2b6-4fc1-86da-cdd19eb4a2b8",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
     }
   ],
   "pinData": {},
   "settings": {},
   "staticData": {
     "node:Notion Trigger (Beta)": {
-      "lastTimeChecked": "2023-04-21T13:29:00.000Z",
+      "lastTimeChecked": "2023-04-24T23:40:00.000Z",
       "possibleDuplicates": [
-        "5ca3e241-0d8c-4008-8ec5-1aa3257e75cb"
+        "8cecdcb2-6eb8-4fb1-bc8b-327aa9512822"
       ]
     },
     "node:Notion Trigger (Beta)1": {
-      "lastTimeChecked": "2023-04-21T13:29:00.000Z",
+      "lastTimeChecked": "2023-04-24T23:40:00.000Z",
       "possibleDuplicates": [
-        "62e56125-d0a4-419e-8573-10d4967ec3a5"
+        "8cecdcb2-6eb8-4fb1-bc8b-327aa9512822"
       ]
     }
   },
@@ -373,6 +422,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2023-04-21T13:29:17.000Z",
-  "versionId": "a9c70056-855c-4d38-be34-1a8a64e87618"
+  "updatedAt": "2023-04-25T01:26:19.000Z",
+  "versionId": "05d3cf69-a6d7-4751-baee-e7243f74a035"
 }

@@ -158,7 +158,9 @@
         "toList": [
           "n8n.prong493@silomails.com"
         ],
-        "additionalFields": {}
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
       },
       "name": "Gmail",
       "type": "n8n-nodes-base.gmail",
@@ -192,6 +194,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-11T23:31:29.000Z",
-  "versionId": "cef3b545-14e8-4866-b2b0-a923ad3448a5"
+  "updatedAt": "2023-04-24T23:41:27.000Z",
+  "versionId": "3614aa00-6cd1-497c-ad28-4bc143fb8b53"
 }

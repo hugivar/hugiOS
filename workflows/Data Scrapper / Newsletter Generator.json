@@ -1,17 +1,6 @@
 {
   "active": true,
   "connections": {
-    "A scribe.rip url": {
-      "main": [
-        [
-          {
-            "node": "Notion (Beta)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Rip titles and hrefs from page": {
       "main": [
         [
@@ -44,22 +33,11 @@
         ]
       ]
     },
-    "Rip titles and hrefs from page1": {
-      "main": [
-        [
-          {
-            "node": "Add Reading collection and Newsletter tag2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "FS blog newsletter": {
       "main": [
         [
           {
-            "node": "Rip titles and hrefs from page1",
+            "node": "FS - Rip titles and hrefs from page",
             "type": "main",
             "index": 0
           }
@@ -103,7 +81,7 @@
       "main": [
         [
           {
-            "node": "Add Reading collection and Newsletter tag1",
+            "node": "RN - Add Reading collection and Newsletter tag",
             "type": "main",
             "index": 0
           }
@@ -169,7 +147,7 @@
       "main": [
         [
           {
-            "node": "A scribe.rip url",
+            "node": "Medium - Add scribe.rip url",
             "type": "main",
             "index": 0
           }
@@ -180,7 +158,7 @@
       "main": [
         [
           {
-            "node": "Add Reading collection and Newsletter tag",
+            "node": "Brew - Add Reading collection and Newsletter tag",
             "type": "main",
             "index": 0
           }
@@ -264,7 +242,18 @@
         ]
       ]
     },
-    "Add Reading collection and Newsletter tag": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FS - Add Reading collection and Newsletter tag": {
       "main": [
         [
           {
@@ -275,7 +264,18 @@
         ]
       ]
     },
-    "Add Reading collection and Newsletter tag1": {
+    "FS - Rip titles and hrefs from page": {
+      "main": [
+        [
+          {
+            "node": "FS - Add Reading collection and Newsletter tag",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Medium - Add scribe.rip url": {
       "main": [
         [
           {
@@ -286,7 +286,18 @@
         ]
       ]
     },
-    "Add Reading collection and Newsletter tag2": {
+    "RN - Add Reading collection and Newsletter tag": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Brew - Add Reading collection and Newsletter tag": {
       "main": [
         [
           {
@@ -356,20 +367,6 @@
     },
     {
       "parameters": {
-        "mode": "runOnceForEachItem",
-        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.href = \"https://scribe.rip\" + $input.item.json.href;\n$input.item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n$input.item.json.tag = \"d1307e676a454f6997870698f9aaa0e5\"\n\nreturn $input.item;"
-      },
-      "id": "6a5be8b5-fc33-466b-97c0-963f3c2c8315",
-      "name": "A scribe.rip url",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
-      "position": [
-        1760,
-        460
-      ]
-    },
-    {
-      "parameters": {
         "jsCode": "for (const item of $input.all()) {\n  const hrefRegex = /(([^>]+)>)|<\\/h2/ig;\n  \n  const hrefs = item.json.data.split(/></g).filter(item => item.includes(\"Post Preview Title\")).map(item => item.match(/href=([\"'\\\\])(.*?)\\1/ig)[0].slice(6));\n\n  const titleRegex = /(([^>]+)>)|<\\/h2/ig;\n  const titles = item.json.data.split(/></g).filter(item => item.includes(\"bd ij kj kk kl km eo kn ko kp kq es kr ks kt ku ew kv kw kx ky fa kz la lb lc fe ff fg fh fj fk bi\")).map(str => str.replace(titleRegex, \"\"))\n\n  const data = titles.map((title, idx) => ({ \"title\": title, href: hrefs[idx] }))\n\n  item.json.data = null;\n  item.json.titles = data;\n}\n\nreturn $input.all();"
       },
       "id": "c64702dd-b00f-48ea-8994-90ff93513aa5",
@@ -399,19 +396,6 @@
       "position": [
         400,
         460
-      ]
-    },
-    {
-      "parameters": {
-        "jsCode": "for (const item of $input.all()) {\n  const href = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].match(/href=([\"'\\\\])(.*?)\\1/ig);\n\n    const title = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].replace(/<a[^>]*>|<\\/a>/g, \"\");\n\n\n  item.json.data = null;\n  item.json.title = { \"title\": title, \"href\": href };\n  \n}\n\nreturn $input.all();"
-      },
-      "id": "3cd24c43-c254-49de-acaf-b4dfb830832d",
-      "name": "Rip titles and hrefs from page1",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
-      "position": [
-        1400,
-        720
       ]
     },
     {
@@ -691,42 +675,81 @@
       ]
     },
     {
-      "parameters": {
-        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"30a613422dba413cb1c36b7d26edd2ab\";\n  item.json.tag = \"792baac9c5184c40ba471f183ee994d2\"\n}\n\nreturn $input.all();"
-      },
-      "id": "fc992cb7-87de-48db-84c4-151659f674e6",
-      "name": "Add Fun collection and Reddit tag1",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
       "position": [
-        -180,
-        460
-      ]
+        2140,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "cdd3d122-e419-4359-9074-83b8734c2ff1"
     },
     {
       "parameters": {
-        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"30a613422dba413cb1c36b7d26edd2ab\";\n  item.json.tag = \"792baac9c5184c40ba471f183ee994d2\"\n}\n\nreturn $input.all();"
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
       },
-      "id": "37af43ac-ebe5-4bcc-9edf-ec6111dd43b8",
-      "name": "Add Fun collection and Reddit tag2",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
       "position": [
-        -100,
-        540
-      ]
+        2400,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "de4670bf-1166-4bf2-aae1-46d19c7e528a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
     },
     {
       "parameters": {
         "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = \"4279a5dabc7f48e183d0ddd4737b4c6f\"\n}\n\nreturn $input.all();"
       },
-      "id": "8b581b99-a7dc-4185-951b-6913c2932651",
-      "name": "Add Reading collection and Newsletter tag",
+      "id": "3c1c09da-81c1-45f9-b6a9-17d9055d1c6b",
+      "name": "FS - Add Reading collection and Newsletter tag",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1720,
-        0
+        1620,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  const href = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].match(/href=([\"'\\\\])(.*?)\\1/ig)[0];\n\n    const title = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].replace(/<a[^>]*>|<\\/a>/g, \"\");\n\n\n  item.json.data = null;\n  item.json.title = { \"title\": title, \"href\": href };\n  \n}\n\nreturn $input.all();"
+      },
+      "id": "3cd24c43-c254-49de-acaf-b4dfb830832d",
+      "name": "FS - Rip titles and hrefs from page",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.href = \"https://scribe.rip\" + $input.item.json.href;\n$input.item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n$input.item.json.tag = \"d1307e676a454f6997870698f9aaa0e5\"\n\nreturn $input.item;"
+      },
+      "id": "6a5be8b5-fc33-466b-97c0-963f3c2c8315",
+      "name": "Medium - Add scribe.rip url",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        460
       ]
     },
     {
@@ -734,7 +757,7 @@
         "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = \"4279a5dabc7f48e183d0ddd4737b4c6f\"\n}\n\nreturn $input.all();"
       },
       "id": "4d6959be-dd7e-4489-95aa-3401842307f1",
-      "name": "Add Reading collection and Newsletter tag1",
+      "name": "RN - Add Reading collection and Newsletter tag",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
@@ -746,13 +769,13 @@
       "parameters": {
         "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = \"4279a5dabc7f48e183d0ddd4737b4c6f\"\n}\n\nreturn $input.all();"
       },
-      "id": "3c1c09da-81c1-45f9-b6a9-17d9055d1c6b",
-      "name": "Add Reading collection and Newsletter tag2",
+      "id": "8b581b99-a7dc-4185-951b-6913c2932651",
+      "name": "Brew - Add Reading collection and Newsletter tag",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1620,
-        720
+        1720,
+        0
       ]
     }
   ],
@@ -796,6 +819,6 @@
     }
   ],
   "triggerCount": 3,
-  "updatedAt": "2023-04-22T02:51:00.000Z",
-  "versionId": "bd84684f-ace1-4e36-9f7c-63a008ee1912"
+  "updatedAt": "2023-04-24T23:40:53.000Z",
+  "versionId": "ac1ec324-e3f9-47b7-9980-8666ed925476"
 }

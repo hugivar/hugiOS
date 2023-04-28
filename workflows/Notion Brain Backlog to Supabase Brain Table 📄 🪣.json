@@ -33,6 +33,11 @@
           }
         ]
       ]
+    },
+    "Error Trigger": {
+      "main": [
+        []
+      ]
     }
   },
   "createdAt": "2023-04-07T17:19:57.030Z",
@@ -47,6 +52,10 @@
               "value1": "={{ $json.object }}",
               "operation": "contains",
               "value2": "page"
+            },
+            {
+              "value1": "={{ $json.url }}",
+              "operation": "isNotEmpty"
             }
           ]
         }
@@ -66,9 +75,9 @@
         "operation": "get",
         "pageId": {
           "__rl": true,
-          "value": "={{ $json.id }}",
-          "mode": "id",
-          "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?4[0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12})"
+          "value": "={{ $json.url }}",
+          "mode": "url",
+          "__regex": "(?:https|http)://www.notion.so/(?:[a-z0-9-]{2,}/)?(?:[a-zA-Z0-9-]{2,}-)?([0-9a-f]{8}[0-9a-f]{4}4[0-9a-f]{3}[89ab][0-9a-f]{3}[0-9a-f]{12})"
         }
       },
       "id": "beea855d-9a13-4695-917b-32ec62a43b1a",
@@ -226,6 +235,17 @@
           "name": "Supabase account"
         }
       }
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        380,
+        140
+      ],
+      "typeVersion": 1,
+      "id": "d598088b-1a93-4364-9f94-7cf2e0db25e1"
     }
   ],
   "pinData": {},
@@ -244,10 +264,7 @@
       ]
     },
     "node:Brain Item Updated": {
-      "lastTimeChecked": "2023-04-21T14:00:00.000Z",
-      "possibleDuplicates": [
-        "7618e871-ae49-4cf7-adfd-47daf792efce"
-      ]
+      "lastTimeChecked": "2023-04-26T14:06:00.000Z"
     }
   },
   "tags": [
@@ -265,6 +282,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-21T14:00:14.000Z",
-  "versionId": "c2b55348-f3e4-48be-b711-1e19802470d0"
+  "updatedAt": "2023-04-26T14:06:58.000Z",
+  "versionId": "4be9bfe2-2f2e-4c8d-971d-d1f67f6ca19e"
 }

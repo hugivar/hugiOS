@@ -5,7 +5,17 @@
       "main": [
         [
           {
-            "node": "IF purge Generated playlist is true",
+            "node": "Split out seed_artists",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Get \"Generated\" Spotify playlist",
             "type": "main",
             "index": 0
           }
@@ -129,39 +139,6 @@
         ]
       ]
     },
-    "IF purge Generated playlist is true": {
-      "main": [
-        [
-          {
-            "node": "Get \"Generated\" Spotify playlist",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Split out seed_artists",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          }
-        ],
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          },
-          {
-            "node": "Split out seed_artists",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Get \"Generated\" Spotify playlist": {
       "main": [
         [
@@ -178,6 +155,17 @@
         [
           {
             "node": "Spotify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
             "type": "main",
             "index": 0
           }
@@ -367,14 +355,14 @@
             },
             {
               "name": "seed_artists",
-              "value": "5O1YiYFy3CEWD2lkOmoerV"
+              "value": "={{ $json.artistIds }}"
             },
             {
               "name": "seed_genres"
             },
             {
               "name": "limit",
-              "value": "2"
+              "value": "20"
             }
           ]
         },
@@ -431,26 +419,6 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "boolean": [
-            {
-              "value1": "={{ $json.purge }}",
-              "value2": true
-            }
-          ]
-        }
-      },
-      "id": "78b8d512-b5bf-4cd5-91dd-007d1c922654",
-      "name": "IF purge Generated playlist is true",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        -1080,
-        540
-      ]
-    },
-    {
-      "parameters": {
         "resource": "playlist",
         "operation": "get",
         "id": "spotify:playlist:0IIxCoCu2IQkuxSDnvSYJg"
@@ -489,7 +457,7 @@
         "resource": "playlist",
         "operation": "delete",
         "id": "spotify:playlist:0IIxCoCu2IQkuxSDnvSYJg",
-        "trackID": "=spotify:track:{{ $json.track.album.id }}"
+        "trackID": "=spotify:track:{{ $json.track.id }}"
       },
       "id": "bc564b78-0b95-469c-b86f-7ff5ff0c5359",
       "name": "Spotify",
@@ -505,6 +473,44 @@
           "name": "Spotify account"
         }
       }
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        900,
+        300
+      ],
+      "typeVersion": 1,
+      "id": "cf0e719c-8f13-4510-984a-6428975d3f3e"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        1160,
+        300
+      ],
+      "typeVersion": 1,
+      "id": "17560752-c535-4a99-947b-4a0cae10a119",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
     }
   ],
   "pinData": {
@@ -517,9 +523,7 @@
           "mood_preset": "energetic",
           "name": "energetic",
           "seed_artists": [
-            "Zone 2",
-            "Karma",
-            "Kwengface"
+            "Kay Flock"
           ],
           "seed_library": false,
           "seed_tracks": [],
@@ -542,6 +546,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2023-04-15T15:27:33.000Z",
-  "versionId": "2becf6d4-cc20-40d8-9318-b470e28d612f"
+  "updatedAt": "2023-04-24T23:39:52.000Z",
+  "versionId": "0cb38122-9541-467e-b43b-48f08e800627"
 }
