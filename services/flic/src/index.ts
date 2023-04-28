@@ -8,6 +8,7 @@ import { createOpenApiExpressMiddleware } from 'trpc-openapi';
 import { openApiDocument } from './openapi';
 import { appRouter, createContext } from './router';
 
+const port = 3001;
 const app = express();
 
 // Setup CORS
@@ -22,6 +23,6 @@ app.use('/api', createOpenApiExpressMiddleware({ router: appRouter, createContex
 app.use('/', swaggerUi.serve);
 app.get('/', swaggerUi.setup(openApiDocument));
 
-app.listen(3000, () => {
-  console.log('Server started on http://localhost:3000');
+app.listen(port, () => {
+  console.log(`Server started on http://localhost:${port}`);
 });
