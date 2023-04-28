@@ -1,12 +1,18 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import { TRPCError, initTRPC } from '@trpc/server';
 import { CreateExpressContextOptions } from '@trpc/server/adapters/express';
 import jwt from 'jsonwebtoken';
 import { OpenApiMeta } from 'trpc-openapi';
 import { v4 as uuid } from 'uuid';
 import { z } from 'zod';
+import { createClient } from '@supabase/supabase-js'
 
-import { Post, User, database } from './database';
 
+import { User, database } from './database';
+
+const supabase = createClient(process.env.SUPABASE_URL ?? '', process.env.SUPABASE_KEY ?? '')
 const jwtSecret = uuid();
 
 export type Context = {
@@ -237,19 +243,19 @@ const helloRouter = t.router({
       })
       .input(z.object({ name: z.string() }))
       .output(z.object({ greeting: z.string() }))
-      .query(({ input }) => {
+    .query(({ input }) => {
         return { greeting: `Hello ${input.name}!` };
       })
 });
   
-const postsRouter = t.router({
-  getPosts: publicProcedure
+const doorsRouter = t.router({
+  getDoors: publicProcedure
     .meta({
       openapi: {
         method: 'GET',
-        path: '/posts',
-        tags: ['posts'],
-        summary: 'Read all posts',
+        path: '/doors',
+        tags: ['door'],
+        summary: 'Read all door clicks',
       },
     })
     .input(
@@ -259,184 +265,110 @@ const postsRouter = t.router({
     )
     .output(
       z.object({
-        posts: z.array(
+        doors: z.array(
           z.object({
-            id: z.string().uuid(),
-            content: z.string(),
-            userId: z.string().uuid(),
+            id: z.number(),
+            created_at: z.string(),
+            status: z.string(),
           }),
         ),
       }),
     )
-    .query(({ input }) => {
-      let posts: Post[] = database.posts;
+    .query(async () => {
+      let { data, error } = await supabase
+        .from('Door')
+        .select('*')
 
-      if (input.userId) {
-        posts = posts.filter((post) => {
-          return post.userId === input.userId;
-        });
-      }
-
-      return { posts };
+      return { doors: data };
     }),
-  getPostById: publicProcedure
+    getDoorRecent: publicProcedure
     .meta({
       openapi: {
         method: 'GET',
-        path: '/posts/{id}',
-        tags: ['posts'],
-        summary: 'Read a post by id',
+        path: '/door/recent',
+        tags: ['door'],
+        summary: 'Get the latest door click',
       },
     })
     .input(
       z.object({
-        id: z.string().uuid(),
+        userId: z.string().uuid().optional(),
       }),
     )
     .output(
       z.object({
-        post: z.object({
-          id: z.string().uuid(),
-          content: z.string(),
-          userId: z.string().uuid(),
+        click: z.object({
+            id: z.number(),
+            created_at: z.string(),
+            status: z.string(),
         }),
       }),
     )
-    .query(({ input }) => {
-      const post = database.posts.find((_post) => _post.id === input.id);
-
-      if (!post) {
-        throw new TRPCError({
-          message: 'Post not found',
-          code: 'NOT_FOUND',
-        });
-      }
-
-      return { post };
+    .query(async () => {
+      let { data, error } = await supabase
+        .from('Door')
+        .select('*')
+        .order('id', { ascending: false })
+        .range(0, 0)
+      
+      const recentClick = data[0];
+      return {
+        click: {
+          ...recentClick,
+          created_at: `${new Date(recentClick.created_at).toLocaleDateString('en-us', { weekday:"long" })} at ${new Date(recentClick.created_at).toLocaleTimeString('en-US', { hour: "2-digit", minute: "2-digit" })}`
+      } };
     }),
-  createPost: protectedProcedure
+  click: publicProcedure
     .meta({
       openapi: {
         method: 'POST',
-        path: '/posts',
-        tags: ['posts'],
-        protect: true,
-        summary: 'Create a new post',
+        path: '/door/click',
+        tags: ['door'],
+        protect: false,
+        summary: 'Set OPENED status',
       },
     })
-    .input(
-      z.object({
-        content: z.string().min(1).max(140),
-      }),
-    )
-    .output(
-      z.object({
-        post: z.object({
-          id: z.string().uuid(),
-          content: z.string(),
-          userId: z.string().uuid(),
-        }),
-      }),
-    )
-    .mutation(({ input, ctx }) => {
-      const post: Post = {
-        id: uuid(),
-        content: input.content,
-        userId: ctx.user.id,
-      };
-
-      database.posts.push(post);
-
-      return { post };
-    }),
-  updatePostById: protectedProcedure
-    .meta({
-      openapi: {
-        method: 'PUT',
-        path: '/posts/{id}',
-        tags: ['posts'],
-        protect: true,
-        summary: 'Update an existing post',
-      },
-    })
-    .input(
-      z.object({
-        id: z.string().uuid(),
-        content: z.string().min(1),
-      }),
-    )
-    .output(
-      z.object({
-        post: z.object({
-          id: z.string().uuid(),
-          content: z.string(),
-          userId: z.string().uuid(),
-        }),
-      }),
-    )
-    .mutation(({ input, ctx }) => {
-      const post = database.posts.find((_post) => _post.id === input.id);
-
-      if (!post) {
-        throw new TRPCError({
-          message: 'Post not found',
-          code: 'NOT_FOUND',
-        });
-      }
-      if (post.userId !== ctx.user.id) {
-        throw new TRPCError({
-          message: 'Cannot edit post owned by other user',
-          code: 'FORBIDDEN',
-        });
-      }
-
-      post.content = input.content;
-
-      return { post };
-    }),
-  deletePostById: protectedProcedure
-    .meta({
-      openapi: {
-        method: 'DELETE',
-        path: '/posts/{id}',
-        tags: ['posts'],
-        protect: true,
-        summary: 'Delete a post',
-      },
-    })
-    .input(
-      z.object({
-        id: z.string().uuid(),
-      }),
-    )
+    .input( z.object({}))
     .output(z.null())
-    .mutation(({ input, ctx }) => {
-      const post = database.posts.find((_post) => _post.id === input.id);
-
-      if (!post) {
-        throw new TRPCError({
-          message: 'Post not found',
-          code: 'NOT_FOUND',
-        });
-      }
-      if (post.userId !== ctx.user.id) {
-        throw new TRPCError({
-          message: 'Cannot delete post owned by other user',
-          code: 'FORBIDDEN',
-        });
-      }
-
-      database.posts = database.posts.filter((_post) => _post !== post);
-
+    .mutation(async () => {
+      const { data, error } = await supabase
+      .from('Door')
+      .insert([
+        { status: 'OPENED' },
+      ])
+      
+      console.log('router line:340', data, error);
       return null;
     }),
+  press: publicProcedure
+  .meta({
+    openapi: {
+      method: 'POST',
+      path: '/door/press',
+      tags: ['door'],
+      protect: false,
+      summary: 'Set ARMED status',
+    },
+  })
+  .input( z.object({}))
+  .output(z.null())
+    .mutation(async () => {
+
+    const { data, error } = await supabase
+    .from('Door')
+    .insert([
+      { status: 'ARMED' },
+    ])
+    
+    return null;
+  }),
 });
 
 export const appRouter = t.router({
   auth: authRouter,
   users: usersRouter,
   hello: helloRouter,
-  posts: postsRouter,
+  doors: doorsRouter,
 });
 
 export type AppRouter = typeof appRouter;

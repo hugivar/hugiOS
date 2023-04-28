@@ -6,8 +6,10 @@
     "dev": "ts-node-dev --respawn --transpile-only --exit-child ./src/index.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.21.0",
     "@trpc/server": "^10.9.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "swagger-ui-express": "^4.6.0",
