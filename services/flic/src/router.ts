@@ -12,7 +12,7 @@ import { createClient } from '@supabase/supabase-js'
 
 import { User, database } from './database';
 
-const supabase = createClient(process.env.SUPABASE_URL ?? '', process.env.SUPABASE_KEY ?? '')
+let supabase = null;
 const jwtSecret = uuid();
 
 export type Context = {
@@ -43,12 +43,11 @@ CreateExpressContextOptions): Promise<Context> => {
   let user: User | null = null;
 
   try {
-    if (req.headers.authorization) {
-      const token = req.headers.authorization.split(' ')[1];
-      const userId = jwt.verify(token, jwtSecret) as string;
-      if (userId) {
-        user = database.users.find((_user) => _user.id === userId) ?? null;
-      }
+    if (req.headers.apikey === process.env.SUPABASE_KEY) {
+      supabase = createClient(process.env.SUPABASE_URL ?? '', req.headers.apikey ?? '')
+
+    } else {
+      supabase = createClient(process.env.SUPABASE_URL ?? '', '')
     }
   } catch (cause) {
     console.error(cause);
@@ -310,8 +309,9 @@ const doorsRouter = t.router({
         .select('*')
         .order('id', { ascending: false })
         .range(0, 0)
-      
+      // console.log('router line:313', data, error);
       const recentClick = data[0];
+      
       return {
         click: {
           ...recentClick,
