@@ -1,6 +1,6 @@
 FROM node:16
 
-wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+RUN npm i -g pnpm
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -16,5 +16,4 @@ RUN pnpm install
 COPY . .
 
 EXPOSE 3001
-
-RUN pnpm dev
+CMD [ "pnpm", "dev" ]
