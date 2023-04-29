@@ -103,18 +103,7 @@
       "main": [
         [
           {
-            "node": "Morning Brew",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Morning Brew": {
-      "main": [
-        [
-          {
-            "node": "Rip data from script",
+            "node": "Morning Brew Archive",
             "type": "main",
             "index": 0
           }
@@ -231,37 +220,9 @@
         ]
       ]
     },
-    "Add Fun collection and Reddit tag": {
-      "main": [
-        [
-          {
-            "node": "Notion (Beta)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Error Trigger": {
       "main": [
-        [
-          {
-            "node": "Send error email",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "FS - Add Reading collection and Newsletter tag": {
-      "main": [
-        [
-          {
-            "node": "Notion (Beta)",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "FS - Rip titles and hrefs from page": {
@@ -275,29 +236,56 @@
         ]
       ]
     },
-    "Medium - Add scribe.rip url": {
-      "main": [
-        [
-          {
-            "node": "Notion (Beta)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "RN - Add Reading collection and Newsletter tag": {
-      "main": [
-        [
-          {
-            "node": "Notion (Beta)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Brew - Add Reading collection and Newsletter tag": {
+      "main": [
+        [
+          {
+            "node": "Individual article",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Morning Brew Archive": {
+      "main": [
+        [
+          {
+            "node": "Rip data from script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Individual article": {
+      "main": [
+        [
+          {
+            "node": "Grab Brew Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Grab Brew Image": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
       "main": [
         [
           {
@@ -348,6 +336,14 @@
             }
           ]
         },
+        "blockUi": {
+          "blockValues": [
+            {
+              "type": "image",
+              "url": "={{ $json.coverUrl }}"
+            }
+          ]
+        },
         "options": {}
       },
       "id": "9227d87e-6e61-4044-836f-719e42bfed1f",
@@ -355,7 +351,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        2120,
+        2440,
         460
       ],
       "credentials": {
@@ -503,20 +499,6 @@
     },
     {
       "parameters": {
-        "url": "https://www.morningbrew.com/archive",
-        "options": {}
-      },
-      "id": "bcfb0d04-4e7b-480e-9489-a46d00ed5672",
-      "name": "Morning Brew",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 3,
-      "position": [
-        820,
-        0
-      ]
-    },
-    {
-      "parameters": {
         "mode": "runOnceForEachItem",
         "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.data = [\n  { href: \"https://medium.com/tag/programming/top/week\" },\n  { href: \"https://medium.com/tag/technology/top/week\" },\n  { href: \"https://medium.com/tag/productivity/top/week\" }\n];\n\nreturn $input.item;"
       },
@@ -559,14 +541,14 @@
     },
     {
       "parameters": {
-        "jsCode": "for (const item of $input.all()) {\n  const script = item.json.data.match(/<script[^>]*>([^<]+)<\\/script>/g)[1];\n\n  const jsonData = script.replace(/<script[^>]*>|<\\/script>/g, \"\");\n\n  const dailyArticle = JSON.parse(jsonData)?.props?.pageProps?.initialApolloState?.ROOT_QUERY?.['allArchiveIssues:{\"query\":\"\",\"newsletter\":\"daily\"}']?.[0];\n\n\n\n  item.json.data = null;\n  item.json.title = dailyArticle?.subjectLine;\n  item.json.href = \"https://www.morningbrew.com/daily/issues/\" + dailyArticle.slug;\n}\n\nreturn $input.all();"
+        "jsCode": "for (const item of $input.all()) {\n  const script = item.json.data.match(/<script[^>]*>([^<]+)<\\/script>/g)[1];\n  \n  const jsonData = script.replace(/<script[^>]*>|<\\/script>/g, \"\");\n\n  const dailyArticle = JSON.parse(jsonData)?.props?.pageProps?.initialApolloState?.ROOT_QUERY?.['allArchiveIssues:{\"query\":\"\",\"newsletter\":\"daily\"}']?.[0];\n  \n\n  console.log(item.json.data)\n  item.json.data = null;\n  item.json.title = dailyArticle?.subjectLine;\n  item.json.href = \"https://www.morningbrew.com/daily/issues/\" + dailyArticle.slug;\n  item.json.image = \"\"\n}\n\nreturn $input.all();"
       },
       "id": "43e54ec5-be83-4a5c-aab3-fe26720f0f51",
       "name": "Rip data from script",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1280,
+        1060,
         0
       ]
     },
@@ -679,38 +661,11 @@
       "name": "Error Trigger",
       "type": "n8n-nodes-base.errorTrigger",
       "position": [
-        2140,
-        240
+        2400,
+        60
       ],
       "typeVersion": 1,
       "id": "cdd3d122-e419-4359-9074-83b8734c2ff1"
-    },
-    {
-      "parameters": {
-        "resource": "message",
-        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
-        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}",
-        "toList": [
-          "n8n.prong493@silomails.com"
-        ],
-        "additionalFields": {
-          "senderName": "n8n <hemingway72129@gmail.com>"
-        }
-      },
-      "name": "Send error email",
-      "type": "n8n-nodes-base.gmail",
-      "position": [
-        2400,
-        240
-      ],
-      "typeVersion": 1,
-      "id": "de4670bf-1166-4bf2-aae1-46d19c7e528a",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "6",
-          "name": "Gmail account"
-        }
-      }
     },
     {
       "parameters": {
@@ -774,8 +729,69 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1720,
+        1440,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.morningbrew.com/archive",
+        "options": {
+          "response": {
+            "response": {}
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "bcfb0d04-4e7b-480e-9489-a46d00ed5672",
+      "name": "Morning Brew Archive",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        820,
         0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.href }}",
+        "options": {}
+      },
+      "id": "102d6fc7-b273-4387-a598-d89bbea79f91",
+      "name": "Individual article",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        1620,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n   // Find the img tag with the story-header-image classname\n  // Split the img tab based on the regex pattern to extract only the src value\n   const imageUrl = item.json.data.split(/>/g).filter(item => item.includes(\"story-header-image\"))[0].split(/<img[^>]+src=\"?([^\"\\s]+)\"?\\s*/)[1];\n \n   item.json.data = null;\n   item.json.coverUrl = imageUrl;\n  \n}\n\nreturn $input.all();"
+      },
+      "id": "6d819920-c65b-4d93-82e6-d56432a48d3a",
+      "name": "Grab Brew Image",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition",
+        "options": {}
+      },
+      "id": "5744476e-2ff5-4989-99d3-3afd7aa2d53b",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        2060,
+        100
       ]
     }
   ],
@@ -819,6 +835,6 @@
     }
   ],
   "triggerCount": 3,
-  "updatedAt": "2023-04-24T23:40:53.000Z",
-  "versionId": "ac1ec324-e3f9-47b7-9980-8666ed925476"
+  "updatedAt": "2023-04-28T13:42:39.000Z",
+  "versionId": "e75bba50-ec3a-47ea-ae93-f0070b6e24b5"
 }
