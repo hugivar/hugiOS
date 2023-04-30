@@ -93,6 +93,22 @@
           }
         ]
       ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Get all playlist fora user",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get all stored Spotify tracks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-04-10T00:47:45.958Z",
@@ -298,8 +314,19 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        20,
-        500
+        -40,
+        440
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "d4e495fe-9547-40d4-a57a-29de358fe775",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        680
       ]
     }
   ],
@@ -325,6 +352,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-11T22:18:07.000Z",
-  "versionId": "bd25dc22-7378-4c10-9de2-e35610c818a4"
+  "updatedAt": "2023-04-29T15:56:16.000Z",
+  "versionId": "65e06802-c198-46a1-a7ef-973db18cf57d"
 }
