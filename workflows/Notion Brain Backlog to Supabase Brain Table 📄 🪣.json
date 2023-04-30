@@ -33,11 +33,6 @@
           }
         ]
       ]
-    },
-    "Error Trigger": {
-      "main": [
-        []
-      ]
     }
   },
   "createdAt": "2023-04-07T17:19:57.030Z",
@@ -135,7 +130,7 @@
         "fieldsUi": {
           "fieldValues": [
             {
-              "fieldId": "id",
+              "fieldId": "page_id",
               "fieldValue": "={{ $json.id }}"
             },
             {
@@ -264,9 +259,9 @@
       ]
     },
     "node:Brain Item Updated": {
-      "lastTimeChecked": "2023-04-29T00:00:00.000Z",
+      "lastTimeChecked": "2023-04-30T03:00:00.000Z",
       "possibleDuplicates": [
-        "a0630c20-0baa-4817-8e88-a9d088d1dfbf"
+        "82f5e096-e0ad-4743-9f8a-f92db96b9ffc"
       ]
     }
   },
@@ -285,6 +280,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-29T00:00:46.000Z",
-  "versionId": "4be9bfe2-2f2e-4c8d-971d-d1f67f6ca19e"
+  "updatedAt": "2023-04-30T03:00:10.000Z",
+  "versionId": "200d3d0d-cc6c-429c-b28e-1de426291eaf"
 }
