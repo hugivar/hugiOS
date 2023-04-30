@@ -137,11 +137,11 @@
     },
     {
       "parameters": {
-        "tableId": "Events Backlog",
+        "tableId": "Event Backlog",
         "fieldsUi": {
           "fieldValues": [
             {
-              "fieldId": "id",
+              "fieldId": "page_id",
               "fieldValue": "={{ $json.id }}"
             },
             {
@@ -312,7 +312,7 @@
       ]
     },
     "node:Event Updated": {
-      "lastTimeChecked": "2023-04-30T02:16:00.000Z",
+      "lastTimeChecked": "2023-04-30T15:35:00.000Z",
       "possibleDuplicates": [
         "e6cca1df-d31c-42d9-b9f8-8f9668a4f377"
       ]
@@ -333,6 +333,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-30T02:16:58.000Z",
-  "versionId": "fd95924f-7733-496b-8f20-d682e32127a7"
+  "updatedAt": "2023-04-30T15:35:17.000Z",
+  "versionId": "cbc0ef68-a43d-432c-a601-b3a87600caa2"
 }
