@@ -43,11 +43,12 @@ CreateExpressContextOptions): Promise<Context> => {
   let user: User | null = null;
 
   try {
+    console.log('router line:46', );
     if (req.headers.apikey === process.env.SUPABASE_KEY) {
       supabase = createClient(process.env.SUPABASE_URL ?? '', req.headers.apikey ?? '')
 
     } else {
-      supabase = createClient(process.env.SUPABASE_URL ?? '', '')
+      supabase = null;
     }
   } catch (cause) {
     console.error(cause);
@@ -296,23 +297,38 @@ const doorsRouter = t.router({
     )
     .output(
       z.object({
+        error: z.string().nullable(),
         click: z.object({
             id: z.number(),
             created_at: z.string(),
             status: z.string(),
-        }),
+        }).nullable()
       }),
     )
-    .query(async () => {
+      .query(async () => {
+        if (!supabase) {
+          return {
+            error: 'Invalid credentials',
+            click: null
+          }
+        };
+
+
       let { data, error } = await supabase
         .from('Door')
         .select('*')
         .order('id', { ascending: false })
         .range(0, 0)
-      // console.log('router line:313', data, error);
-      const recentClick = data[0];
+
+      if (error) {
+        return error;
+      }
+
+      
+      const recentClick = data?.[0];
       
       return {
+        error: null,
         click: {
           ...recentClick,
           created_at: `${new Date(recentClick.created_at).toLocaleDateString('en-us', { weekday:"long" })} at ${new Date(recentClick.created_at).toLocaleTimeString('en-US', { hour: "2-digit", minute: "2-digit" })}`

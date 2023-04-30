@@ -1,5 +1,10 @@
 # Flic Server
 
+## Building docker image
+```sh
+docker build . -t flic
+```
+
 ## Running Flic server locally
 ```sh
 docker run -d \
