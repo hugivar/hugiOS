@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Event Updated": {
       "main": [
@@ -20,8 +20,7 @@
             "type": "main",
             "index": 0
           }
-        ],
-        []
+        ]
       ]
     },
     "Get Page": {
@@ -313,7 +312,7 @@
       ]
     },
     "node:Event Updated": {
-      "lastTimeChecked": "2023-04-26T00:11:00.000Z",
+      "lastTimeChecked": "2023-04-30T02:16:00.000Z",
       "possibleDuplicates": [
         "e6cca1df-d31c-42d9-b9f8-8f9668a4f377"
       ]
@@ -334,6 +333,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-27T00:10:21.000Z",
-  "versionId": "469cba58-4711-4d28-a3f2-ce701dc20022"
+  "updatedAt": "2023-04-30T02:16:58.000Z",
+  "versionId": "fd95924f-7733-496b-8f20-d682e32127a7"
 }
