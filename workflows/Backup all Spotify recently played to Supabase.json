@@ -78,7 +78,7 @@
     },
     {
       "parameters": {
-        "tableId": "Recently Played Spotify",
+        "tableId": "Spotify Recently Played",
         "dataToSend": "autoMapInputData"
       },
       "id": "387a27ab-aabd-464b-8715-23d38220587b",
@@ -99,7 +99,7 @@
     {
       "parameters": {
         "operation": "delete",
-        "tableId": "Recently Played Spotify",
+        "tableId": "Spotify Recently Played",
         "filters": {
           "conditions": [
             {
@@ -165,6 +165,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-11T22:15:45.000Z",
-  "versionId": "72080516-d286-46a6-aa9b-8f8aebe62e6c"
+  "updatedAt": "2023-04-30T15:24:06.000Z",
+  "versionId": "5c3b5e38-9bb9-40d0-b6c4-64306814519b"
 }
