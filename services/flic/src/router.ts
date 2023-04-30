@@ -12,6 +12,7 @@ import { createClient } from '@supabase/supabase-js'
 
 import { User, database } from './database';
 
+// Move this initialization to exist in the context;
 let supabase = null;
 const jwtSecret = uuid();
 
@@ -43,7 +44,6 @@ CreateExpressContextOptions): Promise<Context> => {
   let user: User | null = null;
 
   try {
-    console.log('router line:46', );
     if (req.headers.apikey === process.env.SUPABASE_KEY) {
       supabase = createClient(process.env.SUPABASE_URL ?? '', req.headers.apikey ?? '')
 
@@ -347,6 +347,13 @@ const doorsRouter = t.router({
     .input( z.object({}))
     .output(z.null())
     .mutation(async () => {
+      if (!supabase) {
+        return {
+          error: 'Invalid credentials',
+          click: null
+        }
+      };
+
       const { data, error } = await supabase
       .from('Door')
       .insert([
@@ -369,6 +376,12 @@ const doorsRouter = t.router({
   .input( z.object({}))
   .output(z.null())
     .mutation(async () => {
+      if (!supabase) {
+        return {
+          error: 'Invalid credentials',
+          click: null
+        }
+      };
 
     const { data, error } = await supabase
     .from('Door')
