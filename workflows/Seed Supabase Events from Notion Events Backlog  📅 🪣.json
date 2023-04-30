@@ -35,28 +35,28 @@
       ]
     }
   },
-  "createdAt": "2023-04-07T18:19:30.894Z",
-  "id": "11",
+  "createdAt": "2023-04-30T15:18:33.936Z",
+  "id": "26",
   "name": "Seed Supabase Events from Notion Events Backlog  📅 🪣",
   "nodes": [
     {
       "parameters": {},
-      "id": "1c277932-2e00-4891-929e-b8bbaafa7b24",
+      "id": "7efd99da-6f83-4fd1-b16b-84032eb659f4",
       "name": "When clicking \"Execute Workflow\"",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        120,
+        140,
         500
       ]
     },
     {
       "parameters": {
-        "tableId": "Events Backlog",
+        "tableId": "Event Backlog",
         "fieldsUi": {
           "fieldValues": [
             {
-              "fieldId": "id",
+              "fieldId": "page_id",
               "fieldValue": "={{ $json.id }}"
             },
             {
@@ -150,7 +150,7 @@
           ]
         }
       },
-      "id": "9b73985a-8f8f-492a-949a-3f3332bedf04",
+      "id": "83d95b2a-1936-48c2-af25-c34edee22533",
       "name": "Supabase",
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
@@ -180,7 +180,7 @@
         "simple": false,
         "options": {}
       },
-      "id": "e2c61141-bcf9-4b64-9862-6fccbd68d6ce",
+      "id": "e3f6026a-5ed0-489d-8ef5-ddad2cd0834b",
       "name": "Get Event Backlog items",
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
@@ -206,7 +206,7 @@
           "__regex": "^([0-9a-f]{8}-?[0-9a-f]{4}-?4[0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12})"
         }
       },
-      "id": "1ba9bcd2-82f2-4457-a4f9-40a332972688",
+      "id": "698bf518-dd73-4bfe-8b12-709056a6b7c2",
       "name": "Notion (Beta)",
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
@@ -240,6 +240,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2023-04-29T16:03:21.000Z",
-  "versionId": "94759b13-3e8d-4a03-857e-0a5e1dd0b3e9"
+  "updatedAt": "2023-04-30T15:22:47.000Z",
+  "versionId": "593a9776-b67f-4dc0-9cdf-d5a81a2bfed3"
 }
