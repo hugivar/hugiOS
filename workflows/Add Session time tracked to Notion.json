@@ -1,0 +1,532 @@
+{
+  "active": false,
+  "connections": {
+    "Remove Project from Summary": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Get Session events": {
+      "main": [
+        [
+          {
+            "node": "Remove Project from Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion (Beta)": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compare Datasets": {
+      "main": [
+        [],
+        [],
+        [],
+        [
+          {
+            "node": "Supabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Item Lists1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Item Lists1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Session events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-30T16:42:31.433Z",
+  "id": "28",
+  "name": "Add Session time tracked to Notion",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\nconst splitSummary = $input.item.json.summary.split(':');\n$input.item.json.summary = splitSummary[1] ? splitSummary[1].trim() : splitSummary[0].trim();\n\nreturn $input.item;"
+      },
+      "id": "8f604f5b-d7ec-4682-bcec-6322107eafa7",
+      "name": "Remove Project from Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        700,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "hk6htrtktofghv0jimp1l40adj0khrth@import.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "Session: focus"
+        },
+        "returnAll": true,
+        "options": {
+          "timeMin": "={{$today.minus({days: 3})}}"
+        }
+      },
+      "id": "7afb4208-65e8-4d4d-9917-cf7c69350e8d",
+      "name": "Get Session events",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1,
+      "position": [
+        480,
+        460
+      ],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "3",
+          "name": "Google Calendar"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "version": 1,
+        "operation": "search",
+        "text": "={{ $json.summary }}",
+        "limit": 2,
+        "options": {
+          "filter": {
+            "filters": {
+              "value": "page"
+            }
+          }
+        }
+      },
+      "id": "ee56ee2f-45fe-4245-8721-650d1df21f00",
+      "name": "Notion (Beta)",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        1660,
+        200
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\nvar diff = Math.abs(new Date($input.item.json.start_time) - new Date($input.item.json.end_time));\n\nvar minutes = Math.floor((diff/1000)/60);\n\n$input.item.json.time = minutes;\n\nreturn $input.item;"
+      },
+      "id": "d59fe814-318e-4e49-9b59-fe4d9a86723d",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url",
+          "__regex": "(?:https|http)://www.notion.so/(?:[a-z0-9-]{2,}/)?(?:[a-zA-Z0-9-]{2,}-)?([0-9a-f]{8}[0-9a-f]{4}4[0-9a-f]{3}[89ab][0-9a-f]{3}[0-9a-f]{12})"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Time Spent (mins)|number",
+              "numberValue": "={{ $json.property_time_spent_mins ? $json.property_time_spent_mins : 0 + $json.sum_time }}"
+            }
+          ]
+        }
+      },
+      "id": "0edade6a-296b-4479-bd64-81fa244194f5",
+      "name": "Notion (Beta)1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        2660,
+        340
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "event_id",
+              "field2": "id"
+            }
+          ]
+        },
+        "resolve": "includeBoth",
+        "options": {}
+      },
+      "id": "56984c99-0a26-4e2d-90c2-3329b839486a",
+      "name": "Compare Datasets",
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2,
+      "position": [
+        960,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.property_project }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "564dfd6c-8b63-4808-a3ff-08f310741c0f",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "summarize",
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "aggregation": "sum",
+              "field": "time"
+            }
+          ]
+        },
+        "fieldsToSplitBy": "summary",
+        "options": {}
+      },
+      "id": "1258d9c5-7dd9-4152-9148-32c57de788ec",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        1980,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "removeDuplicates",
+        "compare": "selectedFields",
+        "fieldsToCompare": {
+          "fields": [
+            {
+              "fieldName": "name"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3d7d932b-babc-4596-b1c7-7cae5f38678e",
+      "name": "Item Lists1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2,
+      "position": [
+        2160,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "name",
+              "field2": "summary"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8237e9d1-8895-4cdb-ba75-c1d83ee13fe5",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        2380,
+        340
+      ]
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        1480,
+        720
+      ],
+      "typeVersion": 1,
+      "id": "bfd30bfe-d6cf-4343-b100-10642219b088"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        1740,
+        720
+      ],
+      "typeVersion": 1,
+      "id": "5219d178-1bc5-42ad-894b-d1da0e8f5cdc",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "Session Events",
+        "returnAll": true
+      },
+      "id": "04c95075-84c2-497e-8caa-edfb4370cbf4",
+      "name": "Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        700,
+        220
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "Session Events",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "event_id",
+              "fieldValue": "={{ $json.id }}"
+            },
+            {
+              "fieldId": "summary",
+              "fieldValue": "={{ $json.summary }}"
+            },
+            {
+              "fieldId": "start_time",
+              "fieldValue": "={{ $json.start.dateTime }}"
+            },
+            {
+              "fieldId": "end_time",
+              "fieldValue": "={{ $json.end.dateTime }}"
+            }
+          ]
+        }
+      },
+      "id": "102ba087-b73c-4951-9e34-72410f47cdee",
+      "name": "Supabase1",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        380
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 4
+            }
+          ]
+        }
+      },
+      "id": "94836941-0c8f-4e86-a985-3efb3749e26b",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        180,
+        460
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:35:16.927Z",
+      "updatedAt": "2023-04-09T15:35:16.927Z",
+      "id": "2",
+      "name": "Notion"
+    },
+    {
+      "createdAt": "2023-04-09T16:17:15.682Z",
+      "updatedAt": "2023-04-09T16:17:15.682Z",
+      "id": "4",
+      "name": "Calendar"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2023-04-30T18:18:11.000Z",
+  "versionId": "0d99a6b5-c9d1-423c-a6c7-472526e085e7"
+}
