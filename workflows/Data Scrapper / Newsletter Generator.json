@@ -136,7 +136,7 @@
       "main": [
         [
           {
-            "node": "Medium - Add scribe.rip url",
+            "node": "Medium - Add scribe.rip url, collection, and tags",
             "type": "main",
             "index": 0
           }
@@ -220,11 +220,6 @@
         ]
       ]
     },
-    "Error Trigger": {
-      "main": [
-        []
-      ]
-    },
     "FS - Rip titles and hrefs from page": {
       "main": [
         [
@@ -245,7 +240,7 @@
             "index": 0
           },
           {
-            "node": "Merge",
+            "node": "Brew - Merge",
             "type": "main",
             "index": 1
           }
@@ -278,14 +273,97 @@
       "main": [
         [
           {
-            "node": "Merge",
+            "node": "Brew - Merge",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Merge": {
+    "Medium - Add scribe.rip url, collection, and tags": {
+      "main": [
+        [
+          {
+            "node": "Medium - article",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Medium - Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Medium - Grab Image": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Medium - article": {
+      "main": [
+        [
+          {
+            "node": "Medium - Grab Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Medium - Merge": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Medium - Merge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Brew - Merge": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FS - Add Reading collection and Newsletter tag": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RN - Add Reading collection and Newsletter tag": {
       "main": [
         [
           {
@@ -351,8 +429,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        2440,
-        460
+        3420,
+        540
       ],
       "credentials": {
         "notionApi": {
@@ -363,15 +441,15 @@
     },
     {
       "parameters": {
-        "jsCode": "for (const item of $input.all()) {\n  const hrefRegex = /(([^>]+)>)|<\\/h2/ig;\n  \n  const hrefs = item.json.data.split(/></g).filter(item => item.includes(\"Post Preview Title\")).map(item => item.match(/href=([\"'\\\\])(.*?)\\1/ig)[0].slice(6));\n\n  const titleRegex = /(([^>]+)>)|<\\/h2/ig;\n  const titles = item.json.data.split(/></g).filter(item => item.includes(\"bd ij kj kk kl km eo kn ko kp kq es kr ks kt ku ew kv kw kx ky fa kz la lb lc fe ff fg fh fj fk bi\")).map(str => str.replace(titleRegex, \"\"))\n\n  const data = titles.map((title, idx) => ({ \"title\": title, href: hrefs[idx] }))\n\n  item.json.data = null;\n  item.json.titles = data;\n}\n\nreturn $input.all();"
+        "jsCode": "for (const item of $input.all()) {\n  const hrefRegex = /(([^>]+)>)|<\\/h2/ig;\n  \n  const hrefs = item.json.data.split(/></g).filter(item => item.includes(\"Post Preview Title\")).map(item => item.match(/href=([\"'\\\\])(.*?)\\1/ig)[0].slice(6));\n\n  const titleRegex = /(([^>]+)>)|<\\/h2/ig;\n  const titles = item.json.data.split(/></g).filter(item => item.includes(\"be ik kj kk kl km kn ko kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh fg fh fi fk fl bj\")).map(str => str.replace(titleRegex, \"\"))\n\n  const data = titles.map((title, idx) => ({ \"title\": title, href: hrefs[idx] }))\n\n  item.json.data = null;\n  item.json.titles = data;\n}\n\nreturn $input.all();"
       },
       "id": "c64702dd-b00f-48ea-8994-90ff93513aa5",
       "name": "Rip titles and hrefs from page",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1340,
-        460
+        1360,
+        540
       ]
     },
     {
@@ -404,8 +482,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        860,
-        720
+        840,
+        1000
       ]
     },
     {
@@ -419,7 +497,7 @@
       "typeVersion": 3,
       "position": [
         840,
-        240
+        200
       ]
     },
     {
@@ -432,7 +510,7 @@
       "typeVersion": 1,
       "position": [
         1100,
-        240
+        200
       ]
     },
     {
@@ -446,7 +524,7 @@
       "typeVersion": 1,
       "position": [
         1360,
-        240
+        200
       ]
     },
     {
@@ -460,8 +538,8 @@
       "type": "n8n-nodes-base.markdown",
       "typeVersion": 1,
       "position": [
-        1540,
-        240
+        1740,
+        200
       ]
     },
     {
@@ -475,7 +553,7 @@
       "typeVersion": 3,
       "position": [
         1160,
-        460
+        540
       ]
     },
     {
@@ -493,8 +571,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1,
       "position": [
-        420,
-        0
+        360,
+        -100
       ]
     },
     {
@@ -507,8 +585,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        720,
-        460
+        740,
+        540
       ]
     },
     {
@@ -521,8 +599,8 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 2,
       "position": [
-        940,
-        460
+        960,
+        540
       ]
     },
     {
@@ -536,7 +614,7 @@
       "typeVersion": 2,
       "position": [
         1540,
-        460
+        540
       ]
     },
     {
@@ -548,8 +626,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1060,
-        0
+        1000,
+        -100
       ]
     },
     {
@@ -561,8 +639,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1320,
-        -180
+        1340,
+        -400
       ]
     },
     {
@@ -575,8 +653,8 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 2,
       "position": [
-        1580,
-        -180
+        1600,
+        -400
       ]
     },
     {
@@ -598,7 +676,7 @@
       "typeVersion": 1,
       "position": [
         420,
-        -180
+        -400
       ]
     },
     {
@@ -611,8 +689,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        680,
-        -180
+        700,
+        -400
       ]
     },
     {
@@ -625,8 +703,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1100,
-        -180
+        1120,
+        -400
       ]
     },
     {
@@ -639,8 +717,8 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 2,
       "position": [
-        900,
-        -180
+        920,
+        -400
       ]
     },
     {
@@ -652,8 +730,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1820,
-        -180
+        1840,
+        -400
       ]
     },
     {
@@ -661,23 +739,23 @@
       "name": "Error Trigger",
       "type": "n8n-nodes-base.errorTrigger",
       "position": [
-        2400,
-        60
+        240,
+        220
       ],
       "typeVersion": 1,
       "id": "cdd3d122-e419-4359-9074-83b8734c2ff1"
     },
     {
       "parameters": {
-        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = \"4279a5dabc7f48e183d0ddd4737b4c6f\"\n}\n\nreturn $input.all();"
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = [\"4279a5dabc7f48e183d0ddd4737b4c6f\", \"c6b4ca39f2b64c49baacbc043f4fda9b\"]\n  item.json.coverUrl = \"https://149664534.v2.pressablecdn.com/wp-content/uploads/2021/06/fsblog-logo@2x.png\"\n}\n\nreturn $input.all();"
       },
       "id": "3c1c09da-81c1-45f9-b6a9-17d9055d1c6b",
       "name": "FS - Add Reading collection and Newsletter tag",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1620,
-        720
+        1520,
+        1000
       ]
     },
     {
@@ -689,35 +767,21 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1200,
-        720
+        1180,
+        1000
       ]
     },
     {
       "parameters": {
-        "mode": "runOnceForEachItem",
-        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.href = \"https://scribe.rip\" + $input.item.json.href;\n$input.item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n$input.item.json.tag = \"d1307e676a454f6997870698f9aaa0e5\"\n\nreturn $input.item;"
-      },
-      "id": "6a5be8b5-fc33-466b-97c0-963f3c2c8315",
-      "name": "Medium - Add scribe.rip url",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
-      "position": [
-        1760,
-        460
-      ]
-    },
-    {
-      "parameters": {
-        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = \"4279a5dabc7f48e183d0ddd4737b4c6f\"\n}\n\nreturn $input.all();"
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n  item.json.tag = [\"4279a5dabc7f48e183d0ddd4737b4c6f\", \"11f8704c0b1147d3a25c33a10b38a0c5\"];\n  item.json.coverUrl = \"https://reactnewsletter.com/images/reactnewsletter-logo-center.svg\"\n}\n\nreturn $input.all();"
       },
       "id": "4d6959be-dd7e-4489-95aa-3401842307f1",
       "name": "RN - Add Reading collection and Newsletter tag",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1720,
-        240
+        2180,
+        200
       ]
     },
     {
@@ -729,8 +793,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1440,
-        80
+        1380,
+        -20
       ]
     },
     {
@@ -748,8 +812,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        820,
-        0
+        760,
+        -100
       ]
     },
     {
@@ -762,8 +826,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4,
       "position": [
-        1620,
-        -40
+        1560,
+        -140
       ]
     },
     {
@@ -775,8 +839,22 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1820,
-        -40
+        1760,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.href = \"https://scribe.rip\" + $input.item.json.href;\n$input.item.json.collection = \"62acdcf2feca4853ad48de2e4f27462c\";\n$input.item.json.tag = [\"d1307e676a454f6997870698f9aaa0e5\", \"c6b4ca39f2b64c49baacbc043f4fda9b\"]\n\nreturn $input.item;"
+      },
+      "id": "6a5be8b5-fc33-466b-97c0-963f3c2c8315",
+      "name": "Medium - Add scribe.rip url, collection, and tags",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        540
       ]
     },
     {
@@ -786,12 +864,75 @@
         "options": {}
       },
       "id": "5744476e-2ff5-4989-99d3-3afd7aa2d53b",
-      "name": "Merge",
+      "name": "Brew - Merge",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        2060,
-        100
+        2100,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n   // Find the img tag with the story-header-image classname\n  // Split the img tab based on the regex pattern to extract only the src value\n   const imageUrl = item.json.data.split(/>/g)\n     .filter(item => item.includes(\"cdn-image\"))[0].split(/<img[^>]+src=\"?([^\"\\s]+)\"?\\s*/)[1];\n \n   item.json.data = null;\n   item.json.coverUrl = imageUrl;\n  \n}\n\nreturn $input.all();"
+      },
+      "id": "5489e181-9227-4ea1-b7e7-863891396ffe",
+      "name": "Medium - Grab Image",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        2200,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.href }}",
+        "options": {}
+      },
+      "id": "37a0854d-ae5a-4f95-a2bd-7dcaa27cab8b",
+      "name": "Medium - article",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        1980,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition",
+        "options": {}
+      },
+      "id": "59911a71-1416-4bff-aec4-039186695f23",
+      "name": "Medium - Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        2720,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.coverUrl }}",
+              "operation": "regex",
+              "value2": "/[^\\s]+(.*?).(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/"
+            }
+          ]
+        }
+      },
+      "id": "f5a39a6c-84f5-4a2b-bea2-023b36a3e224",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2380,
+        420
       ]
     }
   ],
@@ -835,6 +976,6 @@
     }
   ],
   "triggerCount": 3,
-  "updatedAt": "2023-04-28T13:42:39.000Z",
-  "versionId": "e75bba50-ec3a-47ea-ae93-f0070b6e24b5"
+  "updatedAt": "2023-05-02T00:06:03.000Z",
+  "versionId": "6f160056-3349-4df3-80b5-bfa1013e9951"
 }
