@@ -126,17 +126,6 @@
         ]
       ]
     },
-    "Error Trigger": {
-      "main": [
-        [
-          {
-            "node": "Send error email",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "IF channelId exists": {
       "main": [
         [
@@ -337,7 +326,7 @@
       ],
       "credentials": {
         "youTubeOAuth2Api": {
-          "id": "10",
+          "id": "11",
           "name": "YouTube account"
         }
       }
@@ -443,33 +432,6 @@
     },
     {
       "parameters": {
-        "resource": "message",
-        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
-        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
-        "toList": [
-          "n8n.prong493@silomails.com"
-        ],
-        "additionalFields": {
-          "senderName": "n8n <hemingway72129@gmail.com>"
-        }
-      },
-      "name": "Send error email",
-      "type": "n8n-nodes-base.gmail",
-      "position": [
-        80,
-        840
-      ],
-      "typeVersion": 1,
-      "id": "b92124a8-cef8-450a-8006-3be416861737",
-      "credentials": {
-        "gmailOAuth2": {
-          "id": "6",
-          "name": "Gmail account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "conditions": {
           "string": [
             {
@@ -511,6 +473,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-25T00:39:54.000Z",
-  "versionId": "3a4b9867-646f-4f98-aad5-9db9841b09a6"
+  "updatedAt": "2023-05-03T01:15:30.000Z",
+  "versionId": "6a2a60a5-121c-4851-8cf4-00c1b37938fe"
 }
