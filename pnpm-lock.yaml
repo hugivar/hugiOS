@@ -394,10 +394,10 @@ importers:
         version: link:../../../../services/notion
       '@raycast/api':
         specifier: latest
-        version: 1.50.2(@types/node@18.16.0)(@types/react@18.2.0)
+        version: 1.50.5(@types/node@18.16.0)(@types/react@18.2.0)
       '@raycast/utils':
         specifier: ^1.4.7
-        version: 1.4.7(@raycast/api@1.50.2)
+        version: 1.4.7(@raycast/api@1.50.5)
       email-validator:
         specifier: ^2.0.4
         version: 2.0.4
@@ -1167,8 +1167,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1
       cypress:
-        specifier: 12.11.0
-        version: 12.11.0
+        specifier: 12.12.0
+        version: 12.12.0
       eslint:
         specifier: ^8.5.0
         version: 8.17.0
@@ -6953,8 +6953,8 @@ packages:
       react-reconciler: 0.28.0(react@18.1.0)
     dev: false
 
-  /@raycast/api@1.50.2(@types/node@18.16.0)(@types/react@18.2.0):
-    resolution: {integrity: sha512-z/XBBN3kH6Qbu/FMH3PpkYTKhpqGSfX+3sBuNXA222gUAWPT7VP7/3eLLt++A+r3tyZXSVKsVqEq4RHweqOY4w==}
+  /@raycast/api@1.50.5(@types/node@18.16.0)(@types/react@18.2.0):
+    resolution: {integrity: sha512-k8hNAryDteS0nb7lT55VFz5bM0NG+6IjVJ6bLxAVUax8MUiD5HU8jfHzs9qoo8Ilx3auCQqOoCZ4fsIAuYQaWw==}
     hasBin: true
     requiresBuild: true
     peerDependencies:
@@ -7004,12 +7004,12 @@ packages:
       - typescript
     dev: true
 
-  /@raycast/utils@1.4.7(@raycast/api@1.50.2):
+  /@raycast/utils@1.4.7(@raycast/api@1.50.5):
     resolution: {integrity: sha512-v0Ba4UnqlUaQfdJBOS9KKhhFUzw3wwgZ6EBVSDg/dJYWOobXWeA6TbjgBBiY9Up5W0ei+IfegbwRICXxehLiww==}
     peerDependencies:
       '@raycast/api': '>=1.39.2'
     dependencies:
-      '@raycast/api': 1.50.2(@types/node@18.16.0)(@types/react@18.2.0)
+      '@raycast/api': 1.50.5(@types/node@18.16.0)(@types/react@18.2.0)
       content-type: 1.0.5
       dequal: 2.0.3
       media-typer: 1.1.0
@@ -10938,8 +10938,8 @@ packages:
       csv-stringify: 5.6.5
       stream-transform: 2.1.3
 
-  /cypress@12.11.0:
-    resolution: {integrity: sha512-TJE+CCWI26Hwr5Msb9GpQhFLubdYooW0fmlPwTsfiyxmngqc7+SZGLPeIkj2dTSSZSEtpQVzOzvcnzH0o8G7Vw==}
+  /cypress@12.12.0:
+    resolution: {integrity: sha512-UU5wFQ7SMVCR/hyKok/KmzG6fpZgBHHfrXcHzDmPHWrT+UUetxFzQgt7cxCszlwfozckzwkd22dxMwl/vNkWRw==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     requiresBuild: true
