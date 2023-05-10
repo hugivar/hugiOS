@@ -1,0 +1,360 @@
+{
+  "active": true,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion (Beta)": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "IF collections doesn't exist",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF collections doesn't exist": {
+      "main": [
+        [
+          {
+            "node": "IF is scribe url",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IF is scribe url1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF is scribe url": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF is scribe url1": {
+      "main": [
+        [
+          {
+            "node": "Notion (Beta)2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send error email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-04-20T20:20:20.517Z",
+  "id": "25",
+  "name": "Bookmark auto tag and add collection daily at 6am",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 6
+            }
+          ]
+        }
+      },
+      "id": "89a750af-981d-4cf5-8d4d-c4ec78cc338d",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        160,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "22a4c495-5aef-4a32-8032-deed90357668",
+          "mode": "list",
+          "cachedResultName": "Bookmarks Backlog",
+          "cachedResultUrl": "https://www.notion.so/22a4c4955aef4a328032deed90357668"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "b24eed23-902f-44ab-8e76-3b6a0c33fa8e",
+      "name": "Notion (Beta)",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        360,
+        460
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.property_collections.length > 0 }}"
+            },
+            {
+              "value1": "={{ $json.property_tags.length > 0 }}"
+            }
+          ]
+        },
+        "combineConditions": "OR"
+      },
+      "id": "4fd05f6c-0360-4c70-9ad3-adbb57e213a5",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 1,
+      "position": [
+        560,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.property_collections.length > 0 }}"
+            }
+          ]
+        }
+      },
+      "id": "8c96532c-6157-4f4f-a4f2-40fae3ed29f5",
+      "name": "IF collections doesn't exist",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        780,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.property_url }}",
+              "operation": "contains",
+              "value2": "https://scribe.rip/"
+            }
+          ]
+        }
+      },
+      "id": "6f1d5674-1dd8-4681-b70b-7759e740c693",
+      "name": "IF is scribe url",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url",
+          "__regex": "(?:https|http)://www.notion.so/(?:[a-z0-9-]{2,}/)?(?:[a-zA-Z0-9-]{2,}-)?([0-9a-f]{8}[0-9a-f]{4}4[0-9a-f]{3}[89ab][0-9a-f]{3}[0-9a-f]{12})"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Collections|relation",
+              "relationValue": [
+                "62acdcf2feca4853ad48de2e4f27462c"
+              ]
+            }
+          ]
+        }
+      },
+      "id": "f7e5ee1d-b881-4c10-8bad-c549918c5566",
+      "name": "Notion (Beta)1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        1280,
+        160
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.property_url }}",
+              "operation": "contains",
+              "value2": "https://scribe.rip/"
+            }
+          ]
+        }
+      },
+      "id": "44faff73-9f4a-4394-b433-cfb605b7ce7d",
+      "name": "IF is scribe url1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url",
+          "__regex": "(?:https|http)://www.notion.so/(?:[a-z0-9-]{2,}/)?(?:[a-zA-Z0-9-]{2,}-)?([0-9a-f]{8}[0-9a-f]{4}4[0-9a-f]{3}[89ab][0-9a-f]{3}[0-9a-f]{12})"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Tags|relation",
+              "relationValue": [
+                "d1307e676a454f6997870698f9aaa0e5"
+              ]
+            }
+          ]
+        }
+      },
+      "id": "ee49e47b-6ded-4c51-b204-47beeb10d689",
+      "name": "Notion (Beta)2",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        520
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "1",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "position": [
+        780,
+        880
+      ],
+      "typeVersion": 1,
+      "id": "0b228a9e-298b-4ae9-8fff-22fe364b62fa"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "subject": "=n8n Workflow Failure:  {{$json[\"workflow\"][\"name\"]}}",
+        "message": "=Workflow: {{$json[\"workflow\"][\"name\"]}}\nError: {{$json[\"execution\"][\"error\"][\"message\"]}}\nLast node executed: {{$json[\"execution\"][\"lastNodeExecuted\"]}}\nExecution URL: {{$json[\"execution\"][\"url\"]}}\nStacktrace:\n{{$json[\"execution\"][\"error\"][\"stack\"]}}",
+        "toList": [
+          "n8n.prong493@silomails.com"
+        ],
+        "additionalFields": {
+          "senderName": "n8n <hemingway72129@gmail.com>"
+        }
+      },
+      "name": "Send error email",
+      "type": "n8n-nodes-base.gmail",
+      "position": [
+        1040,
+        880
+      ],
+      "typeVersion": 1,
+      "id": "6ca28ff6-4200-4319-ae67-886c58170d12",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2023-04-09T15:35:16.927Z",
+      "updatedAt": "2023-04-09T15:35:16.927Z",
+      "id": "2",
+      "name": "Notion"
+    },
+    {
+      "createdAt": "2023-04-20T03:31:54.437Z",
+      "updatedAt": "2023-04-20T03:31:54.437Z",
+      "id": "8",
+      "name": "Medium"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2023-05-07T14:11:02.000Z",
+  "versionId": "c19e4253-9ef9-4b4e-888a-7d3b71617e48"
+}
