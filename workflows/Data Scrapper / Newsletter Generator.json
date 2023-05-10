@@ -337,8 +337,7 @@
             "type": "main",
             "index": 0
           }
-        ],
-        []
+        ]
       ]
     },
     "Brew - Merge": {
@@ -760,7 +759,7 @@
     },
     {
       "parameters": {
-        "jsCode": "for (const item of $input.all()) {\n  const href = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].match(/href=([\"'\\\\])(.*?)\\1/ig)[0];\n\n    const title = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].replace(/<a[^>]*>|<\\/a>/g, \"\");\n\n\n  item.json.data = null;\n  item.json.title = { \"title\": title, \"href\": href };\n  \n}\n\nreturn $input.all();"
+        "jsCode": "for (const item of $input.all()) {\n  const href = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].match(/href=([\"'\\\\])(.*?)\\1/ig)[0].split('href=')[1];\n\n    const title = item.json.data.match(/<a[^>]*>([^<]+)<\\/a>/g)[4].replace(/<a[^>]*>|<\\/a>/g, \"\");\n\n\n  item.json.data = null;\n  item.json.title = title;\n  item.json.href = href;\n  \n}\n\nreturn $input.all();"
       },
       "id": "3cd24c43-c254-49de-acaf-b4dfb830832d",
       "name": "FS - Rip titles and hrefs from page",
@@ -976,6 +975,6 @@
     }
   ],
   "triggerCount": 3,
-  "updatedAt": "2023-05-02T00:06:03.000Z",
-  "versionId": "6f160056-3349-4df3-80b5-bfa1013e9951"
+  "updatedAt": "2023-05-07T14:10:08.000Z",
+  "versionId": "135c48ef-0b2c-4a57-b9f6-a3b04c20a63e"
 }
