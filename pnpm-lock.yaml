@@ -166,8 +166,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0
       electron:
-        specifier: 24.2.0
-        version: 24.2.0
+        specifier: 24.3.0
+        version: 24.3.0
 
   apps/web:
     dependencies:
@@ -394,10 +394,10 @@ importers:
         version: link:../../../../services/notion
       '@raycast/api':
         specifier: latest
-        version: 1.50.5(@types/node@18.16.0)(@types/react@18.2.0)
+        version: 1.51.0(@types/node@18.16.0)(@types/react@18.2.0)
       '@raycast/utils':
         specifier: ^1.4.7
-        version: 1.4.7(@raycast/api@1.50.5)
+        version: 1.4.7(@raycast/api@1.51.0)
       email-validator:
         specifier: ^2.0.4
         version: 2.0.4
@@ -6953,8 +6953,8 @@ packages:
       react-reconciler: 0.28.0(react@18.1.0)
     dev: false
 
-  /@raycast/api@1.50.5(@types/node@18.16.0)(@types/react@18.2.0):
-    resolution: {integrity: sha512-k8hNAryDteS0nb7lT55VFz5bM0NG+6IjVJ6bLxAVUax8MUiD5HU8jfHzs9qoo8Ilx3auCQqOoCZ4fsIAuYQaWw==}
+  /@raycast/api@1.51.0(@types/node@18.16.0)(@types/react@18.2.0):
+    resolution: {integrity: sha512-SiDguyZQLIuUQ1//shmhOAN18N/lrT8fuVjHuHnx/O/KDQf//0zwTLjd040ZQIiUiaINX0TfQ4BLngmjI0nOSg==}
     hasBin: true
     requiresBuild: true
     peerDependencies:
@@ -7004,12 +7004,12 @@ packages:
       - typescript
     dev: true
 
-  /@raycast/utils@1.4.7(@raycast/api@1.50.5):
+  /@raycast/utils@1.4.7(@raycast/api@1.51.0):
     resolution: {integrity: sha512-v0Ba4UnqlUaQfdJBOS9KKhhFUzw3wwgZ6EBVSDg/dJYWOobXWeA6TbjgBBiY9Up5W0ei+IfegbwRICXxehLiww==}
     peerDependencies:
       '@raycast/api': '>=1.39.2'
     dependencies:
-      '@raycast/api': 1.50.5(@types/node@18.16.0)(@types/react@18.2.0)
+      '@raycast/api': 1.51.0(@types/node@18.16.0)(@types/react@18.2.0)
       content-type: 1.0.5
       dequal: 2.0.3
       media-typer: 1.1.0
@@ -11598,8 +11598,8 @@ packages:
       - supports-color
     dev: true
 
-  /electron@24.2.0:
-    resolution: {integrity: sha512-fEYAftYqFhveniWJbEHXjNMWjooFFIuqNj/eEFJkGzycInfBJq/c4E/dew++s6s0YLubxFnjoF2qZiqapLj0gA==}
+  /electron@24.3.0:
+    resolution: {integrity: sha512-M7PpfpOzGdLeZPr2xhxXuvJeoXPEHMH40Rtv8BCGleRPolwna9BepAGc0H0F+Uz5kGKOv3xcm99fTurvXUH0nw==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
