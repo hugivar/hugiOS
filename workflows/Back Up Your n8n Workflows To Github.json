@@ -192,6 +192,7 @@
     },
     {
       "parameters": {
+        "authentication": "oAuth2",
         "resource": "file",
         "operation": "get",
         "owner": "={{$node[\"Globals\"].json[\"repo\"][\"owner\"]}}",
@@ -210,8 +211,8 @@
       "typeVersion": 1,
       "alwaysOutputData": true,
       "credentials": {
-        "githubApi": {
-          "id": "5",
+        "githubOAuth2Api": {
+          "id": "12",
           "name": "GitHub account"
         }
       },
@@ -281,6 +282,7 @@
     },
     {
       "parameters": {
+        "authentication": "oAuth2",
         "resource": "file",
         "operation": "edit",
         "owner": "={{$node[\"Globals\"].json[\"repo\"][\"owner\"]}}",
@@ -298,14 +300,15 @@
       ],
       "typeVersion": 1,
       "credentials": {
-        "githubApi": {
-          "id": "5",
+        "githubOAuth2Api": {
+          "id": "12",
           "name": "GitHub account"
         }
       }
     },
     {
       "parameters": {
+        "authentication": "oAuth2",
         "resource": "file",
         "owner": "={{$node[\"Globals\"].json[\"repo\"][\"owner\"]}}",
         "repository": "={{$node[\"Globals\"].json[\"repo\"][\"name\"]}}",
@@ -322,8 +325,8 @@
       ],
       "typeVersion": 1,
       "credentials": {
-        "githubApi": {
-          "id": "5",
+        "githubOAuth2Api": {
+          "id": "12",
           "name": "GitHub account"
         }
       }
@@ -492,6 +495,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-09T16:19:05.000Z",
-  "versionId": "039f0135-8698-4b3d-8d89-63662ad728be"
+  "updatedAt": "2023-05-10T21:28:27.000Z",
+  "versionId": "9edf9a64-26b4-495f-82b0-d9438f3d682a"
 }
