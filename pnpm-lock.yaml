@@ -1136,8 +1136,8 @@ importers:
         specifier: 3.3.2
         version: 3.3.2
       vue-router:
-        specifier: 4.1.0
-        version: 4.1.0(vue@3.3.2)
+        specifier: 4.2.0
+        version: 4.2.0(vue@3.3.2)
     devDependencies:
       '@rushstack/eslint-patch':
         specifier: 1.2.0
@@ -8569,7 +8569,7 @@ packages:
     dependencies:
       '@volar/language-core': 1.4.1
       '@volar/source-map': 1.4.1
-      '@vue/compiler-dom': 3.2.47
+      '@vue/compiler-dom': 3.3.2
       '@vue/compiler-sfc': 3.2.47
       '@vue/reactivity': 3.2.47
       '@vue/shared': 3.2.47
@@ -8773,20 +8773,9 @@ packages:
       '@vue/shared': 3.3.2
       csstype: 3.1.2
 
-  /@vue/server-renderer@3.2.47(vue@3.3.2):
-    resolution: {integrity: sha512-dN9gc1i8EvmP9RCzvneONXsKfBRgqFeFZLurmHOveL7oH6HiFXJw5OGu294n1nHc/HMgTy6LulU/tv5/A7f/LA==}
-    requiresBuild: true
-    peerDependencies:
-      vue: 3.2.47
-    dependencies:
-      '@vue/compiler-ssr': 3.2.47
-      '@vue/shared': 3.2.47
-      vue: 3.3.2
-    dev: true
-    optional: true
-
   /@vue/server-renderer@3.3.2(vue@3.3.2):
     resolution: {integrity: sha512-QCwh6OGwJg6GDLE0fbQhRTR6tnU+XDJ1iCsTYHXBiezCXAhqMygFRij7BiLF4ytvvHcg5kX9joX5R5vP85++wg==}
+    requiresBuild: true
     peerDependencies:
       vue: 3.3.2
     dependencies:
@@ -8809,8 +8798,8 @@ packages:
       js-beautify: 1.14.6
       vue: 3.3.2
     optionalDependencies:
-      '@vue/compiler-dom': 3.2.47
-      '@vue/server-renderer': 3.2.47(vue@3.3.2)
+      '@vue/compiler-dom': 3.3.2
+      '@vue/server-renderer': 3.3.2(vue@3.3.2)
     dev: true
 
   /@vue/tsconfig@0.4.0:
@@ -22060,8 +22049,8 @@ packages:
       - supports-color
     dev: true
 
-  /vue-router@4.1.0(vue@3.3.2):
-    resolution: {integrity: sha512-A+dYO0ZXLJFZ40ebW3XtqehCW0Wv2xNH4lFddOByDja4NtItEdyirrShTlvD3UA4xc5a5mG2RRI30BusYpOb9g==}
+  /vue-router@4.2.0(vue@3.3.2):
+    resolution: {integrity: sha512-c+usESa6ZoWsm4PPdzRSyenp5A4dsUtnDJnrI03fY1IpIihA9TK3x5ffgkFDpjhLJZewsXoKURapNLFdZjuqTg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
