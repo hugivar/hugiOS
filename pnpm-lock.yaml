@@ -1164,8 +1164,8 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(vue@3.2.47)
       '@vue/tsconfig':
-        specifier: 0.3.1
-        version: 0.3.1
+        specifier: 0.4.0
+        version: 0.4.0
       cypress:
         specifier: 12.12.0
         version: 12.12.0
@@ -8743,8 +8743,8 @@ packages:
       '@vue/server-renderer': 3.2.47(vue@3.2.47)
     dev: true
 
-  /@vue/tsconfig@0.3.1:
-    resolution: {integrity: sha512-tRsFw+xU6/bzWZT2U7RCG7/avCNIk7qMBONfzJzQBxoi4Ni6C7WpTifCVLNkLn0IDqxhtEETNAPsBtz36uNIxA==}
+  /@vue/tsconfig@0.4.0:
+    resolution: {integrity: sha512-CPuIReonid9+zOG/CGTT05FXrPYATEqoDGNrEaqS4hwcw5BUNM2FguC0mOwJD4Jr16UpRVl9N0pY3P+srIbqmg==}
     dev: true
 
   /@webassemblyjs/ast@1.11.1:
