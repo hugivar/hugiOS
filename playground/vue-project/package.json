@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "pinia": "2.0.14",
-    "vue": "3.2.47",
+    "vue": "3.3.2",
     "vue-router": "4.1.0"
   },
   "devDependencies": {
