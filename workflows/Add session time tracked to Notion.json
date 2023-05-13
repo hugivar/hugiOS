@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Remove Project from Summary": {
       "main": [
@@ -17,22 +17,6 @@
         [
           {
             "node": "Remove Project from Summary",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Copy session events to my own calendar": {
-      "main": [
-        [
-          {
-            "node": "Notion (Beta)",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Code",
             "type": "main",
             "index": 0
           }
@@ -61,35 +45,14 @@
         ]
       ]
     },
-    "Google Calendar1": {
-      "main": [
-        [
-          {
-            "node": "Compare Datasets",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "Get Session events",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Compare Datasets": {
       "main": [
         [],
         [],
+        [],
         [
           {
-            "node": "Copy session events to my own calendar",
+            "node": "Supabase1",
             "type": "main",
             "index": 0
           }
@@ -150,18 +113,56 @@
           }
         ]
       ]
+    },
+    "Supabase": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Notion (Beta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Session events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "createdAt": "2023-04-17T01:50:34.740Z",
-  "id": "21",
-  "name": "Add session time tracked to Notion",
+  "createdAt": "2023-04-30T16:42:31.433Z",
+  "id": "28",
+  "name": "Add Session time tracked to Notion",
   "nodes": [
     {
       "parameters": {
         "mode": "runOnceForEachItem",
-        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n$input.item.json.summary = $input.item.json.summary.split(':')[1].trim();\n\nreturn $input.item;"
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\nconst splitSummary = $input.item.json.summary.split(':');\n$input.item.json.summary = splitSummary[1] ? splitSummary[1].trim() : splitSummary[0].trim();\n\nreturn $input.item;"
       },
-      "id": "c3c0753c-62d9-4367-a2a7-0a5fabb9c478",
+      "id": "8f604f5b-d7ec-4682-bcec-6322107eafa7",
       "name": "Remove Project from Summary",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
@@ -181,45 +182,16 @@
         },
         "returnAll": true,
         "options": {
-          "timeMin": "={{$today.minus({days: 1})}}"
+          "timeMin": "={{$today.minus({days: 3})}}"
         }
       },
-      "id": "f62cb709-af0d-405a-bc0f-02a136f101ab",
+      "id": "7afb4208-65e8-4d4d-9917-cf7c69350e8d",
       "name": "Get Session events",
       "type": "n8n-nodes-base.googleCalendar",
       "typeVersion": 1,
       "position": [
         480,
         460
-      ],
-      "credentials": {
-        "googleCalendarOAuth2Api": {
-          "id": "3",
-          "name": "Google Calendar"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "calendar": {
-          "__rl": true,
-          "value": "hemingway72129@gmail.com",
-          "mode": "list",
-          "cachedResultName": "hemingway72129@gmail.com"
-        },
-        "start": "={{ $json.start.dateTime }}",
-        "end": "={{ $json.end.dateTime }}",
-        "additionalFields": {
-          "summary": "={{ $json.summary }}"
-        }
-      },
-      "id": "cc91f171-5bb3-4b2e-81c6-371c04f0d8cb",
-      "name": "Copy session events to my own calendar",
-      "type": "n8n-nodes-base.googleCalendar",
-      "typeVersion": 1,
-      "position": [
-        1240,
-        380
       ],
       "credentials": {
         "googleCalendarOAuth2Api": {
@@ -242,12 +214,12 @@
           }
         }
       },
-      "id": "9a56e375-791f-4bc2-8317-c47c04ecb67c",
+      "id": "ee56ee2f-45fe-4245-8721-650d1df21f00",
       "name": "Notion (Beta)",
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        1500,
+        1660,
         200
       ],
       "credentials": {
@@ -260,14 +232,14 @@
     {
       "parameters": {
         "mode": "runOnceForEachItem",
-        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\n\nvar diff = Math.abs(new Date($input.item.json.start.dateTime) - new Date($input.item.json.end.dateTime));\nvar minutes = Math.floor((diff/1000)/60);\n\n$input.item.json.time = minutes;\n\nreturn $input.item;"
+        "jsCode": "// Add a new field called 'myNewField' to the\n// JSON of the item\nvar diff = Math.abs(new Date($input.item.json.start_time) - new Date($input.item.json.end_time));\n\nvar minutes = Math.floor((diff/1000)/60);\n\n$input.item.json.time = minutes;\n\nreturn $input.item;"
       },
-      "id": "28e2fe5b-74a1-4469-b686-08e20d6648b5",
+      "id": "d59fe814-318e-4e49-9b59-fe4d9a86723d",
       "name": "Code",
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        1500,
+        1720,
         460
       ]
     },
@@ -290,12 +262,12 @@
           ]
         }
       },
-      "id": "dc4f30f4-3365-468e-8ffe-ab31f3f2930e",
+      "id": "0edade6a-296b-4479-bd64-81fa244194f5",
       "name": "Notion (Beta)1",
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [
-        2440,
+        2660,
         340
       ],
       "credentials": {
@@ -307,71 +279,24 @@
     },
     {
       "parameters": {
-        "operation": "getAll",
-        "calendar": {
-          "__rl": true,
-          "value": "hemingway72129@gmail.com",
-          "mode": "list",
-          "cachedResultName": "hemingway72129@gmail.com"
-        },
-        "returnAll": true,
-        "options": {
-          "timeMin": "={{$today.minus({days: 1})}}"
-        }
-      },
-      "id": "24066711-94aa-4e92-a981-8937883e7767",
-      "name": "Google Calendar1",
-      "type": "n8n-nodes-base.googleCalendar",
-      "typeVersion": 1,
-      "position": [
-        660,
-        280
-      ],
-      "credentials": {
-        "googleCalendarOAuth2Api": {
-          "id": "3",
-          "name": "Google Calendar"
-        }
-      }
-    },
-    {
-      "parameters": {
         "mergeByFields": {
           "values": [
             {
-              "field1": "summary",
-              "field2": "summary"
+              "field1": "event_id",
+              "field2": "id"
             }
           ]
         },
+        "resolve": "includeBoth",
         "options": {}
       },
-      "id": "4d5c5a22-d9b2-4231-aa67-19c1cb004354",
+      "id": "56984c99-0a26-4e2d-90c2-3329b839486a",
       "name": "Compare Datasets",
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2,
       "position": [
         960,
         380
-      ]
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 3
-            }
-          ]
-        }
-      },
-      "id": "9c4130da-e5c4-4985-be04-a9d07a9342bb",
-      "name": "Schedule Trigger",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1,
-      "position": [
-        160,
-        460
       ]
     },
     {
@@ -385,12 +310,12 @@
           ]
         }
       },
-      "id": "f010e5ac-e916-420f-b849-8c022da9cec9",
+      "id": "564dfd6c-8b63-4808-a3ff-08f310741c0f",
       "name": "Filter",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 1,
       "position": [
-        1720,
+        1880,
         200
       ]
     },
@@ -408,12 +333,12 @@
         "fieldsToSplitBy": "summary",
         "options": {}
       },
-      "id": "1a1da123-07d5-4774-bcf6-ef4a3a0c0927",
+      "id": "1258d9c5-7dd9-4152-9148-32c57de788ec",
       "name": "Item Lists",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 2,
       "position": [
-        1760,
+        1980,
         460
       ]
     },
@@ -430,12 +355,12 @@
         },
         "options": {}
       },
-      "id": "65ea205e-a268-42a1-8e76-3660a6c12a54",
+      "id": "3d7d932b-babc-4596-b1c7-7cae5f38678e",
       "name": "Item Lists1",
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 2,
       "position": [
-        1940,
+        2160,
         200
       ]
     },
@@ -452,12 +377,12 @@
         },
         "options": {}
       },
-      "id": "a5db3090-5190-4f0a-84f1-5c26745cb95e",
+      "id": "8237e9d1-8895-4cdb-ba75-c1d83ee13fe5",
       "name": "Merge",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        2160,
+        2380,
         340
       ]
     },
@@ -470,7 +395,7 @@
         720
       ],
       "typeVersion": 1,
-      "id": "4fcea43b-927b-4ccf-a58e-3ab83107268c"
+      "id": "bfd30bfe-d6cf-4343-b100-10642219b088"
     },
     {
       "parameters": {
@@ -491,13 +416,93 @@
         720
       ],
       "typeVersion": 1,
-      "id": "7747439c-b308-4fca-9c64-64ec5a78bc9b",
+      "id": "5219d178-1bc5-42ad-894b-d1da0e8f5cdc",
       "credentials": {
         "gmailOAuth2": {
           "id": "6",
           "name": "Gmail account"
         }
       }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "Session Events",
+        "returnAll": true
+      },
+      "id": "04c95075-84c2-497e-8caa-edfb4370cbf4",
+      "name": "Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        700,
+        220
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableId": "Session Events",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "event_id",
+              "fieldValue": "={{ $json.id }}"
+            },
+            {
+              "fieldId": "summary",
+              "fieldValue": "={{ $json.summary }}"
+            },
+            {
+              "fieldId": "start_time",
+              "fieldValue": "={{ $json.start.dateTime }}"
+            },
+            {
+              "fieldId": "end_time",
+              "fieldValue": "={{ $json.end.dateTime }}"
+            }
+          ]
+        }
+      },
+      "id": "102ba087-b73c-4951-9e34-72410f47cdee",
+      "name": "Supabase1",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        380
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "7",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 4
+            }
+          ]
+        }
+      },
+      "id": "94836941-0c8f-4e86-a985-3efb3749e26b",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        180,
+        460
+      ]
     }
   ],
   "pinData": {},
@@ -522,6 +527,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-04-24T23:41:49.000Z",
-  "versionId": "82868815-3335-437a-98d0-992558bd1f9f"
+  "updatedAt": "2023-04-30T18:18:11.000Z",
+  "versionId": "0d99a6b5-c9d1-423c-a6c7-472526e085e7"
 }

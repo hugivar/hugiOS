@@ -548,7 +548,7 @@ importers:
         version: 5.0.2
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.16.0)
+        version: 4.3.0(@types/node@18.15.11)
       vite-tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
@@ -597,7 +597,7 @@ importers:
         version: 5.0.2
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.16.0)
+        version: 4.3.0(@types/node@18.15.11)
       vite-plugin-solid:
         specifier: 2.7.0
         version: 2.7.0(solid-js@1.7.0)(vite@4.3.0)
@@ -947,7 +947,7 @@ importers:
         version: 2.1.0
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.16.0)
+        version: 4.3.0(@types/node@18.15.11)
       webpack:
         specifier: ^5.75.0
         version: 5.75.0(webpack-cli@5.0.1)
@@ -1048,7 +1048,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.16.0)
+        version: 4.3.0(@types/node@18.15.11)
 
   playground/rest:
     dependencies:
@@ -1094,7 +1094,7 @@ importers:
         version: 4.0.0(vite@4.3.0)
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.16.0)
+        version: 4.3.0(@types/node@18.15.11)
 
   playground/solidjs-starter:
     dependencies:
@@ -1116,7 +1116,7 @@ importers:
         version: 5.0.2
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.16.0)
+        version: 4.3.0(@types/node@18.15.11)
       vite-plugin-solid:
         specifier: 2.7.0
         version: 2.7.0(solid-js@1.7.0)(vite@4.3.0)
@@ -1142,6 +1142,9 @@ importers:
       '@rushstack/eslint-patch':
         specifier: 1.2.0
         version: 1.2.0
+      '@tsconfig/node18':
+        specifier: ^2.0.1
+        version: 2.0.1
       '@types/jsdom':
         specifier: 21.1.1
         version: 21.1.1
@@ -7373,6 +7376,10 @@ packages:
 
   /@tsconfig/node16@1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
+
+  /@tsconfig/node18@2.0.1:
+    resolution: {integrity: sha512-UqdfvuJK0SArA2CxhKWwwAWfnVSXiYe63bVpMutc27vpngCntGUZQETO24pEJ46zU6XM+7SpqYoMgcO3bM11Ew==}
+    dev: true
 
   /@types/acorn@4.0.6:
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
@@ -21749,7 +21756,7 @@ packages:
       merge-anything: 5.1.4
       solid-js: 1.7.0
       solid-refresh: 0.5.2(solid-js@1.7.0)
-      vite: 4.3.0(@types/node@18.16.0)
+      vite: 4.3.0(@types/node@18.15.11)
       vitefu: 0.2.4(vite@4.3.0)
     transitivePeerDependencies:
       - supports-color
@@ -21835,6 +21842,7 @@ packages:
       rollup: 3.20.2
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
   /vite@4.3.4(@types/node@18.15.11):
     resolution: {integrity: sha512-f90aqGBoxSFxWph2b39ae2uHAxm5jFBBdnfueNxZAT1FTpM13ccFQExCaKbR2xFW5atowjleRniQ7onjJ22QEg==}
@@ -21876,7 +21884,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.3.0(@types/node@18.16.0)
+      vite: 4.3.0(@types/node@18.15.11)
     dev: true
 
   /vitefu@0.2.4(vite@4.3.4):

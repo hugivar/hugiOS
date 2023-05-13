@@ -14,7 +14,7 @@ it("handle form change correctly", async () => {
   const handleSubmit = vi.fn();
   const { container } = render(<Form onSubmit={handleSubmit} />);
 
-  const input = screen.getByRole("textbox", { name: "" });
+  const input = screen.getByRole("textbox", { name: "Email address" });
 
   expect(input).toBeInTheDocument();
 
