@@ -114,8 +114,8 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1(eslint-config-prettier@8.8.0)(eslint@8.32.0)(prettier@2.8.7)
       happy-dom:
-        specifier: 9.17.0
-        version: 9.17.0
+        specifier: 9.18.3
+        version: 9.18.3
       jest:
         specifier: ^29.4.0
         version: 29.4.0(@types/node@18.15.11)(ts-node@10.9.1)
@@ -139,7 +139,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.17.0)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.18.3)(jsdom@21.1.1)
 
   apps/notifications:
     dependencies:
@@ -311,8 +311,8 @@ importers:
         specifier: 8.8.0
         version: 8.8.0(eslint@8.17.0)
       happy-dom:
-        specifier: 9.17.0
-        version: 9.17.0
+        specifier: 9.18.3
+        version: 9.18.3
       jsdom:
         specifier: 21.1.1
         version: 21.1.1
@@ -336,7 +336,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.17.0)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.18.3)(jsdom@21.1.1)
 
   packages/config:
     dependencies:
@@ -548,13 +548,13 @@ importers:
         version: 5.0.2
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
       vite-tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.17.0)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.18.3)(jsdom@21.1.1)
 
   packages/solid-ui:
     dependencies:
@@ -597,7 +597,7 @@ importers:
         version: 5.0.2
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
       vite-plugin-solid:
         specifier: 2.7.0
         version: 2.7.0(solid-js@1.7.0)(vite@4.3.0)
@@ -606,7 +606,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.17.0)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.18.3)(jsdom@21.1.1)
 
   packages/testing:
     dependencies:
@@ -947,7 +947,7 @@ importers:
         version: 2.1.0
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
       webpack:
         specifier: ^5.75.0
         version: 5.75.0(webpack-cli@5.0.1)
@@ -1048,7 +1048,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
 
   playground/rest:
     dependencies:
@@ -1094,7 +1094,7 @@ importers:
         version: 4.0.0(vite@4.3.0)
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
 
   playground/solidjs-starter:
     dependencies:
@@ -1116,7 +1116,7 @@ importers:
         version: 5.0.2
       vite:
         specifier: 4.3.0
-        version: 4.3.0(@types/node@18.15.11)
+        version: 4.3.0(@types/node@18.16.0)
       vite-plugin-solid:
         specifier: 2.7.0
         version: 2.7.0(solid-js@1.7.0)(vite@4.3.0)
@@ -1125,7 +1125,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.17.0)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.18.3)(jsdom@21.1.1)
 
   playground/vue-project:
     dependencies:
@@ -1198,7 +1198,7 @@ importers:
         version: 4.3.0(@types/node@18.16.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.17.0)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.18.3)(jsdom@21.1.1)
       vue-tsc:
         specifier: 1.6.1
         version: 1.6.1(typescript@5.0.2)
@@ -8493,7 +8493,7 @@ packages:
       magic-string: 0.30.0
       picocolors: 1.0.0
       std-env: 3.3.2
-      vitest: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.17.0)(jsdom@21.1.1)
+      vitest: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.18.3)(jsdom@21.1.1)
     dev: true
 
   /@vitest/expect@0.31.0:
@@ -8539,7 +8539,7 @@ packages:
       pathe: 1.1.0
       picocolors: 1.0.0
       sirv: 2.0.2
-      vitest: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.17.0)(jsdom@21.1.1)
+      vitest: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.18.3)(jsdom@21.1.1)
     dev: true
 
   /@vitest/utils@0.31.0:
@@ -11419,7 +11419,7 @@ packages:
     dependencies:
       domelementtype: 2.3.0
       domhandler: 5.0.3
-      entities: 4.4.0
+      entities: 4.5.0
 
   /domelementtype@2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
@@ -11734,14 +11734,9 @@ packages:
   /entities@2.2.0:
     resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
 
-  /entities@4.4.0:
-    resolution: {integrity: sha512-oYp7156SP8LkeGD0GF85ad1X9Ai79WtRsZ2gxJqtBuzH+98YUV6jkHEKlZkMbcrjJjIVJNIDP/3WL9wQkoPbWA==}
-    engines: {node: '>=0.12'}
-
   /entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
-    dev: true
 
   /env-paths@2.2.1:
     resolution: {integrity: sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==}
@@ -13630,8 +13625,8 @@ packages:
   /handle-thing@2.0.1:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==}
 
-  /happy-dom@9.17.0:
-    resolution: {integrity: sha512-+uuf/Vr4XAaPj94vNyGfnDY+td2dc5RwUNaGNR1vM8kuteOeQ59b6wY61Ik0l4BWcmLK8BICMWSItqA9lXHl0A==}
+  /happy-dom@9.18.3:
+    resolution: {integrity: sha512-b7iMGYeIXvUryNultA0AHEVU0FPpb2djJ/xSVlMDfP7HG4z7FomdqkCEpWtSv1zDL+t1gRUoBbpqFCoUBvjYtg==}
     dependencies:
       css.escape: 1.5.1
       entities: 4.5.0
@@ -13904,7 +13899,7 @@ packages:
       domelementtype: 2.3.0
       domhandler: 5.0.3
       domutils: 3.0.1
-      entities: 4.4.0
+      entities: 4.5.0
 
   /http-cache-semantics@4.1.1:
     resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
@@ -17604,7 +17599,7 @@ packages:
   /parse5@7.1.2:
     resolution: {integrity: sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==}
     dependencies:
-      entities: 4.4.0
+      entities: 4.5.0
 
   /parseurl@1.3.3:
     resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}
@@ -21756,7 +21751,7 @@ packages:
       merge-anything: 5.1.4
       solid-js: 1.7.0
       solid-refresh: 0.5.2(solid-js@1.7.0)
-      vite: 4.3.0(@types/node@18.15.11)
+      vite: 4.3.0(@types/node@18.16.0)
       vitefu: 0.2.4(vite@4.3.0)
     transitivePeerDependencies:
       - supports-color
@@ -21842,7 +21837,6 @@ packages:
       rollup: 3.20.2
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vite@4.3.4(@types/node@18.15.11):
     resolution: {integrity: sha512-f90aqGBoxSFxWph2b39ae2uHAxm5jFBBdnfueNxZAT1FTpM13ccFQExCaKbR2xFW5atowjleRniQ7onjJ22QEg==}
@@ -21884,7 +21878,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.3.0(@types/node@18.15.11)
+      vite: 4.3.0(@types/node@18.16.0)
     dev: true
 
   /vitefu@0.2.4(vite@4.3.4):
@@ -21897,7 +21891,7 @@ packages:
     dependencies:
       vite: 4.3.4(@types/node@18.15.11)
 
-  /vitest@0.31.0(@vitest/ui@0.31.0)(happy-dom@9.17.0)(jsdom@21.1.1):
+  /vitest@0.31.0(@vitest/ui@0.31.0)(happy-dom@9.18.3)(jsdom@21.1.1):
     resolution: {integrity: sha512-JwWJS9p3GU9GxkG7eBSmr4Q4x4bvVBSswaCFf1PBNHiPx00obfhHRJfgHcnI0ffn+NMlIh9QGvG75FlaIBdKGA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -21943,7 +21937,7 @@ packages:
       chai: 4.3.7
       concordance: 5.0.4
       debug: 4.3.4(supports-color@8.1.1)
-      happy-dom: 9.17.0
+      happy-dom: 9.18.3
       jsdom: 21.1.1
       local-pkg: 0.4.3
       magic-string: 0.30.0
