@@ -1,67 +1,20 @@
 name: Release
+
 on:
   push:
     branches:
       - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 env:
   CI: true
   PNPM_CACHE_FOLDER: .pnpm-store
 
 jobs:
-  # ipfs-deployment:
-  #   timeout-minutes: 15
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [15]
-  #   env:
-  #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  #     PINATA_KEY: ${{ secrets.PINATA_KEY }}
-  #     PINATA_SECRET_KEY: ${{ secrets.PINATA_SECRET_KEY }}
-  #     CLOUDFLARE_TOKEN_ID: ${{ secrets.CLOUDFLARE_TOKEN_ID }}
-  #     CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
-  #     CLOUDFLARE_DNS_ID: ${{ secrets.CLOUDFLARE_DNS_ID }}
-  #   # https://pnpm.io/continuous-integration#github-actions
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: pnpm/action-setup@v2.2.2
-  #       with:
-  #         version: 7.0.0-rc.6
-  #     - name: Use Node.js ${{ matrix.node-version }}
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #         cache: "pnpm"
-  #     - name: setup pnpm config
-  #       run: pnpm config set store-dir $PNPM_CACHE_FOLDER
-  #     - name: Install dependencies
-  #       run: pnpm install
-  #     - name: Check changesets/action
-  #       id: changesets
-  #       run: pnpm changeset status
-  #     # https://nextjs.org/docs/messages/no-cache
-  #     # https://github.com/actions/cache/blob/main/examples.md#node---yarn
-  #     - uses: actions/cache@v3
-  #       with:
-  #         path: |
-  #           ~/.pnpm-store
-  #           ~/.pnpm-state
-  #           ${{ github.workspace }}/.next/cache
-  #         # Generate a new cache whenever packages or source files change.
-  #         key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-  #         # If source files changed but packages didn't, rebuild from a prior cache.
-  #         restore-keys: |
-  #           ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
-  #     - name: Release static code if changeset for app exists
-  #       run: |
-  #         pnpm changeset status --output output.json
-  #         pnpm release
-
   changeset:
     name: Changeset creation
     runs-on: ubuntu-latest
-    needs: ipfs-deployment
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
