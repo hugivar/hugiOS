@@ -466,10 +466,7 @@
       "parameters": {
         "triggerTimes": {
           "item": [
-            {
-              "mode": "everyX",
-              "value": 24
-            }
+            {}
           ]
         }
       },
@@ -495,6 +492,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-05-10T21:28:27.000Z",
-  "versionId": "9edf9a64-26b4-495f-82b0-d9438f3d682a"
+  "updatedAt": "2023-05-13T15:32:34.000Z",
+  "versionId": "940063fb-a744-4e09-a5c5-25435c9d6b8f"
 }
