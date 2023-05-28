@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/bash_profile.pre.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.pre.bash"
 # Setting PATH for Python 3.7
 # The original version is saved in .bash_profile.pysave
 # PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
@@ -39,6 +37,3 @@ source ~/.aliases
 
 # NPM global installs
 export PATH=$PATH:/usr/local/Cellar/node/12.4.0/bin
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && builtin source "$HOME/.fig/shell/bash_profile.post.bash"

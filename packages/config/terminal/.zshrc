@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export USER="${USER}"
 
 export PATH=$PATH:~/flutter/bin
@@ -95,12 +93,52 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # https://dev.to/abdfnx/oh-my-zsh-powerlevel10k-cool-terminal-1no0
 
-plugins=()
-
+plugins=(
+  git
+  git-extra-commands
+  macos
+  zsh-autosuggestions
+  zsh-autocomplete
+  zsh-syntax-highlighting
+  zsh-you-should-use
+)
+  
+# Alias
 if [ -x "$(command -v exa)" ]; then
-    alias ls="exa"
-    alias la="exa --long --all --group"
+  alias ls="exa"
+  alias l="exa -lbF --git"
+  alias ll="exa -lbGF --git"
+  alias llm="exa -lbGF --git --sort=modified"
+  alias la="exa --long --all --group"
+  alias lx="exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale"
 fi
+
+alias bertyAndroid="cd ~/repos/berty/js/android"
+alias repos="cd ~/repos/"
+
+# Git
+alias ga="git add"
+alias gc="git commit"
+alias gl="git pull"
+alias gcb="git checkout -b"
+alias gcf="git config --list"
+alias gcmsg="git commit --message"
+alias gf="git fetch"
+alias gp="git push"
+alias g="git"
+
+# Misc
+alias zshrc="${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"
+alias sgrep="grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}"
+alias t="tail -f"
+alias h="history"
+alias hs="history | grep"
+alias hsi="history | grep -i"
+alias help="man"
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias kill="sudo kill"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -157,6 +195,3 @@ export PATH="$PNPM_HOME:$PATH"
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 # zplug end
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
