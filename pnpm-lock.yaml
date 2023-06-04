@@ -293,8 +293,8 @@ importers:
         specifier: 0.31.0
         version: 0.31.0(vitest@0.31.0)
       c8:
-        specifier: 7.13.0
-        version: 7.13.0
+        specifier: 7.14.0
+        version: 7.14.0
       cheerio:
         specifier: 1.0.0-rc.11
         version: 1.0.0-rc.11
@@ -8830,7 +8830,7 @@ packages:
       vitest: '>=0.30.0 <1'
     dependencies:
       '@ampproject/remapping': 2.2.0
-      c8: 7.13.0
+      c8: 7.14.0
       magic-string: 0.30.0
       picocolors: 1.0.0
       std-env: 3.3.2
@@ -10321,8 +10321,8 @@ packages:
     resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
     engines: {node: '>= 0.8'}
 
-  /c8@7.13.0:
-    resolution: {integrity: sha512-/NL4hQTv1gBL6J6ei80zu3IiTrmePDKXKXOTLpHvcIWZTVYQlDhVWjjWvkhICylE8EwwnMVzDZugCvdx0/DIIA==}
+  /c8@7.14.0:
+    resolution: {integrity: sha512-i04rtkkcNcCf7zsQcSv/T9EbUn4RXQ6mropeMcjFOsQXQ0iGLAr/xT6TImQg4+U9hmNpN9XdvPkjUL1IzbgxJw==}
     engines: {node: '>=10.12.0'}
     hasBin: true
     dependencies:
