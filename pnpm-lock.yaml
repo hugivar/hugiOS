@@ -197,8 +197,8 @@ importers:
         specifier: 2.3.1
         version: 2.3.1
       daisyui:
-        specifier: 2.51.0
-        version: 2.51.0(autoprefixer@10.4.7)(postcss@8.4.21)
+        specifier: 2.52.0
+        version: 2.52.0(autoprefixer@10.4.7)(postcss@8.4.21)
       gray-matter:
         specifier: 4.0.3
         version: 4.0.3
@@ -207,7 +207,7 @@ importers:
         version: 8.0.1
       next:
         specifier: 13.4.0
-        version: 13.4.0(@babel/core@7.22.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 13.4.0(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
       next-themes:
         specifier: 0.2.0
         version: 0.2.0(next@13.4.0)(react-dom@18.2.0)(react@18.2.0)
@@ -355,7 +355,7 @@ importers:
         version: 7.32.0(eslint@8.17.0)
       next:
         specifier: 13.4.0
-        version: 13.4.0(@babel/core@7.22.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 13.4.0(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -12405,8 +12405,8 @@ packages:
       type: 1.2.0
     dev: false
 
-  /daisyui@2.51.0(autoprefixer@10.4.7)(postcss@8.4.21):
-    resolution: {integrity: sha512-HGM89+VzZ/KDsH4cK6OhizIscXOVzkEENynovL6bXPfJDOKZQz0V2CuTGEoQmN8FeuGxrZiz/He1P9p+E9Qr5A==}
+  /daisyui@2.52.0(autoprefixer@10.4.7)(postcss@8.4.21):
+    resolution: {integrity: sha512-LQTA5/IVXAJHBMFoeaEMfd7/akAFPPcdQPR3O9fzzcFiczneJFM73CFPnScmW2sOgn/D83cvkP854ep2T9OfTg==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
@@ -18305,7 +18305,7 @@ packages:
       react: '*'
       react-dom: '*'
     dependencies:
-      next: 13.4.0(@babel/core@7.22.1)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.4.0(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -18314,7 +18314,7 @@ packages:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: false
 
-  /next@13.4.0(@babel/core@7.22.1)(react-dom@18.2.0)(react@18.2.0):
+  /next@13.4.0(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-y3E+2ZjiVrphkz7zcJvd2rEG6miOekI8krPfWV4AZZ9TaF0LDuFdP/f+RQ5M9wRvsz6GWw8k8+7jsO860GxSqg==}
     engines: {node: '>=16.8.0'}
     hasBin: true
@@ -18342,7 +18342,7 @@ packages:
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      styled-jsx: 5.1.1(@babel/core@7.22.1)(react@18.2.0)
+      styled-jsx: 5.1.1(@babel/core@7.21.4)(react@18.2.0)
       zod: 3.21.4
     optionalDependencies:
       '@next/swc-darwin-arm64': 13.4.0
@@ -21766,7 +21766,7 @@ packages:
       inline-style-parser: 0.1.1
     dev: true
 
-  /styled-jsx@5.1.1(@babel/core@7.22.1)(react@18.2.0):
+  /styled-jsx@5.1.1(@babel/core@7.21.4)(react@18.2.0):
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -21779,7 +21779,7 @@ packages:
       babel-plugin-macros:
         optional: true
     dependencies:
-      '@babel/core': 7.22.1
+      '@babel/core': 7.21.4
       client-only: 0.0.1
       react: 18.2.0
     dev: false
