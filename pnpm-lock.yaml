@@ -388,8 +388,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-i18next:
-        specifier: 12.2.0
-        version: 12.2.0(i18next@22.5.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 12.3.1
+        version: 12.3.1(i18next@22.5.0)(react-dom@18.2.0)(react@18.2.0)
 
   packages/raycast/extensions/documentation-creator:
     dependencies:
@@ -20119,8 +20119,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-i18next@12.2.0(i18next@22.5.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-5XeVgSygaGfyFmDd2WcXvINRw2WEC1XviW1LXY/xLOEMzsCFRwKqfnHN+hUjla8ZipbVJR27GCMSuTr0BhBBBQ==}
+  /react-i18next@12.3.1(i18next@22.5.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-5v8E2XjZDFzK7K87eSwC7AJcAkcLt5xYZ4+yTPDAW1i7C93oOY1dnr4BaQM7un4Hm+GmghuiPvevWwlca5PwDA==}
     peerDependencies:
       i18next: '>= 19.0.0'
       react: '>= 16.8.0'
