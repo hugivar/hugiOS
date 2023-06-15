@@ -128,7 +128,6 @@ alias gp="git push"
 alias g="git"
 
 # Misc
-alias zshrc="${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc"
 alias sgrep="grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}"
 alias t="tail -f"
 alias h="history"
