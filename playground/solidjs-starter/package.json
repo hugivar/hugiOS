@@ -12,7 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "@hugios/testing": "workspace:*",
-    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/jest-dom": "5.17.0",
     "typescript": "5.0.2",
     "vite": "4.3.0",
     "vite-plugin-solid": "2.7.0",
