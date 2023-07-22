@@ -9,11 +9,11 @@
     "hugios": "./bin/cli.js"
   },
   "scripts": {
-    "dev": "ts-node ./cli/main",
+    "dev": "ts-node ./cli/main.ts",
     "buildSiteMap": "node ./buildSiteMap"
   },
   "dependencies": {
-    "chalk": "5.2.0",
+    "chalk": "4.1.2",
     "node-fetch": "3.3.0",
     "ts-node": "10.9.1",
     "typescript": "5.0.2"

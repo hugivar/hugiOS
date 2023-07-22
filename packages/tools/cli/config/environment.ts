@@ -5,8 +5,7 @@ import path from 'path';
 import createRepo from 'cli/commands/createRepo';
 import setupZsh from 'cli/commands/setupZsh';
 import setupWakaTime from 'cli/commands/setupWakaTime';
-import updateFromLocalDotfiles from 'cli/commands/updateFromLocalDotfiles';
-import updateLocalDotfiles from 'cli/commands/updateLocalDotfiles';
+import updateDotfiles from 'cli/commands/updateDotfiles';
 
 export const setup = {
     name: 'Environment setup',
@@ -30,13 +29,8 @@ export const choices = [
         action: setupWakaTime
     },
     {
-        name: 'Update repo dotfiles file based on local zsh file',
-        value: 'update.fromlocaldotfiles',
-        action: updateFromLocalDotfiles,
-    },
-    {
         name: 'Update local dotfiles based on repo files',
-        value: 'update.LocalDotfiles',
-        action: updateLocalDotfiles
+        value: 'update.Dotfiles',
+        action: updateDotfiles
     }
 ];

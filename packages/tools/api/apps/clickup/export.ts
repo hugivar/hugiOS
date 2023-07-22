@@ -2,7 +2,7 @@ import https from 'https';
 import fs from 'fs';
 import 'dotenv/config';
 
-const config = JSON.parse(process.env.CLICKUP_DATA);
+const config = process.env.CLICKUP_DATA as any
 
 const initialize = () => {
     if (!fs.existsSync('./exports')) {
