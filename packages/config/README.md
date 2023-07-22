@@ -23,6 +23,11 @@ hugios update dotfiles
 
 1. zsh-completions: https://github.com/zsh-users/zsh-completions
 
+## OhMyZsh configuration
+
+Find my forked configruations of oh-my-zsh
+https://github.com/hugivar/ohmyzsh 
+
 ## VSCode Config
  
 https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
