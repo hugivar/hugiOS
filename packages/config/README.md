@@ -10,17 +10,11 @@
 4. vimrc
 5. zshrc
 
-### Update HugiOS repo using local configs
+### Symlink HugiOS dotfiles to the local dotfiles
 
 ```
-hugios update fromlocaldotfiles 
+hugios update dotfiles 
 ```
-### Using these configs
-
-```
-hugios update localdotfiles
-```
-
 ### Useful Links
 
 1. https://www.swyx.io/new-mac-setup
