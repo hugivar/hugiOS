@@ -572,8 +572,8 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
       '@testing-library/jest-dom':
-        specifier: 5.16.4
-        version: 5.16.4
+        specifier: 5.17.0
+        version: 5.17.0
       '@types/react':
         specifier: 18.2.0
         version: 18.2.0
@@ -627,8 +627,8 @@ importers:
         specifier: 9.3.0
         version: 9.3.0
       '@testing-library/jest-dom':
-        specifier: 5.16.4
-        version: 5.16.4
+        specifier: 5.17.0
+        version: 5.17.0
       '@testing-library/react':
         specifier: 14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -1109,8 +1109,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/testing
       '@testing-library/jest-dom':
-        specifier: 5.16.4
-        version: 5.16.4
+        specifier: 5.17.0
+        version: 5.17.0
       typescript:
         specifier: 5.0.2
         version: 5.0.2
@@ -1317,6 +1317,10 @@ packages:
   /@aashutoshrathi/word-wrap@1.2.6:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
+
+  /@adobe/css-tools@4.2.0:
+    resolution: {integrity: sha512-E09FiIft46CmH5Qnjb0wsW54/YQd69LsxeKUOWawmws1XWvyFGURnAChH0mlr7YPFR1ofwvUQfcL0J3lMxXqPA==}
+    dev: true
 
   /@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
@@ -7363,6 +7367,21 @@ packages:
       aria-query: 5.3.0
       chalk: 3.0.0
       css: 3.0.0
+      css.escape: 1.5.1
+      dom-accessibility-api: 0.5.16
+      lodash: 4.17.21
+      redent: 3.0.0
+    dev: true
+
+  /@testing-library/jest-dom@5.17.0:
+    resolution: {integrity: sha512-ynmNeT7asXyH3aSVv4vvX4Rb+0qjOhdNHnO/3vuZNqPmhDpV/+rCSGwQ7bLcmU2cJ4dvoheIO85LQj0IbJHEtg==}
+    engines: {node: '>=8', npm: '>=6', yarn: '>=1'}
+    dependencies:
+      '@adobe/css-tools': 4.2.0
+      '@babel/runtime': 7.22.6
+      '@types/testing-library__jest-dom': 5.14.8
+      aria-query: 5.3.0
+      chalk: 3.0.0
       css.escape: 1.5.1
       dom-accessibility-api: 0.5.16
       lodash: 4.17.21
@@ -18635,7 +18654,7 @@ packages:
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.22.6
       react: 18.2.0
     dev: false
 
