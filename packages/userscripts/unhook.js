@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Unhook
-// @version      2.0
+// @version      2.1
 // @description  Disable uselesss elements from YouTube
 // @author       hugivar
-// @match        *://www.youtube.com/*
-// @run-at       document-idle
+// @match        *://*.youtube.com/*
+// @match        *://youtube.com/*
 // @grant        none
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
 
@@ -38,36 +38,42 @@ let settingsInit = false
  * @param {String} querySelector - Selector of element to wait for
  * @param {Integer} timeout - Milliseconds to wait before timing out, or 0 for no timeout
  */
-function waitForElement(querySelector, timeout) {
-    return new Promise((resolve, reject) => {
-        var timer = false;
-        if (document.querySelectorAll(querySelector).length) return resolve();
-        const observer = new MutationObserver(() => {
-            if (document.querySelectorAll(querySelector).length) {
+
+
+
+function waitForElm(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            return resolve(document.querySelector(selector));
+        }
+
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector)) {
+                resolve(document.querySelector(selector));
                 observer.disconnect();
-                if (timer !== false) clearTimeout(timer);
-                return resolve();
             }
         });
+
         observer.observe(document.body, {
             childList: true,
             subtree: true
         });
-        if (timeout) timer = setTimeout(() => {
-            observer.disconnect();
-            reject();
-        }, timeout);
     });
 }
 
+function hideSkeleton() {
+    waitForElm("#home-container-skeleton").then(function () {
+        document.querySelector("#home-container-skeleton").remove();
+    });
+}
 function hideHomeFeed() {
-    waitForElement("ytd-browse", 3000).then(function () {
+    waitForElm("ytd-browse").then(function () {
         document.querySelector("ytd-browse").remove();
     });
 };
 
 function hideShorts() {
-    waitForElement("#items", 3000).then(function () {
+    waitForElm("#items").then(function () {
         const shortsBadgeSelector = 'ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"]';
         const shortBadges = qsa(shortsBadgeSelector);
         shortBadges?.forEach(badge => {
@@ -89,13 +95,13 @@ function hideShorts() {
 }
 
 function hideVideoSidebar() {
-    waitForElement("#secondary", 3000).then(function () {
+    waitForElm('#secondary').then((elm) => {
         document.querySelector("#secondary").remove();
     });
 };
 
 function hideComments() {
-    waitForElement("ytd-item-section-renderer", 3000).then(function () {
+    waitForElm('ytd-item-section-renderer').then((elm) => {
         document.querySelector("ytd-item-section-renderer").remove();
     });
 };
@@ -106,6 +112,8 @@ function disableAfterLoad() {
 
 function handleNewPage() {
     if (onHomepage) {
+        console.log('onHomepage')
+        hideSkeleton();
         hideHomeFeed();
         hideShorts();
     }
@@ -116,6 +124,5 @@ function handleNewPage() {
     }
 };
 
-window.onload = function () {
-    handleNewPage();
-}
+
+handleNewPage();
