@@ -158,8 +158,8 @@ importers:
         specifier: 6.3.0
         version: 6.3.0
       '@electron-forge/maker-deb':
-        specifier: 6.1.0
-        version: 6.1.0
+        specifier: 6.3.0
+        version: 6.3.0
       '@electron-forge/maker-rpm':
         specifier: 6.1.0
         version: 6.1.0
@@ -5248,12 +5248,12 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-deb@6.1.0:
-    resolution: {integrity: sha512-1lYc6/3yMyW4N1yvfkPj+POEHeLD0jFDU5HCWKl57V0Z99s6puqZPYlDj8rC0wYHHHT7DFGWVM9TWZjQjVneuw==}
+  /@electron-forge/maker-deb@6.3.0:
+    resolution: {integrity: sha512-ttNhPTMAI55tJh5Jcs0/4kW+dPrjfTdKIuxtyCKZI/MZXLy39Lq6fneUUg1G7ZqTEE1DHL947uxlYw5NumahEw==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.1.0
-      '@electron-forge/shared-types': 6.1.0
+      '@electron-forge/maker-base': 6.3.0
+      '@electron-forge/shared-types': 6.3.0
     optionalDependencies:
       electron-installer-debian: 3.1.0
     transitivePeerDependencies:
