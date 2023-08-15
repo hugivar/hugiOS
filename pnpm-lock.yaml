@@ -164,8 +164,8 @@ importers:
         specifier: 6.3.0
         version: 6.3.0
       '@electron-forge/maker-squirrel':
-        specifier: 6.1.0
-        version: 6.1.0
+        specifier: 6.3.0
+        version: 6.3.0
       '@electron-forge/maker-zip':
         specifier: 6.1.0
         version: 6.1.0
@@ -5274,12 +5274,12 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-squirrel@6.1.0:
-    resolution: {integrity: sha512-kYqKe9sIEYuod5hkqdUrNrDetGl9bIBNRFUr38jLlVyQ5oLzwpNtahQyl3hNWAF2fC7H6k7lK3SmdY41CB8MWA==}
+  /@electron-forge/maker-squirrel@6.3.0:
+    resolution: {integrity: sha512-SkVgkwBr+QYT6Cvfp785ni27EINC4tV2SBpy52gFTu+QTtH2cg/4aZJ8jmoXSkJ9rRSMKsHg9z7jInslM5A85w==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.1.0
-      '@electron-forge/shared-types': 6.1.0
+      '@electron-forge/maker-base': 6.3.0
+      '@electron-forge/shared-types': 6.3.0
       fs-extra: 10.1.0
     optionalDependencies:
       electron-winstaller: 5.1.0
