@@ -143,7 +143,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@22.1.0)
 
   apps/notifications:
     dependencies:
@@ -318,8 +318,8 @@ importers:
         specifier: 9.20.3
         version: 9.20.3
       jsdom:
-        specifier: 21.1.1
-        version: 21.1.1
+        specifier: 22.1.0
+        version: 22.1.0
       react-test-renderer:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
@@ -340,7 +340,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@22.1.0)
 
   packages/config:
     dependencies:
@@ -558,7 +558,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@22.1.0)
 
   packages/solid-ui:
     dependencies:
@@ -610,7 +610,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@22.1.0)
 
   packages/testing:
     dependencies:
@@ -1129,7 +1129,7 @@ importers:
         version: 4.2.0(typescript@5.0.2)(vite@4.3.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@22.1.0)
 
   playground/vue-project:
     dependencies:
@@ -1186,8 +1186,8 @@ importers:
         specifier: 8.7.1
         version: 8.7.1(eslint@8.17.0)
       jsdom:
-        specifier: 21.1.1
-        version: 21.1.1
+        specifier: 22.1.0
+        version: 22.1.0
       prettier:
         specifier: 2.8.0
         version: 2.8.0
@@ -1202,7 +1202,7 @@ importers:
         version: 4.3.0(@types/node@18.16.0)
       vitest:
         specifier: 0.31.0
-        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@21.1.1)
+        version: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@22.1.0)
       vue-tsc:
         specifier: 1.6.1
         version: 1.6.1(typescript@5.0.2)
@@ -8566,7 +8566,7 @@ packages:
       magic-string: 0.30.1
       picocolors: 1.0.0
       std-env: 3.3.3
-      vitest: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@21.1.1)
+      vitest: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@22.1.0)
     dev: true
 
   /@vitest/expect@0.31.0:
@@ -8612,7 +8612,7 @@ packages:
       pathe: 1.1.1
       picocolors: 1.0.0
       sirv: 2.0.3
-      vitest: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@21.1.1)
+      vitest: 0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@22.1.0)
     dev: true
 
   /@vitest/utils@0.31.0:
@@ -15367,9 +15367,9 @@ packages:
       - utf-8-validate
     dev: true
 
-  /jsdom@21.1.1:
-    resolution: {integrity: sha512-Jjgdmw48RKcdAIQyUD1UdBh2ecH7VqwaXPN3ehoZN6MqgVbMn+lRm1aAT1AsdJRAJpwfa4IpwgzySn61h2qu3w==}
-    engines: {node: '>=14'}
+  /jsdom@22.1.0:
+    resolution: {integrity: sha512-/9AVW7xNbsBv6GfWho4TTNjEo9fe6Zhf9O7s0Fhhr3u+awPwAJMKwAMXnkk5vBxflqLW9hTHX/0cs+P3gW+cQw==}
+    engines: {node: '>=16'}
     peerDependencies:
       canvas: ^2.5.0
     peerDependenciesMeta:
@@ -15377,13 +15377,10 @@ packages:
         optional: true
     dependencies:
       abab: 2.0.6
-      acorn: 8.10.0
-      acorn-globals: 7.0.1
       cssstyle: 3.0.0
       data-urls: 4.0.0
       decimal.js: 10.4.3
       domexception: 4.0.0
-      escodegen: 2.1.0
       form-data: 4.0.0
       html-encoding-sniffer: 3.0.0
       http-proxy-agent: 5.0.0
@@ -21948,7 +21945,7 @@ packages:
     dependencies:
       vite: 4.4.6(@types/node@18.16.0)
 
-  /vitest@0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@21.1.1):
+  /vitest@0.31.0(@vitest/ui@0.31.0)(happy-dom@9.20.3)(jsdom@22.1.0):
     resolution: {integrity: sha512-JwWJS9p3GU9GxkG7eBSmr4Q4x4bvVBSswaCFf1PBNHiPx00obfhHRJfgHcnI0ffn+NMlIh9QGvG75FlaIBdKGA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -21995,7 +21992,7 @@ packages:
       concordance: 5.0.4
       debug: 4.3.4(supports-color@8.1.1)
       happy-dom: 9.20.3
-      jsdom: 21.1.1
+      jsdom: 22.1.0
       local-pkg: 0.4.3
       magic-string: 0.30.1
       pathe: 1.1.1

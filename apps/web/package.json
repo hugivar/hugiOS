@@ -65,7 +65,7 @@
     "eslint-config-next": "13.4.0",
     "eslint-config-prettier": "8.8.0",
     "happy-dom": "9.20.3",
-    "jsdom": "21.1.1",
+    "jsdom": "22.1.0",
     "react-test-renderer": "18.2.0",
     "rimraf": "5.0.0",
     "serve": "14.2.0",
