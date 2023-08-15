@@ -167,8 +167,8 @@ importers:
         specifier: 6.3.0
         version: 6.3.0
       '@electron-forge/maker-zip':
-        specifier: 6.1.0
-        version: 6.1.0
+        specifier: 6.3.0
+        version: 6.3.0
       electron:
         specifier: 24.4.1
         version: 24.4.1
@@ -5224,18 +5224,6 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-base@6.1.0:
-    resolution: {integrity: sha512-pNj/iVSU1NZTUtR5RiY5IyUj1+nHST/lcVmhsvu+3dpOFfcPx91+4E0nGeWMepL5mraFnZO7DQXKPd0/VJsr7w==}
-    engines: {node: '>= 14.17.5'}
-    dependencies:
-      '@electron-forge/shared-types': 6.1.0
-      fs-extra: 10.1.0
-      which: 2.0.2
-    transitivePeerDependencies:
-      - enquirer
-      - supports-color
-    dev: true
-
   /@electron-forge/maker-base@6.3.0:
     resolution: {integrity: sha512-zAU2G7yh9gLyFbw08RfU4j8z/QAt5Sm4uaub3dE+GdRuXOc0NeqIfUiwP2xIl6Ja6mt5dU4gvdxQT/+hnqXqoQ==}
     engines: {node: '>= 14.17.5'}
@@ -5288,12 +5276,12 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-zip@6.1.0:
-    resolution: {integrity: sha512-KOZeLnta1gC0QXvTI1346DCGpNTsx2Atk6sCmV826jFb2eBmyTzg4aXyo+ffEaaVGj2znP2Z0o21YdTftTKiGg==}
+  /@electron-forge/maker-zip@6.3.0:
+    resolution: {integrity: sha512-LYtT3KbFaT0z2sGK8y+QvbAZuc/Kdnnr3BFqYBd+OWGxvNfWCO762C0j63X01FFFrKoBFnA+wxUYHZplzYxvDA==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.1.0
-      '@electron-forge/shared-types': 6.1.0
+      '@electron-forge/maker-base': 6.3.0
+      '@electron-forge/shared-types': 6.3.0
       cross-zip: 4.0.0
       fs-extra: 10.1.0
       got: 11.8.6
@@ -5317,18 +5305,6 @@ packages:
     engines: {node: '>= 14.17.5'}
     dependencies:
       '@electron-forge/shared-types': 6.3.0
-    transitivePeerDependencies:
-      - enquirer
-      - supports-color
-    dev: true
-
-  /@electron-forge/shared-types@6.1.0:
-    resolution: {integrity: sha512-XemHvhVv/wvPfs5wHCp1keNZ7nFsC4U88ySLLznVNYdbe5yORNZhCiZC/vd4RykGIh+37jNnKBLXqzwxygqM4g==}
-    engines: {node: '>= 14.17.5'}
-    dependencies:
-      '@electron/rebuild': 3.2.13
-      electron-packager: 17.1.1
-      listr2: 5.0.8
     transitivePeerDependencies:
       - enquirer
       - supports-color
