@@ -161,8 +161,8 @@ importers:
         specifier: 6.3.0
         version: 6.3.0
       '@electron-forge/maker-rpm':
-        specifier: 6.1.0
-        version: 6.1.0
+        specifier: 6.3.0
+        version: 6.3.0
       '@electron-forge/maker-squirrel':
         specifier: 6.1.0
         version: 6.1.0
@@ -5261,12 +5261,12 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-rpm@6.1.0:
-    resolution: {integrity: sha512-v0r1C+zVlEh+QC8Il5R8Vcj/iErfZ6rjkUumpNBVYwOayHvajy8itiNRBCbd4GAXiVSZFDKygWwsVXdBImxkcQ==}
+  /@electron-forge/maker-rpm@6.3.0:
+    resolution: {integrity: sha512-JZkkmGcMR9Ay87emmXZ4GFhrq9YswkA7zftoM+McK3RZoB8hNgCFKVlVI0tJq2UXqDZ5J8Fy3qg3TRNaSiPRIw==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.1.0
-      '@electron-forge/shared-types': 6.1.0
+      '@electron-forge/maker-base': 6.3.0
+      '@electron-forge/shared-types': 6.3.0
     optionalDependencies:
       electron-installer-redhat: 3.4.0
     transitivePeerDependencies:
