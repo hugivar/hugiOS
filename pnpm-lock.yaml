@@ -312,8 +312,8 @@ importers:
         specifier: 13.4.0
         version: 13.4.0(eslint@8.17.0)(typescript@5.0.2)
       eslint-config-prettier:
-        specifier: 8.8.0
-        version: 8.8.0(eslint@8.17.0)
+        specifier: 8.10.0
+        version: 8.10.0(eslint@8.17.0)
       happy-dom:
         specifier: 9.20.3
         version: 9.20.3
@@ -12243,6 +12243,15 @@ packages:
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
       - supports-color
+
+  /eslint-config-prettier@8.10.0(eslint@8.17.0):
+    resolution: {integrity: sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: 8.17.0
+    dev: true
 
   /eslint-config-prettier@8.8.0(eslint@7.32.0):
     resolution: {integrity: sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==}
