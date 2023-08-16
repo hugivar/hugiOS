@@ -1180,8 +1180,8 @@ importers:
         specifier: ^8.5.0
         version: 8.17.0
       eslint-plugin-cypress:
-        specifier: 2.13.1
-        version: 2.13.1(eslint@8.17.0)
+        specifier: 2.14.0
+        version: 2.14.0(eslint@8.17.0)
       eslint-plugin-vue:
         specifier: 8.7.1
         version: 8.7.1(eslint@8.17.0)
@@ -12340,13 +12340,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /eslint-plugin-cypress@2.13.1(eslint@8.17.0):
-    resolution: {integrity: sha512-THjc7IT3S9H4KwmRhzAhMGQaEqy78/7W75He/gBhJEH0vIuAY16vOI4YSliDo/ZY+Wm6DtvMHR+8uVvICcI3Lw==}
+  /eslint-plugin-cypress@2.14.0(eslint@8.17.0):
+    resolution: {integrity: sha512-eW6tv7iIg7xujleAJX4Ujm649Bf5jweqa4ObPEIuueYRyLZt7qXGWhCY/n4bfeFW/j6nQZwbIBHKZt6EKcL/cg==}
     peerDependencies:
       eslint: '>= 3.2.1'
     dependencies:
       eslint: 8.17.0
-      globals: 11.12.0
+      globals: 13.20.0
     dev: true
 
   /eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.59.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.17.0):
