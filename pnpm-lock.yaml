@@ -170,8 +170,8 @@ importers:
         specifier: 6.3.0
         version: 6.3.0
       electron:
-        specifier: 24.4.1
-        version: 24.4.1
+        specifier: 24.7.1
+        version: 24.7.1
 
   apps/web:
     dependencies:
@@ -11899,8 +11899,8 @@ packages:
       - supports-color
     dev: true
 
-  /electron@24.4.1:
-    resolution: {integrity: sha512-tVZw5/dKGJbU1h8bdY0gfz4Y7ANYi8VddnIiLg/sPidJWc4CdshCZhLfU0lW1ySjtEt35JYxGHfmerkJJqUSTw==}
+  /electron@24.7.1:
+    resolution: {integrity: sha512-v7nMXqTl5e1sudOMe5P77ofb6WOKCCTOqBrxVwwBRvShm5udFa2EkNrzYpO53w2fdIVlKbfLhD5DdlmYAROGvQ==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
