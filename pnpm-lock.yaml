@@ -158,8 +158,8 @@ importers:
         specifier: 6.4.2
         version: 6.4.2
       '@electron-forge/maker-deb':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.4.2
+        version: 6.4.2
       '@electron-forge/maker-rpm':
         specifier: 6.3.0
         version: 6.3.0
@@ -5415,14 +5415,14 @@ packages:
       - supports-color
     dev: true
 
-  /@electron-forge/maker-deb@6.3.0:
-    resolution: {integrity: sha512-ttNhPTMAI55tJh5Jcs0/4kW+dPrjfTdKIuxtyCKZI/MZXLy39Lq6fneUUg1G7ZqTEE1DHL947uxlYw5NumahEw==}
+  /@electron-forge/maker-deb@6.4.2:
+    resolution: {integrity: sha512-tlV8ffivgBP94vtYXgAeXgzeKCaRyLuWH9LT8PQW1QrYbAFpCMmuwk/zFaJkyMklImCWmDFTPYMEqdEJGd7Npg==}
     engines: {node: '>= 14.17.5'}
     dependencies:
-      '@electron-forge/maker-base': 6.3.0
-      '@electron-forge/shared-types': 6.3.0
+      '@electron-forge/maker-base': 6.4.2
+      '@electron-forge/shared-types': 6.4.2
     optionalDependencies:
-      electron-installer-debian: 3.1.0
+      electron-installer-debian: 3.2.0
     transitivePeerDependencies:
       - enquirer
       - supports-color
@@ -11851,8 +11851,8 @@ packages:
     dev: true
     optional: true
 
-  /electron-installer-debian@3.1.0:
-    resolution: {integrity: sha512-k6KChvx0Fw8XTlCqwwbBfh19yGQaKjGdbugokmr1IpzINOm4QFyACKMTHAYFHW5LCBUZQShZD96hwxUZ+8Kx+w==}
+  /electron-installer-debian@3.2.0:
+    resolution: {integrity: sha512-58ZrlJ1HQY80VucsEIG9tQ//HrTlG6sfofA3nRGr6TmkX661uJyu4cMPPh6kXW+aHdq/7+q25KyQhDrXvRL7jw==}
     engines: {node: '>= 10.0.0'}
     os: [darwin, linux]
     hasBin: true
@@ -11865,7 +11865,7 @@ packages:
       get-folder-size: 2.0.1
       lodash: 4.17.21
       word-wrap: 1.2.4
-      yargs: 15.4.1
+      yargs: 16.2.0
     transitivePeerDependencies:
       - supports-color
     dev: true
