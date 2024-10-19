@@ -22,11 +22,11 @@
     "vite": "4.3.0"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "^20.0.0",
     "@types/react": "18.2.0",
     "typescript": "^5.0.0"
   },
   "volta": {
-    "node": "18.16.0"
+    "node": "20.18.0"
   }
 }
