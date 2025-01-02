@@ -184,3 +184,8 @@ override.tf.json
 terraform.rc
 .vercel
 workflows/
+
+# Ignore all .env files
+.env*
+icons.json
+gradients.json
