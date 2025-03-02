@@ -189,3 +189,4 @@ workflows/
 .env*
 icons.json
 gradients.json
+animated-covers.json

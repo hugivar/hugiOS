@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "create:backgrounds": "node background-generator.js",
-    "create:icons": "node icon-generator.js"
+    "create:icons": "node icon-generator.js",
+    "create:animated-covers": "node animated-covers-generator.js"
   },
   "keywords": [],
   "author": "",
