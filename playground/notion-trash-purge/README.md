@@ -1,1 +1,0 @@
-Based on the python script by thomashirtz: https://github.com/thomashirtz/notion-clear-trash
