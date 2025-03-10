@@ -1,126 +1,137 @@
 const fs = require('fs').promises;
-const path = require('path');
 const sharp = require('sharp');
-const cliProgress = require('cli-progress');
+const axios = require('axios');
+require('dotenv').config();
 
-async function processImages(inputFolder, outputFolder) {
+async function downloadIcon(iconSlug) {
     try {
-        // Create the progress bar
-        const progressBar = new cliProgress.SingleBar({
-            format: '{bar} {percentage}% | {value}/{total} | Processing Images',
-            clearOnComplete: false,
-            hideCursor: true
-        }, cliProgress.Presets.shades_classic);
+        const url = `https://lib.notion.vip/icons/${iconSlug}`;
+        const response = await axios.get(url, { responseType: 'arraybuffer' });
+        return response.data;
+    } catch (error) {
+        console.error(`Error downloading icon: ${error.message}`);
+        throw error;
+    }
+}
 
-        // Get all background images
-        const backgroundFiles = await getFilesRecursively(inputFolder);
-        console.log(`Found ${backgroundFiles.length} images to process`);
-        
-        // Create base output directory
-        await fs.mkdir(outputFolder, { recursive: true });
+async function generateImage(options = {}) {
+    const {
+        icon,
+        iconLabel = 'Apple',
+        iconColor = '',
+        width = 1100,
+        height = 500,
+        outputPath
+    } = options;
 
-        // Initialize progress bar
-        progressBar.start(backgroundFiles.length, 0);
+    try {
+        // Download icon
+        const iconData = await downloadIcon(icon.slug, iconColor);
 
-        // Group files by their parent folder (apple, pear, etc.)
-        const filesByFolder = backgroundFiles.reduce((acc, file) => {
-            // Get the parent folder name (apple, pear, etc.)
-            const relativePath = path.relative(inputFolder, file);
-            const parentFolder = relativePath.split(path.sep)[0];
-            
-            if (!acc[parentFolder]) {
-                acc[parentFolder] = [];
+        // Create a blank background
+        const background = sharp({
+            create: {
+                width: width,
+                height: height,
+                channels: 4,
+                background: { r: 255, g: 255, b: 255, alpha: 0 }
             }
-            acc[parentFolder].push(file);
-            return acc;
-        }, {});
+        });
 
-        // Process files maintaining folder structure
-        for (const folder of Object.keys(filesByFolder)) {
-            // Create folder in output directory
-            const folderPath = path.join(outputFolder, folder);
-            await fs.mkdir(folderPath, { recursive: true });
+        // Calculate icon position (centered)
+        const iconSize = 170;
+        const iconX = Math.floor((width - iconSize) / 2);
+        const iconY = Math.floor((height - iconSize) / 2);
 
-            // Process files in this folder
-            for (const file of filesByFolder[folder]) {
-                const fileName = path.basename(file, path.extname(file));
-                const outputPath = path.join(folderPath, `${fileName}.png`);
-                
-                await processIndividualImage(file, outputPath);
-                progressBar.increment();
+        // Resize the icon and overlay it on the background
+        const processedIcon = await sharp(iconData)
+            .resize(iconSize, iconSize)
+            .toBuffer();
+
+        // Composite the icon onto the background
+        const finalImage = await background
+            .composite([{
+                input: processedIcon,
+                top: iconY,
+                left: iconX
+            }])
+            .png()
+            .toBuffer();
+
+        // Save the image
+        const finalOutputPath = outputPath || `${iconLabel}.png`;
+        await fs.writeFile(finalOutputPath, finalImage);
+        console.log(`Image saved to: ${finalOutputPath}`);
+
+        return finalOutputPath;
+    } catch (error) {
+        console.error('Error generating image:', error);
+        throw error;
+    }
+}
+
+async function generateIcons(options = {}) {
+    const {
+        outputDir = 'output',
+        iconColor = ''
+    } = options;
+
+    try {
+        // Parse icons from raw data
+        const icons = require('./icons.json');
+
+        console.log(`Loaded ${icons.length} icons configurations`);
+
+        // Create output directory if it doesn't exist
+        await fs.mkdir(outputDir, { recursive: true });
+
+        let totalCount = icons.length;
+        let currentCount = 0;
+
+        console.log(`Starting generation of ${totalCount} images...`);
+
+        // Process each icon
+        for (const icon of icons) {
+            // Generate each icon
+            currentCount++;
+            const fileName = `${icon.label.toLowerCase().replace(/[^a-z0-9]/g, '-')}.png`;
+            const outputPath = `./${outputDir}/${fileName}`;
+
+            try {
+                await generateImage({
+                    icon,
+                    iconLabel: icon.label,
+                    iconColor,
+                    outputPath
+                });
+
+                // Progress update
+                const progress = ((currentCount / totalCount) * 100).toFixed(1);
+                console.log(`[${progress}%] Generated: ${icon.label}`);
+            } catch (error) {
+                console.error(`Error generating ${icon.label}:`, error.message);
             }
         }
 
-        progressBar.stop();
-        console.log('\nAll processing completed successfully!');
+        console.log('\nGeneration complete!');
+        console.log(`Total images generated: ${currentCount}`);
+        console.log(`Output directory: ${outputDir}`);
+
     } catch (error) {
-        console.error('Error in main process:', error);
+        console.error('Error in batch generation:', error);
+        throw error;
     }
 }
 
-async function getFilesRecursively(dir) {
-    const files = [];
-    const items = await fs.readdir(dir, { withFileTypes: true });
-
-    for (const item of items) {
-        const fullPath = path.join(dir, item.name);
-        if (item.isDirectory()) {
-            files.push(...await getFilesRecursively(fullPath));
-        } else if (/\.(jpg|jpeg|png|webp)$/i.test(item.name)) {
-            files.push(fullPath);
-        }
-    }
-
-    return files;
-}
-
-async function processIndividualImage(inputPath, outputPath) {
+async function main() {
     try {
-        const metadata = await sharp(inputPath).metadata();
-        
-        // Calculate dimensions for center crop
-        const cropSize = Math.min(metadata.width, metadata.height);
-        const left = Math.floor((metadata.width - cropSize) / 2);
-        const top = Math.floor((metadata.height - cropSize) / 2);
-
-        await sharp(inputPath)
-            // Extract square from center
-            .extract({
-                left,
-                top,
-                width: cropSize,
-                height: cropSize
-            })
-            // Resize to 256x256
-            .resize(256, 256, {
-                fit: 'fill'
-            })
-            // Add rounded corners
-            .composite([
-                {
-                    input: Buffer.from(`<svg>
-                        <rect 
-                            x="0" 
-                            y="0" 
-                            width="256" 
-                            height="256" 
-                            rx="10"
-                            ry="10"
-                        />
-                    </svg>`),
-                    blend: 'dest-in'
-                }
-            ])
-            // Save processed image
-            .toFile(outputPath);
+        await generateIcons({
+            outputDir: 'generated-icons',
+            iconColor: '',  // Set to 'White' for white icons
+        });
     } catch (error) {
-        console.error(`Error processing individual image ${inputPath}:`, error);
+        console.error('Error in main:', error);
     }
 }
 
-// Example usage
-const inputFolder = './backgrounds';  // Changed to match your file structure
-const outputFolder = './processed-icons';
-
-// Run the script
-processImages(inputFolder, outputFolder);
+main();

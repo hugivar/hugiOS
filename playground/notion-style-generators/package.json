@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "create:backgrounds": "node background-generator.js",
     "create:icons": "node icon-generator.js",
+    "create:backgrounds": "node background-generator.js",
+    "create:icon-backgrounds": "node icon-background-generator.js",
     "create:animated-covers": "node animated-covers-generator.js"
   },
   "keywords": [],
