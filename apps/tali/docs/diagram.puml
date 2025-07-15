@@ -1,0 +1,33 @@
+@startuml
+
+
+title "Tali - Sequence Diagram"
+
+actor User
+boundary "Web GUI" as GUI
+control "ServiceList" as SL
+entity "API"
+database Services
+
+User -> GUI : To Tali
+GUI -> SL : Select desired service
+SL -> Services : Add API token
+SL -> API: Get service data
+SL -> GUI: Show service data
+
+User -> GUI : To Tali
+GUI -> SL : Select desired service
+GUI -> SL : Refresh service data
+SL -> API: Get user data for service
+SL -> Services : Save data
+SL -> GUI: Show service data
+
+User -> GUI : To Tali
+GUI -> SL : 
+GUI -> SL : Refresh service data
+SL -> API: Get user data for service
+SL -> Services : Save data
+SL -> GUI: Show service data
+
+
+@enduml

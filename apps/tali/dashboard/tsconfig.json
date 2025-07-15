@@ -1,0 +1,32 @@
+{
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": "tsconfig/nextjs.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "next.config.js",
+    "next-i18next.config.js",
+    ".next/types/**/*.ts"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}
