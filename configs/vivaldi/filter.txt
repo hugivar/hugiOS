@@ -1,0 +1,299 @@
+! Title: Personal Cosmetic Filter
+! Description: Reddit ads, YouTube Shorts, and general web annoyances
+! Version: 1.0
+! Last modified: 2025-07-04
+
+! ========================================
+! REDDIT - ADS & ANNOYANCES
+! ========================================
+
+! Promoted posts in feed
+reddit.com##[data-testid="post-container"]:has([data-click-id="promoted"])
+reddit.com##[data-promoted="true"]
+reddit.com##.promotedlink
+reddit.com##[data-type="promoted"]
+
+! Sponsored content markers
+reddit.com##.promoted-tag
+reddit.com##[data-testid="post-container"]:has-text(/promoted/i)
+reddit.com##[data-testid="post-container"]:has-text(/sponsored/i)
+
+! Reddit Premium prompts
+reddit.com##[data-testid="premium-banner"]
+reddit.com##.premium-banner-large
+reddit.com##[data-testid="premium-upsell"]
+
+! Sidebar ads
+reddit.com##[data-testid="subreddit-sidebar"] [data-testid="promoted-post"]
+reddit.com##.side-container .promoted
+
+! Mobile ads
+reddit.com##[data-testid="post-container"]:has([data-adclicklocation])
+reddit.com##.Post:has([data-promoted])
+
+! Cookie banner
+reddit.com##[data-testid="cookie-banner"]
+reddit.com##.cookie-banner
+
+! App download prompts
+reddit.com##[data-testid="app-banner"]
+reddit.com##.app-banner
+reddit.com##[data-testid="xpromo-banner"]
+reddit.com##.XPromoPopup
+
+! Login/signup prompts
+reddit.com##[data-testid="login-prompt"]
+reddit.com##.login-required-overlay
+reddit.com##[data-testid="blocking-modal"]
+
+! Avatar shop prompts
+reddit.com##[data-testid="avatar-shop-banner"]
+reddit.com##.avatar-upsell
+
+! Community recommendations
+reddit.com##[data-testid="community-recommendations"]
+reddit.com##.recommended-communities
+
+! Chat suggestions
+reddit.com##[data-testid="chat-suggestions"]
+
+! Old Reddit promoted posts
+old.reddit.com##.promoted
+old.reddit.com##.organic-listing .promoted .usertext
+
+! Old Reddit sidebar ads
+old.reddit.com##.ad-container
+old.reddit.com##.sponsorshipbox
+old.reddit.com##[id*="siteTable_organic"]
+
+! Generic Reddit ad selectors
+reddit.com##[class*="promoted"]:not([class*="non-promoted"])
+reddit.com##[id*="promoted"]
+reddit.com##[data-*="promoted"]
+reddit.com##[href*="ads.reddit.com"]
+
+! Remove elements with ad-related text content
+reddit.com##*:has-text(/^promoted$/i)
+reddit.com##*:has-text(/^sponsored$/i)
+reddit.com##*:has-text(/^advertisement$/i)
+
+! Block ad-related scripts and resources
+||ads.reddit.com^
+||events.reddit.com^$script
+||reddit.com/api/v1/gold/gild^$xmlhttprequest
+||reddit.com/api/click^$xmlhttprequest
+
+! ========================================
+! YOUTUBE - SHORTS COMPLETE REMOVAL
+! ========================================
+
+! Main Shorts shelf on homepage
+youtube.com##[is-shorts]
+youtube.com##ytd-rich-shelf-renderer:has([title*="Shorts" i])
+youtube.com##ytd-rich-shelf-renderer:has([aria-label*="Shorts" i])
+youtube.com##[tab-title="Shorts"]
+
+! Shorts tab in channel pages
+youtube.com##tp-yt-paper-tab:has-text(/^Shorts$/i)
+youtube.com##[role="tab"]:has-text(/^Shorts$/i)
+youtube.com##yt-tab-shape:has-text(/^Shorts$/i)
+
+! Shorts section in search results
+youtube.com##ytd-shelf-renderer:has([title*="Shorts" i])
+youtube.com##ytd-video-renderer:has([aria-label*="Shorts" i])
+youtube.com##[overlay-style="SHORTS"]
+
+! Individual Shorts videos in feeds
+youtube.com##ytd-video-renderer:has([href*="/shorts/"])
+youtube.com##ytd-rich-item-renderer:has([href*="/shorts/"])
+youtube.com##ytd-compact-video-renderer:has([href*="/shorts/"])
+
+! Shorts player and related elements
+youtube.com##ytd-shorts
+youtube.com##ytd-reel-video-renderer
+youtube.com##[page-subtype="shorts"]
+youtube.com##ytd-shorts-player
+
+! Shorts in subscription feed
+youtube.com##ytd-grid-video-renderer:has([href*="/shorts/"])
+youtube.com##ytd-rich-grid-media:has([href*="/shorts/"])
+
+! Shorts suggestions and up next
+youtube.com##ytd-compact-video-renderer:has([title*="Shorts" i])
+youtube.com##ytd-video-meta-block:has([href*="/shorts/"])
+
+! Mobile YouTube Shorts
+youtube.com##[data-shorts="true"]
+youtube.com##[is-short="true"]
+youtube.com##.ytd-shorts-shelf-renderer
+
+! Shorts remix and creation prompts
+youtube.com##ytd-shorts-remix-button
+youtube.com##[aria-label*="Create a Short"]
+youtube.com##[title*="Create a Short"]
+
+! Shorts navigation and menus
+youtube.com##[href="/shorts"]
+youtube.com##[href^="/shorts/"]
+youtube.com##a[href*="/shorts/"]:not([href*="/shorts/subscriptions"])
+
+! Shorts in trending page
+youtube.com##ytd-expanded-shelf-contents-renderer:has([href*="/shorts/"])
+youtube.com##ytd-video-renderer:has([href*="/shorts/"])
+
+! Shorts watermarks and overlays
+youtube.com##.shorts-video-overlay
+youtube.com##[class*="shorts-player"]
+youtube.com##[id*="shorts-player"]
+
+! Community tab shorts
+youtube.com##ytd-backstage-post-thread-renderer:has([href*="/shorts/"])
+youtube.com##ytd-post-renderer:has([href*="/shorts/"])
+
+! Shorts-specific UI elements
+youtube.com##ytd-shorts-lockup-view-model
+youtube.com##ytd-shorts-shelf-renderer
+youtube.com##ytd-reel-shelf-renderer
+
+! Generic catch-all for shorts content
+youtube.com##*[href*="/shorts/"]:not([href*="/shorts/subscriptions"])
+youtube.com##*[class*="shorts"]:not([class*="shortcuts"])
+youtube.com##*[id*="shorts"]:not([id*="shortcuts"])
+
+! Block shorts-related network requests
+||youtube.com/youtubei/v1/shorts/*
+||youtube.com/api/stats/shorts/*
+
+! Hide shorts notifications
+youtube.com##ytd-notification-renderer:has([href*="/shorts/"])
+
+! Remove shorts from watch history
+youtube.com##ytd-video-renderer:has([href*="/shorts/"]) 
+youtube.com##[class*="watch-history"] *[href*="/shorts/"]
+
+! Shorts creation prompts in studio
+youtube.com##[aria-label*="Create Short"]
+youtube.com##[title*="Create Short"]
+
+! Remove shorts from search suggestions
+youtube.com##[role="option"]:has-text(/shorts/i)
+youtube.com##ytd-search-suggestion-renderer:has-text(/shorts/i)
+
+! ========================================
+! GENERAL WEB ANNOYANCES
+! ========================================
+
+! Cookie consent banners
+##[id*="cookie"]:not([id*="facebook"])
+##[class*="cookie"]:not([class*="facebook"])
+##[id*="consent"]
+##[class*="consent"]
+##[class*="gdpr"]
+##[id*="gdpr"]
+##.cookie-banner
+##.consent-banner
+##[data-testid*="cookie"]
+
+! Newsletter popups and subscription prompts
+##[id*="newsletter"]
+##[class*="newsletter"]
+##[id*="subscribe"]:not([id*="youtube"])
+##[class*="subscribe"]:not([class*="youtube"])
+##[class*="email-signup"]
+##[class*="signup-modal"]
+##[class*="newsletter-popup"]
+##[id*="email-capture"]
+
+! Chat widgets and support bubbles
+##[id*="chat"]:not([id*="twitch"])
+##[class*="chat"]:not([class*="twitch"])
+##[id*="support-widget"]
+##[class*="support-widget"]
+##[id*="intercom"]
+##[class*="intercom"]
+##[id*="zendesk"]
+##[class*="zendesk"]
+##[class*="chat-bubble"]
+##[class*="help-widget"]
+
+! Social media share widgets
+##[class*="social-share"]
+##[class*="share-buttons"]
+##[id*="social-share"]
+##[class*="addthis"]
+##[class*="sharethis"]
+
+! App download prompts
+##[class*="app-banner"]
+##[id*="app-banner"]
+##[class*="mobile-app"]
+##[class*="download-app"]
+##[data-testid*="app-banner"]
+
+! Notification permission prompts
+##[class*="notification-prompt"]
+##[class*="push-notification"]
+##[id*="notification-permission"]
+
+! Rating and review prompts
+##[class*="rating-prompt"]
+##[class*="review-prompt"]
+##[id*="rating-modal"]
+##[class*="feedback-modal"]
+
+! Privacy policy and terms popups
+##[class*="privacy-notice"]
+##[class*="terms-popup"]
+##[id*="privacy-banner"]
+
+! Video autoplay overlays
+##[class*="autoplay-overlay"]
+##[class*="video-overlay"]
+##[id*="video-prompt"]
+
+! Survey and feedback widgets
+##[class*="survey-widget"]
+##[class*="feedback-widget"]
+##[id*="survey-popup"]
+##[class*="user-survey"]
+
+! ========================================
+! SITE SPECIFIC ANNOYANCES
+! ========================================
+
+! Twitter/X promoted content
+twitter.com##[data-testid="tweet"]:has([data-testid="promotedIndicator"])
+x.com##[data-testid="tweet"]:has([data-testid="promotedIndicator"])
+twitter.com##[data-testid="placementTracking"]
+x.com##[data-testid="placementTracking"]
+
+! LinkedIn promoted posts
+linkedin.com##[data-urn*="sponsoredUpdate"]
+linkedin.com##.feed-shared-update-v2:has([data-urn*="sponsoredUpdate"])
+
+! Facebook sponsored posts
+facebook.com##[data-pagelet="FeedUnit_0"]:has([data-testid="story-subtitle"]:has-text(/Sponsored/i))
+facebook.com##[role="article"]:has([aria-label*="Sponsored"])
+
+! Instagram sponsored posts
+instagram.com##article:has([data-testid="sponsored-post"])
+instagram.com##[data-testid="story-item"]:has([data-testid="sponsored-label"])
+
+! News sites - common annoyances
+##[class*="paywall"]
+##[class*="subscription-wall"]
+##[class*="premium-content"]
+##[class*="article-limit"]
+
+! ========================================
+! PERFORMANCE & PRIVACY
+! ========================================
+
+! Block common ad servers
+||doubleclick.net^
+||googleadservices.com^
+||googlesyndication.com^
+||amazon-adsystem.com^
+||facebook.com/tr^
+||google-analytics.com^
+||googletagmanager.com^
