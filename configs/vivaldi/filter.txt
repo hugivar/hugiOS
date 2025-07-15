@@ -1,11 +1,70 @@
 ! Title: Personal Cosmetic Filter
 ! Description: Reddit ads, YouTube Shorts, and general web annoyances
-! Version: 1.0
+! Version: 1.4
 ! Last modified: 2025-07-04
 
 ! ========================================
 ! REDDIT - ADS & ANNOYANCES
 ! ========================================
+
+! Reddit Complete Block Filter for Vivaldi
+||reddit.com^
+||www.reddit.com^
+||old.reddit.com^
+||new.reddit.com^
+||m.reddit.com^
+||amp.reddit.com^
+||redd.it^
+||reddithelp.com^
+||redditstatic.com^
+||redditmedia.com^
+||reddit.map.fastly.net^
+||redditinc.com^
+|https://www.reddit.com
+|http://www.reddit.com
+|https://reddit.com
+|http://reddit.com
+|https://old.reddit.com
+|http://old.reddit.com
+##a[href*="reddit.com"]
+##a[href*="redd.it"]
+
+! Reddit Complete Block Filter
+! Basic domain blocking with important priority
+||reddit.com^$important
+||www.reddit.com^$important
+||old.reddit.com^$important
+||new.reddit.com^$important
+||m.reddit.com^$important
+||amp.reddit.com^$important
+||redd.it^$important
+
+! Document-level blocking (prevents page loading)
+||reddit.com^$document,important
+||www.reddit.com^$document,important
+
+! Reddit-related domains and CDNs
+||reddithelp.com^$important
+||redditstatic.com^$important
+||redditmedia.com^$important
+||reddit.map.fastly.net^$important
+||redditinc.com^$important
+
+! Full URL blocking (backup method)
+|https://www.reddit.com
+|http://www.reddit.com
+|https://reddit.com
+|http://reddit.com
+|https://old.reddit.com
+|http://old.reddit.com
+
+! Hide Reddit links in search results
+##a[href*="reddit.com"]
+##a[href*="redd.it"]
+
+! Block Reddit app deep links
+||reddit.com^$app
+||www.reddit.com^$app
 
 ! Promoted posts in feed
 reddit.com##[data-testid="post-container"]:has([data-click-id="promoted"])
@@ -297,3 +356,82 @@ instagram.com##[data-testid="story-item"]:has([data-testid="sponsored-label"])
 ||facebook.com/tr^
 ||google-analytics.com^
 ||googletagmanager.com^
+
+||accounts.google.com/gsi/*
+||accounts.google.com/o/oauth2/*$popup
+||accounts.google.com/signin/*$popup
+||google.com/js/googleapis.js$script
+||apis.google.com/js/api.js$script
+||apis.google.com/js/platform.js$script
+||gstatic.com/firebasejs/*/firebase-auth.js$script
+||www.googleapis.com/auth/*
+||accounts.google.com/_/AccountsSignInUi/*
+||accounts.google.com/b/*/signin/*
+||accounts.google.com/AccountChooser*
+||accounts.google.com/CheckCookie*
+||accounts.google.com/embedded/setup/*
+||ssl.gstatic.com/accounts/static/*signin*
+||www.google.com/accounts/SetSID*
+||accounts.google.com/gsi/client$script
+||accounts.google.com/gsi/button$script
+||*.google.com/accounts/oauth2/v2/auth*$popup
+||accounts.google.com/oauth/authorize*$popup
+||accounts.google.com/o/oauth2/auth*$popup
+||accounts.google.com/signin/oauth*$popup
+||accounts.google.com/AccountLoginInfo*$popup
+||accounts.google.com/ServiceLogin*$popup
+||accounts.google.com/AddSession*$popup
+##div[id*="credential_picker"]
+##div[class*="credential_picker"]
+##div[data-account-chooser-dialog]
+##div[data-google-signin-button]
+##div[class*="google-signin"]
+##div[class*="g-signin"]
+##div[id*="google-signin"]
+##div[id*="g-signin"]
+##button[class*="google-signin"]
+##button[data-provider="google"]
+##a[href*="accounts.google.com/signin"]
+##a[href*="accounts.google.com/oauth"]
+##iframe[src*="accounts.google.com"]
+##iframe[src*="accounts.google.com/gsi"]
+##iframe[src*="googleapis.com"]
+##iframe[name*="gsi_"]
+##iframe[id*="gsi_"]
+##div[class*="oauth-google"]
+##div[class*="social-login"] button[class*="google"]
+##div[class*="login-with-google"]
+##div[class*="sign-in-with-google"]
+##div[class*="signin-google"]
+##div[class*="google-auth"]
+##div[class*="google-login"]
+##span[class*="google-signin"]
+##div[aria-label*="Sign in with Google"]
+##div[title*="Sign in with Google"]
+##div[data-testid*="google-signin"]
+##div[data-cy*="google-signin"]
+##div[class*="social-signin"]:has(button[class*="google"])
+##div[class*="oauth-buttons"]:has(button[class*="google"])
+##div[class*="login-options"]:has(button[class*="google"])
+##div[class*="signin-methods"]:has(button[class*="google"])
+##div[class*="auth-providers"]:has(button[class*="google"])
+##div[class*="external-auth"]:has(button[class*="google"])
+##ul[class*="social-login"] li:has(button[class*="google"])
+##form[class*="oauth"]:has(button[class*="google"])
+##div[jsname="V68bde"]
+##div[class*="VfPpkd-Bz112c-LgbsSe"]
+##div[data-client-id][data-callback]
+##div[id*="g_id_"]
+##div[class*="g_id_"]
+##div[data-g-sso]
+##div[class*="smartlock"]
+##div[class*="one-tap"]
+##div[class*="onetap"]
+##div[aria-live="polite"][role="status"]
+##div[data-g-one-tap]
+##div[class*="modal"]:has(div[class*="google-signin"])
+##div[class*="overlay"]:has(div[class*="google-signin"])
+##div[class*="popup"]:has(div[class*="google-signin"])
+##div[class*="dialog"]:has(div[class*="google-signin"])
+##div[role="dialog"]:has(div[class*="google-signin"])
+##div[class*="lightbox"]:has(div[class*="google-signin"])
