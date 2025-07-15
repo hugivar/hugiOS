@@ -1,0 +1,17 @@
+{
+  "name": "edge-history-analyzer",
+  "version": "1.0.0",
+  "description": "Analyze Microsoft Edge browser history",
+  "main": "edge-history-analyzer.js",
+  "scripts": {
+    "start": "node edge-history-analyzer.js",
+    "diagnose": "node edge-history-analyzer.js --diagnose",
+    "export": "node edge-history-analyzer.js --export"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  },
+  "keywords": ["browser", "history", "edge", "analytics"],
+  "author": "Hugo",
+  "license": "MIT"
+}
