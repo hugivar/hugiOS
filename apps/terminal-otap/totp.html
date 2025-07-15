@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+    <canvas id="qr-code"></canvas>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const totpUrl = urlParams.get('totp') || '';
+        
+        const qr = new QRious({
+            element: document.getElementById('qr-code'),
+            value: totpUrl,
+            size: 256
+        });
+    </script>
+</body>
+</html>

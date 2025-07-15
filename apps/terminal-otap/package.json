@@ -1,0 +1,30 @@
+{
+  "name": "terminal-otap",
+  "version": "1.0.0",
+  "description": "A secure, terminal-based QR code generator for OTAP URLs",
+  "main": "generate-qr.js",
+  "bin": {
+    "otapqr": "./generate-qr.js"
+  },
+  "scripts": {
+    "start": "node generate-qr.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "otap",
+    "qr",
+    "qrcode",
+    "terminal",
+    "cli",
+    "security"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "preferGlobal": true
+}
