@@ -1,0 +1,458 @@
+@charset "UTF-8";
+
+/*────────────────────────────────────
+++++++++++++Fonts++++++++++++
+────────────────────────────────────*/
+@font-face {
+  font-family: "Karla";
+  src: url("./Karla.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("./Karla-Italic.ttf");
+  font-style: italic;
+  font-display: swap;
+}
+
+/*────────────────────────────────────
+++++++++++++Variables+++++++++++++++++
+────────────────────────────────────*/
+:root,
+body {
+  /*──────────Font Families──────────*/
+  --font-preview: var(--font-text);
+  --font-preview-header: var(--font-text);
+  --font-editor: var(--font-text);
+  --font-editor-header: var(--font-text);
+  /* Original Obsidian Font Variables */
+  --font-interface-theme: "Karla", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --font-text-theme: "Karla", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --font-monospace-theme: "Cascadia Code", Inconsolata, Courier, monospace;
+  --font-mermaid: var(--font-preview);
+  --default-font: var(--font-interface-theme);
+  --font-code: var(--font-monospace-theme);
+  /*──────────Font Weight──────────*/
+  --font-thin: 100;
+  --font-extra-light: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  --font-extra-bold: 800;
+  /*──────────Typography Modular Scale──────────*/
+  /*  Based on Standard 18px  */
+  --line-width: 700px;
+  --font-scale-000: 0.547em;
+  --font-scale-00: 0.676em;
+  --font-scale-0: 0.81em;
+  --font-scale-0-5: 0.875em;
+  --font-scale-1: 1em;
+  --font-scale-2: 1.08em;
+  --font-scale-3: 1.12em;
+  --font-scale-4: 1.25em;
+  --font-scale-5: 1.37em;
+  --font-scale-6: 1.6em;
+  --font-scale-7: 2em;
+  --line-height-0: 1em;
+  --line-height-0-5: 1.2em;
+  --line-height-1: 1.53em;
+  --font-text-size: var(--editor-font-size);
+  --font-ui-small: 14px;
+  --font-ui-smaller: var(--font-scale-0-5);
+  --oz-fta-folder-font-size: 15px;
+  /*──────────Tracking (Letter Spacing)──────────*/
+  --tracking-0: 0px;
+  --tracking-1: 0.16px;
+  --tracking-2: 0.32px;
+  --tracking-3: 0.64px;
+  --tracking-4: 1.28px;
+  --tracking-5: 2.56px;
+  /*──────────Layout Sizing──────────*/
+  /* Obsidian Defaults */
+  --border-width: 1px;
+  --scale-0-0: 0px;
+  /* Multiples of 2 */
+  --scale-2-1: 2px;
+  --scale-2-2: 4px;
+  --scale-2-3: 6px;
+  --scale-2-4: 8px;
+  --scale-2-5: 10px;
+  --scale-2-6: 12px;
+  --scale-2-8: 16px;
+  --scale-2-9: 18px;
+  --scale-2-10: 20px;
+  --scale-2-18: 36px;
+  /* Multiples of 8 */
+  --scale-8-1: 8px;
+  --scale-8-2: 16px;
+  --scale-8-3: 24px;
+  --scale-8-4: 32px;
+  --scale-8-5: 40px;
+  --scale-8-6: 48px;
+  --scale-8-7: 54px;
+  --scale-8-8: 64px;
+  --scale-8-9: 72px;
+  --scale-8-10: 80px;
+  --scale-8-12: 96px;
+  --scale-8-18: 144px;
+  --scale-8-36: 288px;
+  /*──────────Shadow Sizing──────────*/
+  --shadow-xs: 0px 0px 3px 1px;
+  --shadow-s: 0px 2px 8px -1px;
+  --shadow-m: 0px 4px 16px -2px;
+  --shadow-l: 0px 8px 24px -3px;
+  --shadow-xl: 0px 12px 32px -4px;
+  /*──────────Duration, Transitions & Animations──────────*/
+  /* Duration */
+  --duration-none: 0;
+  --duration-superfast: 70ms;
+  --duration-fast-1: 140ms;
+  --duration-fast-2: 260ms;
+  --duration-moderate-1: 300ms;
+  --duration-moderate-2: 440ms;
+  --duration-slow-1: 560ms;
+  --duration-slow-2: 600ms;
+  /* Transitions & Animations */
+  --motion-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  /* easeInOutSine */
+  --motion-delay: cubic-bezier(0.65, 0.05, 0.36, 1);
+  /* easeInOutCubic */
+  --motion-jumpy: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* easeInOutBack */
+
+  /* Callouts */
+  --callout-padding: 0;
+}
+
+.theme-light {
+  --spa-rosewater: 220, 138, 120;
+  --spa-flamingo: 221, 120, 120;
+  --spa-pink: 234, 118, 203;
+  --spa-mauve: 179, 136, 255;
+  --spa-red: 239, 83, 80;
+  --spa-maroon: 230, 69, 83;
+  --spa-peach: 254, 100, 11;
+  --spa-yellow: 223, 142, 29;
+  --spa-green: 64, 160, 43;
+  --spa-teal: 23, 146, 153;
+  --spa-sky: 4, 165, 229;
+  --spa-sapphire: 32, 159, 181;
+  --spa-blue: 30, 102, 245;
+  --spa-lavender: 114, 135, 253;
+  --spa-text: 76, 79, 105;
+  --spa-subtext1: 92, 95, 119;
+  --spa-subtext0: 108, 111, 133;
+  --spa-overlay2: 124, 127, 147;
+  --spa-overlay1: 140, 143, 161;
+  --spa-overlay0: 156, 160, 176;
+  --spa-surface2: 172, 176, 190;
+  --spa-surface1: 188, 192, 204;
+  --spa-surface0: 204, 208, 218;
+  --spa-base: 239, 241, 245;
+  --spa-mantle: 230, 233, 239;
+  --spa-crust: 220, 224, 232;
+  --hex-pink: #ea76cb;
+  --hex-mauve: #8839ef;
+  --hex-red: #d20f39;
+  --hex-peach: #fe640b;
+  --hex-yellow: #df8e1d;
+  --hex-green: #40a02b;
+  --hex-teal: #179299;
+  --hex-sky: #04a5e5;
+  --hex-sapphire: #209fb5;
+  --hex-blue: #1e66f5;
+  --hex-lavender: #7287fd;
+}
+
+.theme-dark.spa-frappe {
+  --spa-rosewater: 242, 213, 207;
+  --spa-flamingo: 238, 190, 190;
+  --spa-pink: 244, 184, 228;
+  --spa-mauve: 202, 158, 230;
+  --spa-red: 231, 130, 132;
+  --spa-maroon: 234, 153, 156;
+  --spa-peach: 239, 159, 118;
+  --spa-yellow: 229, 200, 144;
+  --spa-green: 166, 209, 137;
+  --spa-teal: 129, 200, 190;
+  --spa-sky: 153, 209, 219;
+  --spa-sapphire: 133, 193, 220;
+  --spa-blue: 140, 170, 238;
+  --spa-lavender: 186, 187, 241;
+  --spa-text: 198, 208, 245;
+  --spa-subtext1: 181, 191, 226;
+  --spa-subtext0: 165, 173, 206;
+  --spa-overlay2: 148, 156, 187;
+  --spa-overlay1: 131, 139, 167;
+  --spa-overlay0: 115, 121, 148;
+  --spa-surface2: 98, 104, 128;
+  --spa-surface1: 81, 87, 109;
+  --spa-surface0: 65, 69, 89;
+  --spa-base: 48, 52, 70;
+  --spa-mantle: 41, 44, 60;
+  --spa-crust: 35, 38, 52;
+  --hex-pink: #f4b8e4;
+  --hex-mauve: #ca9ee6;
+  --hex-red: #e78284;
+  --hex-peach: #ef9f76;
+  --hex-yellow: #e5c890;
+  --hex-green: #a6d189;
+  --hex-teal: #81c8be;
+  --hex-sky: #99d1db;
+  --hex-sapphire: #85c1dc;
+  --hex-blue: #8caaee;
+  --hex-lavender: #babbf1;
+}
+
+.theme-dark.spa-macchiato {
+  --spa-rosewater: 244, 219, 214;
+  --spa-flamingo: 240, 198, 198;
+  --spa-pink: 245, 189, 230;
+  --spa-mauve: 198, 160, 246;
+  --spa-red: 237, 135, 150;
+  --spa-maroon: 238, 153, 160;
+  --spa-peach: 245, 169, 127;
+  --spa-yellow: 238, 212, 159;
+  --spa-green: 166, 218, 149;
+  --spa-teal: 139, 213, 202;
+  --spa-sky: 145, 215, 227;
+  --spa-sapphire: 125, 196, 228;
+  --spa-blue: 138, 173, 244;
+  --spa-lavender: 183, 189, 248;
+  --spa-text: 202, 211, 245;
+  --spa-subtext1: 184, 192, 224;
+  --spa-subtext0: 165, 173, 203;
+  --spa-overlay2: 147, 154, 183;
+  --spa-overlay1: 128, 135, 162;
+  --spa-overlay0: 110, 115, 141;
+  --spa-surface2: 91, 96, 120;
+  --spa-surface1: 73, 77, 100;
+  --spa-surface0: 54, 58, 79;
+  --spa-base: 36, 39, 58;
+  --spa-mantle: 30, 32, 48;
+  --spa-crust: 24, 25, 38;
+  --hex-pink: #f5bde6;
+  --hex-mauve: #c6a0f6;
+  --hex-red: #ed8796;
+  --hex-peach: #f5a97f;
+  --hex-yellow: #eed49f;
+  --hex-green: #a6da95;
+  --hex-teal: #8bd5ca;
+  --hex-sky: #91d7e3;
+  --hex-sapphire: #7dc4e4;
+  --hex-blue: #8aadf4;
+  --hex-lavender: #b7bdf8;
+}
+
+.theme-dark,
+.theme-dark.spa-mocha {
+  --spa-rosewater: 245, 224, 220;
+  --spa-flamingo: 242, 205, 205;
+  --spa-pink: 245, 194, 231;
+  --spa-mauve: 203, 166, 247;
+  --spa-red: 243, 139, 168;
+  --spa-maroon: 235, 160, 172;
+  --spa-peach: 250, 179, 135;
+  --spa-yellow: 249, 226, 175;
+  --spa-green: 166, 227, 161;
+  --spa-teal: 148, 226, 213;
+  --spa-sky: 137, 220, 235;
+  --spa-sapphire: 116, 199, 236;
+  --spa-blue: 137, 180, 250;
+  --spa-lavender: 180, 190, 254;
+  --spa-text: 205, 214, 244;
+  --spa-subtext1: 186, 194, 222;
+  --spa-subtext0: 166, 173, 200;
+  --spa-overlay2: 147, 153, 178;
+  --spa-overlay1: 127, 132, 156;
+  --spa-overlay0: 108, 112, 134;
+  --spa-surface2: 88, 91, 112;
+  --spa-surface1: 69, 71, 90;
+  --spa-surface0: 49, 50, 68;
+  --spa-base: 30, 30, 46;
+  --spa-mantle: 24, 24, 37;
+  --spa-crust: 17, 17, 27;
+  --hex-pink: #f5c2e7;
+  --hex-mauve: #cba6f7;
+  --hex-red: #f38ba8;
+  --hex-peach: #fab387;
+  --hex-yellow: #f9e2af;
+  --hex-green: #a6e3a1;
+  --hex-teal: #94e2d5;
+  --hex-sky: #89dceb;
+  --hex-sapphire: #74c7ec;
+  --hex-blue: #89b4fa;
+  --hex-lavender: #b4befe;
+}
+
+.theme-light,
+.theme-dark {
+  --color-red-rgb: var(--spa-red);
+  --color-red: var(--hex-red);
+  --color-orange-rgb: var(--spa-peach);
+  --color-orange: var(--hex-peach);
+  --color-yellow-rgb: var(--spa-yellow);
+  --color-yellow: var(--hex-yellow);
+  --color-green-rgb: var(--spa-green);
+  --color-green: var(--hex-green);
+  --color-cyan-rgb: var(--spa-sapphire);
+  --color-cyan: var(--hex-sapphire);
+  --color-blue-rgb: var(--spa-blue);
+  --color-blue: var(--hex-blue);
+  --color-purple-rgb: var(--spa-mauve);
+  --color-purple: var(--hex-mauve);
+  --color-pink-rgb: var(--spa-pink);
+  --color-pink: var(--hex-pink);
+}
+
+/* ------------------Selecting Accents------------------- */
+
+.spa-full-palette {
+  --spa-accent: var(--spa-lavender);
+}
+
+.spa-accent-rosewater {
+  --spa-accent: var(--spa-rosewater);
+}
+
+.spa-accent-flamingo {
+  --spa-accent: var(--spa-flamingo);
+}
+
+.spa-accent-pink {
+  --spa-accent: var(--spa-pink);
+}
+
+.spa-accent-mauve {
+  --spa-accent: var(--spa-mauve);
+}
+
+.spa-accent-red {
+  --spa-accent: var(--spa-red);
+}
+
+.spa-accent-maroon {
+  --spa-accent: var(--spa-maroon);
+}
+
+.spa-accent-peach {
+  --spa-accent: var(--spa-peach);
+}
+
+.spa-accent-yellow {
+  --spa-accent: var(--spa-yellow);
+}
+
+.spa-accent-green {
+  --spa-accent: var(--spa-green);
+}
+
+.spa-accent-teal {
+  --spa-accent: var(--spa-teal);
+}
+
+.spa-accent-sky {
+  --spa-accent: var(--spa-sky);
+}
+
+.spa-accent-sapphire {
+  --spa-accent: var(--spa-sapphire);
+}
+
+.spa-accent-blue {
+  --spa-accent: var(--spa-blue);
+}
+
+.spa-accent-lavender {
+  --spa-accent: var(--spa-lavender);
+}
+
+/* ------------------Actual Configs-------------------- */
+.theme-dark,
+.theme-light {
+  --background-primary: rgb(var(--spa-base));
+  --background-primary-rgb: var(--spa-base);
+  --background-primary-alt: rgb(var(--spa-mantle));
+  --background-secondary: rgb(var(--spa-mantle));
+  --background-secondary-alt: rgb(var(--spa-crust));
+  --background-modifier-border: rgb(var(--spa-surface0));
+  --background-modifier-form-field: rgb(var(--spa-crust), 30%);
+  --background-modifier-form-field-highlighted: rgb(var(--spa-crust), 22%);
+  --background-modifier-box-shadow: rgb(var(--spa-crust), 30%);
+  --background-modifier-success: rgb(var(--spa-green), 90%);
+  --background-modifier-success-rgb: var(--spa-green);
+  --background-modifier-error: rgb(var(--spa-red), 90%);
+  --background-modifier-error-rgb: var(--spa-red);
+  --background-modifier-error-hover: rgb(var(--spa-red), 100%);
+  --background-modifier-cover: rgb(var(--spa-crust), 90%);
+  --color-accent: rgb(var(--spa-accent));
+  --color-accent-1: rgb(var(--spa-accent));
+  --color-accent-2: rgb(var(--spa-accent), 90%);
+  --text-accent: rgb(var(--spa-accent));
+  --text-accent-hover: rgb(var(--spa-accent));
+  --text-normal: rgb(var(--spa-text));
+  --text-muted: rgb(var(--spa-subtext0));
+  --text-muted-rgb: var(--spa-subtext0);
+  --text-faint: rgb(var(--spa-surface1));
+  --text-error: rgb(var(--spa-red));
+  --text-error-hover: rgb(var(--spa-red), 80%);
+  --text-highlight-bg: rgb(var(--spa-rosewater), 100%);
+  // --text-highlight-bg-active: rgb(var(--spa-rosewater), 100%);
+  // --text-selection: rgb(var(--spa-rosewater), 100%);
+  --text-selection: rgb(var(--spa-accent), 90%);
+  --text-on-accent: rgb(var(--spa-base));
+  --interactive-normal: rgb(var(--spa-surface0));
+  --interactive-hover: rgb(var(--spa-surface1));
+  --interactive-accent: rgb(var(--spa-accent));
+  --interactive-accent-rgb: var(--spa-accent);
+  --interactive-accent-hover: rgb(var(--spa-accent));
+  --interactive-success: rgb(var(--spa-green));
+  --scrollbar-active-thumb-bg: rgb(var(--spa-text), 20%);
+  --scrollbar-bg: rgb(var(--spa-text), 5%);
+  --scrollbar-thumb-bg: rgb(var(--spa-text), 10%);
+  --mono-rgb-0: var(--spa-crust);
+  --mono-rgb-100: var(--spa-text);
+  --color-red-rgb: var(--spa-red);
+  --color-red: rgb(var(--spa-red));
+  --color-green-rgb: var(--spa-green);
+  --color-green: rgb(var(--spa-green));
+  --color-orange: rgb(var(--spa-peach));
+  --color-yellow: rgb(var(--spa-yellow));
+  --color-cyan: rgb(var(--spa-sky));
+  --color-blue: rgb(var(--spa-blue));
+  --color-purple: rgb(var(--spa-lavender));
+  --color-pink: rgb(var(--spa-pink));
+  --color-base-00: rgb(var(--spa-crust));
+  --color-base-10: rgb(var(--spa-mantle));
+  --color-base-20: rgb(var(--spa-base));
+  --color-base-25: rgb(var(--spa-surface0));
+  --color-base-30: rgb(var(--spa-surface1));
+  --color-base-35: rgb(var(--spa-surface2));
+  --color-base-40: rgb(var(--spa-overlay0));
+  --color-base-50: rgb(var(--spa-overlay1));
+  --color-base-60: rgb(var(--spa-overlay2));
+  --color-base-70: rgb(var(--spa-subtext0));
+  --color-base-100: rgb(var(--spa-text));
+}
+
+.theme-dark {
+  color-scheme: dark;
+
+  --highlight-mix-blend-mode: lighten;
+}
+
+.theme-light {
+  color-scheme: light;
+
+  --highlight-mix-blend-mode: darken;
+}
+
+/* ------------------CSS Snippets------------------ */
+
+.spa-bold-folder-title .nav-folder-title-content {
+  font-weight: var(--font-bold);
+}

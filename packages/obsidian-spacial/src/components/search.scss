@@ -1,0 +1,16 @@
+.search-result-file-matched-text {
+    background-color: rgb(var(--spa-rosewater));
+    color: var(--text-on-accent);
+}
+
+.is-flashing,
+.cm-s-obsidian .is-flashing .cm-url {
+    --tag-color: var(--text-on-accent);
+
+    background-color: rgb(var(--spa-rosewater));
+    color: var(--text-on-accent);
+}
+
+.is-flashing .cm-quote.cm-quote {
+    color: var(--text-on-accent);
+}

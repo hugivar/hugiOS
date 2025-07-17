@@ -1,0 +1,403 @@
+/* ---------- L A Y O U T ---------- */
+/* Prompt */
+body:not(.spacial-workspace-background) .prompt .prompt-input {
+    background: rgb(var(--spa-crust));
+}
+
+body:not(.spacial-workspace-background) .prompt {
+    background: rgba(var(--spa-mantle));
+}
+
+/* Card Layout */
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .horizontal-main-container,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .mod-left-split,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .mod-left-split .workspace-tabs .workspace-leaf,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .mod-right-split .workspace-tabs .workspace-leaf,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .mod-root .workspace-tabs .workspace-leaf,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .mod-vertical,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .mod-vertical .workspace-tab-container,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .mod-vertical .workspace-tabs,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .workspace-split.mod-vertical,
+.spacial-card-layout:not(.spacial-workspace-background):not(.spacial-translucent-window:not(.is-fullscreen)) .workspace {
+    --tab-container-background: var(--background-secondary);
+    --titlebar-background-focused: var(--background-secondary);
+    background-color: var(--tab-container-background);
+}
+
+.workspace-split:not(.mod-root) .graph-controls,
+.workspace-split:not(.mod-root) .graph-controls.is-close,
+.workspace-split:not(.mod-root) .graph-controls:not(.is-close) {
+    background-color: rgb(var(--spa-crust));
+}
+
+.spacial-card-layout .sidebar-toggle-button,
+.spacial-card-layout .workspace-tabs.mod-top,
+body.spacial-card-layout {
+    --file-header-border: var(--border-width) dotted var(--background-modifier-border);
+}
+
+.spacial-card-layout .mod-left-split .workspace-tab-header-container,
+.spacial-card-layout .workspace-tab-header-container {
+    border-bottom: none;
+}
+
+.spacial-card-layout .workspace-ribbon.mod-left {
+    padding: 0;
+    background-color: var(--tab-container-background);
+    border: none;
+}
+
+.spacial-card-layout-actions.spacial-card-layout .workspace-ribbon.mod-left {
+    margin-right: var(--spacial-card-layout-padding, 10px);
+}
+
+.spacial-card-layout .workspace-ribbon.mod-left:before {
+    border-bottom: none;
+    background-color: var(--tab-container-background) !important;
+}
+
+.spacial-card-layout .side-dock-actions,
+.spacial-card-layout .side-dock-settings {
+    padding: var(--ribbon-padding);
+}
+
+.spacial-card-layout-actions.spacial-card-layout .side-dock-actions {
+    border-radius: 0 var(--spacial-card-radius, var(--radius-xl)) var(--spacial-card-radius, var(--radius-xl)) 0;
+    border: 1px solid var(--tab-outline-color);
+    background-color: var(--card-background-color);
+    margin-top: 2px;
+}
+
+.spacial-card-layout-actions.spacial-card-layout .side-dock-settings {
+    border-radius: 0 var(--spacial-card-radius, var(--radius-xl)) 0 0;
+    border: 1px solid var(--tab-outline-color);
+    background-color: var(--card-background-color);
+}
+
+.spacial-card-layout .workspace-ribbon.mod-left {
+    margin-top: calc(var(--header-height) - 1px) !important;
+}
+
+.spacial-card-layout .mod-vertical .workspace-tab-header-container {
+    padding-left: var(--spacial-card-header-left-padding, 20px);
+}
+
+.spacial-card-layout .mod-vertical .workspace-tab-header-container-inner {
+    margin: 6px -5px calc(var(--tab-outline-width) * -1);
+    z-index: 1;
+}
+
+.spacial-card-layout .mod-vertical .workspace-tabs {
+    padding-left: var(--spacial-card-layout-padding, 10px);
+    padding-right: var(--spacial-card-layout-padding, 10px);
+}
+
+.spacial-card-layout .mod-left-split .workspace-tab-container,
+.spacial-card-layout .mod-right-split .workspace-tab-container {
+    padding-left: var(--spacial-card-layout-padding, 10px);
+    padding-right: var(--spacial-card-layout-padding, 10px);
+    background-color: var(--tab-container-background);
+}
+
+.spacial-card-layout .workspace-split.mod-horizontal>*>.workspace-leaf-resize-handle,
+.spacial-card-layout .workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+.spacial-card-layout .workspace-split.mod-right-split>.workspace-leaf-resize-handle {
+    border: 2px solid transparent;
+}
+
+.spacial-card-layout .workspace-split .workspace-leaf-content {
+    border-radius: var(--spacial-card-radius, var(--radius-xl));
+    background-color: var(--card-background-color);
+    border: 1px solid var(--tab-outline-color);
+    margin-bottom: var(--spacial-card-layout-padding, 10px);
+}
+
+.spacial-card-layout.spacial-card-shadows.spacial-card-layout-actions .side-dock-actions,
+.spacial-card-layout.spacial-card-shadows .workspace-split .workspace-leaf-content,
+.spacial-card-layout.spacial-card-shadows.spacial-card-layout-fileexplorer .workspace-split .workspace-leaf-content[data-type='file-explorer'] {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.spacial-card-layout .workspace-split .workspace-leaf-content[data-type='file-explorer'] {
+    background-color: var(--tab-container-background);
+    box-shadow: none;
+    border-width: 0;
+}
+
+.spacial-card-layout.spacial-card-layout-fileexplorer .workspace-split .workspace-leaf-content[data-type='file-explorer'] {
+    background-color: var(--card-background-color);
+    border-width: 1px;
+}
+
+.spacial-card-layout .workspace-split .mod-stacked .workspace-leaf-content {
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    border-left: none;
+}
+
+.spacial-card-layout .workspace-split.mod-horizontal>* {
+    width: unset;
+}
+
+.spacial-card-layout .mod-stacked .workspace-tab-header {
+    border-style: solid;
+    border-radius: var(--spacial-card-radius, var(--radius-xl)) 0 0 var(--spacial-card-radius, var(--radius-xl)) !important;
+    border-width: var(--tab-outline-width);
+    border-color: var(--tab-outline-color);
+    border-right: var(--tab-outline-width) dashed var(--tab-outline-color);
+}
+
+.spacial-card-layout .mod-stacked .workspace-leaf {
+    border-left-width: 0;
+    border-top-width: var(--tab-outline-width);
+    border-bottom-width: var(--tab-outline-width);
+    border-style: solid;
+    border-color: var(--tab-outline-color);
+    border-radius: 0 var(--spacial-card-radius, var(--radius-xl)) var(--spacial-card-radius, var(--radius-xl)) 0;
+}
+
+.spacial-card-layout .mod-stacked .workspace-tab-container {
+    padding-bottom: var(--spacial-card-layout-padding, 10px);
+}
+
+.spacial-card-layout .mod-top .workspace-leaf-resize-handle {
+    border-color: transparent;
+}
+
+body.spacial-disable-borders,
+body.spacial-disable-borders.spacial-workspace-background-image-dark-toggle {
+    --divider-color: transparent;
+}
+
+.spacial-card-layout .workspace-drop-overlay:before {
+    width: calc(100% - 6px - var(--spacial-card-layout-padding, 0) * 2);
+    height: calc(100% - 6px - var(--spacial-card-layout-padding, 0) * 2);
+    margin: auto;
+}
+
+.spacial-card-layout:not(.spacial-translucent-window:not(.is-fullscreen)) .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf {
+    background-color: var(--background-secondary);
+}
+
+/* Workspace Background */
+.theme-light.spacial-workspace-background {
+    --background-secondary: rgba(var(--spa-mantle),
+            var(--spacial-workspace-background-workspace-slider-light));
+    --background-secondary-alt: rgba(var(--spa-mantle-alt),
+            var(--spacial-workspace-background-workspace-slider-light));
+    --ribbon-background: rgba(var(--spa-mantle),
+            var(--spacial-workspace-background-workspace-slider-light));
+    --ribbon-background-collapsed: rgba(var(--spa-mantle),
+            var(--spacial-workspace-background-workspace-slider-light));
+    --titlebar-background: rgba(var(--spa-crust),
+            var(--spacial-workspace-background-workspace-slider-light));
+    --titlebar-background-focused: rgba(var(--spa-crust),
+            var(--spacial-workspace-background-workspace-slider-light));
+}
+
+.theme-dark.spacial-workspace-background {
+    --background-secondary: rgba(var(--spa-mantle),
+            var(--spacial-workspace-background-workspace-slider-dark));
+    --background-secondary-alt: rgba(var(--spa-mantle-alt),
+            var(--spacial-workspace-background-workspace-slider-dark));
+    --ribbon-background: rgba(var(--spa-mantle),
+            var(--spacial-workspace-background-workspace-slider-dark));
+    --ribbon-background-collapsed: rgba(var(--spa-mantle),
+            var(--spacial-workspace-background-workspace-slider-dark));
+    --titlebar-background: rgba(var(--spa-crust),
+            var(--spacial-workspace-background-workspace-slider-dark));
+    --titlebar-background-focused: rgba(var(--spa-crust),
+            var(--spacial-workspace-background-workspace-slider-dark));
+}
+
+.spacial-workspace-background .horizontal-main-container {
+    background: var(--workspace-background-image);
+    background-color: transparent;
+    background-size: cover;
+}
+
+.theme-light.spacial-workspace-background.spacial-workspace-background-image-lines .horizontal-main-container {
+    --lines: url('https://images.hdqwalls.com/wallpapers/up-down-lines-light-mode-8k-o9.jpg');
+    --workspace-background-image: var(--lines);
+}
+
+.theme-light.spacial-workspace-background.spacial-workspace-background-image-waves .horizontal-main-container {
+    --waves: url('https://wallpapercave.com/wp/wp8561217.jpg');
+    --workspace-background-image: var(--waves);
+}
+
+.theme-light.spacial-workspace-background.spacial-workspace-background-image-waterwaves .horizontal-main-container {
+    --water-waves: url('https://wallpapercave.com/wp/wp8561104.jpg');
+    --workspace-background-image: var(--water-waves);
+}
+
+.theme-light.spacial-workspace-background .horizontal-main-container {
+    --workspace-background-image: var(--spacial-workspace-background-image-light-custom-option);
+}
+
+.theme-dark.spacial-workspace-background.spacial-workspace-background-image-tokoyo .horizontal-main-container {
+    --tokyo: url('https://www.pixel4k.com/wp-content/uploads/2018/09/tokyo-tower-4k_1538072109.jpg');
+    --workspace-background-image: var(--tokyo);
+}
+
+.theme-dark.spacial-workspace-background.spacial-workspace-background-image-skyline .horizontal-main-container {
+    --skyline: url('https://i.redd.it/m23bwh4n0x151.png');
+    --workspace-background-image: var(--skyline);
+}
+
+.theme-dark.spacial-workspace-background.spacial-workspace-background-image-spiderman .horizontal-main-container {
+    --sipder-man-multiverse: url('https://i.imgur.com/OuXoXpu.jpeg');
+    --workspace-background-image: var(--sipder-man-multiverse);
+}
+
+.theme-dark.spacial-workspace-background.spacial-workspace-background-image-neonsunrise .horizontal-main-container {
+    --neon-sunrise: url('https://i.imgur.com/W08gUuJ.jpeg');
+    --workspace-background-image: var(--neon-sunrise);
+}
+
+.theme-dark.spacial-workspace-background .horizontal-main-container {
+    --workspace-background-image: var(--spacial-workspace-background-image-dark-custom-option);
+}
+
+.spacial-workspace-background .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
+    --background-primary: rgba(var(--spa-crust), 0.7);
+}
+
+.spacial-workspace-background .workspace-leaf.is-hidden {
+    --background-primary: transparent !important;
+}
+
+.spacial-workspace-background .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
+.spacial-workspace-background .mod-root .workspace-tabs .workspace-leaf {
+    --background-primary: rgba(var(--spa-crust),
+            var(--spacial-workspace-background-workspace-slider-dark));
+}
+
+.spacial-workspace-background,
+.prompt,
+.menu .popover {
+    --background-primary: rgba(var(--spa-crust), 0.7);
+    --background-secondary: rgba(var(--spa-mantle), 0.5);
+    --background-secondary-alt: rgba(var(--spa-mantle-alt), 0.5);
+    --modal-background: rgba(var(--spa-mantle), 0.9);
+}
+
+.spacial-workspace-background .prompt {
+    background-color: var(--background-secondary);
+}
+
+/* Colorful Frame */
+.spacial-colorful-frame {
+    --titlebar-background: rgba(var(--spa-accent),
+            var(--spacial-colorful-frame-opacity));
+    --titlebar-background-focused: rgba(var(--spa-accent),
+            var(--spacial-colorful-frame-opacity));
+    --tab-container-background: rgba(var(--spa-accent), 0.7);
+}
+
+.spacial-colorful-frame.spacial-card-layout .horizontal-main-container,
+.spacial-colorful-frame.spacial-card-layout .mod-left-split,
+.spacial-colorful-frame.spacial-card-layout .mod-left-split .workspace-tabs .workspace-leaf,
+.spacial-colorful-frame.spacial-card-layout .mod-right-split .workspace-tabs .workspace-leaf,
+.spacial-colorful-frame.spacial-card-layout .mod-root .workspace-tabs .workspace-leaf,
+.spacial-colorful-frame.spacial-card-layout .mod-vertical,
+.spacial-colorful-frame.spacial-card-layout .mod-vertical .workspace-tab-container,
+.spacial-colorful-frame.spacial-card-layout .mod-vertical .workspace-tabs,
+.spacial-colorful-frame.spacial-card-layout .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
+.spacial-colorful-frame.spacial-card-layout .workspace-split.mod-vertical,
+.spacial-colorful-frame.spacial-card-layout .workspace {
+    --tab-container-background: rgba(var(--spa-accent),
+            var(--spacial-colorful-frame-opacity));
+    --tab-container-background-focused: rgba(var(--spa-accent),
+            var(--spacial-colorful-frame-opacity));
+    background-color: rgba(var(--spa-accent),
+            var(--spacial-colorful-frame-opacity));
+}
+
+.spacial-colorful-frame .mod-left-split .mod-top .workspace-tab-header-inner-icon,
+.spacial-colorful-frame.spacial-card-layout .mod-left-split .workspace-tab-header-inner-icon,
+.spacial-colorful-frame.spacial-card-layout .mod-right-split .workspace-tab-header-inner-icon,
+.spacial-colorful-frame .mod-left-split .mod-top .workspace-tab-header-inner-icon:hover,
+.spacial-colorful-frame .mod-right-split .mod-top .workspace-tab-header-inner-icon,
+.spacial-colorful-frame .mod-left-split .mod-top .workspace-tab-header-inner-icon:hover,
+.spacial-colorful-frame .mod-right-split .mod-top .workspace-tab-header-inner-icon:hover,
+.spacial-colorful-frame .mod-vertical .workspace-tab-header:not(.is-active),
+.spacial-colorful-frame .mod-vertical .workspace-tab-header:not(.is-active) .workspace-tab-header-inner:hover,
+.spacial-colorful-frame .mod-vertical .workspace-tab-header-inner-icon:hover,
+.spacial-colorful-frame.spacial-card-layout .workspace-tabs.mod-top .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-icon,
+.spacial-colorful-frame .workspace-split.mod-vertical .mod-top .workspace-tab-header:not(.is-active):hover,
+.spacial-colorful-frame.spacial-card-layout .mod-top .workspace-tab-header:not(.is-active):hover,
+.spacial-colorful-frame.spacial-card-layout .mod-vertical .workspace-tab-header:not(.is-active):hover,
+.spacial-colorful-frame .workspace-tab-header-tab-list,
+.spacial-colorful-frame .workspace-tab-header-tab-list .clickable-icon:hover,
+.spacial-colorful-frame .workspace-tab-header-new-tab,
+.spacial-colorful-frame .workspace-tab-header-new-tab .clickable-icon:hover {
+    color: rgb(var(--spa-black)) !important;
+    --icon-color: rgb(var(--spa-black)) !important;
+    --icon-color-hover: rgb(var(--spa-black)) !important;
+    --icon-color-focused: rgb(var(--spa-black)) !important;
+    --tab-text-color-focused: rgb(var(--spa-black)) !important;
+    --tab-text-color-focused-active-current: rgb(var(--spa-black)) !important;
+}
+
+.spacial-colorful-frame .mod-top .workspace-tab-header.is-active,
+.spacial-colorful-frame .mod-top .workspace-tab-header:hover,
+.spacial-colorful-frame.spacial-card-layout .workspace-tabs .workspace-tab-header.is-active,
+.spacial-colorful-frame.spacial-card-layout .workspace-tabs .workspace-tab-header:hover,
+.spacial-colorful-frame .workspace-tab-header-tab-list .clickable-icon:hover,
+.spacial-colorful-frame .workspace-tab-header-new-tab .clickable-icon:hover {
+    --background-modifier-hover: rgba(var(--spa-crust), 0.1);
+}
+
+.spacial-colorful-frame .titlebar-button-container {
+    color: rgb(var(--spa-black));
+}
+
+.spacial-colorful-frame .sidebar-toggle-button {
+    background-color: var(--background-primary);
+    height: 35px;
+    width: 44px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 10px;
+}
+
+.workspace-split.mod-vertical .workspace-tab-header-new-tab {
+    margin-left: auto;
+}
+
+.workspace-split.mod-vertical .workspace-tab-header-spacer {
+    display: none;
+}
+
+/* Tranlucent Window */
+.spacial-translucent-window.is-translucent:not(.is-fullscreen) .workspace {
+    --background-primary: transparent !important;
+    --background-primary-alt: transparent !important;
+    --background-secondary: transparent !important;
+    --background-secondary-alt: transparent !important;
+
+    --titlebar-background: transparent !important;
+    --titlebar-background-focused: transparent !important;
+    --card-background-color: transparent !important;
+}
+
+.spacial-translucent-window.spacial-card-layout.is-translucent:not(.is-fullscreen) .workspace-tab-container,
+.spacial-translucent-window.spacial-card-layout.is-translucent:not(.is-fullscreen) .workspace-tab-container,
+.spacial-translucent-window.spacial-card-layout.is-translucent:not(.is-fullscreen) .workspace-split.mod-root .view-content,
+.spacial-translucent-window.spacial-card-layout.is-translucent:not(.is-fullscreen) .workspace-split .workspace-leaf-content[data-type='file-explorer'] {
+    background-color: transparent !important;
+    --card-background-color: transparent !important;
+}
+
+.spacial-translucent-window.is-translucent:not(.is-fullscreen) {
+    --workspace-background-translucent: rgba(var(--spa-mantle),
+            var(--spacial-translucent-window-opacity));
+}
+
+.is-translucent:not(.is-fullscreen) .titlebar,
+.is-translucent.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right,
+.is-translucent.is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right {
+    background-color: inherit;
+}

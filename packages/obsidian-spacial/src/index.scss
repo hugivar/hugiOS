@@ -1,0 +1,31 @@
+/* Base */
+@use "base/variables.scss";
+@use "base/fonts.scss";
+@use "base/theme.scss";
+/* Obsidian app */
+
+@use "editor.scss";
+@use "layout.scss";
+@use "settings.scss";
+@use "sidebar.scss";
+@use "tabs.scss";
+@use "show-hide-elements.scss";
+@use "launch.scss";
+@use "style-settings.scss";
+
+/* Themes */
+@use "themes/full-palette";
+
+/* Editor */
+@use "editor/links.scss";
+
+/* Components */
+@use "components/file-explorer.scss";
+@use "components/search.scss";
+
+/* Spacial features */
+@use 'features/labeled-nav';
+@use 'features/active-line';
+
+/* Plugins */
+@use "plugins.scss";

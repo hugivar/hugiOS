@@ -1,0 +1,83 @@
+/* ---------- links ---------- */
+.link-default,
+body {
+    --link-decoration: none;
+    --link-external-decoration: none;
+}
+
+.external-link {
+    background-image: none;
+    padding-right: unset;
+}
+
+.link-web {
+    --link-decoration: underline;
+    --link-external-decoratoin: underline;
+    --link-color: var(--color-blue);
+    --link-external-color: var(--color-blue);
+    --link-color-hover: var(--color-purple);
+    --link-external-color-hover: var(--color-purple);
+    --link-unresolved-color: var(--color-cyan);
+    --link-unresolved-decoration-color: var(--color-cyan);
+}
+
+.link-button {
+    --link-color: var(--text-normal);
+    --link-unresolved-color: var(--text-normal);
+    --link-external-color: var(--text-normal);
+    --link-decoration-hover: none;
+    --link-external-decoration-hover: none;
+}
+
+.link-button .internal-link,
+.link-button .external-link,
+.link-button .markdown-source-view.mod-cm6 .cm-underline {
+    background-color: var(--background-primary);
+    -webkit-box-shadow: 0 -1px 7px -1px rgb(118 118 118 / 15%) inset;
+    padding: 1px 10px;
+    border-radius: 0.4em;
+    border: solid var(--background-modifier-border) 1.1px;
+    background-image: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.link-button .internal-link:hover,
+.link-button .external-link:hover,
+.link-button .markdown-source-view.mod-cm6 .cm-underline:hover {
+    -webkit-box-shadow: 0 -1px 10px -1px rgb(118 118 118 / 30%) inset;
+}
+
+.link-em {
+    --link-unresolved-color: var(--text-muted);
+    --link-unresolved-decoration-color: var(--background-modifier-border-hover);
+}
+
+.link-em .internal-link,
+.link-em .external-link {
+    color: var(--text-normal);
+    text-decoration: underline var(--background-modifier-border) 2.3px;
+    text-underline-offset: 0.19em;
+}
+
+.link-em .markdown-source-view.mod-cm6 .cm-underline {
+    color: var(--text-normal);
+    text-decoration: underline var(--background-modifier-border) 2.3px;
+}
+
+.link-em .internal-link:hover,
+.link-em .external-link:hover,
+.link-em .markdown-source-view.mod-cm6 .cm-underline:hover {
+    color: var(--color-accent-2);
+    text-decoration: underline var(--color-accent-1) 4px;
+}
+
+.link-em .internal-link::before,
+.link-em .external-link::before {
+    content: "🡭";
+    margin-right: 0.3em;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    font-family: 'Noto Sans Symbols 2', sans-serif;
+}

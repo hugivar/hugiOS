@@ -1,0 +1,1620 @@
+/* ---------- STYLE SETTINGS ---------- */
+.style-settings-heading[data-id='spacial'] {
+   font-weight: bold;
+   border-bottom: 1px solid rgb(var(--spa-accent));
+}
+
+.style-settings-heading:not([data-level='0'], .is-collapsed) {
+   margin-bottom: 0;
+}
+
+.style-settings-heading:not([data-level='0'])+.style-settings-container {
+   border: 1px solid rgba(var(--spa-text), 0.2);
+   border-radius: var(--radius-s);
+   padding: var(--size-4-2);
+   padding-left: var(--size-4-6);
+   background-color: rgba(var(--spa-crust), 0.3);
+   overflow-x: hidden;
+}
+
+/* certain settins to hide when not in use */
+body:not(.font-select) .setting-item[data-id='font-default-select'],
+body:not(.font-select) .setting-item[data-id='font-secondary-select'],
+body:not(.font-select) .setting-item[data-id='font-monospace-select'],
+body:not(.font-bundle) .setting-item[data-id='font-bundle-select'],
+body:not(.custom-font) .setting-item[data-id='font-default-custom'],
+body:not(.custom-font) .setting-item[data-id='font-secondary-custom'],
+body:not(.custom-font) .setting-item[data-id='font-monospace-custom'] {
+   display: none;
+}
+
+.style-settings-heading:not([data-level='0'])+.style-settings-container {
+   border: 1px solid rgba(var(--spa-text), 0.2);
+   border-radius: var(--radius-s);
+   padding: var(--size-4-2);
+   padding-left: var(--size-4-6);
+   background-color: rgba(var(--spa-crust), 0.3);
+   overflow-x: hidden;
+}
+
+.style-settings-container .setting-item-control:has(input[type='text']) {
+   flex-grow: 0;
+   position: relative;
+}
+
+.style-settings-container .setting-item-control:has(input[type='text'])::after {
+   align-items: center;
+   background-color: var(--background-modifier-hover);
+   border-radius: var(--radius-s);
+   display: flex;
+   font-size: 10px;
+   font-weight: var(--font-semibold);
+   height: calc(var(--input-height) - 12px);
+   justify-content: center;
+   left: calc(100% - 68px);
+   letter-spacing: 0.05em;
+   line-height: var(--line-height-normal);
+   padding: 0;
+   position: absolute;
+   text-transform: uppercase;
+   top: 6px;
+   width: 28px;
+}
+
+.style-settings-container .setting-item:is([data-id='callout-radius'],
+   [data-id='spacial-card-radius'],
+   [data-id='spacial-card-header-left-padding'],
+   [data-id='spacial-card-layout-padding']) .setting-item-control::after {
+   content: 'px';
+}
+
+.style-settings-container .setting-item:is([data-id='h1-size'],
+   [data-id='h2-size'],
+   [data-id='h3-size'],
+   [data-id='h4-size'],
+   [data-id='h5-size'],
+   [data-id='h6-size']) .setting-item-control::after {
+   content: 'em';
+}
+
+/* @settings
+
+name: Spacial
+id: spacial
+level: 1
+settings:
+   - 
+      id: spacial-colors-heading
+      title: Colors
+      description: Theme Accent
+      type: heading
+      level: 1
+      collapsed: true
+   - 
+      id: spa-accent
+      title: Theme Accent
+      description: Select your preferred accent
+      type: class-select
+      allowEmpty: false
+      default: spa-full-palette
+      options:
+         -
+            label: Full palette
+            value: spa-full-palette
+         -
+            label: Rosewater
+            value: spa-accent-rosewater
+         -
+            label: Flamingo
+            value: spa-accent-flamingo
+         -
+            label: Pink
+            value: spa-accent-pink
+         -
+            label: Mauve
+            value: spa-accent-mauve
+         -
+            label: Red
+            value: spa-accent-red
+         -
+            label: Maroon
+            value: spa-accent-maroon
+         -
+            label: Peach
+            value: spa-accent-peach
+         -
+            label: Yellow
+            value: spa-accent-yellow
+         -
+            label: Green
+            value: spa-accent-green
+         -
+            label: Teal
+            value: spa-accent-teal
+         -
+            label: Sky
+            value: spa-accent-sky
+         -
+            label: Sapphire
+            value: spa-accent-sapphire
+         -
+            label: Blue
+            value: spa-accent-blue
+         -
+            label: Lavender
+            value: spa-accent-lavender
+   #---------- E D I T O R ----------
+   - 
+      id: spacial-editor-heading
+      title: Editor
+      description: Active Line, Headings, Callouts, Checkbox and Rainbow Tags, etc...
+      type: heading
+      level: 1
+      collapsed: true
+   -
+      id: spacial-active-line
+      title: Active line highlight
+      type: class-select
+      allowEmpty: false
+      default: spacial-no-highlight
+      options:
+         -
+            label: None
+            value: spacial-no-highlight
+         -
+            label: Highlight
+            value: spacial-active-line-highlight
+         -
+            label: Border
+            value: spacial-active-line-border
+         -
+            label: Highlight + Border
+            value: spacial-active-line-highlight-border
+   - 
+      id: spacial-text-heading
+      title: Text
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: fonts-source
+      title: Fonts Source
+      type: class-select
+      default: font-bundle
+      options: 
+            -  
+               label: Use Font Bundles (Presets)
+               value: font-bundle
+            -
+               label: Select Fonts
+               value: font-select
+            -
+               label: Use a System Font
+               value: custom-font
+
+   -
+      id: font-bundle-select
+      title: Font Bundle
+      type: class-select
+      description: Choose a combination of fonts. NOTE - some fonts may not work offline.
+      default: ia-font
+      options:   
+            -
+               label: Austere
+               value: austere-font
+            -
+               label: iA Writer
+               value: ia-font
+            -
+               label: Google
+               value: google-font
+            -
+               label: Gothic
+               value: gothic-font
+            -   
+               label: Obsidian
+               value: obsidian-font
+            -
+               label: Serif 
+               value: serif-font
+            -
+               label: Robust 
+               value: robust-font
+            -
+               label: Round
+               value: cursive-font   
+            -
+               label: Web
+               value: web-font
+   -
+         id: font-default-select
+         title: Default Font
+         type: variable-select
+         default: 'iA Writer Quattro S'
+         options:
+            - 'Comfortaa'
+            - 'Exo'
+            - 'Figtree'
+            - 'iA Writer Duo S'
+            - 'iA Writer Mono S'
+            - 'iA Writer Quattro S'
+            - 'Inconsolata'
+            - 'Inter '
+            - 'Karla'
+            - 'Lexend'
+            - 'Lora'
+            - 'Martel'
+            - 'Montserrat'
+            - 'Nanum Gothic'
+            - 'Noto Sans'
+            - 'Noto Sans Mono'
+            - 'Noto Serif'
+            - 'Pathway Extreme'
+            - 'Recursive'
+            - 'Roboto'
+            - 'Rubik'
+            - 'Sono'
+            - 'Source Code Pro'
+            - 'Special Elite'
+            - 'Titillium Web'
+            - 'Varela Round'
+            - 'Ysabeau'
+   -
+         id: font-secondary-select
+         title: Secondary Font
+         type: variable-select
+         default: 'iA Writer Quattro S'
+         options:
+            - 'Comfortaa'
+            - 'Exo'
+            - 'Figtree'
+            - 'iA Writer Duo S'
+            - 'iA Writer Mono S'
+            - 'iA Writer Quattro S'
+            - 'Inconsolata'
+            - 'Inter '
+            - 'Karla'
+            - 'Lexend'
+            - 'Lora'
+            - 'Martel'
+            - 'Montserrat'
+            - 'Nanum Gothic'
+            - 'Noto Sans'
+            - 'Noto Sans Mono'
+            - 'Noto Serif'
+            - 'Pathway Extreme'
+            - 'Recursive'
+            - 'Roboto'
+            - 'Rubik'
+            - 'Sono'
+            - 'Source Code Pro'
+            - 'Special Elite'
+            - 'Titillium Web'
+            - 'Varela Round'
+            - 'Ysabeau'
+   -
+         id: font-monospace-select
+         title: Monospace Font
+         type: variable-select
+         default: 'iA Writer Mono S'
+         options: 
+            - 'Cousine'
+            - 'Exo'
+            - 'Fira Code'
+            - 'iA Writer Mono S'
+            - 'iA Writer Duo S'
+            - 'iA Writer Quattro S'
+            - 'Inconsolata'
+            - 'Nanum Gothic Coding'
+            - 'Noto Sans Mono'
+            - 'Roboto Mono'
+            - 'Special Elite'
+            - 'Source Code Mono'
+   -
+      id: font-default-custom
+      title: Custom Font Default
+      type: variable-text
+      default: 'iA Writer Quattro S'
+   -
+      id: font-secondary-custom
+      title: Custom Font Secondary
+      type: variable-text
+      default: 'iA Writer Duo S'
+   -
+      id: font-monospace-custom
+      title: Custom Font Monospace
+      type: variable-text
+      default: 'iA Writer Mono S'
+   -
+      id: bold-color
+      title: Bold Color
+      type: variable-select
+      default: rgb(var(--spa-red))
+      options:
+         - 
+            label: Red
+            value: rgb(var(--spa-red))
+         - 
+            label: Orange
+            value: rgb(var(--spa-orange))
+         - 
+            label: Yellow
+            value: rgb(var(--spa-yellow))
+         - 
+            label: Green
+            value: rgb(var(--spa-green))
+         - 
+            label: Cyan
+            value: rgb(var(--spa-cyan))
+         - 
+            label: Blue
+            value: rgb(var(--spa-blue))
+         -
+            label: Pink
+            value: rgb(var(--spa-pink))
+         - 
+            label: Purple
+            value: rgb(var(--spa-purple))
+   -
+      id: italic-color
+      title: Italic Color
+      type: variable-select
+      default: rgb(var(--spa-blue))
+      options:
+         - 
+            label: Red
+            value: rgb(var(--spa-red))
+         - 
+            label: Orange
+            value: rgb(var(--spa-orange))
+         - 
+            label: Yellow
+            value: rgb(var(--spa-yellow))
+         - 
+            label: Green
+            value: rgb(var(--spa-green))
+         - 
+            label: Cyan
+            value: rgb(var(--spa-cyan))
+         - 
+            label: Blue
+            value: rgb(var(--spa-blue))
+         -
+            label: Pink
+            value: rgb(var(--spa-pink))
+         - 
+            label: Purple
+            value: rgb(var(--spa-purple))
+   - 
+      id: spacial-headings-heading
+      title: Headings
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: spacial-heading-color
+      title: Colored Heading
+      type: class-toggle
+      default: true
+   -
+      id: spacial-neon-headings
+      title: Neon Heading
+      type: class-toggle
+      default: false
+   -
+      id: spacial-h1-heading
+      title: H1 settings
+      type: heading
+      level: 3
+      collapsed: true
+   -
+      id: h1-font
+      title: H1 font
+      type: variable-select
+      default: Rubik
+      options:
+         - 'Comfortaa'
+         - 'Exo'
+         - 'Figtree'
+         - 'iA Writer Duo S'
+         - 'iA Writer Mono S'
+         - 'iA Writer Quattro S'
+         - 'Inconsolata'
+         - 'Inter '
+         - 'Karla'
+         - 'Lexend'
+         - 'Lora'
+         - 'Martel'
+         - 'Montserrat'
+         - 'Nanum Gothic'
+         - 'Noto Sans'
+         - 'Noto Sans Mono'
+         - 'Noto Serif'
+         - 'Pathway Extreme'
+         - 'Recursive'
+         - 'Roboto'
+         - 'Rubik'
+         - 'Sono'
+         - 'Source Code Pro'
+         - 'Special Elite'
+         - 'Titillium Web'
+         - 'Varela Round'
+         - 'Ysabeau'
+   -
+      id: h1-font
+      title: H1 Custom font 
+      type: variable-text
+      default: Rubik
+   - 
+      id: h1-size
+      title: H1 size
+      type: variable-number
+      default: 2
+      format: em
+   - 
+      id: h1-weight
+      title: H1 weight
+      type: variable-number
+      default: 600
+   - 
+      id: h1-line-height
+      title: H1 line height
+      type: variable-number
+      default: 1
+   - 
+      id: spacial-h1-color
+      title: H1 color
+      type: class-select
+      allowEmpty: true
+      default: none
+      options:
+         - 
+            label: Red
+            value: spacial-h1-red
+         - 
+            label: Orange
+            value: spacial-h1-orange
+         - 
+            label: Yellow
+            value: spacial-h1-yellow
+         - 
+            label: Green
+            value: spacial-h1-green
+         - 
+            label: Cyan
+            value: spacial-h1-cyan
+         - 
+            label: Blue
+            value: spacial-h1-blue
+         -
+            label: Pink
+            value: spacial-h1-pink
+         - 
+            label: Purple
+            value: spacial-h1-purple
+   -
+      id: h1-color
+      title: Custom H1 Color
+      type: variable-themed-color
+      opacity: true
+      format: hex
+      default-light: '#'
+      default-dark: '#'
+   -
+      id: spacial-h2-heading
+      title: H2 settings
+      type: heading
+      level: 3
+      collapsed: true
+   -
+      id: h2-font
+      title: H2 font
+      type: variable-select
+      default: Rubik
+      options:
+         - 'Comfortaa'
+         - 'Exo'
+         - 'Figtree'
+         - 'iA Writer Duo S'
+         - 'iA Writer Mono S'
+         - 'iA Writer Quattro S'
+         - 'Inconsolata'
+         - 'Inter '
+         - 'Karla'
+         - 'Lexend'
+         - 'Lora'
+         - 'Martel'
+         - 'Montserrat'
+         - 'Nanum Gothic'
+         - 'Noto Sans'
+         - 'Noto Sans Mono'
+         - 'Noto Serif'
+         - 'Pathway Extreme'
+         - 'Recursive'
+         - 'Roboto'
+         - 'Rubik'
+         - 'Sono'
+         - 'Source Code Pro'
+         - 'Special Elite'
+         - 'Titillium Web'
+         - 'Varela Round'
+         - 'Ysabeau'
+   -
+      id: h2-font
+      title: H2 Custom font 
+      type: variable-text
+      default: Rubik
+   - 
+      id: h2-size
+      title: H2 size
+      type: variable-number
+      default: 1.75
+      format: em
+   - 
+      id: h2-weight
+      title: H2 weight
+      type: variable-number
+      default: 600
+   - 
+      id: h2-line-height
+      title: H2 line height
+      type: variable-number
+      default: 1
+   - 
+      id: spacial-h2-color
+      title: H2 color
+      type: class-select
+      allowEmpty: true
+      default: none
+      options:
+         - 
+            label: Red
+            value: spacial-h2-red
+         - 
+            label: Orange
+            value: spacial-h2-orange
+         - 
+            label: Yellow
+            value: spacial-h2-yellow
+         - 
+            label: Green
+            value: spacial-h2-green
+         - 
+            label: Cyan
+            value: spacial-h2-cyan
+         - 
+            label: Blue
+            value: spacial-h2-blue
+         -
+            label: Pink
+            value: spacial-h2-pink
+         - 
+            label: Purple
+            value: spacial-h2-purple
+   -
+      id: h2-color
+      title: Custom H2 Color
+      type: variable-themed-color
+      opacity: true
+      format: hex
+      default-light: '#'
+      default-dark: '#'
+   -
+      id: spacial-h3-heading
+      title: H3 settings
+      type: heading
+      level: 3
+      collapsed: true
+   -
+      id: h3-font
+      title: H3 font
+      type: variable-select
+      default: Rubik
+      options:
+         - 'Comfortaa'
+         - 'Exo'
+         - 'Figtree'
+         - 'iA Writer Duo S'
+         - 'iA Writer Mono S'
+         - 'iA Writer Quattro S'
+         - 'Inconsolata'
+         - 'Inter '
+         - 'Karla'
+         - 'Lexend'
+         - 'Lora'
+         - 'Martel'
+         - 'Montserrat'
+         - 'Nanum Gothic'
+         - 'Noto Sans'
+         - 'Noto Sans Mono'
+         - 'Noto Serif'
+         - 'Pathway Extreme'
+         - 'Recursive'
+         - 'Roboto'
+         - 'Rubik'
+         - 'Sono'
+         - 'Source Code Pro'
+         - 'Special Elite'
+         - 'Titillium Web'
+         - 'Varela Round'
+         - 'Ysabeau'
+   -
+      id: h3-font
+      title: H3 Custom font 
+      type: variable-text
+      default: Rubik
+   - 
+      id: h3-size
+      title: H3 size
+      type: variable-number
+      default: 1.5
+      format: em
+   - 
+      id: h3-weight
+      title: H3 weight
+      type: variable-number
+      default: 600
+   - 
+      id: h3-line-height
+      title: H3 line height
+      type: variable-number
+      default: 1
+   - 
+      id: spacial-h3-color
+      title: H3 color
+      type: class-select
+      allowEmpty: true
+      default: none
+      options:
+         - 
+            label: Red
+            value: spacial-h3-red
+         - 
+            label: Orange
+            value: spacial-h3-orange
+         - 
+            label: Yellow
+            value: spacial-h3-yellow
+         - 
+            label: Green
+            value: spacial-h3-green
+         - 
+            label: Cyan
+            value: spacial-h3-cyan
+         - 
+            label: Blue
+            value: spacial-h3-blue
+         -
+            label: Pink
+            value: spacial-h3-pink
+         - 
+            label: Purple
+            value: spacial-h3-purple
+   -
+      id: h3-color
+      title: Custom H3 Color
+      type: variable-themed-color
+      opacity: true
+      format: hex
+      default-light: '#'
+      default-dark: '#'
+   -
+      id: spacial-h4-heading
+      title: H4 settings
+      type: heading
+      level: 3
+      collapsed: true
+   -
+      id: h4-font
+      title: H4 font
+      type: variable-select
+      default: Rubik
+      options:
+         - 'Comfortaa'
+         - 'Exo'
+         - 'Figtree'
+         - 'iA Writer Duo S'
+         - 'iA Writer Mono S'
+         - 'iA Writer Quattro S'
+         - 'Inconsolata'
+         - 'Inter '
+         - 'Karla'
+         - 'Lexend'
+         - 'Lora'
+         - 'Martel'
+         - 'Montserrat'
+         - 'Nanum Gothic'
+         - 'Noto Sans'
+         - 'Noto Sans Mono'
+         - 'Noto Serif'
+         - 'Pathway Extreme'
+         - 'Recursive'
+         - 'Roboto'
+         - 'Rubik'
+         - 'Sono'
+         - 'Source Code Pro'
+         - 'Special Elite'
+         - 'Titillium Web'
+         - 'Varela Round'
+         - 'Ysabeau'
+   -
+      id: h4-font
+      title: H4 Custom font 
+      type: variable-text
+      default: Rubik
+   - 
+      id: h4-size
+      title: H4 size
+      type: variable-number
+      default: 1.25
+      format: em
+   - 
+      id: h4-weight
+      title: H4 weight
+      type: variable-number
+      default: 600
+   - 
+      id: h4-line-height
+      title: H4 line height
+      type: variable-number
+      default: 1
+   - 
+      id: spacial-h4-color
+      title: H4 color
+      type: class-select
+      allowEmpty: true
+      default: none
+      options:
+         - 
+            label: Red
+            value: spacial-h4-red
+         - 
+            label: Orange
+            value: spacial-h4-orange
+         - 
+            label: Yellow
+            value: spacial-h4-yellow
+         - 
+            label: Green
+            value: spacial-h4-green
+         - 
+            label: Cyan
+            value: spacial-h4-cyan
+         - 
+            label: Blue
+            value: spacial-h4-blue
+         -
+            label: Pink
+            value: spacial-h4-pink
+         - 
+            label: Purple
+            value: spacial-h4-purple
+   -
+      id: h4-color
+      title: Custom H4 Color
+      type: variable-themed-color
+      opacity: true
+      format: hex
+      default-light: '#'
+      default-dark: '#'
+   -
+      id: spacial-h5-heading
+      title: H5 settings
+      type: heading
+      level: 3
+      collapsed: true
+   -
+      id: h5-font
+      title: H5 font
+      type: variable-select
+      default: Rubik
+      options:
+         - 'Comfortaa'
+         - 'Exo'
+         - 'Figtree'
+         - 'iA Writer Duo S'
+         - 'iA Writer Mono S'
+         - 'iA Writer Quattro S'
+         - 'Inconsolata'
+         - 'Inter '
+         - 'Karla'
+         - 'Lexend'
+         - 'Lora'
+         - 'Martel'
+         - 'Montserrat'
+         - 'Nanum Gothic'
+         - 'Noto Sans'
+         - 'Noto Sans Mono'
+         - 'Noto Serif'
+         - 'Pathway Extreme'
+         - 'Recursive'
+         - 'Roboto'
+         - 'Rubik'
+         - 'Sono'
+         - 'Source Code Pro'
+         - 'Special Elite'
+         - 'Titillium Web'
+         - 'Varela Round'
+         - 'Ysabeau'
+   -
+      id: h5-font
+      title: H5 Custom font 
+      type: variable-text
+      default: Rubik
+   - 
+      id: h5-size
+      title: H5 size
+      type: variable-number
+      default: 1
+      format: em
+   - 
+      id: h5-weight
+      title: H5 weight
+      type: variable-number
+      default: 600
+   - 
+      id: h5-line-height
+      title: H5 line height
+      type: variable-number
+      default: 1
+   - 
+      id: spacial-h5-color
+      title: H5 color
+      type: class-select
+      allowEmpty: true
+      default: none
+      options:
+         - 
+            label: Red
+            value: spacial-h5-red
+         - 
+            label: Orange
+            value: spacial-h5-orange
+         - 
+            label: Yellow
+            value: spacial-h5-yellow
+         - 
+            label: Green
+            value: spacial-h5-green
+         - 
+            label: Cyan
+            value: spacial-h5-cyan
+         - 
+            label: Blue
+            value: spacial-h5-blue
+         -
+            label: Pink
+            value: spacial-h5-pink
+         - 
+            label: Purple
+            value: spacial-h5-purple
+   -
+      id: h5-color
+      title: Custom H5 Color
+      type: variable-themed-color
+      opacity: true
+      format: hex
+      default-light: '#'
+      default-dark: '#'
+   -
+      id: spacial-h6-heading
+      title: H6 settings
+      type: heading
+      level: 3
+      collapsed: true
+   -
+      id: h6-font
+      title: H6 font
+      type: variable-select
+      default: Rubik
+      options:
+         - 'Comfortaa'
+         - 'Exo'
+         - 'Figtree'
+         - 'iA Writer Duo S'
+         - 'iA Writer Mono S'
+         - 'iA Writer Quattro S'
+         - 'Inconsolata'
+         - 'Inter '
+         - 'Karla'
+         - 'Lexend'
+         - 'Lora'
+         - 'Martel'
+         - 'Montserrat'
+         - 'Nanum Gothic'
+         - 'Noto Sans'
+         - 'Noto Sans Mono'
+         - 'Noto Serif'
+         - 'Pathway Extreme'
+         - 'Recursive'
+         - 'Roboto'
+         - 'Rubik'
+         - 'Sono'
+         - 'Source Code Pro'
+         - 'Special Elite'
+         - 'Titillium Web'
+         - 'Varela Round'
+         - 'Ysabeau'
+   -
+      id: h6-font
+      title: H6 Custom font 
+      type: variable-text
+      default: Rubik
+   - 
+      id: h6-size
+      title: H6 size
+      type: variable-number
+      default: 1
+      format: em
+   - 
+      id: h6-weight
+      title: H6 weight
+      type: variable-number
+      default: 600
+   - 
+      id: h6-line-height
+      title: H6 line height
+      type: variable-number
+      default: 1
+   - 
+      id: spacial-h6-color
+      title: H6 color
+      type: class-select
+      allowEmpty: true
+      default: none
+      options:
+         - 
+            label: Red
+            value: spacial-h6-red
+         - 
+            label: Orange
+            value: spacial-h6-orange
+         - 
+            label: Yellow
+            value: spacial-h6-yellow
+         - 
+            label: Green
+            value: spacial-h6-green
+         - 
+            label: Cyan
+            value: spacial-h6-cyan
+         - 
+            label: Blue
+            value: spacial-h6-blue
+         -
+            label: Pink
+            value: spacial-h6-pink
+         - 
+            label: Purple
+            value: spacial-h6-purple
+   -
+      id: h6-color
+      title: Custom H6 Color
+      type: variable-themed-color
+      opacity: true
+      format: hex
+      default-light: '#'
+      default-dark: '#'
+      
+   - 
+      id: spacial-callouts-heading
+      title: Callouts
+      type: heading
+      level: 2
+      collapsed: true
+
+   -
+      id: spacial-callouts
+      title: Enable Callout Styling
+      type: class-toggle
+
+   -
+      id: spacial-callouts-select
+      title: Callout Styling
+      type: class-select
+      allowEmpty: false
+      default: default
+      options:
+            - 
+               label: Default
+               value: default
+            - 
+               label: Sleek
+               value: spacial-callouts-sleek
+            - 
+               label: Vanilla
+               value: spacial-callouts-vanilla
+            - 
+               label: Block
+               value: spacial-callouts-block
+   -
+      id: callout-radius
+      title: Callout Radius
+      type: variable-number
+      default: 4
+      format: px
+   -
+		id: tags
+		title: Tags
+		type: heading
+		level: 2
+		collapsed: true
+	-
+				id: tag-radius
+				title: Tag Shape
+				type: variable-select
+				default: '2em'
+				allowEmpty: false
+				options:
+					-
+						label: 'Pill'
+						value: '2em'
+					-
+						label: 'Rounded'
+						value: '4px'
+					-
+						label: 'Square'
+						value: '0em'
+	-
+				id: tag-border-width
+				title: Tag border
+				type: variable-select
+				default: '0px'
+				allowEmpty: false
+				options:
+					-
+						label: 'None'
+						value: '0px'
+					-
+						label: 'Thin'
+						value: '1px'
+					-
+						label: 'Thick'
+						value: '2px'
+	-
+				id: tag-color
+				title: Tag text color
+				type: variable-themed-color
+				format: rgb
+				opacity: false
+				default-light: 'rgb(var(--interactive-accent-rgb))'
+				default-dark: 'rgb(var(--interactive-accent-rgb))'
+	-
+				id: tag-color-hover
+				title: Tag text color (hover)
+				type: variable-themed-color
+				format: rgb
+				opacity: false
+				default-light: 'rgb(var(--interactive-accent-rgb))'
+				default-dark: 'rgb(var(--interactive-accent-rgb))'
+	-
+				id: tag-background
+				title: Tag background color
+				type: variable-themed-color
+				format: rgb
+				opacity: true
+				default-light: 'rgba(var(--interactive-accent-rgb), 0.15)'
+				default-dark: 'rgba(var(--interactive-accent-rgb), 0.15)'
+	-
+				id: tag-background-hover
+				title: Tag background color (hover)
+				type: variable-themed-color
+				format: rgb
+				opacity: true
+				default-light: 'rgba(var(--interactive-accent-rgb), 0.25)'
+				default-dark: 'rgba(var(--interactive-accent-rgb), 0.25)'
+	-
+				id: tag-decoration
+				title: Tag text decoration
+				type: variable-select
+				default: 'none'
+				allowEmpty: false
+				options:
+					-
+						label: 'None'
+						value: 'none'
+					-
+						label: 'Thin underline'
+						value: 'underline 1px'
+					-
+						label: 'Thick underline'
+						value: 'underline 2px'
+	-
+				id: tag-decoration-hover
+				title: Tag text decoration (hover)
+				type: variable-select
+				default: 'none'
+				allowEmpty: false
+				options:
+					-
+						label: 'None'
+						value: 'none'
+					-
+						label: 'Thin underline'
+						value: 'underline 1px'
+					-
+						label: 'Thick underline'
+						value: 'underline 2px'
+   - 
+      id: spacial-custom-checkbox-heading
+      title: Checkbox
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: spacial-custom-checkbox
+      title: Enable Custom Checkbox
+      description: Enable custom checkboxes for checkbox customization
+      default: true
+      type: class-toggle
+   -
+        id: callout-options
+        title: Callouts
+        type: heading
+        level: 2
+        collapsed: true
+   -
+      id: callout-style
+      title: Callout Style
+      type: class-select
+      allowEmpty: false
+      default: callout-normal
+      options:
+          -
+              label: Default
+              value: callout-normal
+          -
+              label: Bordered
+              value: callout-bordered
+          -
+              label: Outlined
+              value: callout-outlined
+          -
+              label: Card
+              value: callout-floating   
+   - 
+      id: spacial-css-classes-heading
+      title: CSS Classes
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: spacial-css-classes
+      title: Toggle CSS Classes
+      description: Customize your notes with custom css classes
+      default: true
+      type: class-toggle
+   - 
+      id: spacial-rainbow-tags-heading
+      title: Rainbow Tags
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: spacial-rainbow-tags
+      title: Enable Rainbow Tags
+      description: Customize your tag with rainbow colors
+      type: class-toggle
+   -
+      id: link-options
+      title: Links
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: link-style
+      title: Link Style
+      type: class-select
+      allowEmpty: false
+      default: link-default
+      options:
+         -
+            label: Default
+            value: link-default
+         -
+            label: Web
+            value: link-web
+         -
+            label: Emphasized
+            value: link-em
+         -
+            label: Button
+            value: link-button  
+   -
+		id: graphs
+		title: Graphs
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: graph-line
+		title: Line color
+		description: Changing graph colors requires closing and reopening graph panes or restarting Obsidian
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: graph-node
+		title: Node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: graph-node-focused
+		title: Active node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-  
+		id: graph-node-tag
+		title: Tag node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-  
+		id: graph-node-attachment
+		title: Attachment node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-  
+		id: graph-node-unresolved
+		title: Unresolved node color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+
+   #---------- L A Y O U T ----------
+   - 
+      id: spacial-workspace-heading
+      title: Workspace
+      description: Layout, Background, Colorful frame, etc.
+      type: heading
+      level: 1
+      collapsed: true
+   - 
+      id: spacial-layout-heading
+      title: Layout
+      type: heading
+      level: 2
+      collapsed: true
+   - 
+      id: spacial-layout-select
+      title: Layout Style
+      type: class-select
+      allowEmpty: false
+      default: spacial-default-layout
+      options:
+         -
+            label: Default
+            value: spacial-default-layout
+         -
+            label: Cards
+            value: spacial-card-layout
+   - 
+      id: spacial-disable-borders
+      title: Disable borders
+      type: class-toggle
+   -
+      id: tab-outline-color
+      title: Custom borders Color
+      type: variable-color
+      opacity: true
+      format: hex
+      default: '#'
+   - 
+      id: spacial-card-heading
+      title: Card Layout
+      type: heading
+      level: 3
+      collapsed: true
+   - 
+      id: spacial-card-radius
+      title: Card radius
+      description: Size unit is px
+      type: variable-number
+      default: 16
+      format: px
+   - 
+      id: spacial-card-layout-padding
+      title: Card padding
+      description: Size unit is px
+      type: variable-number
+      default: 10
+      format: px
+   - 
+      id: spacial-card-header-left-padding
+      title: Tab left padding
+      description: Size unit is px
+      type: variable-number
+      default: 20
+      format: px
+   - 
+      id: spacial-card-shadows
+      title: Enable shadows for cards
+      type: class-toggle
+   - 
+      id: spacial-card-layout-actions
+      title: Enable card format for left ribbon
+      type: class-toggle
+   - 
+      id: spacial-card-layout-fileexplorer
+      title: Enable card format for file explorer
+      default: true
+      type: class-toggle
+   - 
+      id: spacial-workspace-background-heading
+      title: Background
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: spacial-workspace-background
+      title: Enable Backgound
+      description: Customize your workspace background by adding images to it (not compatible with colorful frames) 
+      type: class-toggle
+   - 
+      id: spacial-workspace-background-light-heading
+      title: Light Theme
+      type: heading
+      level: 3
+      collapsed: true
+   -
+      id: spacial-workspace-background-image-dark
+      title: Select Background Image
+      description: Customize your workspace background by adding images to it
+      type: class-select
+      allowEmpty: false
+      default: spacial-workspace-background-image-lines
+      options:
+         - 
+            label: Lines
+            value: spacial-workspace-background-image-lines
+         - 
+            label: Waves
+            value: spacial-workspace-background-image-waves
+         - 
+            label: Water Waves
+            value: spacial-workspace-background-image-waterwaves
+         -
+            label: Custom
+            value: spacial-workspace-background-image-custom
+   -
+      id: spacial-workspace-background-image-light-custom-option
+      title: Custom Workspace Background Image
+      description: Customize the background image. Use the default format below for an online image. Use the following format to point to a local file - url("app://local/D:/Pictures/Mountain.jpg").
+      type: variable-text
+      default: url("https://")
+   -
+      id: spacial-workspace-background-workspace-slider-light
+      title: Container opacity
+      type: variable-number-slider
+      min: 0
+      max: 1
+      step: 0.05
+      default: 0.4
+   - 
+      id: spacial-workspace-background-blur-light
+      title: Background blur
+      type: variable-number-slider
+      min: 0
+      max: 20
+      step: 1
+      default: 5
+      format: px
+   - 
+      id: spacial-workspace-background-brightness-light
+      title: Background brightness
+      type: variable-number-slider
+      min: 0
+      max: 1
+      step: 0.05
+      default: 0.7
+   - 
+      id: spacial-workspace-background-dark-heading
+      title: Dark Theme
+      type: heading
+      level: 3
+      collapsed: true
+   -
+      id: spacial-workspace-background-image-dark
+      title: Select Background Image
+      description: Customize your workspace background by adding images to it
+      type: class-select
+      allowEmpty: false
+      default: spacial-workspace-background-image-tokoyo
+      options:
+         - 
+            label: Tokoyo
+            value: spacial-workspace-background-image-tokoyo
+         - 
+            label: Skyline
+            value: spacial-workspace-background-image-skyline
+         - 
+            label: Spider Man Multiverse
+            value: spacial-workspace-background-image-spiderman
+         - 
+            label: Neon Sunrise
+            value: spacial-workspace-background-image-neonsunrise
+         -
+            label: Custom
+            value: spacial-workspace-background-image-custom
+   -
+      id: spacial-workspace-background-image-dark-custom-option
+      title: Custom Workspace Background Image
+      description: Customize the background image. Use the default format below for an online image. Use the following format to point to a local file - url("app://local/D:/Pictures/Mountain.jpg").
+      type: variable-text
+      default: url("https://")
+   -
+      id: spacial-workspace-background-workspace-slider-dark
+      title: Container opacity
+      type: variable-number-slider
+      min: 0
+      max: 1
+      step: 0.05
+      default: 0.4
+   - 
+      id: spacial-workspace-background-blur-dark
+      title: Background blur
+      type: variable-number-slider
+      min: 0
+      max: 20
+      step: 1
+      default: 5
+      format: px
+   - 
+      id: spacial-workspace-background-brightness-dark
+      title: Background brightness
+      type: variable-number-slider
+      min: 0
+      max: 1
+      step: 0.05
+      default: 0.7
+   - 
+      id: spacial-file-explorer-heading
+      title: File Explorer
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: spacial-file-icons
+      title: Enable File Icons
+      description: Customize your file icons
+      type: class-toggle
+   -
+      id: spacial-folder-icons
+      title: Enable folder Icons
+      description: Customize your folder icons
+      type: class-toggle
+   -
+      id: spacial-colorful-frame-heading
+      title: Colorful Frame
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: spacial-colorful-frame
+      title: Enable Colorful Frame
+      description: This does not work with Transluent Window or Custom Background
+      type: class-toggle
+   -
+      id: spacial-colorful-frame-opacity
+      title: Colorful Frame Opacity
+      type: variable-number-slider
+      default: 1
+      min: 0
+      max: 1
+      step: 0.05
+   - 
+      id: spacial-rainbow-folders-heading
+      title: Folder Colors
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: folder-color-options
+      title: Folder Colors
+      description: Enable or disable rainbow folders (original rainbow folders created by Lithou)
+      type: class-select
+      allowEmpty: false
+      default: folder-default
+      options:
+         -
+               label: Default
+               value: folder-default
+         -
+               label: Rainbow Folder Titles
+               value: folder-rainbow-titles
+         -
+               label: Rainbow Folder Backgrounds
+               value: folder-rainbow-backgrounds
+   -
+      id: spacial-translucent-window-heading
+      title: Translucent Window
+      type: heading
+      level: 2
+      collapsed: true
+   -
+      id: spacial-translucent-window
+      title: Translucent Window
+      description: Make the window 100% translucent.
+      type: class-toggle
+   - 
+      id: spacial-translucent-window-opacity
+      title: Background opacity
+      type: variable-number-slider
+      min: 0
+      max: 1
+      step: 0.1
+      default: 0.5
+
+   -
+      id: spacial-show-hide-elements-header
+      title: Show/Hide UI Elements
+      description: Toggle Visibility of UI Elements
+      type: heading
+      level: 1
+      collapsed: true
+   -   
+      id: spacial-floating-titlebar
+      title: Floating titlebar
+      type: class-toggle
+   -
+      id: spacial-floating-status-bar
+      title: Floating Status Bar
+      type: class-toggle
+   -   
+      id: spacial-hide-status-bar
+      title: Hide Status Bar
+      type: class-toggle   
+   -
+      id: spacial-toggle-metadata
+      title: Hide Metadata
+      type: class-toggle
+   -   
+      id: spacial-tooltip-toggle
+      title: Hide Tooltips
+      type: class-toggle
+   -
+      id: spacial-features
+      title: Featues
+      description: Toggle feautes
+      type: heading
+      level: 1
+      collapsed: true
+   -   
+      id: spacial-labeled-nav
+      title: Text labels for primary navigation
+      type: class-toggle
+
+*/
+/* @plugins
+core:
+- audio-recorder
+- backlink
+- command-palette
+- daily-notes
+- editor-status
+- file-explorer
+- file-recovery
+- global-search
+- graph
+- outgoing-link
+- outline
+- page-preview
+- starred
+- switcher
+- sync
+- tag-pane
+
+community:
+- dataview
+- obsidian-style-settings
+
+*/

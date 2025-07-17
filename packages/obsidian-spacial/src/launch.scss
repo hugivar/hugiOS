@@ -1,0 +1,17 @@
+/*────────────────────────────────────
+        Vault Launch Progress
+────────────────────────────────────*/
+.is-loading:before,
+.search-result-container.is-loading:before {
+    background-color: var(--background-primary);
+}
+
+.progress-bar {
+    background: var(--background-primary);
+}
+
+.progress-bar-indicator {
+    width: 35%;
+    overflow: hidden;
+    border-radius: var(--size-4-3);
+}
