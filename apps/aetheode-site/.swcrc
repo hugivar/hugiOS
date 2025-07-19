@@ -1,0 +1,9 @@
+{
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "config": ["./config/*"],
+      "components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
+    }
+}
