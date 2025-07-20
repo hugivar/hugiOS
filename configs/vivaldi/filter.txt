@@ -1,6 +1,6 @@
 ! Title: Personal Cosmetic Filter
 ! Description: Reddit ads, YouTube Shorts, and general web annoyances
-! Version: 1.4
+! Version: 1.5
 ! Last modified: 2025-07-04
 
 ! ========================================
@@ -256,8 +256,6 @@ youtube.com##ytd-search-suggestion-renderer:has-text(/shorts/i)
 ! Newsletter popups and subscription prompts
 ##[id*="newsletter"]
 ##[class*="newsletter"]
-##[id*="subscribe"]:not([id*="youtube"])
-##[class*="subscribe"]:not([class*="youtube"])
 ##[class*="email-signup"]
 ##[class*="signup-modal"]
 ##[class*="newsletter-popup"]
