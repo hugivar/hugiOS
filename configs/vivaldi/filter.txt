@@ -1,6 +1,6 @@
 ! Title: Personal Cosmetic Filter
 ! Description: Reddit ads, YouTube Shorts, and general web annoyances
-! Version: 1.7
+! Version: 1.8
 ! Last modified: 2025-07-04
 
 ! ========================================
@@ -253,18 +253,7 @@ youtube.com##ytd-search-suggestion-renderer:has-text(/shorts/i)
 ##.consent-banner
 ##[data-testid*="cookie"]
 
-! Newsletter popups and subscription prompts
-##[id*="newsletter"]
-##[class*="newsletter"]
-##[class*="email-signup"]
-##[class*="signup-modal"]
-##[class*="newsletter-popup"]
-##[id*="email-capture"]
-
 ! Chat widgets and support bubbles
-##[id*="chat"]:not([id*="twitch"])
-##[class*="chat"]:not([class*="twitch"])
-##[id*="support-widget"]
 ##[class*="support-widget"]
 ##[id*="intercom"]
 ##[class*="intercom"]
@@ -314,3 +303,76 @@ youtube.com##ytd-search-suggestion-renderer:has-text(/shorts/i)
 ##[id*="survey-popup"]
 ##[class*="user-survey"]
 
+! ========================================
+! PERFORMANCE & PRIVACY
+! ========================================
+
+! Block common ad servers
+||doubleclick.net^
+||googleadservices.com^
+||googlesyndication.com^
+||amazon-adsystem.com^
+||facebook.com/tr^
+||google-analytics.com^
+||googletagmanager.com^
+
+! ========================================
+! SITE SPECIFIC ANNOYANCES
+! ========================================
+
+! Twitter/X promoted content
+twitter.com##[data-testid="tweet"]:has([data-testid="promotedIndicator"])
+x.com##[data-testid="tweet"]:has([data-testid="promotedIndicator"])
+twitter.com##[data-testid="placementTracking"]
+x.com##[data-testid="placementTracking"]
+
+! LinkedIn promoted posts
+linkedin.com##[data-urn*="sponsoredUpdate"]
+linkedin.com##.feed-shared-update-v2:has([data-urn*="sponsoredUpdate"])
+
+! Facebook sponsored posts
+facebook.com##[data-pagelet="FeedUnit_0"]:has([data-testid="story-subtitle"]:has-text(/Sponsored/i))
+facebook.com##[role="article"]:has([aria-label*="Sponsored"])
+
+! Instagram sponsored posts
+instagram.com##article:has([data-testid="sponsored-post"])
+instagram.com##[data-testid="story-item"]:has([data-testid="sponsored-label"])
+
+! News sites - common annoyances
+##[class*="paywall"]
+##[class*="subscription-wall"]
+##[class*="premium-content"]
+##[class*="article-limit"]
+
+! ========================================
+! TARGETED GOOGLE SIGN-IN POPUP BLOCKING
+! ========================================
+
+! Block the most intrusive Google One Tap prompts
+||accounts.google.com/gsi/client$script,third-party
+||accounts.google.com/gsi/button$script,third-party
+##div[id*="g_id_"]
+##div[class*="g_id_"]
+##div[data-g-one-tap]
+##div[class*="one-tap"]
+##div[class*="onetap"]
+##div[jsname="V68bde"]
+##div[data-client-id][data-callback]
+
+! Block auto-appearing credential pickers
+##div[id*="credential_picker"]
+##div[class*="credential_picker"]
+##div[data-account-chooser-dialog]
+
+! Block intrusive overlays and popups (but not inline buttons)
+##div[class*="modal"]:has(div[class*="google-signin"])
+##div[class*="overlay"]:has(div[class*="google-signin"])
+##div[class*="popup"]:has(div[class*="google-signin"])
+##div[role="dialog"]:has(div[class*="google-signin"])
+##div[class*="lightbox"]:has(div[class*="google-signin"])
+
+! Block auto-prompting smart lock
+##div[class*="smartlock"]
+
+! Block specific intrusive Google auth iframes
+##iframe[src*="accounts.google.com/gsi"]
