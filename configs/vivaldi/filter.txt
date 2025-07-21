@@ -238,16 +238,3 @@ youtube.com##[title*="Create Short"]
 youtube.com##[role="option"]:has-text(/shorts/i)
 youtube.com##ytd-search-suggestion-renderer:has-text(/shorts/i)
 
-! ========================================
-! PERFORMANCE & PRIVACY
-! ========================================
-
-! Block common ad servers
-||doubleclick.net^
-||googleadservices.com^
-||googlesyndication.com^
-||amazon-adsystem.com^
-||facebook.com/tr^
-||google-analytics.com^
-||googletagmanager.com^
-
