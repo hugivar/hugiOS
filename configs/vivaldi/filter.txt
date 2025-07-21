@@ -1,6 +1,6 @@
 ! Title: Personal Cosmetic Filter
 ! Description: Reddit ads, YouTube Shorts, and general web annoyances
-! Version: 1.6
+! Version: 1.7
 ! Last modified: 2025-07-04
 
 ! ========================================
@@ -237,4 +237,80 @@ youtube.com##[title*="Create Short"]
 ! Remove shorts from search suggestions
 youtube.com##[role="option"]:has-text(/shorts/i)
 youtube.com##ytd-search-suggestion-renderer:has-text(/shorts/i)
+
+! ========================================
+! GENERAL WEB ANNOYANCES
+! ========================================
+
+! Cookie consent banners
+##[id*="cookie"]:not([id*="facebook"])
+##[class*="cookie"]:not([class*="facebook"])
+##[id*="consent"]
+##[class*="consent"]
+##[class*="gdpr"]
+##[id*="gdpr"]
+##.cookie-banner
+##.consent-banner
+##[data-testid*="cookie"]
+
+! Newsletter popups and subscription prompts
+##[id*="newsletter"]
+##[class*="newsletter"]
+##[class*="email-signup"]
+##[class*="signup-modal"]
+##[class*="newsletter-popup"]
+##[id*="email-capture"]
+
+! Chat widgets and support bubbles
+##[id*="chat"]:not([id*="twitch"])
+##[class*="chat"]:not([class*="twitch"])
+##[id*="support-widget"]
+##[class*="support-widget"]
+##[id*="intercom"]
+##[class*="intercom"]
+##[id*="zendesk"]
+##[class*="zendesk"]
+##[class*="chat-bubble"]
+##[class*="help-widget"]
+
+! Social media share widgets
+##[class*="social-share"]
+##[class*="share-buttons"]
+##[id*="social-share"]
+##[class*="addthis"]
+##[class*="sharethis"]
+
+! App download prompts
+##[class*="app-banner"]
+##[id*="app-banner"]
+##[class*="mobile-app"]
+##[class*="download-app"]
+##[data-testid*="app-banner"]
+
+! Notification permission prompts
+##[class*="notification-prompt"]
+##[class*="push-notification"]
+##[id*="notification-permission"]
+
+! Rating and review prompts
+##[class*="rating-prompt"]
+##[class*="review-prompt"]
+##[id*="rating-modal"]
+##[class*="feedback-modal"]
+
+! Privacy policy and terms popups
+##[class*="privacy-notice"]
+##[class*="terms-popup"]
+##[id*="privacy-banner"]
+
+! Video autoplay overlays
+##[class*="autoplay-overlay"]
+##[class*="video-overlay"]
+##[id*="video-prompt"]
+
+! Survey and feedback widgets
+##[class*="survey-widget"]
+##[class*="feedback-widget"]
+##[id*="survey-popup"]
+##[class*="user-survey"]
 
