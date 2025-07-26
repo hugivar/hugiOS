@@ -1,7 +1,7 @@
 ! Title: Personal Cosmetic Filter
-! Description: Reddit ads, YouTube Shorts, and general web annoyances
-! Version: 1.8
-! Last modified: 2025-07-04
+! Description: Reddit ads, YouTube Shorts, YouTube Playables, and general web annoyances
+! Version: 1.9
+! Last modified: 2025-07-26
 
 ! ========================================
 ! REDDIT - ADS & ANNOYANCES
@@ -237,6 +237,119 @@ youtube.com##[title*="Create Short"]
 ! Remove shorts from search suggestions
 youtube.com##[role="option"]:has-text(/shorts/i)
 youtube.com##ytd-search-suggestion-renderer:has-text(/shorts/i)
+
+! ========================================
+! YOUTUBE - PLAYABLES COMPLETE REMOVAL
+! ========================================
+
+! Main Playables shelf on homepage
+youtube.com##ytd-rich-shelf-renderer:has([title*="Playables" i])
+youtube.com##ytd-rich-shelf-renderer:has([aria-label*="Playables" i])
+youtube.com##ytd-rich-shelf-renderer:has([title*="Games" i])
+youtube.com##[tab-title="Playables"]
+youtube.com##[shelf-title="Playables"]
+
+! Playables tab and navigation
+youtube.com##tp-yt-paper-tab:has-text(/^Playables$/i)
+youtube.com##[role="tab"]:has-text(/^Playables$/i)
+youtube.com##yt-tab-shape:has-text(/^Playables$/i)
+youtube.com##[href="/playables"]
+youtube.com##[href^="/playables/"]
+youtube.com##a[href*="/playables/"]
+
+! Individual Playables items in feeds
+youtube.com##ytd-game-card-renderer
+youtube.com##ytd-playables-item-renderer
+youtube.com##ytd-rich-item-renderer:has([href*="/playables/"])
+youtube.com##ytd-compact-game-renderer
+youtube.com##[data-context-item-type="playable"]
+
+! Playables section in search results
+youtube.com##ytd-shelf-renderer:has([title*="Playables" i])
+youtube.com##ytd-shelf-renderer:has([title*="Games" i])
+youtube.com##ytd-video-renderer:has([aria-label*="Playables" i])
+
+! Playables player and game elements
+youtube.com##ytd-playables-player
+youtube.com##ytd-game-player-renderer
+youtube.com##[page-subtype="playables"]
+youtube.com##.playables-player
+youtube.com##[class*="game-player"]
+
+! Playables in subscription and trending feeds
+youtube.com##ytd-grid-playable-renderer
+youtube.com##ytd-rich-grid-playable
+youtube.com##[data-playable="true"]
+youtube.com##[is-playable="true"]
+
+! Playables suggestions and recommendations
+youtube.com##ytd-compact-playable-renderer
+youtube.com##[aria-label*="Play game"]
+youtube.com##[title*="Play game"]
+youtube.com##[data-testid*="playable"]
+
+! Mobile YouTube Playables
+youtube.com##[data-playables="true"]
+youtube.com##[class*="playables-shelf"]
+youtube.com##.ytd-playables-shelf-renderer
+
+! Playables creation and upload prompts
+youtube.com##[aria-label*="Upload game"]
+youtube.com##[title*="Upload game"]
+youtube.com##[aria-label*="Create Playable"]
+youtube.com##[title*="Create Playable"]
+
+! Playables in community and channel tabs
+youtube.com##ytd-backstage-post-thread-renderer:has([href*="/playables/"])
+youtube.com##ytd-post-renderer:has([href*="/playables/"])
+youtube.com##[tab-identifier="playables"]
+
+! Playables-specific UI elements and containers
+youtube.com##ytd-playables-lockup-view-model
+youtube.com##ytd-playables-shelf-renderer
+youtube.com##ytd-game-shelf-renderer
+youtube.com##[class*="playables-container"]
+youtube.com##[id*="playables-container"]
+
+! Gaming category that might include Playables
+youtube.com##ytd-rich-shelf-renderer:has([title*="Gaming" i]):has([href*="/playables/"])
+youtube.com##[gaming-shelf]:has([href*="/playables/"])
+
+! Generic catch-all for playables content
+youtube.com##*[href*="/playables/"]
+youtube.com##*[class*="playables"]:not([class*="non-playables"])
+youtube.com##*[id*="playables"]
+youtube.com##*[class*="game-card"]
+youtube.com##*[data-*="playable"]
+
+! Block playables-related network requests
+||youtube.com/youtubei/v1/playables/*
+||youtube.com/api/stats/playables/*
+||youtube.com/playables/*
+
+! Hide playables notifications
+youtube.com##ytd-notification-renderer:has([href*="/playables/"])
+youtube.com##[notification-type="playable"]
+
+! Remove playables from watch/play history
+youtube.com##ytd-video-renderer:has([href*="/playables/"]) 
+youtube.com##[class*="watch-history"] *[href*="/playables/"]
+youtube.com##[class*="play-history"] *[href*="/playables/"]
+
+! Playables creation prompts in studio
+youtube.com##[aria-label*="Create Playable"]
+youtube.com##[title*="Create Playable"]
+youtube.com##[aria-label*="Upload Game"]
+youtube.com##[title*="Upload Game"]
+
+! Remove playables from search suggestions
+youtube.com##[role="option"]:has-text(/playables/i)
+youtube.com##ytd-search-suggestion-renderer:has-text(/playables/i)
+youtube.com##[role="option"]:has-text(/games/i)
+
+! Block gaming-related shelves that contain playables
+youtube.com##ytd-rich-shelf-renderer:has([shelf-title*="Games"]):has(*[href*="/playables/"])
+youtube.com##ytd-horizontal-card-list-renderer:has([href*="/playables/"])
 
 ! ========================================
 ! GENERAL WEB ANNOYANCES
