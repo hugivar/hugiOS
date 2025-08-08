@@ -1,6 +1,6 @@
 ! Title: Personal Cosmetic Filter
 ! Description: Reddit ads, YouTube Shorts, YouTube Playables, YouTube Music Mixes, and general web annoyances
-! Version: 1.10
+! Version: 1.11
 ! Last modified: 2025-08-08
 
 ! ========================================
@@ -143,291 +143,200 @@ reddit.com##*:has-text(/^advertisement$/i)
 ||reddit.com/api/click^$xmlhttprequest
 
 ! ========================================
-! YOUTUBE - SHORTS COMPLETE REMOVAL
+! YOUTUBE - SHORTS COMPLETE REMOVAL (ABP Compatible)
 ! ========================================
 
-! Main Shorts shelf on homepage
+! Block Shorts by main attributes
 youtube.com##[is-shorts]
-youtube.com##ytd-rich-shelf-renderer:has([title*="Shorts" i])
-youtube.com##ytd-rich-shelf-renderer:has([aria-label*="Shorts" i])
 youtube.com##[tab-title="Shorts"]
-
-! Shorts tab in channel pages
-youtube.com##tp-yt-paper-tab:has-text(/^Shorts$/i)
-youtube.com##[role="tab"]:has-text(/^Shorts$/i)
-youtube.com##yt-tab-shape:has-text(/^Shorts$/i)
-
-! Shorts section in search results
-youtube.com##ytd-shelf-renderer:has([title*="Shorts" i])
-youtube.com##ytd-video-renderer:has([aria-label*="Shorts" i])
 youtube.com##[overlay-style="SHORTS"]
-
-! Individual Shorts videos in feeds
-youtube.com##ytd-video-renderer:has([href*="/shorts/"])
-youtube.com##ytd-rich-item-renderer:has([href*="/shorts/"])
-youtube.com##ytd-compact-video-renderer:has([href*="/shorts/"])
-
-! Shorts player and related elements
-youtube.com##ytd-shorts
-youtube.com##ytd-reel-video-renderer
 youtube.com##[page-subtype="shorts"]
-youtube.com##ytd-shorts-player
-
-! Shorts in subscription feed
-youtube.com##ytd-grid-video-renderer:has([href*="/shorts/"])
-youtube.com##ytd-rich-grid-media:has([href*="/shorts/"])
-
-! Shorts suggestions and up next
-youtube.com##ytd-compact-video-renderer:has([title*="Shorts" i])
-youtube.com##ytd-video-meta-block:has([href*="/shorts/"])
-
-! Mobile YouTube Shorts
 youtube.com##[data-shorts="true"]
 youtube.com##[is-short="true"]
-youtube.com##.ytd-shorts-shelf-renderer
 
-! Shorts remix and creation prompts
-youtube.com##ytd-shorts-remix-button
-youtube.com##[aria-label*="Create a Short"]
-youtube.com##[title*="Create a Short"]
-
-! Shorts navigation and menus
+! Block Shorts by href patterns
 youtube.com##[href="/shorts"]
 youtube.com##[href^="/shorts/"]
-youtube.com##a[href*="/shorts/"]:not([href*="/shorts/subscriptions"])
+youtube.com##[href*="/shorts/"]:not([href*="/shorts/subscriptions"])
 
-! Shorts in trending page
-youtube.com##ytd-expanded-shelf-contents-renderer:has([href*="/shorts/"])
-youtube.com##ytd-video-renderer:has([href*="/shorts/"])
-
-! Shorts watermarks and overlays
-youtube.com##.shorts-video-overlay
-youtube.com##[class*="shorts-player"]
-youtube.com##[id*="shorts-player"]
-
-! Community tab shorts
-youtube.com##ytd-backstage-post-thread-renderer:has([href*="/shorts/"])
-youtube.com##ytd-post-renderer:has([href*="/shorts/"])
-
-! Shorts-specific UI elements
+! Block Shorts renderers and elements
+youtube.com##ytd-shorts
+youtube.com##ytd-reel-video-renderer
+youtube.com##ytd-shorts-player
+youtube.com##ytd-shorts-remix-button
 youtube.com##ytd-shorts-lockup-view-model
 youtube.com##ytd-shorts-shelf-renderer
 youtube.com##ytd-reel-shelf-renderer
 
-! Generic catch-all for shorts content
-youtube.com##*[href*="/shorts/"]:not([href*="/shorts/subscriptions"])
-youtube.com##*[class*="shorts"]:not([class*="shortcuts"])
-youtube.com##*[id*="shorts"]:not([id*="shortcuts"])
-
-! Block shorts-related network requests
-||youtube.com/youtubei/v1/shorts/*
-||youtube.com/api/stats/shorts/*
-
-! Hide shorts notifications
-youtube.com##ytd-notification-renderer:has([href*="/shorts/"])
-
-! Remove shorts from watch history
-youtube.com##ytd-video-renderer:has([href*="/shorts/"]) 
-youtube.com##[class*="watch-history"] *[href*="/shorts/"]
-
-! Shorts creation prompts in studio
+! Block Shorts by aria-label and title attributes
+youtube.com##[aria-label*="Shorts"]
+youtube.com##[title*="Shorts"]
+youtube.com##[aria-label*="Create a Short"]
+youtube.com##[title*="Create a Short"]
 youtube.com##[aria-label*="Create Short"]
 youtube.com##[title*="Create Short"]
 
-! Remove shorts from search suggestions
-youtube.com##[role="option"]:has-text(/shorts/i)
-youtube.com##ytd-search-suggestion-renderer:has-text(/shorts/i)
+! Block Shorts by class patterns
+youtube.com##[class*="shorts-video-overlay"]
+youtube.com##[class*="shorts-player"]
+youtube.com##[class*="shorts"]:not([class*="shortcuts"])
+youtube.com##.ytd-shorts-shelf-renderer
 
-! ========================================
-! YOUTUBE - MUSIC MIXES COMPLETE REMOVAL
-! ========================================
+! Block Shorts by ID patterns
+youtube.com##[id*="shorts-player"]
+youtube.com##[id*="shorts"]:not([id*="shortcuts"])
 
-! Block videos with "Mix -" title format (YouTube's auto-generated mixes)
-youtube.com##ytd-rich-item-renderer:has(#video-title:contains(/^Mix\s*-/i))
-youtube.com##ytd-compact-video-renderer:has(#video-title:contains(/^Mix\s*-/i))
-youtube.com##ytd-video-renderer:has(#video-title:contains(/^Mix\s*-/i))
-youtube.com##ytd-grid-video-renderer:has(#video-title:contains(/^Mix\s*-/i))
+! Block Shorts tabs (simplified approach)
+youtube.com##tp-yt-paper-tab[tab-title="Shorts"]
+youtube.com##[role="tab"][aria-label*="Shorts"]
+youtube.com##yt-tab-shape[tab-title="Shorts"]
 
-! Block videos starting with "Mix -" in aria-labels
-youtube.com##ytd-rich-item-renderer:has([aria-label^="Mix -"])
-youtube.com##ytd-compact-video-renderer:has([aria-label^="Mix -"])
-youtube.com##ytd-video-renderer:has([aria-label^="Mix -"])
+! Block all links to shorts (broad selector)
+youtube.com##a[href*="/shorts/"]:not([href*="/shorts/subscriptions"])
 
-! Block the broader "mix" pattern as fallback
-youtube.com##ytd-rich-item-renderer:has(#video-title:contains(/mix/i))
-youtube.com##ytd-compact-video-renderer:has(#video-title:contains(/mix/i))
-youtube.com##ytd-video-renderer:has(#video-title:contains(/mix/i))
-youtube.com##ytd-grid-video-renderer:has(#video-title:contains(/mix/i))
+! Block Shorts network requests
+||youtube.com/youtubei/v1/shorts/*
+||youtube.com/api/stats/shorts/*
 
-! Block YouTube's auto-generated mixes by aria-label
-youtube.com##ytd-rich-item-renderer:has([aria-label*="Mix"])
-youtube.com##ytd-compact-video-renderer:has([aria-label*="Mix"])
-youtube.com##ytd-video-renderer:has([aria-label*="Mix"])
+! Block Shorts in various contexts by URL
+youtube.com##ytd-video-renderer[href*="/shorts/"]
+youtube.com##ytd-rich-item-renderer[href*="/shorts/"]
+youtube.com##ytd-compact-video-renderer[href*="/shorts/"]
+youtube.com##ytd-grid-video-renderer[href*="/shorts/"]
+youtube.com##ytd-rich-grid-media[href*="/shorts/"]
 
-! Block playlists and compilations
-youtube.com##ytd-rich-item-renderer:has(#video-title:contains(/playlist/i))
-youtube.com##ytd-rich-item-renderer:has(#video-title:contains(/compilation/i))
-youtube.com##ytd-compact-video-renderer:has(#video-title:contains(/playlist/i))
-youtube.com##ytd-compact-video-renderer:has(#video-title:contains(/compilation/i))
+! Block Shorts creation elements
+youtube.com##[aria-label*="Create a Short"]
+youtube.com##[title*="Create a Short"]
+youtube.com##[aria-label*="Create Short"]
+youtube.com##[title*="Create Short"]
 
-! Block music mix shelves on homepage
-youtube.com##ytd-rich-shelf-renderer:has([title*="Mix" i])
-youtube.com##ytd-rich-shelf-renderer:has([title*="Playlist" i])
-youtube.com##ytd-rich-shelf-renderer:has([aria-label*="Mix" i])
+! Block Shorts notifications
+youtube.com##[href*="/shorts/"][class*="notification"]
+youtube.com##ytd-notification-renderer[href*="/shorts/"]
 
-! Block mix recommendations in sidebar
-youtube.com##ytd-compact-autoplay-renderer:has([aria-label*="Mix"])
-youtube.com##ytd-compact-video-renderer:has([title*="Mix" i])
+! Block Shorts in community posts
+youtube.com##ytd-backstage-post-thread-renderer[href*="/shorts/"]
+youtube.com##ytd-post-renderer[href*="/shorts/"]
 
-! Block mix-related metadata and badges
-youtube.com##[class*="mix-badge"]
-youtube.com##[class*="playlist-badge"]:has-text(/mix/i)
-youtube.com##[aria-label*="Auto-generated by YouTube"]
+! Additional specific Shorts elements
+youtube.com##[data-context-item-type="shorts"]
+youtube.com##[video-type="shorts"]
+youtube.com##[content-type="shorts"]
 
-! Block specific mix types (Radio, Station)
-youtube.com##ytd-rich-item-renderer:has(#video-title:contains(/radio/i))
-youtube.com##ytd-rich-item-renderer:has(#video-title:contains(/station/i))
-youtube.com##ytd-compact-video-renderer:has(#video-title:contains(/radio/i))
-youtube.com##ytd-compact-video-renderer:has(#video-title:contains(/station/i))
+! Block Shorts suggestions
+youtube.com##[role="option"][aria-label*="shorts"]
+youtube.com##[role="option"][title*="shorts"]
 
-! Block algorithm-generated music content
-youtube.com##ytd-rich-item-renderer:has([title*="Auto-generated"])
-youtube.com##ytd-compact-video-renderer:has([title*="Auto-generated"])
+! Remove Shorts shelf from YouTube homepage (ABP Compatible)
+youtube.com##ytd-reel-shelf-renderer
+youtube.com##ytd-shorts-shelf-renderer
+youtube.com##[shelf-title*="Shorts"]
+youtube.com##[aria-label*="Shorts shelf"]
+youtube.com##[title*="Shorts shelf"]
+youtube.com##ytd-rich-shelf-renderer[shelf-title*="Shorts"]
 
-! Block mix content in search results
-youtube.com##ytd-video-renderer:has([title*="Mix" i])
-youtube.com##ytd-playlist-renderer:has([title*="Mix" i])
+! Remove YouTube Shorts shelf from homepage
+youtube.com##ytd-reel-shelf-renderer
+youtube.com##ytd-shorts-shelf-renderer
 
-! Block mix notifications and suggestions
-youtube.com##ytd-notification-renderer:has([title*="Mix" i])
-youtube.com##[class*="mix-suggestion"]
+! Remove Shorts shelf from YouTube homepage (ABP Compatible)
+youtube.com##ytd-rich-section-renderer[is-shorts]
+youtube.com##[is-shorts]
+youtube.com##[shelf-title="Shorts"]
+youtube.com##ytd-rich-section-renderer[aria-label*="Shorts"]
 
-! Block YouTube Music mix crossovers
-youtube.com##ytd-rich-item-renderer:has([href*="music.youtube.com"])
-youtube.com##ytd-compact-video-renderer:has([href*="music.youtube.com"])
-
-! Additional specific patterns for "Mix -" format
-youtube.com##ytd-rich-item-renderer:has(#video-title[title^="Mix -"])
-youtube.com##ytd-compact-video-renderer:has(#video-title[title^="Mix -"])
-youtube.com##ytd-video-renderer:has(#video-title[title^="Mix -"])
-
-! Block by thumbnail overlay text
-youtube.com##ytd-rich-item-renderer:has([overlay-text*="Mix"])
-youtube.com##ytd-compact-video-renderer:has([overlay-text*="Mix"])
+! Block YouTube Shorts homepage shelf (2024-2025)
+youtube.com##ytd-rich-section-renderer:has([is-shorts])
+www.youtube.com##ytd-browse[page-subtype="home"] ytd-rich-section-renderer:has([is-shorts])
+youtube.com##ytd-rich-section-renderer:has([is-shorts])
 
 
 ! ========================================
-! YOUTUBE - PLAYABLES COMPLETE REMOVAL
+! YOUTUBE - MUSIC MIXES COMPLETE REMOVAL (ABP Compatible)
 ! ========================================
 
-! Main Playables shelf on homepage
-youtube.com##ytd-rich-shelf-renderer:has([title*="Playables" i])
-youtube.com##ytd-rich-shelf-renderer:has([aria-label*="Playables" i])
-youtube.com##ytd-rich-shelf-renderer:has([title*="Games" i])
+! Remove Mix shelf from YouTube homepage (ABP Compatible)
+youtube.com##ytd-rich-shelf-renderer[shelf-title*="Mix"]
+youtube.com##ytd-rich-section-renderer[title*="Mix"]
+youtube.com##[shelf-title*="Mix"]
+youtube.com##[aria-label*="Mix shelf"]
+
+! Comprehensive Mix shelf removal from homepage
+youtube.com##ytd-rich-shelf-renderer:has(#shelf-title:has-text(/Mix/))
+youtube.com##ytd-rich-section-renderer:has(#title:has-text(/Mix/))
+youtube.com##ytd-rich-shelf-renderer:has([title*="Mix"])
+youtube.com##ytd-rich-shelf-renderer:has([aria-label*="Mix"])
+
+youtube.com##ytd-rich-shelf-renderer:has(#shelf-title:has-text(/Mix/))
+
+! ========================================
+! YOUTUBE - PLAYABLES COMPLETE REMOVAL (ABP Compatible)
+! ========================================
+
+! Block Playables tabs and navigation
 youtube.com##[tab-title="Playables"]
 youtube.com##[shelf-title="Playables"]
-
-! Playables tab and navigation
-youtube.com##tp-yt-paper-tab:has-text(/^Playables$/i)
-youtube.com##[role="tab"]:has-text(/^Playables$/i)
-youtube.com##yt-tab-shape:has-text(/^Playables$/i)
 youtube.com##[href="/playables"]
 youtube.com##[href^="/playables/"]
-youtube.com##a[href*="/playables/"]
+youtube.com##[href*="/playables/"]
 
-! Individual Playables items in feeds
+! Block Playables renderers and elements
 youtube.com##ytd-game-card-renderer
 youtube.com##ytd-playables-item-renderer
-youtube.com##ytd-rich-item-renderer:has([href*="/playables/"])
 youtube.com##ytd-compact-game-renderer
-youtube.com##[data-context-item-type="playable"]
-
-! Playables section in search results
-youtube.com##ytd-shelf-renderer:has([title*="Playables" i])
-youtube.com##ytd-shelf-renderer:has([title*="Games" i])
-youtube.com##ytd-video-renderer:has([aria-label*="Playables" i])
-
-! Playables player and game elements
 youtube.com##ytd-playables-player
 youtube.com##ytd-game-player-renderer
-youtube.com##[page-subtype="playables"]
-youtube.com##.playables-player
-youtube.com##[class*="game-player"]
-
-! Playables in subscription and trending feeds
 youtube.com##ytd-grid-playable-renderer
 youtube.com##ytd-rich-grid-playable
-youtube.com##[data-playable="true"]
-youtube.com##[is-playable="true"]
-
-! Playables suggestions and recommendations
 youtube.com##ytd-compact-playable-renderer
-youtube.com##[aria-label*="Play game"]
-youtube.com##[title*="Play game"]
-youtube.com##[data-testid*="playable"]
-
-! Mobile YouTube Playables
-youtube.com##[data-playables="true"]
-youtube.com##[class*="playables-shelf"]
-youtube.com##.ytd-playables-shelf-renderer
-
-! Playables creation and upload prompts
-youtube.com##[aria-label*="Upload game"]
-youtube.com##[title*="Upload game"]
-youtube.com##[aria-label*="Create Playable"]
-youtube.com##[title*="Create Playable"]
-
-! Playables in community and channel tabs
-youtube.com##ytd-backstage-post-thread-renderer:has([href*="/playables/"])
-youtube.com##ytd-post-renderer:has([href*="/playables/"])
-youtube.com##[tab-identifier="playables"]
-
-! Playables-specific UI elements and containers
 youtube.com##ytd-playables-lockup-view-model
 youtube.com##ytd-playables-shelf-renderer
 youtube.com##ytd-game-shelf-renderer
-youtube.com##[class*="playables-container"]
-youtube.com##[id*="playables-container"]
 
-! Gaming category that might include Playables
-youtube.com##ytd-rich-shelf-renderer:has([title*="Gaming" i]):has([href*="/playables/"])
-youtube.com##[gaming-shelf]:has([href*="/playables/"])
-
-! Generic catch-all for playables content
-youtube.com##*[href*="/playables/"]
-youtube.com##*[class*="playables"]:not([class*="non-playables"])
-youtube.com##*[id*="playables"]
-youtube.com##*[class*="game-card"]
-youtube.com##*[data-*="playable"]
-
-! Block playables-related network requests
-||youtube.com/youtubei/v1/playables/*
-||youtube.com/api/stats/playables/*
-||youtube.com/playables/*
-
-! Hide playables notifications
-youtube.com##ytd-notification-renderer:has([href*="/playables/"])
+! Block Playables by attributes
+youtube.com##[data-context-item-type="playable"]
+youtube.com##[page-subtype="playables"]
+youtube.com##[data-playable="true"]
+youtube.com##[is-playable="true"]
+youtube.com##[data-playables="true"]
+youtube.com##[tab-identifier="playables"]
 youtube.com##[notification-type="playable"]
 
-! Remove playables from watch/play history
-youtube.com##ytd-video-renderer:has([href*="/playables/"]) 
-youtube.com##[class*="watch-history"] *[href*="/playables/"]
-youtube.com##[class*="play-history"] *[href*="/playables/"]
+! Block Playables by class patterns
+youtube.com##[class*="playables-player"]
+youtube.com##[class*="game-player"]
+youtube.com##[class*="playables-shelf"]
+youtube.com##[class*="playables-container"]
+youtube.com##[class*="game-card"]
 
-! Playables creation prompts in studio
+! Block Playables by ID patterns
+youtube.com##[id*="playables-container"]
+youtube.com##[id*="playables"]
+
+! Block Playables by aria-label and title
+youtube.com##[aria-label*="Playables"]
+youtube.com##[title*="Playables"]
+youtube.com##[aria-label*="Play game"]
+youtube.com##[title*="Play game"]
+youtube.com##[aria-label*="Upload game"]
+youtube.com##[title*="Upload game"]
 youtube.com##[aria-label*="Create Playable"]
 youtube.com##[title*="Create Playable"]
 youtube.com##[aria-label*="Upload Game"]
 youtube.com##[title*="Upload Game"]
 
-! Remove playables from search suggestions
-youtube.com##[role="option"]:has-text(/playables/i)
-youtube.com##ytd-search-suggestion-renderer:has-text(/playables/i)
-youtube.com##[role="option"]:has-text(/games/i)
+! Block Playables by data attributes
+youtube.com##[data-testid*="playable"]
+youtube.com##[data-*="playable"]
 
-! Block gaming-related shelves that contain playables
-youtube.com##ytd-rich-shelf-renderer:has([shelf-title*="Games"]):has(*[href*="/playables/"])
-youtube.com##ytd-horizontal-card-list-renderer:has([href*="/playables/"])
+! Block Playables network requests
+||youtube.com/youtubei/v1/playables/*
+||youtube.com/api/stats/playables/*
+||youtube.com/playables/*
+
+! Block gaming shelves (simplified)
+youtube.com##[gaming-shelf]
 
 ! ========================================
 ! GENERAL WEB ANNOYANCES
