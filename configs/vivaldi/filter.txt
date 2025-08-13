@@ -1,7 +1,7 @@
 ! Title: Personal Cosmetic Filter
 ! Description: Reddit ads, YouTube Shorts, YouTube Playables, YouTube Music Mixes, and general web annoyances
-! Version: 1.11
-! Last modified: 2025-08-08
+! Version: 1.12
+! Last modified: 2025-08-13
 
 ! ========================================
 ! REDDIT - ADS & ANNOYANCES
@@ -253,7 +253,7 @@ youtube.com##ytd-rich-section-renderer:has([is-shorts])
 
 
 ! ========================================
-! YOUTUBE - MUSIC MIXES COMPLETE REMOVAL (ABP Compatible)
+! YOUTUBE - MUSIC MIXES COMPLETE REMOVAL
 ! ========================================
 
 ! Remove Mix shelf from YouTube homepage (ABP Compatible)
@@ -271,7 +271,7 @@ youtube.com##ytd-rich-shelf-renderer:has([aria-label*="Mix"])
 youtube.com##ytd-rich-shelf-renderer:has(#shelf-title:has-text(/Mix/))
 
 ! ========================================
-! YOUTUBE - PLAYABLES COMPLETE REMOVAL (ABP Compatible)
+! YOUTUBE - PLAYABLES COMPLETE REMOVAL
 ! ========================================
 
 ! Block Playables tabs and navigation
@@ -337,6 +337,37 @@ youtube.com##[data-*="playable"]
 
 ! Block gaming shelves (simplified)
 youtube.com##[gaming-shelf]
+
+! ========================================
+! YOUTUBE - SIDEBAR CLEANUP
+! ========================================
+
+! Remove "Your podcasts" from YouTube navigation  
+youtube.com##[href="/feed/podcasts"]
+
+! Remove "Your videos" from YouTube navigation
+youtube.com##ytd-guide-entry-renderer:has(#endpoint[href*="/channel/"][href*="/videos"])
+
+! Remove "YouTube Music" from YouTube navigation
+youtube.com##[href*="music.youtube.com"]
+
+! Remove "Downloads" from YouTube navigation
+youtube.com##[href="/feed/downloads"]
+
+! Targeting just the 2nd section to remove it (subscriptions is usually 2nd)
+youtube.com##ytd-guide-renderer > #sections > ytd-guide-section-renderer:nth-child(2)
+
+! Targeting just the 4th section to remove it (more from youtube is usually 4th)
+youtube.com##ytd-guide-renderer > #sections > ytd-guide-section-renderer:nth-child(4)
+
+youtube.com##a[href*="/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ"]
+youtube.com##ytd-guide-entry-renderer[line-end-style]:has([title="Fashion & Beauty"])
+youtube.com##a[href*="/channel/UCkYQyvc_i9hXEo4xic9Hh2g"]
+youtube.com##ytd-guide-entry-renderer[line-end-style]:has([title="Fashion & Beauty"])
+youtube.com##a[href="/gaming"]
+youtube.com##ytd-guide-entry-renderer:has([href="/gaming"])
+youtube.com##ytd-guide-entry-renderer:has([title="Gaming"])
+
 
 ! ========================================
 ! GENERAL WEB ANNOYANCES
