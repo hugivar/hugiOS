@@ -1,7 +1,7 @@
 ! Title: Personal Cosmetic Filter
 ! Description: Reddit ads, YouTube Shorts, YouTube Playables, YouTube Music Mixes, and general web annoyances
-! Version: 1.12
-! Last modified: 2025-08-13
+! Version: 1.13
+! Last modified: 2025-08-31
 
 ! ========================================
 ! REDDIT - ADS & ANNOYANCES
@@ -143,67 +143,13 @@ reddit.com##*:has-text(/^advertisement$/i)
 ||reddit.com/api/click^$xmlhttprequest
 
 ! ========================================
-! YOUTUBE - SHORTS COMPLETE REMOVAL (ABP Compatible)
+! YOUTUBE - SHORTS SELECTIVE REMOVAL (History Preserved)
 ! ========================================
 
-! Block Shorts by main attributes
-youtube.com##[is-shorts]
-youtube.com##[tab-title="Shorts"]
-youtube.com##[overlay-style="SHORTS"]
-youtube.com##[page-subtype="shorts"]
-youtube.com##[data-shorts="true"]
-youtube.com##[is-short="true"]
-
-! Block Shorts by href patterns
-youtube.com##[href="/shorts"]
-youtube.com##[href^="/shorts/"]
-youtube.com##[href*="/shorts/"]:not([href*="/shorts/subscriptions"])
-
-! Block Shorts renderers and elements
-youtube.com##ytd-shorts
-youtube.com##ytd-reel-video-renderer
-youtube.com##ytd-shorts-player
-youtube.com##ytd-shorts-remix-button
-youtube.com##ytd-shorts-lockup-view-model
-youtube.com##ytd-shorts-shelf-renderer
-youtube.com##ytd-reel-shelf-renderer
-
-! Block Shorts by aria-label and title attributes
-youtube.com##[aria-label*="Shorts"]
-youtube.com##[title*="Shorts"]
-youtube.com##[aria-label*="Create a Short"]
-youtube.com##[title*="Create a Short"]
-youtube.com##[aria-label*="Create Short"]
-youtube.com##[title*="Create Short"]
-
-! Block Shorts by class patterns
-youtube.com##[class*="shorts-video-overlay"]
-youtube.com##[class*="shorts-player"]
-youtube.com##[class*="shorts"]:not([class*="shortcuts"])
-youtube.com##.ytd-shorts-shelf-renderer
-
-! Block Shorts by ID patterns
-youtube.com##[id*="shorts-player"]
-youtube.com##[id*="shorts"]:not([id*="shortcuts"])
-
-! Block Shorts tabs (simplified approach)
+! Block Shorts tabs in main navigation
 youtube.com##tp-yt-paper-tab[tab-title="Shorts"]
 youtube.com##[role="tab"][aria-label*="Shorts"]
 youtube.com##yt-tab-shape[tab-title="Shorts"]
-
-! Block all links to shorts (broad selector)
-youtube.com##a[href*="/shorts/"]:not([href*="/shorts/subscriptions"])
-
-! Block Shorts network requests
-||youtube.com/youtubei/v1/shorts/*
-||youtube.com/api/stats/shorts/*
-
-! Block Shorts in various contexts by URL
-youtube.com##ytd-video-renderer[href*="/shorts/"]
-youtube.com##ytd-rich-item-renderer[href*="/shorts/"]
-youtube.com##ytd-compact-video-renderer[href*="/shorts/"]
-youtube.com##ytd-grid-video-renderer[href*="/shorts/"]
-youtube.com##ytd-rich-grid-media[href*="/shorts/"]
 
 ! Block Shorts creation elements
 youtube.com##[aria-label*="Create a Short"]
@@ -211,34 +157,13 @@ youtube.com##[title*="Create a Short"]
 youtube.com##[aria-label*="Create Short"]
 youtube.com##[title*="Create Short"]
 
-! Block Shorts notifications
-youtube.com##[href*="/shorts/"][class*="notification"]
-youtube.com##ytd-notification-renderer[href*="/shorts/"]
-
-! Block Shorts in community posts
-youtube.com##ytd-backstage-post-thread-renderer[href*="/shorts/"]
-youtube.com##ytd-post-renderer[href*="/shorts/"]
-
-! Additional specific Shorts elements
-youtube.com##[data-context-item-type="shorts"]
-youtube.com##[video-type="shorts"]
-youtube.com##[content-type="shorts"]
-
-! Block Shorts suggestions
-youtube.com##[role="option"][aria-label*="shorts"]
-youtube.com##[role="option"][title*="shorts"]
-
-! Remove Shorts shelf from YouTube homepage (ABP Compatible)
+! Remove Shorts shelf from YouTube homepage
 youtube.com##ytd-reel-shelf-renderer
 youtube.com##ytd-shorts-shelf-renderer
 youtube.com##[shelf-title*="Shorts"]
 youtube.com##[aria-label*="Shorts shelf"]
 youtube.com##[title*="Shorts shelf"]
 youtube.com##ytd-rich-shelf-renderer[shelf-title*="Shorts"]
-
-! Remove YouTube Shorts shelf from homepage
-youtube.com##ytd-reel-shelf-renderer
-youtube.com##ytd-shorts-shelf-renderer
 
 ! Remove Shorts shelf from YouTube homepage (ABP Compatible)
 youtube.com##ytd-rich-section-renderer[is-shorts]
@@ -249,7 +174,14 @@ youtube.com##ytd-rich-section-renderer[aria-label*="Shorts"]
 ! Block YouTube Shorts homepage shelf (2024-2025)
 youtube.com##ytd-rich-section-renderer:has([is-shorts])
 www.youtube.com##ytd-browse[page-subtype="home"] ytd-rich-section-renderer:has([is-shorts])
-youtube.com##ytd-rich-section-renderer:has([is-shorts])
+
+! Block Shorts in recommended/suggestions (but not history)
+youtube.com##ytd-compact-video-renderer[href*="/shorts/"]:not(.ytd-section-list-renderer)
+youtube.com##ytd-rich-item-renderer[href*="/shorts/"]:not(.ytd-section-list-renderer)
+
+! Block Shorts suggestions in sidebar
+youtube.com##[role="option"][aria-label*="shorts"]
+youtube.com##[role="option"][title*="shorts"]
 
 
 ! ========================================
@@ -367,6 +299,45 @@ youtube.com##ytd-guide-entry-renderer[line-end-style]:has([title="Fashion & Beau
 youtube.com##a[href="/gaming"]
 youtube.com##ytd-guide-entry-renderer:has([href="/gaming"])
 youtube.com##ytd-guide-entry-renderer:has([title="Gaming"])
+
+! ========================================
+! HEYSERVES.COM BLOCKING
+! ========================================
+
+! Block HeyServes domain and all subdomains
+||heyserves.com^$important
+||ss.heyserves.com^$important
+||www.heyserves.com^$important
+
+! Document-level blocking to prevent page loading
+||heyserves.com^$document,important
+||ss.heyserves.com^$document,important
+
+! Block all network requests to HeyServes
+||heyserves.com^$third-party
+||ss.heyserves.com^$third-party
+
+! Block all resource types from HeyServes
+||heyserves.com^$script,image,stylesheet,font,media,object,xmlhttprequest,websocket
+||ss.heyserves.com^$script,image,stylesheet,font,media,object,xmlhttprequest,websocket
+
+! Full URL blocking
+|https://ss.heyserves.com
+|http://ss.heyserves.com
+|https://heyserves.com
+|http://heyserves.com
+
+! Hide any links to HeyServes
+##a[href*="heyserves.com"]
+##a[href*="ss.heyserves.com"]
+
+! Remove any elements with HeyServes URLs
+##[src*="heyserves.com"]
+##[src*="ss.heyserves.com"]
+##[href*="heyserves.com"]
+##[href*="ss.heyserves.com"]
+##[data-src*="heyserves.com"]
+##[data-src*="ss.heyserves.com"]
 
 
 ! ========================================
