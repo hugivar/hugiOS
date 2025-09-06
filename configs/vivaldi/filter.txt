@@ -7,65 +7,6 @@
 ! REDDIT - ADS & ANNOYANCES
 ! ========================================
 
-! Reddit Complete Block Filter for Vivaldi
-||reddit.com^
-||www.reddit.com^
-||old.reddit.com^
-||new.reddit.com^
-||m.reddit.com^
-||amp.reddit.com^
-||redd.it^
-||reddithelp.com^
-||redditstatic.com^
-||redditmedia.com^
-||reddit.map.fastly.net^
-||redditinc.com^
-|https://www.reddit.com
-|http://www.reddit.com
-|https://reddit.com
-|http://reddit.com
-|https://old.reddit.com
-|http://old.reddit.com
-##a[href*="reddit.com"]
-##a[href*="redd.it"]
-
-! Reddit Complete Block Filter
-! Basic domain blocking with important priority
-||reddit.com^$important
-||www.reddit.com^$important
-||old.reddit.com^$important
-||new.reddit.com^$important
-||m.reddit.com^$important
-||amp.reddit.com^$important
-||redd.it^$important
-
-! Document-level blocking (prevents page loading)
-||reddit.com^$document,important
-||www.reddit.com^$document,important
-
-! Reddit-related domains and CDNs
-||reddithelp.com^$important
-||redditstatic.com^$important
-||redditmedia.com^$important
-||reddit.map.fastly.net^$important
-||redditinc.com^$important
-
-! Full URL blocking (backup method)
-|https://www.reddit.com
-|http://www.reddit.com
-|https://reddit.com
-|http://reddit.com
-|https://old.reddit.com
-|http://old.reddit.com
-
-! Hide Reddit links in search results
-##a[href*="reddit.com"]
-##a[href*="redd.it"]
-
-! Block Reddit app deep links
-||reddit.com^$app
-||www.reddit.com^$app
-
 ! Promoted posts in feed
 reddit.com##[data-testid="post-container"]:has([data-click-id="promoted"])
 reddit.com##[data-promoted="true"]
