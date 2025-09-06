@@ -7,6 +7,12 @@
 ! REDDIT - ADS & ANNOYANCES
 ! ========================================
 
+*$popup,third-party
+||googlesyndication.com^$popup
+||googleadservices.com^$popup
+||doubleclick.net^$popup
+||s.8jfbt5va3r.com^
+
 ! Promoted posts in feed
 reddit.com##[data-testid="post-container"]:has([data-click-id="promoted"])
 reddit.com##[data-promoted="true"]
