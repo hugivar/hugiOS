@@ -1,7 +1,7 @@
 ! Title: Personal Cosmetic Filter
-! Description: Reddit ads, YouTube Shorts, YouTube Playables, YouTube Music Mixes, and general web annoyances
-! Version: 1.13
-! Last modified: 2025-08-31
+! Description: Reddit ads, YouTube Shorts, YouTube Music Mixes, and general web annoyances
+! Version: 1.14
+! Last modified: 2025-09-16
 
 ! ========================================
 ! REDDIT - ADS & ANNOYANCES
@@ -148,6 +148,35 @@ reddit.com##*:has-text(/^advertisement$/i)
 ||events.reddit.com^$script
 ||reddit.com/api/v1/gold/gild^$xmlhttprequest
 ||reddit.com/api/click^$xmlhttprequest
+
+! ========================================
+! YOUTUBE - HIDE ALL HOMEPAGE VIDEOS
+! ========================================
+
+! Hide all video content from YouTube homepage
+youtube.com##ytd-browse[page-subtype="home"] ytd-rich-item-renderer
+youtube.com##ytd-browse[page-subtype="home"] ytd-video-renderer
+youtube.com##ytd-browse[page-subtype="home"] ytd-compact-video-renderer
+youtube.com##ytd-browse[page-subtype="home"] ytd-grid-video-renderer
+
+! Hide rich grid renderer (main video container on homepage)
+youtube.com##ytd-browse[page-subtype="home"] ytd-rich-grid-renderer
+
+! Hide two column browse results (backup)
+youtube.com##ytd-browse[page-subtype="home"] ytd-two-column-browse-results-renderer #primary
+
+! Hide the main content area on homepage
+youtube.com##ytd-browse[page-subtype="home"] #contents
+
+! Alternative approach - hide the entire primary content area on homepage
+youtube.com##ytd-browse[page-subtype="home"] #primary-inner
+
+! Hide rich sections that contain videos
+youtube.com##ytd-browse[page-subtype="home"] ytd-rich-section-renderer
+
+! Hide any remaining video thumbnails on homepage
+youtube.com##ytd-browse[page-subtype="home"] ytd-thumbnail
+youtube.com##ytd-browse[page-subtype="home"] [id="thumbnail"]
 
 ! ========================================
 ! YOUTUBE - SHORTS SELECTIVE REMOVAL (History Preserved)
