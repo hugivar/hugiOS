@@ -337,46 +337,6 @@ youtube.com##ytd-guide-entry-renderer:has([href="/gaming"])
 youtube.com##ytd-guide-entry-renderer:has([title="Gaming"])
 
 ! ========================================
-! HEYSERVES.COM BLOCKING
-! ========================================
-
-! Block HeyServes domain and all subdomains
-||heyserves.com^$important
-||ss.heyserves.com^$important
-||www.heyserves.com^$important
-
-! Document-level blocking to prevent page loading
-||heyserves.com^$document,important
-||ss.heyserves.com^$document,important
-
-! Block all network requests to HeyServes
-||heyserves.com^$third-party
-||ss.heyserves.com^$third-party
-
-! Block all resource types from HeyServes
-||heyserves.com^$script,image,stylesheet,font,media,object,xmlhttprequest,websocket
-||ss.heyserves.com^$script,image,stylesheet,font,media,object,xmlhttprequest,websocket
-
-! Full URL blocking
-|https://ss.heyserves.com
-|http://ss.heyserves.com
-|https://heyserves.com
-|http://heyserves.com
-
-! Hide any links to HeyServes
-##a[href*="heyserves.com"]
-##a[href*="ss.heyserves.com"]
-
-! Remove any elements with HeyServes URLs
-##[src*="heyserves.com"]
-##[src*="ss.heyserves.com"]
-##[href*="heyserves.com"]
-##[href*="ss.heyserves.com"]
-##[data-src*="heyserves.com"]
-##[data-src*="ss.heyserves.com"]
-
-
-! ========================================
 ! GENERAL WEB ANNOYANCES
 ! ========================================
 
@@ -483,34 +443,36 @@ instagram.com##[data-testid="story-item"]:has([data-testid="sponsored-label"])
 ##[class*="article-limit"]
 
 ! ========================================
-! TARGETED GOOGLE SIGN-IN POPUP BLOCKING
+! TARGETED GOOGLE AUTO-LOGIN POPUP BLOCKING
 ! ========================================
 
-! Block the most intrusive Google One Tap prompts
+! Block Google One Tap auto-login scripts (the main culprits)
 ||accounts.google.com/gsi/client$script,third-party
 ||accounts.google.com/gsi/button$script,third-party
-##div[id*="g_id_"]
-##div[class*="g_id_"]
+
+! Block Google One Tap auto-appearing elements (specific to auto-login)
 ##div[data-g-one-tap]
-##div[class*="one-tap"]
-##div[class*="onetap"]
+##div[id^="g_id_onload"]
+##div[class*="g_id_signin"]
 ##div[jsname="V68bde"]
-##div[data-client-id][data-callback]
 
-! Block auto-appearing credential pickers
-##div[id*="credential_picker"]
-##div[class*="credential_picker"]
-##div[data-account-chooser-dialog]
+! Block auto-credential picker overlays (not user-initiated ones)
+##div[id*="credential_picker_container"]:not(:hover)
+##div[class*="credential_picker"]:not([role="button"])
 
-! Block intrusive overlays and popups (but not inline buttons)
-##div[class*="modal"]:has(div[class*="google-signin"])
-##div[class*="overlay"]:has(div[class*="google-signin"])
-##div[class*="popup"]:has(div[class*="google-signin"])
-##div[role="dialog"]:has(div[class*="google-signin"])
-##div[class*="lightbox"]:has(div[class*="google-signin"])
+! Block Google Smart Lock auto-prompts
+##div[data-smartlock-enabled="true"]
+##div[class*="smartlock-prompt"]
 
-! Block auto-prompting smart lock
-##div[class*="smartlock"]
+! Block specific auto-appearing Google auth containers
+##div[data-client-id][data-auto_prompt="true"]
+##div[data-client-id][data-callback]:not([data-theme])
+
+! Block auto-prompting Google signin iframes (not embedded buttons)
+##iframe[src*="accounts.google.com/gsi"]:not([width])
+
+! Block Google account chooser when it auto-appears
+##div[data-account-chooser-dialog][style*="display: block"]
 
 ! Block specific intrusive Google auth iframes
 ##iframe[src*="accounts.google.com/gsi"]
