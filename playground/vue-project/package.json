@@ -34,7 +34,7 @@
     "jsdom": "21.1.1",
     "prettier": "2.8.0",
     "start-server-and-test": "2.0.0",
-    "typescript": "5.0.2",
+    "typescript": "5.9.2",
     "vite": "4.3.0",
     "vitest": "0.31.0",
     "vue-tsc": "1.6.1"
